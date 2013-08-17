@@ -2,7 +2,7 @@
 
 ~ "visual studio solution build event"
 
-This extension for additional **event** handling **to all subprojects at once in solution**. This features is not provided for solution ( e.g. MSVS2010Pro SP1), **only for individual projects** :(
+This extension for additional event handling **to all subprojects at once in solution**. This feature is not provided by default for solution  ( e.g. MSVS2010Pro SP1), **[only for individual projects](https://bitbucket.org/3F/vssolutionbuildevent/downloads/standard_build_events.png)** :(
 
 Designed for MS Visual Studio 2010 Professional, but you can try on other versions if you needed...
 
@@ -10,10 +10,12 @@ Designed for MS Visual Studio 2010 Professional, but you can try on other versio
 
 * Install latest build release **vsSolutionBuildEvent.vsix** and restart your VS IDE
 * After installing you have opportunity to add/change settings for your solution:
+
 ![menu item](https://bitbucket.org/3F/vssolutionbuildevent/downloads/screen_menu_item.png)
 
 ![screen1](https://bitbucket.org/3F/vssolutionbuildevent/downloads/screen1.png)
 
+The settings are stored in the solution directory as **.xprojvsbe** (you can also ignore from repo with your scm(.gitignore, etc.,))
 
 # Example of solving some problem
 If you have a many subprojects in your solution as here:
@@ -66,10 +68,10 @@ Click settings and select "**Pre-Build**" Solution. Write for example:
 revision.vbs
 ```
 
-and that's all:
+and that's all.. you can use a regular build solution with your scripts:
 
 ![vbs handling](https://bitbucket.org/3F/vssolutionbuildevent/downloads/screen_projects_vbs.png)
 
-you can also use any other interpreter as php, PS, Wscript, NodeJs etc.:
+you can also use any other interpreter as php, PowerShell, Wscript, Node.js, etc.:
 
-* see: [Sending e-mail after complete building](https://bitbucket.org/3F/vssolutionbuildevent/downloads/screen1.png)
+* see also: [Sending e-mail after completed building](https://bitbucket.org/3F/vssolutionbuildevent/downloads/screen1.png)
