@@ -20,7 +20,7 @@ Designed for MS Visual Studio 2010 Professional, but you can try on other versio
 ![interpreter mode](https://bitbucket.org/3F/vssolutionbuildevent/downloads/0.2.2_screen1.png)
 
 
-# Example using
+# Example of using
 
 * Install latest build release **[vsSolutionBuildEvent.vsix](https://sourceforge.net/projects/vssbe/files/latest/download)** and restart your VS IDE
 * After installing you have opportunity to add/change settings for your solution:
@@ -105,6 +105,8 @@ or use any other interpreter as php, PowerShell, Wscript, Node.js, etc.
 
 
 # other screenshots
+
+![screen-0.2](https://bitbucket.org/3F/vssolutionbuildevent/downloads/screen1_v0.2.2.png)
 
 ![files mode](https://bitbucket.org/3F/vssolutionbuildevent/downloads/0.2.2_screen2.png)
 
