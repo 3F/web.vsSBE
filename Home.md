@@ -37,9 +37,9 @@ Designed for MS Visual Studio 2010 Professional, but you can try on other versio
 * Install latest build release **[vsSolutionBuildEvent.vsix](https://sourceforge.net/projects/vssbe/files/latest/download)** and restart your VS IDE
 * After installing you have opportunity to add/change settings for your solution:
 
-![menu item](https://bitbucket.org/3F/vssolutionbuildevent/downloads/screen_menu_item.png)
+![menu item 0.2](https://bitbucket.org/3F/vssolutionbuildevent/downloads/vs_item_menu_0.2.png)
 
-![screen1](https://bitbucket.org/3F/vssolutionbuildevent/downloads/screen1.png)
+![interpreter mode](https://bitbucket.org/3F/vssolutionbuildevent/downloads/0.2.2_screen1.png)![files mode](https://bitbucket.org/3F/vssolutionbuildevent/downloads/0.2.2_screen2.png)
 
 The settings are stored in the solution directory as **.xprojvsbe** (you can also ignore from repo with your scm(.gitignore, etc.,))
 
@@ -163,6 +163,9 @@ $ga->render();
 
 # other screenshots
 
-![interpreter mode](https://bitbucket.org/3F/vssolutionbuildevent/downloads/0.2.2_screen1.png)![files mode](https://bitbucket.org/3F/vssolutionbuildevent/downloads/0.2.2_screen2.png)
 
 ![logs](https://bitbucket.org/3F/vssolutionbuildevent/downloads/0.2.2_screen3.png)
+
+![v0.1 menuitem](https://bitbucket.org/3F/vssolutionbuildevent/downloads/screen_menu_item.png)
+
+![v0.1 screen1](https://bitbucket.org/3F/vssolutionbuildevent/downloads/screen1.png)
