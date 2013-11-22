@@ -115,11 +115,54 @@ for /F "tokens=2 delims=<" %%l in ('findstr /r "cshelp.*=.*\"[^\"]*" *.html') do
 
 or use any other interpreter as php, PowerShell, Wscript, Node.js, etc.
 
+e.g.: easy sending email after complete building:
+
+```
+#!php
+
+mail('yourmail@example.com', 'Build completed', date('H:i:s'));
+```
+or something else
+
+
+```
+#!php
+
+/* range of 11000 - 11999 */ 
+$rangeBegin = 11000; 
+ 
+/* ... */ 
+ 
+class GArtefacts 
+{ 
+    /* ... */ 
+     
+    public function render() 
+    { 
+         try{ 
+            $db = new PDO("sqlite:positions.db"); 
+            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
+ 
+            $res = $db->query("SELECT * FROM exports"); 
+            while($row = $res->fetchObject()){ 
+                echo $row->dtmX . ' ' . $row->dtmY . ' ' . $row->dtmZ . "\n"; 
+            } 
+        } 
+        catch(Exception $e){ 
+            echo 'Error: ' . $e->getMessage(); 
+        } 
+    } 
+     
+    /* ... */ 
+} 
+ 
+$ga = new GArtefacts(); 
+$ga->render();
+```
+ ...
 
 # other screenshots
 
-![interpreter mode](https://bitbucket.org/3F/vssolutionbuildevent/downloads/0.2.2_screen1.png)
-
-![files mode](https://bitbucket.org/3F/vssolutionbuildevent/downloads/0.2.2_screen2.png)
+![interpreter mode](https://bitbucket.org/3F/vssolutionbuildevent/downloads/0.2.2_screen1.png)![files mode](https://bitbucket.org/3F/vssolutionbuildevent/downloads/0.2.2_screen2.png)
 
 ![logs](https://bitbucket.org/3F/vssolutionbuildevent/downloads/0.2.2_screen3.png)
