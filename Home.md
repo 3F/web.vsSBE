@@ -22,7 +22,7 @@ Designed for MS Visual Studio 2010 Professional, but you can try on other versio
 
 # Example using
 
-* Install latest build release **vsSolutionBuildEvent.vsix** and restart your VS IDE
+* Install latest build release **[vsSolutionBuildEvent.vsix](https://sourceforge.net/projects/vssbe/files/latest/download)** and restart your VS IDE
 * After installing you have opportunity to add/change settings for your solution:
 
 ![menu item](https://bitbucket.org/3F/vssolutionbuildevent/downloads/screen_menu_item.png)
