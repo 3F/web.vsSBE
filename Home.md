@@ -1,3 +1,15 @@
+[Download/Скачать](https://sourceforge.net/projects/vssbe/files/latest/download) (SourceForge.net)                    
+![statistic](http://vssbe.sourceforge.net/stat/)
+
+*MS Visual Studio Gallery*:
+
+* [0d1dbfd7-ed8a-40af-ae39-281bfeca2334](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/)
+* (deprecated) [a83c8d51-301c-40cc-bd03-9cb85f723a72](http://visualstudiogallery.msdn.microsoft.com/a83c8d51-301c-40cc-bd03-9cb85f723a72)
+
+```
+#!text
+```
+
 # Visual Studio. Solution Build Event (vsSBE). What is it ?
 
 This extension for additional event handling **to all subprojects at once in solution**. This feature is not provided by default for solution  ( e.g. MSVS2010Pro SP1), **[only for individual projects](https://bitbucket.org/3F/vssolutionbuildevent/downloads/standard_build_events.png)** :(
@@ -17,7 +29,7 @@ Designed for MS Visual Studio 2010 Professional, but you can try on other versio
 * [fix] #152 change slashes (/ to \) for relative paths
 * minor UI changes
  
-![interpreter mode](https://bitbucket.org/3F/vssolutionbuildevent/downloads/0.2.2_screen1.png)
+![screen-0.2](https://bitbucket.org/3F/vssolutionbuildevent/downloads/screen1_v0.2.2.png)
 
 
 # Example of using
@@ -106,7 +118,7 @@ or use any other interpreter as php, PowerShell, Wscript, Node.js, etc.
 
 # other screenshots
 
-![screen-0.2](https://bitbucket.org/3F/vssolutionbuildevent/downloads/screen1_v0.2.2.png)
+![interpreter mode](https://bitbucket.org/3F/vssolutionbuildevent/downloads/0.2.2_screen1.png)
 
 ![files mode](https://bitbucket.org/3F/vssolutionbuildevent/downloads/0.2.2_screen2.png)
 
