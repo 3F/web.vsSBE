@@ -126,7 +126,7 @@ or something else
 
 
 ```
-#!php
+#!java
 
 /* range of 11000 - 11999 */ 
 $rangeBegin = 11000; 
