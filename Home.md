@@ -1,10 +1,24 @@
-# What this ?
-
-~ "visual studio solution build event"
+# Visual Studio. Solution Build Event (vsSBE). What is it ?
 
 This extension for additional event handling **to all subprojects at once in solution**. This feature is not provided by default for solution  ( e.g. MSVS2010Pro SP1), **[only for individual projects](https://bitbucket.org/3F/vssolutionbuildevent/downloads/standard_build_events.png)** :(
 
 Designed for MS Visual Studio 2010 Professional, but you can try on other versions if you needed...
+
+* Visual Studio 2012
+* Visual Studio 2013
+
+# Changes 
+
+## v0.2.2 
+
+* [enhancement] advanced control of events 
+* [enhancement] New modes: interpreter & files mode
+* [fix] vsix. removed restrictions on products
+* [fix] #152 change slashes (/ to \) for relative paths
+* minor UI changes
+ 
+![interpreter mode](https://bitbucket.org/3F/vssolutionbuildevent/downloads/0.2.2_screen1.png)
+
 
 # Example using
 
@@ -75,3 +89,9 @@ and that's all.. you can use a regular build solution with your scripts:
 you can also use any other interpreter as php, PowerShell, Wscript, Node.js, etc.:
 
 * see also: [Sending e-mail after completed building](https://bitbucket.org/3F/vssolutionbuildevent/downloads/screen1.png)
+
+# other screenshots
+
+![files mode](https://bitbucket.org/3F/vssolutionbuildevent/downloads/0.2.2_screen2.png)
+
+![logs](https://bitbucket.org/3F/vssolutionbuildevent/downloads/0.2.2_screen3.png)
