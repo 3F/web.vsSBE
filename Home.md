@@ -86,9 +86,23 @@ and that's all.. you can use a regular build solution with your scripts:
 
 ![vbs handling](https://bitbucket.org/3F/vssolutionbuildevent/downloads/screen_projects_vbs.png)
 
-you can also use any other interpreter as php, PowerShell, Wscript, Node.js, etc.:
+You can also write a multi-line script (Do not use a single-line comment):
 
-* see also: [Sending e-mail after completed building](https://bitbucket.org/3F/vssolutionbuildevent/downloads/screen1.png)
+```
+#!bash
+
+... 
+for /F "tokens=2 delims=<" %%l in ('findstr /r "cshelp.*=.*\"[^\"]*" *.html') do ( 
+    set line=%%l 
+    set /a pos=%search_after% 
+    set token_pos=!pos! 
+    call :handler 
+) 
+...
+```
+
+or use any other interpreter as php, PowerShell, Wscript, Node.js, etc.
+
 
 # other screenshots
 
