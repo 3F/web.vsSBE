@@ -128,32 +128,30 @@ or something else
 ```
 #!java
 
+/* Do not use a single-line comment */ 
+ 
 /* range of 11000 - 11999 */ 
 $rangeBegin = 11000; 
  
 /* ... */ 
- 
 class GArtefacts 
 { 
-    /* ... */ 
-     
+    /* ... */   
     public function render() 
     { 
          try{ 
-            $db = new PDO("sqlite:positions.db"); 
+            $db = new PDO(Factory::sqlite("positions.db")); 
             $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
  
             $res = $db->query("SELECT * FROM exports"); 
             while($row = $res->fetchObject()){ 
-                echo $row->dtmX . ' ' . $row->dtmY . ' ' . $row->dtmZ . "\n"; 
+                Stripper::pack($row->dtmX, $row->dtmY, $row->dtmZ); 
             } 
         } 
         catch(Exception $e){ 
-            echo 'Error: ' . $e->getMessage(); 
+            $this->_msg('Error: ' . $e->getMessage()); 
         } 
     } 
-     
-    /* ... */ 
 } 
  
 $ga = new GArtefacts(); 
