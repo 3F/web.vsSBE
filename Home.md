@@ -12,7 +12,7 @@
 
 # Visual Studio. Solution Build Event (vsSBE). What is it ?
 
-This extension for additional event handling **to all subprojects at once in solution**. This feature is not provided by default for solution  ( e.g. MSVS2010Pro SP1), **[only for individual projects](https://bitbucket.org/3F/vssolutionbuildevent/downloads/standard_build_events.png)** :(
+This extension for additional event handling **to all subprojects at once in solution**. This feature is not provided by default for solution  ( only for individual projects, e.g. with a MSVS2010Pro SP1 ) :(
 
 Designed for MS Visual Studio 2010 Professional, but you can try on other versions if you needed...
 
@@ -21,12 +21,17 @@ Designed for MS Visual Studio 2010 Professional, but you can try on other versio
 
 # Changes 
 
+## v0.3 
+
+* [enhancement] MSBuild environment variables (properties). See help for detail. 
+* New License: BSL 1.0 
+
 ## v0.2.2 
 
 * [enhancement] advanced control of events 
 * [enhancement] New modes: interpreter & files mode
 * [fix] vsix. removed restrictions on products
-* [fix] #152 change slashes (/ to \) for relative paths
+* [fix] #152 change slashes (/ to \\) for relative paths
 * minor UI changes
  
 ![screen-0.2](https://bitbucket.org/3F/vssolutionbuildevent/downloads/screen1_v0.2.2.png)
@@ -159,11 +164,43 @@ $ga->render();
 ```
  ...
 
-# other screenshots
+# MSBuild environment variables (properties)
+
+available with **v0.3**
+
+**Syntax:**
 
 
-![logs](https://bitbucket.org/3F/vssolutionbuildevent/downloads/0.2.2_screen3.png)
+```
+#!bash
 
-![v0.1 menuitem](https://bitbucket.org/3F/vssolutionbuildevent/downloads/screen_menu_item.png)
+$(name)
+$(name:project) - properties from selected project in your solution
+```
+Escape symbol is a **$**: 
 
-![v0.1 screen1](https://bitbucket.org/3F/vssolutionbuildevent/downloads/screen1.png)
+```
+#!bash
+
+$$(name) ... $$(name:project)
+```
+
+![UI-helper](https://bitbucket.org/3F/vssolutionbuildevent/downloads/env_variables.png)
+
+This feature provided with a UI-helper.
+
+You may:
+
+* Selecting an specific project from list for a different value of variable
+* Use a filter for quick access to variable
+* Press [ENTER] for select and insert into the main window or use double click
+* Disable this feature: uncheck this option in main windows and click [Apply] 
+
+ Access to assistant:
+
+* [CTRL] + [SPACE] when a typing commands...
+* Press button - [MSBuild Properties] on main form
+* [ESCAPE] terminate assistant 
+
+
+# [other screenshots](screenshots)
