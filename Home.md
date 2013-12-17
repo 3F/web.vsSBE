@@ -21,6 +21,11 @@ Designed for MS Visual Studio 2010 Professional, but you can try on other versio
 
 # Changes 
 
+## v0.3.1
+
+* [bug] Button "MSBuild Properties" does not resize with the Window
+* [bug] doubling escape symbol
+
 ## v0.3 
 
 * [enhancement] MSBuild environment variables (properties). See help for detail. 
