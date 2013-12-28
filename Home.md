@@ -19,6 +19,10 @@ Designed for MS Visual Studio 2010 Professional, but you can try on other versio
 * Visual Studio 2012
 * Visual Studio 2013
 
+You may also use it for each project a singly.
+
+Examples of using is contained below - *scripts, solutions, etc.,*
+
 ![screen-0.2](https://bitbucket.org/3F/vssolutionbuildevent/downloads/screen1_v0.2.2.png)
 
 # Changes
@@ -223,7 +227,7 @@ REM ### Pre-Build
 
     :Event_PRE
         if "%cfgname%" == "Release" (
-            revision.vbs
+            ... TODO ...
         )
     goto end
 
