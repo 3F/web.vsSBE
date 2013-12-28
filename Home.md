@@ -14,32 +14,16 @@
 
 This extension for additional event handling **to all subprojects at once in solution**. This feature is not provided by default for solution  ( only for individual projects, e.g. with a MSVS2010Pro SP1 ) :(
 
-Designed for MS Visual Studio 2010 Professional, but you can try on other versions if you needed...
+Designed for MS Visual Studio 2010 Professional, but you can try on other versions if that is still needed...
 
 * Visual Studio 2012
 * Visual Studio 2013
 
-# Changes 
-
-## v0.3.1
-
-* [bug] Button "MSBuild Properties" does not resize with the Window
-* [bug] doubling escape symbol
-
-## v0.3 
-
-* [enhancement] MSBuild environment variables (properties). See help for detail. 
-* New License: BSL 1.0 
-
-## v0.2.2 
-
-* [enhancement] advanced control of events 
-* [enhancement] New modes: interpreter & files mode
-* [fix] vsix. removed restrictions on products
-* [fix] #152 change slashes (/ to \\) for relative paths
-* minor UI changes
- 
 ![screen-0.2](https://bitbucket.org/3F/vssolutionbuildevent/downloads/screen1_v0.2.2.png)
+
+# Changes
+
+* [Change List](Change List)
 
 
 # Example of using
@@ -207,5 +191,53 @@ You may:
 * Press button - [MSBuild Properties] on main form
 * [ESCAPE] terminate assistant 
 
+## Example with a MSBuild variables
+
+* File Mode:
+
+```
+#!bash
+
+vssbe_h.bat PRE $(Configuration)
+```
+
+* vssbe_h.bat:
+
+
+```
+#!bash
+
+@echo off
+REM arguments:
+
+    REM event type:
+    set etype=%1
+    REM configuration name:
+    set cfgname=%2
+
+REM ### Event handling #
+
+goto :Event_%etype%
+
+REM ### Pre-Build
+
+    :Event_PRE
+        if "%cfgname%" == "Release" (
+            revision.vbs
+        )
+    goto end
+
+REM ### Post-Build
+
+    :Event_POST
+    goto end
+
+REM ### Cancel-Build
+
+    :Event_CANCEL
+    goto end
+
+:end
+```
 
 # [other screenshots](screenshots)
