@@ -27,16 +27,15 @@ Examples of using is contained below & [Visual Studio Gallery page](http://visua
 
 * [Archive](Archive.Examples)
 
-# Community solutions
+# Solutions of community #
 
-*If you have your own solutions/examples using of this extension, you can share with the community your experiences*
+*If you have your own solutions/examples of using this extension, [you can share](https://bitbucket.org/3F/vssolutionbuildevent/wiki/create) with the community your experiences*
+
+## List  ##
+* [Version number](Examples/Version number)
 
 
-```
-#!text#
 
-please fill me
-```
 
 
 ...
