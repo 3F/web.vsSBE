@@ -128,6 +128,8 @@ Now we have the next result:
 * Only after completed building the Version utility ↓ 
 * Should automatically:
 * * Generating Version.cs with properties of version, sha1 and other
+* * * The Version.cs should be included in main project with the `Build Action` as **Compile**
+* * * And recommend to ignore this, for your SCM (.gitignore, .hgignore, .bzrignore, svn:ignore, etc.,)
 * * Updating .vsixmanifest
 * After completed → building the remaining projects in the solution. Done.
 
