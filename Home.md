@@ -42,10 +42,11 @@ Examples of using is contained below & [Visual Studio Gallery page](http://visua
 * * [minimal v4.5 for develop on Visual Studio 2012](http://www.microsoft.com/en-US/download/details.aspx?id=30653) (Offline installer: [dotNetFx45_Full_x86_x64.exe](http://go.microsoft.com/fwlink/?LinkId=225702))
 * * [minimal v4.5.1 for develop on Visual Studio 2013](http://www.microsoft.com/en-US/download/details.aspx?id=40779)
 * [vsSBE](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/) v0.8.1 or higher
-* [NuGet](https://www.nuget.org/) (starting with VS2012, NuGet is included in every edition. For VS2010, NuGet is available through the Extension Manager)
+* [NuGet](https://www.nuget.org/) (starting with VS2012, NuGet is included in every edition. For VS2010, NuGet is available through the Extension Manager - [NuGet Package Manager](https://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c))
 * * more detail: http://docs.nuget.org/docs/start-here/installing-nuget
 * [Moq 4](https://github.com/Moq/moq4) or higher
-* [NLog](http://nlog-project.org/) (contained in ./external folder)
+* [NLog v2](http://nlog-project.org/) or higher
+* [Json.NET v6](http://json.codeplex.com/) or higher
 
 ### Build ###
 
@@ -60,8 +61,8 @@ Examples of using is contained below & [Visual Studio Gallery page](http://visua
 * * * For `Start Action` - set as `Start External program`
 * * * Then, select your **devenv**, e.g.: `C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe`
 * * In the `Start Options` → `Command line arguments` write the: '**/rootsuffix Exp**' (without quotes)
-* By default, NLog should already be added to References of project. If exist problem with paths, simply add from ./external
 * Click `Build` → `Build Solution`
+* Libraries: NLog, Json.NET, Moq - managed by NuGet and should be received automatically to ./packages directory. Otherwise, try add manually if exist some problems.
 
 Congratulation! Now, you can running the vsSBE extension over experimental VS IDE for debugging
 
