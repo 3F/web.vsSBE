@@ -1,3 +1,9 @@
+```
+#!text
+
+Obsolete. vsSBE v0.9 supported SBE-Scripts. Example should be later!
+```
+
 # Automatically updating version number for VSIX Package (vsixmanifest) #
 
 ## Variant with your utility as part of solution ##
