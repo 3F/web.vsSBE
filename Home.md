@@ -23,8 +23,4 @@
 
 *If you have your own solutions/examples of using this extension, [you can share](https://bitbucket.org/3F/vssolutionbuildevent/wiki/create) with community of your experiences*
 
-## List  ##
 * [Version number](Examples/Version number)
-
-
-...

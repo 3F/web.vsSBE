@@ -12,6 +12,5 @@
 * [OWPComponent](SBE-Scripts/Components/OWPComponent) - For work with OWP
 * [UserVariableComponent](SBE-Scripts/Components/UserVariableComponent) - For work with User-Variables
 
-## Examples ##
 
 
