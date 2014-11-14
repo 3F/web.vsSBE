@@ -53,7 +53,7 @@ If you have a some patch, - use the **pull request** *(on Bitbucket or GitHub)*,
 
 ## Creating Component for SBE-Scripts core ##
 
-All component should implement the **[IComponent](https://bitbucket.org/3F/vssolutionbuildevent/src/develop/vsSolutionBuildEvent/SBEScripts/Components/IComponent.cs)**
+All components should implement the **[IComponent](https://bitbucket.org/3F/vssolutionbuildevent/src/develop/vsSolutionBuildEvent/SBEScripts/Components/IComponent.cs)**
 
 ```
 #!c#
@@ -208,16 +208,23 @@ public class DemoComponent: Component, IComponent
 }
 ```
 
-Then, in [Bootloader.init](https://bitbucket.org/3F/vssolutionbuildevent/src/develop/vsSolutionBuildEvent/SBEScripts/Components/Bootloader.cs) just register your component as `register(new DemoComponent())`:
+Then, with default [Bootloader](https://bitbucket.org/3F/vssolutionbuildevent/src/develop/vsSolutionBuildEvent/SBEScripts/Bootloader.cs) just to register your component as `register(new DemoComponent())`:
 
 ```
 #!c#
 
-public static void init(IEnvironment env, IUserVariable uvariable)
+protected virtual void init()
 {
     ...
     register(new DemoComponent());
 }
+```
+
+You can also use others bootloaders. Simply to implement the [IBootloader](https://bitbucket.org/3F/vssolutionbuildevent/src/develop/vsSolutionBuildEvent/SBEScripts/IBootloader.cs) (also you can override [Bootloader.init()](https://bitbucket.org/3F/vssolutionbuildevent/src/develop/vsSolutionBuildEvent/SBEScripts/Bootloader.cs)) and initialize the new instance of SBE-Scripts core, for example:
+```
+#!c#
+
+new Script(new BootloaderCustom())
 ```
 
 That's all. Build and Run vsSBE, open `Tools` - `SBE-Scripts` and try to execute:
@@ -236,13 +243,14 @@ Also, if you wish to share with your component for current project - use the pul
 
 **Have a question ?**
 
-If you have a question or have a some problem with build, just [create the new Issue](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)
+If you have a question or have a some problem with creating new component, just [create the new Issue](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)
 
 For more details you can see:
 
 * Interface [IComponent](https://bitbucket.org/3F/vssolutionbuildevent/src/develop/vsSolutionBuildEvent/SBEScripts/Components/IComponent.cs)
 * abstract  [Component](https://bitbucket.org/3F/vssolutionbuildevent/src/develop/vsSolutionBuildEvent/SBEScripts/Components/Component.cs)
-* [Bootloader](https://bitbucket.org/3F/vssolutionbuildevent/src/develop/vsSolutionBuildEvent/SBEScripts/Components/Bootloader.cs)
+* [Bootloader](https://bitbucket.org/3F/vssolutionbuildevent/src/develop/vsSolutionBuildEvent/SBEScripts/Bootloader.cs) ([IBootloader](https://bitbucket.org/3F/vssolutionbuildevent/src/develop/vsSolutionBuildEvent/SBEScripts/IBootloader.cs))
 * [Existing components](https://bitbucket.org/3F/vssolutionbuildevent/src/develop/vsSolutionBuildEvent/SBEScripts/Components/)
 * [SBEScripts/](https://bitbucket.org/3F/vssolutionbuildevent/src/develop/vsSolutionBuildEvent/SBEScripts/) namespace
+
 
