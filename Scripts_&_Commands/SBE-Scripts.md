@@ -17,4 +17,4 @@ SBE-Scripts - it's internal specification for additional work over MSBuild - con
 
 ## New Components for SBE-Scripts core ##
 
-* [Developer Zone](Developer Zone)
+* [Developer Zone](../Developer Zone)
