@@ -15,4 +15,6 @@ SBE-Scripts - it's internal specification for additional work over MSBuild - con
 * [UserVariableComponent](SBE-Scripts/Components/UserVariableComponent) - For work with User-Variables
 
 
+## New Components for SBE-Scripts core ##
 
+* [Developer Zone](Developer Zone)
