@@ -188,6 +188,161 @@ What's next ? how to implement more complex logic and how to work with MSBuild &
 
 Also, if you wish to share your component for current project - use the pull request (on Bitbucket or GitHub), or send directly as .patch file with available contacts.
 
+## Dom & Code Completion ##
+
+Optional, you can describe your component with [SBEScripts/Dom](https://bitbucket.org/3F/vssolutionbuildevent/src/develop/vsSolutionBuildEvent/SBEScripts/Dom/) for code completion (Intellisense) or to any generation of documentation.
+
+It's easy with next attributes:
+
+### PropertyAttribute ###
+
+To describe the properties of the component. For example:
+
+```
+#!c#
+
+[Property("propertyName", "Description of the property", CValueType.Boolean, CValueType.Boolean)]
+protected string yourLogic()
+{
+   ...
+}
+```
+
+```
+#!c#
+
+[Property(
+    "IsBuildable", 
+    "Gets or Sets whether the project or project item configuration can be built.", 
+    "find", 
+    "stProjectConf", 
+    CValueType.Boolean, 
+    CValueType.Boolean
+)]
+```
+
+
+Syntax:
+```
+#!c#
+[Property(string name, string description, CValueType get, CValueType set)]
+```
+
+```
+#!c#
+[Property(string name, string parent, string method, CValueType get, CValueType set)]
+```
+
+
+Note:
+
+* Type of the get/set should be as [CValueType](https://bitbucket.org/3F/vssolutionbuildevent/src/develop/vsSolutionBuildEvent/SBEScripts/CValueType.cs)
+* The **parent** it's optional argument used for linking on parent element (property/method etc.) if exist
+* * The **method** argument should contain the real method name who implements the parent element (property/method etc.) 
+* All available constructors see with the [Dom.PropertyAttribute](https://bitbucket.org/3F/vssolutionbuildevent/src/develop/vsSolutionBuildEvent/SBEScripts/Dom/PropertyAttribute.cs).
+
+### MethodAttribute ###
+
+To describe the methods/functions of the component. For example:
+
+
+```
+#!c#
+
+[
+    Method
+    (
+        "call", 
+        "Caller of executable files with arguments.", 
+        new string[] { "name", "args" }, 
+        new string[] { "Executable file", "Arguments" }, 
+        CValueType.Void, 
+        CValueType.String, CValueType.String
+    )
+]
+protected string stCall(string data, bool stdOut, bool silent)
+{
+    ...
+}
+```
+
+Syntax:
+
+```
+#!c#
+
+[Method(string name, string description, CValueType ret, params CValueType[] args)]
+```
+```
+#!c#
+
+[Method(string name, string parent, string method, CValueType ret, params CValueType[] args)]
+```
+
+Note:
+
+* Type of the get/set should be as [CValueType](https://bitbucket.org/3F/vssolutionbuildevent/src/develop/vsSolutionBuildEvent/SBEScripts/CValueType.cs)
+* The **parent** it's optional argument used for linking on parent element (property/method etc.) if exist
+* * The **method** argument should contain the real method name who implements the parent element (property/method etc.) 
+* All available constructors see with the [Dom.MethodAttribute](https://bitbucket.org/3F/vssolutionbuildevent/src/develop/vsSolutionBuildEvent/SBEScripts/Dom/MethodAttribute.cs)
+
+### ComponentAttribute ###
+
+To describe the new component. For example:
+
+```
+#!c#
+
+[Component("File", "I/O operations")]
+public class FileComponent: Component, IComponent
+{
+    ...
+}
+```
+Syntax:
+```
+#!c#
+
+[Component(string name, string description)]
+```
+
+All available constructors see with the [Dom.ComponentAttribute](https://bitbucket.org/3F/vssolutionbuildevent/src/develop/vsSolutionBuildEvent/SBEScripts/Dom/ComponentAttribute.cs)
+
+
+### DefinitionAttribute ###
+
+To describe the any definition of the component. For example:
+```
+#!c#
+
+[Definition("(true) { }", "Conditionals statements\n\n(1 > 2) {\n ... \n}")]
+public class ConditionComponent: Component, IComponent
+{
+    ...
+}
+```
+
+```
+#!c#
+    [Definition("var name", "Get data from variable the 'name'")]
+    [Definition("var name = data", "Set the 'data' for variable the 'name'")]
+```
+
+Syntax:
+```
+#!c#
+
+[Definition(string name, string description)]
+```
+
+All available constructors see with the [Dom.DefinitionAttribute](https://bitbucket.org/3F/vssolutionbuildevent/src/develop/vsSolutionBuildEvent/SBEScripts/Dom/DefinitionAttribute.cs)
+
+
+## Other examples ##
+
+All details you can see in the real implementation of the [existing components](https://bitbucket.org/3F/vssolutionbuildevent/src/develop/vsSolutionBuildEvent/SBEScripts/Components/)
+
+
 ## Have a question ? ##
 
 If you have a question or have a some problem with creating new component, just [create the new Issue](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)
