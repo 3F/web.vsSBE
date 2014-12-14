@@ -75,7 +75,7 @@ For Condition property we should set subcontainer to entry, for basic checking o
 
 public override string Condition
 {
-    get { return "[Demo "; }
+    get { return "Demo "; }
 }
 ```
 
@@ -89,7 +89,7 @@ public class DemoComponent: Component, IComponent
 {
     public override string Condition
     {
-        get { return "^[Build projects\\..+"; }
+        get { return "^Build projects\\..+"; }
     }
 
     public DemoComponent(): base()
@@ -126,7 +126,7 @@ public class DemoComponent: Component, IComponent
 {
     public override string Condition
     {
-        get { return "[Demo "; }
+        get { return "Demo "; }
     }
 
     public override string parse(string data)
@@ -154,6 +154,7 @@ public class DemoComponent: Component, IComponent
     }
 }
 ```
+**Note**: the regular expression used for this example it's a variant of implementation i.e. you can use anything else what you like...
 
 Then, with default [Bootloader](https://bitbucket.org/3F/vssolutionbuildevent/src/develop/vsSolutionBuildEvent/SBEScripts/Bootloader.cs) just to register your component as `register(new DemoComponent())`:
 
@@ -337,12 +338,6 @@ Syntax:
 
 All available constructors see with the [Dom.DefinitionAttribute](https://bitbucket.org/3F/vssolutionbuildevent/src/develop/vsSolutionBuildEvent/SBEScripts/Dom/DefinitionAttribute.cs)
 
-
-## Other examples ##
-
-All details you can see in the real implementation of the [existing components](https://bitbucket.org/3F/vssolutionbuildevent/src/develop/vsSolutionBuildEvent/SBEScripts/Components/)
-
-
 ## Have a question ? ##
 
 If you have a question or have a some problem with creating new component, just [create the new Issue](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)
@@ -352,6 +347,6 @@ For more details you can see:
 * Interface [IComponent](https://bitbucket.org/3F/vssolutionbuildevent/src/develop/vsSolutionBuildEvent/SBEScripts/Components/IComponent.cs)
 * abstract  [Component](https://bitbucket.org/3F/vssolutionbuildevent/src/develop/vsSolutionBuildEvent/SBEScripts/Components/Component.cs)
 * [Bootloader](https://bitbucket.org/3F/vssolutionbuildevent/src/develop/vsSolutionBuildEvent/SBEScripts/Bootloader.cs) ([IBootloader](https://bitbucket.org/3F/vssolutionbuildevent/src/develop/vsSolutionBuildEvent/SBEScripts/IBootloader.cs))
-* [Existing components](https://bitbucket.org/3F/vssolutionbuildevent/src/develop/vsSolutionBuildEvent/SBEScripts/Components/)
+* **[Existing components](https://bitbucket.org/3F/vssolutionbuildevent/src/develop/vsSolutionBuildEvent/SBEScripts/Components/)** - *more details you can see in the real implementation.*
 * [SBEScripts/](https://bitbucket.org/3F/vssolutionbuildevent/src/develop/vsSolutionBuildEvent/SBEScripts/) namespace
 

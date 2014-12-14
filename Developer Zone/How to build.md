@@ -27,7 +27,7 @@
 * * vsSolutionBuildEvent_2012.sln for Visual Studio 2012
 * * other similar vsSolutionBuildEvent`_X`.sln where 'X' is a number version of used Visual Studio
 * Find the 'vsSolutionBuildEvent' project in solution:
-* * Set as SturtUp project
+* * Set as StartUp project
 * * Open `Properties` > `Debug`:
 * * * For `Start Action` - set as `Start External program`
 * * * Then, select your **devenv**, e.g.: `C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe`
