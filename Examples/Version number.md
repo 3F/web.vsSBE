@@ -54,28 +54,38 @@ namespace example
      Updating version
 "]
 
-#[var ver = #[File get("_version")]]
-#[var tpl = #[File get("Version.tpl")]]
-#[var pDir = $(ProjectName)/]
+#[var ver   = #[File get("_version")]]
+#[var tpl   = #[File get("Version.tpl")]]
+#[var pDir  = $($(ProjectDir:$(SolutionName)))]
 
-#[var tStart = $([System.DateTime]::Parse("05.11.2014").ToBinary())]
-#[var tNow   = $([System.DateTime]::UtcNow.Ticks)]
-#[var revBuild = $([System.TimeSpan]::FromTicks($([MSBuild]::Subtract(#[var tNow], #[var tStart]))).TotalMinutes.ToString("0"))]
-
-#[var branchSha1 = #[File sout("git", "rev-parse --short HEAD")]]
-#[var branchName = #[File sout("git", "rev-parse --abbrev-ref HEAD")]]
-#[var branchRevCount = #[File sout("git", "rev-list HEAD --count")]]
+#[var tStart    = $([System.DateTime]::Parse("05.11.2014").ToBinary())]
+#[var tNow      = $([System.DateTime]::UtcNow.Ticks)]
+#[var revBuild  = $([System.TimeSpan]::FromTicks($([MSBuild]::Subtract(#[var tNow], #[var tStart]))).TotalMinutes.ToString("0"))]
 
 #[var cs = $(tpl.Replace(%Version%, "$(ver.Replace(".", ", ")), #[var revBuild]"))]
-
 #[var cs = $(cs.Replace(%VersionRevString%, "$(ver).#[var revBuild]").Replace(%VersionString%, "$(ver)"))]
-#[var cs = $(cs.Replace(%branchName%, "#[var branchName]").Replace(%branchSha1%, "#[var branchSha1]").Replace(%branchRevCount%, "#[var branchRevCount]"))]
+
+#[( #[File exists.file("git.exe", true)] ) {
+
+	#[var branchSha1   	 = #[File sout("git", "rev-parse --short HEAD")]]
+	#[var branchName 	 = #[File sout("git", "rev-parse --abbrev-ref HEAD")]]
+	#[var branchRevCount = #[File sout("git", "rev-list HEAD --count")]]
+	
+	#[var cs = $(cs.Replace(%branchName%, "#[var branchName]").Replace(%branchSha1%, "#[var branchSha1]").Replace(%branchRevCount%, "#[var branchRevCount]"))]
+}
+else {
+	#[var cs = $(cs.Replace(%branchName%, "-").Replace(%branchSha1%, "-").Replace(%branchRevCount%, "-"))]
+}]
 
 #[File write("#[var pDir]Version.cs"):#[var cs]]
 
 #[" 
     .vsixmanifest
 "]
+
+#[($(Configuration) ~= _with_revision) {
+	#[var ver = #[var ver].#[var revBuild]]
+}]
 
 #[File replace.Regexp("#[var pDir]/source.extension.vsixmanifest", "<Version>[0-9\.]+</Version>", "<Version>#[var ver]</Version>")]
 ```
@@ -252,3 +262,4 @@ Now we have the next result:
 # References #
 
 * [Examples of basic usage - scripts, solutions, etc., ](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/)
+
