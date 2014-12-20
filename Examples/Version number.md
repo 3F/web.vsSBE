@@ -82,11 +82,6 @@ else {
 #[" 
     .vsixmanifest
 "]
-
-#[($(Configuration) ~= _with_revision) {
-	#[var ver = #[var ver].#[var revBuild]]
-}]
-
 #[File replace.Regexp("#[var pDir]/source.extension.vsixmanifest", "<Version>[0-9\.]+</Version>", "<Version>#[var ver]</Version>")]
 ```
 * Activate event and click apply
