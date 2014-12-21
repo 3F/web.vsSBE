@@ -47,6 +47,10 @@ Congratulation! Now, you can running the vsSBE extension over experimental VS ID
 * Moq library also should automatically installed with NuGet, if not - simply run the following command in the [Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console):
 `PM> Install-Package Moq`
 
+## What next ? ##
+
+* [Creating the new components](New%20Component)
+
 ## Have a question ? ##
 
 If you have a question or have a some problem with build, just [create the new Issue](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)

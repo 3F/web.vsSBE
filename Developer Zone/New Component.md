@@ -154,7 +154,24 @@ public class DemoComponent: Component, IComponent
     }
 }
 ```
-**Note**: the regular expression used for this example it's a variant of implementation i.e. you can use anything else what you like...
+**Note**: the regular expression used for this example it's a variant of implementation i.e. you can use anything else what you like... for example:
+
+```
+#!c#
+
+public class DemoComponent: Component, IComponent 
+{ 
+    public override string Condition 
+    { 
+        get { return "Demo "; } 
+    } 
+    
+    public override string parse(string data) 
+    {
+        return Values.from(1 + 2); 
+    } 
+}
+```
 
 Then, with default [Bootloader](https://bitbucket.org/3F/vssolutionbuildevent/src/develop/vsSolutionBuildEvent/SBEScripts/Bootloader.cs) just to register your component as `register(new DemoComponent())`:
 
@@ -349,4 +366,5 @@ For more details you can see:
 * [Bootloader](https://bitbucket.org/3F/vssolutionbuildevent/src/develop/vsSolutionBuildEvent/SBEScripts/Bootloader.cs) ([IBootloader](https://bitbucket.org/3F/vssolutionbuildevent/src/develop/vsSolutionBuildEvent/SBEScripts/IBootloader.cs))
 * **[Existing components](https://bitbucket.org/3F/vssolutionbuildevent/src/develop/vsSolutionBuildEvent/SBEScripts/Components/)** - *more details you can see in the real implementation.*
 * [SBEScripts/](https://bitbucket.org/3F/vssolutionbuildevent/src/develop/vsSolutionBuildEvent/SBEScripts/) namespace
+
 
