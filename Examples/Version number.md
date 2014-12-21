@@ -121,7 +121,9 @@ Also you can use the conditions for rev. number, for example:
 In example above, should be 0.9.0**.176489** for **Release** configuration and 0.9.0 for another
 
 
-## For version < v0.9 - Variant with your utility as part of solution ##
+## Variant with the own utility as part of solution (or variant for version < v0.9) ##
+
+***!*** With v0.9 or higher you can use the [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts)
 
 ### Synopsis ###
 
@@ -256,5 +258,7 @@ Now we have the next result:
 
 # References #
 
+* [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts)
+* [MSBuild](../Scripts_&_Commands/MSBuild)
 * [Examples of basic usage - scripts, solutions, etc., ](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/)
 
