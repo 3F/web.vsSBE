@@ -1,8 +1,10 @@
 # How to build vsSBE #
 
-## Requirements ##
+## Variant for Visual Studio ##
 
-* MS Visual Studio 2010 or higher
+### Requirements ###
+
+* MS Visual Studio 2010 or higher (You can use free [Visual Studio Community 2013](http://www.visualstudio.com/products/visual-studio-community-vs) or higher)
 * Installed Microsoft Visual Studio SDK:
 * * [For Visual Studio 2013](http://www.microsoft.com/en-us/download/details.aspx?id=40758)
 * * [For Visual Studio 2012](http://www.microsoft.com/en-us/download/details.aspx?id=30668)
@@ -10,20 +12,19 @@
 * * [For Visual Studio 2010 SP1](http://www.microsoft.com/en-us/download/details.aspx?id=21835) (after update to SP1)
 * Microsoft .NET Framework:
 * * [minimal v4.0 for develop on Visual Studio 2010](http://www.microsoft.com/en-US/download/details.aspx?id=17718)
-* * [minimal v4.5 for develop on Visual Studio 2012](http://www.microsoft.com/en-US/download/details.aspx?id=30653) (Offline installer: [dotNetFx45_Full_x86_x64.exe](http://go.microsoft.com/fwlink/?LinkId=225702))
-* * [minimal v4.5.1 for develop on Visual Studio 2013](http://www.microsoft.com/en-US/download/details.aspx?id=40779)
+* * [minimal v4.5 for develop on Visual Studio 2012/2013](http://www.microsoft.com/en-US/download/details.aspx?id=30653) (Offline installer: [dotNetFx45_Full_x86_x64.exe](http://go.microsoft.com/fwlink/?LinkId=225702))
 * [vsSBE](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/) v0.10.0 or higher
 * [NuGet](https://www.nuget.org/) (starting with VS2012, NuGet is included in every edition. For VS2010, NuGet is available through the Extension Manager - [NuGet Package Manager](https://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c))
 * * more detail: http://docs.nuget.org/docs/start-here/installing-nuget
 * [Moq 4](https://github.com/Moq/moq4) or higher
 * [NLog v2](http://nlog-project.org/) or higher
 * [Json.NET v6](http://json.codeplex.com/) or higher
-* [Ude v1.1](https://code.google.com/p/ude/) or higher
+* [Ude v0.1](https://code.google.com/p/ude/) or higher
 * [AvalonEdit v5](http://avalonedit.net/) or higher
 
 if you have a some problem with getting libraries through NuGet, you can also use the backups from [/dev/lib/](http://sourceforge.net/projects/vssbe/files/dev/lib/)
 
-## Build ##
+### Build ###
 
 * Install [latest vsSBE build](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/referral/118151)
 * Open **.sln** file with your Visual studio
@@ -46,6 +47,14 @@ Congratulation! Now, you can running the vsSBE extension over experimental VS ID
 * Tests should be automatically running for all release-configurations after building. Or you can manualy start with `Test` > `Run` > `All Tests in Solution`
 * Moq library also should automatically installed with NuGet, if not - simply run the following command in the [Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console):
 `PM> Install-Package Moq`
+
+## With MSBuild.exe ##
+
+```
+#!text
+
+Information is temporarily unavailable. Please try again later.
+```
 
 ## What next ? ##
 
