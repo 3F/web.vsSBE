@@ -2,6 +2,8 @@
 
 ## Variant for Visual Studio ##
 
+`This variant is more convenient for develop & debug. See below others variants.`
+
 ### Requirements ###
 
 * MS Visual Studio 2010 or higher (You can use free [Visual Studio Community 2013](http://www.visualstudio.com/products/visual-studio-community-vs) or higher)
@@ -48,7 +50,7 @@ Congratulation! Now, you can running the vsSBE extension over experimental VS ID
 * Moq library also should automatically installed with NuGet, if not - simply run the following command in the [Package Manager Console](http://docs.nuget.org/docs/start-here/using-the-package-manager-console):
 `PM> Install-Package Moq`
 
-## With MSBuild.exe ##
+## Variant for MSBuild.exe ##
 
 ```
 #!text
