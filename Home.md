@@ -15,6 +15,7 @@
 * [MSBuild](Scripts_&_Commands/MSBuild)
 * [DTE-Commands](Scripts_&_Commands/DTE-Commands)
 * [Continuous Integration (CI)](CI)
+* [API](API)
 
 ```
  
@@ -25,3 +26,4 @@
 *If you have your own solutions/examples of using this extension, [you can share](https://bitbucket.org/3F/vssolutionbuildevent/wiki/create) with community of your experiences*
 
 * [Version number](Examples/Version number)
+

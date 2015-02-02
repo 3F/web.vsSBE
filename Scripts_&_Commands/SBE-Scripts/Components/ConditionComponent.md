@@ -1,6 +1,6 @@
 # ConditionComponent #
 
-Conditions in scripts
+Conditional statement for scripts
 
 ## Syntax ##
 
@@ -57,6 +57,40 @@ Rules of comparison:
 * * Compares as: left <= right as numeric
 * **!**
 * * Inverting the all condition
+
+## Composite Conditions ##
+
+Composite Conditions **available with v0.11** with limited Short-circuit Evaluation (separately for all brackets)
+
+### && and || ###
+
+```
+#!java
+
+#[($(Configuration) ~= Deb && $(count) > 10 || $(Configuration) == "Release" ){
+    ...
+}]
+```
+
+```
+#!java
+
+#[( #[var count] > 10 || ($(isAllow) && true ) ){
+    ...
+}
+else{
+    ...
+}]
+```
+
+```
+#!java
+
+#[( (1 < 2 && 2 == 2 && ( true || ((false || 2 >= 2) && (1 > 7 && true)))) ){
+    ...
+}]
+```
+
 
 ## Examples ##
 
