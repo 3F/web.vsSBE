@@ -2,7 +2,7 @@
 
 Utility to support the command-line mode of the Visual Studio for work with [vsSolutionBuildEvent](https://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/) through **[Devenv](https://msdn.microsoft.com/en-us/library/vstudio/xee0c8y7.aspx)**
 
-**Please note**: you can use the **[CI.MSBuild](../CI.MSBuild)** utility for work through msbuild.exe for special build server etc.
+**Please note**: you can use the **[CI.MSBuild](../CI/CI.MSBuild)** utility for work through msbuild.exe for special build server etc.
 
 ## How to get & Install ##
 
