@@ -4,6 +4,19 @@ Utility to support the command-line mode of the Visual Studio for work with [vsS
 
 **Please note**: you can use the **[CI.MSBuild](../CI/CI.MSBuild)** utility for work through msbuild.exe for special build server etc.
 
+` *!* `
+The [Add-ins are deprecated in Visual Studio 2013](http://msdn.microsoft.com/en-us/library/80493a3w.aspx) and removed in [14CTP](http://www.visualstudioextensibility.com/2014/06/05/visual-studio-14-ctp-add-ins-are-gone/) (also in VS2015 Preview)
+
+Therefore, this utility support the next versions: Visual Studio 2010, 2012, 2013.
+
+However! Command-Line mode not available for [VSPackages](https://msdn.microsoft.com/en-us/library/bb166424.aspx) and possible only with Add-in.
+
+This reported on MS Connect Issue #[1075033](https://connect.microsoft.com/VisualStudio/Feedback/Details/1075033) you can vote this!
+
+* As variant, you can use other our utility - **[CI.MSBuild](../CI/CI.MSBuild)**
+
+` *!* `
+
 ## How to get & Install ##
 
 * [Download Devenv_v1.0_[5d7aa0c].zip](http://sourceforge.net/projects/vssbe/files/CI-Utilities/Devenv/Devenv_v1.0_%5B5d7aa0c%5D.zip/download) (SourceForge.net) 
