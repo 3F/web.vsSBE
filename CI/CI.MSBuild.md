@@ -64,6 +64,8 @@ AppVeyor also provides the private NuGet hosting, and you can use own packs of t
 
 ### With AppVeyor NuGet server ###
 
+* http://www.appveyor.com
+
 see also [AppVeyor documentation](http://www.appveyor.com/docs/nuget) & [Creating and Publishing a Package](http://docs.nuget.org/create/creating-and-publishing-a-package)
 
 * On AppVeyor: `Project` - `Settings` - `NuGet` - enable the `Account feed`
@@ -100,6 +102,8 @@ nuget install vsSBE.CI.MSBuild -OutputDirectory C:\projects\<your_project>\Build
 Yes, that's all.
 
 ## Example for TeamCity ##
+
+* https://www.jetbrains.com/teamcity/
 
 Similar as with AppVeyor above:
 
