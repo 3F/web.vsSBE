@@ -4,7 +4,9 @@ Utility to support the command-line mode of the Visual Studio for work with [vsS
 
 **Please note**: you can use the **[CI.MSBuild](../CI/CI.MSBuild)** utility for work through msbuild.exe for special build server etc.
 
-` *!* `
+```
+ *!*
+```
 The [Add-ins are deprecated in Visual Studio 2013](http://msdn.microsoft.com/en-us/library/80493a3w.aspx) and removed in [14CTP](http://www.visualstudioextensibility.com/2014/06/05/visual-studio-14-ctp-add-ins-are-gone/) (also in VS2015 Preview)
 
 Therefore, this utility support the next versions: Visual Studio 2010, 2012, 2013.
@@ -15,7 +17,10 @@ This reported on MS Connect Issue #[1075033](https://connect.microsoft.com/Visua
 
 * As variant, you can use other our utility - **[CI.MSBuild](../CI/CI.MSBuild)**
 
-` *!* `
+
+```
+ *!*
+```
 
 ## How to get & Install ##
 
