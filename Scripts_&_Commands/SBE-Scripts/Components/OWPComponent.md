@@ -100,7 +100,7 @@ Syntax:
 
 ## out ##
 
-For getting mixed data from the OWP. Returns the partial raw from all build log
+Gets mixed data from the OWP. Returns the partial raw from all build log
 
 Syntax:
 ```

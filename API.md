@@ -1,6 +1,6 @@
 # vsSolutionBuildEvent API #
 
-The vsSolutionBuildEvent project also providing the API level. This can be used with any external application for work with events/actions.
+The vsSolutionBuildEvent project also provide the API level. This can be used with any external application for work with events/actions.
 
 For example, this already implemented in our products as part of vsSolutionBuildEvent project:
 

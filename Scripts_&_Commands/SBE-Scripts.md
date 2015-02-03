@@ -11,7 +11,7 @@ SBE-Scripts - it's internal specification for additional work over MSBuild - con
 * [FileComponent](SBE-Scripts/Components/FileComponent) - Support file operations - I/O, call, etc.
 * [FunctionComponent](SBE-Scripts/Components/FunctionComponent) - Mixed supported functions
 * [InternalComponent](SBE-Scripts/Components/InternalComponent) - All internal operation with vsSBE
-* [OWPComponent](SBE-Scripts/Components/OWPComponent) - For work with OWP
+* [OWPComponent](SBE-Scripts/Components/OWPComponent) - For work with OWP and similar operations.
 * [UserVariableComponent](SBE-Scripts/Components/UserVariableComponent) - For work with User-Variables
 
 ## Dom & Code Completion ##

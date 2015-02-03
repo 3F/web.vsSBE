@@ -1,6 +1,6 @@
 # ConditionComponent #
 
-Conditional statement for scripts
+Conditional statement for scripts.
 
 ## Syntax ##
 
@@ -56,7 +56,7 @@ Rules of comparison:
 * **<=**
 * * Compares as: left <= right as numeric
 * **!**
-* * Inverting the all condition
+* * Inverts result of the expression in the used brackets
 
 ## Composite Conditions ##
 
@@ -75,7 +75,7 @@ Composite Conditions **available with v0.11** with limited Short-circuit Evaluat
 ```
 #!java
 
-#[( #[var count] > 10 || ($(isAllow) && true ) ){
+#[( #[var count] > 10 || ($(isAllow) && !false ) ){
     ...
 }
 else{
