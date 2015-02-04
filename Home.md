@@ -10,20 +10,11 @@
 ```
 
 * [Change List](https://bitbucket.org/3F/vssolutionbuildevent/raw/master/changelog.txt)
-* **[How to build vsSBE](Developer Zone)**
+* **[How to build vsSBE](Developer Zone/How to build)** ([Developer Zone](Developer Zone))
 * [SBE-Scripts](Scripts_&_Commands/SBE-Scripts)
 * [MSBuild](Scripts_&_Commands/MSBuild)
 * [DTE-Commands](Scripts_&_Commands/DTE-Commands)
+* [Examples](Examples)
 * [Continuous Integration (CI)](CI)
 * [API](API)
-
-```
- 
-```
-
-# Solutions of community #
-
-*If you have your own solutions/examples of using this extension, [you can share](https://bitbucket.org/3F/vssolutionbuildevent/wiki/create) with community of your experiences*
-
-* [Version number](Examples/Version number)
 
