@@ -18,7 +18,7 @@ That's all. Now you can use the vsSolutionBuildEvent with msbuild. See below of 
 
 ### Manually variant ###
 
-*For advanced use, for example with own NuGet private server etc.*
+* For advanced usage, for example with own NuGet private server etc.*
 
 * [Download CI.MSBuild_v1.0_[5d7aa0c].zip](http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/CI.MSBuild_v1.0_%5B5d7aa0c%5D.zip/download) (SourceForge.net) 
 * * All binaries of the CI.MSBuild: [CI-Utilities/CI.MSBuild/](https://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/)
@@ -58,13 +58,13 @@ Use the command: `msbuild.exe /?` for details about keys: `/nologo` `/noconsolel
 
 ## Configure for AppVeyor ##
 
-AppVeyor also provides the private NuGet hosting, and you can use own packs of the vsSolutionBuildEvent CI.MSBuild ([related topic](http://help.appveyor.com/discussions/questions/900-additional-logger-to-msbuild))
+* http://www.appveyor.com
+
+AppVeyor also provides the private NuGet hosting, and you can use own packages of the vsSolutionBuildEvent CI.MSBuild ([related topic](http://help.appveyor.com/discussions/questions/900-additional-logger-to-msbuild))
 
 ![Example with AppVeyor](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/ci_example_appveyor.png)
 
 ### With AppVeyor NuGet server ###
-
-* http://www.appveyor.com
 
 See also [AppVeyor documentation](http://www.appveyor.com/docs/nuget) & [Creating and Publishing a Package](http://docs.nuget.org/create/creating-and-publishing-a-package)
 
