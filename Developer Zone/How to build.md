@@ -37,18 +37,18 @@ if you have a some problems with getting libraries through NuGet, you can also u
 * * Set as StartUp project
 * * Open `Properties` -> `Debug`:
 * * * For `Start Action` - set as `Start External program`
-* * * Then, select your **devenv.exe**, e.g.: `C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe`
+* * * Then, select your **devenv.exe**, e.g.: C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe
 * * * In `Start Options` > `Command line arguments` write the: '**/rootsuffix Exp**' (without quotes)
 * Find the 'Devenv' project in solution:
 * * `Properties` -> `Debug`:
 * * * For `Start Action` - set as `Start External program`
-* * * Also select your devenv.exe, e.g.: `C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe`
+* * * Also select your devenv.exe, e.g.: C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe
 * * * In `Start Options` > `Command line arguments` write the: '**/resetaddin Devenv.Connect**' (without quotes)
-* * * `Working Directory` add the: '**C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\**'
+* * * `Working Directory` add the: C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\
 * Find the 'CI.MSBuild' project in solution:
 * * `Properties` -> `Debug`:
 * * * For `Start Action` - set as `Start External program`
-* * * Add the full path to **msbuild.exe**, for example: `C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe`
+* * * Add the full path to **msbuild.exe**, for example: C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe
 * * * In `Start Options` > `Command line arguments` write for example:
 
 ```
@@ -58,7 +58,7 @@ if you have a some problems with getting libraries through NuGet, you can also u
 /l:"CI.MSBuild\bin\<Current_Configuration_Name>\CI.MSBuild.dll";lib=vsSolutionBuildEvent\bin\<Current_Configuration_Name>\ /verbosity:Diagnostic /t:Rebuild /p:Configuration=<Configuration>;Platform=<Platform>
 ```
 
-* * * `Working Directory` add the path to vsSolutionBuildEvent sources, for example: '**D:\projects\vsSolutionBuildEvent\**'
+* * * `Working Directory` add the path to vsSolutionBuildEvent sources, for example: D:\projects\vsSolutionBuildEvent\
 * Click `Build` > `Build Solution`
 
 Congratulation! Now, you can run the vsSBE extension over experimental VS IDE for debugging and also to  debug the **Devenv** & **CI.MSBuild** if you want. (Don't forget change the `StartUp project`)
@@ -87,5 +87,6 @@ Information is temporarily unavailable. Please try again later.
 If you have a question or have a some problem with build, just [create the new Issue](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)
 
 If you have a some patch, - use the **pull request** *(on Bitbucket or GitHub)*,  or send directly as **.patch** file with available contacts
+
 
 
