@@ -33,7 +33,7 @@ All commands and operations should be wrapped with container:
 If you have a problem with syntax and documentation for component can't say how this should be... don't worry, you can:
 
 * See available Unit-tests for component: [vsSolutionBuildEventTest/SBEScripts/Components/](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEventTest/SBEScripts/Components/) (all tests see with [vsSolutionBuildEventTest](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEventTest/))
-* Or, just [create the new Issue](https://bitbucket.org/3F/vssolutionbuildevent/issues/new) - we help you!
+* Or, just [create the new Issue](https://bitbucket.org/3F/vssolutionbuildevent/issues/new) - we are help you!
 
 
 ## New Components for SBE-Scripts core ##
