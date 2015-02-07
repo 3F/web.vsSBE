@@ -6,13 +6,21 @@ Utility to support the [CI servers](http://en.wikipedia.org/wiki/Continuous_inte
 
 Currently the CI.MSBuild it's only additional wrapper (~50 kb) for work with vsSolutionBuildEvent plugin through [API](../API). It means, you should also have this library for work.
 
-**However**, variant with NuGet also provide a complete version with all libraries for works. Use any convenient variant for you!
+**However**, [variant with NuGet](https://www.nuget.org/packages/vsSBE.CI.MSBuild/) also provide a complete version with all libraries for works. Use any convenient variant for you!
 
 ### Variant with NuGet ###
+
+[vsSBE.CI.MSBuild](https://www.nuget.org/packages/vsSBE.CI.MSBuild/) - Complete version(with all libraries), just get and use...
 
 `nuget install vsSBE.CI.MSBuild -OutputDirectory <path>`
 
 for example: `nuget install vsSBE.CI.MSBuild -OutputDirectory C:\projectX\Build\bin\`
+
+**OR**
+
+Add this utility for your ***.sln** (see [Managing Packages for the Solution](https://docs.nuget.org/consume/package-manager-dialog#managing-packages-for-the-solution)):
+
+* In Visual Studio: right click on solution -> `Manage NuGet Packages for Solution...`
 
 That's all. Now you can use the vsSolutionBuildEvent with msbuild. See below of how to use it.
 
@@ -26,7 +34,7 @@ That's all. Now you can use the vsSolutionBuildEvent with msbuild. See below of 
 * Unpack the CI.MSBuild archive. *(you can delete all *.pdb files)*
 * Download the [vsSolutionBuildEvent plugin](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/referral/118151) and extract all files from *.**vsix** with any archiver ([it's a simple 'zip' archive](https://msdn.microsoft.com/en-us/library/ff407026.aspx))
 * * **Or** simply go to the installed folder (In plugin: `Settings` - `CI Utilities` - `Plugin` - `Open directory with plugin`)
-* Copy all files into the CI.MSBuild folder
+* Copy all files into the CI.MSBuild folder (without replacements - i.e. CI.MSBuild should be over vsSolutionBuildEvent)
 * * **Or** use `lib=<path>` key with utility (see in "how to use")
 
 That's all. Now you can use the vsSolutionBuildEvent with msbuild. See below of how to use it.
@@ -86,6 +94,8 @@ nuget install CI.MSBuild -OutputDirectory C:\projects\<your_project>\Build\bin\ 
 ```
 Enjoy
 
+**Note:** if the CI.MSBuild added for ***.sln** you can simply use it with one command - `nuget restore <SolutionFile>.sln`... it's easy and useful (see in 'How to get & Install' above)
+
 ### With our NuGet package ###
 
 Similar as above:
@@ -100,6 +110,8 @@ nuget install vsSBE.CI.MSBuild -OutputDirectory C:\projects\<your_project>\Build
   & "C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe" "<SolutionFile>.sln" /verbosity:detailed /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll" /l:"C:\projects\<your_project>\Build\bin\vsSBE.CI.MSBuild.<ver>\bin\CI.MSBuild.dll" /m
 ```
 Yes, that's all.
+
+**Note:** if the CI.MSBuild added for ***.sln** you can simply use it with one command - `nuget restore <SolutionFile>.sln`... it's easy and useful (see in 'How to get & Install' above)
 
 ## Example for TeamCity ##
 
@@ -116,6 +128,7 @@ nuget install vsSBE.CI.MSBuild -OutputDirectory C:\projects\<your_project>\Build
   & nuget restore <SolutionFile>.sln 
   & "C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe" "<SolutionFile>.sln" /verbosity:detailed /l:"C:\projects\<your_project>\Build\bin\vsSBE.CI.MSBuild.<ver>\bin\CI.MSBuild.dll" /m /nologo
 ```
+**Note:** if the CI.MSBuild added for ***.sln** you can simply use it with one command - `nuget restore <SolutionFile>.sln`... it's easy and useful (see in 'How to get & Install' above)
 
 for additional NuGet server, use command:
 
@@ -123,6 +136,7 @@ for additional NuGet server, use command:
 * For private: `nuget sources add -Name <FriendlyName> -Source <URL> -UserName <user> -Password <pass>`
 
 ![Example of work](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/CI.MSBuild_example_TC.png)
+
 
 
 

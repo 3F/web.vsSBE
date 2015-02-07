@@ -13,7 +13,7 @@ Therefore, this utility support the next versions: Visual Studio 2010, 2012, 201
 
 However! Command-Line mode not available for [VSPackages](https://msdn.microsoft.com/en-us/library/bb166424.aspx) and possible only with Add-in.
 
-This reported on MS Connect Issue #[1075033](https://connect.microsoft.com/VisualStudio/Feedback/Details/1075033) you can [vote this](https://connect.microsoft.com/VisualStudio/Feedback/Details/1075033)!
+This reported on MS Connect Issue #[1075033](https://connect.microsoft.com/VisualStudio/Feedback/Details/1075033) and you can [vote or comment here](https://connect.microsoft.com/VisualStudio/Feedback/Details/1075033) *if you want to see this feature on newer versions*!
 
 * As variant, you can use other our utility - **[CI.MSBuild](../CI/CI.MSBuild)**
 
