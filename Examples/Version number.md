@@ -58,23 +58,23 @@ namespace example
 #[var tpl   = #[File get("Version.tpl")]]
 #[var pDir  = $($(ProjectDir:$(SolutionName)))]
 
-#[var tStart    = $([System.DateTime]::Parse("05.11.2014").ToBinary())]
+#[var tStart    = $([System.DateTime]::Parse("2015/02/01").ToBinary())]
 #[var tNow      = $([System.DateTime]::UtcNow.Ticks)]
 #[var revBuild  = $([System.TimeSpan]::FromTicks($([MSBuild]::Subtract(#[var tNow], #[var tStart]))).TotalMinutes.ToString("0"))]
 
 #[var cs = $(tpl.Replace(%Version%, "$(ver.Replace(".", ", ")), #[var revBuild]"))]
 #[var cs = $(cs.Replace(%VersionRevString%, "$(ver).#[var revBuild]").Replace(%VersionString%, "$(ver)"))]
 
-#[( #[File exists.file("git.exe", true)] ) {
+#[( #[File exists.directory(".git")] && #[File exists.file("git.exe", true)] ) {
 
-	#[var branchSha1   	 = #[File sout("git", "rev-parse --short HEAD")]]
-	#[var branchName 	 = #[File sout("git", "rev-parse --abbrev-ref HEAD")]]
-	#[var branchRevCount = #[File sout("git", "rev-list HEAD --count")]]
-	
-	#[var cs = $(cs.Replace(%branchName%, "#[var branchName]").Replace(%branchSha1%, "#[var branchSha1]").Replace(%branchRevCount%, "#[var branchRevCount]"))]
+    #[var branchSha1        = #[File sout("git", "rev-parse --short HEAD")]]
+    #[var branchName        = #[File sout("git", "rev-parse --abbrev-ref HEAD")]]
+    #[var branchRevCount    = #[File sout("git", "rev-list HEAD --count")]]
+    
+    #[var cs = $(cs.Replace(%branchName%, "#[var branchName]").Replace(%branchSha1%, "#[var branchSha1]").Replace(%branchRevCount%, "#[var branchRevCount]"))]
 }
 else {
-	#[var cs = $(cs.Replace(%branchName%, "-").Replace(%branchSha1%, "-").Replace(%branchRevCount%, "-"))]
+    #[var cs = $(cs.Replace(%branchName%, "-").Replace(%branchSha1%, "-").Replace(%branchRevCount%, "-"))]
 }]
 
 #[File write("#[var pDir]Version.cs"):#[var cs]]
