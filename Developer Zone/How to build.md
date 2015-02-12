@@ -1,8 +1,10 @@
 # How to build vsSBE #
 
+[![Build status](https://ci.appveyor.com/api/projects/status/l38xn0j2c5an28e1/branch/master?svg=true)](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/branch/master) 
+
 ## Variant for Visual Studio ##
 
-`Current variant is more convenient for develop & debug. Others variants are contained below.`
+`Current variant is more convenient for develop & debug. Others are contained below.`
 
 ### Requirements ###
 
@@ -45,6 +47,7 @@ if you have a some problems with getting libraries through NuGet, you can also u
 * * * Also select your devenv.exe, e.g.: C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe
 * * * In `Start Options` > `Command line arguments` write the: '**/resetaddin Devenv.Connect**' (without quotes)
 * * * `Working Directory` add the: C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\
+* * * `Enable Debuggers` - enable the `Enable the Visual Studio hosting process`
 * Find the 'CI.MSBuild' project in solution:
 * * `Properties` -> `Debug`:
 * * * For `Start Action` - set as `Start External program`
@@ -61,7 +64,7 @@ if you have a some problems with getting libraries through NuGet, you can also u
 * * * `Working Directory` add the path to vsSolutionBuildEvent sources, for example: D:\projects\vsSolutionBuildEvent\
 * Click `Build` > `Build Solution`
 
-Congratulation! Now, you can run the vsSBE extension over experimental VS IDE for debugging and also to  debug the **Devenv** & **CI.MSBuild** if you want. (Don't forget change the `StartUp project`)
+Congratulation! Now, you can run the vsSBE extension over experimental VS IDE for debugging and also to  debug the **Devenv** & **CI.MSBuild** if you want.
 
 Note:
 
@@ -70,13 +73,38 @@ Note:
 * **Libraries**: NLog, Json.NET, Moq, Ude, AvalonEdit - managed by NuGet and should be received automatically into `./packages` directory. Otherwise, use the following command: `nuget restore vsSolutionBuildEvent_X.sln` or try to [add manually](http://sourceforge.net/projects/vssbe/files/dev/lib/) if exists a some problems.
 
 
-## Variant for MSBuild.exe ##
+## Variant for Microsoft Build Tools (msbuild.exe) ##
+
+`*` Currently this variant still requires installed the Microsoft Visual Studio SDK for your machine *(see above where to find)*
+
+* Clone repository with git:
 
 ```
-#!text
+#!bash
 
-Information is temporarily unavailable. Please try again later.
+git clone --branch=master https://bitbucket.org/3F/vssolutionbuildevent.git C:\projects\vssolutionbuildevent
 ```
+* Restore all packages with [nuget.exe](https://www.nuget.org/nuget.exe) ([documentation](http://docs.nuget.org/Consume/Command-Line-Reference))
+```
+#!bash
+
+nuget restore vsSolutionBuildEvent_2013.sln 
+```
+* And use msbuild.exe for build:
+```
+#!bash
+
+"C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe" "vsSolutionBuildEvent_2013.sln" /verbosity:detailed  /l:"C:\projects\vssolutionbuildevent\packages\vsSBE.CI.MSBuild.1.0.2\bin\CI.MSBuild.dll" /m /p:Configuration=Debug
+```
+That's all.
+
+**Note** for example above:
+* `C:\projects\vssolutionbuildevent` - your path for source code.
+* `vsSolutionBuildEvent_2013.sln` - solution file for VS2013. Others available you can see in root directory.
+* `C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe` - full path to your msbuild.exe
+* `C:\projects\vssolutionbuildevent\packages\vsSBE.CI.MSBuild.1.0.2\bin\CI.MSBuild.dll` - full path to the [CI.MSBuild](../CI/CI.MSBuild)
+
+*this variant also used for build automation with [AppVeyor](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent)*
 
 ## What next ? ##
 
@@ -87,6 +115,7 @@ Information is temporarily unavailable. Please try again later.
 If you have a question or have a some problem with build, just [create the new Issue](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)
 
 If you have a some patch, - use the **pull request** *(on Bitbucket or GitHub)*,  or send directly as **.patch** file with available contacts
+
 
 
 

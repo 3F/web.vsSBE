@@ -1,5 +1,6 @@
 # Automatic Version Numbering for VSIX Package (vsixmanifest) #
 
+*this variant also used for our project:  [Full script for assembling the vsSolutionBuildEvent v0.11](https://gist.github.com/3F/3f2f56dfc2a01dc99c63) (you can [load this script file](https://bitbucket.org/3F/vssolutionbuildevent/src/master/.vssbe))*
 
 ## For v0.9 or newer ##
 
@@ -119,6 +120,27 @@ Also you can use the conditions for rev. number, for example:
 #[File replace.Regexp("source.extension.vsixmanifest", "<Version>[0-9\.]+</Version>", "<Version>#[var ver]</Version>")]
 ```
 In example above, should be 0.9.0**.176489** for **Release** configuration and 0.9.0 for another
+
+Note:
+
+This hard line in example above:
+```
+#!java
+
+#[var cs = $(tpl.Replace(%Version%, "$(ver.Replace(".", ", ")), #[var revBuild]"))]
+```
+
+can be converted to simple:
+```
+#!java
+
+#[var ver   = $(ver.Replace(".", ", ")), $(revBuild)]
+#[var tpl   = $(tpl.Replace(%Version%, "$(ver)"))]
+```
+            
+and similar... 
+
+You can also test/debug all scripts with our testing tools, look in the `Settings` - `Tools`
 
 
 ## Variant with the own utility as part of solution (or variant for version < v0.9) ##
@@ -261,4 +283,5 @@ Now we have the next result:
 * [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts)
 * [MSBuild](../Scripts_&_Commands/MSBuild)
 * [Examples of basic usage - scripts, solutions, etc., ](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/)
+
 
