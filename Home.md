@@ -17,4 +17,5 @@
 * [Examples](Examples)
 * [Continuous Integration (CI)](CI)
 * [API](API)
+* [Help/Donation](Donation)
 
