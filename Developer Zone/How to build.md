@@ -99,7 +99,8 @@ nuget restore vsSolutionBuildEvent_2013.sln
 That's all.
 
 **Note** for example above:
-* `C:\projects\vssolutionbuildevent` - your path for source code.
+
+* `C:\projects\vssolutionbuildevent` - your path to source code.
 * `vsSolutionBuildEvent_2013.sln` - solution file for VS2013. Others available you can see in root directory.
 * `C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe` - full path to your msbuild.exe
 * `C:\projects\vssolutionbuildevent\packages\vsSBE.CI.MSBuild.1.0.2\bin\CI.MSBuild.dll` - full path to the [CI.MSBuild](../CI/CI.MSBuild)
