@@ -2,7 +2,7 @@
 
 ## For v0.9 or newer ##
 
-You can use option "Actions for specific configurations" see below, or use conditions with SBE-Scripts & MSBuild core.
+You can use option "Actions for specific configurations" see below, or use conditions with [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts) & [MSBuild](../Scripts_&_Commands/MSBuild) core.
 
 * Turn on support: SBE-Scripts & MSBuild in control window. 
 * And use similar for your action script: 
