@@ -107,11 +107,11 @@ That's all.
 
 *this variant also used for build automation with [AppVeyor](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent)*
 
-## What next ? ##
+## What's next ? ##
 
 * [Creating the new components](New%20Component)
 
-## Have a question ? ##
+## Have a questions ? ##
 
 If you have a question or have a some problem with build, just [create the new Issue](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)
 

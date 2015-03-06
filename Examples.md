@@ -11,3 +11,4 @@ See [Developer Zone](Developer Zone)
 # Others #
 
 * [Actions for specific configuration](Features/Actions for specific configuration)
+* [.vssbe File format & Unified Project name for different .sln](Features/.vssbe)
