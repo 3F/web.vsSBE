@@ -1,6 +1,6 @@
 # SBE-Scripts #
 
-SBE-Scripts - it's internal specification for additional work over MSBuild - conditions, subcommands, files, etc. by components.
+SBE-Scripts - it's internal specification for additional work over [MSBuild](MSBuild) - conditions, subcommands, files, etc. by components.
 
 ## Components ##
 

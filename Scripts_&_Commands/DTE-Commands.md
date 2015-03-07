@@ -31,3 +31,8 @@ Build.SolutionPlatforms(x86)
 Build.Cancel
 ```
 
+
+# References #
+
+* [SBE-Scripts](SBE-Scripts)
+* [MSBuild](MSBuild)
