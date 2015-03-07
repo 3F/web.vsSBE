@@ -2,6 +2,13 @@
 
 The Microsoft Build Engine is a platform for building applications. This engine, which is also known as MSBuild, provides an XML schema for a project file that controls how the build platform processes and builds software.
 
+-------
+`*!*` 
+
+* Starting with v0.9, you can use the [SBE-Scripts](SBE-Scripts)
+* Starting with v0.11, you can use the [CI.MSBuild](../CI/CI.MSBuild) for work through msbuild.exe (Microsoft Build Tools)
+-------
+
 MSDN References:
 
 * [MSBuild](http://msdn.microsoft.com/en-us/library/vstudio/dd393574.aspx)
