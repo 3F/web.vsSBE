@@ -12,3 +12,4 @@ See [Developer Zone](Developer Zone)
 
 * [Actions for specific configuration](Features/Actions for specific configuration)
 * [.vssbe File format & Unified Project name for different .sln](Features/.vssbe)
+* [Confirmation dialog](Features/Confirmation dialog)
