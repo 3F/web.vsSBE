@@ -2,7 +2,7 @@
 
 *Should be enabled the [MSBuild](../Scripts_&_Commands/MSBuild) & [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts).*
 
-In examples below, we use the [MSBuild Property Functions](https://msdn.microsoft.com/en-us/library/vstudio/dd633440%28v=vs.120%29.aspx#BKMK_PropertyFunctions) and you can use any static method or property of these system classes, for example:
+In examples below, we use the [MSBuild Property Functions](https://msdn.microsoft.com/en-us/library/vstudio/dd633440%28v=vs.120%29.aspx#BKMK_PropertyFunctions) and you can use any static method or property of these system classes:
 
 * System.Math
 * System.Decimal
@@ -15,7 +15,7 @@ In examples below, we use the [MSBuild Property Functions](https://msdn.microsof
 * System.Int64
 * System.TimeSpan
 * System.DateTime
-* [...](https://msdn.microsoft.com/en-us/library/vstudio/dd633440%28v=vs.120%29.aspx#BKMK_PropertyFunctions)
+* [...](https://msdn.microsoft.com/en-us/library/vstudio/dd633440%28v=vs.120%29.aspx#BKMK_Static)
 
 Example of counter in the range 1 - 10:
 
@@ -63,5 +63,6 @@ The variable **spec** in example above should contain the next values - ![Value 
 # References #
 
 * [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts)
+* * [ConditionComponent](../Scripts_&_Commands/SBE-Scripts/Components/ConditionComponent)
 * [MSBuild](../Scripts_&_Commands/MSBuild)
 
