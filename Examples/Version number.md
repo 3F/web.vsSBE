@@ -280,6 +280,7 @@ Now we have the next result:
 
 # References #
 
+* [Increment & Decrement Numbers [custom counters]](../Features/Increment & Decrement Numbers [custom counters])
 * [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts)
 * [MSBuild](../Scripts_&_Commands/MSBuild)
 * [Examples of basic usage - scripts, solutions, etc., ](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/)
