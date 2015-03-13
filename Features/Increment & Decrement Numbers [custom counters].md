@@ -57,7 +57,7 @@ $(numYmod = $([MSBuild]::Modulo($(numY), 12)))
 #[var spec = $(numX).$(numYmod).$(numY)]
 ```
 
-The variable **spec** in example above should contain the next values - ![Value of variable - spec](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/examples/var_spec.gif)
+The variable **spec** in example above should contain the next values - ![Value of variable - spec](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/examples/ver_spec.gif)
 
 
 # References #
