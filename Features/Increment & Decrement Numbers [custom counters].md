@@ -65,6 +65,6 @@ The variable **spec** in example above should contain the next values - ![Value 
 * [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts)
 * * [ConditionComponent](../Scripts_&_Commands/SBE-Scripts/Components/ConditionComponent)
 * [MSBuild](../Scripts_&_Commands/MSBuild)
-* [Date & Time](Features/Date & Time)
+* [Date & Time](Date & Time)
 * [Automatic Version Numbering for VSIX Package](../Examples/Version number)
 

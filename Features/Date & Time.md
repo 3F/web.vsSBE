@@ -34,6 +34,12 @@ or
 
 $([System.DateTime]::Parse("2015/02/17 07:21").ToBinary())
 ```
+or
+```
+#!java
+
+$([System.DateTime]::Parse("17.02.2015 17:41").ToBinary())
+```
 etc.
 
 ### Number of ticks from current date and time
@@ -104,7 +110,7 @@ You can [try this](../Examples/Version number) If needed a some additional build
 
 * [Automatic Version Numbering for VSIX Package](../Examples/Version number)
 * [CI](../CI)
-* [Increment & Decrement Numbers [custom counters]](Features/Increment & Decrement Numbers [custom counters])
+* [Increment & Decrement Numbers [custom counters]](Increment & Decrement Numbers [custom counters])
 * [MSBuild](../Scripts_&_Commands/MSBuild)
 * MSDN:
 * * [DateTime.Parse](https://msdn.microsoft.com/en-us/library/system.datetime.parse.aspx)
