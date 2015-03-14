@@ -63,7 +63,7 @@ The variable **spec** in example above should contain the next values - ![Value 
 
 # Unique number for team
 
-In example on page [Date & Time](Date & Time) you know what the UTC it does not give any warranty for unique numbers and you should use the our **[CI features](../CI)** or something else..:
+In example on page [Date & Time](Date & Time) now you know that the UTC it does not give any warranty for unique numbers and you should use the our **[CI features](../CI)** or something else..:
 
 * You can also use any cryptographic hash function ([sha1](https://en.wikipedia.org/wiki/SHA-1), [MD5](https://en.wikipedia.org/wiki/MD5), [TTH](https://en.wikipedia.org/wiki/Merkle_tree#Tiger_tree_hash) etc.) with your specific unique identification (timestamp + computer identifier + ... and similar), for example:
 ```
