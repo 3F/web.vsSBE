@@ -6,12 +6,12 @@
 
 # Some features & others #
 
-* [Actions for specific configuration](Features/Actions for specific configuration)
-* [.vssbe File format & Unified Project name for different .sln](Features/.vssbe)
-* [Confirmation dialog](Features/Confirmation dialog)
 * [Date & Time](Features/Date & Time)
 * [Increment & Decrement Numbers [custom counters]](Features/Increment & Decrement Numbers [custom counters])
+* [.vssbe File format & Unified Project name for different .sln](Features/.vssbe)
+* [Actions for specific configuration](Features/Actions for specific configuration)
+* [Confirmation dialog](Features/Confirmation dialog)
 
 # For developers #
 
-You should see [Developer Zone](Developer Zone)
+You should see [Developer Zone](Developer Zone) - *How to build, API, How to create component for current platform ...*
