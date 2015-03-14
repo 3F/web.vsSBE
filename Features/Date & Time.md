@@ -104,13 +104,13 @@ You can [try this](../Examples/Version number) If needed a some additional build
 **Notes**: 
 
 * In general, the TotalMinutes possible only if you have one or less assemblies for 1 **minute**. Otherwise, you should use the similar TotalSeconds again only if you have one or less assemblies for 1 **second** etc.
-* You should use **UTC** (Coordinated Universal Time) **However!** it does not give any warranty for unique numbers. Please remember about this, and be careful for developing in team - for this case use the our **[CI features](../CI)** and others... see also - [custom counters](Increment & Decrement Numbers [custom counters])
+* You should use **UTC** (Coordinated Universal Time) **However!** it does not give any warranty for unique numbers. Please remember about this, and be careful for developing in team - for this case use the our **[CI features](../CI)** and others... see also - [custom counters](Custom counters)
 
 # References #
 
 * [Automatic Version Numbering for VSIX Package](../Examples/Version number)
 * [CI](../CI)
-* [Increment & Decrement Numbers [custom counters]](Increment & Decrement Numbers [custom counters])
+* [Custom counters](Custom counters)
 * [MSBuild](../Scripts_&_Commands/MSBuild)
 * MSDN:
 * * [DateTime.Parse](https://msdn.microsoft.com/en-us/library/system.datetime.parse.aspx)

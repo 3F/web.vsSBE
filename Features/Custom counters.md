@@ -1,6 +1,8 @@
-# Increment & Decrement Numbers [custom counters]
+# Custom counters
 
 *Should be enabled the [MSBuild](../Scripts_&_Commands/MSBuild) & [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts).*
+
+## Increment & Decrement Numbers
 
 In examples below, we use the [MSBuild Property Functions](https://msdn.microsoft.com/en-us/library/vstudio/dd633440%28v=vs.120%29.aspx#BKMK_PropertyFunctions) and you can use any static method or property of these system classes:
 

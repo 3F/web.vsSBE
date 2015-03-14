@@ -280,7 +280,7 @@ Now we have the next result:
 
 # References #
 
-* [Increment & Decrement Numbers [custom counters]](../Features/Increment & Decrement Numbers [custom counters])
+* [Custom counters](../Features/Custom counters)
 * [Date & Time](../Features/Date & Time)
 * [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts)
 * [MSBuild](../Scripts_&_Commands/MSBuild)

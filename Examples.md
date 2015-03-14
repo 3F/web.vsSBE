@@ -7,7 +7,7 @@
 # Some features & others #
 
 * [Date & Time](Features/Date & Time)
-* [Increment & Decrement Numbers [custom counters]](Features/Increment & Decrement Numbers [custom counters])
+* [Increment & Decrement Numbers [custom counters]](Features/Custom counters)
 * [.vssbe File format & Unified Project name for different .sln](Features/.vssbe)
 * [Actions for specific configuration](Features/Actions for specific configuration)
 * [Confirmation dialog](Features/Confirmation dialog)
