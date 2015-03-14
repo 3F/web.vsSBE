@@ -61,7 +61,7 @@ The variable **spec** in example above should contain the next values - ![Value 
 
 # Unique number for team
 
-In example on page [Date & Time](Date & Time) you know what the UTC it does not give any warranty for unique numbers and you should use the our **[CI features](../CI)** or something else, for example:
+In example on page [Date & Time](Date & Time) you know what the UTC it does not give any warranty for unique numbers and you should use the our **[CI features](../CI)** or something else..:
 
 * You can also use any cryptographic hash function ([sha1](https://en.wikipedia.org/wiki/SHA-1), [MD5](https://en.wikipedia.org/wiki/MD5), [TTH](https://en.wikipedia.org/wiki/Merkle_tree#Tiger_tree_hash) etc.) with your specific unique identification (timestamp + computer identifier + ... and similar), for example:
 ```
@@ -70,7 +70,7 @@ In example on page [Date & Time](Date & Time) you know what the UTC it does not 
 #[var utcnow = $([System.DateTime]::UtcNow.Ticks)]
 #[File sout("cmd", "/C echo \"#[var utcnow]\" | openssl sha1 | sed 's/^.*\s//'")]
 ```
-*f80ba367786b1fc075bf04104a69656141202aa5*
+`f80ba367786b1fc075bf04104a69656141202aa5`
 
 **Note:** In example above we use the [openssl](https://www.openssl.org/docs/apps/openssl.html)
 
@@ -81,7 +81,7 @@ In example on page [Date & Time](Date & Time) you know what the UTC it does not 
 
 $([System.Guid]::NewGuid())
 ```
-*364c741c-21da-4c85-8d33-abf15b7c9672*
+`364c741c-21da-4c85-8d33-abf15b7c9672`
 
 if needed sha1 you can also recalculate this:
 ```
@@ -90,7 +90,7 @@ if needed sha1 you can also recalculate this:
 #[var guid = $([System.Guid]::NewGuid())]
 #[File sout("cmd", "/C echo \"#[var guid]\" | openssl sha1 | sed 's/^.*\s//'")]
 ```
-*2580219018d287e84de683f4cd74822ba952c96f*
+`2580219018d287e84de683f4cd74822ba952c96f`
 
 and similar..
 

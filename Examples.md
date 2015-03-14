@@ -14,4 +14,4 @@
 
 # For developers #
 
-You should see [Developer Zone](Developer Zone) - *How to build, API, How to create component for current platform ...*
+You should see [Developer Zone](Developer Zone) - *API; How to build plugin; How to create component for current platform; ...*
