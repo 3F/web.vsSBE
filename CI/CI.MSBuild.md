@@ -70,7 +70,7 @@ Use the command: `msbuild.exe /?` for details about keys: `/nologo` `/noconsolel
 
 AppVeyor also provides the private NuGet hosting, and you can use own packages of the vsSolutionBuildEvent CI.MSBuild ([related topic](http://help.appveyor.com/discussions/questions/900-additional-logger-to-msbuild))
 
-![Example with AppVeyor](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/ci_example_appveyor.png)
+[![Example with AppVeyor](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/ci_example_appveyor.png)](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/build/build-17)
 
 ### With AppVeyor NuGet server ###
 
