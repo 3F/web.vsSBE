@@ -8,8 +8,12 @@ In latest versions you can use special option for your [scripts](../scripts).
 * In `Control` section set the **Confirmation** option.
 
 
-This can be useful for most operations, however you can also use own dialog if needed, for example:
+This can be useful for most operations. However you can also use own dialogs, see below.
 
+
+## Custom dialogs
+
+You can use any own dialog if needed, for example:
 
 * Activate [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts) support
 * Use script for example:
