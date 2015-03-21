@@ -1,8 +1,12 @@
-# Automatic Version Numbering for VSIX Package (vsixmanifest) #
+# Automatic Version Numbering
+
+![Version class](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/examples/VersionClass.gif)
+
+## VSPackages (VSIX Package/.vsixmanifest) and for others
 
 *this variant also used for our project:  [Full script for assembling the vsSolutionBuildEvent v0.11](https://gist.github.com/3F/3f2f56dfc2a01dc99c63) (you can [load this script file](https://bitbucket.org/3F/vssolutionbuildevent/src/master/.vssbe))*
 
-## For v0.9 or newer ##
+### For v0.9 or newer
 
 * Select event type - "Pre-Build".
 * Change "Processing mode" to Interpreter Mode
@@ -19,7 +23,7 @@
 * Manually set - `#[var ver = 1.2.3]` 
 * Other with MSBuild & SBE-Scripts
 
-### Generating the Version class & Build/revision Number ###
+#### Generating the Version class & Build/revision Number
 
 * Create template of Version class e.g.: **Version.tpl** with what you want, using placeholders instead of real values - sample:
 
@@ -143,11 +147,11 @@ and similar...
 You can also test/debug all scripts with our testing tools, look in the `Settings` - `Tools`
 
 
-## Variant with the own utility as part of solution (or variant for version < v0.9) ##
+### Variant with the own utility as part of solution (or variant for version < v0.9) 
 
 ***!*** With v0.9 or higher you can use the [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts)
 
-### Synopsis ###
+#### Synopsis
 
 This method should automatically generate the class, e.g.: ↘
 
@@ -201,7 +205,7 @@ For **.vsixmanifest** it's a little harder. The <Version> in .vsixmanifest, foll
 therefore, we can update this only as replacement, see below
 
 
-### Step 1. Preparing utility ###
+#### Step 1. Preparing utility 
 
 The next steps:
 
@@ -234,7 +238,7 @@ It's easy (time etc.) and examples of basic implementation, you can found in [cu
 
 After implementing, we can work with this utility in vsSBE
 
-### Step 2. Settings vsSBE ###
+#### Step 2. Settings vsSBE
 
 * Select event type - "Pre-Build".
 * Change "Processing mode" to Interpreter Mode
@@ -265,7 +269,7 @@ and similar..
 
 Activate event and click apply
 
-### Result ###
+#### Result
 
 Now we have the next result:
 
@@ -278,12 +282,10 @@ Now we have the next result:
 * * Updating .vsixmanifest
 * After completed → building the remaining projects in the solution. Done.
 
-# References #
+# References
 
 * [Custom counters](../Features/Custom counters)
 * [Date & Time](../Features/Date & Time)
 * [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts)
 * [MSBuild](../Scripts_&_Commands/MSBuild)
 * [Examples of basic usage - scripts, solutions, etc., ](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/)
-
-
