@@ -15,17 +15,6 @@ I/O operations with files.
 * For more details see: [MS Q110930](http://support.microsoft.com/kb/110930/en-us)
 
 
-## get ##
-
-Receiving data from file.
-
-Syntax:
-```
-#!java
-
-#[File get("filename")]
-```
-
 ## call ##
 
 Caller of executable files.
@@ -34,30 +23,52 @@ Syntax:
 ```
 #!java
 
-#[File call("filename", "args")]
+void #[File call(string filename, string args)]
 ```
 ```
 #!java
 
-#[File call("filename")]
+void #[File call(string filename)]
 ```
+
+**v0.11.3+**:
+```
+#!java
+
+void #[File call(string filename, string args, uinteger timeout)]
+```
+
+Where,
+
+* filename - Full path to executable file.
+* args - Arguments to executable file.
+* timeout - How long to wait the execution, in seconds. 0 value - infinitely
+
 
 ## out ##
 
-Receiving data from executed file.
+Receiving data from stdout for executed file.
 
 Syntax:
 ```
 #!java
 
-#[File out("filename", "args")]
+string #[File out(string filename, string args)]
 ```
 
 ```
 #!java
 
-#[File out("filename")]
+string #[File out(string filename)]
 ```
+
+**v0.11.3+**:
+```
+#!java
+
+string #[File out(string filename, string args, uinteger timeout)]
+```
+* timeout - How long to wait the execution, in seconds. 0 value - infinitely
 
 ## scall ##
 
@@ -67,29 +78,58 @@ Syntax:
 ```
 #!java
 
-#[File scall("filename", "args")]
+void #[File scall(string filename, string args)]
 ```
 ```
 #!java
 
-#[File scall("filename")]
+void #[File scall(string filename)]
 ```
+
+**v0.11.3+**:
+```
+#!java
+
+void #[File scall(string filename, string args, uinteger timeout)]
+```
+* timeout - How long to wait the execution, in seconds. 0 value - infinitely
 
 ## sout ##
 
-Receiving data from executed file in silent mode.
+Receiving data from stdout for executed file with silent mode.
 
 Syntax:
 ```
 #!java
 
-#[File sout("filename", "args")]
+string #[File sout(string filename, string args)]
 ```
 
 ```
 #!java
 
-#[File sout("filename")]
+string #[File sout(string filename)]
+```
+
+
+**v0.11.3+**:
+```
+#!java
+
+string #[File sout(string filename, string args, uinteger timeout)]
+```
+* timeout - How long to wait the execution, in seconds. 0 value - infinitely
+
+
+## get ##
+
+Receiving data from file.
+
+Syntax:
+```
+#!java
+
+string #[File get("filename")]
 ```
 
 ## write ##
@@ -106,12 +146,12 @@ Syntax:
 #[File write("filename"): multiline data]
 ```
 
-v0.10:
+v0.10+:
  
 ```
 #!java
 
-#[File write(string name, boolean append, boolean line, string encoding): multiline data]
+void #[File write(string name, boolean append, boolean line, string encoding): multiline data]
 ```
 * name - File name
 * append - Flag of adding data to the end file
@@ -189,7 +229,7 @@ Syntax:
 #[File replace.Wildcards("file", "pattern", "replacement")]
 ```
 
-v0.10:
+v0.10+:
 
 * Alias for Regexp:
 ```
@@ -208,7 +248,7 @@ Sample:
 
 ## exists ##
 
-v0.10
+v0.10+
 
 Determines whether the something exists.
 
@@ -303,3 +343,4 @@ Samples:
    ...
 }]
 ```
+
