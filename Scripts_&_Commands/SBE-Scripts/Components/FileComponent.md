@@ -2,7 +2,7 @@
 
 I/O operations with files.
 
-**Note** for call/out/scall/sout:
+**Note** for call/scall/sout:
 
 * All errors can be ~disabled with arguments, for example:
 * * stderr to stdout: *<command>* **2>&1**
@@ -44,32 +44,6 @@ Where,
 * args - Arguments to executable file.
 * timeout - How long to wait the execution, in seconds. 0 value - infinitely
 
-
-## out ##
-
-Receiving data from stdout for executed file.
-
-Syntax:
-```
-#!java
-
-string #[File out(string filename, string args)]
-```
-
-```
-#!java
-
-string #[File out(string filename)]
-```
-
-**v0.11.3+**:
-```
-#!java
-
-string #[File out(string filename, string args, uinteger timeout)]
-```
-* timeout - How long to wait the execution, in seconds. 0 value - infinitely
-
 ## scall ##
 
 Caller of executable files in silent mode.
@@ -96,7 +70,7 @@ void #[File scall(string filename, string args, uinteger timeout)]
 
 ## sout ##
 
-Receiving data from stdout for executed file with silent mode.
+Receives data from standard streams for executed file. To disable errors use the '2>nul' and similar - see above.
 
 Syntax:
 ```
@@ -120,10 +94,30 @@ string #[File sout(string filename, string args, uinteger timeout)]
 ```
 * timeout - How long to wait the execution, in seconds. 0 value - infinitely
 
+## cmd ##
+
+**v0.11.3+**:
+
+Alias to sout() for cmd.
+`- #[File cmd("args")] -> #[File sout("cmd", "/C args")]`
+
+Receives data from standard streams for cmd process with arguments.
+
+```
+#!java
+
+string #[File cmd(string args)]
+```
+```
+#!java
+
+string #[File cmd(string args, uinteger timeout)]
+```
+* timeout - How long to wait the execution, in seconds. 0 value - infinitely
 
 ## get ##
 
-Receiving data from file.
+Gets all data from file.
 
 Syntax:
 ```
@@ -343,4 +337,5 @@ Samples:
    ...
 }]
 ```
+
 
