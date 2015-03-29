@@ -7,12 +7,12 @@ SBE-Scripts - it's internal specification for additional work over [MSBuild](MSB
 * [BuildComponent](SBE-Scripts/Components/BuildComponent) - Component of building
 * [CommentComponent](SBE-Scripts/Components/CommentComponent) - Any supported comments with scripts
 * [ConditionComponent](SBE-Scripts/Components/ConditionComponent) - Conditions in scripts
-* [DTEComponent](SBE-Scripts/Components/DTEComponent) - For work with DTE
+* [DTEComponent](SBE-Scripts/Components/DTEComponent) - Works with EnvDTE
 * [FileComponent](SBE-Scripts/Components/FileComponent) - Support file operations - I/O, call, etc.
 * [FunctionComponent](SBE-Scripts/Components/FunctionComponent) - Mixed supported functions
 * [InternalComponent](SBE-Scripts/Components/InternalComponent) - All internal operation with vsSBE
-* [OWPComponent](SBE-Scripts/Components/OWPComponent) - For work with OWP and similar operations.
-* [UserVariableComponent](SBE-Scripts/Components/UserVariableComponent) - For work with User-Variables
+* [OWPComponent](SBE-Scripts/Components/OWPComponent) - Works with OWP and similar operations.
+* [UserVariableComponent](SBE-Scripts/Components/UserVariableComponent) - Works with User-Variables
 
 ## Dom & Code Completion ##
 
