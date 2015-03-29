@@ -8,10 +8,10 @@ Conditional statement for scripts.
 #!java
 
 #[(condition){ 
-  body if condition has true value
+  body if the condition has true value
 }
 else{ 
-  body if condition has false value
+  body if the condition has false value
 }]
 ```
 
@@ -29,6 +29,12 @@ else{
 
  ===, !==, ~=, ==, !=, >=, <=, !, >, < 
 ```
+**v0.11.3+**:
+```
+#!text
+
+ ^=, =^
+```
 Rules of comparison:
 
 * **===** 
@@ -37,6 +43,10 @@ Rules of comparison:
 * * Compares as: left != right as string
 * **~=**
 * * Compares as: left Contains right ?
+* **^=**
+* * Compares as: left Begins with right ?
+* **=^**
+* * Compares as: left Ends with right ?
 * **==** 
 * * Compares in order of: 
 * * * left == right as numeric
@@ -115,5 +125,20 @@ else{
 
 #[(!1 > 2){
     is greater
+}]
+```
+
+### Comparing strings. Case insensitive.
+
+You can use the [MSBuild](../../MSBuild) core and [String.ToLower](https://msdn.microsoft.com/en-us/library/system.string.tolower.aspx) Method for your variables, for example:
+
+```
+#!java
+
+#[( $(left.ToLower()) ^= $(right.ToLower()) ) {
+    Yes
+}
+else{
+    No
 }]
 ```
