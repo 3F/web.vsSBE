@@ -10,12 +10,12 @@
 ```
 
 * [Changelist](https://bitbucket.org/3F/vssolutionbuildevent/raw/master/changelog.txt)
-* **[How to build vsSBE](Developer Zone/How to build)** ([Developer Zone](Developer Zone))
+* [How to build vsSBE](Developer Zone/How to build) ([Developer Zone](Developer Zone))
 * [SBE-Scripts](Scripts_&_Commands/SBE-Scripts)
 * [MSBuild](Scripts_&_Commands/MSBuild)
 * [DTE-Commands](Scripts_&_Commands/DTE-Commands)
-* [Examples](Examples)
+* **[Examples](Examples)**
 * [Continuous Integration (CI)](CI)
 * [API](API)
-* [Help/Donation](Donation)
+* **[Support us. /Donation](Donation)**
 
