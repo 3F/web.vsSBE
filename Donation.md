@@ -1,11 +1,11 @@
 
 ##### Help to project to help you!
 
-vsSolutionBuildEvent - it's **open** and **free** project & related projects for all... a more than 1.5 years!
+vsSolutionBuildEvent - it's **open** and **free** project & related projects for all... a [more than 1.5 years](https://bitbucket.org/3F/vssolutionbuildevent/raw/master/changelog.txt)!
 
 Today, need a long description for many many features for this.. well, simply use it :) of course don't forget about documentation.
 
-Want to help us and want to see a more new features, support etc. ?
+Want to help us and want to see a more new features, support etc. ? (see [Changelog](https://bitbucket.org/3F/vssolutionbuildevent/raw/master/changelog.txt))
 
 Well, now you can help - How ? no, not only money :)
 
