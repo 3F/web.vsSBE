@@ -4,12 +4,12 @@ The vsSolutionBuildEvent project also provide the API level. This can be used wi
 
 For example, this already implemented in our products as part of vsSolutionBuildEvent project:
 
-* [CI.MSBuild](CI/CI.MSBuild) - for work through msbuild.exe
+* [CI.MSBuild](CI/CI.MSBuild) - for work through msbuild.exe (Microsoft Build Tools)
 * [Devenv Command-Line](CI/Devenv Command-Line) - for work through devenv of the Visual Studio
 
 ## Bridge ##
 
-* [Download Bridge_v1.0_[5d7aa0c].zip](http://sourceforge.net/projects/vssbe/files/API/Bridge/Bridge_v1.0_%5B5d7aa0c%5D.zip/download) (SourceForge.net) 
+* [Download Bridge_v1.0_[5d7aa0c].zip](http://sourceforge.net/projects/vssbe/files/API/Bridge/Bridge_v1.0_%5B5d7aa0c%5D.zip/download) (SourceForge.net) ~5Kb
 * All binaries of the Bridge: [API/Bridge/](https://sourceforge.net/projects/vssbe/files/API/Bridge/)
 
 You can use the Bridge for accessing to vsSolutionBuildEvent library.
@@ -22,7 +22,7 @@ This contains specification of all available events from the vsSolutionBuildEven
 
 ## Provider ##
 
-* [Provider_v1.0_[5d7aa0c].zip](http://sourceforge.net/projects/vssbe/files/API/Provider/Provider_v1.0_%5B5d7aa0c%5D.zip/download) (SourceForge.net)
+* [Provider_v1.0_[5d7aa0c].zip](http://sourceforge.net/projects/vssbe/files/API/Provider/Provider_v1.0_%5B5d7aa0c%5D.zip/download) (SourceForge.net) ~24Kb
 * All binaries of the Bridge: [API/Provider/](https://sourceforge.net/projects/vssbe/files/API/Provider/)
 
 The Provider already contains loader of the vsSolutionBuildEvent library and any other methods for rapid accessing to this library. Use this for a quick implementation of the basic logic.
