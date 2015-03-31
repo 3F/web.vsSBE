@@ -5,7 +5,7 @@ vsSolutionBuildEvent - it's **open** and **free** project & related projects for
 
 Today, need a long description for many many features for this.. well, simply use it :) of course don't forget about documentation.
 
-Want to help us and want to see a more new features, support etc. ? (see [Changelog](https://bitbucket.org/3F/vssolutionbuildevent/raw/master/changelog.txt))
+Want to help us and want to see a more new features, supports etc. ? (Changelog [here](https://bitbucket.org/3F/vssolutionbuildevent/raw/master/changelog.txt))
 
 Well, now you can help - How ? no, not only money :)
 
@@ -16,7 +16,7 @@ Well, now you can help - How ? no, not only money :)
 yes, it's a classic.. but it is really helpful!
 
 * PyPal: [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=P2HRG52AJSA9N&lc=US&item_name=vsSolutionBuildEvent%20%28vsSBE%29%20projects&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted)
-* Problem with PyPal ? write [here](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)
+* Problem with PyPal ? other variant ? write [here](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)
 
 No money ?
 
