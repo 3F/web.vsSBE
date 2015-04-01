@@ -2,7 +2,11 @@
 
 I/O operations with files.
 
-**Note** for call/scall/sout:
+### Remarks
+
+#### Redirection for standard streams.
+
+*for call/scall/sout* etc.:
 
 * All errors can be ~disabled with arguments, for example:
 * * stderr to stdout: *<command>* **2>&1**
@@ -14,8 +18,22 @@ I/O operations with files.
 * * Where <destination> it's similar as above.
 * For more details see: [MS Q110930](http://support.microsoft.com/kb/110930/en-us)
 
+#### MSBuild Property Functions.
 
-## call ##
+You should also remember, the some features also available with [MSBuild](../../MSBuild) core as [Property Functions](https://msdn.microsoft.com/en-us/library/vstudio/dd633440%28v=vs.120%29.aspx)
+
+* Use the [System.IO Namespace](https://msdn.microsoft.com/en-us/library/System.IO%28v=vs.100%29.aspx) for example:
+
+```
+#!java
+
+$([System.IO.File]::Exists("D:/tmp/result.log"))
+```
+*[File.Exists](https://msdn.microsoft.com/en-us/library/system.io.file.exists%28v=vs.100%29.aspx) Method*
+
+## Available features
+
+### call 
 
 Caller of executable files.
 
@@ -31,7 +49,7 @@ void #[File call(string filename, string args)]
 void #[File call(string filename)]
 ```
 
-**v0.11.3+**:
+v0.11.3+:
 ```
 #!java
 
@@ -44,7 +62,7 @@ Where,
 * args - Arguments to executable file.
 * timeout - How long to wait the execution, in seconds. 0 value - infinitely
 
-## scall ##
+### scall
 
 Caller of executable files in silent mode.
 
@@ -60,7 +78,7 @@ void #[File scall(string filename, string args)]
 void #[File scall(string filename)]
 ```
 
-**v0.11.3+**:
+v0.11.3+:
 ```
 #!java
 
@@ -68,7 +86,7 @@ void #[File scall(string filename, string args, uinteger timeout)]
 ```
 * timeout - How long to wait the execution, in seconds. 0 value - infinitely
 
-## sout ##
+### sout
 
 Receives data from standard streams for executed file. To disable errors use the '2>nul' and similar - see above.
 
@@ -86,7 +104,7 @@ string #[File sout(string filename)]
 ```
 
 
-**v0.11.3+**:
+v0.11.3+:
 ```
 #!java
 
@@ -94,9 +112,9 @@ string #[File sout(string filename, string args, uinteger timeout)]
 ```
 * timeout - How long to wait the execution, in seconds. 0 value - infinitely
 
-## cmd ##
+### cmd
 
-**v0.11.3+**:
+v0.11.3+:
 
 Alias to sout() for cmd.
 `- #[File cmd("args")] -> #[File sout("cmd", "/C args")]`
@@ -115,7 +133,7 @@ string #[File cmd(string args, uinteger timeout)]
 ```
 * timeout - How long to wait the execution, in seconds. 0 value - infinitely
 
-## get ##
+### get
 
 Gets all data from file.
 
@@ -126,7 +144,7 @@ Syntax:
 string #[File get("filename")]
 ```
 
-## write ##
+### write
 
 Writes text data in file. 
 
@@ -160,7 +178,7 @@ Examples of values of the encoding names:
 	utf-16
 
 
-## append ##
+### append
 
 Writes text data in file. 
 
@@ -174,7 +192,7 @@ Syntax:
 #[File append("filename"): multiline data]
 ```
 
-## writeLine ##
+### writeLine
 
 Writes text data with CR/LF in file. 
 
@@ -188,7 +206,7 @@ Syntax:
 #[File writeLine("filename"): multiline data]
 ```
 
-## appendLine ##
+### appendLine
 
 Writes text data with CR/LF in file. 
 
@@ -202,7 +220,7 @@ Syntax:
 #[File appendLine("filename"): multiline data]
 ```
 
-## replace ##
+### replace
 
 Replacing the strings in files.
 
@@ -240,13 +258,13 @@ Sample:
 #[File replace.Regexp("source.extension.vsixmanifest", "<Version>[0-9\.]+</Version>", "<Version>#[var ver]</Version>")]
 ```
 
-## exists ##
+### exists
 
 v0.10+
 
 Determines whether the something exists.
 
-### directory ###
+#### directory
 
 Determines whether the given path refers to an existing directory on disk.
 
@@ -291,7 +309,7 @@ Samples:
 }]
 ```
 
-### file ###
+#### file
 
 Determines whether the specified file exists.
 

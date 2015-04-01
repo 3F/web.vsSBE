@@ -18,7 +18,7 @@ SBE-Scripts - it's internal specification for additional work over [MSBuild](MSB
 
 With latest versions used [Dom](../Developer Zone/New Component) for inspecting model of the SBE-Scripts core. You can see all available features with code completion (Intellisense) in editor.
 
-*Note: Currently, all in this section added manually... but, later this section should be generated automatically.*
+*Note: Currently, all in this Wiki section added manually... it means that this may contain a some typo etc. Just use the code completion in program and this for more help. Later this can be generated automatically with additional utility from our Dom.*
 
 ## Syntax ##
 
