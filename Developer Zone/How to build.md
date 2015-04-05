@@ -17,7 +17,7 @@
 * Microsoft .NET Framework:
 * * [minimal v4.0 for develop on Visual Studio 2010](http://www.microsoft.com/en-US/download/details.aspx?id=17718)
 * * [minimal v4.5 for develop on Visual Studio 2012/2013](http://www.microsoft.com/en-US/download/details.aspx?id=30653) (Offline installer: [dotNetFx45_Full_x86_x64.exe](http://go.microsoft.com/fwlink/?LinkId=225702))
-* [vsSBE](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/) v0.11.2 or higher
+* [vsSBE](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/) v0.11.3+
 * [NuGet](https://www.nuget.org/) (starting with VS2012, NuGet is included in every edition. For VS2010, NuGet is available through the Extension Manager - [NuGet Package Manager](https://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c))
 * * more detail: http://docs.nuget.org/docs/start-here/installing-nuget
 * [Moq 4](https://github.com/Moq/moq4) or higher
@@ -94,8 +94,10 @@ nuget restore vsSolutionBuildEvent_2013.sln
 ```
 #!bash
 
-"C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe" "vsSolutionBuildEvent_2013.sln" /verbosity:detailed  /l:"C:\projects\vssolutionbuildevent\packages\vsSBE.CI.MSBuild.1.0.2\bin\CI.MSBuild.dll" /m /p:Configuration=Debug
+"C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe" "vsSolutionBuildEvent_2013.sln" /verbosity:detailed  /l:"C:\projects\vssolutionbuildevent\packages\vsSBE.CI.MSBuild.1.0.5\bin\CI.MSBuild.dll" /m:4 /p:Configuration=Debug
 ```
+or use [build_[CI_Debug]](https://bitbucket.org/3F/vssolutionbuildevent/src/master/build_[CI_Debug].bat) / [build_[CI_Release]](https://bitbucket.org/3F/vssolutionbuildevent/src/master/build_[CI_Release].bat)
+
 That's all.
 
 **Note** for example above:
@@ -103,7 +105,7 @@ That's all.
 * `C:\projects\vssolutionbuildevent` - your path to source code.
 * `vsSolutionBuildEvent_2013.sln` - solution file for VS2013. Others available you can see in root directory.
 * `C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe` - full path to your msbuild.exe
-* `C:\projects\vssolutionbuildevent\packages\vsSBE.CI.MSBuild.1.0.2\bin\CI.MSBuild.dll` - full path to the [CI.MSBuild](../CI/CI.MSBuild)
+* `C:\projects\vssolutionbuildevent\packages\vsSBE.CI.MSBuild.1.0.5\bin\CI.MSBuild.dll` - full path to the [CI.MSBuild](../CI/CI.MSBuild)
 
 *this variant also used for build automation with [AppVeyor](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent)*
 
@@ -116,7 +118,3 @@ That's all.
 If you have a question or have a some problem with build, just [create the new Issue](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)
 
 If you have a some patch, - use the **pull request** *(on Bitbucket or GitHub)*,  or send directly as **.patch** file with available contacts
-
-
-
-
