@@ -6,22 +6,25 @@
 
 *this variant also used for our project:  [Full script for assembling the vsSolutionBuildEvent v0.11](https://gist.github.com/3F/3f2f56dfc2a01dc99c63) (you can [load this script file](https://bitbucket.org/3F/vssolutionbuildevent/src/master/.vssbe))*
 
-### For v0.9 or newer
+### For v0.9+
+
+*Variant for older versions or as alternative is contained below*
 
 * Select event type - "Pre-Build".
-* Change "Processing mode" to Interpreter Mode
+* Change "Processing mode" to 'Script Mode'
 * Activate SBE-Scripts support
 * Write the next script, for example:
 ```
 #!java
 #[File replace.Regexp("projectname/source.extension.vsixmanifest", "<Version>[0-9\.]+</Version>", "<Version>#[var ver]</Version>")]
 ```
-**Where**, `#[var ver]` it's your number. You can change this value with next variants:
+**Where**, `#[var ver]` it's your number(see [UserVariableComponent](../Scripts_&_Commands/SBE-Scripts/Components/UserVariableComponent)). You can change value with next variants:
 
-* Geting from MSBuild Property `#[var ver = $(name)]`
+* Getting from [MSBuild Property](../Scripts_&_Commands/MSBuild) `#[var ver = $(name)]`
 * Getting from file: `#[var ver = #[File get("_version")]]`
+* Getting from your external utility(stdout): `#[var ver = #[File sout("updv.exe", "-s new")]]`
 * Manually set - `#[var ver = 1.2.3]` 
-* Other with MSBuild & SBE-Scripts
+* Other with [MSBuild](../Scripts_&_Commands/MSBuild) & [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts)
 
 #### Generating the Version class & Build/revision Number
 
@@ -46,11 +49,12 @@ namespace example
 
 * Create file e.g.: **_version** and write current number of your project like a **major**.**minor**. and similar
 * Select event type - "Pre-Build".
-* Change "Processing mode" to Interpreter Mode
+* Change "Processing mode" to 'Script Mode'
 * Activate SBE-Scripts support
 * Activate MSBuild support
 * Write the next script, for example:
 
+*please also see [Date & Time](../Features/Date & Time) features for more details about limitations*
 
 ```
 #!java
@@ -63,7 +67,7 @@ namespace example
 #[var tpl   = #[File get("Version.tpl")]]
 #[var pDir  = $($(ProjectDir:$(SolutionName)))]
 
-#[var tStart    = $([System.DateTime]::Parse("2015/02/01").ToBinary())]
+#[var tStart    = $([System.DateTime]::Parse("2015/04/01").ToBinary())]
 #[var tNow      = $([System.DateTime]::UtcNow.Ticks)]
 #[var revBuild  = $([System.TimeSpan]::FromTicks($([MSBuild]::Subtract(#[var tNow], #[var tStart]))).TotalMinutes.ToString("0"))]
 
@@ -89,7 +93,7 @@ else {
 "]
 #[File replace.Regexp("#[var pDir]/source.extension.vsixmanifest", "<Version>[0-9\.]+</Version>", "<Version>#[var ver]</Version>")]
 ```
-* Activate event and click apply
+* Activate event and click apply.
 
 As result you have the **Version.cs** class for your project (should be included in main project with the `Build Action` as **Compile**)
 
@@ -144,10 +148,12 @@ can be converted to simple:
             
 and similar... 
 
+* *[Sample of how to use it for 'Assembly' attributes etc.](https://gist.github.com/3F/f54ad9736a9cbb984785)*
+
 You can also test/debug all scripts with our testing tools, look in the `Settings` - `Tools`
 
 
-### Variant with the own utility as part of solution (or variant for version < v0.9) 
+### Variant with the own utility as part of solution (or variant for versions < v0.9) 
 
 ***!*** With v0.9 or higher you can use the [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts)
 
@@ -271,7 +277,7 @@ Activate event and click apply
 
 #### Result
 
-Now we have the next result:
+Now we have next result:
 
 * Before building the all projects in your solution ↓ 
 * Only after completed building the Version utility ↓ 
@@ -281,6 +287,8 @@ Now we have the next result:
 * * * And recommend to ignore this, for your SCM (.gitignore, .hgignore, .bzrignore, svn:ignore, etc.,)
 * * Updating .vsixmanifest
 * After completed → building the remaining projects in the solution. Done.
+
+**note:** *we strongly recommend to use the new variants with [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts) above - it's easy and fast*
 
 # References
 
