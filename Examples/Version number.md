@@ -4,7 +4,7 @@
 
 ## VSPackages (VSIX Package/.vsixmanifest) and for others
 
-*this variant also used for our project:  [Full script for assembling the vsSolutionBuildEvent v0.11](https://gist.github.com/3F/3f2f56dfc2a01dc99c63) (you can [load this script file](https://bitbucket.org/3F/vssolutionbuildevent/src/master/.vssbe))*
+*this variant also used for our project:  [Full script for assembling the vsSolutionBuildEvent v0.11](https://gist.github.com/3F/3f2f56dfc2a01dc99c63) (actual version in current [script file](https://bitbucket.org/3F/vssolutionbuildevent/src/master/.vssbe))*
 
 ### For v0.9+
 
@@ -12,8 +12,8 @@
 
 * Select event type - "Pre-Build".
 * Change "Processing mode" to 'Script Mode'
-* Activate SBE-Scripts support
-* Write the next script, for example:
+* Add action & Activate [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts) support
+* Write next script, for example:
 ```
 #!java
 #[File replace.Regexp("projectname/source.extension.vsixmanifest", "<Version>[0-9\.]+</Version>", "<Version>#[var ver]</Version>")]
@@ -49,9 +49,9 @@ namespace example
 
 * Create file e.g.: **_version** and write current number of your project like a **major**.**minor**. and similar
 * Select event type - "Pre-Build".
-* Change "Processing mode" to 'Script Mode'
-* Activate SBE-Scripts support
-* Activate MSBuild support
+* Change "Processing mode" to 'Interpreter Mode' or 'Script Mode'
+* Activate [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts) support
+* Activate [MSBuild](../Scripts_&_Commands/MSBuild) support
 * Write the next script, for example:
 
 *please also see [Date & Time](../Features/Date & Time) features for more details about limitations*
@@ -296,4 +296,5 @@ Now we have next result:
 * [Date & Time](../Features/Date & Time)
 * [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts)
 * [MSBuild](../Scripts_&_Commands/MSBuild)
-* [Examples of basic usage - scripts, solutions, etc., ](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/)
+* [Visual Studio Gallery page](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/)
+* [Examples & Features](../Examples)
