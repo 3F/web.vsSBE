@@ -11,7 +11,7 @@ You can see also a fragment of this from our short overview:
 
 ## CI / Special Build Servers / Devenv
 
-Well., not important where use it - simply configure and use any scripts for any environments. It means you should see the same result:
+Well., not important where use it - simply configure and use any scripts for any environments. It means you should see the same result on your PC(for example) for the same script:
 
 ![Artefacts on PC](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/examples/artefacts_pc.png)
 
