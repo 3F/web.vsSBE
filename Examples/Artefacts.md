@@ -11,7 +11,9 @@ You can see also a fragment of this from our short overview:
 
 ## CI / Special Build Servers / Devenv
 
-Well., not important where use it - simply configure and use any scripts for any environments.
+Well., not important where use it - simply configure and use any scripts for any environments. It means you should see the same result:
+
+![Artefacts on PC](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/examples/artefacts_pc.png)
 
 * How to work with [CI components](../CI).
 * [.vssbe for each .sln (Solution File)](../Features/.vssbe)
