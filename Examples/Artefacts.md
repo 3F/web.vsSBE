@@ -1,5 +1,8 @@
 # Artefacts. How to prepare as you want.
 
+![Packing & Uploading - Artefacts](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/examples/artefacts_appveyor.gif)
+
+
 *Artefacts / Binaries from build project, etc.*
 
 You can see also a fragment of this from our short overview:
@@ -15,7 +18,7 @@ Well., not important where use it - simply configure and use any scripts for any
 
 ## Releases from a few projects
 
-*Full sample you can see in our project:  [Full script for assembling the vsSolutionBuildEvent v0.11](https://gist.github.com/3F/3f2f56dfc2a01dc99c63) (actual version in current [script file](https://bitbucket.org/3F/vssolutionbuildevent/src/master/.vssbe))*
+*Full sample you can see in our project, for example:  [Full script for assembling the vsSolutionBuildEvent v0.11](https://gist.github.com/3F/3f2f56dfc2a01dc99c63) (actual version in current [script file](https://bitbucket.org/3F/vssolutionbuildevent/src/master/.vssbe))*
 
 As result [you should see next files](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/build/build-27/artifacts) (i.e. only for example - your variants **can be as you want**) for any deploy or simple use:
 
@@ -23,10 +26,10 @@ Samples:
 
 File                            | Description
 ---------------------------- | ---
-bin\Releases\Bridge_v1.0_[399a7e8][net40].zip| Packed all binaries from 'Bridge' project as part of main project.
-bin\Releases\CI.MSBuild_v1.0_[399a7e8][net40].zip | Packed all binaries from 'CI.MSBuild' project as part of main project.
-bin\Releases\Devenv_v1.0_[399a7e8][net40].zip | Packed all binaries from 'Devenv' project as part of main project.
-bin\Releases\Provider_v1.0_[399a7e8][net40].zip | Packed all binaries from 'Provider' project as part of main project.
+bin\Releases\Bridge_v1.0_[399a7e8][net40].zip| Packed binaries from 'Bridge' project as part of main project.
+bin\Releases\CI.MSBuild_v1.0_[399a7e8][net40].zip | Packed binaries from 'CI.MSBuild' project as part of main project.
+bin\Releases\Devenv_v1.0_[399a7e8][net40].zip | Packed binaries from 'Devenv' project as part of main project.
+bin\Releases\Provider_v1.0_[399a7e8][net40].zip | Packed binaries from 'Provider' project as part of main project.
 bin\Releases\Release_notes.txt | Auto-generated notes from current assemblies.
 bin\Releases\vsSBE.CI.MSBuild.1.0.nupkg | NuGet package from 'CI.MSBuild' project.
 bin\Releases\vsSolutionBuildEvent_v0.11.3.47103_[399a7e8][net40].vsix | VSPackage of main project.
@@ -155,7 +158,7 @@ Write next script, for example:
 #[File scall(".nuget\nuget.exe", "pack \"#[var nupCIMdir]\vsSBE.CI.MSBuild.nuspec\" -OutputDirectory \"#[var nupCIMdir]\..\" -NonInteractive")] 
 ```
 
-Where - '[vsSBE.CI.MSBuild.nuspec.tpl](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSBE.CI.MSBuild.nuspec.tpl)' is template e.g.:
+Where - '[vsSBE.CI.MSBuild.nuspec.tpl](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSBE.CI.MSBuild.nuspec.tpl)' is a template e.g.:
 
 ```
 #!xml
@@ -167,7 +170,7 @@ Where - '[vsSBE.CI.MSBuild.nuspec.tpl](https://bitbucket.org/3F/vssolutionbuilde
     <title>vsSolutionBuildEvent CI.MSBuild</title>
     <version>%CIMVersion%%PackageVersion%</version>
     <authors>...</authors>
-    <owners>reg</owners>
+    <owners>...</owners>
     <licenseUrl>...</licenseUrl>
     <projectUrl>...</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -210,7 +213,7 @@ Versions:
 
 #### Explanation for script above
 
-In 'Definitions' section we simply defined some variables for a quick access to some data, link to archiver for example:
+In 'Definitions' section simply defined some variables for a quick accessing to some data. Link to archiver for example:
 
 ```
 #!java
@@ -226,9 +229,8 @@ In 'Packing ...' sections we use [FileComponent](../Scripts_&_Commands/SBE-Scrip
 
 For more details you should see:
 
-* Documentation for 7za:
-* * Distributive packet contains the see '7-zip.chm' - User's Manual in HTML Help format . Otherwise see [7-zip.org](http://www.7-zip.org)
-* System utilities - [xcopy & copy](http://support.microsoft.com/en-us/kb/240268)
+* Documentation for 7za: Distributive packet contains the '7-zip.chm' - User's Manual in HTML Help format. Otherwise see [7-zip.org](http://www.7-zip.org)
+* System utilities - [xcopy & copy](http://support.microsoft.com/en-us/kb/240268) - Use `copy /?`, `xcopy /?` commands for documentation.
 
 For 'NuGet Packing ...' used all above including:
 

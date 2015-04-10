@@ -294,6 +294,7 @@ Now we have next result:
 
 * [Custom counters](../Features/Custom counters)
 * [Date & Time](../Features/Date & Time)
+* [Artefacts. How to prepare as you want](Artefacts)
 * [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts)
 * [MSBuild](../Scripts_&_Commands/MSBuild)
 * [Visual Studio Gallery page](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/)
