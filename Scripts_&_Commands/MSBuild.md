@@ -102,9 +102,9 @@ $(start = $([System.DateTime]::Parse("2015/04/01").ToBinary()))
 $(pdir = $(ProjectDir:project))
 ```
 
-## Nested Evaluation for MSBuild Properties
+## Nested levels - recursive evaluation for MSBuild Properties
 
-Most variables can be evaluated with nested levels. 
+In vsSolutionBuildEvent the most variables can be evaluated with nested levels.
 
 ```
 #!java
@@ -117,7 +117,7 @@ $($(...:$(...)))
 
 $($(...:$($(...:$(...)))))
 ```
-etc.
+and similar.
 
 This useful for any dynamic references on your data or additional evaluation with MSBuild. For example: 
 
@@ -134,4 +134,8 @@ $($(ProjectDir:$(ProjectName)))
 and similar... *see also related issue - '[$(ProjectDir) doesn't resolve properly](https://bitbucket.org/3F/vssolutionbuildevent/issue/29/projectdir-doesnt-resolve-properly)'*
 
 
+# References
 
+* [Examples & Features](../Examples)
+* [SBE-Scripts](SBE-Scripts)
+* [Visual Studio Gallery page](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/)
