@@ -28,7 +28,7 @@
 
 #### Generating the Version class & Build/revision Number
 
-* Create template of Version class e.g.: **Version.tpl** with what you want, using placeholders instead of real values - sample:
+* Create template of Version class e.g.: **Version.tpl** with what you want, using placeholders instead of real values - sample for C#:
 
 ```
 #!c#
@@ -46,6 +46,18 @@ namespace example
     }
 }
 ```
+
+*Similarly for others... e.g. for C++ you can also use simple preprocessor directives - #define*
+
+```
+#!cpp
+
+#ifndef REVISION_H 
+  #define REVISION_STR "v0.11.3.47085 [ 399a7e8 ] /'master':212" 
+  #define L_REVISION_STR L"v0.11.3.47085 [ 399a7e8 ] /'master':212" 
+#endif 
+```
+*or similar class as above..*
 
 * Create file e.g.: **_version** and write current number of your project like a **major**.**minor**. and similar
 * Select event type - "Pre-Build".
