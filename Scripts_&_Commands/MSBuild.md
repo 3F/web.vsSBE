@@ -1,4 +1,4 @@
-# MSBuild #
+# MSBuild
 
 The Microsoft Build Engine is a platform for building applications. This engine, which is also known as MSBuild, provides an XML schema for a project file that controls how the build platform processes and builds software.
 
@@ -7,6 +7,7 @@ The Microsoft Build Engine is a platform for building applications. This engine,
 
 * Starting with v0.9, you can use the [SBE-Scripts](SBE-Scripts)
 * Starting with v0.11, you can use the [CI.MSBuild](../CI/CI.MSBuild) for work through msbuild.exe (Microsoft Build Tools)
+
 -------
 
 MSDN References:
@@ -15,24 +16,27 @@ MSDN References:
 * [MSBuild Concepts](http://msdn.microsoft.com/en-us/library/vstudio/dd637714.aspx)
 * [Property Functions](http://msdn.microsoft.com/en-us/library/vstudio/dd633440%28v=vs.120%29.aspx)
 
-Note: also vsSBE provides additional handling for specific project.
+## MSBuild Property & Property Functions
+
+The vsSolutionBuildEvent uses additional syntax for select specific project. This is so because this can be used for all projects at once as [Solution-wide](http://stackoverflow.com/q/2295454) ([related issue](https://bitbucket.org/3F/vssolutionbuildevent/issue/29/projectdir-doesnt-resolve-properly))
 
 Syntax:
 ```
 #!java
 
-$(name)
-$(name:project) - properties from selected project in your solution
+$(...)
+$(...:project) - from selected project in your solution
 ```
 
 Escape symbol is a $: 
 ```
 #!java
 
-$$(name) ... $$(name:project)
+$$(...) / $$(...:project)
 ```
+Where '**...**' - is any allowed syntax with MSBuild data. See MSDN.
 
-Samples:
+## Samples
 
 _                            | Result
 ---------------------------- | ---
@@ -45,27 +49,21 @@ $([System.IO.Path]::Combine($(OS), $(Platform))) | Windows_NT\\x86
 $(MSBuildBinPath)\MSBuild "$(ProjectPath.Replace('\', '/'):Version)" /t:Build /p:Configuration=Release | C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild "D:/prg/projects/vsSolutionBuildEvent/Version/Version.csproj" /t:Build /p:Configuration=Release
 
 
-## Examples ##
-
 ```
 #!java
 
-$([System.DateTime]::Parse("07.07.2014").ToBinary())
+$([System.DateTime]::Parse("2015/04/01").ToBinary())
 ```
-
 ```
 #!java
 
 $([System.DateTime]::UtcNow.Ticks)
 ```
-
 ```
 #!java
 
 $([System.TimeSpan]::FromTicks($([MSBuild]::Subtract($(tNow), $(tStart)))).TotalMinutes.ToString("0"))
 ```
-
-
 ```
 #!java
 $(MSBuildBinPath)\MSBuild "$(ProjectPath.Replace('\', '/'):Version)" /t:Build /p:Configuration=Release 
@@ -74,7 +72,66 @@ $(MSBuildBinPath)\MSBuild "$(ProjectPath.Replace('\', '/'):Version)" /t:Build /p
  
 "$(TargetPath.Replace('\', '/'):Version)"  
   "$(SolutionDir.Replace('\', '/'))" 
-  "$(ProjectDir.Replace('\', '/'):mainApp)Version.cs"  
   "$(ProjectDir.Replace('\', '/'):mainApp)source.extension.vsixmanifest"
 ```
+
+## User-variables for MSBuild core
+
+It's older and strictly limited version compared with [UserVariableComponent](../SBE-Scripts/Components/UserVariableComponent) ([SBE-Scripts core](SBE-Scripts))
+
+Currently allows the only definitions from others variables/properties & property functions. 
+
+Syntax:
+```
+#!java
+
+$(name = $(...))
+```
+
+
+For example:
+
+```
+#!java
+
+$(start = $([System.DateTime]::Parse("2015/04/01").ToBinary()))
+```
+```
+#!java
+
+$(pdir = $(ProjectDir:project))
+```
+
+## Nested Evaluation for MSBuild Properties
+
+Most variables can be evaluated with nested levels. 
+
+```
+#!java
+
+$($(...:$(...)))
+```
+
+```
+#!java
+
+$($(...:$($(...:$(...)))))
+```
+etc.
+
+This useful for any dynamic references on your data or additional evaluation with MSBuild. For example: 
+
+if you don't put a fixed project name and need to link variable or evaluate some property from specific project in your solution, you can for example:
+
+```
+#!java
+$($(ProjectDir:$(SolutionName)))
+```
+```
+#!java
+$($(ProjectDir:$(ProjectName)))
+```
+and similar... *see also related issue - '[$(ProjectDir) doesn't resolve properly](https://bitbucket.org/3F/vssolutionbuildevent/issue/29/projectdir-doesnt-resolve-properly)'*
+
+
 
