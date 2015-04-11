@@ -47,7 +47,7 @@ namespace example
 }
 ```
 
-*Similarly for others... e.g. for C++ you can also use simple preprocessor directives - #define*
+*Similarly for others... e.g. for C++ you can also use preprocessor directives - #define (macro definitions):*
 
 ```
 #!cpp
