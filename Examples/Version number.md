@@ -53,8 +53,8 @@ namespace example
 #!cpp
 
 #ifndef REVISION_H 
-  #define REVISION_STR "v0.11.3.47085 [ 399a7e8 ] /'master':212" 
-  #define L_REVISION_STR L"v0.11.3.47085 [ 399a7e8 ] /'master':212" 
+  #define REVISION_STR "%VersionRevString% [ %branchSha1% ] /'%branchName%':%branchRevCount%" 
+  #define L_REVISION_STR L"%VersionRevString% [ %branchSha1% ] /'%branchName%':%branchRevCount%" 
 #endif 
 ```
 *or similar class as above..*
