@@ -73,6 +73,8 @@ ready ? ok, see below..
 
 ### How to
 
+*Please also note - [Convenience for single line arguments](../Features/Strings)*
+
 Firstly you should decide how will be numbered versions of all your projects - this can be as [here](Version number) or others.
 
 For packing you can use free [7za](http://sourceforge.net/projects/sevenzip/files/7-Zip/9.20/7za920.zip/download) archiver ([7-Zip Command line version](http://www.7-zip.org)) or similar.
@@ -258,6 +260,7 @@ Working example you can see in:
 
 # References
 
+* [Operations with strings](../Features/Strings)
 * [Automatic Version Numbering](Version number)
 * [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts)
 * [MSBuild](../Scripts_&_Commands/MSBuild)

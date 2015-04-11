@@ -121,3 +121,4 @@ You can [try this](../Examples/Version number) If needed a some additional build
 * * [TimeSpan.TotalMinutes](https://msdn.microsoft.com/en-us/library/system.timespan.totalminutes%28v=vs.100%29.aspx)
 * * [TimeSpan.TotalHours](https://msdn.microsoft.com/en-us/library/system.timespan.totalhours%28v=vs.100%29.aspx)
 * * [TimeSpan.FromTicks](https://msdn.microsoft.com/en-us/library/system.timespan.fromticks%28v=vs.100%29.aspx)
+* [Examples & Features](../Examples)

@@ -106,5 +106,6 @@ and similar..
 * [OpenSSL Project](https://openssl.org)
 * MSDN:
 * * [System.Guid](https://msdn.microsoft.com/en-us/library/system.guid%28v=vs.100%29.aspx)
+* [Examples & Features](../Examples)
 
 

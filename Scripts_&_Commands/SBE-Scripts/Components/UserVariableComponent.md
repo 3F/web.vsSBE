@@ -97,3 +97,8 @@ Others:
 ```
 
 You can to escape evaluation of this sequence with a '$' symbols if needed. For more details see with [MSBuild](../../MSBuild)
+
+# References
+
+* [Operations with strings](../../../Features/Strings)
+* [Examples & Features](../../../Examples)

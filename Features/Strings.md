@@ -47,7 +47,7 @@ debug
 rev321]
 ```
 
-you can use the Replace() method for replace to any compatible sequence, e.g.:
+you can use the Replace() method for changing on any compatible sequence, e.g.:
 
 ```
 #!java
@@ -80,7 +80,83 @@ as result we have:
 Version is a v1.2 :: debug  :: rev321 !
 ```
 
+## Convenience for single line arguments
 
+If you want to pass a long string as argument for some function or method, for example as [here](../Examples/Artefacts):
+
+```
+#!java
+
+#[File sout("cmd", "/C cd \"#[var pDir]bin/#[var cfg]/\" & xcopy *.dll \"#[var nupCIMdir]\bin\" /Y/R/I & xcopy NLog.dll.nlog \"#[var nupCIMdir]\bin\" /Y/R/I")]
+```
+
+You can for example:
+
+* Use the User-Variables for splitting the logic:
+* * With [MSBuild](../Scripts_&_Commands/MSBuild) core
+* * With [UserVariableComponent](../Scripts_&_Commands/SBE-Scripts/Components/UserVariableComponent) ([SBE-Scripts](../Scripts_&_Commands/SBE-Scripts) core)
+
+The [UserVariableComponent](../Scripts_&_Commands/SBE-Scripts/Components/UserVariableComponent) is  more useful because for current component allowed the multiline mixed definition and therefore you can for example:
+
+```
+#!java
+
+#[var arg = cd \"D:/tmp/\" 
+dir
+cd ..
+dir]
+
+#[var arg = $(arg.Replace("\r\n", " & "))]
+```
+Evaluated value for **arg** variable above should be as `cd \"D:/tmp/\"  & dir & cd .. & dir`
+
+You can also automatically escape the '"' (double quotes), erase the first & last the newline symbols etc.:
+
+```
+#!java
+
+#[var arg = 
+cd "D:/tmp/" 
+dir
+cd ..
+dir
+]
+$(arg.Trim("\r\n").Replace('"', '\"').Replace("\r\n", " & "))
+```
+
+Therefore the long single line from example above also can be as:
+```
+#!java
+
+#[var arg = 
+
+cd \"#[var pDir]bin/#[var cfg]/\"
+xcopy *.dll \"#[var nupCIMdir]\bin\" /Y/R/I
+xcopy NLog.dll.nlog \"#[var nupCIMdir]\bin\" /Y/R/I
+
+]
+
+#[var arg = $(arg.Trim("\r\n").Replace("\r\n", " & "))]
+#[File sout("cmd", "/C  #[var arg]")]
+```
+
+also with [cmd](../Scripts_&_Commands/SBE-Scripts/Components/FileComponent) alias it can be as:
+
+```
+#!java
+
+#[var arg = 
+
+cd "#[var pDir]bin/#[var cfg]/"
+xcopy *.dll "#[var nupCIMdir]\bin" /Y/R/I
+xcopy NLog.dll.nlog "#[var nupCIMdir]\bin" /Y/R/I
+
+]
+
+#[var arg = $(arg.Trim("\r\n").Replace('"', '\"').Replace("\r\n", " & "))]
+#[File cmd("#[var arg]")]
+```
+and similar..
 
 
 # References
@@ -88,3 +164,4 @@ Version is a v1.2 :: debug  :: rev321 !
 * [MSBuild](../Scripts_&_Commands/MSBuild)
 * [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts)
 * [Examples & Features](../Examples)
+
