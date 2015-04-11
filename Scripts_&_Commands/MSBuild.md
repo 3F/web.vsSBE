@@ -40,7 +40,7 @@ Where '**...**' - is any allowed syntax with MSBuild data. See MSDN.
 
 _                            | Result
 ---------------------------- | ---
-$([System.Guid]::NewGuid())| 2d2c4ac4-b48d-4509-b42b-aaf6b6047866
+$([System.Guid]::NewGuid())| `2d2c4ac4-b48d-4509-b42b-aaf6b6047866`
 $(SolutionDir.Substring(0,3))|  d:\
 $([System.DateTime]::Now.ToString("yyyy.MM.dd HH:mm:ss"))| 2014.06.19 17:32:53
 $(EntityDeployIntermediateResourcePath.Substring(0,1):boost)|  F
@@ -77,7 +77,7 @@ $(MSBuildBinPath)\MSBuild "$(ProjectPath.Replace('\', '/'):Version)" /t:Build /p
 
 ## User-variables for MSBuild core
 
-It's older and strictly limited version compared with [UserVariableComponent](../SBE-Scripts/Components/UserVariableComponent) ([SBE-Scripts core](SBE-Scripts))
+It's older and strictly limited version compared with [UserVariableComponent](SBE-Scripts/Components/UserVariableComponent) ([SBE-Scripts core](SBE-Scripts))
 
 Currently allows the only definitions from others variables/properties & property functions. 
 
