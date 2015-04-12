@@ -11,6 +11,7 @@
 * [Actions for specific configuration](Features/Actions for specific configuration)
 * [Confirmation dialog](Features/Confirmation dialog)
 * [Work with Unit-Tests & EnvDTE](Features/EnvDTE & Tests)
+* [Exclude projects from build on Pre-Build event](Features/Exclude projects)
 * [Operations with strings](Features/Strings)
 
 # For developers
