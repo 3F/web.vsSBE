@@ -10,6 +10,7 @@
 * [.vssbe File format & Unified Project name for different .sln](Features/.vssbe)
 * [Actions for specific configuration](Features/Actions for specific configuration)
 * [Confirmation dialog](Features/Confirmation dialog)
+* [Work with Unit-Tests & EnvDTE](Features/EnvDTE & Tests)
 * [Operations with strings](Features/Strings)
 
 # For developers

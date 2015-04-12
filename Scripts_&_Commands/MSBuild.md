@@ -121,7 +121,7 @@ and similar.
 
 This useful for any dynamic references on your data or additional evaluation with MSBuild. For example: 
 
-if you don't put a fixed project name and need to link variable or evaluate some property from specific project in your solution, you can for example:
+if you don't put a fixed project name and need link to variable or evaluate some property from specific project in your solution, you can for example:
 
 ```
 #!java
