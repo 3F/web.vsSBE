@@ -29,7 +29,7 @@ You can also manually configure all commands to Visual Studio with [DTE-Commands
 
 As variant you can use powerful and flexible control with the [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts) core.
 
-* For operation with an commands exists the [DTEComponent](../Scripts_&_Commands/SBE-Scripts/Components/DTEComponent)
+* For operations with an commands exists the [DTEComponent](../Scripts_&_Commands/SBE-Scripts/Components/DTEComponent)
 
 Therefore you can use this as you want for example:
 
