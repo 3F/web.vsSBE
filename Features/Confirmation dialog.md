@@ -49,3 +49,71 @@ End If
 similarly, you can also use any other script language..
 
 **Note:** Should be enabled the [ConditionComponent](../Scripts_&_Commands/SBE-Scripts/Components/ConditionComponent) for [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts) core.
+
+### External logic. Simple caller (or variant for older versions < v0.9)
+
+This **older** variant is **deprecated**. However you can also like this:
+
+`*!*` *please note it's Obsolete see also [similar with new version](../Examples/Version number)* `*!*`
+
+For example if you have a few subprojects in your solution as here:
+
+![a few subprojects](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/examples/obsolete/project_list.jpg)
+
+and you want to update a some file at start build **for all projects at once**(as Solution-wide) for example: revision.h 
+
+```
+#!cpp
+
+#ifndef REVISION_H 
+  #define REVISION_STR "31 [support::4b9a0cf]" 
+  #define L_REVISION_STR L"31 [support::4b9a0cf]" 
+#endif 
+```
+
+
+It can be generated with your some tool, e.g. simple revision.bat and similar [vbscript](http://ss64.com/vb/) with [msgbox](http://ss64.com/vb/msgbox.html) for confirmation to user:
+
+* revision.bat:
+```
+#!bash
+
+...
+  : rev count 
+  FOR /F %%i IN ('git rev-list HEAD --count') DO set git_rev_count=%%i 
+  : rev SHA1 short 
+  FOR /F %%i IN ('git rev-parse --short HEAD') DO set git_rev_sha1=%%i 
+...
+```
+
+revision.vbs:
+
+```
+#!basic
+
+ret = MsgBox("Do you want to update revision.h ?", vbYesNo + vbQuestion, "Pre-Build Event :: Updating version") 
+ 
+If ret = vbYes Then 
+    Set shell = WScript.CreateObject("WScript.Shell") 
+    code = shell.Run("revision.bat", 1, true) 
+    If code <> 0 Then 
+        MsgBox "The script exited with code: " & code, vbOKOnly + vbExclamation, "Pre-Build Event :: Updating version" 
+    End If 
+End If
+```
+
+etc.
+
+Then,
+
+* Select Pre-Build event
+* Add action with processing as 'Files Mode' and call the revision.vbs
+
+as result you simply call external script with your fully external logic & your confirmation dialog for all projects at once:
+
+![scripts for all projects at once](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/examples/obsolete/vbs_ext.jpg)
+
+# References
+
+* [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts)
+* [Examples & Features](../Examples)
