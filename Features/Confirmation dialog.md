@@ -101,8 +101,8 @@ If ret = vbYes Then
     End If 
 End If
 ```
+and similar..
 
-etc.
 
 Then,
 
@@ -112,6 +112,8 @@ Then,
 as result you simply call external script with your fully external logic & your confirmation dialog for all projects at once:
 
 ![scripts for all projects at once](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/examples/obsolete/vbs_ext.jpg)
+
+`*!*` *please note it's Obsolete see also [similar with new version](../Examples/Version number)* `*!*`
 
 # References
 

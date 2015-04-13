@@ -46,34 +46,40 @@ $([System.DateTime]::Now.ToString("yyyy.MM.dd HH:mm:ss"))| 2014.06.19 17:32:53
 $(EntityDeployIntermediateResourcePath.Substring(0,1):boost)|  F
 $([MSBuild]::GetRegistryValueFromView ('HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SDKs\Silverlight\v3.0\ReferenceAssemblies', 'SLRuntimeInstallPath', null, RegistryView.Registry64, RegistryView.Registry32)) | C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\Silverlight\v3.0\
 $([System.IO.Path]::Combine($(OS), $(Platform))) | Windows_NT\\x86
-$(MSBuildBinPath)\MSBuild "$(ProjectPath.Replace('\', '/'):Version)" /t:Build /p:Configuration=Release | C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild "D:/prg/projects/vsSolutionBuildEvent/Version/Version.csproj" /t:Build /p:Configuration=Release
+$(MSBuildBinPath)\MSBuild.exe "$(ProjectPath.Replace('\', '/'):Version)" /t:Build /p:Configuration=Release | C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe "D:/prg/projects/vsSolutionBuildEvent/Version/Version.csproj" /t:Build /p:Configuration=Release
+$([System.DateTime]::UtcNow.Ticks) | `635645190692933259`
+$([System.DateTime]::Parse("2015/04/01").ToBinary()) | `635634432000000000`
 
 
+* if you see problem with any slashes for path:
 ```
 #!java
 
-$([System.DateTime]::Parse("2015/04/01").ToBinary())
+$(SolutionPath.Replace('\', '/'))  -> D:\App\ConsoleApp1.sln to D:/App/ConsoleApp1.sln
+$(SolutionPath.Replace('\', '\\')) -> to D:\\App\\ConsoleApp1.sln
 ```
-```
-#!java
 
-$([System.DateTime]::UtcNow.Ticks)
-```
+* delta to time
 ```
 #!java
 
 $([System.TimeSpan]::FromTicks($([MSBuild]::Subtract($(tNow), $(tStart)))).TotalMinutes.ToString("0"))
 ```
+
+* manually build with msbuild.exe
 ```
 #!java
-$(MSBuildBinPath)\MSBuild "$(ProjectPath.Replace('\', '/'):Version)" /t:Build /p:Configuration=Release 
+
+$(MSBuildBinPath)\MSBuild.exe "$(ProjectPath.Replace('\', '/'):Version)" /t:Build /p:Configuration=Release 
  
  & 
  
-"$(TargetPath.Replace('\', '/'):Version)"  
-  "$(SolutionDir.Replace('\', '/'))" 
-  "$(ProjectDir.Replace('\', '/'):mainApp)source.extension.vsixmanifest"
+"$(TargetPath:Version)"  
+  "$(SolutionDir)" 
+  "$(ProjectDir:mainApp)Version.cs"  
+  "$(ProjectDir:mainApp)source.extension.vsixmanifest"
 ```
+
 
 ## User-variables for MSBuild core
 
@@ -100,6 +106,11 @@ $(start = $([System.DateTime]::Parse("2015/04/01").ToBinary()))
 #!java
 
 $(pdir = $(ProjectDir:project))
+```
+```
+#!java
+
+$(pdir = $(ProjectDir.Replace('\', '/'):project))
 ```
 
 ## Nested levels - recursive evaluation for MSBuild Properties
