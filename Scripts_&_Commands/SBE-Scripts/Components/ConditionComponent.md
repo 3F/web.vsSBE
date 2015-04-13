@@ -74,18 +74,11 @@ Composite Conditions **available with v0.11** with limited Short-circuit Evaluat
 
 ### && and || ###
 
-```
-#!java
-
-#[($(Configuration) ~= Deb && $(count) > 10 || $(Configuration) == "Release" ){
-    ...
-}]
-```
 
 ```
 #!java
 
-#[( #[var count] > 10 || ($(isAllow) && !false ) ){
+#[( #[var count] > 10 || ($(isAllow) && !false) ) {
     ...
 }
 else{
@@ -96,8 +89,22 @@ else{
 ```
 #!java
 
-#[( (1 < 2 && 2 == 2 && ( true || ((false || 2 >= 2) && (1 > 7 && true)))) ){
+#[($(Configuration) ~= Deb && $(count) > 10 || $(Configuration) == "Release" ) {
     ...
+}]
+```
+
+```
+#!java
+
+#[( (1 < 2 && 2 == 2 && ( true || ((false || 2 >= 2) && (1 > 7 && true)))) )
+{
+    #[( #[var count] > 10 || ($(isAllow) && !false) ) {
+        ...
+    }
+    else{
+        ...
+    }]
 }]
 ```
 

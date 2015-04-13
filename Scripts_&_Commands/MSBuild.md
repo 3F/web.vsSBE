@@ -49,6 +49,7 @@ $([System.IO.Path]::Combine($(OS), $(Platform))) | Windows_NT\\x86
 $(MSBuildBinPath)\MSBuild.exe "$(ProjectPath.Replace('\', '/'):Version)" /t:Build /p:Configuration=Release | C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe "D:/prg/projects/vsSolutionBuildEvent/Version/Version.csproj" /t:Build /p:Configuration=Release
 $([System.DateTime]::UtcNow.Ticks) | `635645190692933259`
 $([System.DateTime]::Parse("2015/04/01").ToBinary()) | `635634432000000000`
+$([MSBuild]::GetRegistryValue('HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\12.0\Debugger', 'SymbolCacheDir')) | C:\Symbols
 
 
 * if you see problem with any slashes for path:
@@ -59,14 +60,14 @@ $(SolutionPath.Replace('\', '/'))  -> D:\App\ConsoleApp1.sln to D:/App/ConsoleAp
 $(SolutionPath.Replace('\', '\\')) -> to D:\\App\\ConsoleApp1.sln
 ```
 
-* delta to time
+* delta to time:
 ```
 #!java
 
 $([System.TimeSpan]::FromTicks($([MSBuild]::Subtract($(tNow), $(tStart)))).TotalMinutes.ToString("0"))
 ```
 
-* manually build with msbuild.exe
+* manually build with msbuild.exe and call binary with args:
 ```
 #!java
 
@@ -149,4 +150,3 @@ and similar... *see also related issue - '[$(ProjectDir) doesn't resolve properl
 
 * [Examples & Features](../Examples)
 * [SBE-Scripts](SBE-Scripts)
-* [Visual Studio Gallery page](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/)

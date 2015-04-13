@@ -2,6 +2,7 @@
 
 * [Automatic Version Numbering](Examples/Version number)
 * [Artefacts. How to prepare as you want](Examples/Artefacts)
+* [Stop build on first error](Examples/Errors.Stop build)
 
 # Some features & others
 

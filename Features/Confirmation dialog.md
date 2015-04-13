@@ -72,7 +72,7 @@ and you want to update a some file at start build **for all projects at once**(a
 ```
 
 
-It can be generated with your some tool, e.g. simple revision.bat and similar [vbscript](http://ss64.com/vb/) with [msgbox](http://ss64.com/vb/msgbox.html) for confirmation to user:
+It can be generated with your some tool, for example simple revision.bat and similar [vbscript](http://ss64.com/vb/) with [msgbox](http://ss64.com/vb/msgbox.html) for confirmation to user:
 
 * revision.bat:
 ```
