@@ -1,5 +1,7 @@
 # Stop build on first error
 
+![Build has been canceled](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/examples/stop_build.png)
+
 Immediately stop(at the same time) after the first appearance.
 
 For example,

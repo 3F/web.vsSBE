@@ -14,6 +14,7 @@
 * [Confirmation dialog](Features/Confirmation dialog)
 * [Work with Unit-Tests & EnvDTE](Features/EnvDTE & Tests)
 * [Exclude projects from build on Pre-Build event](Features/Exclude projects)
+* [Work with external utilities](Features/External utilities)
 * [Operations with strings](Features/Strings)
 
 # For developers
