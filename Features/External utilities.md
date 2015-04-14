@@ -53,6 +53,7 @@ Result: `1.0.5` -> `1.0.6`
 
 # References
 
+* [Operations with strings](Strings)
 * [MSBuild](../Scripts_&_Commands/MSBuild)
 * [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts)
 * * [FileComponent](../Scripts_&_Commands/SBE-Scripts/Components/FileComponent)
