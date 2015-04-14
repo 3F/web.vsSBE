@@ -10,6 +10,7 @@
 * [Increment & Decrement Numbers [custom counters]](Features/Custom counters)
 * [.vssbe File format & Unified Project name for different .sln](Features/.vssbe)
 * [Actions for specific configuration](Features/Actions for specific configuration)
+* [Solution-wide Pre-Build event](Features/Solution-wide)
 * [Confirmation dialog](Features/Confirmation dialog)
 * [Work with Unit-Tests & EnvDTE](Features/EnvDTE & Tests)
 * [Exclude projects from build on Pre-Build event](Features/Exclude projects)
