@@ -51,6 +51,13 @@ $([MSBuild]::Add(#[File sout("cmd", "/C .nuget\nuget.exe list vsSBE.CI.MSBuild |
 ```
 Result: `1.0.5` -> `1.0.6`
 
+### Packing files. Archive of binaries files from projects.
+
+For packing you can use free [7za](http://sourceforge.net/projects/sevenzip/files/7-Zip/9.20/7za920.zip/download) archiver ([7-Zip Command line version](http://www.7-zip.org)) or similar...
+
+How to work with [7-zip](http://www.7-zip.org) you can see in '[Artefacts](../Examples/Artefacts)' as a complete solutions.
+
+
 # References
 
 * [Operations with strings](Strings)
@@ -58,4 +65,5 @@ Result: `1.0.5` -> `1.0.6`
 * [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts)
 * * [FileComponent](../Scripts_&_Commands/SBE-Scripts/Components/FileComponent)
 * [Examples & Features](../Examples)
+
 
