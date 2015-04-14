@@ -1,6 +1,6 @@
-# Solution-wide Pre-Build event
+# Solution-wide Build Events
 
-Any actions for Pre-Build event **can be for all projects at once**. (You should remember this for work with [MSBuild](../Scripts_&_Commands/MSBuild))
+Any actions for Pre-Build/Post-Build event **can be for all projects at once**. (You should remember this for work with [MSBuild](../Scripts_&_Commands/MSBuild))
 
 [![scripts for all projects at once](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/examples/obsolete/vbs_ext.jpg)](Confirmation dialog)
 
