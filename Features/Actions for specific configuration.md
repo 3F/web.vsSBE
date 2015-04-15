@@ -1,11 +1,11 @@
-# Actions for specific configuration #
+# Actions for specific configuration 
 
-## For v0.9 or newer ##
+## For v0.9+ 
 
-You can use option "Actions for specific configurations" see below, or use conditions with [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts) & [MSBuild](../Scripts_&_Commands/MSBuild) core.
+You can use an additional option "Actions for specific configurations" (see below) or conditional statements with [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts) core.
 
-* Turn on support: SBE-Scripts & MSBuild in control window. 
-* And use similar for your action script: 
+* Turn on support: [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts) & [MSBuild](../Scripts_&_Commands/MSBuild) in control window. 
+* And use for example: 
 
 ```
 #!java
@@ -14,7 +14,7 @@ You can use option "Actions for specific configurations" see below, or use condi
     ... 
 }]
 ```
-also you can check part of the name, e.g.:
+also you can check only part of the name, e.g.:
 ```
 #!java
 
@@ -25,18 +25,23 @@ also you can check part of the name, e.g.:
      * Release_with_revision, etc. 
 }]
 ```
+etc. *see [ConditionComponent](../Scripts_&_Commands/SBE-Scripts/Components/ConditionComponent) for more details*
 
-## For v0.8 or newer ##
+## For v0.8+ 
 
-*Actions for specific configurations introduced in* **v0.8**
+*Actions for specific configurations has been introduced in* **v0.8**
 
-* Simply select any event, mode, add the any action, and configure available options. 
+Simply:
+
+* Select the event type, mode, add the any actions, and configure other available options.
 * In window "Only For" you can select available configuration for your solution.
-* Activate event and click [apply]. Now selected action should run only for selected configurations.
+* Activate event and click [apply]. 
+
+As result: this should work only for selected configurations.
 
 ## For version < v0.8 or newer ##
 
-Sample with the File Mode:
+You can use simple call, for example:
 
 ```
 #!java
@@ -80,3 +85,12 @@ REM ### Cancel-Build
  
 :end
 ```
+
+and similar with [MSBuild](../Scripts_&_Commands/MSBuild)
+
+# References
+
+* [MSBuild](../Scripts_&_Commands/MSBuild)
+* [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts)
+* * [ConditionComponent](../Scripts_&_Commands/SBE-Scripts/Components/ConditionComponent)
+* [Examples & Features](../Examples)
