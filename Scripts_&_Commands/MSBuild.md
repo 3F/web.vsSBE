@@ -145,6 +145,17 @@ $($(ProjectDir:$(ProjectName)))
 ```
 and similar... *see also related issue - '[$(ProjectDir) doesn't resolve properly](https://bitbucket.org/3F/vssolutionbuildevent/issue/29/projectdir-doesnt-resolve-properly)'*
 
+## Solution Configuration & Platform
+
+This also has a few differences as part of 'Solution-wide'(see above) features:
+
+Property         | Description
+---------------- | ----------
+$(Configuration) | Active configuration **for solution**
+$(Configuration**:project**) | Configuration for specific project
+$(Platform) | Active platform **for solution**
+$(Platform**:project**) | Platform for specific project
+
 
 # References
 
