@@ -39,7 +39,7 @@ Simply:
 
 As result: this should work only for selected configurations.
 
-## For version < v0.8 or newer ##
+## For version < v0.8 or for all
 
 You can use simple call, for example:
 
