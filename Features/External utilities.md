@@ -6,7 +6,11 @@
 
 All basic modes such as a 'Files Mode', 'Interpreter Mode' can be used for work with any external utilities.
 
-You can call what you want and you can redirect results from the output to any place. 
+You can call what you want and you can redirect results from the output to any place. For example simple batch:
+
+* [get changes between revisions](https://gist.github.com/3F/48dea90aae98ddb64d3a)
+* [update revision with data from SCM - git](https://gist.github.com/3F/e0d88d4d5c90df1e9a96)
+* [parsing of .html files and generating cshelp.h with C++ macro definitions](https://gist.github.com/3F/c98f172cf97f647c8470)
 
 **However!** you can more... see below
 
