@@ -1,20 +1,20 @@
 # vsSolutionBuildEvent CI.MSBuild #
 
-Utility to support the [CI servers](http://en.wikipedia.org/wiki/Continuous_integration) for work with [vsSolutionBuildEvent](https://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/) through **[msbuild.exe](https://msdn.microsoft.com/en-us/library/vstudio/ms164311.aspx)** (Microsoft Build Tools)
+Utility to support the [CI / Special Build servers](http://en.wikipedia.org/wiki/Continuous_integration) for work with [vsSolutionBuildEvent](https://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/) through **[msbuild.exe](https://msdn.microsoft.com/en-us/library/vstudio/ms164311.aspx)** (Microsoft Build Tools)
 
 ## How to get & Install ##
 
-Currently the CI.MSBuild it's only additional wrapper (~50 kb) for work with vsSolutionBuildEvent plugin through [API](../API). It means, you should also have this library for work.
+Currently the CI.MSBuild it's only additional wrapper (~50 kb) for work with vsSolutionBuildEvent plugin through [API](../API). *You should also have this library for work it means.*
 
-**However**, [variant with NuGet](https://www.nuget.org/packages/vsSBE.CI.MSBuild/) also provide a complete version with all libraries for works. Use any convenient variant for you!
+**However**, [variant with NuGet](https://www.nuget.org/packages/vsSBE.CI.MSBuild/) also provides main libraries for work. Use any convenient variant for you!
 
 ### Variant with NuGet ###
 
-[vsSBE.CI.MSBuild](https://www.nuget.org/packages/vsSBE.CI.MSBuild/) - Complete version(with all libraries), just get and use...
+[vsSBE.CI.MSBuild](https://www.nuget.org/packages/vsSBE.CI.MSBuild/) - Full version(with all main libraries), just get and use...
 
-`nuget install vsSBE.CI.MSBuild -OutputDirectory <path>`
+`nuget install vsSBE.CI.MSBuild`
 
-for example: `nuget install vsSBE.CI.MSBuild -OutputDirectory C:\projectX\Build\bin\`
+for example: `nuget install vsSBE.CI.MSBuild -ExcludeVersion -OutputDirectory C:\projectX\bin\`
 
 **OR**
 
@@ -24,13 +24,13 @@ Add this utility for your ***.sln** (see [Managing Packages for the Solution](ht
 
 That's all. Now you can use the vsSolutionBuildEvent with msbuild. See below of how to use it.
 
-### Manually variant ###
+### Custom variant ###
 
-*For advanced usage, for example with own NuGet private server etc.*
+*For advanced usage, for example with own NuGet private server, custom libraries etc.*
 
 * [Download CI.MSBuild_v1.0_[5d7aa0c].zip](http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/CI.MSBuild_v1.0_%5B5d7aa0c%5D.zip/download) (SourceForge.net) 
 * * All binaries of the CI.MSBuild: [CI-Utilities/CI.MSBuild/](https://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/)
-* Unpack the CI.MSBuild archive. *(you can delete all *.pdb files)*
+* Unpack the CI.MSBuild archive. *(you can delete all .pdb files)*
 * Download the [vsSolutionBuildEvent plugin](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/referral/118151) and extract all files from *.**vsix** with any archiver ([it's a simple 'zip' archive](https://msdn.microsoft.com/en-us/library/ff407026.aspx))
 * * **Or** simply go to the installed folder (In plugin: `Settings` - `CI Utilities` - `Plugin` - `Open directory with plugin`)
 * Copy all files into the CI.MSBuild folder (without replacements - i.e. CI.MSBuild should be over vsSolutionBuildEvent)
@@ -63,13 +63,38 @@ Use the command: `msbuild.exe /?` for details about keys: `/nologo` `/noconsolel
 
 ![Example of work](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/CI.MSBuild_example_console.png)
 
+### Could not load file or assembly ... or one of its dependencies. ###
+
+```
+#!log
+
+MSBUILD : error MSB4017: The build stopped unexpectedly because of an unexpected logger failure.
+...
+```
+
+Various environments for CI has a different configuration and if you see similar problem and list of this:
+ 
+ `Could not load file or assembly ... or one of its dependencies.`
+
+You can try add this manually: generally problem can be only for 3 libraries (as part of VSSDK for main library):
+
+* [envdte80.dll](https://www.nuget.org/api/v2/package/VSSDK.DTE.8/8.0.4) ~147 Kb
+* [Microsoft.VisualStudio.Shell.10.0.dll](https://www.nuget.org/api/v2/package/VSSDK.Shell.10/10.0.4) ~972 Kb
+* [envdte.dll](https://www.nuget.org/api/v2/package/VSSDK.DTE/7.0.4) ~255 Kb
+
+*See in **/lib** folder after unpacking .nupkg with any archiver*
+
+If you see any errors with installing and/or using, please report [here](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)
+
+*Some references can be removed later special for CI.MSBuild version and/or some libraries can be added later in [our package](https://www.nuget.org/packages/vsSBE.CI.MSBuild/) directly or as dependencies for full automation.*
+
 ## Configure for AppVeyor ##
 
 * http://www.appveyor.com
 
 AppVeyor also provides the private NuGet hosting, and you can use own packages of the vsSolutionBuildEvent CI.MSBuild ([related topic](http://help.appveyor.com/discussions/questions/900-additional-logger-to-msbuild))
 
-[![Example with AppVeyor](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/ci_example_appveyor.png)](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/build/build-22)
+[![Example with AppVeyor](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/ci_example_appveyor.png)](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/build/build-28)
 
 ### With AppVeyor NuGet server ###
 
@@ -93,7 +118,10 @@ nuget install CI.MSBuild -OutputDirectory C:\projects\<your_project>\Build\bin\ 
 ```
 Enjoy
 
-**Note:** if the CI.MSBuild added for ***.sln** you can simply use it with one command - `nuget restore <SolutionFile>.sln`... it's easy and useful (see in 'How to get & Install' above)
+**Note:** 
+
+* Use key **[-ExcludeVersion](https://docs.nuget.org/consume/command-line-reference)** for path without version number, e.g.: `vsSBE.CI.MSBuild\bin\CI.MSBuild.dll`
+* You can simply use it with one command - `nuget restore <SolutionFile>.sln`... if the CI.MSBuild added for ***.sln** it's easy and useful (see in 'How to get & Install' above)
 
 ### With our NuGet package ###
 
@@ -110,7 +138,10 @@ nuget install vsSBE.CI.MSBuild -OutputDirectory C:\projects\<your_project>\Build
 ```
 Yes, that's all.
 
-**Note:** if the CI.MSBuild added for ***.sln** you can simply use it with one command - `nuget restore <SolutionFile>.sln`... it's easy and useful (see in 'How to get & Install' above)
+**Note:** 
+
+* Use key **[-ExcludeVersion](https://docs.nuget.org/consume/command-line-reference)** for path without version number, e.g.: `vsSBE.CI.MSBuild\bin\CI.MSBuild.dll`
+* You can simply use it with one command - `nuget restore <SolutionFile>.sln`... if the CI.MSBuild added for ***.sln** it's easy and useful (see in 'How to get & Install' above)
 
 ## Example for TeamCity ##
 
@@ -127,7 +158,10 @@ nuget install vsSBE.CI.MSBuild -OutputDirectory C:\projects\<your_project>\Build
   & nuget restore <SolutionFile>.sln 
   & "C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe" "<SolutionFile>.sln" /verbosity:detailed /l:"C:\projects\<your_project>\Build\bin\vsSBE.CI.MSBuild.<ver>\bin\CI.MSBuild.dll" /m:4 /nologo
 ```
-**Note:** if the CI.MSBuild added for ***.sln** you can simply use it with one command - `nuget restore <SolutionFile>.sln`... it's easy and useful (see in 'How to get & Install' above)
+**Note:** 
+
+* Use key **[-ExcludeVersion](https://docs.nuget.org/consume/command-line-reference)** for path without version number, e.g.: `vsSBE.CI.MSBuild\bin\CI.MSBuild.dll`
+* You can simply use it with one command - `nuget restore <SolutionFile>.sln`... if the CI.MSBuild added for ***.sln** it's easy and useful (see in 'How to get & Install' above)
 
 for additional NuGet server, use command:
 
@@ -135,7 +169,3 @@ for additional NuGet server, use command:
 * For private: `nuget sources add -Name <FriendlyName> -Source <URL> -UserName <user> -Password <pass>`
 
 ![Example of work](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/CI.MSBuild_example_TC.png)
-
-
-
-
