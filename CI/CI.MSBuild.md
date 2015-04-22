@@ -76,7 +76,7 @@ Various environments for CI has a different configuration and if you see similar
  
  `Could not load file or assembly ... or one of its dependencies.`
 
-You can try add this manually: generally problem can be only for 3 libraries (as part of VSSDK for main library):
+You can try add this manually into **/bin** folder: generally problem can be only for next libraries (as part of VSSDK for main library):
 
 * [envdte80.dll](https://www.nuget.org/api/v2/package/VSSDK.DTE.8/8.0.4) ~147 Kb
 * [Microsoft.VisualStudio.Shell.10.0.dll](https://www.nuget.org/api/v2/package/VSSDK.Shell.10/10.0.4) ~972 Kb

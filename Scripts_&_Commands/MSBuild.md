@@ -5,7 +5,7 @@ The Microsoft Build Engine is a platform for building applications. This engine,
 -------
 `*!*` 
 
-* Starting with v0.9, you can use the [SBE-Scripts](SBE-Scripts)
+* Starting with v0.9, you can also use the [SBE-Scripts](SBE-Scripts) for additional features.
 * Starting with v0.11, you can use the [CI.MSBuild](../CI/CI.MSBuild) for work through msbuild.exe (Microsoft Build Tools)
 
 -------
@@ -22,7 +22,7 @@ The vsSolutionBuildEvent uses additional syntax for select specific project. Thi
 
 Syntax:
 ```
-#!java
+#!Bash
 
 $(...)
 $(...:project) - from selected project in your solution
@@ -30,7 +30,7 @@ $(...:project) - from selected project in your solution
 
 Escape symbol is a $: 
 ```
-#!java
+#!Bash
 
 $$(...) / $$(...:project)
 ```
@@ -54,7 +54,7 @@ $([MSBuild]::GetRegistryValue('HKEY_CURRENT_USER\Software\Microsoft\VisualStudio
 
 * if you see problem with any slashes for path:
 ```
-#!java
+#!Bash
 
 $(SolutionPath.Replace('\', '/'))  -> D:\App\ConsoleApp1.sln to D:/App/ConsoleApp1.sln
 $(SolutionPath.Replace('\', '\\')) -> to D:\\App\\ConsoleApp1.sln
@@ -62,14 +62,14 @@ $(SolutionPath.Replace('\', '\\')) -> to D:\\App\\ConsoleApp1.sln
 
 * delta to time:
 ```
-#!java
+#!Bash
 
 $([System.TimeSpan]::FromTicks($([MSBuild]::Subtract($(tNow), $(tStart)))).TotalMinutes.ToString("0"))
 ```
 
 * manually build with msbuild.exe and call binary with args:
 ```
-#!java
+#!Bash
 
 $(MSBuildBinPath)\MSBuild.exe "$(ProjectPath.Replace('\', '/'):Version)" /t:Build /p:Configuration=Release 
  
@@ -90,7 +90,7 @@ Currently allows the only definitions from others variables/properties & propert
 
 Syntax:
 ```
-#!java
+#!Bash
 
 $(name = $(...))
 ```
@@ -99,17 +99,17 @@ $(name = $(...))
 For example:
 
 ```
-#!java
+#!Bash
 
 $(start = $([System.DateTime]::Parse("2015/04/01").ToBinary()))
 ```
 ```
-#!java
+#!Bash
 
 $(pdir = $(ProjectDir:project))
 ```
 ```
-#!java
+#!Bash
 
 $(pdir = $(ProjectDir.Replace('\', '/'):project))
 ```
@@ -119,13 +119,13 @@ $(pdir = $(ProjectDir.Replace('\', '/'):project))
 In vsSolutionBuildEvent the most variables can be evaluated with nested levels.
 
 ```
-#!java
+#!Bash
 
 $($(...:$(...)))
 ```
 
 ```
-#!java
+#!Bash
 
 $($(...:$($(...:$(...)))))
 ```
@@ -136,11 +136,11 @@ This useful for any dynamic references on your data or additional evaluation wit
 if you don't put a fixed project name and need link to variable or evaluate some property from specific project in your solution, you can for example:
 
 ```
-#!java
+#!Bash
 $($(ProjectDir:$(SolutionName)))
 ```
 ```
-#!java
+#!Bash
 $($(ProjectDir:$(ProjectName)))
 ```
 and similar... *see also related issue - '[$(ProjectDir) doesn't resolve properly](https://bitbucket.org/3F/vssolutionbuildevent/issue/29/projectdir-doesnt-resolve-properly)'*
@@ -155,6 +155,51 @@ $(Configuration) | Active configuration **for solution**
 $(Configuration**:project**) | Configuration for specific project
 $(Platform) | Active platform **for solution**
 $(Platform**:project**) | Platform for specific project
+
+## Registry Properties
+
+The [Registry Properties](https://msdn.microsoft.com/en-us/library/vstudio/ms171458.aspx) are allowed in **v0.11.4+**:
+
+```
+#!Bash
+
+$(registry:Hive\MyKey\MySubKey@ValueName) - gets value for ValueName from subkey.
+$(registry:Hive\MyKey\MySubKey) - gets the default subkey value.
+```
+
+**for older versions** you can also use the registry properties but only with a little trick, for example:
+
+```
+#!Bash
+
+#[var k = :Hive\MyKey\MySubKey]
+$(registry$(k))
+```
+```
+#!Bash
+
+#[var k = :Hive\MyKey\MySubKey@ValueName]
+$(registry$(k))
+```
+*and similar..*
+
+`*!*` **OR** you can read system registry values with:
+
+* [MSBuild GetRegistryValue](https://msdn.microsoft.com/en-us/library/vstudio/dd633440%28v=vs.120%29.aspx#BKMK_GetRegistryValue) -  returns the value of a registry key:
+
+```
+#!Bash
+
+$([MSBuild]::GetRegistryValue('keyName', 'valueName'))
+```
+
+* [MSBuild GetRegistryValueFromView](https://msdn.microsoft.com/en-us/library/vstudio/dd633440%28v=vs.120%29.aspx#BKMK_GetRegistryValueFromView) - gets system registry data. The key and value are searched in each registry view(e.g. 32-bit & 64-bit registry view) in order until they are found. Sample of how to look first in the 64-bit then in the 32-bit registry view:
+
+```
+#!Bash
+
+$([MSBuild]::GetRegistryValueFromView('keyName', 'valueName', null, RegistryView.Registry64, RegistryView.Registry32))
+```
 
 
 # References
