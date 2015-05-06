@@ -2,6 +2,8 @@
 
 Utility to support the [CI / Special Build servers](http://en.wikipedia.org/wiki/Continuous_integration) for work with [vsSolutionBuildEvent](https://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/) through **[msbuild.exe](https://msdn.microsoft.com/en-us/library/vstudio/ms164311.aspx)** (Microsoft Build Tools)
 
+*see [Devenv Command-Line](Devenv Command-Line) if you're searching work in command-line mode of Visual Studio(devenv.exe /.com)*
+
 ## How to get & Install ##
 
 Currently the CI.MSBuild it's only additional wrapper (~50 kb) for work with vsSolutionBuildEvent plugin through [API](../API). *You should also have this library for work it means.*

@@ -97,7 +97,7 @@ nuget restore vsSolutionBuildEvent_2013.sln
 ```
 #!bash
 
-"C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe" "vsSolutionBuildEvent_2013.sln" /verbosity:detailed  /l:"C:\projects\vssolutionbuildevent\packages\vsSBE.CI.MSBuild.1.0.5\bin\CI.MSBuild.dll" /m:4 /p:Configuration=Debug
+"C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe" "vsSolutionBuildEvent_2013.sln" /verbosity:detailed  /l:"C:\projects\vssolutionbuildevent\packages\vsSBE.CI.MSBuild.1.1.0\bin\CI.MSBuild.dll" /m:4 /p:Configuration=Debug
 ```
 or use [build_[CI_Debug]](https://bitbucket.org/3F/vssolutionbuildevent/src/master/build_[CI_Debug].bat) / [build_[CI_Release]](https://bitbucket.org/3F/vssolutionbuildevent/src/master/build_[CI_Release].bat)
 
@@ -108,7 +108,7 @@ That's all.
 * `C:\projects\vssolutionbuildevent` - your path to source code.
 * `vsSolutionBuildEvent_2013.sln` - solution file for VS2013. Others available you can see in root directory.
 * `C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe` - full path to your msbuild.exe
-* `C:\projects\vssolutionbuildevent\packages\vsSBE.CI.MSBuild.1.0.5\bin\CI.MSBuild.dll` - full path to the [CI.MSBuild](../CI/CI.MSBuild)
+* `C:\projects\vssolutionbuildevent\packages\vsSBE.CI.MSBuild.1.1.0\bin\CI.MSBuild.dll` - full path to the [CI.MSBuild](../CI/CI.MSBuild)
 
 *this variant also used for build automation with [AppVeyor](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent)*
 
