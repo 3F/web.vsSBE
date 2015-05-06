@@ -60,7 +60,7 @@ you can use the Replace() method for changing on any compatible sequence, e.g.:
 or as variant:
 
 ```
-#!bash
+#!java
 
 #[var cs = $(cs.Replace("%ver%", $(projectRev.Replace("\r\n", " :: "))))]
 ```

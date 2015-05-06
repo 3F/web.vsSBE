@@ -7,11 +7,11 @@ Utility to support the command-line mode of the Visual Studio for work with [vsS
 -------
 `*!*` 
 
-The [Add-ins are deprecated in Visual Studio 2013](http://msdn.microsoft.com/en-us/library/80493a3w.aspx) and removed in [14CTP](http://www.visualstudioextensibility.com/2014/06/05/visual-studio-14-ctp-add-ins-are-gone/) (also in VS2015 Preview)
+The [Add-ins are deprecated in Visual Studio 2013](http://msdn.microsoft.com/en-us/library/80493a3w.aspx) and removed in [14CTP's](http://www.visualstudioextensibility.com/2014/06/05/visual-studio-14-ctp-add-ins-are-gone/) (also in VS2015 RC)
 
-Therefore, this utility support the next versions: Visual Studio 2010, 2012, 2013.
+Therefore, this utility supports the next versions: Visual Studio 2010, 2012, 2013. ([Want to see in VS2015+ ?](https://connect.microsoft.com/VisualStudio/Feedback/Details/1075033))
 
-However! Command-Line mode not available for [VSPackages](https://msdn.microsoft.com/en-us/library/bb166424.aspx) and possible only with Add-in.
+* The command-Line features are not available for [VSPackages](https://msdn.microsoft.com/en-us/library/bb166424.aspx) and this possible only with our [tricks](https://bitbucket.org/3F/vssolutionbuildevent/issue/25/)
 
 This reported on MS Connect Issue #[1075033](https://connect.microsoft.com/VisualStudio/Feedback/Details/1075033) and you can [vote or comment here](https://connect.microsoft.com/VisualStudio/Feedback/Details/1075033) *if you want to see this feature on newer versions*!
 
@@ -21,7 +21,7 @@ This reported on MS Connect Issue #[1075033](https://connect.microsoft.com/Visua
 
 ## How to get & Install ##
 
-* [Download Devenv_v1.0_[5d7aa0c].zip](http://sourceforge.net/projects/vssbe/files/CI-Utilities/Devenv/Devenv_v1.0_%5B5d7aa0c%5D.zip/download) (SourceForge.net) 
+* [Devenv_v1.1_[e9ad3bd][net40].zip](http://sourceforge.net/projects/vssbe/files/CI-Utilities/Devenv/Devenv_v1.1_%5Be9ad3bd%5D%5Bnet40%5D.zip/download) (SourceForge.net) 
 * * All binaries of the CI.MSBuild: [CI-Utilities/Devenv/](https://sourceforge.net/projects/vssbe/files/CI-Utilities/Devenv/)
 
 Currently the Devenv Command-Line it's only additional wrapper (~41 kb) for work with vsSolutionBuildEvent plugin through [API](../API). It means, you should also have this library for work.

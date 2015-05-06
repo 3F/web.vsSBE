@@ -2,7 +2,7 @@
 
 Starting with v0.11, vsSolutionBuildEvent can be used for [continuous Integration](http://en.wikipedia.org/wiki/Continuous_integration) with others tools...
 
-![Example with AppVeyor](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/ci_example_appveyor.png)
+[![Example with AppVeyor](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/ci_example_appveyor.png)](CI/CI.MSBuild)
 
 It's possible with next additional utilities:
 

@@ -10,6 +10,8 @@ Currently the CI.MSBuild it's only additional wrapper (~50 kb) for work with vsS
 
 ### Variant with NuGet ###
 
+[![nuget vsSBE.CI.MSBuild](https://img.shields.io/nuget/v/vsSBE.CI.MSBuild.svg)](https://www.nuget.org/packages/vsSBE.CI.MSBuild/)
+
 [vsSBE.CI.MSBuild](https://www.nuget.org/packages/vsSBE.CI.MSBuild/) - Full version(with all main libraries), just get and use...
 
 `nuget install vsSBE.CI.MSBuild`
@@ -28,7 +30,7 @@ That's all. Now you can use the vsSolutionBuildEvent with msbuild. See below of 
 
 *For advanced usage, for example with own NuGet private server, custom libraries etc.*
 
-* [Download CI.MSBuild_v1.0_[5d7aa0c].zip](http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/CI.MSBuild_v1.0_%5B5d7aa0c%5D.zip/download) (SourceForge.net) 
+* Download [CI.MSBuild_v1.1_[e9ad3bd][net40].zip](http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/CI.MSBuild_v1.1_%5Be9ad3bd%5D%5Bnet40%5D.zip/download) (SourceForge.net) 
 * * All binaries of the CI.MSBuild: [CI-Utilities/CI.MSBuild/](https://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/)
 * Unpack the CI.MSBuild archive. *(you can delete all .pdb files)*
 * Download the [vsSolutionBuildEvent plugin](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/referral/118151) and extract all files from *.**vsix** with any archiver ([it's a simple 'zip' archive](https://msdn.microsoft.com/en-us/library/ff407026.aspx))
@@ -76,7 +78,7 @@ Various environments for CI has a different configuration and if you see similar
  
  `Could not load file or assembly ... or one of its dependencies.`
 
-You can try add this manually into **/bin** folder: generally problem can be only for next libraries (as part of VSSDK for main library):
+You can try add this manually into **/bin** folder: generally, problem can be with a few libraries (as part of VSSDK for main library):
 
 * [envdte80.dll](https://www.nuget.org/api/v2/package/VSSDK.DTE.8/8.0.4) ~147 Kb
 * [Microsoft.VisualStudio.Shell.10.0.dll](https://www.nuget.org/api/v2/package/VSSDK.Shell.10/10.0.4) ~972 Kb
