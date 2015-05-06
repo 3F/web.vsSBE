@@ -100,6 +100,8 @@ In **v0.11.4+** added strings:
 * `".."` - Allows any evaluation inside string. Escaping is a `\"`
 * `'..'` - All msbuild containers $() should not be evaluated for this type string. Escaping is a `\'`
 
+*'\' and "\" used 'as is' for compatibility with MSBuild*
+
 ```
 #!Bash
 

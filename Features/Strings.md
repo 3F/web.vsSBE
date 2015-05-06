@@ -21,7 +21,7 @@ You can use [System.String](https://msdn.microsoft.com/en-us/library/system.stri
 For example:
 
 ```
-#!java
+#!bash
 
 $(cs.Replace("\r\n", ""))
 ```
@@ -29,7 +29,7 @@ $(cs.Replace("\r\n", ""))
 or with different combination CR/LF ([Newline - representations](http://en.wikipedia.org/wiki/Newline#Representations))
 
 ```
-#!java
+#!bash
 
 $(cs.Replace("\r", "").Replace("\n", ""))
 ```
@@ -60,7 +60,7 @@ you can use the Replace() method for changing on any compatible sequence, e.g.:
 or as variant:
 
 ```
-#!java
+#!bash
 
 #[var cs = $(cs.Replace("%ver%", $(projectRev.Replace("\r\n", " :: "))))]
 ```
@@ -158,6 +158,32 @@ xcopy NLog.dll.nlog "#[var nupCIMdir]\bin" /Y/R/I
 ```
 and similar..
 
+## Escape-Sequences
+
+You can use available escape-sequence in [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts) & [MSBuild](../Scripts_&_Commands/MSBuild) cores, for example:
+
+```
+#!bash
+
+$([System.String]::Concat("\r\n"))
+```
+
+```
+#!bash
+
+$(ver = "1.2.3")
+$([System.String]::Format("\t version is a {0}", $(ver)))
+```
+
+### What available ?
+
+Currently used a strictly limited set:
+
+* [hexadecimal-escape-sequence](https://msdn.microsoft.com/en-us/library/aa691087%28v=vs.71%29.aspx): `\x   0-0xF  [0-0xF  [0-0xF  [0-0xF]]]`
+* [unicode-escape-sequence](https://msdn.microsoft.com/en-us/library/aa664669%28v=vs.71%29.aspx): 
+* * `\u   0-0xF  0-0xF  0-0xF  0-0xF` 
+* * `\U   0-0xF  0-0xF  0-0xF  0-0xF  0-0xF  0-0xF  0-0xF  0-0xF`
+* basic: `\r \n \t \v \a \b \0 \f`
 
 # References
 

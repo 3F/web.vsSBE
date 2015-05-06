@@ -26,7 +26,7 @@ This reported on MS Connect Issue #[1075033](https://connect.microsoft.com/Visua
 
 Currently the Devenv Command-Line it's only additional wrapper (~41 kb) for work with vsSolutionBuildEvent plugin through [API](../API). It means, you should also have this library for work.
 
-* Unpack the Devenv archive into the `%HOMEPATH%\Documents\` -> `Visual Studio <num>\Addins` folder (see full instruction on [MSDN](https://msdn.microsoft.com/en-us/library/19dax6cz.aspx)). *(you can delete all *.pdb files from archive)*
+* Unpack the Devenv archive into the `%HOMEPATH%\Documents\` -> `Visual Studio <num>\Addins` folder (see full instruction in [MSDN](https://msdn.microsoft.com/en-us/library/19dax6cz.aspx)). *(you can delete all *.pdb files from archive)*
 * * For example: `C:\Users\<user>\Documents\Visual Studio 2013\Addins\`
 * The [vsSolutionBuildEvent plugin](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/referral/118151) plugin already should be installed for your version of the Visual Studio.
 * * **Or** [Download](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/referral/118151) and extract all files from *.**vsix** with any archiver ([it's a simple 'zip' archive](https://msdn.microsoft.com/en-us/library/ff407026.aspx)) into `%HOMEPATH%\Documents\Visual Studio 2013\Addins\Devenv\`
