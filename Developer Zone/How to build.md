@@ -1,6 +1,8 @@
 # How to build vsSBE #
 
-[![Build status](https://ci.appveyor.com/api/projects/status/l38xn0j2c5an28e1/branch/master?svg=true)](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/branch/master) 
+Branches status:
+
+[![master branch](https://img.shields.io/badge/master_-%7E-555555.svg?style=flat)](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/branch/master)[![Build status](https://ci.appveyor.com/api/projects/status/l38xn0j2c5an28e1/branch/master?svg=true)](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/branch/master) [![develop branch](https://img.shields.io/badge/develop-%7E-555555.svg?style=flat)](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/branch/develop)[![Build status](https://ci.appveyor.com/api/projects/status/l38xn0j2c5an28e1/branch/develop?svg=true)](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/branch/develop)
 
 ## Variant for Visual Studio ##
 
@@ -46,8 +48,9 @@ if you have a some problems with getting libraries through NuGet, you can also u
 * * * For `Start Action` - set as `Start External program`
 * * * Also select your devenv.exe, e.g.: C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv.exe
 * * * In `Start Options` > `Command line arguments` write the: '**/resetaddin Devenv.Connect**' (without quotes)
-* * * `Working Directory` add the: C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\
 * * * `Enable Debuggers` - enable the `Enable the Visual Studio hosting process`
+* * For testing in command-line mode you should change `Command line arguments` for example: '"D:\app\App1.sln" /Rebuild' (without single quotes)
+* * * Also add 'Devenv.AddIn' into your '%HOMEPATH%\Documents\Visual Studio 2013\Addins' with full path to assembly, for example: '<Assembly>D:/full_path_to/Devenv.dll</Assembly>'
 * Find the 'CI.MSBuild' project in solution:
 * * `Properties` -> `Debug`:
 * * * For `Start Action` - set as `Start External program`
