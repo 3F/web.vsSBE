@@ -17,9 +17,15 @@
 * [Work with external utilities](Features/External utilities)
 * [Operations with strings](Features/Strings)
 
+# Scheme of vsSolutionBuildEvent projects
+
+You should see [this page](scheme)
+
+![Scheme of vsSolutionBuildEvent projects](https://bitbucket.org/3F/vssolutionbuildevent/wiki/Resources/scheme.png)
+
 # For developers
 
-You should see [Developer Zone](Developer Zone) - *API; How to build plugin; How to create component for current platform; ...*
+See [Developer Zone](Developer Zone) - *How to build plugin; How to create component for current platform; API; etc.*
 
 # Your experience
 

@@ -25,4 +25,10 @@ This contains specification of all available features from the vsSolutionBuildEv
 * [Provider_v2.0_[e9ad3bd][net40].zip](http://sourceforge.net/projects/vssbe/files/API/Provider/Provider_v2.0_%5Be9ad3bd%5D%5Bnet40%5D.zip/download) (SourceForge.net) ~15Kb
 * All binaries of the Bridge: [API/Provider/](https://sourceforge.net/projects/vssbe/files/API/Provider/)
 
-The Provider already contains loader of the vsSolutionBuildEvent library and any other methods for rapid accessing to this library. Use this for a quick implementation of the basic logic.
+The Provider already contains loader of the vsSolutionBuildEvent library and any other methods for rapid accessing etc. Use this for a quick implementation of the basic logic.
+
+
+# References
+
+* [Continuous Integration (CI)](CI)
+* [Developer Zone](Developer Zone)

@@ -54,3 +54,10 @@ You can also use the `verbosity` key for details information from vsSolutionBuil
 For more details about Devenv Command Line see [MSDN documentation](https://msdn.microsoft.com/en-us/library/vstudio/xee0c8y7.aspx)
 
 ![Example of work](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/Devenv_example.png)
+
+
+# References
+
+* [vsSolutionBuildEvent CI.MSBuild](CI.MSBuild)
+* [Scripts & Commands](../scripts)
+* [Examples](../Examples)

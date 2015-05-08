@@ -173,3 +173,9 @@ for additional NuGet server, use command:
 * For private: `nuget sources add -Name <FriendlyName> -Source <URL> -UserName <user> -Password <pass>`
 
 ![Example of work](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/CI.MSBuild_example_TC.png)
+
+# References
+
+* [vsSolutionBuildEvent Devenv Command-Line](Devenv Command-Line)
+* [Scripts & Commands](../scripts)
+* [Examples](../Examples)

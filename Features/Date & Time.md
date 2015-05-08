@@ -29,13 +29,11 @@ for example:
 
 $([System.DateTime]::Parse("2015/02/17").ToBinary())
 ```
-or
 ```
 #!java
 
 $([System.DateTime]::Parse("2015/02/17 07:21").ToBinary())
 ```
-or
 ```
 #!java
 
