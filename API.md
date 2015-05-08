@@ -32,3 +32,4 @@ The Provider already contains loader of the vsSolutionBuildEvent library and any
 
 * [Continuous Integration (CI)](CI)
 * [Developer Zone](Developer Zone)
+* [Scheme of vsSolutionBuildEvent projects](scheme)
