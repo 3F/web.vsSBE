@@ -48,7 +48,7 @@ We also should use the next properties:
 * [DateTime.UtcNow](https://msdn.microsoft.com/en-us/library/system.datetime.utcnow%28v=vs.100%29.aspx)
 * [DateTime.Ticks](https://msdn.microsoft.com/en-us/library/system.datetime.ticks%28v=vs.100%29.aspx)
 
-for example ![UtcNow.Ticks](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/examples/UtcNow-Ticks.gif):
+for example ![UtcNow.Ticks](https://bitbucket.org/3F/vssolutionbuildevent/wiki/Resources/examples/UtcNow-Ticks.gif):
 
 ```
 #!java

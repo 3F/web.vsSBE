@@ -1,13 +1,13 @@
 # Artefacts. How to prepare as you want.
 
-![Packing & Uploading - Artefacts](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/examples/artefacts_appveyor.gif)
+![Packing & Uploading - Artefacts](https://bitbucket.org/3F/vssolutionbuildevent/wiki/Resources/examples/artefacts_appveyor.gif)
 
 
 *Artefacts / Binaries from build project, etc.*
 
 You can see also a fragment of this from our short overview:
 
-[![Short Overview](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/examples/overview-youtube.png)](http://youtu.be/FX5GiMX0ulI)
+[![Short Overview](https://bitbucket.org/3F/vssolutionbuildevent/wiki/Resources/examples/overview-youtube.png)](http://youtu.be/FX5GiMX0ulI)
 
 ## CI / Special Build Servers / Devenv
 
@@ -15,7 +15,7 @@ Well., not important where use it..
 
 Simply configure and use any scripts for any environments. It means you should see the same result on your PC(for example) and for another with identical script:
 
-![Artefacts on PC](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/examples/artefacts_pc.png)
+![Artefacts on PC](https://bitbucket.org/3F/vssolutionbuildevent/wiki/Resources/examples/artefacts_pc.png)
 
 You can also read this:
 

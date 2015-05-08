@@ -1,6 +1,6 @@
 # Automatic Version Numbering
 
-![Version class](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/examples/VersionClass.gif)
+![Version class](https://bitbucket.org/3F/vssolutionbuildevent/wiki/Resources/examples/VersionClass.gif)
 
 ## VSPackages (VSIX Package/.vsixmanifest) and for others
 

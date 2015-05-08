@@ -65,7 +65,7 @@ You can also use the `/verbosity` key for details information from vsSolutionBui
 Use the command: `msbuild.exe /?` for details about keys: `/nologo` `/noconsolelogger` `/m` or see [MSDN documentation](https://msdn.microsoft.com/en-us/library/vstudio/ms164311.aspx)
 
 
-![Example of work](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/CI.MSBuild_example_console.png)
+![Example of work](https://bitbucket.org/3F/vssolutionbuildevent/wiki/Resources/CI.MSBuild_example_console.png)
 
 ### Could not load file or assembly ... or one of its dependencies. ###
 
@@ -98,7 +98,7 @@ If you see any errors with installing and/or using, please report [here](https:/
 
 AppVeyor also provides the private NuGet hosting, and you can use own packages of the vsSolutionBuildEvent CI.MSBuild ([related topic](http://help.appveyor.com/discussions/questions/900-additional-logger-to-msbuild))
 
-[![Example with AppVeyor](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/ci_example_appveyor.png)](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/build/build-28)
+[![Example with AppVeyor](https://bitbucket.org/3F/vssolutionbuildevent/wiki/Resources/ci_example_appveyor.png)](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/build/build-28)
 
 ### With AppVeyor NuGet server ###
 
@@ -172,7 +172,7 @@ for additional NuGet server, use command:
 * `nuget sources add -Name <FriendlyName> -Source <URL>`
 * For private: `nuget sources add -Name <FriendlyName> -Source <URL> -UserName <user> -Password <pass>`
 
-![Example of work](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/CI.MSBuild_example_TC.png)
+![Example of work](https://bitbucket.org/3F/vssolutionbuildevent/wiki/Resources/CI.MSBuild_example_TC.png)
 
 # References
 

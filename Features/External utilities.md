@@ -1,6 +1,6 @@
 # Work with external utilities
 
-![Work with external utility](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/examples/ext_utility.png)
+![Work with external utility](https://bitbucket.org/3F/vssolutionbuildevent/wiki/Resources/examples/ext_utility.png)
 
 ## Basic work
 

@@ -2,7 +2,7 @@
 
 Any actions for Pre-Build / Post-Build event **can be for all projects at once**. (You should remember this for work with [MSBuild](../Scripts_&_Commands/MSBuild))
 
-[![scripts for all projects at once](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/examples/obsolete/vbs_ext.jpg)](Confirmation dialog)
+[![scripts for all projects at once](https://bitbucket.org/3F/vssolutionbuildevent/wiki/Resources/examples/obsolete/vbs_ext.jpg)](Confirmation dialog)
 
 You can use as a [Simple caller - with your external logic](Confirmation dialog) or use the [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts) or [DTE-Commands](../Scripts_&_Commands/DTE-Commands) or similar internal scripts with any interpreter such as php, python, PowerShell, Wscript, Node.js, etc.
 

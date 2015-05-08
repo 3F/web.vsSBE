@@ -21,7 +21,7 @@
 
 You should see [this page](scheme)
 
-![Scheme of vsSolutionBuildEvent projects](https://bitbucket.org/3F/vssolutionbuildevent/wiki/Resources/scheme.png)
+[![Scheme of vsSolutionBuildEvent projects](https://bitbucket.org/3F/vssolutionbuildevent/wiki/Resources/scheme.png)](scheme)
 
 # For developers
 

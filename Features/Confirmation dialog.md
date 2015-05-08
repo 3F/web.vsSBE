@@ -2,7 +2,7 @@
 
 In latest versions you can use special option for your [scripts](../scripts). 
 
-![Confirmation dialog](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/dlg/confirmation.png)
+![Confirmation dialog](https://bitbucket.org/3F/vssolutionbuildevent/wiki/Resources/dlg/confirmation.png)
 
 * Simply add any action type for any events
 * In `Control` section set the **Confirmation** option.
@@ -44,7 +44,7 @@ Else
     Wscript.Echo "false"
 End If
 ```
-![Custom dialog](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/dlg/msgbox_vbs.png)
+![Custom dialog](https://bitbucket.org/3F/vssolutionbuildevent/wiki/Resources/dlg/msgbox_vbs.png)
 
 similarly, you can also use any other script language..
 
@@ -58,7 +58,7 @@ This **older** variant is **deprecated**. However you can also like this:
 
 For example if you have a few subprojects in your solution as here:
 
-![a few subprojects](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/examples/obsolete/project_list.jpg)
+![a few subprojects](https://bitbucket.org/3F/vssolutionbuildevent/wiki/Resources/examples/obsolete/project_list.jpg)
 
 and you want to update a some file at start build **for all projects at once**(as Solution-wide) for example: revision.h 
 
@@ -111,7 +111,7 @@ Then,
 
 as result you simply call external script with your fully external logic & your confirmation dialog for all projects at once:
 
-![scripts for all projects at once](https://bytebucket.org/3F/vssolutionbuildevent/wiki/Resources/examples/obsolete/vbs_ext.jpg)
+![scripts for all projects at once](https://bitbucket.org/3F/vssolutionbuildevent/wiki/Resources/examples/obsolete/vbs_ext.jpg)
 
 `*!*` *please note it's Obsolete see also [similar with new version](../Examples/Version number)* `*!*`
 
