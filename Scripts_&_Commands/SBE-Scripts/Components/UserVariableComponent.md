@@ -96,9 +96,20 @@ Others:
 #[var name = $([System.String]::Format("{0} - {1}", "      ", "test"))]
 ```
 
-You can to escape evaluation of this sequence with a '$' symbols if needed. For more details see with [MSBuild](../../MSBuild)
+*You can escape evaluation of this sequence with a '$' symbols if needed.*
+
+**Or** you can use [MSBuild core](../../MSBuild) for work with User-Variables, for example:
+
+```
+#!bash
+
+$(name = " ")
+$(name = "  - Platform is a $(Platform)  ")
+```
+*For more details: see [MSBuild](../../MSBuild) page*
 
 # References
 
 * [Operations with strings](../../../Features/Strings)
+* [MSBuild](../../MSBuild)
 * [Examples & Features](../../../Examples)
