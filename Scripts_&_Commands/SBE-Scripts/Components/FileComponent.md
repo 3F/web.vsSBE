@@ -1,6 +1,6 @@
 # FileComponent #
 
-I/O operations with files.
+Operations with files and standard streams.
 
 ### Remarks
 

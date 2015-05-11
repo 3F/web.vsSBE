@@ -1,6 +1,6 @@
 # ConditionComponent #
 
-Conditional statement for scripts.
+Conditional statements for [scripts](../../../scripts).
 
 ## Syntax ##
 

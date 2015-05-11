@@ -1,6 +1,6 @@
 # CommentComponent #
 
-Any supported comments with scripts
+Any supported comments in scripts.
 
 # Available syntax #
 

@@ -1,6 +1,6 @@
 # InternalComponent #
 
-All internal operation with vsSBE
+All internal operations with vsSBE.
 
 ## events ##
 

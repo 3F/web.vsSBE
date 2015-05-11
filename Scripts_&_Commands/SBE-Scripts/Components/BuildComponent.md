@@ -1,6 +1,6 @@
 # BuildComponent #
 
-Component of building
+Component to managing of building the projects at runtime and similar.
 
 # Available operations #
 

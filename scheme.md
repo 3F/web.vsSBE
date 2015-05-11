@@ -12,7 +12,7 @@ Where:
 
 The [vsSolutionBuildEvent](https://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/) - is the main plugin as a [VSPackage](https://msdn.microsoft.com/en-us/library/bb166424.aspx). Contains main logic for work with events of Visual Studio through [Microsoft.VisualStudio.Shell.Interop](http://stackoverflow.com/a/18311007).
 
-* Implements the basic the model of events with IVsSolutionEvents and IVsUpdateSolutionEvents2
+* Implements basic model of events with IVsSolutionEvents and IVsUpdateSolutionEvents2
 * Works with [priority processing](http://stackoverflow.com/q/27018762) (i.e. with 'Advise..' methods instead of simple subscription with Events from DTE). See [MSDN](https://msdn.microsoft.com/en-us/library/Microsoft.VisualStudio.Shell.Interop.aspx) for more details.
 * Distributed as **.vsix** for IDE Visual Studio.
 
