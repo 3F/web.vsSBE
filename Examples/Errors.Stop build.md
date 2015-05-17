@@ -45,7 +45,7 @@ For example:
 ```
 #!java
 
-#[($(isAllow) && $(sysc) == "break" || $(cmdc) > 10) {
+#[( $(isAllow) && $(sysc) == "break" || $(cmdc) > 10 ) {
     #[Build cancel = #[File sout("state", "-s")]
 }]
 ```
@@ -56,4 +56,3 @@ etc.
 
 * [Examples & Features](../Examples)
 * [Scripts & Commands](../scripts)
-* [MSBuild](../Scripts_&_Commands/MSBuild)
