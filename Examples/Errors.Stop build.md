@@ -40,9 +40,20 @@ Also as variant you can use - [MSBuild](../Scripts_&_Commands/MSBuild) & [SBE-Sc
 
 *Feel free. You can what you want and as you want*
 
+For example:
+
+```
+#!java
+
+#[($(isAllow) && $(sysc) == "break" || $(cmdc) > 10) {
+    #[Build cancel = #[File sout("state", "-s")]
+}]
+```
+etc.
+
+
 # References
 
 * [Examples & Features](../Examples)
-* [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts)
+* [Scripts & Commands](../scripts)
 * [MSBuild](../Scripts_&_Commands/MSBuild)
-

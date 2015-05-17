@@ -2,7 +2,7 @@
 
 SBE-Scripts - it's internal specification for additional work over [MSBuild](MSBuild) - conditions, subcommands, files, etc. by components.
 
-*you can use this as an additional variant and/or if need a some features, for example, special for Visual Studio etc. what are not exists with [MSBuild](MSBuild)*
+*you can use this as an additional variant and/or if need a some features, for example, special for Visual Studio etc. what are not exists/available with [MSBuild](MSBuild)*
 
 ## Components
 

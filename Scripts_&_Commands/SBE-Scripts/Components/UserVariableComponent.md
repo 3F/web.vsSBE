@@ -106,7 +106,7 @@ Others:
 $(name = " ")
 $(name = "  - Platform is a $(Platform)  ")
 ```
-*For more details: see [MSBuild](../../MSBuild) page*
+*For more details: see [MSBuild page](../../MSBuild)*
 
 # References
 
