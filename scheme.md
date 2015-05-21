@@ -59,7 +59,7 @@ All this above can be used in some other your tools through [API/Provider](API) 
 
 In general, the vsSolutionBuildEvent works on the event model, i.e.:
 
-* There is an event (from Visual Studio, MSBuild tools, etc.)
+* There is an unified event (from Visual Studio, MSBuild tools, etc.)
 * And there is any actions, that to be executed...
 
 ![Model of events](https://bitbucket.org/3F/vssolutionbuildevent/wiki/Resources/events_model.png)
