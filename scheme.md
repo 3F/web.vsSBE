@@ -1,6 +1,6 @@
-# Scheme of vsSolutionBuildEvent projects
+# Scheme of vsSolutionBuildEvent projects and their work
 
-This page should describe about structure of all components of the vsSolutionBuildEvent and give an understanding of how it works with Visual Studio Command-Line & MSBuild tools.
+This page should describe structure of all components of the vsSolutionBuildEvent, basic scheme of work, and give an understanding of how it works with Visual Studio Command-Line & MSBuild tools.
 
 ## Basic scheme for versions v0.11.x
 
@@ -54,6 +54,20 @@ CI.MSBuild also works through [Provider](API) and also requires main library. Al
 ### Other Applications
 
 All this above can be used in some other your tools through [API/Provider](API) and similar. You can, for example, use a custom model of events for additional build and/or provide additional GUI for settings/commands/scripts and many others...
+
+# Model of events
+
+In general, the vsSolutionBuildEvent works on the event model, i.e.:
+* There is an event (from Visual Studio, MSBuild tools, etc.)
+* And there is any actions, that to be executed...
+
+![Model of events](https://bitbucket.org/3F/vssolutionbuildevent/wiki/Resources/events_model.png)
+
+Basic work is a:
+
+* Choose Event type.
+* Create and configure any actions for this event above.
+* Enjoy.
 
 # Have a questions ?
 
