@@ -8,3 +8,6 @@ User scripts and commands as part of this:
 * [MSBuild](Scripts_&_Commands/MSBuild)
 * [DTE-Commands](Scripts_&_Commands/DTE-Commands)
 
+# References
+
+* [Examples & Features](Examples)

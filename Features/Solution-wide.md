@@ -42,7 +42,7 @@ $ga = new GArtefacts();
 $ga->render();
 ```
 
-**or** use any [other available action type ...](../Home)
+**or** use any [other available action type ...](../scripts)
 
 # References
 
