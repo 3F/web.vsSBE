@@ -6,9 +6,9 @@ Immediately stop(at the same time) after the first appearance.
 
 For example,
 
-If you also used [StopOnFirstBuildError](http://visualstudiogallery.msdn.microsoft.com/91aaa139-5d3c-43a7-b39f-369196a84fa5) before, you can see that it not resolve important problem for big projects or/and for slow machines...
+If you also used [StopOnFirstBuildError](http://visualstudiogallery.msdn.microsoft.com/91aaa139-5d3c-43a7-b39f-369196a84fa5) before, you can see -  that it not resolves important problem for big projects or/and for slow machines...
 
-A quick example what that mean:
+A quick example what it means:
 
 * If your **each project** in your solution requires a long time for full compilation (~5-10min average for example)...
 * Well, congratulation.. you still should a wait the end of building project **where error occurred**(~5-10min average for example).
