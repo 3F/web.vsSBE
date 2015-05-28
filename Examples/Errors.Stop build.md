@@ -13,12 +13,12 @@ A quick example what it means:
 * If your **each project** in your solution requires a long time for full compilation (~5-10min average for example)...
 * Well, congratulation.. you still should a wait the end of building project **where error occurred**(~5-10min average for example).
 
-Why ? and Why not exist any settings for this ? we don't know but this so **because** the StopOnFirstBuildError used subscription with [OnBuildProjConfigDone](https://msdn.microsoft.com/en-us/library/envdte._dispbuildevents.onbuildprojconfigdone%28v=vs.120%29.aspx) - However this should be as is... after a project configuration is finished building. 
+Why ? and Why not exist any settings for this ? we don't know but this so **because** the StopOnFirstBuildError used subscription with [OnBuildProjConfigDone](https://msdn.microsoft.com/en-us/library/envdte._dispbuildevents.onbuildprojconfigdone%28v=vs.120%29.aspx) - However this should be as is... after when is finished building the project configuration. 
 
 It seems useful for some others case, However... not for this ...
 So! what to do with our solutions ? 
 
-Simply add a some action for Error-Build event and configure this as you want - see below.
+Simply add some action for Error-Build event and configure this as you want - see below.
 
 ## Immediately stop for all
 
