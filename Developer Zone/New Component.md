@@ -3,7 +3,7 @@
 All components should implement the **[IComponent](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/IComponent.cs)**
 
 ```
-#!c#
+#!csharp
 
 public interface IComponent
 {
@@ -58,7 +58,7 @@ All components should have a postfix **Component** as part of name, for example:
 * Add new class in path `/SBEScripts/Components/DemoComponent.cs`
 
 ```
-#!c#
+#!csharp
 
 public class DemoComponent: Component, IComponent
 {
@@ -71,7 +71,7 @@ With [Component](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolu
 For Condition property we should set subcontainer to entry, for basic checking of ability to work with data. In example we use:
 
 ```
-#!c#
+#!csharp
 
 public override string Condition
 {
@@ -79,30 +79,39 @@ public override string Condition
 }
 ```
 
-If your component requires complex identification, use [CRegex](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/IComponent.cs) flag, for using regex pattern (pattern used [IgnorePatternWhitespace](http://msdn.microsoft.com/en-us/library/system.text.regularexpressions.regexoptions.aspx) by default)
+If necessary complex identification, use [CRegex](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/IComponent.cs) flag for regex pattern ( [IgnorePatternWhitespace](http://msdn.microsoft.com/en-us/library/system.text.regularexpressions.regexoptions.aspx) used by default)
 
-You can override this property, or set **cregex** as true if your component extends [Component](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/Component.cs). Example with additional handling for already existing component - [BuildComponent](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/BuildComponent.cs):
+You can override this property or use cregex field if your component extends [Component](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/Component.cs). Example with additional handling for already existing component - [BuildComponent](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/BuildComponent.cs):
 
 ```
-#!c#
+#!csharp
 public class DemoComponent: Component, IComponent
 {
     public override string Condition
     {
         get { return "^Build projects\\..+"; }
+        //or as alias: get { return @"(?:Build|Alias)\s"; } etc.
     }
-
+    ...
+    /// <summary>
+    /// Use regex engine for the Condition property
+    /// </summary>
+    public override bool CRegex
+    {
+        get { return true; }
+    }
+    
+//or you can (if extends abstract std. Component):
     public DemoComponent(): base()
     {
         cregex = true;
     }
-    ...
 ```
 
 Now you should implement `parse(string data)` with what you want:
 
 ```
-#!c#
+#!csharp
 
 public override string parse(string data)
 {
@@ -120,7 +129,7 @@ For example, we'll implement **add()** property, sample:
 ```
 
 ```
-#!c#
+#!csharp
 
 public class DemoComponent: Component, IComponent
 {
@@ -157,7 +166,7 @@ public class DemoComponent: Component, IComponent
 **Note**: the regular expression used for this example it's a variant of implementation i.e. you can use anything else what you like... for example:
 
 ```
-#!c#
+#!csharp
 
 public class DemoComponent: Component, IComponent 
 { 
@@ -176,7 +185,7 @@ public class DemoComponent: Component, IComponent
 Then, with default [Bootloader](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Bootloader.cs) just to register your component as `register(new DemoComponent())`:
 
 ```
-#!c#
+#!csharp
 
 protected virtual void init()
 {
@@ -187,7 +196,7 @@ protected virtual void init()
 
 You can also use others bootloaders. Simply to implement the [IBootloader](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/IBootloader.cs) (also you can override [Bootloader.init()](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Bootloader.cs)) and initialize the new instance of SBE-Scripts core, for example:
 ```
-#!c#
+#!csharp
 
 new Script(new BootloaderCustom())
 ```
@@ -224,7 +233,7 @@ It's easy with next attributes:
 To describe the properties of the component. For example:
 
 ```
-#!c#
+#!csharp
 
 [Property("propertyName", "Description of the property", CValueType.Boolean, CValueType.Boolean)]
 protected string yourLogic()
@@ -234,7 +243,7 @@ protected string yourLogic()
 ```
 
 ```
-#!c#
+#!csharp
 
 [Property(
     "IsBuildable", 
@@ -249,12 +258,12 @@ protected string yourLogic()
 
 Syntax:
 ```
-#!c#
+#!csharp
 [Property(string name, string description, CValueType get, CValueType set)]
 ```
 
 ```
-#!c#
+#!csharp
 [Property(string name, string parent, string method, CValueType get, CValueType set)]
 ```
 
@@ -272,7 +281,7 @@ To describe the methods/functions of the component. For example:
 
 
 ```
-#!c#
+#!csharp
 
 [
     Method
@@ -294,12 +303,12 @@ protected string stCall(string data, bool stdOut, bool silent)
 Syntax:
 
 ```
-#!c#
+#!csharp
 
 [Method(string name, string description, CValueType ret, params CValueType[] args)]
 ```
 ```
-#!c#
+#!csharp
 
 [Method(string name, string parent, string method, CValueType ret, params CValueType[] args)]
 ```
@@ -316,7 +325,7 @@ Note:
 To describe the new component. For example:
 
 ```
-#!c#
+#!csharp
 
 [Component("File", "I/O operations")]
 public class FileComponent: Component, IComponent
@@ -326,7 +335,7 @@ public class FileComponent: Component, IComponent
 ```
 Syntax:
 ```
-#!c#
+#!csharp
 
 [Component(string name, string description)]
 ```
@@ -338,7 +347,7 @@ All available constructors see with the [Dom.ComponentAttribute](https://bitbuck
 
 To describe the any definition of the component. For example:
 ```
-#!c#
+#!csharp
 
 [Definition("(true) { }", "Conditionals statements\n\n(1 > 2) {\n ... \n}")]
 public class ConditionComponent: Component, IComponent
@@ -348,14 +357,14 @@ public class ConditionComponent: Component, IComponent
 ```
 
 ```
-#!c#
-    [Definition("var name", "Get data from variable the 'name'")]
-    [Definition("var name = data", "Set the 'data' for variable the 'name'")]
+#!csharp
+[Definition("var name", "Get data from variable the 'name'")]
+[Definition("var name = data", "Set the 'data' for variable the 'name'")]
 ```
 
 Syntax:
 ```
-#!c#
+#!csharp
 
 [Definition(string name, string description)]
 ```
@@ -373,5 +382,3 @@ For more details you can see:
 * [Bootloader](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Bootloader.cs) ([IBootloader](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/IBootloader.cs))
 * **[Existing components](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/)** - *more details you can see in the real implementation.*
 * [SBEScripts/](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/) namespace
-
-
