@@ -18,6 +18,15 @@ Operations with files and standard streams.
 * * Where <destination> it's similar as above.
 * For more details see: [MS Q110930](http://support.microsoft.com/kb/110930/en-us)
 
+#### IO alias
+
+*available with v0.12+*
+```
+#!java
+
+#[IO ...]
+```
+
 #### MSBuild Property Functions.
 
 You should also remember, the some features also available with [MSBuild](../../MSBuild) core as [Property Functions](https://msdn.microsoft.com/en-us/library/vstudio/dd633440%28v=vs.120%29.aspx)
@@ -25,7 +34,7 @@ You should also remember, the some features also available with [MSBuild](../../
 * Use the [System.IO Namespace](https://msdn.microsoft.com/en-us/library/System.IO%28v=vs.100%29.aspx) for example:
 
 ```
-#!java
+#!bash
 
 $([System.IO.File]::Exists("D:/tmp/result.log"))
 ```
@@ -355,5 +364,3 @@ Samples:
    ...
 }]
 ```
-
-

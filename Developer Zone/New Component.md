@@ -342,6 +342,13 @@ Syntax:
 
 All available constructors see with the [Dom.ComponentAttribute](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Dom/ComponentAttribute.cs)
 
+#### Aliases
+
+```
+#!csharp
+
+[Component("Primary", new string[]{ "Alias1", "Alias2", "Alias3" }, "description")]
+```
 
 ### DefinitionAttribute ###
 

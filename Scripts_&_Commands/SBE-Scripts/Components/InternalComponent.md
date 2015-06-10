@@ -10,7 +10,7 @@ Available events:
 ```
 #!text
 
-Pre, Post, Cancel, Warnings, Errors, OWP, Transmitter
+Pre, Post, Cancel, Warnings, Errors, OWP, Transmitter, Logging
 ```
 
 Syntax:
