@@ -47,11 +47,11 @@ Use any [our available modes](../Modes) and feel free...
 
 # What alternatives exist for work without plugins
 
-In some cases, any extensions for Visual Studio can not be suitable or not comfortable for some reasons (for example, your some box solution etc.)
+In some cases, any extending of Visual Studio may be not suitable or not comfortable for some reasons (for example, your some box solution etc.)
 
-As variant (if it's really need), you can try with other our solution - [Variant 2: Targets & Map of projects](http://stackoverflow.com/a/18311007)
+As variant (if it's really needed), you can try other our solution - [Variant 2: Targets & Map of projects](http://stackoverflow.com/a/18311007)
 
-The complete solution you can found [here](https://gist.github.com/3F/a77129e3978841241927)
+Full script for this solution you can found [here](https://gist.github.com/3F/a77129e3978841241927)
 
 
 # References
