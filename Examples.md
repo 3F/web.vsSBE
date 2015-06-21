@@ -17,6 +17,14 @@
 * [Work with external utilities](Features/External utilities)
 * [Operations with strings](Features/Strings)
 
+# Processing modes
+
+* [Processing modes](Modes)
+
+# Events
+
+* [Available Events](Events)
+
 # Scheme of vsSolutionBuildEvent projects
 
 You should see [this page](scheme)
