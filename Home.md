@@ -16,6 +16,7 @@
 * [DTE-Commands](Scripts_&_Commands/DTE-Commands)
 * **[Examples](Examples)**
 * [Continuous Integration (CI)](CI)
+* [Processing modes](Modes)
 * [API](API)
 * **[Support us. /Donation](Donation)**
 

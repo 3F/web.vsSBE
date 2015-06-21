@@ -8,6 +8,10 @@ User scripts and commands as part of this:
 * [MSBuild](Scripts_&_Commands/MSBuild)
 * [DTE-Commands](Scripts_&_Commands/DTE-Commands)
 
+# Advanced modes with C# & MSBuild Targets
+
+* [Processing modes](Modes)
+
 # References
 
 * [Examples & Features](Examples)
