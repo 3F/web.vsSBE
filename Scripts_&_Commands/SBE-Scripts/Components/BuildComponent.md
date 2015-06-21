@@ -96,3 +96,19 @@ Sample:
 
 #[Build projects.find("ZenLib").IsDeployable= false]
 ```
+
+## type
+
+*available with v0.12+*
+
+Gets type of current build action, or last used type if it already finished.
+
+Syntax:
+
+```
+#!java
+
+enum #[Build type]
+```
+
+**Note:** allowed types you can see [here](https://bitbucket.org/3F/vssolutionbuildevent/src/master/Bridge/BuildType.cs)
