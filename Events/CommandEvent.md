@@ -25,6 +25,8 @@ $(lcId   = #[DTE events.LastCommand.Id])
 }]
 ```
 
+or you can use [C# Mode](../Modes/CSharp) etc.
+
 # References
 
 * [Available Events](../Events)
