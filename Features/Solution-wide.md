@@ -42,10 +42,22 @@ $ga = new GArtefacts();
 $ga->render();
 ```
 
-**or** use any [other available action type ...](../scripts)
+Use any [our available modes](../Modes) and feel free...
+
+
+# What alternatives exist for work without plugins
+
+In some cases, any extensions for Visual Studio can not be suitable or not comfortable for some reasons (for example, your some box solution etc.)
+
+As variant (if it's really need), you can try with other our solution - [Variant 2: Targets & Map of projects](http://stackoverflow.com/a/18311007)
+
+The complete solution you can found [here](https://gist.github.com/3F/a77129e3978841241927)
+
 
 # References
 
+* [Available Events](../Events)
+* [Processing modes](../Modes)
 * [Automatic Version Numbering](../Examples/Version number)
 * [Artefacts. How to prepare as you want](../Examples/Artefacts)
 * [Exclude projects from build on Pre-Build event](Exclude projects)
