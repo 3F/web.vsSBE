@@ -6,11 +6,9 @@
 
 For simplicity, consider the [Script Mode](../Modes/Script), If you don't like this - use other variants, for example with [Targets Mode](../Modes/Targets) or [C# Mode](../Modes/CSharp)
 
-## VSPackages (VSIX Package/.vsixmanifest) and for others
+*This variant is also used in our project:  [Full script for assembling the vsSolutionBuildEvent v0.11](https://gist.github.com/3F/3f2f56dfc2a01dc99c63) (actual version in current [script file](https://bitbucket.org/3F/vssolutionbuildevent/src/master/.vssbe))*
 
-*this variant also used for our project:  [Full script for assembling the vsSolutionBuildEvent v0.11](https://gist.github.com/3F/3f2f56dfc2a01dc99c63) (actual version in current [script file](https://bitbucket.org/3F/vssolutionbuildevent/src/master/.vssbe))*
-
-### Synopsis
+## Synopsis
 
 This method should automatically generate the class, e.g.: ↘
 
@@ -28,9 +26,9 @@ class Version
     public const string branchRevCount              = "88";
 }
 ```
-Then, we can use this in different places:
+Then, we can use this in different places, for example:
 
-• For VSIX Package, sample: 
+• For VSPackage, sample: 
 ```
 #!csharp
 
@@ -51,11 +49,10 @@ Then, we can use this in different places:
 #!csharp
 
   toolVersion.Text = string.Format("v{0} [ {1} ]", Version.numberString, Version.branchSha1);
-  etc.,
 ```
+etc.,
 
-
-For **.vsixmanifest** it's a little harder. The <Version> in .vsixmanifest, follows the CLR assembly versioning format: Major.Minor.Build.Revision (1.2.40308.00). see MSDN:
+Note: For **.vsixmanifest** ([VSPackages /VSIX Package](https://msdn.microsoft.com/en-us/library/bb166424.aspx)) it's a little harder. The <Version> in .vsixmanifest, **follows the CLR assembly versioning format**: Major.Minor.Build.Revision (1.2.40308.00). see MSDN:
 
 * [VSIX Extension Schema 2.0 Reference](http://msdn.microsoft.com/en-us/library/hh696828.aspx)
 * [System.Version](http://msdn.microsoft.com/en-us/library/System.Version%28v=vs.110%29.aspx)
@@ -69,17 +66,18 @@ therefore, we can update this only as replacement, for example:
 ```
 #!java
 
-#[File replace.Regexp("projectname/source.extension.vsixmanifest", "<Version>[0-9\.]+</Version>", "<Version>#[var ver]</Version>")]
+#[File replace.Regexp("source.extension.vsixmanifest", "<Version>[0-9\.]+</Version>", "<Version>#[var number]</Version>")]
 ```
-**Where**, `#[var ver]` it's your number(see [UserVariableComponent](../Scripts_&_Commands/SBE-Scripts/Components/UserVariableComponent)). You can change value with next variants:
+**Where**, `#[var number]` it's your number(see [UserVariableComponent](../Scripts_&_Commands/SBE-Scripts/Components/UserVariableComponent)). You can manage this value with next variants, for example:
 
-* Getting from [MSBuild Property](../Scripts_&_Commands/MSBuild) `#[var ver = $(name)]` or `$(ver = $(name))`
-* Getting from file: `#[var ver = #[File get("_version")]]`
-* Getting from your external utility(stdout): `#[var ver = #[File sout("updv.exe", "-s new")]]`
-* Manually set - `#[var ver = 1.2.3]` or `$(ver = "1.2.3")`
+* Getting from [MSBuild Property](../Scripts_&_Commands/MSBuild) `#[var number = $(name)]` or `$(number = $(name))`
+* Getting from file: `#[var number = #[File get(".version")]]`
+* Getting from your external utility(stdout): `#[var number = #[File sout("updv.exe", "-s new")]]`
+* Manually set - `#[var number = 1.2.3]` or `$(number = "1.2.3")`
 * Other with [MSBuild](../Scripts_&_Commands/MSBuild) & [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts)
+* etc.
 
-### Generating the Version class & Build/revision Number
+## Generating the Version class & Build/revision Number
 
 * Create template of Version class e.g.: **Version.tpl** with what you want, using placeholders instead of real values - sample for C#:
 
@@ -112,7 +110,7 @@ namespace example
 ```
 *or similar class as above..*
 
-* Create file e.g.: **_version** and write current number of your project like a **major**.**minor**. and similar
+* Create file e.g.: **.version** and write current number of your project like a **major**.**minor**. and similar
 * Select event type - "Pre-Build".
 * Change "Processing mode" to 'Interpreter Mode' or 'Script Mode'
 * Activate [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts) support
@@ -128,7 +126,7 @@ namespace example
      Updating version
 "]
 
-#[var ver   = #[File get("_version")]]
+#[var ver   = #[File get(".version")]]
 #[var tpl   = #[File get("Version.tpl")]]
 #[var pDir  = $($(ProjectDir:$(SolutionName)))]
 

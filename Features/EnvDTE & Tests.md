@@ -9,7 +9,7 @@ Example, what variants exist for VS2010:
 * MSDN: [Configure and Run Scheduled Tests After Building Your Application](http://msdn.microsoft.com/en-us/library/ms182465%28v=vs.100%29.aspx)
 * MSDN: [Run Automated Tests from the Command Line Using MSTest](http://msdn.microsoft.com/en-us/library/ms182487%28v=vs.100%29.aspx)
 
-vsSBE provides actions with commands and may work with [EnvDTE](http://msdn.microsoft.com/en-us/library/EnvDTE.aspx) environment. So, you can simple run all tests after building, e.g.:
+vsSBE provides actions with commands and may work with [EnvDTE](http://msdn.microsoft.com/en-us/library/EnvDTE.aspx) environment. So, you can simply run all tests after building, e.g.:
 
 * Use Operation Mode for your action.
 * Select the operation - "Run all Unit-Tests" or "Debug all Unit-Tests".
