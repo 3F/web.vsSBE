@@ -52,12 +52,12 @@ Then, we can use this in different places, for example:
 ```
 etc.,
 
-Note: For **.vsixmanifest** ([VSPackages /VSIX Package](https://msdn.microsoft.com/en-us/library/bb166424.aspx)) it's a little harder. The <Version> in .vsixmanifest, **follows the CLR assembly versioning format**: Major.Minor.Build.Revision (1.2.40308.00). see MSDN:
+Note: For **.vsixmanifest** ([VSPackages /VSIX Package](https://msdn.microsoft.com/en-us/library/bb166424.aspx)) it's a little harder. The <Version> in .vsixmanifest, follows the CLR assembly versioning format: Major.Minor.Build.Revision (1.2.40308.00). see MSDN:
 
 * [VSIX Extension Schema 2.0 Reference](http://msdn.microsoft.com/en-us/library/hh696828.aspx)
 * [System.Version](http://msdn.microsoft.com/en-us/library/System.Version%28v=vs.110%29.aspx)
     
-therefore, we can update this only as replacement, for example:
+and we can update this only as replacement, for example:
 
 * Select event type - "Pre-Build".
 * Change "Processing mode" to 'Script Mode'
