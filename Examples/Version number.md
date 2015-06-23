@@ -120,7 +120,7 @@ namespace example
 *please also see [Date & Time](../Features/Date & Time) features for more details about limitations*
 
 ```
-#!java
+#!minid
 
 #[" 
      Updating version
@@ -182,7 +182,7 @@ and **vsixmanifest** file with updated number.
 Also you can use the conditions for rev. number, for example:
 
 ```
-#!java
+#!minid
 
 #[($(Configuration) == Release){
     #[var ver = #[var ver].#[var revBuild]]
@@ -196,14 +196,14 @@ Note:
 
 This hard line in example above:
 ```
-#!java
+#!minid
 
 #[var cs = $(tpl.Replace(%Version%, "$(ver.Replace(".", ", ")), #[var revBuild]"))]
 ```
 
-can be converted to simple:
+may be converted to simple:
 ```
-#!java
+#!minid
 
 #[var ver   = $(ver.Replace(".", ", ")), $(revBuild)]
 #[var tpl   = $(tpl.Replace(%Version%, "$(ver)"))]

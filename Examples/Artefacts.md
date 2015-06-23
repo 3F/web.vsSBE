@@ -73,9 +73,12 @@ ready ? ok, see below..
 
 ### How to
 
-*Please also note - [Convenience for single line arguments](../Features/Strings)*
+*Please note*: 
 
-Firstly you should decide how will be numbered versions of all your projects - this can be as [here](Version number) or others.
+* You can achieve this results with [our different modes](../Modes).
+* [Convenience work with single lines arguments /strings](../Features/Strings)
+
+Firstly, you should to decide how will be numbered versions of all your projects - this can be as [here](Version number) or others.
 
 For packing you can use free [7za](http://sourceforge.net/projects/sevenzip/files/7-Zip/9.20/7za920.zip/download) archiver ([7-Zip Command line version](http://www.7-zip.org)) or similar.
 
@@ -88,7 +91,7 @@ Write next script, for example:
 * Definitions:
 
 ```
-#!java
+#!minid
 
 #[var appzip    = $(SolutionDir)bin/7z/7za.exe]
 #[var odir      = $(SolutionDir)bin/Releases/]
@@ -103,7 +106,7 @@ Write next script, for example:
 * Packing - 'Bridge'
 
 ```
-#!java
+#!minid
 
 #[File sout("cmd", "/C cd \"#[var pDirBridge]bin/#[var cfg]/\" & \"#[var appzip]\" a \"#[var odir]Bridge_v#[var numBridge]_[#[var branchSha1]][#[var netStamp]].zip\" *.*")]
 ```
@@ -111,7 +114,7 @@ Write next script, for example:
 * Packing - 'CI.MSBuild'
 
 ```
-#!java
+#!minid
 
 #[File sout("cmd", "/C cd \"#[var pDirCIM]bin/#[var cfg]/\" & \"#[var appzip]\" a \"#[var odir]CI.MSBuild_v#[var numCIM]_[#[var branchSha1]][#[var netStamp]].zip\" *.*")]
 ```
@@ -120,7 +123,7 @@ Write next script, for example:
 * Packing - 'Devenv'
 
 ```
-#!java
+#!minid
 
 #[File sout("cmd", "/C cd \"#[var pDirDevenv]bin/#[var cfg]/\" & xcopy *.dll Devenv /Y/R/I & xcopy *.pdb Devenv /Y/R/I")] 
 #[File sout("cmd", "/C cd \"#[var pDirDevenv]bin/#[var cfg]/\" & \"#[var appzip]\" a \"#[var odir]Devenv_v#[var numDevenv]_[#[var branchSha1]][#[var netStamp]].zip\" Devenv.AddIn Devenv/*.*")] 
@@ -130,7 +133,7 @@ Write next script, for example:
 * Packing - 'Provider'
 
 ```
-#!java
+#!minid
 
 #[File sout("cmd", "/C cd \"#[var pDirProvider]bin/#[var cfg]/\" & \"#[var appzip]\" a \"#[var odir]Provider_v#[var numProvider]_[#[var branchSha1]][#[var netStamp]].zip\" *.*")]
 ```
@@ -139,7 +142,7 @@ Write next script, for example:
 * Packing - 'vsSolutionBuildEvent'
 
 ```
-#!java
+#!minid
 
 #[File sout("cmd", "/C cd \"#[var pDir]bin/#[var cfg]/\" & copy vsSolutionBuildEvent.vsix \"#[var odir]vsSolutionBuildEvent_v#[var numSBE]_[#[var branchSha1]][#[var netStamp]].vsix\"")]
 ```
@@ -147,7 +150,7 @@ Write next script, for example:
 
 * NuGet Packing - 'vsSBE.CI.MSBuild'
 ```
-#!java
+#!minid
 
 
 #[var tplNuspecCIM = #[File get("vsSBE.CI.MSBuild.nuspec.tpl")]]
@@ -194,7 +197,7 @@ Where - '[vsSBE.CI.MSBuild.nuspec.tpl](https://bitbucket.org/3F/vssolutionbuilde
 
 * 'Release_notes.txt' for current assemblies:
 ```
-#!java
+#!minid
 
 #[File write("#[var odir]/Release_notes.txt"):This assembled from:
 
@@ -224,7 +227,7 @@ Versions:
 In 'Definitions' section simply defined some variables for a quick accessing to some data. Link to archiver for example:
 
 ```
-#!java
+#!minid
 
 #[var appzip = $(SolutionDir)bin/7z/7za.exe]
 ```
@@ -262,6 +265,7 @@ Working example you can see in:
 
 * [Operations with strings](../Features/Strings)
 * [Automatic Version Numbering](Version number)
+* [Processing modes](../Modes)
 * [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts)
 * [MSBuild](../Scripts_&_Commands/MSBuild)
 * [Visual Studio Gallery page](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/)
