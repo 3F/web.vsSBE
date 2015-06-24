@@ -29,7 +29,7 @@ namespace vsSolutionBuildEvent
 
 See our source code for more details about [ICommand](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/Actions/ICommand.cs) & [ISolutionEvent](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/Events/ISolutionEvent.cs).
 
-## Write to VS Output - 'Build' item
+## Write to VS Output window pane
 
 * Activate C# Mode
 * Add **'EnvDTE.dll'** references in `Compiler` - `References`
@@ -49,7 +49,7 @@ namespace vsSolutionBuildEvent
     {
         public static int Init(ICommand cmd, ISolutionEvent evt)
         {
-            cmd.Env.OutputWindowPane.getByName("Build", true).OutputString("Hello World!\n");
+            cmd.Env.OutputWindowPane.getByName("Custom Name", true).OutputString("Hello World!\n");
             return 0;
         }
     }
