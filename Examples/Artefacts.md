@@ -108,7 +108,7 @@ Write next script, for example:
 ```
 #!minid
 
-#[File sout("cmd", "/C cd \"#[var pDirBridge]bin/#[var cfg]/\" & \"#[var appzip]\" a \"#[var odir]Bridge_v#[var numBridge]_[#[var branchSha1]][#[var netStamp]].zip\" *.*")]
+#[File cmd("cd \"#[var pDirBridge]bin/#[var cfg]/\" & \"#[var appzip]\" a \"#[var odir]Bridge_v#[var numBridge]_[#[var branchSha1]][#[var netStamp]].zip\" *.*")]
 ```
 
 * Packing - 'CI.MSBuild'
@@ -116,7 +116,7 @@ Write next script, for example:
 ```
 #!minid
 
-#[File sout("cmd", "/C cd \"#[var pDirCIM]bin/#[var cfg]/\" & \"#[var appzip]\" a \"#[var odir]CI.MSBuild_v#[var numCIM]_[#[var branchSha1]][#[var netStamp]].zip\" *.*")]
+#[File cmd("cd \"#[var pDirCIM]bin/#[var cfg]/\" & \"#[var appzip]\" a \"#[var odir]CI.MSBuild_v#[var numCIM]_[#[var branchSha1]][#[var netStamp]].zip\" *.*")]
 ```
 
 
@@ -125,8 +125,8 @@ Write next script, for example:
 ```
 #!minid
 
-#[File sout("cmd", "/C cd \"#[var pDirDevenv]bin/#[var cfg]/\" & xcopy *.dll Devenv /Y/R/I & xcopy *.pdb Devenv /Y/R/I")] 
-#[File sout("cmd", "/C cd \"#[var pDirDevenv]bin/#[var cfg]/\" & \"#[var appzip]\" a \"#[var odir]Devenv_v#[var numDevenv]_[#[var branchSha1]][#[var netStamp]].zip\" Devenv.AddIn Devenv/*.*")] 
+#[File cmd("cd \"#[var pDirDevenv]bin/#[var cfg]/\" & xcopy *.dll Devenv /Y/R/I & xcopy *.pdb Devenv /Y/R/I")] 
+#[File cmd("cd \"#[var pDirDevenv]bin/#[var cfg]/\" & \"#[var appzip]\" a \"#[var odir]Devenv_v#[var numDevenv]_[#[var branchSha1]][#[var netStamp]].zip\" Devenv.AddIn Devenv/*.*")] 
 ```
 
 
@@ -135,7 +135,7 @@ Write next script, for example:
 ```
 #!minid
 
-#[File sout("cmd", "/C cd \"#[var pDirProvider]bin/#[var cfg]/\" & \"#[var appzip]\" a \"#[var odir]Provider_v#[var numProvider]_[#[var branchSha1]][#[var netStamp]].zip\" *.*")]
+#[File cmd("cd \"#[var pDirProvider]bin/#[var cfg]/\" & \"#[var appzip]\" a \"#[var odir]Provider_v#[var numProvider]_[#[var branchSha1]][#[var netStamp]].zip\" *.*")]
 ```
 
 
@@ -144,7 +144,7 @@ Write next script, for example:
 ```
 #!minid
 
-#[File sout("cmd", "/C cd \"#[var pDir]bin/#[var cfg]/\" & copy vsSolutionBuildEvent.vsix \"#[var odir]vsSolutionBuildEvent_v#[var numSBE]_[#[var branchSha1]][#[var netStamp]].vsix\"")]
+#[File cmd("cd \"#[var pDir]bin/#[var cfg]/\" & copy vsSolutionBuildEvent.vsix \"#[var odir]vsSolutionBuildEvent_v#[var numSBE]_[#[var branchSha1]][#[var netStamp]].vsix\"")]
 ```
 
 
@@ -156,16 +156,16 @@ Write next script, for example:
 #[var tplNuspecCIM = #[File get("vsSBE.CI.MSBuild.nuspec.tpl")]]
 #[var nupCIMdir = $(odir)NuGet-CI.MSBuild-package]
  
-#[File sout("cmd", "/C mkdir \"#[var nupCIMdir]\" 2>&1")]
-#[File sout("cmd", "/C del /F/Q \"#[var nupCIMdir]\" & del /F/Q \"#[var nupCIMdir]\bin\" 2>&1")]
+#[File cmd("mkdir \"#[var nupCIMdir]\" 2>&1")]
+#[File cmd("del /F/Q \"#[var nupCIMdir]\" & del /F/Q \"#[var nupCIMdir]\bin\" 2>&1")]
  
 #[var nuspecCIM = $(tplNuspecCIM.Replace(%CIMVersion%, "$(numCIM)").Replace(%PackageVersion%, "").Replace(%vsSBEVersion%, "$(numSBE)"))]
 #[File write("#[var nupCIMdir]\vsSBE.CI.MSBuild.nuspec"):#[var nuspecCIM]]
  
 #[" files for package "]
  
-#[File sout("cmd", "/C cd \"#[var pDir]bin/#[var cfg]/\" & xcopy *.dll \"#[var nupCIMdir]\bin\" /Y/R/I & xcopy NLog.dll.nlog \"#[var nupCIMdir]\bin\" /Y/R/I")]
-#[File sout("cmd", "/C cd \"#[var pDirCIM]bin/#[var cfg]/\" & xcopy *.dll \"#[var nupCIMdir]\bin\" /Y/R/I")]
+#[File cmd("cd \"#[var pDir]bin/#[var cfg]/\" & xcopy *.dll \"#[var nupCIMdir]\bin\" /Y/R/I & xcopy NLog.dll.nlog \"#[var nupCIMdir]\bin\" /Y/R/I")]
+#[File cmd("cd \"#[var pDirCIM]bin/#[var cfg]/\" & xcopy *.dll \"#[var nupCIMdir]\bin\" /Y/R/I")]
 #[File scall(".nuget\nuget.exe", "pack \"#[var nupCIMdir]\vsSBE.CI.MSBuild.nuspec\" -OutputDirectory \"#[var nupCIMdir]\..\" -NonInteractive")] 
 ```
 
@@ -197,7 +197,7 @@ Where - '[vsSBE.CI.MSBuild.nuspec.tpl](https://bitbucket.org/3F/vssolutionbuilde
 
 * 'Release_notes.txt' for current assemblies:
 ```
-#!minid
+#!bat
 
 #[File write("#[var odir]/Release_notes.txt"):This assembled from:
 

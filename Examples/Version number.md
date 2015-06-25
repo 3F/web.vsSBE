@@ -10,7 +10,7 @@ For simplicity, consider the [Script Mode](../Modes/Script), If you don't like t
 
 ## Synopsis
 
-This method should automatically generate the class, e.g.: ↘
+This method should automatically generate the Version class, e.g.: ↘
 
 ```
 #!csharp
@@ -26,16 +26,29 @@ class Version
     public const string branchRevCount              = "88";
 }
 ```
-Then, we can use this in different places, for example:
 
-• For VSPackage, sample: 
+*Similarly for others... e.g. for C++ you can also use preprocessor directives - #define (macro definitions):*
+
+```
+#!cpp
+
+#ifndef REVISION_H 
+  #define REVISION_STR "%VersionRevString% [ %branchSha1% ] /'%branchName%':%branchRevCount%" 
+  #define L_REVISION_STR L"%VersionRevString% [ %branchSha1% ] /'%branchName%':%branchRevCount%" 
+#endif 
+```
+*or similar class as above..*
+
+**Then,** you can use this in different places, for example:
+
+• Attribute to VSPackage class: 
 ```
 #!csharp
 
 [InstalledProductRegistration("#110", "#112", Version.numberWithRevString, IconResourceID = 400)]
 ```
 
-• For AssemblyInfo, sample:
+• AssemblyInfo:
 
 ```
 #!csharp
@@ -43,21 +56,17 @@ Then, we can use this in different places, for example:
 [assembly: AssemblyVersion(Version.numberString)]
 ```
 
-• Other places, e.g:
+• Other places, for example:
 
 ```
 #!csharp
 
   toolVersion.Text = string.Format("v{0} [ {1} ]", Version.numberString, Version.branchSha1);
 ```
-etc.,
+[etc.,](https://gist.github.com/3F/f54ad9736a9cbb984785)
 
-Note: For **.vsixmanifest** ([VSPackages /VSIX Package](https://msdn.microsoft.com/en-us/library/bb166424.aspx)) it's a little harder. The <Version> in .vsixmanifest, follows the CLR assembly versioning format: Major.Minor.Build.Revision (1.2.40308.00). see MSDN:
 
-* [VSIX Extension Schema 2.0 Reference](http://msdn.microsoft.com/en-us/library/hh696828.aspx)
-* [System.Version](http://msdn.microsoft.com/en-us/library/System.Version%28v=vs.110%29.aspx)
-    
-and we can update this only as replacement, for example:
+**Note:** For example, for **.vsixmanifest** ([VSPackages /VSIX Package](https://msdn.microsoft.com/en-us/library/bb166424.aspx)) *or similar*, it's a little harder... We can't use this directly, therefore we may update this only as replacement, for example: 
 
 * Select event type - "Pre-Build".
 * Change "Processing mode" to 'Script Mode'
@@ -76,6 +85,11 @@ and we can update this only as replacement, for example:
 * Manually set - `#[var number = 1.2.3]` or `$(number = "1.2.3")`
 * Other with [MSBuild](../Scripts_&_Commands/MSBuild) & [SBE-Scripts](../Scripts_&_Commands/SBE-Scripts)
 * etc.
+
+**Note:** The <Version> in .vsixmanifest follows the CLR assembly versioning format: Major.Minor.Build.Revision (1.2.40308.00). see MSDN:
+
+* [VSIX Extension Schema 2.0 Reference](http://msdn.microsoft.com/en-us/library/hh696828.aspx)
+* [System.Version](http://msdn.microsoft.com/en-us/library/System.Version%28v=vs.110%29.aspx)
 
 ## Generating the Version class & Build/revision Number
 
@@ -97,18 +111,6 @@ namespace example
     }
 }
 ```
-
-*Similarly for others... e.g. for C++ you can also use preprocessor directives - #define (macro definitions):*
-
-```
-#!cpp
-
-#ifndef REVISION_H 
-  #define REVISION_STR "%VersionRevString% [ %branchSha1% ] /'%branchName%':%branchRevCount%" 
-  #define L_REVISION_STR L"%VersionRevString% [ %branchSha1% ] /'%branchName%':%branchRevCount%" 
-#endif 
-```
-*or similar class as above..*
 
 * Create file e.g.: **.version** and write current number of your project like a **major**.**minor**. and similar
 * Select event type - "Pre-Build".
