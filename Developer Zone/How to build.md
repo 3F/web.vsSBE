@@ -19,9 +19,9 @@ Branches status:
 * Microsoft .NET Framework:
 * * [minimal v4.0 for develop on Visual Studio 2010](http://www.microsoft.com/en-US/download/details.aspx?id=17718)
 * * [minimal v4.5 for develop on Visual Studio 2012/2013](http://www.microsoft.com/en-US/download/details.aspx?id=30653) (Offline installer: [dotNetFx45_Full_x86_x64.exe](http://go.microsoft.com/fwlink/?LinkId=225702))
-* [vsSBE](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/) v0.11.3+
+* [vsSBE](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/) v0.11.3+ *we use this for self-assembly*
 * [NuGet](https://www.nuget.org/) (starting with VS2012, NuGet is included in every edition. For VS2010, NuGet is available through the Extension Manager - [NuGet Package Manager](https://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c))
-* * more detail: http://docs.nuget.org/docs/start-here/installing-nuget
+* * details: http://docs.nuget.org/docs/start-here/installing-nuget
 * [Moq 4](https://github.com/Moq/moq4) or higher
 * [NLog v2](http://nlog-project.org/) or higher
 * [Json.NET v6](http://json.codeplex.com/) or higher
@@ -30,10 +30,10 @@ Branches status:
 
 if you have a some problems with getting libraries through NuGet, you can also use the backups from [/dev/lib/](http://sourceforge.net/projects/vssbe/files/dev/lib/)
 
-### Build ###
+### Build & Debug ###
 
 * Install [latest vsSBE build](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/referral/118151)
-* Open **.sln** file with your Visual studio
+* Open **.sln** file with your Visual studio IDE
 * * vsSolutionBuildEvent.sln for Visual Studio 2010
 * * vsSolutionBuildEvent_2012.sln for Visual Studio 2012
 * * for other version it's similar - vsSolutionBuildEvent`_X`.sln where 'X' is a number version of used Visual Studio
@@ -58,7 +58,7 @@ if you have a some problems with getting libraries through NuGet, you can also u
 * * * In `Start Options` > `Command line arguments` write for example:
 
 ```
-#!bash
+#!bat
 
 "<path_to_SolutionFile_for_debugging>.sln" /nologo /noconsolelogger 
 /l:"CI.MSBuild\bin\<Current_Configuration_Name>\CI.MSBuild.dll";lib=vsSolutionBuildEvent\bin\<Current_Configuration_Name>\ /verbosity:Diagnostic /t:Rebuild /p:Configuration=<Configuration>;Platform=<Platform>
