@@ -16,6 +16,7 @@
 * [Exclude projects from build on Pre-Build event](Features/Exclude projects)
 * [Work with external utilities](Features/External utilities)
 * [Operations with strings](Features/Strings)
+* [Remote servers](Features/Remote)
 
 # Processing modes
 

@@ -261,6 +261,11 @@ Working example you can see in:
 * * [Script file](https://bitbucket.org/3F/vssolutionbuildevent/src/master/.vssbe) ([Gist](https://gist.github.com/3F/3f2f56dfc2a01dc99c63))
 * [ci.appveyor.com](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/build/build-27)
 
+# Remote servers
+
+* [Examples with FTP and other](../Features/Remote)
+
+
 # References
 
 * [Operations with strings](../Features/Strings)
