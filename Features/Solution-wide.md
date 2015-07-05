@@ -1,6 +1,6 @@
 # Solution-wide Build Events
 
-Any actions for Pre-Build / Post-Build event **can be for all projects at once**. (You should remember this for work with [MSBuild](../Scripts_&_Commands/MSBuild))
+Any actions for Pre-Build / Post-Build event **can be for all projects at once**. (You should remember this for work with [MSBuild](../Scripts_&_Commands/MSBuild) engine)
 
 [![scripts for all projects at once](https://bitbucket.org/3F/vssolutionbuildevent/wiki/Resources/examples/obsolete/vbs_ext.jpg)](Confirmation dialog)
 
@@ -14,7 +14,7 @@ for example: notification - send email before/after building of all projects:
 mail('yourmail@example.com', 'Build completed', date('H:i:s'));
 ```
 
-and something else
+or more complex like this:
 
 ```
 #!php
@@ -42,16 +42,16 @@ $ga = new GArtefacts();
 $ga->render();
 ```
 
-Use any [our available modes](../Modes) and feel free...
+Use any **[our available modes](../Modes)** and ~feel~free~ ...
 
 
-# What alternatives exist for work without plugins
+# What's exists for work without plugins ?
 
-In some cases, any extending of Visual Studio may be not suitable or not comfortable for some reasons (for example, your some box solution etc.)
+*In some cases*, any extending of Visual Studio may be not suitable or not comfortable for some reasons (for example, your some box solution etc.)
 
 As variant (if it's really needed), you can try other our solution - [Variant 2: Targets & Map of projects](http://stackoverflow.com/a/18311007)
 
-Full script for this solution you can found [here](https://gist.github.com/3F/a77129e3978841241927)
+Complete script of this solution you can find [here](https://gist.github.com/3F/a77129e3978841241927)
 
 
 # References
