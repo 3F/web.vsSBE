@@ -1,13 +1,15 @@
-Next information will be helpful about your bug or some problem:
+# How to correctly report
 
-* Your version and edition of Visual Studio. Also version of installed Updates if exist. For example: `VS2013 Professional Version 12.0.30501.00 Update 2`
-* Version of vsSBE, where problem exist.
-* * If you know, - the other version of vsSBE where problem not exist.
-* Logs if exist: 
-* * From vsSBE: you should enable 'Debug Mode' and reproduce problem again.
-* * Any dump of crashes - minidumps or [simple](https://drive.google.com/uc?id=0B0-ygoNBOTDcUVNLaUNfRWk3ZTg)
-* And most importantly: Steps of how to reproduce your problem.
-* Any additional information, if you think it necessary to report - projects type: C#, C++, full moon tonight, and another..
+Next information will be helpful:
 
-Remeber: We support the all version of Visual studio from VS2010 and higher, so problem can exist only for specific version or specific project type, solution, etc.
-Therefore, your information really will be helpful for finding and resolving..
+* Your version and edition of Visual Studio. For example: `VS2013 Professional Version 12.0.30501.00 Update 2`
+* The Version of vsSolutionBuildEvent where you see bug or some problem.
+* * The other version where problem not exists if you know.
+* Logs: 
+* * To enable '**Debug Mode**' and reproduce problem again.
+* * Any dump of crashes - minidumps or simply like [this](https://drive.google.com/uc?id=0B0-ygoNBOTDcUVNLaUNfRWk3ZTg)
+* And most importantly: **Steps of how to reproduce your problem.**
+* `+` additional information if you think that's necessary to report: projects type (e.g. C#, C++, ..), data, environments, full moon tonight, and another ...
+
+**Remeber:** We support the all versions of Visual studio from VS2010 and higher, so problem can exist only for specific version or specific project type, solution, etc.
+Therefore, your information really will be helpful for finding and resolving.
