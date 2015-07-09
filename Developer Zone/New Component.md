@@ -163,7 +163,7 @@ public class DemoComponent: Component, IComponent
     }
 }
 ```
-**Note**: the regular expression used for this example it's a variant of implementation i.e. you can use anything else what you like... for example:
+**Note**: the regular expression it's only as variant of implementation i.e. you can use anything else what you like... for example:
 
 ```
 #!csharp
@@ -182,19 +182,26 @@ public class DemoComponent: Component, IComponent
 }
 ```
 
-Then, with default [Bootloader](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Bootloader.cs) just to register your component as `register(new DemoComponent())`:
+Then, with default [Bootloader](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Bootloader.cs) to register your component, use for example:
 
 ```
 #!csharp
 
-protected virtual void init()
+bootloader.register(new DemoComponent());
+```
+
+You can also use own Bootloaders with implementing the [IBootloader](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/IBootloader.cs) or simply override [Bootloader.register()](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Bootloader.cs):
+```
+#!csharp
+
+protected override void register()
 {
     ...
     register(new DemoComponent());
 }
 ```
 
-You can also use others bootloaders. Simply to implement the [IBootloader](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/IBootloader.cs) (also you can override [Bootloader.init()](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Bootloader.cs)) and initialize the new instance of SBE-Scripts core, for example:
+Then to initialize new instance of SBE-Scripts core, use for example:
 ```
 #!csharp
 
@@ -221,6 +228,7 @@ Currently, it's only for internal structures. *It can be later, because it's rea
 
 **But**, today this was not necessary for our users. Otherwise, you should [create](https://bitbucket.org/3F/vssolutionbuildevent/issues/new) issue and **vote** for this - we'll look it as demand among users.
 
+Also, as variant you can see [C# Mode](../Modes/CSharp) as equivalent to your actions at runtime.
 
 ## Dom & Code Completion
 
