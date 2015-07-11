@@ -55,6 +55,12 @@ D:\app\scripts\*.*
 ```
 etc.
 
+So, you can also add this in your solution for more productive work, for example:
+
+![Build Scripts for C# Mode](https://bitbucket.org/3F/vssolutionbuildevent/wiki/Resources/examples/csharp_FilesMode_flag.png)
+
+*Note: In most cases the `Build Action` should be as `None`*
+
 # Examples
 
 See our source code for more details about [ICommand](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/Actions/ICommand.cs) & [ISolutionEvent](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/Events/ISolutionEvent.cs).
