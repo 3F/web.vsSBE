@@ -2,7 +2,7 @@
 
 This page should describe structure of all components of the vsSolutionBuildEvent, basic scheme of work, and give an understanding of how it works with Visual Studio Command-Line & MSBuild tools.
 
-## Basic scheme for versions v0.11.x
+## Basic scheme for versions v0.11+
 
 ![Scheme of vsSolutionBuildEvent projects](https://bitbucket.org/3F/vssolutionbuildevent/wiki/Resources/scheme.png)
 

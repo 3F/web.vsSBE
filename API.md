@@ -1,8 +1,8 @@
 # vsSolutionBuildEvent API
 
-The vsSolutionBuildEvent project also provide the API level. This can be used with any external application for work with events/actions.
+The vsSolutionBuildEvent project also provide the API level. This can be used with [any external application](scheme) for work with events/actions.
 
-For example, this already implemented in our products as part of vsSolutionBuildEvent project:
+For example, this is already implemented in our products as part of vsSolutionBuildEvent project:
 
 * [CI.MSBuild](CI/CI.MSBuild) - for work through msbuild.exe (Microsoft Build Tools)
 * [Devenv Command-Line](CI/Devenv Command-Line) - for work through devenv of the Visual Studio
