@@ -1,0 +1,90 @@
+
+/* Headings */
+h1,
+.h1 {
+  font-size: 38px;
+  color: #245E84;
+}
+h2,
+.h2 {
+  font-size: 30px;
+  color: #26648C;
+}
+h3,
+.h3 {
+  font-size: 26px;
+  color: #317EAC;
+}
+h4,
+.h4 {
+  font-size: 21px;
+  color: #317EAC;
+}
+h5,
+.h5 {
+  font-size: 19px;
+  color: #687377;
+}
+h6,
+.h6 {
+  font-size: 16px;
+  color: #687377;
+  font-weight: bold; 
+}
+
+/* navbar */
+.navbar-default {
+  background-color: #F9F9FB;
+  border-color: transparent;
+}
+
+
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #6A1329;
+  background-color: #F5F5F5;
+  border-color: #CCCCCC;
+  border-radius: 3px;
+}
+pre {
+  line-height: 1.28;
+}
+pre code {
+  white-space: inherit;
+}
+
+
+/* default table for md */
+
+table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 23px;
+}
+table > thead > tr > th,
+table > tbody > tr > th,
+table > tfoot > tr > th,
+table > thead > tr > td,
+table > tbody > tr > td,
+table > tfoot > tr > td {
+  padding: 8px;
+  line-height: 1.846;
+  vertical-align: top;
+  border-top: 1px solid #dddddd;
+}
+table > thead > tr > th {
+  vertical-align: bottom;
+  border-bottom: 1px solid #dddddd;
+}
+table > caption + thead > tr:first-child > th,
+table > colgroup + thead > tr:first-child > th,
+table > thead:first-child > tr:first-child > th,
+table > caption + thead > tr:first-child > td,
+table > colgroup + thead > tr:first-child > td,
+table > thead:first-child > tr:first-child > td {
+  border-top: 0;
+}
+table > tbody + tbody {
+  border-top: 1px solid #dddddd;
+}

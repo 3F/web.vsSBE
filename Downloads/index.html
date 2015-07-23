@@ -1,0 +1,255 @@
+---
+layout: default
+---
+
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title">Binaries</h3>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped table-hover ">
+      <tbody>
+        <tr>
+          <td width="22%">VSPackage</td>
+          <td width="60%">The main plugin. Contains logic for work with events of Visual Studio and core of different actions for anything.</td>
+          <td>
+            <div class="btn-group">
+              <a href="http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/referral/118151" target="pluginDownload" class="btn btn-default">Download</a>
+              <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                {% for ver in {{site.vsixVersions}} %}
+                  <li><a href="http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_{{ver}}.vsix/download" target="pluginDownload">{{ver}}</a></li>
+                {% endfor %}
+                {% if site.vsixVersionsOlder.size >= 0 %}
+                  <li class="divider"></li>
+                {% endif %}
+                {% for ver in {{site.vsixVersionsOlder}} %}
+                  <li><a href="http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_{{ver}}.vsix/download" target="pluginDownload">{{ver}}</a></li>
+                {% endfor %}
+              </ul>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>CI.MSBuild</td>
+          <td>Support the Microsoft Build Tools (MSBuild).</td>
+          <td><a href="http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/" target="_blank" class="btn btn-default">Download</a></td>
+        </tr>
+        <tr>
+          <td>Devenv</td>
+          <td>Support the Visual Studio Command-Line (devenv.exe/com).</td>
+          <td><a href="http://sourceforge.net/projects/vssbe/files/CI-Utilities/Devenv/" target="_blank" class="btn btn-default">Download</a></td>
+        </tr>
+        <tr>
+          <td>API</td>
+          <td>The bridge for work with API level of main library.</td>
+          <td><a href="https://sourceforge.net/projects/vssbe/files/API/Bridge/" target="_blank" class="btn btn-default">Download</a></td>
+        </tr>
+        <tr>
+          <td>Provider</td>
+          <td>The loader and helper for a quick work with main library.</td>
+          <td><a href="https://sourceforge.net/projects/vssbe/files/API/Provider/" target="_blank" class="btn btn-default">Download</a></td>
+        </tr>
+        <tr>
+          <td>NuGet Package for CI</td>
+          <td>The package of the libraries to support the CI /Build Servers.</td>
+          <td><a href="https://www.nuget.org/packages/vsSBE.CI.MSBuild/" target="_blank" class="btn btn-default">Download</a></td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <div class="panel panel-default small">
+              <div class="panel-heading small">
+                <h3 class="panel-title small">Unofficial mirrors</h3>
+              </div>
+              <div class="panel-body small">
+                In the last time we are seeing a lot of errors with SourceForge.net! <i>(<a href="https://twitter.com/sfnet_ops" target="_blank">such as</a>)</i><br />
+                As variant, you can try to get binaries from <strong>unofficial mirrors</strong>, for example:
+                
+                <table class="table table-striped table-hover ">
+                  <tbody>
+                    <tr>
+                      <td>osdn.jp</td>
+                      <td>Automatic collector from sf.net</td>
+                      <td><a href="http://osdn.jp/projects/sfnet_vssbe/releases/" target="_blank">osdn.jp/projects/sfnet_vssbe/releases/</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <i>or use any our available contacts if you still have problems with getting.</i>
+                
+              </div>
+            </div>            
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h3 class="panel-title">Source Code</h3>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped table-hover ">
+      <tbody>
+        <tr>
+          <td width="24%">Repository on <img src="{{ site.baseurl }}/img/GitHub_Logo_57x23.png" width="57" height="23" border="0" /></td>
+          <td width="70%">
+            <div class="form-group has-success">
+              <label class="control-label" for="inputSuccess">Clone with HTTPS:</label>
+              <input class="form-control" id="inputSuccess" type="text" value="git clone https://github.com/3F/vsSolutionBuildEvent.git" />
+            </div>
+            <div class="form-group has-success">
+              <label class="control-label" for="inputSuccess">Clone with SSH:</label>
+              <input class="form-control" id="inputSuccess" type="text" value="git clone git@github.com:3F/vsSolutionBuildEvent.git" />
+            </div>            
+          </td>
+          <td>
+            <div class="panel panel-success small">
+              <div class="panel-heading">
+                <h3 class="panel-title">Fork me on GitHub</h3>
+              </div>
+              <div class="panel-body small">
+                <div class="list-group">
+                  <a href="https://github.com/3F/vsSolutionBuildEvent/" target="_blank" class="list-group-item">vsSolutionBuildEvent/</a>
+                  <a href="https://github.com/3F/vsSolutionBuildEvent/fork" target="_blank" class="list-group-item">vsSolutionBuildEvent/fork</a>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>Repository on <img src="{{ site.baseurl }}/img/logoBitBucketPNG_97x28.png" width="97" height="28" border="0" /></td>
+          <td>
+            <div class="form-group has-success">
+              <label class="control-label" for="inputSuccess">Clone with HTTPS:</label>
+              <input class="form-control" id="inputSuccess" type="text" value="git clone https://bitbucket.org/3F/vssolutionbuildevent.git" />
+            </div>
+            <div class="form-group has-success">
+              <label class="control-label" for="inputSuccess">Clone with SSH:</label>
+              <input class="form-control" id="inputSuccess" type="text" value="git clone git@bitbucket.org:3F/vssolutionbuildevent.git" />
+            </div>            
+          </td>
+          <td>
+            <div class="panel panel-success small">
+              <div class="panel-heading">
+                <h3 class="panel-title">Fork me on Bitbucket</h3>
+              </div>
+              <div class="panel-body small">
+                <div class="list-group">
+                  <a href="https://bitbucket.org/3F/vssolutionbuildevent/overview" target="_blank" class="list-group-item">vssolutionbuildevent/</a>
+                  <a href="https://bitbucket.org/3F/vssolutionbuildevent/" target="_blank" class="list-group-item">vssolutionbuildevent/fork</a>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <a href="https://bitbucket.org/3F/vssolutionbuildevent/commits/all" target="_blank">Commits log</a>
+          </td>
+          <td colspan="2">
+            &nbsp;
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="panel panel-info">
+  <div class="panel-heading">
+    <h3 class="panel-title">Nightly builds</h3>
+  </div>
+  <div class="panel-body">
+    
+    <div class="alert alert-dismissible alert-danger small">
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      <p class="small">Please note! All binaries below can be unstable or not work at all. Use this for tests of latest changes: fixes, new features, etc.</p>
+    </div>
+    
+    <table class="table table-striped table-hover ">
+      <tbody>
+        <tr>
+          <td width="15%">hotfixes</td>
+          <td>Latest binaries from <a href="https://bitbucket.org/3F/vssolutionbuildevent/commits/branch/hotfixes" target="branch">hotfixes branch</a>.</td>
+          <td width="50%"><a href="https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/branch/hotfixes/artifacts" target="_blank" class="btn btn-default">Test</a></td>
+        </tr>
+        <tr>
+          <td>master</td>
+          <td>Latest binaries from <a href="https://bitbucket.org/3F/vssolutionbuildevent/commits/branch/master" target="branch">master branch</a>.</td>
+          <td><a href="https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/branch/master/artifacts" target="_blank" class="btn btn-default">Test</a></td>
+        </tr>
+        <tr>
+          <td>develop</td>
+          <td>Latest binaries from <a href="https://bitbucket.org/3F/vssolutionbuildevent/commits/branch/develop" target="branch">develop branch</a>.</td>
+          <td><a href="https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/branch/develop/artifacts" target="_blank" class="btn btn-default">Test</a></td>
+        </tr>
+        <tr>
+          <td>~</td>
+          <td><a href="https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/history" target="branch">All branch-binaries</a></td>
+          <td>&nbsp;</td>
+        </tr>
+      </tbody>
+    </table> 
+  </div>
+</div>
+
+<div class="panel panel-warning">
+  <div class="panel-heading">
+    <h3 class="panel-title">Snapshots</h3>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped table-hover ">
+      <tbody>
+        <tr>
+          <td width="30%">The archive of public releases</td>
+          <td colspan="3"><a href="https://sourceforge.net/projects/vssbe/files/dev/sources/" target="_blank" class="btn btn-default">Open</a></td>
+        </tr>
+        <tr>
+          <td>releases branch</td>
+          <td width="5%"><a href="https://bitbucket.org/3F/vssolutionbuildevent/get/releases.tar.gz" target="snapshot" class="btn btn-primary">tar.gz</a></td>
+          <td width="5%"><a href="https://bitbucket.org/3F/vssolutionbuildevent/get/releases.tar.bz2" target="snapshot" class="btn btn-info">tar.bz2</a></td>
+          <td width="60%"><a href="https://bitbucket.org/3F/vssolutionbuildevent/get/releases.zip" target="snapshot" class="btn btn-warning">zip</a></td>
+        </tr>
+        <tr>
+          <td>master branch</td>
+          <td><a href="https://bitbucket.org/3F/vssolutionbuildevent/get/master.tar.gz" target="snapshot" class="btn btn-primary">tar.gz</a></td>
+          <td><a href="https://bitbucket.org/3F/vssolutionbuildevent/get/master.tar.bz2" target="snapshot" class="btn btn-info">tar.bz2</a></td>
+          <td><a href="https://bitbucket.org/3F/vssolutionbuildevent/get/master.zip" target="snapshot" class="btn btn-warning">zip</a></td>
+        </tr>
+        <tr>
+          <td>hotfixes branch</td>
+          <td><a href="https://bitbucket.org/3F/vssolutionbuildevent/get/hotfixes.tar.gz" target="snapshot" class="btn btn-primary">tar.gz</a></td>
+          <td><a href="https://bitbucket.org/3F/vssolutionbuildevent/get/hotfixes.tar.bz2" target="snapshot" class="btn btn-info">tar.bz2</a></td>
+          <td><a href="https://bitbucket.org/3F/vssolutionbuildevent/get/hotfixes.zip" target="snapshot" class="btn btn-warning">zip</a></td>
+        </tr>
+        <tr>
+          <td>develop branch</td>
+          <td><a href="https://bitbucket.org/3F/vssolutionbuildevent/get/develop.tar.gz" target="snapshot" class="btn btn-primary">tar.gz</a></td>
+          <td><a href="https://bitbucket.org/3F/vssolutionbuildevent/get/develop.tar.bz2" target="snapshot" class="btn btn-info">tar.bz2</a></td>
+          <td><a href="https://bitbucket.org/3F/vssolutionbuildevent/get/develop.zip" target="snapshot" class="btn btn-warning">zip</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">Build</h3>
+  </div>
+  <div class="panel-body">
+    <p>Information of how to build and all requirements for this you should see on <strong><a href="#">this page</a></strong>.</p>
+    <p>The <strong>archive</strong> of dependencies:</p>
+    <table class="table table-striped table-hover ">
+      <tbody>
+        <tr>
+          <td width="25%">Minimal libraries</td>
+          <td><a href="https://sourceforge.net/projects/vssbe/files/dev/lib/" target="_blank" class="btn btn-default">Download</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

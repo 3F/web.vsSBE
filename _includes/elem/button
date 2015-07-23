@@ -1,0 +1,1 @@
+<a href="{{btnUrl}}" class="btn btn-primary {{btnType}}">{{btnValue}}</a>

@@ -1,3 +1,0 @@
-# FunctionComponent #
-
-Mixed supported functions.

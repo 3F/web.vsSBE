@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+<div class="home">
+  
+    {% for post in site.doc %}
+      {% if post.url == "/Home/" and post.title == "_Home_" %}
+        {{ post.content }}
+        {% break %}
+      {% endif %}
+    {% endfor %}
+    
+</div>

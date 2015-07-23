@@ -1,42 +1,48 @@
+---
+layout: page
+title: Donation
+permalink: /Donation/
+---
+###### Help to project to help for you!
 
-##### Help to project to help you!
+vsSolutionBuildEvent - the **open** and **free** projects for all!
 
-vsSolutionBuildEvent - it's **open** and **free** project & related projects for all... a [more than 1.5 years](https://bitbucket.org/3F/vssolutionbuildevent/raw/master/changelog.txt)!
+Today, need a lot of description of many-many features to describe of this.. well, simply use it for what you need :)
 
-Today, need a long description for many many features for this.. well, simply use it :) of course don't forget about documentation.
+*and have fun...*
 
-Want to help us and want to see a more new features, supports etc. ? (Changelog [here](https://bitbucket.org/3F/vssolutionbuildevent/raw/master/changelog.txt))
+Want to help us also, and want to see a more new features, support etc. ? (Changelog [here]({{site.baseurl}}/Changelist/))
 
-Well, now you can help - How ? no, not only money :)
+Well, now you can help - How ? no, is not only money :)
 
 # What you may #
 
 ## Money ##
 
-yes, it's a classic.. but it is really helpful!
+yes, it's a classic.. but it is really helpful for support this! 
 
 * PyPal: [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=P2HRG52AJSA9N&lc=US&item_name=vsSolutionBuildEvent%20%28vsSBE%29%20projects&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted)
-* Problem with PyPal ? other variant ? write [here](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)
+* Problem with PyPal ? other variant ? write [here](https://bitbucket.org/3F/vssolutionbuildevent/issues/new) or use any direct contacts for private discussion
 
 No money ?
 
-Some our users use this in official job.. so, you can also simply to tell your boss about this :)
+Some our users uses this in official job.. so, you can also simply to tell your boss about this :)
 
-Still no money ? don't worry, if you still want to help us... see next
+Still no money ? don't worry, if you still want to help us... see below
 
 ## Bug fixes & Improvement performance ##
 
-You can simply [to report](https://bitbucket.org/3F/vssolutionbuildevent/issues/new) about problems - it can be used on different versions & platforms and some errors we can find only with you!
+You can simply [report](https://bitbucket.org/3F/vssolutionbuildevent/issues/new) about problems - it can be used on different versions & platforms and some errors we can find only with you!
 
 **Or**! try to fix it yourself!
 
-Start with [Developer Zone](Developer Zone)
+Start with [Developer Zone]({{site.baseurl}}/{{site.docp}}/Dev/)
 
 ## New Features ##
 
-For existing or new things. Have ideas ? good! Also you can extend or improve our platform with [Components](Developer Zone/New Component)
+For existing or new things. Have ideas ? good! Also you can extend or improve our platform with [Components]({{site.baseurl}}/{{site.docp}}/Dev/New Component)
 
-Start with [Developer Zone](Developer Zone)
+Start with [Developer Zone]({{site.baseurl}}/{{site.docp}}/Dev/)
 
 ## UI ##
 
@@ -46,13 +52,13 @@ Improvement or complete replacement the current UI (main GUI, console, tool pane
 
 Current UI is obsolete and not convenient for all new features, so you can also try to help change this.
 
-Start with [Developer Zone](Developer Zone)
+Start with [Developer Zone]({{site.baseurl}}/{{site.docp}}/Dev/)
 
-**Please note:** planned to separate this namespace into the new project (this really needed with [API](API) and all related subprojects). Write before [here](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)
+**Please note:** planned to separate this namespace into the new project (this really needed with [API]({{site.baseurl}}/{{site.docp}}/API) and all related subprojects). Write before [here](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)
 
 ## Share ##
 
-Simply to share this project... many users, many helps or something like that.
+Simply to share this project... many users - a more help or something like that.
 
 # Have a questions ? #
 
