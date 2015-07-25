@@ -11,6 +11,12 @@
       </div>
     </div>
     
+    <div class="wrapper">
+      {% include share.html %}
+      {% if page.layout == "doc" %}
+        {% include disqus.html %}
+      {% endif %}
+    </div>
     {% include footer.html %}
   </body>
 

@@ -18,10 +18,14 @@ collections:
 markdown: kramdown
 kramdown:
     smart_quotes: ["apos", "apos", "quot", "quot"]
+    auto_ids: true # generate ID for headings
+    input: GFM # +GitHub Flavored Markdown
   
 highlighter: pygments
 
 # Data
 changelog: "https://bitbucket.org/3F/vssolutionbuildevent/raw/master/changelog.txt"
+readme: "https://bitbucket.org/3F/vssolutionbuildevent/raw/master/README.md"
+license: "https://bitbucket.org/3F/vssolutionbuildevent/raw/master/LICENSE"
 vsixVersions: [v0.11.4, v0.11.3, v0.11.2, v0.11]
 vsixVersionsOlder: [v0.10.1, v0.9]

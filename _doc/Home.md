@@ -4,7 +4,7 @@ title: _Home_
 permalink: /Home/
 ---
 
-{% assign btnType = "btn-sm" %}
+{% assign btnType = "btn-primary btn-sm" %}
 {% assign btnValue = "Download .vsix" %}
 {% assign btnUrl = "http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/referral/118151" %}
 

@@ -1,0 +1,32 @@
+---
+layout: default
+---
+
+<div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title"><a alt="License" href="https://bitbucket.org/3F/vssolutionbuildevent/raw/master/LICENSE" target="_blank"><img src="https://img.shields.io/badge/License-LGPLv3-008033.svg?style=flat-square" /></a></h3>
+  </div>
+  <pre class="panel-body" id="license" style="overflow: auto; height: 500px;">
+    <div class="panel panel-warning">
+      <div class="panel-heading">
+        <h3 class="panel-title">Warning</h3>
+      </div>
+      <span class="panel-body">
+        Something went wrong... we can't receive file from:
+        <a target="_blank" href="{{site.license}}">{{site.license}}</a>
+        Please try again later or use feedback
+      </span>
+    </div>
+  </pre>
+</div>
+<div id="licenseBar" class="progress progress-striped active">
+  <div class="progress-bar" style="width: 75%"></div>
+</div>
+<script>
+  $.get("{{site.license}}", function(data) {
+    if(data != null && data.length > 0){
+      $("#license").html(data.replace("<", "&lt;").replace(">", "&gt;"));
+    }
+    $("#licenseBar").hide();
+  });
+</script>
