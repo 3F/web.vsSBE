@@ -13,14 +13,14 @@ You can use as a [Simple caller - with your external logic](../Confirmation dial
 
 for example: notification - send email before/after building of all projects:
 
-{% highlight php %}
+```php 
 
 mail('yourmail@example.com', 'Build completed', date('H:i:s'));
-{% endhighlight %}
+```
 
 or more complex like this:
 
-{% highlight php %}
+```php 
 
 class GArtefacts 
 { 
@@ -43,7 +43,7 @@ class GArtefacts
 } 
 $ga = new GArtefacts(); 
 $ga->render();
-{% endhighlight %}
+```
 
 Use any **[our available modes](../../Modes/)** and ~feel~free~ ...
 

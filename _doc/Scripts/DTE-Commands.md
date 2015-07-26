@@ -23,18 +23,19 @@ For testing of commands, you can try with testing tool:
 ## Examples
 
 ### Activation of specific configuration & platform
-{% highlight java %}
+
+```java 
 
 Build.SolutionConfigurations(Debug)
 Build.SolutionPlatforms(x86)
-{% endhighlight %}
+```
 
 ### Cancellation of the build ###
 
-{% highlight java %}
+```java 
 
 Build.Cancel
-{% endhighlight %}
+```
 
 # Multiple mixed DTE-Commands for scripts
 
@@ -42,13 +43,13 @@ As variant you can use powerful and flexible control with the [SBE-Scripts](../S
 
 * For operations with an commands exists the [DTEComponent](../SBE-Scripts/Components/DTEComponent/)
 
-{% highlight java %}
+```java 
 
 #[($(isAllow) && ($(Configuration) ^= "Release" || $(sysLim) > 16)) {
     #[DTE exec: Build.Cancel]
     #[DTE exec: Build.SolutionConfigurations(Debug)]
 }]
-{% endhighlight %}
+```
 etc.
 
 

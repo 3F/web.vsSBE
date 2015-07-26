@@ -9,7 +9,7 @@ Conditional statements for [scripts]({{site.baseurl}}/{{site.docp}}/Scripts/).
 
 ## Syntax
 
-{% highlight java %}
+```java 
 
 #[(condition){ 
   body if the condition has true value
@@ -17,25 +17,26 @@ Conditional statements for [scripts]({{site.baseurl}}/{{site.docp}}/Scripts/).
 else{ 
   body if the condition has false value
 }]
-{% endhighlight %}
+```
 
-{% highlight java %}
+```java 
 
 #[(condition){ body if condition has true value }]
-{% endhighlight %}
+```
 
 
 ## Available operators
 
-{% highlight text %}
+```text 
 
  ===, !==, ~=, ==, !=, >=, <=, !, >, < 
-{% endhighlight %}
+```
 **v0.11.3+**:
-{% highlight text %}
+
+```text 
 
  ^=, =^
-{% endhighlight %}
+```
 Rules of comparison:
 
 * **===** 
@@ -76,7 +77,7 @@ Composite Conditions **available with v0.11** with limited Short-circuit Evaluat
 ### && and || ###
 
 
-{% highlight java %}
+```java 
 
 #[( #[var count] > 10 || ($(isAllow) && !false) ) {
     ...
@@ -84,16 +85,16 @@ Composite Conditions **available with v0.11** with limited Short-circuit Evaluat
 else{
     ...
 }]
-{% endhighlight %}
+```
 
-{% highlight java %}
+```java 
 
 #[($(Configuration) ~= Deb && $(count) > 10 || $(Configuration) == "Release" ) {
     ...
 }]
-{% endhighlight %}
+```
 
-{% highlight java %}
+```java 
 
 #[( (1 < 2 && 2 == 2 && ( true || ((false || 2 >= 2) && (1 > 7 && true)))) )
 {
@@ -104,37 +105,37 @@ else{
         ...
     }]
 }]
-{% endhighlight %}
+```
 
 
 ## Examples ##
 
-{% highlight java %}
+```java 
 
 #[($(Configuration) ~= Deb){
     #[var ver = #[var ver].#[var revBuild]]
 }]
-{% endhighlight %}
+```
 
-{% highlight java %}
+```java 
 
 #[(#[Build projects.find("ZenLib").IsBuildable]){
     #[var branchSha1 = #[File sout("git", "rev-parse --short HEAD")]]
 }]
-{% endhighlight %}
+```
 
-{% highlight java %}
+```java 
 
 #[(!1 > 2){
     is greater
 }]
-{% endhighlight %}
+```
 
 ### Comparing strings. Case insensitive.
 
 You can use the [MSBuild](../../../MSBuild) core and [String.ToLower](https://msdn.microsoft.com/en-us/library/system.string.tolower.aspx) Method for your variables, for example:
 
-{% highlight java %}
+```java 
 
 #[( $(left.ToLower()) ^= $(right.ToLower()) ) {
     Yes
@@ -142,4 +143,4 @@ You can use the [MSBuild](../../../MSBuild) core and [String.ToLower](https://ms
 else{
     No
 }]
-{% endhighlight %}
+```

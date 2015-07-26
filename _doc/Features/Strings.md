@@ -25,45 +25,45 @@ You can use [System.String](https://msdn.microsoft.com/en-us/library/system.stri
 
 For example:
 
-{% highlight bash %}
+```bash 
 
 $(cs.Replace("\r\n", ""))
-{% endhighlight %}
+```
 
 or with different combination CR/LF ([Newline - representations](http://en.wikipedia.org/wiki/Newline#Representations))
 
-{% highlight bash %}
+```bash 
 
 $(cs.Replace("\r", "").Replace("\n", ""))
-{% endhighlight %}
+```
 
 
 So, if you have a multiline value in your variable **projectRev**:
 
-{% highlight java %}
+```java 
 
 #[var cs = Version is a %ver% !] 
 
 #[var projectRev = v1.2
 debug 
 rev321]
-{% endhighlight %}
+```
 
 you can use the Replace() method for changing on any compatible sequence, e.g.:
 
-{% highlight java %}
+```java 
 
 
 #[var projectRev = $(projectRev.Replace("\r\n", " :: "))]
 #[var cs = $(cs.Replace("%ver%", "#[var projectRev]"))]
-{% endhighlight %}
+```
 
 or as variant:
 
-{% highlight java %}
+```java 
 
 #[var cs = $(cs.Replace("%ver%", $(projectRev.Replace("\r\n", " :: "))))]
-{% endhighlight %}
+```
 and similar...
 
 note:
@@ -74,19 +74,19 @@ note:
 
 as result we have:
 
-{% highlight java %}
+```java 
 
 Version is a v1.2 :: debug  :: rev321 !
-{% endhighlight %}
+```
 
 ## Convenience for single line arguments
 
 If you want to pass a long string as argument for some function or method, for example as [here](../../Examples/Artefacts/):
 
-{% highlight java %}
+```java 
 
 #[File sout("cmd", "/C cd \"#[var pDir]bin/#[var cfg]/\" & xcopy *.dll \"#[var nupCIMdir]\bin\" /Y/R/I & xcopy NLog.dll.nlog \"#[var nupCIMdir]\bin\" /Y/R/I")]
-{% endhighlight %}
+```
 
 You can for example:
 
@@ -96,7 +96,7 @@ You can for example:
 
 The [UserVariableComponent](../../Scripts/SBE-Scripts/Components/UserVariableComponent/) is  more useful because for current component allowed the multiline mixed definition and therefore you can for example:
 
-{% highlight java %}
+```java 
 
 #[var arg = cd \"D:/tmp/\" 
 dir
@@ -104,12 +104,12 @@ cd ..
 dir]
 
 #[var arg = $(arg.Replace("\r\n", " & "))]
-{% endhighlight %}
+```
 Evaluated value for **arg** variable above should be as `cd \"D:/tmp/\"  & dir & cd .. & dir`
 
 You can also automatically escape the '"' (double quotes), erase the first & last the newline symbols etc.:
 
-{% highlight java %}
+```java 
 
 #[var arg = 
 cd "D:/tmp/" 
@@ -118,10 +118,11 @@ cd ..
 dir
 ]
 $(arg.Trim("\r\n").Replace('"', '\"').Replace("\r\n", " & "))
-{% endhighlight %}
+```
 
 Therefore the long single line from example above also can be as:
-{% highlight java %}
+
+```java 
 
 #[var arg = 
 
@@ -133,11 +134,11 @@ xcopy NLog.dll.nlog \"#[var nupCIMdir]\bin\" /Y/R/I
 
 #[var arg = $(arg.Trim("\r\n").Replace("\r\n", " & "))]
 #[File sout("cmd", "/C  #[var arg]")]
-{% endhighlight %}
+```
 
 also with [cmd](../../Scripts/SBE-Scripts/Components/FileComponent/) alias it can be as:
 
-{% highlight java %}
+```java 
 
 #[var arg = 
 
@@ -149,23 +150,23 @@ xcopy NLog.dll.nlog "#[var nupCIMdir]\bin" /Y/R/I
 
 #[var arg = $(arg.Trim("\r\n").Replace('"', '\"').Replace("\r\n", " & "))]
 #[File cmd("#[var arg]")]
-{% endhighlight %}
+```
 and similar..
 
 ## Escape-Sequences
 
 You can use available escape-sequence in [SBE-Scripts](../../Scripts/SBE-Scripts/) & [MSBuild](../../Scripts/MSBuild/) cores, for example:
 
-{% highlight bash %}
+```bash 
 
 $([System.String]::Concat("\r\n"))
-{% endhighlight %}
+```
 
-{% highlight bash %}
+```bash 
 
 $(ver = "1.2.3")
 $([System.String]::Format("\t version is a {0}", $(ver)))
-{% endhighlight %}
+```
 
 ### What available ?
 

@@ -28,17 +28,19 @@ MSDN References:
 The vsSolutionBuildEvent uses additional syntax for select specific project. This is so because this can be used for all projects at once as [Solution-wide](http://stackoverflow.com/q/2295454) ([related issue](https://bitbucket.org/3F/vssolutionbuildevent/issue/29/projectdir-doesnt-resolve-properly))
 
 Syntax:
-{% highlight Bash %}
+
+```Bash 
 
 $(...)
 $(...:project) - from selected project in your solution
-{% endhighlight %}
+```
 
 Escape symbol is a $: 
-{% highlight Bash %}
+
+```Bash 
 
 $$(...) / $$(...:project)
-{% endhighlight %}
+```
 Where '**...**' - is any allowed syntax with MSBuild data. See MSDN.
 
 ## Samples
@@ -58,20 +60,23 @@ $([MSBuild]::GetRegistryValue('HKEY_CURRENT_USER\Software\Microsoft\VisualStudio
 
 
 * if you see problem with any slashes for path:
-{% highlight minid %}
+
+```minid 
 
 $(SolutionPath.Replace('\', '/'))  -> D:\App\ConsoleApp1.sln to D:/App/ConsoleApp1.sln
 $(SolutionPath.Replace('\', '\\')) -> to D:\\App\\ConsoleApp1.sln
-{% endhighlight %}
+```
 
 * delta to time:
-{% highlight Bash %}
+
+```Bash 
 
 $([System.TimeSpan]::FromTicks($([MSBuild]::Subtract($(tNow), $(tStart)))).TotalMinutes.ToString("0"))
-{% endhighlight %}
+```
 
 * manually build with msbuild.exe and call binary with args:
-{% highlight minid %}
+
+```minid 
 
 $(MSBuildBinPath)\MSBuild.exe "$(ProjectPath.Replace('\', '/'):Version)" /t:Build /p:Configuration=Release 
  
@@ -81,7 +86,7 @@ $(MSBuildBinPath)\MSBuild.exe "$(ProjectPath.Replace('\', '/'):Version)" /t:Buil
   "$(SolutionDir)" 
   "$(ProjectDir:mainApp)Version.cs"  
   "$(ProjectDir:mainApp)source.extension.vsixmanifest"
-{% endhighlight %}
+```
 
 
 ## User-variables for MSBuild core
@@ -89,10 +94,11 @@ $(MSBuildBinPath)\MSBuild.exe "$(ProjectPath.Replace('\', '/'):Version)" /t:Buil
 It's a strictly limited version compared with [UserVariableComponent](../SBE-Scripts/Components/UserVariableComponent/) ([SBE-Scripts core](../SBE-Scripts/))
 
 Syntax:
-{% highlight Bash %}
+
+```Bash 
 
 $(name = $(...))
-{% endhighlight %}
+```
 
 In **v0.11.4** added strings:
 
@@ -101,41 +107,43 @@ In **v0.11.4** added strings:
 
 *'\' and "\" used 'as is' for compatibility with MSBuild*
 
-{% highlight Bash %}
+```Bash 
 
 $(name = "  - Platform is a $(Platform)  ")
-{% endhighlight %}
+```
 
 *In older versions: Allows definitions only from other variables/properties & property functions.* 
 
 Samples:
 
-{% highlight Bash %}
+```Bash 
 
 $(start = $([System.DateTime]::Parse("2015/04/01").ToBinary()))
-{% endhighlight %}
-{% highlight Bash %}
+```
+
+```Bash 
 
 $(pdir = $(ProjectDir:project))
-{% endhighlight %}
-{% highlight Bash %}
+```
+
+```Bash 
 
 $(pdir = $(ProjectDir.Replace('\', '/'):project))
-{% endhighlight %}
+```
 
 ## Nested levels - recursive evaluation for MSBuild Properties
 
 In vsSolutionBuildEvent the most variables can be evaluated with nested levels also for each project.
 
-{% highlight Bash %}
+```Bash 
 
 $($(...:$(...)))
-{% endhighlight %}
+```
 
-{% highlight Bash %}
+```Bash 
 
 $($(...:$($(...:$(...)))))
-{% endhighlight %}
+```
 and similar,
 
 This useful for any dynamic references on your data or additional evaluation with MSBuild. For example: 
@@ -156,49 +164,50 @@ This also has a few differences as part of 'Solution-wide'(see above) features:
 Property         | Description
 ---------------- | ----------
 $(Configuration) | Active configuration **for solution**
-$(Configuration**:project**) | Configuration for specific project
+$(Configuration:**project**) | Configuration for specific project
 $(Platform) | Active platform **for solution**
-$(Platform**:project**) | Platform for specific project
+$(Platform:**project**) | Platform for specific project
 
 ## Registry Properties
 
 The [Registry Properties](https://msdn.microsoft.com/en-us/library/vstudio/ms171458.aspx) are allowed in **v0.11.4+**:
 
-{% highlight Bash %}
+```Bash 
 
 $(registry:Hive\MyKey\MySubKey@ValueName) - gets value for ValueName from subkey.
 $(registry:Hive\MyKey\MySubKey) - gets the default subkey value.
-{% endhighlight %}
+```
 
 **for older versions** you can also use the registry properties but only with a little trick, for example:
 
-{% highlight Bash %}
+```Bash 
 
 #[var k = :Hive\MyKey\MySubKey]
 $(registry$(k))
-{% endhighlight %}
-{% highlight Bash %}
+```
+
+```Bash 
 
 #[var k = :Hive\MyKey\MySubKey@ValueName]
 $(registry$(k))
-{% endhighlight %}
+```
 *and similar..*
 
 `*!*` **OR** you can read system registry values with:
 
 * [MSBuild GetRegistryValue](https://msdn.microsoft.com/en-us/library/vstudio/dd633440%28v=vs.120%29.aspx#BKMK_GetRegistryValue) -  returns the value of a registry key:
 
-{% highlight Bash %}
+```Bash 
 
 $([MSBuild]::GetRegistryValue('keyName', 'valueName'))
-{% endhighlight %}
+```
 
 * [MSBuild GetRegistryValueFromView](https://msdn.microsoft.com/en-us/library/vstudio/dd633440%28v=vs.120%29.aspx#BKMK_GetRegistryValueFromView) - gets system registry data. The key and value are searched in each registry view(e.g. 32-bit & 64-bit registry view) in order until they are found. Sample of how to look first in the 64-bit then in the 32-bit registry view:
 
-{% highlight Bash %}
+```Bash 
 
 $([MSBuild]::GetRegistryValueFromView('keyName', 'valueName', null, RegistryView.Registry64, RegistryView.Registry32))
-{% endhighlight %}
+```
 
 
 # References

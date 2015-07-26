@@ -23,7 +23,7 @@ You can use any own dialog if needed, for example:
 * Activate [SBE-Scripts](../../Scripts/SBE-Scripts/) support
 * Use script for example:
 
-{% highlight java %}
+```java 
 
 
 #[(#[File sout("cscript", "//nologo dialog.vbs")]) {
@@ -31,11 +31,11 @@ You can use any own dialog if needed, for example:
     ... your action if 'Yes'
 
 }]
-{% endhighlight %}
+```
 
 * Where dialog.vbs it's a simple [vbscript](http://ss64.com/vb/) with [msgbox](http://ss64.com/vb/msgbox.html), for example:
 
-{% highlight basic %}
+```basic 
 
 ' Sample of dialog
 ret = MsgBox("... information ...",  vbAbortRetryIgnore + vbDefaultButton3 + vbExclamation , "Custom dialog")
@@ -46,7 +46,7 @@ If ret = vbYes Then
 Else
     Wscript.Echo "false"
 End If
-{% endhighlight %}
+```
 ![Custom dialog](../../Resources/dlg/msgbox_vbs.png)
 
 similarly, you can also use any other script language..
@@ -65,19 +65,20 @@ For example if you have a few subprojects in your solution as here:
 
 and you want to update a some file at start build **for all projects at once**(as Solution-wide) for example: revision.h 
 
-{% highlight cpp %}
+```cpp 
 
 #ifndef REVISION_H 
   #define REVISION_STR "31 [support::4b9a0cf]" 
   #define L_REVISION_STR L"31 [support::4b9a0cf]" 
 #endif 
-{% endhighlight %}
+```
 
 
 It can be generated with your some tool, for example simple revision.bat and similar [vbscript](http://ss64.com/vb/) with [msgbox](http://ss64.com/vb/msgbox.html) for confirmation to user:
 
 * revision.bat:
-{% highlight bash %}
+
+```bash 
 
 ...
   : rev count 
@@ -85,11 +86,11 @@ It can be generated with your some tool, for example simple revision.bat and sim
   : rev SHA1 short 
   FOR /F %%i IN ('git rev-parse --short HEAD') DO set git_rev_sha1=%%i 
 ...
-{% endhighlight %}
+```
 
 revision.vbs:
 
-{% highlight basic %}
+```basic 
 
 ret = MsgBox("Do you want to update revision.h ?", vbYesNo + vbQuestion, "Pre-Build Event :: Updating version") 
  
@@ -100,7 +101,7 @@ If ret = vbYes Then
         MsgBox "The script exited with code: " & code, vbOKOnly + vbExclamation, "Pre-Build Event :: Updating version" 
     End If 
 End If
-{% endhighlight %}
+```
 and similar..
 
 

@@ -17,14 +17,15 @@ Ok, it's simply...
 
 You should use **IsBuildable** property for get/set value for selected project.
 
-{% highlight java %}
+```java 
 
 #[Build projects.find("name").IsBuildable = true|false|1|0]
-{% endhighlight %}
-{% highlight java %}
+```
+
+```java 
 
 #[Build projects.find("name").IsBuildable]
-{% endhighlight %}
+```
 
 Where name is project name in your solution, for example:
 
@@ -36,22 +37,25 @@ etc.
 ## Examples
 
 * Set true value if next condition also has true
-{% highlight java %}
+
+```java 
 
 
 #[( ($(isAllow) && $(Configuration) === "Debug") || $(sysc) == -1 ) {
     #[Build projects.find("bzip2.vcxproj").IsBuildable = true]
 }]
-{% endhighlight %}
+```
 
 * Set value from external utility:
-{% highlight java %}
+
+```java 
 
 #[Build projects.find("bzip2.vcxproj").IsBuildable = #[File sout("vt.exe", "-s -e bzip", 60)]]
-{% endhighlight %}
+```
 
 * Status for Release_notes.txt
-{% highlight java %}
+
+```java 
 
 #[var pBzip = #[Build projects.find("bzip2.vcxproj").IsBuildable]]
 ...
@@ -62,11 +66,11 @@ etc.
 * bzip2 status:     #[var pBzip];
 ...
 ]
-{% endhighlight %}
+```
 
 * Manage for others projects:
 
-{% highlight java %}
+```java 
 
 #[(#[Build projects.find("boost-regex.vcxproj").IsBuildable])
 {
@@ -77,7 +81,7 @@ etc.
 else {
     #[Build projects.find("bzip2.vcxproj").IsBuildable = true]
 }]
-{% endhighlight %}
+```
 
 # References
 

@@ -4,11 +4,40 @@ layout: default
 
 <div class="home">
   
+  <p>
+    <a href="http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/referral/118151" class="btn btn-primary btn-sm">Download .vsix</a> (SourceForge.net)
+    <img src="http://vssbe.sourceforge.net/stat/" alt="">
+  </p>
+
+  <p><em>MS Visual Studio Gallery</em>:</p>
+
+  <ul>
+  <li><a href="http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/">0d1dbfd7-ed8a-40af-ae39-281bfeca2334</a></li>
+  </ul>
+  <hr />
+  <p><br /></p>
+
+  <ul>
+    <li><a href="Changelist/">Changelist</a></li>
+    <li><strong><a href="{{site.docp}}/Dev/How to build/">How to build</a></strong> (<a href="{{site.docp}}/Dev/">Developer Zone</a>)</li>
+    <li><a href="{{site.docp}}/Scripts/SBE-Scripts/">SBE-Scripts</a></li>
+    <li><a href="{{site.docp}}/Scripts/MSBuild/">MSBuild</a></li>
+    <li><a href="{{site.docp}}/Scripts/DTE-Commands/">DTE-Commands</a></li>
+    <li><strong><a href="{{site.docp}}/Examples/">Examples</a></strong></li>
+    <li><a href="{{site.docp}}/CI/">Continuous Integration (CI)</a></li>
+    <li><a href="{{site.docp}}/Modes/">Processing modes</a></li>
+    <li><a href="{{site.docp}}/API/">API</a></li>
+    <li><strong><a href="Donation/">Support us. /Donation</a></strong></li>
+  </ul>
+  
+<!--  
+    for .md:
     {% for post in site.doc %}
-      {% if post.url == "/Home/" and post.title == "_Home_" %}
+      {% if post.home %}
         {{ post.content }}
         {% break %}
       {% endif %}
     {% endfor %}
+    -->
     
 </div>

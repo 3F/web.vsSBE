@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<div class="home">
+  
+  <div class="list-group">
+    {% for post in site.doc %}
+      {% if post.hideDocmap %}
+        {% continue %}
+      {% endif %}
+      <a href="{{post.url}}" class="list-group-item">
+        <h5 class="list-group-item-heading">{{post.title}}</h5>
+        <!--<p class="list-group-item-text">description</p>-->
+      </a>      
+    {% endfor %}
+  </div>
+    
+</div>

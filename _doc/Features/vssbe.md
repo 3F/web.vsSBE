@@ -65,14 +65,14 @@ Therefore, you should define the **unified project** name for all used .sln with
 
 * Find or define new **PropertyGroup** and place inside the property **ProjectName**
 
-{% highlight xml %}
+```xml 
 
   <PropertyGroup>
       ...
       <ProjectName>YourProjectName</ProjectName>
       ...
   </PropertyGroup>
-{% endhighlight %}
+```
 
 for example:
 

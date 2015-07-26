@@ -62,11 +62,11 @@ if you have a some problems with getting libraries through NuGet, you can also u
         * Add the full path to **msbuild.exe**, for example: C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe
         * In `Start Options` > `Command line arguments` write for example:
 
-{% highlight bat %}
+```bat 
 
 "<path_to_SolutionFile_for_debugging>.sln" /nologo /noconsolelogger 
 /l:"CI.MSBuild\bin\<Current_Configuration_Name>\CI.MSBuild.dll";lib=vsSolutionBuildEvent\bin\<Current_Configuration_Name>\ /verbosity:Diagnostic /t:Rebuild /p:Configuration=<Configuration>;Platform=<Platform>
-{% endhighlight %}
+```
 
         * `Working Directory` add the path to vsSolutionBuildEvent sources, for example: D:\projects\vsSolutionBuildEvent\
 * Click `Build` > `Build Solution`
@@ -86,20 +86,22 @@ Note:
 
 * Clone repository with git:
 
-{% highlight bash %}
+```bash 
 
 git clone --branch=master https://bitbucket.org/3F/vssolutionbuildevent.git C:\projects\vssolutionbuildevent
-{% endhighlight %}
+```
 * Restore all packages with [nuget.exe](https://www.nuget.org/nuget.exe) ([documentation](http://docs.nuget.org/Consume/Command-Line-Reference))
-{% highlight bash %}
+
+```bash 
 
 nuget restore vsSolutionBuildEvent_2013.sln 
-{% endhighlight %}
+```
 * And use msbuild.exe for build:
-{% highlight bash %}
+
+```bash 
 
 "C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe" "vsSolutionBuildEvent_2013.sln" /verbosity:detailed  /l:"C:\projects\vssolutionbuildevent\packages\vsSBE.CI.MSBuild.1.2.1\bin\CI.MSBuild.dll" /m:4 /p:Configuration=Debug
-{% endhighlight %}
+```
 or use [build_[CI_Debug]](https://bitbucket.org/3F/vssolutionbuildevent/src/master/build_[CI_Debug].bat) / [build_[CI_Release]](https://bitbucket.org/3F/vssolutionbuildevent/src/master/build_[CI_Release].bat)
 
 That's all.

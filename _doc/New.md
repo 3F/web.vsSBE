@@ -18,13 +18,13 @@ permalink: /doc/New/
 1. Create or Select any subpath from `_doc/` directory and name your file as you want with **.md** extension.
 1. Add next header:
 
-{% highlight text %}
+```text 
 ---
 layout: doc
 title: <Your title>
 permalink: /doc/<path>/
 ---
-{% endhighlight %}
+```
 
 * `<path>` should be to **.md** file without extension, for example:
     * Use `/doc/My Page/` if you will add the **My Page.md** in root [_doc directory](https://github.com/3F/web.vsSBE/tree/gh-pages/_doc).

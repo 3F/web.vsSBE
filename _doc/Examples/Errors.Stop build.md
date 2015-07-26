@@ -47,12 +47,12 @@ Also as variant you can use - [MSBuild](../../Scripts/MSBuild/) & [SBE-Scripts](
 
 For example:
 
-{% highlight java %}
+```java 
 
 #[( $(isAllow) && $(sysc) == "break" || $(cmdc) > 10 ) {
     #[Build cancel = #[File sout("state", "-s")]
 }]
-{% endhighlight %}
+```
 etc.
 
 

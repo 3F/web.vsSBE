@@ -7,7 +7,7 @@ permalink: /doc/Dev/New Component/
 
 All components should implement the **[IComponent](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/IComponent.cs)**
 
-{% highlight csharp %}
+```csharp 
 
 public interface IComponent
 {
@@ -50,7 +50,7 @@ public interface IComponent
     /// <returns>prepared and evaluated data</returns>
     string parse(string data);
 }
-{% endhighlight %}
+```
 Also available abstract [Component](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/Component.cs) for rapid implementation of all new features. The [Component](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/Component.cs) already contains basic behaviours with available data. Therefore, create the new component really easy.
 
 ## DemoComponent ##
@@ -61,31 +61,31 @@ All components should have a postfix **Component** as part of name, for example:
 
 * Add new class in path `/SBEScripts/Components/DemoComponent.cs`
 
-{% highlight csharp %}
+```csharp 
 
 public class DemoComponent: Component, IComponent
 {
 
 }
-{% endhighlight %}
+```
 
 With [Component](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/Component.cs) we have already implemented common requirements of [IComponent](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/IComponent.cs), therefore, only need to implement own logic. For example:
 
 For Condition property we should set subcontainer to entry, for basic checking of ability to work with data. In example we use:
 
-{% highlight csharp %}
+```csharp 
 
 public override string Condition
 {
     get { return "Demo "; }
 }
-{% endhighlight %}
+```
 
 If necessary complex identification, use [CRegex](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/IComponent.cs) flag for regex pattern ( [IgnorePatternWhitespace](http://msdn.microsoft.com/en-us/library/system.text.regularexpressions.regexoptions.aspx) used by default)
 
 You can override this property or use cregex field if your component extends [Component](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/Component.cs). Example with additional handling for already existing component - [BuildComponent](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/BuildComponent.cs):
 
-{% highlight csharp %}
+```csharp 
 public class DemoComponent: Component, IComponent
 {
     public override string Condition
@@ -107,27 +107,27 @@ public class DemoComponent: Component, IComponent
     {
         cregex = true;
     }
-{% endhighlight %}
+```
 
 Now you should implement `parse(string data)` with what you want:
 
-{% highlight csharp %}
+```csharp 
 
 public override string parse(string data)
 {
     // TODO
     return String.Empty;
 }
-{% endhighlight %}
+```
 
 For example, we'll implement **add()** property, sample:
 
-{% highlight java %}
+```java 
 
 #[Demo add(1, 2)]
-{% endhighlight %}
+```
 
-{% highlight csharp %}
+```csharp 
 
 public class DemoComponent: Component, IComponent
 {
@@ -160,10 +160,10 @@ public class DemoComponent: Component, IComponent
         return Values.from(left + right);
     }
 }
-{% endhighlight %}
+```
 **Note**: the regular expression it's only as variant of implementation i.e. you can use anything else what you like... for example:
 
-{% highlight csharp %}
+```csharp 
 
 public class DemoComponent: Component, IComponent 
 { 
@@ -177,37 +177,39 @@ public class DemoComponent: Component, IComponent
         return Values.from(1 + 2); 
     } 
 }
-{% endhighlight %}
+```
 
 Then, with default [Bootloader](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Bootloader.cs) to register your component, use for example:
 
-{% highlight csharp %}
+```csharp 
 
 bootloader.register(new DemoComponent());
-{% endhighlight %}
+```
 
 You can also use own Bootloaders with implementing the [IBootloader](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/IBootloader.cs) or simply override [Bootloader.register()](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Bootloader.cs):
-{% highlight csharp %}
+
+```csharp 
 
 protected override void register()
 {
     ...
     register(new DemoComponent());
 }
-{% endhighlight %}
+```
 
 Then to initialize new instance of SBE-Scripts core, use for example:
-{% highlight csharp %}
+
+```csharp 
 
 new Script(new BootloaderCustom())
-{% endhighlight %}
+```
 
 That's all. Build and Run vsSBE, open `Tools` - `SBE-Scripts` and try to execute:
 
-{% highlight java %}
+```java 
 
 #[Demo add(7, 5)]
-{% endhighlight %}
+```
 
 Congratulation! DemoComponent() has been implemented.
 
@@ -233,16 +235,16 @@ It's easy with next attributes:
 
 To describe the properties of the component. For example:
 
-{% highlight csharp %}
+```csharp 
 
 [Property("propertyName", "Description of the property", CValueType.Boolean, CValueType.Boolean)]
 protected string yourLogic()
 {
    ...
 }
-{% endhighlight %}
+```
 
-{% highlight csharp %}
+```csharp 
 
 [Property(
     "IsBuildable", 
@@ -252,17 +254,18 @@ protected string yourLogic()
     CValueType.Boolean, 
     CValueType.Boolean
 )]
-{% endhighlight %}
+```
 
 
 Syntax:
-{% highlight csharp %}
-[Property(string name, string description, CValueType get, CValueType set)]
-{% endhighlight %}
 
-{% highlight csharp %}
+```csharp 
+[Property(string name, string description, CValueType get, CValueType set)]
+```
+
+```csharp 
 [Property(string name, string parent, string method, CValueType get, CValueType set)]
-{% endhighlight %}
+```
 
 
 Note:
@@ -277,7 +280,7 @@ Note:
 To describe the methods/functions of the component. For example:
 
 
-{% highlight csharp %}
+```csharp 
 
 [
     Method
@@ -294,18 +297,19 @@ protected string stCall(string data, bool stdOut, bool silent)
 {
     ...
 }
-{% endhighlight %}
+```
 
 Syntax:
 
-{% highlight csharp %}
+```csharp 
 
 [Method(string name, string description, CValueType ret, params CValueType[] args)]
-{% endhighlight %}
-{% highlight csharp %}
+```
+
+```csharp 
 
 [Method(string name, string parent, string method, CValueType ret, params CValueType[] args)]
-{% endhighlight %}
+```
 
 Note:
 
@@ -318,51 +322,54 @@ Note:
 
 To describe the new component. For example:
 
-{% highlight csharp %}
+```csharp 
 
 [Component("File", "I/O operations")]
 public class FileComponent: Component, IComponent
 {
     ...
 }
-{% endhighlight %}
+```
 Syntax:
-{% highlight csharp %}
+
+```csharp 
 
 [Component(string name, string description)]
-{% endhighlight %}
+```
 
 All available constructors see with the [Dom.ComponentAttribute](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Dom/ComponentAttribute.cs)
 
 #### Aliases
 
-{% highlight csharp %}
+```csharp 
 
 [Component("Primary", new string[]{ "Alias1", "Alias2", "Alias3" }, "description")]
-{% endhighlight %}
+```
 
 ### DefinitionAttribute ###
 
 To describe the any definition of the component. For example:
-{% highlight csharp %}
+
+```csharp 
 
 [Definition("(true) { }", "Conditionals statements\n\n(1 > 2) {\n ... \n}")]
 public class ConditionComponent: Component, IComponent
 {
     ...
 }
-{% endhighlight %}
+```
 
-{% highlight csharp %}
+```csharp 
 [Definition("var name", "Get data from variable the 'name'")]
 [Definition("var name = data", "Set the 'data' for variable the 'name'")]
-{% endhighlight %}
+```
 
 Syntax:
-{% highlight csharp %}
+
+```csharp 
 
 [Definition(string name, string description)]
-{% endhighlight %}
+```
 
 All available constructors see with the [Dom.DefinitionAttribute](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Dom/DefinitionAttribute.cs)
 

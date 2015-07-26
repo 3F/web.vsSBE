@@ -12,40 +12,46 @@ All internal operations with vsSBE.
 Work with events.
 
 Available events:
-{% highlight text %}
+
+```text 
 
 Pre, Post, Cancel, Warnings, Errors, OWP, Transmitter, Logging
-{% endhighlight %}
+```
 
 Syntax:
-{% highlight java %}
+
+```java 
 
 #[vsSBE events.Type.item("name")]
-{% endhighlight %}
-{% highlight java %}
+```
+
+```java 
 
 #[vsSBE events.Type.item(index)]
-{% endhighlight %}
+```
 
 Sample:
-{% highlight java %}
+
+```java 
 
 #[vsSBE events.Pre.item("Act1")]
-{% endhighlight %}
+```
 
 ### Enabled
 
 Gets or Sets Enabled status for selected event-item.
 
 Syntax:
-{% highlight java %}
+
+```java 
 
 #[vsSBE events.Pre.item("Act1").Enabled = false]
-{% endhighlight %}
-{% highlight java %}
+```
+
+```java 
 
 #[vsSBE events.Pre.item("Act1").Enabled]
-{% endhighlight %}
+```
 
 ### Status ###
 
@@ -56,15 +62,17 @@ Available statuses for selected event-item.
 Checking existence of errors after executed action for selected event-item.
 
 Syntax:
-{% highlight java %}
+
+```java 
 
 #[vsSBE events.Pre.item("Act1").Status.HasErrors]
-{% endhighlight %}
+```
 
 Sample:
-{% highlight java %}
+
+```java 
 
 #[(#[vsSBE events.Pre.item("Act1").Enabled]){
     #[Build projects.find("zlib").IsBuildable = false]
 }]
-{% endhighlight %}
+```

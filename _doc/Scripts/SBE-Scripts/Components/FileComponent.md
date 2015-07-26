@@ -26,10 +26,11 @@ Operations with files and standard streams.
 #### IO alias
 
 *available with v0.12+*
-{% highlight java %}
+
+```java 
 
 #[IO ...]
-{% endhighlight %}
+```
 
 #### MSBuild Property Functions.
 
@@ -37,10 +38,10 @@ You should also remember, the some features also available with [MSBuild](../../
 
 * Use the [System.IO Namespace](https://msdn.microsoft.com/en-us/library/System.IO%28v=vs.100%29.aspx) for example:
 
-{% highlight bash %}
+```bash 
 
 $([System.IO.File]::Exists("D:/tmp/result.log"))
-{% endhighlight %}
+```
 *[File.Exists](https://msdn.microsoft.com/en-us/library/system.io.file.exists%28v=vs.100%29.aspx) Method*
 
 ## Available features
@@ -50,20 +51,23 @@ $([System.IO.File]::Exists("D:/tmp/result.log"))
 Caller of executable files.
 
 Syntax:
-{% highlight java %}
+
+```java 
 
 void #[File call(string filename, string args)]
-{% endhighlight %}
-{% highlight java %}
+```
+
+```java 
 
 void #[File call(string filename)]
-{% endhighlight %}
+```
 
 v0.11.3+:
-{% highlight java %}
+
+```java 
 
 void #[File call(string filename, string args, uinteger timeout)]
-{% endhighlight %}
+```
 
 Where,
 
@@ -76,20 +80,23 @@ Where,
 Caller of executable files in silent mode.
 
 Syntax:
-{% highlight java %}
+
+```java 
 
 void #[File scall(string filename, string args)]
-{% endhighlight %}
-{% highlight java %}
+```
+
+```java 
 
 void #[File scall(string filename)]
-{% endhighlight %}
+```
 
 v0.11.3+:
-{% highlight java %}
+
+```java 
 
 void #[File scall(string filename, string args, uinteger timeout)]
-{% endhighlight %}
+```
 * timeout - How long to wait the execution, in seconds. 0 value - infinitely
 
 ### sout
@@ -97,22 +104,24 @@ void #[File scall(string filename, string args, uinteger timeout)]
 Receives data from standard streams for executed file. To disable errors use the '2>nul' and similar - see above.
 
 Syntax:
-{% highlight java %}
+
+```java 
 
 string #[File sout(string filename, string args)]
-{% endhighlight %}
+```
 
-{% highlight java %}
+```java 
 
 string #[File sout(string filename)]
-{% endhighlight %}
+```
 
 
 v0.11.3+:
-{% highlight java %}
+
+```java 
 
 string #[File sout(string filename, string args, uinteger timeout)]
-{% endhighlight %}
+```
 * timeout - How long to wait the execution, in seconds. 0 value - infinitely
 
 ### cmd
@@ -124,14 +133,15 @@ Alias to sout() for cmd.
 
 Receives data from standard streams for cmd process with arguments.
 
-{% highlight java %}
+```java 
 
 string #[File cmd(string args)]
-{% endhighlight %}
-{% highlight java %}
+```
+
+```java 
 
 string #[File cmd(string args, uinteger timeout)]
-{% endhighlight %}
+```
 * timeout - How long to wait the execution, in seconds. 0 value - infinitely
 
 ### get
@@ -139,10 +149,11 @@ string #[File cmd(string args, uinteger timeout)]
 Gets all data from file.
 
 Syntax:
-{% highlight java %}
+
+```java 
 
 string #[File get("filename")]
-{% endhighlight %}
+```
 
 ### write
 
@@ -152,17 +163,18 @@ Writes text data in file.
 * Overwrites content if already exist.
 
 Syntax:
-{% highlight java %}
+
+```java 
 
 #[File write("filename"): multiline data]
-{% endhighlight %}
+```
 
 v0.10+:
  
-{% highlight java %}
+```java 
 
 void #[File write(string name, boolean append, boolean line, string encoding): multiline data]
-{% endhighlight %}
+```
 * name - File name
 * append - Flag of adding data to the end file
 * line - Adds a line terminator
@@ -184,10 +196,11 @@ Writes text data in file.
 * Adds data to the end file if it already exist.
 
 Syntax:
-{% highlight java %}
+
+```java 
 
 #[File append("filename"): multiline data]
-{% endhighlight %}
+```
 
 ### writeLine
 
@@ -197,10 +210,11 @@ Writes text data with CR/LF in file.
 * Overwrites content if already exist.
 
 Syntax:
-{% highlight java %}
+
+```java 
 
 #[File writeLine("filename"): multiline data]
-{% endhighlight %}
+```
 
 ### appendLine
 
@@ -210,47 +224,52 @@ Writes text data with CR/LF in file.
 * Adds data to the end file if it already exist.
 
 Syntax:
-{% highlight java %}
+
+```java 
 
 #[File appendLine("filename"): multiline data]
-{% endhighlight %}
+```
 
 ### replace
 
 Replacing the strings in files.
 
 Syntax:
-{% highlight java %}
+
+```java 
 
 #[File replace("file", "pattern", "replacement")]
-{% endhighlight %}
-{% highlight java %}
+```
+
+```java 
 
 #[File replace.Regexp("file", "pattern", "replacement")]
-{% endhighlight %}
-{% highlight java %}
+```
+
+```java 
 
 #[File replace.Wildcards("file", "pattern", "replacement")]
-{% endhighlight %}
+```
 
 v0.10+:
 
 * Alias for Regexp:
-{% highlight java %}
+
+```java 
 
 #[File replace.Regex("file", "pattern", "replacement")]
-{% endhighlight %}
+```
 
 Sample:
 
-{% highlight java %}
+```java 
 
 #[File replace.Regexp("source.extension.vsixmanifest", "<Version>[0-9\.]+</Version>", "<Version>#[var ver]</Version>")]
-{% endhighlight %}
+```
 
 ### exists
 
-v0.10+
+`v0.10+`
 
 Determines whether the something exists.
 
@@ -258,80 +277,83 @@ Determines whether the something exists.
 
 Determines whether the given path refers to an existing directory on disk.
 
-{% highlight java %}
+```java 
 
 boolean #[File exists.directory(string path)]
-{% endhighlight %}
+```
 * path - Path to test
 
 Determines whether the given path refers to an existing directory on disk with searching in environment
 
-{% highlight java %}
+```java 
 
 boolean #[File exists.directory(string path, boolean environment)]
-{% endhighlight %}
+```
 * path - Path to test
 * environment - Using the PATH of the Environment for searching. Environment associated with the current process.
 
 Samples:
 
-{% highlight java %}
+```java 
 
 #[( #[File exists.directory("log")] ){
    ...
 }]
-{% endhighlight %}
-{% highlight java %}
+```
+
+```java 
 
 #[( #[File exists.directory("D:\tmp\log")] ){
    ...
 }]
-{% endhighlight %}
-{% highlight java %}
+```
+
+```java 
 
 #[( #[File exists.directory("System32", true)] ){
    ...
 }]
-{% endhighlight %}
+```    
+.
 
 #### file
 
 Determines whether the specified file exists.
 
-{% highlight java %}
+```java 
 
 boolean #[File exists.file(string path)]
-{% endhighlight %}
+```
 * path - The file to check
 
 Determines whether the specified file exists with searching in environment.
 
-{% highlight java %}
+```java 
 
 boolean #[File exists.file(string path, boolean environment)]
-{% endhighlight %}
+```
 * path - The file to check
 * environment - Using the PATH of the Environment for searching. Environment associated with the current process.
 
 Samples:
 
-{% highlight java %}
+```java 
 
 #[( #[File exists.file("data.log")] ){
    ...
 }]
-{% endhighlight %}
+```
 
-{% highlight java %}
+```java 
 
 #[( #[File exists.file("git.exe", true)] ){
    ...
 }]
-{% endhighlight %}
+```
 
-{% highlight java %}
+```java 
 
 #[( #[File exists.file("D:\tmp\data.log")] ){
    ...
 }]
-{% endhighlight %}
+```

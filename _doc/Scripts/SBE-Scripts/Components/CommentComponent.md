@@ -14,14 +14,14 @@ Multiline comment
 
 Sample:
 
-{% highlight java %}
+```java 
 
 #["
     Example
 "]
-{% endhighlight %}
+```
 
-{% highlight java %}
+```java 
 
 #["Example"]
-{% endhighlight %}
+```

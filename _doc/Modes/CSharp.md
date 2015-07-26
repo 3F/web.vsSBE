@@ -11,7 +11,7 @@ This for work with C# compiler - feel free with all events & actions.
 
 # Default Entry point
 
-{% highlight csharp %}
+```csharp 
 
 using ICommand = net.r_eg.vsSBE.Actions.ICommand;
 using ISolutionEvent = net.r_eg.vsSBE.Events.ISolutionEvent;
@@ -26,7 +26,7 @@ namespace vsSolutionBuildEvent
         }
     }
 }
-{% endhighlight %}
+```
 
 # Compiler settings
 
@@ -34,13 +34,13 @@ namespace vsSolutionBuildEvent
 
 Additional assembly names that are referenced by the source to compile. You can use any formats below, for example:
 
-{% highlight bat %}
+```bat 
 
 EnvDTE.dll
 C:\WINDOWS\assembly\GAC\EnvDTE\<ver>\EnvDTE.dll
 EnvDTE
 EnvDTE, Version=8.0.0.0, PublicKeyToken=b03f5f7f11d50a3a
-{% endhighlight %}
+```
 
 ## FilesMode flag
 
@@ -48,13 +48,13 @@ As variant, you can also use FilesMode flag in Compiler settings for work with e
 
 Then you should use list of files instead of code, for example:
 
-{% highlight bat %}
+```bat 
 
 hooks\*.cs
 scripts\vssbe\main.cs
 scripts\vssbe\ftp.cs
 D:\app\scripts\*.*
-{% endhighlight %}
+```
 etc.
 
 So you can also add this in your solution for more productive work, for example:
@@ -76,7 +76,7 @@ See our source code for more details about [ICommand](https://bitbucket.org/3F/v
 * Customize cache and check other available flags of optimization. (optional)
 * Use next code, for example:
 
-{% highlight csharp %}
+```csharp 
 
 using net.r_eg.vsSBE;
 using ICommand = net.r_eg.vsSBE.Actions.ICommand;
@@ -95,7 +95,7 @@ namespace vsSolutionBuildEvent
         }
     }
 }
-{% endhighlight %}
+```
 
 * Activate Event and click Apply.
 * Enjoy!
@@ -107,7 +107,7 @@ namespace vsSolutionBuildEvent
 * Customize cache and check other available flags of optimization. (optional)
 * Use next code, for example:
 
-{% highlight csharp %}
+```csharp 
 
 using System;
 using System.Net;
@@ -156,7 +156,7 @@ namespace vsSolutionBuildEvent
         }
     }
 }
-{% endhighlight %}
+```
 
 # References
 

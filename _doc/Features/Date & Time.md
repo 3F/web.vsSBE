@@ -29,18 +29,20 @@ We can use the next methods:
 
 for example:
 
-{% highlight java %}
+```java 
 
 $([System.DateTime]::Parse("2015/02/17").ToBinary())
-{% endhighlight %}
-{% highlight java %}
+```
+
+```java 
 
 $([System.DateTime]::Parse("2015/02/17 07:21").ToBinary())
-{% endhighlight %}
-{% highlight java %}
+```
+
+```java 
 
 $([System.DateTime]::Parse("17.02.2015 17:41").ToBinary())
-{% endhighlight %}
+```
 etc.
 
 ### Number of ticks from current date and time
@@ -52,10 +54,10 @@ We also should use the next properties:
 
 for example ![UtcNow.Ticks](https://bitbucket.org/3F/vssolutionbuildevent/wiki/Resources/examples/UtcNow-Ticks.gif):
 
-{% highlight java %}
+```java 
 
 $([System.DateTime]::UtcNow.Ticks)
-{% endhighlight %}
+```
 
 ## How to get the total Minutes or Hours from Ticks
 
@@ -67,31 +69,34 @@ You should use the [TimeSpan Properties](https://msdn.microsoft.com/en-us/librar
 
 and [TimeSpan.FromTicks](https://msdn.microsoft.com/en-us/library/system.timespan.fromticks%28v=vs.100%29.aspx) method, for example:
 
-{% highlight java %}
+```java 
 
 $([System.TimeSpan]::FromTicks(635618792404338780).TotalHours)
 $([System.TimeSpan]::FromTicks(635618792404338780).TotalMinutes)
-{% endhighlight %}
+```
 You also can use the [ToString(string)](https://msdn.microsoft.com/en-us/library/kfsatb94%28v=vs.110%29.aspx) method to get an integer value, e.g.:
-{% highlight java %}
+
+```java 
 
 $([System.TimeSpan]::FromTicks(635618792404338780).TotalHours.ToString("0"))
 $([System.TimeSpan]::FromTicks(635618792404338780).TotalMinutes.ToString("0"))
-{% endhighlight %}
+```
 
 ### How to get delta between the time (Ticks)
 
 * Total **minutes** from Ticks 1 to Ticks 2:
-{% highlight java %}
+
+```java 
 
 $([System.TimeSpan]::FromTicks($([MSBuild]::Subtract(635618821282084745, 635618792404338780))).TotalMinutes.ToString("0"))
-{% endhighlight %}
+```
 
 * Total **seconds** from Ticks 1 to Ticks 2:
-{% highlight java %}
+
+```java 
 
 $([System.TimeSpan]::FromTicks($([MSBuild]::Subtract(635618821282084745, 635618792404338780))).TotalSeconds.ToString("0"))
-{% endhighlight %}
+```
 
 ## Full example for build number
 

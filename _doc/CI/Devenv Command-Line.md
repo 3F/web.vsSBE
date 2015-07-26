@@ -42,17 +42,17 @@ That's all. Now you can use the vsSolutionBuildEvent with msbuild. See below of 
 
 After install you can use the vsSolutionBuildEvent with [Devenv](https://msdn.microsoft.com/en-us/library/vstudio/xee0c8y7.aspx), for example:
 
-{% highlight bash %}
+```bash 
 
 "C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv" "D:\tmp\App1\App1.sln" /Rebuild Debug
-{% endhighlight %}
+```
 
 You can also use the `verbosity` key for details information from vsSolutionBuildEvent - `verbosity:diagnostic` (**debug mode**), for example:
 
-{% highlight bash %}
+```bash 
 
 "C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\devenv" "D:\tmp\App1\App1.sln" verbosity:diagnostic /Build Release
-{% endhighlight %}
+```
 
 For more details about Devenv Command Line see [MSDN documentation](https://msdn.microsoft.com/en-us/library/vstudio/xee0c8y7.aspx)
 

@@ -14,17 +14,17 @@ Immediately cancellation of the build projects
 
 Syntax:
 
-{% highlight java %}
+```java 
 
 #[Build cancel = false|true|1|0]
-{% endhighlight %}
+```
 
 Sample:
 
-{% highlight java %}
+```java 
 
 #[Build cancel = true]
-{% endhighlight %}
+```
 
 Note: This command may be not available if build not started.
 
@@ -34,10 +34,10 @@ Work with configuration manager of projects through the SolutionContexts
 
 Syntax:
 
-{% highlight java %}
+```java 
 
 #[Build projects.find("name")]
-{% endhighlight %}
+```
 
 Note: The find() property compares as part of the name, and you can use simply like a find("ZenLib") or for unique identification full "Zenlib\ZenLib.vcxproj" etc.
 
@@ -46,25 +46,25 @@ Gets or Sets whether the project or project item configuration can be built.
 
 Syntax:
 
-{% highlight java %}
+```java 
 
 #[Build projects.find("name").IsBuildable = false|true|1|0]
 #[Build projects.find("name").IsBuildable]
-{% endhighlight %}
+```
 
 Sample:
 
-{% highlight java %}
+```java 
 
 #[(#[Build projects.find("ZenLib").IsBuildable]){
     Buildable
 }]
-{% endhighlight %}
+```
 
-{% highlight java %}
+```java 
 
 #[Build projects.find("ZenLib").IsBuildable = false]
-{% endhighlight %}
+```
 
 
 ### IsDeployable ###
@@ -73,25 +73,25 @@ Gets or Sets whether the current project is built when the solution configuratio
 
 Syntax:
 
-{% highlight java %}
+```java 
 
 #[Build projects.find("name").IsDeployable = false|true|1|0]
 #[Build projects.find("name").IsDeployable]
-{% endhighlight %}
+```
 
 Sample:
 
-{% highlight java %}
+```java 
 
 #[(#[Build projects.find("ZenLib").IsDeployable]){
     Buildable
 }]
-{% endhighlight %}
+```
 
-{% highlight java %}
+```java 
 
 #[Build projects.find("ZenLib").IsDeployable= false]
-{% endhighlight %}
+```
 
 ## type
 
@@ -101,9 +101,9 @@ Gets type of current build action, or last used type if it already finished.
 
 Syntax:
 
-{% highlight java %}
+```java 
 
 enum #[Build type]
-{% endhighlight %}
+```
 
 **Note:** allowed types you can see [here](https://bitbucket.org/3F/vssolutionbuildevent/src/master/Bridge/BuildType.cs)

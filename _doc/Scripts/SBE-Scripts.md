@@ -31,10 +31,10 @@ With latest versions used [Dom](../../Dev/New Component/) for inspecting model o
 
 All commands and operations should be wrapped with container:
 
-{% highlight java %}
+```java 
 
 #[ ... ]
-{% endhighlight %}
+```
 
 If you have a problem with syntax and documentation for component can't say how this should be... don't worry, you can:
 

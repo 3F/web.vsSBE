@@ -1,6 +1,7 @@
 ---
 layout: doc
 title: Test page for Wiki features
+hideDocmap: true
 permalink: /doc/Wiki test/
 ---
 
@@ -10,7 +11,7 @@ permalink: /doc/Wiki test/
 
 ## Pygments style
 
-{% highlight csharp %}
+```csharp 
 using ICommand = net.r_eg.vsSBE.Actions.ICommand;
 using ISolutionEvent = net.r_eg.vsSBE.Events.ISolutionEvent;
 
@@ -24,7 +25,7 @@ namespace vsSolutionBuildEvent
         }
     }
 }
-{% endhighlight %}
+```
 
 ## GitHub Flavored Markdown
 

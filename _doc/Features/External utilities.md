@@ -34,19 +34,20 @@ Of course all data from external utilities can be used for User-Variables or wit
 [openssl](https://www.openssl.org/docs/apps/openssl.html)
 
 * Sha1 for 'Hello World!'
-{% highlight java %}
+
+```java 
 
 #[File cmd("echo 'Hello World!'| openssl sha1 | sed 's/^.*\s//'")]
-{% endhighlight %}
+```
 Result: `41956c7422fd4f2f8796ccf063a45ab5825372af`
 
 * Sha1 for current time:
 
-{% highlight java %}
+```java 
 
 #[var utcnow = $([System.DateTime]::UtcNow.Ticks)]
 #[File cmd("echo '#[var utcnow]'| openssl sha1 | sed 's/^.*\s//'")]
-{% endhighlight %}
+```
 Result: `47c14be77bc0a13a0454e1ad2e9a642549f467fc`
 
 
@@ -55,17 +56,19 @@ Result: `47c14be77bc0a13a0454e1ad2e9a642549f467fc`
 NuGet command line tool - [nuget.exe](https://www.nuget.org/nuget.exe) ([documentation](http://docs.nuget.org/Consume/Command-Line-Reference))
 
 for example:
-{% highlight java %}
+
+```java 
 
 #[File cmd("nuget list Moq | grep -e \"^Moq \"", 30)]
-{% endhighlight %}
+```
 Result: `Moq 4.2.1502.0911`
 
 * Next patch number for latest package, for example:
-{% highlight java %}
+
+```java 
 
 $([MSBuild]::Add(#[File sout("cmd", "/C .nuget\nuget.exe list vsSBE.CI.MSBuild | grep 'vsSBE.CI.MSBuild' | sed -r 's/^.*\s[0-9]+\.[0-9]+\.//'", 30)], 1))
-{% endhighlight %}
+```
 Result: `1.0.5` -> `1.0.6`
 
 #### Packing files. Archive of binaries files from projects.

@@ -12,14 +12,15 @@ You can use an additional option "Actions for specific configurations" (see belo
 * Turn on support: [SBE-Scripts](../../Scripts/SBE-Scripts/) & [MSBuild](../../Scripts/MSBuild/) in control window. 
 * And use for example: 
 
-{% highlight java %}
+```java 
 
 #[($(Configuration) == Debug){ 
     ... 
 }]
-{% endhighlight %}
+```
 also you can check only part of the name, e.g.:
-{% highlight java %}
+
+```java 
 
 #[($(Configuration) ~= _with_revision) 
 { 
@@ -27,7 +28,7 @@ also you can check only part of the name, e.g.:
      * Debug_with_revision,  
      * Release_with_revision, etc. 
 }]
-{% endhighlight %}
+```
 etc. *see [ConditionComponent](../../Scripts/SBE-Scripts/Components/ConditionComponent/) for more details*
 
 ## For v0.8+ 
@@ -46,13 +47,14 @@ As result: this should work only for selected configurations.
 
 You can use simple call, for example:
 
-{% highlight java %}
+```java 
 
 vssbe_h.bat PRE $(Configuration)
-{% endhighlight %}
+```
 
 vssbe_h.bat:
-{% highlight bash %}
+
+```bash 
 
 @echo off 
 REM arguments: 
@@ -85,7 +87,7 @@ REM ### Cancel-Build
     goto end 
  
 :end
-{% endhighlight %}
+```
 
 and similar with [MSBuild](../../Scripts/MSBuild/)
 
