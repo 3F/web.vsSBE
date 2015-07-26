@@ -82,7 +82,7 @@ else {
 # References
 
 * [SBE-Scripts](../../Scripts/SBE-Scripts/)
-* * [BuildComponent](../../Scripts/SBE-Scripts/Components/BuildComponent/)
-* * [ConditionComponent](../../Scripts/SBE-Scripts/Components/ConditionComponent/)
-* * [UserVariableComponent](../../Scripts/SBE-Scripts/Components/UserVariableComponent/)
+    * [BuildComponent](../../Scripts/SBE-Scripts/Components/BuildComponent/)
+    * [ConditionComponent](../../Scripts/SBE-Scripts/Components/ConditionComponent/)
+    * [UserVariableComponent](../../Scripts/SBE-Scripts/Components/UserVariableComponent/)
 * [Examples & Features](../../Examples/)

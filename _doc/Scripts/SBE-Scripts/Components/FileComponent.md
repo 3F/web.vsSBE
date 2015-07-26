@@ -14,13 +14,13 @@ Operations with files and standard streams.
 *for call/scall/sout* etc.:
 
 * All errors can be ~disabled with arguments, for example:
-* * stderr to stdout: *<command>* **2>&1**
-* * stderr to NUL i.e. as disabled: *<command>* **2>nul**
-* * stderr into file: *<command>* **2>** *<path_to_file>*
-* * etc.
+    * stderr to stdout: `command` **2>&1**
+    * stderr to NUL i.e. as disabled: `command` **2>nul**
+    * stderr into file: `command` **2>** `path_to_file`
+    * etc.
 * stdout can be a similar:
-* * *<command>* **>** *<destination>* or *<command>* **1>** *<destination>*
-* * Where <destination> it's similar as above.
+    * `command` **>** `destination` or `command` **1>** `destination`
+    * Where `destination` it's similar as above.
 * For more details see: [MS Q110930](http://support.microsoft.com/kb/110930/en-us)
 
 #### IO alias

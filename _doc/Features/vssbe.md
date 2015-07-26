@@ -47,9 +47,9 @@ For example, [currently](https://bitbucket.org/3F/vssolutionbuildevent/src) this
 Files above only contains a few projects with different settings, for example:
 
 * Devenv.csproj
-* * Devenv_2012.csproj
-* * Devenv_2013.csproj
-* * Devenv_net40.csproj
+    * Devenv_2012.csproj
+    * Devenv_2013.csproj
+    * Devenv_net40.csproj
 
 And by default the ProjectName can be as 'Devenv_2012', 'Devenv_2013', 'Devenv_net40' if you open .sln
 

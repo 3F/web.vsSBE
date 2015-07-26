@@ -39,35 +39,35 @@ else{
 Rules of comparison:
 
 * **===** 
-*  * Compares as: left == right as string
+    * Compares as: left == right as string
 * **!==**
-* * Compares as: left != right as string
+    * Compares as: left != right as string
 * **~=**
-* * Compares as: left Contains right ?
+    * Compares as: left Contains right ?
 * **^=**
-* * Compares as: left Begins with right ?
+    * Compares as: left Begins with right ?
 * **=^**
-* * Compares as: left Ends with right ?
+    * Compares as: left Ends with right ?
 * **==** 
-* * Compares in order of: 
-* * * left == right as numeric
-* * * left == right as boolean
-* * * left == right as string
+    * Compares in order of: 
+        * left == right as numeric
+        * left == right as boolean
+        * left == right as string
 * **!=** 
-* * Compares in order of: 
-* * * left != right as numeric
-* * * left != right as boolean
-* * * left != right as string
+    * Compares in order of: 
+        * left != right as numeric
+        * left != right as boolean
+        * left != right as string
 * **>**
-* * Compares as: left > right as numeric
+    * Compares as: left > right as numeric
 * **>=**
-* * Compares as: left >= right as numeric
+    * Compares as: left >= right as numeric
 * **<**
-* * Compares as: left < right as numeric
+    * Compares as: left < right as numeric
 * **<=**
-* * Compares as: left <= right as numeric
+    * Compares as: left <= right as numeric
 * **!**
-* * Inverts result of the expression in the used brackets
+    * Inverts result of the expression in the used brackets
 
 ## Composite Conditions ##
 

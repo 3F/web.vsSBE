@@ -247,12 +247,12 @@ And finally generated the 'Release_notes.txt' with [FileComponent](../../Scripts
 As result:
 
 * All packages should appears in **bin\Release** folder.
-* * You should ignore this folder in your scm ([.gitignore](http://git-scm.com/docs/gitignore), .hgignore, .bzrignore, svn:ignore, etc.,)
+    * You should ignore this folder in your scm ([.gitignore](http://git-scm.com/docs/gitignore), .hgignore, .bzrignore, svn:ignore, etc.,)
 
 Working example you can see in:
 
 * [Source code](https://bitbucket.org/3F/vssolutionbuildevent/src)
-* * [Script file](https://bitbucket.org/3F/vssolutionbuildevent/src/master/.vssbe) ([Gist](https://gist.github.com/3F/3f2f56dfc2a01dc99c63))
+    * [Script file](https://bitbucket.org/3F/vssolutionbuildevent/src/master/.vssbe) ([Gist](https://gist.github.com/3F/3f2f56dfc2a01dc99c63))
 * [ci.appveyor.com](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/build/build-60)
 
 # Remote servers

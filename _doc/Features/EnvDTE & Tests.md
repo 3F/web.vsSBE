@@ -50,7 +50,7 @@ etc.
 # References
 
 * [SBE-Scripts](../../Scripts/SBE-Scripts/)
-* * [DTEComponent](../../Scripts/SBE-Scripts/Components/DTEComponent/)
-* * [ConditionComponent](../../Scripts/SBE-Scripts/Components/ConditionComponent/)
+    * [DTEComponent](../../Scripts/SBE-Scripts/Components/DTEComponent/)
+    * [ConditionComponent](../../Scripts/SBE-Scripts/Components/ConditionComponent/)
 * [DTE-Commands](../../Scripts/DTE-Commands/)
 * [Examples & Features](../../Examples/)

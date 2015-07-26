@@ -38,12 +38,12 @@ That's all. Now you can use the vsSolutionBuildEvent with msbuild. See below of 
 *For advanced usage, for example with own NuGet private server, custom libraries etc.*
 
 * Download [CI.MSBuild_v1.1_[e9ad3bd][net40].zip](http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/CI.MSBuild_v1.1_%5Be9ad3bd%5D%5Bnet40%5D.zip/download) (SourceForge.net) 
-* * All binaries of the CI.MSBuild: [CI-Utilities/CI.MSBuild/](https://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/)
+    * All binaries of the CI.MSBuild: [CI-Utilities/CI.MSBuild/](https://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/)
 * Unpack the CI.MSBuild archive. *(you can delete all .pdb files)*
 * Download the [vsSolutionBuildEvent plugin](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/referral/118151) and extract all files from *.**vsix** with any archiver ([it's a simple 'zip' archive](https://msdn.microsoft.com/en-us/library/ff407026.aspx))
-* * **Or** simply go to the installed folder (In plugin: `Settings` - `CI Utilities` - `Plugin` - `Open directory with plugin`)
+    * **Or** simply go to the installed folder (In plugin: `Settings` - `CI Utilities` - `Plugin` - `Open directory with plugin`)
 * Copy all files into the CI.MSBuild folder (without replacements - i.e. CI.MSBuild should be over vsSolutionBuildEvent)
-* * **Or** use `lib=<path>` key with utility (see in "how to use")
+    * **Or** use `lib=<path>` key with utility (see in "how to use")
 
 That's all. Now you can use the vsSolutionBuildEvent with msbuild. See below of how to use it.
 
@@ -109,7 +109,7 @@ See also [AppVeyor documentation](http://www.appveyor.com/docs/nuget) & [Creatin
 * On AppVeyor: `Project` - `Settings` - `NuGet` - enable the `Account feed`
 *  Go to the folder with libraries CI.MSBuild (see above - Install->Manually variant)
 * Execute the command `nuget spec CI.MSBuild.dll`
-* * should create the *CI.MSBuild.dll.nuspec* file, change this file as you want ([see nuget doc](http://docs.nuget.org/create/creating-and-publishing-a-package)).
+    * should create the *CI.MSBuild.dll.nuspec* file, change this file as you want ([see nuget doc](http://docs.nuget.org/create/creating-and-publishing-a-package)).
 * Then pack this with command: `nuget pack CI.MSBuild.dll.nuspec`
 * On AppVeyor: go to - `Account NuGet feed` and get you API key or full command.
 * Push your packet on AppVeyor server: `nuget push CI.MSBuild.dll.<ver>.nupkg -ApiKey <API key> -Source <Account feed URL>/api/v2/package`

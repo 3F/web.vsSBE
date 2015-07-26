@@ -99,13 +99,13 @@ and similar..
 # References #
 
 * [SBE-Scripts](../../Scripts/SBE-Scripts/)
-* * [ConditionComponent](../../Scripts/SBE-Scripts/Components/ConditionComponent/)
+    * [ConditionComponent](../../Scripts/SBE-Scripts/Components/ConditionComponent/)
 * [MSBuild](../../Scripts/MSBuild/)
 * [Date & Time](../Date & Time/)
 * [Automatic Version Numbering for VSIX Package](../../Examples/Version number/)
 * [OpenSSL Project](https://openssl.org)
 * MSDN:
-* * [System.Guid](https://msdn.microsoft.com/en-us/library/system.guid%28v=vs.100%29.aspx)
+    * [System.Guid](https://msdn.microsoft.com/en-us/library/system.guid%28v=vs.100%29.aspx)
 * [Examples & Features](../../Examples/)
 
 

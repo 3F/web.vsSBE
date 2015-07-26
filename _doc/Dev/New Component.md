@@ -269,7 +269,7 @@ Note:
 
 * Type of the get/set should be as [CValueType](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/CValueType.cs)
 * The **parent** it's optional argument used for linking on parent element (property/method etc.) if exist
-* * The **method** argument should contain the real method name who implements the parent element (property/method etc.) 
+    * The **method** argument should contain the real method name who implements the parent element (property/method etc.) 
 * All available constructors see with the [Dom.PropertyAttribute](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Dom/PropertyAttribute.cs).
 
 ### MethodAttribute ###
@@ -311,7 +311,7 @@ Note:
 
 * Type of the get/set should be as [CValueType](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/CValueType.cs)
 * The **parent** it's optional argument used for linking on parent element (property/method etc.) if exist
-* * The **method** argument should contain the real method name who implements the parent element (property/method etc.) 
+    * The **method** argument should contain the real method name who implements the parent element (property/method etc.) 
 * All available constructors see with the [Dom.MethodAttribute](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Dom/MethodAttribute.cs)
 
 ### ComponentAttribute ###

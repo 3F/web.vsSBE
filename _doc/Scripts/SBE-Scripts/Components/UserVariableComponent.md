@@ -74,7 +74,7 @@ For older versions - you should use 1 or more symbols (whitespace characters or 
 The all variables should skip the first whitespace characters to set values for compatibility. However, you can use the [MSBuild](../../../MSBuild/) core and static methods, for example:
 
 * [String.Concat Method (Object)](https://msdn.microsoft.com/en-us/library/khca9w90%28v=vs.100%29.aspx)
-* * [String.Concat Method (String, String)](https://msdn.microsoft.com/en-us/library/a6d350wd%28v=vs.100%29.aspx)
+    * [String.Concat Method (String, String)](https://msdn.microsoft.com/en-us/library/a6d350wd%28v=vs.100%29.aspx)
 * [String.Format Method (String, Object, Object)](https://msdn.microsoft.com/en-us/library/zf3d0ccc%28v=vs.100%29.aspx)
 * and similar..
 

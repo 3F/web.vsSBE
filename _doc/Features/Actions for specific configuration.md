@@ -93,5 +93,5 @@ and similar with [MSBuild](../../Scripts/MSBuild/)
 
 * [MSBuild](../../Scripts/MSBuild/)
 * [SBE-Scripts](../../Scripts/SBE-Scripts/)
-* * [ConditionComponent](../../Scripts/SBE-Scripts/Components/ConditionComponent/)
+    * [ConditionComponent](../../Scripts/SBE-Scripts/Components/ConditionComponent/)
 * [Examples & Features](../../Examples/)

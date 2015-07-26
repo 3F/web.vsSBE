@@ -80,5 +80,5 @@ How to work with [7-zip](http://www.7-zip.org) you can see in '[Artefacts](../..
 * [Operations with strings](../Strings/)
 * [MSBuild](../../Scripts/MSBuild/)
 * [SBE-Scripts](../../Scripts/SBE-Scripts/)
-* * [FileComponent](../../Scripts/SBE-Scripts/Components/FileComponent/)
+    * [FileComponent](../../Scripts/SBE-Scripts/Components/FileComponent/)
 * [Examples & Features](../../Examples/)

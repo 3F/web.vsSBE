@@ -91,8 +91,8 @@ If you want to pass a long string as argument for some function or method, for e
 You can for example:
 
 * Use the User-Variables for splitting the logic:
-* * With [MSBuild](../../Scripts/MSBuild/) core
-* * With [UserVariableComponent](../../Scripts/SBE-Scripts/Components/UserVariableComponent/) ([SBE-Scripts](../../Scripts/SBE-Scripts/) core)
+    * With [MSBuild](../../Scripts/MSBuild/) core
+    * With [UserVariableComponent](../../Scripts/SBE-Scripts/Components/UserVariableComponent/) ([SBE-Scripts](../../Scripts/SBE-Scripts/) core)
 
 The [UserVariableComponent](../../Scripts/SBE-Scripts/Components/UserVariableComponent/) is  more useful because for current component allowed the multiline mixed definition and therefore you can for example:
 
@@ -173,8 +173,8 @@ Currently used a strictly limited set:
 
 * [hexadecimal-escape-sequence](https://msdn.microsoft.com/en-us/library/aa691087%28v=vs.71%29.aspx): `\x   0-0xF  [0-0xF  [0-0xF  [0-0xF]]]`
 * [unicode-escape-sequence](https://msdn.microsoft.com/en-us/library/aa664669%28v=vs.71%29.aspx): 
-* * `\u   0-0xF  0-0xF  0-0xF  0-0xF` 
-* * `\U   0-0xF  0-0xF  0-0xF  0-0xF  0-0xF  0-0xF  0-0xF  0-0xF`
+    * `\u   0-0xF  0-0xF  0-0xF  0-0xF` 
+    * `\U   0-0xF  0-0xF  0-0xF  0-0xF  0-0xF  0-0xF  0-0xF  0-0xF`
 * basic: `\r \n \t \v \a \b \0 \f`
 
 # References
