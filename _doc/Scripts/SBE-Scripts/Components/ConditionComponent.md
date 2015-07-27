@@ -1,11 +1,12 @@
 ---
 layout: doc
 title: ConditionComponent
+description: Conditional statements for scripts.
 permalink: /doc/Scripts/SBE-Scripts/Components/ConditionComponent/
 ---
 # ConditionComponent
 
-Conditional statements for [scripts]({{site.baseurl}}/{{site.docp}}/Scripts/).
+Conditional statements for [scripts]({{site.docp}}/Scripts/).
 
 ## Syntax
 

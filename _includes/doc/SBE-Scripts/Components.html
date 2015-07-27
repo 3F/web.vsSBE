@@ -1,0 +1,16 @@
+<table class="table table-striped table-hover ">
+  <tbody>
+  {% assign cprefix = "SBE-Scripts/Components/" %}
+  {% for post in site.doc %} 
+    {% if post.url contains {{cprefix}} %}
+      {% assign _c = post.url | split: {{cprefix}}  %}
+      {% if {{_c.size}} > 1 %}
+      <tr>
+        <td><a href="{{site.docp}}/Scripts/SBE-Scripts/Components/{{_c[1]}}">{{_c[1] | remove: '/'}}</a></td>
+        <td>{{post.description}}</td>
+      </tr>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+  </tbody>
+</table>

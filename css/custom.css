@@ -58,6 +58,9 @@ pre code {
   white-space: inherit;
 }
 
+.breadcrumb {
+  margin-bottom: 0px;
+}
 
 /* default table for md */
 

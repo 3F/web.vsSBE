@@ -36,13 +36,13 @@ You can simply [report](https://bitbucket.org/3F/vssolutionbuildevent/issues/new
 
 **Or**! try to fix it yourself!
 
-Start with [Developer Zone]({{site.baseurl}}/{{site.docp}}/Dev/)
+Start with [Developer Zone]({{site.docp}}/Dev/)
 
 ## New Features ##
 
-For existing or new things. Have ideas ? good! Also you can extend or improve our platform with [Components]({{site.baseurl}}/{{site.docp}}/Dev/New Component)
+For existing or new things. Have ideas ? good! Also you can extend or improve our platform with [Components]({{site.docp}}/Dev/New Component)
 
-Start with [Developer Zone]({{site.baseurl}}/{{site.docp}}/Dev/)
+Start with [Developer Zone]({{site.docp}}/Dev/)
 
 ## UI ##
 
@@ -52,9 +52,9 @@ Improvement or complete replacement the current UI (main GUI, console, tool pane
 
 Current UI is obsolete and not convenient for all new features, so you can also try to help change this.
 
-Start with [Developer Zone]({{site.baseurl}}/{{site.docp}}/Dev/)
+Start with [Developer Zone]({{site.docp}}/Dev/)
 
-**Please note:** planned to separate this namespace into the new project (this really needed with [API]({{site.baseurl}}/{{site.docp}}/API) and all related subprojects). Write before [here](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)
+**Please note:** planned to separate this namespace into the new project (this really needed with [API]({{site.docp}}/API) and all related subprojects). Write before [here](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)
 
 ## Share ##
 

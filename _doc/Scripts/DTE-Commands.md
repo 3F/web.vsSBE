@@ -57,4 +57,4 @@ etc.
 
 * [SBE-Scripts](../SBE-Scripts/)
 * [MSBuild](../MSBuild/)
-* [Examples & Features]({{site.baseurl}}/{{site.docp}}/Examples/)
+* [Examples & Features]({{site.docp}}/Examples/)

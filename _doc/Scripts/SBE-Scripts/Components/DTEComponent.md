@@ -1,6 +1,7 @@
 ---
 layout: doc
 title: DTEComponent
+description: For work with EnvDTE.
 permalink: /doc/Scripts/SBE-Scripts/Components/DTEComponent/
 ---
 # DTEComponent
@@ -39,7 +40,7 @@ Operations with events.
 
 Last received command.
 
-**Note:** Use our [Sniffer]({{site.baseurl}}/{{site.docp}}/Events/CommandEvent/) to find any commands.
+**Note:** Use our [Sniffer]({{site.docp}}/Events/CommandEvent/) to find any commands.
 
 #### Guid
 

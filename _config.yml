@@ -6,7 +6,7 @@ baseurl: ""
 url: "http://vssbe.r-eg.net" # base hostname
 
 # root path to doc structure
-docp: "./doc"
+docp: "/doc"
 #permalink: pretty
 
 collections:

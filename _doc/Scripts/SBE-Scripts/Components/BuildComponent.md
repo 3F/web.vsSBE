@@ -1,6 +1,7 @@
 ---
 layout: doc
 title: BuildComponent
+description: Component to managing of building the projects at runtime and similar.
 permalink: /doc/Scripts/SBE-Scripts/Components/BuildComponent/
 ---
 # BuildComponent

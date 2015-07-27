@@ -1,6 +1,7 @@
 ---
 layout: doc
 title: UserVariableComponent
+description: Works with User-Variables.
 permalink: /doc/Scripts/SBE-Scripts/Components/UserVariableComponent/
 ---
 # UserVariableComponent
@@ -112,6 +113,6 @@ $(name = "  - Platform is a $(Platform)  ")
 
 # References
 
-* [Operations with strings]({{site.baseurl}}/{{site.docp}}/Features/Strings)
-* [MSBuild](../../../MSBuild)
-* [Examples & Features]({{site.baseurl}}/{{site.docp}}/Examples)
+* [Operations with strings]({{site.docp}}/Features/Strings/)
+* [MSBuild](../../../MSBuild/)
+* [Examples & Features]({{site.docp}}/Examples/)
