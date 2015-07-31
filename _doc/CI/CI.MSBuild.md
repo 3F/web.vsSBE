@@ -27,7 +27,7 @@ for example: `nuget install vsSBE.CI.MSBuild -ExcludeVersion -OutputDirectory C:
 
 **OR**
 
-Add this utility for your ***.sln** (see [Managing Packages for the Solution](https://docs.nuget.org/consume/package-manager-dialog#managing-packages-for-the-solution)):
+Add this utility for your **.sln** (see [Managing Packages for the Solution](https://docs.nuget.org/consume/package-manager-dialog#managing-packages-for-the-solution)):
 
 * In Visual Studio: right click on solution -> `Manage NuGet Packages for Solution...`
 
@@ -40,7 +40,7 @@ That's all. Now you can use the vsSolutionBuildEvent with msbuild. See below of 
 * Download [CI.MSBuild_v1.1_[e9ad3bd][net40].zip](http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/CI.MSBuild_v1.1_%5Be9ad3bd%5D%5Bnet40%5D.zip/download) (SourceForge.net) 
     * All binaries of the CI.MSBuild: [CI-Utilities/CI.MSBuild/](https://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/)
 * Unpack the CI.MSBuild archive. *(you can delete all .pdb files)*
-* Download the [vsSolutionBuildEvent plugin](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/referral/118151) and extract all files from *.**vsix** with any archiver ([it's a simple 'zip' archive](https://msdn.microsoft.com/en-us/library/ff407026.aspx))
+* Download the [vsSolutionBuildEvent plugin](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/referral/118151) and extract all files from .**vsix** with any archiver ([it's a simple 'zip' archive](https://msdn.microsoft.com/en-us/library/ff407026.aspx))
     * **Or** simply go to the installed folder (In plugin: `Settings` - `CI Utilities` - `Plugin` - `Open directory with plugin`)
 * Copy all files into the CI.MSBuild folder (without replacements - i.e. CI.MSBuild should be over vsSolutionBuildEvent)
     * **Or** use `lib=<path>` key with utility (see in "how to use")
@@ -70,7 +70,24 @@ Use the command: `msbuild.exe /?` for details about keys: `/nologo` `/noconsolel
 
 ![Example of work](../../Resources/CI.MSBuild_example_console.png)
 
-### Could not load file or assembly ... or one of its dependencies. ###
+### Keys to CI.MSBuild
+
+name | description | sample
+-----|---------
+lib  |Path to main library - vsSolutionBuildEvent.dll|/l:"CI.MSBuild.dll";lib=D:\bin\
+culture|Culture for the current thread|;culture=ru-RU
+cultureUI|Culture used by the Resource Manager to look up culture-specific resources at run time. For example - console messages from msbuild engine etc.|;cultureUI=en-US
+
+
+Samples:
+```
+"D:\projects\App1.sln" /nologo /l:"CI.MSBuild.dll";lib=D:\bin\vsSolutionBuildEvent\;cultureUI=en-US /verbosity:detailed /t:Rebuild /p:Configuration=Debug;Platform="Any CPU" /m:8
+```
+
+If you want disable all msbuild messages, i.e. allow only messages from vsSolutionBuildEvent, use the `/noconsolelogger` key to msbuild [[?](https://msdn.microsoft.com/en-us/library/vstudio/ms164311.aspx)]
+
+
+### Could not load file or assembly ... or one of its dependencies.
 
 ```bash 
 
@@ -78,19 +95,15 @@ MSBUILD : error MSB4017: The build stopped unexpectedly because of an unexpected
 ...
 ```
 
-Various environments for CI has a different configuration and if you see similar problem and list of this:
+[Our NuGet Package](https://www.nuget.org/packages/vsSBE.CI.MSBuild/) **is already now** contains most required libraries for working.
+
+However, the various environments for CI has a different configuration and if you see similar problem and list of this:
  
  `Could not load file or assembly ... or one of its dependencies.`
+ 
+You can try add this manually into **/bin** folder.
 
-You can try add this manually into **/bin** folder: generally, problem can be with a few libraries (as part of VSSDK for main library):
-
-* [envdte80.dll](https://www.nuget.org/api/v2/package/VSSDK.DTE.8/8.0.4) ~147 Kb
-* [Microsoft.VisualStudio.Shell.10.0.dll](https://www.nuget.org/api/v2/package/VSSDK.Shell.10/10.0.4) ~972 Kb
-* [envdte.dll](https://www.nuget.org/api/v2/package/VSSDK.DTE/7.0.4) ~255 Kb
-
-*See in **/lib** folder after unpacking .nupkg with any archiver*
-
-If you see any errors with installing and/or using, please report [here](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)
+If you see any problem with installing and/or using, please report [here](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)
 
 *Some references can be removed later special for CI.MSBuild version and/or some libraries can be added later in [our package](https://www.nuget.org/packages/vsSBE.CI.MSBuild/) directly or as dependencies for full automation.*
 
@@ -126,7 +139,7 @@ Enjoy
 **Note:** 
 
 * Use key **[-ExcludeVersion](https://docs.nuget.org/consume/command-line-reference)** for path without version number, e.g.: `vsSBE.CI.MSBuild\bin\CI.MSBuild.dll`
-* You can simply use it with one command - `nuget restore <SolutionFile>.sln`... if the CI.MSBuild added for ***.sln** it's easy and useful (see in 'How to get & Install' above)
+* You can simply use it with one command - `nuget restore <SolutionFile>.sln`... if the CI.MSBuild added for **.sln** it's easy and useful (see in 'How to get & Install' above)
 
 ### With our NuGet package ###
 
@@ -145,7 +158,7 @@ Yes, that's all.
 **Note:** 
 
 * Use key **[-ExcludeVersion](https://docs.nuget.org/consume/command-line-reference)** for path without version number, e.g.: `vsSBE.CI.MSBuild\bin\CI.MSBuild.dll`
-* You can simply use it with one command - `nuget restore <SolutionFile>.sln`... if the CI.MSBuild added for ***.sln** it's easy and useful (see in 'How to get & Install' above)
+* You can simply use it with one command - `nuget restore <SolutionFile>.sln`... if the CI.MSBuild added for **.sln** it's easy and useful (see in 'How to get & Install' above)
 
 ## Example for TeamCity ##
 
@@ -164,7 +177,7 @@ nuget install vsSBE.CI.MSBuild -OutputDirectory C:\projects\<your_project>\Build
 **Note:** 
 
 * Use key **[-ExcludeVersion](https://docs.nuget.org/consume/command-line-reference)** for path without version number, e.g.: `vsSBE.CI.MSBuild\bin\CI.MSBuild.dll`
-* You can simply use it with one command - `nuget restore <SolutionFile>.sln`... if the CI.MSBuild added for ***.sln** it's easy and useful (see in 'How to get & Install' above)
+* You can simply use it with one command - `nuget restore <SolutionFile>.sln`... if the CI.MSBuild added for **.sln** it's easy and useful (see in 'How to get & Install' above)
 
 for additional NuGet server, use command:
 
