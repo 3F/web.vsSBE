@@ -1,4 +1,21 @@
 <header>
+
+<!-- cse -->
+<script>
+  (function() {
+    var cx = '015940813846195949799:g4jcvddxv9y';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div style="width:0; height:0; overflow: hidden;">
+  <gcse:search linktarget="_self"></gcse:search>
+</div>
     
     <nav class="navbar navbar-default">
       <div class="wrapper container-fluid">
@@ -22,11 +39,12 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">+ <span class="caret"></span></a>
               <ul class="dropdown-menu" role="menu">
                 <li>
-                  <form class="navbar-form navbar-left" role="search">
+                  <form id="searchbox_015940813846195949799:g4jcvddxv9y" action="" class="navbar-form navbar-left" role="search">
+                    <input value="015940813846195949799:g4jcvddxv9y" name="cx" type="hidden"/>
                     <span class="form-group">
-                      <input class="form-control" placeholder="Search" type="text" >
+                      <input id="q" name="q" class="form-control" placeholder="Search" type="text" >
                     </span>
-                    <!--<button type="submit" class="btn btn-default">~</button>-->
+                    <!--<button type="submit" name="sa" class="btn btn-default">~</button>-->
                   </form>
                 </li>
                 <li><a href="{{ site.docp }}/New/">Create new page</a></li>

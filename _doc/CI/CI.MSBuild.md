@@ -73,16 +73,15 @@ Use the command: `msbuild.exe /?` for details about keys: `/nologo` `/noconsolel
 ### Keys to CI.MSBuild
 
 name | description | sample
------|---------
+-----|-------------|-------
 lib  |Path to main library - vsSolutionBuildEvent.dll|/l:"CI.MSBuild.dll";lib=D:\bin\
-culture|Culture for the current thread|;culture=ru-RU
-cultureUI|Culture used by the Resource Manager to look up culture-specific resources at run time. For example - console messages from msbuild engine etc.|;cultureUI=en-US
+culture|v1.3+ Culture for the current thread|culture=ru-RU
+cultureUI|v1.3+ Culture used by the Resource Manager to look up culture-specific resources at run time. For example - console messages from msbuild engine etc.|cultureUI=en-US
 
 
-Samples:
-```
-"D:\projects\App1.sln" /nologo /l:"CI.MSBuild.dll";lib=D:\bin\vsSolutionBuildEvent\;cultureUI=en-US /verbosity:detailed /t:Rebuild /p:Configuration=Debug;Platform="Any CPU" /m:8
-```
+Samples: 
+
+* `"D:\projects\App1.sln" /nologo /l:"CI.MSBuild.dll";lib=D:\bin\vsSolutionBuildEvent\;cultureUI=en-US /verbosity:detailed /t:Rebuild /p:Configuration=Debug;Platform="Any CPU" /m:8`
 
 If you want disable all msbuild messages, i.e. allow only messages from vsSolutionBuildEvent, use the `/noconsolelogger` key to msbuild [[?](https://msdn.microsoft.com/en-us/library/vstudio/ms164311.aspx)]
 

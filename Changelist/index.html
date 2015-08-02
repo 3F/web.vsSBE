@@ -6,27 +6,83 @@ layout: default
   <div class="panel-heading">
     <h3 class="panel-title">Changelist</h3>
   </div>
-  <pre class="panel-body" id="changelist" style="overflow: auto; height: 500px;">
-    <div class="panel panel-warning">
-      <div class="panel-heading">
-        <h3 class="panel-title">Warning</h3>
-      </div>
-      <span class="panel-body">
-        Something went wrong... we can't receive file from:
-        <a target="_blank" href="{{site.changelog}}">{{site.changelog}}</a>
-        Please try again later or use feedback
-      </span>
-    </div>
+  <ul class="nav nav-tabs" style="margin-left: 0;">
+    <li class="active"><a id="mainTab" aria-expanded="true" href="#main" data-toggle="tab">Main library</a></li>
+    <li class=""><a id="cimTab" aria-expanded="false" href="#cim" data-toggle="tab">CI.MSBuild</a></li>
+    <li class=""><a id="devenvTab" aria-expanded="false" href="#devenv" data-toggle="tab">Devenv</a></li>
+    <li class=""><a id="apiTab" aria-expanded="false" href="#api" data-toggle="tab">API</a></li>
+    <li class=""><a id="providerTab" aria-expanded="false" href="#provider" data-toggle="tab">Provider</a></li>
+    <li class=""><a id="nugetTab" aria-expanded="false" href="#nuget" data-toggle="tab">NuGet Package for CI</a></li>
+  </ul>
+  <pre id="content" class="panel-body tab-content" style="overflow: auto; height: 500px;">
   </pre>
 </div>
-<div id="changelistBar" class="progress progress-striped active">
+<div id="progress" class="progress progress-striped active">
   <div class="progress-bar" style="width: 75%"></div>
 </div>
+
+<span id="msgWarn" style="display: none;">
+  <div class="panel panel-warning">
+    <div class="panel-heading">
+      <h4 class="panel-title">Something went wrong...</h4>
+    </div>
+    <div class="panel-body">
+      We can't receive file from:
+      <a target="_blank" href="%changelogUrl%">%changelogUrl%</a>
+      Please try again later or use feedback
+    </div>
+  </div>
+</span>
+
+<span id="msgNuget" style="display: none;">
+  <div class="panel panel-warning">
+    <div class="panel-body">
+      See 'Version History' &amp; 'Release Notes' on this page:
+      &bull; <a target="_blank" href="https://www.nuget.org/packages/vsSBE.CI.MSBuild/">nuget.org/packages/vsSBE.CI.MSBuild/</a>
+    </div>
+  </div>
+</span>
+
 <script>
-  $.get("{{site.changelog}}", function(data) {
-    if(data != null && data.length > 0){
-      $("#changelist").html(data);
-    }
-    $("#changelistBar").hide();
+  
+  $(function(){
+      'use strict';
+      
+      var loadLog = function(url, to)
+      {
+          $("#progress").show();
+          $.get(url, function(data)
+          {
+            if(data != null && data.length > 0){
+              to.html(data);
+            }
+            $("#progress").hide();
+          })
+          .fail(function() {
+              to.html($('#msgWarn').html().replace(/%changelogUrl%/g, url));
+          });
+      };
+  
+      $('#mainTab').click(function(){
+          loadLog("{{site.changelog}}", $('#content'));
+      });
+      $('#cimTab').click(function(){
+          loadLog("{{site.changelogCIM}}", $('#content'));
+      });
+      $('#devenvTab').click(function(){
+          loadLog("{{site.changelogDevenv}}", $('#content'));
+      });
+      $('#apiTab').click(function(){
+          loadLog("{{site.changelogAPI}}", $('#content'));
+      });
+      $('#providerTab').click(function(){
+          loadLog("{{site.changelogProvider}}", $('#content'));
+      });
+      $('#nugetTab').click(function(){
+          $('#content').html($('#msgNuget').html());
+      });
+      
+      loadLog("{{site.changelog}}", $('#content'));
   });
+  
 </script>

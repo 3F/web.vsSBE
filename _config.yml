@@ -29,6 +29,10 @@ highlighter: pygments
 
 # Data
 changelog: "https://bitbucket.org/3F/vssolutionbuildevent/raw/master/changelog.txt"
+changelogCIM: "https://bitbucket.org/3F/vssolutionbuildevent/raw/master/CI.MSBuild/changelog.txt"
+changelogDevenv: "https://bitbucket.org/3F/vssolutionbuildevent/raw/master/Devenv/changelog.txt"
+changelogAPI: "https://bitbucket.org/3F/vssolutionbuildevent/raw/master/Bridge/changelog.txt"
+changelogProvider: "https://bitbucket.org/3F/vssolutionbuildevent/raw/master/Provider/changelog.txt"
 readme: "https://bitbucket.org/3F/vssolutionbuildevent/raw/master/README.md"
 license: "https://bitbucket.org/3F/vssolutionbuildevent/raw/master/LICENSE"
 vsixVersions: [v0.12.2, v0.12.1, v0.11.4]
