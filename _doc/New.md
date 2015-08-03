@@ -5,10 +5,8 @@ permalink: /doc/New/
 ---
 # Create new page
 
-{% assign btnUrl = "https://github.com/3F/web.vsSBE/new/gh-pages/_doc" %}
-{% assign btnValue = " Create " %}
-{% assign btnType = "btn-success" %}
-{% include elem/button %}
+<div style="text-align: center;"><a style="width: 150px;" href="https://github.com/3F/web.vsSBE/new/gh-pages/_doc" class="btn btn-success"> Create </a></div>
+<br />
 
 ## How to in details
 

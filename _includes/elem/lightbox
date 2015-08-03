@@ -1,0 +1,3 @@
+<a href="{{site.docp}}/Resources/{{img}}" data-lightbox="example-set" data-title="{{title}}">
+    <img class="collage" src="{{site.docp}}/Resources/{{img}}" {{attr}} alt="" />
+</a>

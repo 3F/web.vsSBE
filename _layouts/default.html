@@ -15,12 +15,12 @@
           
           {% assign url = {{site.docp}} %}
           {% for p in _page | offset: 2 %}
-            {% assign url = {{url}} | append: "/" | append: {{p}} | append: "/" %}
+            {% assign url = {{url}} | append: "/" | append: {{p}} %}
             {% if forloop.last %}
               <li class="active">{{p}}</li>
               {% break %}
             {% endif %}
-            <li><a href="{{url}}">{{p}}</a></li>
+            <li><a href="{{url}}/">{{p}}</a></li>
           {% endfor %}
         </ul>
       </div>
