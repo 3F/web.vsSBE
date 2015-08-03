@@ -31,7 +31,7 @@
         <div class="wrapper small">
           <ul class="breadcrumb small">
             <li><a href="/">Home</a></li>
-            <li class="active">{{_page[1]}}</li>
+            <li class="active">{{_page[1] | remove: '.html'}}</li>
           </ul>
         </div>
       {% endif %}

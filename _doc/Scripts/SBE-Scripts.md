@@ -36,7 +36,7 @@ If you have a problem with syntax and documentation for component can't say how 
 
 ## New Components for SBE-Scripts core
 
-* [Developer Zone](../../Dev/)
+* [Creating Component](../../Dev/New Component/) ([Developer Zone](../../Dev/))
 
 
 # References
