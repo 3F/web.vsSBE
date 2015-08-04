@@ -60,6 +60,7 @@ if you have a some problems with getting libraries through NuGet, you can also u
     * `Properties` -> `Debug`:
         * For `Start Action` - set as `Start External program`
         * Add the full path to **msbuild.exe**, for example: C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe
+        * Optional, add path to vsSolutionBuildEvent sources in `Working Directory` field, for example: D:\projects\vsSolutionBuildEvent\
         * In `Start Options` > `Command line arguments` write for example:
 
 ```bat 
@@ -68,7 +69,6 @@ if you have a some problems with getting libraries through NuGet, you can also u
 /l:"CI.MSBuild\bin\<Current_Configuration_Name>\CI.MSBuild.dll";lib=vsSolutionBuildEvent\bin\<Current_Configuration_Name>\ /verbosity:Diagnostic /t:Rebuild /p:Configuration=<Configuration>;Platform=<Platform>
 ```
 
-        * `Working Directory` add the path to vsSolutionBuildEvent sources, for example: D:\projects\vsSolutionBuildEvent\
 * Click `Build` > `Build Solution`
 
 Congratulation! Now, you can run the vsSBE extension over experimental VS IDE for debugging and also to  debug the **Devenv** & **CI.MSBuild** if you want.
@@ -100,7 +100,7 @@ nuget restore vsSolutionBuildEvent_2013.sln
 
 ```bash 
 
-"C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe" "vsSolutionBuildEvent_2013.sln" /verbosity:detailed  /l:"C:\projects\vssolutionbuildevent\packages\vsSBE.CI.MSBuild.1.2.1\bin\CI.MSBuild.dll" /m:4 /p:Configuration=Debug
+"C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe" "vsSolutionBuildEvent_2013.sln" /verbosity:detailed  /l:"C:\projects\vssolutionbuildevent\packages\vsSBE.CI.MSBuild.1.3\bin\CI.MSBuild.dll" /m:4 /p:Configuration=Debug
 ```
 or use [build_[CI_Debug]](https://bitbucket.org/3F/vssolutionbuildevent/src/master/build_[CI_Debug].bat) / [build_[CI_Release]](https://bitbucket.org/3F/vssolutionbuildevent/src/master/build_[CI_Release].bat)
 
@@ -111,16 +111,18 @@ That's all.
 * `C:\projects\vssolutionbuildevent` - your path to source code.
 * `vsSolutionBuildEvent_2013.sln` - solution file for VS2013. Others available you can see in root directory.
 * `C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe` - full path to your msbuild.exe
-* `C:\projects\vssolutionbuildevent\packages\vsSBE.CI.MSBuild.1.2.1\bin\CI.MSBuild.dll` - full path to the [CI.MSBuild](../../CI/CI.MSBuild/)
+* `C:\projects\vssolutionbuildevent\packages\vsSBE.CI.MSBuild.1.3\bin\CI.MSBuild.dll` - full path to the [CI.MSBuild](../../CI/CI.MSBuild/)
 
 *this variant also used for build automation with [AppVeyor](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent)*
 
 ## What's next ? ##
 
-* [Creating the new components](../New%20Component/)
+* Create [New component](../New%20Component/)
+* Improve all what you want...
+
+Is also ready for collaboration ? use pull request features *(on [Bitbucket](https://bitbucket.org/3F/vssolutionbuildevent/) or [GitHub](https://github.com/3F/vsSolutionBuildEvent/))*, or send this directly as **.patch** file with available contacts.
+*For complex logic(as for our lexers, analyzers etc.) please also provide a correct new unit-tests.*
 
 ## Have a questions ? ##
 
-If you have a question or have a some problem with build, just [create the new Issue](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)
-
-If you have a some patch, - use the **pull request** *(on Bitbucket or GitHub)*,  or send directly as **.patch** file with available contacts
+* [Create new Issue](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)
