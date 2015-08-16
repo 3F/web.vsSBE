@@ -17,13 +17,14 @@ Branches status:
 
 * MS Visual Studio 2010 or higher (You can use free [Visual Studio Community 2013](http://www.visualstudio.com/products/visual-studio-community-vs) or higher)
 * Installed Microsoft Visual Studio SDK:
+    * For Visual Studio 2015 - The SDK is no longer offered as a separate download and included as an optional feature in Visual Studio setup ([How to enable](https://msdn.microsoft.com/en-us/library/bb166441(v=vs.140).aspx))
     * [For Visual Studio 2013](http://www.microsoft.com/en-us/download/details.aspx?id=40758)
     * [For Visual Studio 2012](http://www.microsoft.com/en-us/download/details.aspx?id=30668)
     * [For Visual Studio 2010](http://www.microsoft.com/en-us/download/details.aspx?id=2680) (without update SP1)
     * [For Visual Studio 2010 SP1](http://www.microsoft.com/en-us/download/details.aspx?id=21835) (after update to SP1)
 * Microsoft .NET Framework:
     * [minimal v4.0 for develop on Visual Studio 2010](http://www.microsoft.com/en-US/download/details.aspx?id=17718)
-    * [minimal v4.5 for develop on Visual Studio 2012/2013](http://www.microsoft.com/en-US/download/details.aspx?id=30653) (Offline installer: [dotNetFx45_Full_x86_x64.exe](http://go.microsoft.com/fwlink/?LinkId=225702))
+    * [minimal v4.5 for develop on Visual Studio 2012+](http://www.microsoft.com/en-US/download/details.aspx?id=30653) (Offline installer: [dotNetFx45_Full_x86_x64.exe](http://go.microsoft.com/fwlink/?LinkId=225702))
 * [vsSBE](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/) v0.11.3+ *we use this for self-assembly*
 * [NuGet](https://www.nuget.org/) (starting with VS2012, NuGet is included in every edition. For VS2010, NuGet is available through the Extension Manager - [NuGet Package Manager](https://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c))
     * details: http://docs.nuget.org/docs/start-here/installing-nuget
@@ -100,7 +101,7 @@ nuget restore vsSolutionBuildEvent_2013.sln
 
 ```bash 
 
-"C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe" "vsSolutionBuildEvent_2013.sln" /verbosity:detailed  /l:"C:\projects\vssolutionbuildevent\packages\vsSBE.CI.MSBuild.1.3\bin\CI.MSBuild.dll" /m:4 /p:Configuration=Debug
+"C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe" "vsSolutionBuildEvent_2013.sln" /verbosity:detailed /l:"packages\vsSBE.CI.MSBuild.1.4.0\bin\CI.MSBuild.dll" /m:4 /p:Configuration=Debug /p:Platform="Any CPU"
 ```
 or use [build_[CI_Debug]](https://bitbucket.org/3F/vssolutionbuildevent/src/master/build_[CI_Debug].bat) / [build_[CI_Release]](https://bitbucket.org/3F/vssolutionbuildevent/src/master/build_[CI_Release].bat)
 
@@ -111,7 +112,7 @@ That's all.
 * `C:\projects\vssolutionbuildevent` - your path to source code.
 * `vsSolutionBuildEvent_2013.sln` - solution file for VS2013. Others available you can see in root directory.
 * `C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe` - full path to your msbuild.exe
-* `C:\projects\vssolutionbuildevent\packages\vsSBE.CI.MSBuild.1.3\bin\CI.MSBuild.dll` - full path to the [CI.MSBuild](../../CI/CI.MSBuild/)
+* `C:\projects\vssolutionbuildevent\packages\vsSBE.CI.MSBuild.1.4.0\bin\CI.MSBuild.dll` - full path to the [CI.MSBuild](../../CI/CI.MSBuild/)
 
 *this variant also used for build automation with [AppVeyor](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent)*
 
@@ -123,6 +124,3 @@ That's all.
 Is also ready for collaboration ? use pull request features *(on [Bitbucket](https://bitbucket.org/3F/vssolutionbuildevent/) or [GitHub](https://github.com/3F/vsSolutionBuildEvent/))*, or send this directly as **.patch** file with available contacts.
 *For complex logic(as for our lexers, analyzers etc.) please also provide a correct new unit-tests.*
 
-## Have a questions ? ##
-
-* [Create new Issue](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)
