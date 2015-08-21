@@ -55,15 +55,17 @@ similarly, you can also use any other script language..
 
 ### External logic. Simple caller (or variant for older versions < v0.9)
 
-This **older** variant is **deprecated**. However you can also like this:
+See also - [Work with external utilities](../../Features/External utilities/) for details about this.
+
+The information below is an deprecated variant. But if you still like this:
 
 `*!*` *please note it's Obsolete see also [similar with new version](../../Examples/Version number/)* `*!*`
 
-For example if you have a few subprojects in your solution as here:
+For example, if you have a few subprojects in your solution as here:
 
 ![a few subprojects](../../Resources/examples/obsolete/project_list.jpg)
 
-and you want to update a some file at start build **for all projects at once**(as Solution-wide) for example: revision.h 
+and you want to update some file at start build **for all projects at once**(as Solution-wide) for example: revision.h 
 
 ```cpp 
 
@@ -74,7 +76,7 @@ and you want to update a some file at start build **for all projects at once**(a
 ```
 
 
-It can be generated with your some tool, for example simple revision.bat and similar [vbscript](http://ss64.com/vb/) with [msgbox](http://ss64.com/vb/msgbox.html) for confirmation to user:
+It can be generated with your some tool, for example, simple revision.bat and similar [vbscript](http://ss64.com/vb/) with [msgbox](http://ss64.com/vb/msgbox.html) for confirmation to user:
 
 * revision.bat:
 

@@ -3,6 +3,6 @@ layout: doc
 title: Features
 permalink: /doc/Features/
 ---
-# Features list
+# Some features & others
 
 {% include doc/Features.html %}

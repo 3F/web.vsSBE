@@ -43,6 +43,6 @@ See [Developer Zone](../Dev/) - *How to build plugin; How to create component fo
 
 # Your experience
 
-You can also improve current pages or to share with community of your experiences if you have your own solutions/examples with current projects. Start [here](../New/)
+You can also improve all current pages or share some solutions/examples with community of your experiences. Click [Edit] button below or Start new [here](../New/)
 
 *Take a few minutes of your time for helping for others our users. From short useful script/note or any complete solution. - this can be as part of [donation]({{site.baseurl}}/Donation/) or simple note for themselves or others...*
