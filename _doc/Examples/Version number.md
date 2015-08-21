@@ -138,9 +138,9 @@ namespace example
 #[" 
     Calculate revBuild
 "]
-$(tStart    = $([System.DateTime]::Parse("2015/08/08").ToBinary()))
-$(tNow      = $([System.DateTime]::UtcNow.Ticks))
-$(revBuild  = $([System.TimeSpan]::FromTicks($([MSBuild]::Subtract($(tNow), $(tStart)))).TotalMinutes.ToString("0")))
+$(tStart        = $([System.DateTime]::Parse("2015/08/08").ToBinary()))
+$(tNow          = $([System.DateTime]::UtcNow.Ticks))
+#[var revBuild  = $([System.TimeSpan]::FromTicks($([MSBuild]::Subtract($(tNow), $(tStart)))).TotalMinutes.ToString("0"))]
 
 
 #[" 
