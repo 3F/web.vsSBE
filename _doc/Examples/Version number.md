@@ -144,7 +144,7 @@ $(tNow          = $([System.DateTime]::UtcNow.Ticks))
 
 
 #[" 
-    Replacing placeholders
+    Remove placeholders
 "]
 #[var cs = $(tpl.Replace("%Version%", "$(ver.Replace('.', ', ')), $(revBuild)"))]
 #[var cs = $(cs.Replace("%VersionRevString%", "$(ver).$(revBuild)").Replace("%VersionString%", "$(ver)"))]
@@ -154,7 +154,7 @@ $(tNow          = $([System.DateTime]::UtcNow.Ticks))
     Checks availability of git folder +tool & retrieving sha1, branch name, etc.
 "]
 
-#[( #[File exists.directory(".git")] && #[File exists.file("git.exe", true)] ) {
+#[( #[IO exists.directory(".git")] && #[IO exists.file("git.exe", true)] ) {
 
     #[var branchSha1        = #[File sout("git", "rev-parse --short HEAD")]]
     #[var branchName        = #[File sout("git", "rev-parse --abbrev-ref HEAD")]]
