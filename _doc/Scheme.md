@@ -31,6 +31,10 @@ The [vsSolutionBuildEvent Provider](../API/) - is also as a part of API level, h
 
 * Used for [CI.MSBuild](../CI/CI.MSBuild/) and [Devenv](../CI/Devenv Command-Line/) projects.
 
+### client.vssbe.dll
+
+The `client.vssbe.dll` it's optional variant for work with events from our core library. [How to create and use](../API/#create-client-vssbe-dll).
+
 ### Devenv
 
 The [vsSolutionBuildEvent Devenv Command-Line](../CI/Devenv Command-Line/) - is a wrapper and translator of the model of events for main library to support the command-line of Visual Studio. 

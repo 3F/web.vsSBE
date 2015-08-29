@@ -7,12 +7,12 @@ layout: default
     <h3 class="panel-title">Changelist</h3>
   </div>
   <ul class="nav nav-tabs" style="margin-left: 0;">
-    <li class="active"><a id="mainTab" aria-expanded="true" href="#main" data-toggle="tab">Main library</a></li>
-    <li class=""><a id="cimTab" aria-expanded="false" href="#cim" data-toggle="tab">CI.MSBuild</a></li>
-    <li class=""><a id="devenvTab" aria-expanded="false" href="#devenv" data-toggle="tab">Devenv</a></li>
-    <li class=""><a id="apiTab" aria-expanded="false" href="#api" data-toggle="tab">API</a></li>
-    <li class=""><a id="providerTab" aria-expanded="false" href="#provider" data-toggle="tab">Provider</a></li>
-    <li class=""><a id="nugetTab" aria-expanded="false" href="#nuget" data-toggle="tab">NuGet Package for CI</a></li>
+    <li id="vsix"><a aria-expanded="true" href="#vsix" data-toggle="tab">Main library</a></li>
+    <li id="cim"><a aria-expanded="false" href="#cim" data-toggle="tab">CI.MSBuild</a></li>
+    <li id="devenv"><a aria-expanded="false" href="#devenv" data-toggle="tab">Devenv</a></li>
+    <li id="api"><a aria-expanded="false" href="#api" data-toggle="tab">API</a></li>
+    <li id="provider"><a aria-expanded="false" href="#provider" data-toggle="tab">Provider</a></li>
+    <li id="nuget"><a aria-expanded="false" href="#nuget" data-toggle="tab">NuGet Package for CI</a></li>
   </ul>
   <pre id="content" class="panel-body tab-content" style="overflow: auto; height: 500px;">
   </pre>
@@ -63,26 +63,38 @@ layout: default
           });
       };
   
-      $('#mainTab').click(function(){
+      $('#vsix').click(function(){
           loadLog("{{site.changelog}}", $('#content'));
+          window.location.hash = this.id;
       });
-      $('#cimTab').click(function(){
+      $('#cim').click(function(){
           loadLog("{{site.changelogCIM}}", $('#content'));
+          window.location.hash = this.id;
       });
-      $('#devenvTab').click(function(){
+      $('#devenv').click(function(){
           loadLog("{{site.changelogDevenv}}", $('#content'));
+          window.location.hash = this.id;
       });
-      $('#apiTab').click(function(){
+      $('#api').click(function(){
           loadLog("{{site.changelogAPI}}", $('#content'));
+          window.location.hash = this.id;
       });
-      $('#providerTab').click(function(){
+      $('#provider').click(function(){
           loadLog("{{site.changelogProvider}}", $('#content'));
+          window.location.hash = this.id;
       });
-      $('#nugetTab').click(function(){
+      $('#nuget').click(function(){
           $('#content').html($('#msgNuget').html());
+          window.location.hash = this.id;
       });
       
-      loadLog("{{site.changelog}}", $('#content'));
+      // intial
+      var hash = window.location.hash;
+      if(hash.length < 1 || $(hash).length < 1){
+          hash = "#vsix";
+      }      
+      $(hash).click();
+      $(hash).addClass("active");
   });
   
 </script>

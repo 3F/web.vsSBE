@@ -154,8 +154,8 @@ $(tNow          = $([System.DateTime]::UtcNow.Ticks))
     Checks availability of git folder +tool & retrieving sha1, branch name, etc.
 "]
 
-#[( #[IO exists.directory(".git")] && #[IO exists.file("git.exe", true)] ) {
-
+#[( #[IO exists.directory(".git")] && #[IO exists.file("git.exe", true)] )
+{
     #[var branchSha1        = #[File sout("git", "rev-parse --short HEAD")]]
     #[var branchName        = #[File sout("git", "rev-parse --abbrev-ref HEAD")]]
     #[var branchRevCount    = #[File sout("git", "rev-list HEAD --count")]]
