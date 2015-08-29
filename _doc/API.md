@@ -16,7 +16,7 @@ For example, this is already implemented in our products as part of vsSolutionBu
 
 ### Bridge
 
-* [Download Bridge_v1.2_[dc72d4c][net40].zip](http://sourceforge.net/projects/vssbe/files/API/Bridge/Bridge_v1.2_%5Bdc72d4c%5D%5Bnet40%5D.zip/download) (SourceForge.net) ~5Kb
+* [Download Bridge_v1.3_[8bde22a][net40].zip](http://sourceforge.net/projects/vssbe/files/API/Bridge/Bridge_v1.3_%5B8bde22a%5D%5Bnet40%5D.zip/download) (SourceForge.net) ~8Kb
 * All binaries of the Bridge: [API/Bridge/](https://sourceforge.net/projects/vssbe/files/API/Bridge/)
 
 You can use Bridge for accessing to our products.
@@ -29,7 +29,7 @@ This contains specification of all available features from the vsSolutionBuildEv
 
 ### Provider
 
-* [Download Provider_v2.1_[f9bf5fc][net40].zip](http://sourceforge.net/projects/vssbe/files/API/Provider/Provider_v2.1_%5Bf9bf5fc%5D%5Bnet40%5D.zip/download) (SourceForge.net) ~16Kb
+* [Download Provider_v3.0_[8bde22a][net40].zip](http://sourceforge.net/projects/vssbe/files/API/Provider/Provider_v3.0_%5B8bde22a%5D%5Bnet40%5D.zip/download) (SourceForge.net) ~19Kb
 * All binaries of the Bridge: [API/Provider/](https://sourceforge.net/projects/vssbe/files/API/Provider/)
 
 Contains loader of the vsSolutionBuildEvent core and any other methods for rapid accessing and services. Use this for a quick implementation of the basic logic.
@@ -53,7 +53,8 @@ Feel free...
 
 You can also see the [ClientDemo](https://github.com/3F/vsSolutionBuildEvent/tree/master/ClientDemo) project for **basic sample**.
 
-* [Download demo - client.vssbe.dll](#) for a quick testing of work with library.
+* Download demo - client.vssbe.dll: [ClientDemo_[8bde22a][net40]&#40;2692&#41;.zip](http://sourceforge.net/projects/vssbe/files/dev/clients/client.vssbe.dll/ClientDemo_%5B8bde22a%5D%5Bnet40%5D%282692%29.zip/download) for a quick testing of work with library.
+    * All binaries of ClientDemo: [/dev/clients/client.vssbe.dll/](https://sourceforge.net/projects/vssbe/files/dev/clients/client.vssbe.dll/)
 
 # References
 

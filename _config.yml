@@ -35,5 +35,5 @@ changelogAPI: "https://bitbucket.org/3F/vssolutionbuildevent/raw/master/Bridge/c
 changelogProvider: "https://bitbucket.org/3F/vssolutionbuildevent/raw/master/Provider/changelog.txt"
 readme: "https://bitbucket.org/3F/vssolutionbuildevent/raw/master/README.md"
 license: "https://bitbucket.org/3F/vssolutionbuildevent/raw/master/LICENSE"
-vsixVersions: [v0.12.2, v0.12.1, v0.11.4]
-vsixVersionsOlder: [v0.11.3, v0.10.1, v0.9]
+vsixVersions: [v0.12.3, v0.12.2, v0.12.1]
+vsixVersionsOlder: [v0.11.4, v0.10.1, v0.9]
