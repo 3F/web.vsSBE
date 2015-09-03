@@ -77,35 +77,35 @@ layout: default
               $("#barVSPackage").html(
                       bar(
                         mVSPackage, 
-                        "http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/",
+                        "/Changelist/#vsix",
                         "https://img.shields.io/badge/VSPackage-vX.X.X-68217A.svg"
                       ));
               
               $("#barCIM").html(
                       bar(
                         mCIM, 
-                        "http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/",
+                        "/Changelist/#cim",
                         "https://img.shields.io/badge/CI.MSBuild-vX.X-8080C0.svg?style=flat"
                       ));
               
               $("#barDevenv").html(
                       bar(
                         mDevenv, 
-                        "http://sourceforge.net/projects/vssbe/files/CI-Utilities/Devenv/",
+                        "/Changelist/#devenv",
                         "https://img.shields.io/badge/Devenv-vX.X-B5B5D7.svg?style=flat"
                       ));
               
               $("#barProvider").html(
                       bar(
                         mProvider, 
-                        "https://sourceforge.net/projects/vssbe/files/API/Provider/",
+                        "/Changelist/#provider",
                         "https://img.shields.io/badge/Provider-vX.X-BAC5C0.svg?style=flat"
                       ));
               
               $("#barAPI").html(
                       bar(
                         mAPI, 
-                        "https://sourceforge.net/projects/vssbe/files/API/Bridge/",
+                        "/Changelist/#api",
                         "https://img.shields.io/badge/API-vX.X-AFCFBE.svg?style=flat"
                       ));
               
@@ -121,7 +121,7 @@ layout: default
       var formatBar = function(img, url)
       {
           var img = "<img src='" + img + "' border='0' />";
-          return "<a href='" + url + "' target='_blank'>" + img + "</a>";
+          return "<a href='" + url + "'>" + img + "</a>";
       }
       
       var bar = function(data, url, defImg)
