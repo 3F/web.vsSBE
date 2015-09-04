@@ -28,12 +28,21 @@ kramdown:
 highlighter: pygments
 
 # Data
-changelog: "https://bitbucket.org/3F/vssolutionbuildevent/raw/master/changelog.txt"
-changelogCIM: "https://bitbucket.org/3F/vssolutionbuildevent/raw/master/CI.MSBuild/changelog.txt"
-changelogDevenv: "https://bitbucket.org/3F/vssolutionbuildevent/raw/master/Devenv/changelog.txt"
-changelogAPI: "https://bitbucket.org/3F/vssolutionbuildevent/raw/master/Bridge/changelog.txt"
-changelogProvider: "https://bitbucket.org/3F/vssolutionbuildevent/raw/master/Provider/changelog.txt"
-readme: "https://bitbucket.org/3F/vssolutionbuildevent/raw/master/README.md"
-license: "https://bitbucket.org/3F/vssolutionbuildevent/raw/master/LICENSE"
+
+changelog: "https://raw.githubusercontent.com/3F/vsSolutionBuildEvent/master/changelog.txt"
+changelogCIM: "https://raw.githubusercontent.com/3F/vsSolutionBuildEvent/master/CI.MSBuild/changelog.txt"
+changelogDevenv: "https://raw.githubusercontent.com/3F/vsSolutionBuildEvent/master/Devenv/changelog.txt"
+changelogAPI: "https://raw.githubusercontent.com/3F/vsSolutionBuildEvent/master/Bridge/changelog.txt"
+changelogProvider: "https://raw.githubusercontent.com/3F/vsSolutionBuildEvent/master/Provider/changelog.txt"
+
+readme: "https://raw.githubusercontent.com/3F/vsSolutionBuildEvent/master/README.md"
+license: "https://raw.githubusercontent.com/3F/vsSolutionBuildEvent/master/LICENSE"
+
+versionVsix: "https://raw.githubusercontent.com/3F/vsSolutionBuildEvent/master/.version"
+versionCIM: "https://raw.githubusercontent.com/3F/vsSolutionBuildEvent/master/CI.MSBuild/.version"
+versionDevenv: "https://raw.githubusercontent.com/3F/vsSolutionBuildEvent/master/Devenv/.version"
+versionAPI: "https://raw.githubusercontent.com/3F/vsSolutionBuildEvent/master/Bridge/.version"
+versionProvider: "https://raw.githubusercontent.com/3F/vsSolutionBuildEvent/master/Provider/.version"
+
 vsixVersions: [v0.12.3, v0.12.2, v0.12.1]
 vsixVersionsOlder: [v0.11.4, v0.10.1, v0.9]

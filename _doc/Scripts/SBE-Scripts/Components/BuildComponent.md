@@ -107,4 +107,4 @@ Syntax:
 enum #[Build type]
 ```
 
-**Note:** allowed types you can see [here](https://bitbucket.org/3F/vssolutionbuildevent/src/master/Bridge/BuildType.cs)
+**Note:** allowed types you can see [here](https://github.com/3F/vsSolutionBuildEvent/blob/master/Bridge/BuildType.cs)

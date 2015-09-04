@@ -103,7 +103,7 @@ nuget restore vsSolutionBuildEvent_2013.sln
 
 "C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe" "vsSolutionBuildEvent_2013.sln" /verbosity:detailed /l:"packages\vsSBE.CI.MSBuild.1.5.0\bin\CI.MSBuild.dll" /m:4 /p:Configuration=Debug /p:Platform="Any CPU"
 ```
-or use [build_[CI_Debug]](https://bitbucket.org/3F/vssolutionbuildevent/src/master/build_[CI_Debug].bat) / [build_[CI_Release]](https://bitbucket.org/3F/vssolutionbuildevent/src/master/build_[CI_Release].bat)
+or use [build_[CI_Debug]](https://github.com/3F/vsSolutionBuildEvent/blob/master/build_%5BCI_Debug%5D.bat) / [build_[CI_Release]](https://github.com/3F/vsSolutionBuildEvent/blob/master/build_%5BCI_Release%5D.bat)
 
 That's all.
 

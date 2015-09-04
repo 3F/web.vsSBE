@@ -102,3 +102,7 @@ table > tbody + tbody {
   border: 1px solid #CCCCCC;
   margin: 5px;
 }
+
+.nav-gicon:before {
+    padding-right: 7px;
+}

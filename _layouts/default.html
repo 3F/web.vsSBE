@@ -11,7 +11,10 @@
     
       <div class="wrapper small">
         <ul class="breadcrumb small">
-          <li><a href="/">Home</a></li>
+          <li>
+            <span class="glyphicon glyphicon-home nav-gicon" aria-hidden="true"></span>
+            <a href="/">Home</a>
+          </li>
           
           {% assign url = {{site.docp}} %}
           {% for p in _page | offset: 2 %}
@@ -30,7 +33,10 @@
       {% if _page.size != 0 %}
         <div class="wrapper small">
           <ul class="breadcrumb small">
-            <li><a href="/">Home</a></li>
+            <li>
+              <span class="glyphicon glyphicon-home nav-gicon" aria-hidden="true"></span>
+              <a href="/">Home</a>
+            </li>
             <li class="active">{{_page[1] | remove: '.html'}}</li>
           </ul>
         </div>

@@ -3,9 +3,10 @@ layout: doc
 title: Create new page
 permalink: /doc/New/
 ---
-# Create new page
 
-<div style="text-align: center;"><a style="width: 150px;" href="https://github.com/3F/web.vsSBE/new/gh-pages/_doc" class="btn btn-success"> Create </a></div>
+<div style="text-align: left;">
+<a style="width: 150px;" href="https://github.com/3F/web.vsSBE/new/gh-pages/_doc" class="btn btn-success" title="Create new wiki page">
+<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Create </a></div>
 <br />
 
 ## How to in details
@@ -46,7 +47,7 @@ Use this ([GitHub Flavored Markdown](https://help.github.com/articles/github-fla
     ```
 ```
 
-or like this:
+or like this (not recommended):
 <code>
 &#123;% highlight lang %&#125;
     ...

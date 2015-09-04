@@ -23,8 +23,8 @@ You can use Bridge for accessing to our products.
 
 This contains specification of all available features from the vsSolutionBuildEvent and any others specifications of available operations with library, for example:
 
-* [IEvent](https://bitbucket.org/3F/vssolutionbuildevent/src/master/Bridge/IEvent.cs)
-* [Bridge/](https://bitbucket.org/3F/vssolutionbuildevent/src/master/Bridge/) - all specifications of Bridge
+* [IEvent](https://github.com/3F/vsSolutionBuildEvent/blob/master/Bridge/IEvent.cs)
+* [Bridge/](https://github.com/3F/vsSolutionBuildEvent/tree/master/Bridge) - all specifications of Bridge
 
 
 ### Provider

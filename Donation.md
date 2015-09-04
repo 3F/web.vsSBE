@@ -1,11 +1,10 @@
 ---
 layout: page
-title: Donation
+title: Help to project to help for you!
 permalink: /Donation/
 ---
-###### Help to project to help for you!
 
-vsSolutionBuildEvent - the **open** and **free** projects for all!
+The vsSolutionBuildEvent - is **open** and **free** projects for all!
 
 Today, need a lot of description of many-many features to describe of this.. well, simply use it for what you need :)
 
@@ -13,7 +12,7 @@ Today, need a lot of description of many-many features to describe of this.. wel
 
 Want to help us also, and want to see a more new features, support etc. ? (Changelog [here]({{site.baseurl}}/Changelist/))
 
-Well, now you can help - How ? no, is not only money :)
+Well, now you can help...
 
 # What you may #
 
@@ -26,7 +25,7 @@ yes, it's a classic.. but it is really helpful for support this!
 
 No money ?
 
-Some our users uses this in official job.. so, you can also simply to tell your boss about this :)
+Some our users are uses this in official job.. so, you can also simply to tell your boss about this :)
 
 Still no money ? don't worry, if you still want to help us... see below
 
@@ -62,4 +61,4 @@ Simply to share this project... many users - a more help or something like that.
 
 # Have a questions ? #
 
--> [we are help you!](https://bitbucket.org/3F/vssolutionbuildevent/issues/new) -_*
+-> [we are help you](https://bitbucket.org/3F/vssolutionbuildevent/issues/new) -_*

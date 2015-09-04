@@ -7,7 +7,7 @@ permalink: /doc/Modes/CSharp/
 
 This for work with C# compiler - feel free with all events & actions.
 
-*Available control of caching bytecode and full access to [ICommand](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/Actions/ICommand.cs) & [ISolutionEvent](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/Events/ISolutionEvent.cs) (can be cast [on similars](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/Events/))*
+*Available control of caching bytecode and full access to [ICommand](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/Actions/ICommand.cs) & [ISolutionEvent](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/Events/ISolutionEvent.cs) (can be cast [on similars](https://github.com/3F/vsSolutionBuildEvent/tree/master/vsSolutionBuildEvent/Events))*
 
 # Default Entry point
 
@@ -65,7 +65,7 @@ So you can also add this in your solution for more productive work, for example:
 
 # Examples
 
-See our source code for more details about [ICommand](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/Actions/ICommand.cs) & [ISolutionEvent](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/Events/ISolutionEvent.cs).
+See our source code for more details about [ICommand](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/Actions/ICommand.cs) & [ISolutionEvent](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/Events/ISolutionEvent.cs).
 
 ## Write to VS Output window pane through vsSBE
 
@@ -162,7 +162,7 @@ namespace vsSolutionBuildEvent
 
 * [Processing modes](../../Modes/)
 * [Examples & Features](../../Examples/)
-* [ICommand](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/Actions/ICommand.cs) 
-* [ISolutionEvent](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/Events/ISolutionEvent.cs)
-* [Actions/](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/Actions/)
-* [Events/](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/Events/)
+* [ICommand](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/Actions/ICommand.cs) 
+* [ISolutionEvent](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/Events/ISolutionEvent.cs)
+* [Actions/](https://github.com/3F/vsSolutionBuildEvent/tree/master/vsSolutionBuildEvent/Actions)
+* [Events/](https://github.com/3F/vsSolutionBuildEvent/tree/master/vsSolutionBuildEvent/Events)
