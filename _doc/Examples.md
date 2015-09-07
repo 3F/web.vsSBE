@@ -8,6 +8,7 @@ permalink: /doc/Examples/
 * [Automatic Version Numbering](Version number/)
 * [Artefacts. How to prepare as you want](Artefacts/)
 * [Stop build on first error](Errors.Stop build/)
+* [Demo projects](Demo/)
 
 # Some features & others
 
@@ -31,7 +32,7 @@ permalink: /doc/Examples/
 
 * [Available Events](../Events/)
 
-# Scheme of vsSolutionBuildEvent projects
+# Scheme of vsSolutionBuildEvent
 
 You should see [this page](../Scheme/)
 

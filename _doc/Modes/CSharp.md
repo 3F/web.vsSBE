@@ -63,6 +63,63 @@ So you can also add this in your solution for more productive work, for example:
 
 *Note: In most cases the `Build Action` should be as `None`*
 
+# ICommand & ISolutionEvent objects
+
+The default entry point provides accessing to next objects:
+
+* [ICommand](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/Actions/ICommand.cs) - For work with [Actions](https://github.com/3F/vsSolutionBuildEvent/tree/master/vsSolutionBuildEvent/Actions).
+* [ISolutionEvent](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/Events/ISolutionEvent.cs) - For work with [Events](https://github.com/3F/vsSolutionBuildEvent/tree/master/vsSolutionBuildEvent/Events).
+
+As you can see, you may work with most operations of vsSolutionBuildEvent core, for example:
+
+## Work with MSBuild & SBE-Scripts engine
+
+### Define UserVariable with value from C# code
+
+You have a few variants for work with UserVariables:
+
+* Parse data via engines:
+    * SBE-Scripts: `cmd.SBEScript.parse(...);` (see also [ISBEScript](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/ISBEScript.cs))
+    * MSBuild: `cmd.MSBuild.parse(...);` (see also [IMSBuild](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/MSBuild/IMSBuild.cs))
+* Direct access to [IUserVariable](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/Scripts/IUserVariable.cs) object with used Bootloader (see also [IBootloader](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/IBootloader.cs)):
+    * `cmd.SBEScript.Bootloader.UVariable`
+
+SBE-Scripts engine. For example:
+
+```csharp 
+
+Stack<string> mv = new Stack<string>();
+mv.Push("One");
+mv.Push("Two");
+mv.Push("Three");
+
+string data = String.Format("#[var mvMap = {0}]", String.Join(";", mv.ToArray()));
+cmd.SBEScript.parse(data);
+```
+
+As result you can get this value from other actions with standard operations, for example:
+
+* `$(mvMap)` and `#[var mvMap]` - should return value: 'Three;Two;One'
+
+**Please note:** 
+
+if also used the `MSBuild support` option for C# code, for example, for work with msbuild properties:
+
+```csharp 
+
+using(StreamReader reader = new StreamReader(@"$(SolutionPath)", Encoding.Default))
+{
+    ...
+}
+```
+
+Don't forget about escaping an sequences, for example:
+
+```csharp 
+
+cmd.MSBuild.parse(String.Format("$$(mvMap = '{0}')", steps.Peek()));
+```
+
 # Examples
 
 See our source code for more details about [ICommand](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/Actions/ICommand.cs) & [ISolutionEvent](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/Events/ISolutionEvent.cs).
@@ -166,3 +223,7 @@ namespace vsSolutionBuildEvent
 * [ISolutionEvent](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/Events/ISolutionEvent.cs)
 * [Actions/](https://github.com/3F/vsSolutionBuildEvent/tree/master/vsSolutionBuildEvent/Actions)
 * [Events/](https://github.com/3F/vsSolutionBuildEvent/tree/master/vsSolutionBuildEvent/Events)
+* [ISBEScript](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/ISBEScript.cs)
+* [IMSBuild](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/MSBuild/IMSBuild.cs)
+* [IBootloader](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/IBootloader.cs)
+* [IUserVariable](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/Scripts/IUserVariable.cs)
