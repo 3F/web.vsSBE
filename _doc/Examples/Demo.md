@@ -13,9 +13,11 @@ List of available demo projects as example of basic work, features and similar.
 ### Sample 1
 
 * [With native C++ projects](https://github.com/3F/CI.MSBuild.Demo/tree/master/native%20C%2B%2B/Sample1).
-* [With .NET projects](https://github.com/3F/CI.MSBuild.Demo/tree/master/.NET/Sample1).
+    * [![](https://img.shields.io/badge/native_C%2B%2B-passing-brightgreen.svg?style=flat)](https://ci.appveyor.com/project/3Fs/ci-msbuild-demo/build/build-4)
+* [With .NET projects (CLR)](https://github.com/3F/CI.MSBuild.Demo/tree/master/.NET/Sample1).
+    * [![](https://img.shields.io/badge/.NET_(CLR)-passing-brightgreen.svg?style=flat)](https://ci.appveyor.com/project/3Fs/ci-msbuild-demo/build/build-5)
 
-This is a simple example ([Readme.txt](https://github.com/3F/CI.MSBuild.Demo/blob/master/native%20C%2B%2B/Sample1/Readme.txt)) for work with - CI.MSBuild / vsSolutionBuildEvent. You will see next features:
+This is a simple example ([Readme](https://github.com/3F/CI.MSBuild.Demo/blob/master/native%20C%2B%2B/Sample1/Readme.md)) for work with - CI.MSBuild / vsSolutionBuildEvent. You will see next features:
 
 * Unified work in different environment with MSBuild & Visual Studio.
 * Work with [FileComponent](../../Scripts/SBE-Scripts/Components/FileComponent/)
