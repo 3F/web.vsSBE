@@ -31,9 +31,9 @@ Add this utility for your **.sln** (see [Managing Packages for the Solution](htt
 
 * In Visual Studio: right click on solution -> `Manage NuGet Packages for Solution...`
 
-That's all. Now you can use the vsSolutionBuildEvent with msbuild. See below of how to use it.
+That's all. Now you can use vsSolutionBuildEvent with msbuild.
 
-### Custom variant ###
+### Custom variant
 
 *For advanced usage, for example with own NuGet private server, custom libraries etc.*
 
@@ -42,21 +42,20 @@ That's all. Now you can use the vsSolutionBuildEvent with msbuild. See below of 
 * Unpack the CI.MSBuild archive. *(you can delete all .pdb files)*
 * Download the [vsSolutionBuildEvent plugin](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/referral/118151) and extract all files from .**vsix** with any archiver ([it's a simple 'zip' archive](https://msdn.microsoft.com/en-us/library/ff407026.aspx))
     * **Or** simply go to the installed folder (In plugin: `Settings` - `CI Utilities` - `Plugin` - `Open directory with plugin`)
-* Copy all files into the CI.MSBuild folder (without replacements - i.e. CI.MSBuild should be over vsSolutionBuildEvent)
-    * **Or** use `lib=<path>` key with utility (see in "how to use")
+* Combine all this files in one folder. **Or** use [`lib=<path>`](#keys-to-ci-msbuild) key to CI.MSBuild.dll library.
 
-That's all. Now you can use the vsSolutionBuildEvent with msbuild. See below of how to use it.
+That's all. Now you can use vsSolutionBuildEvent with msbuild.
 
-## How to use ##
+## How to use
 
-After install you can use the vsSolutionBuildEvent with [msbuild.exe](https://msdn.microsoft.com/en-us/library/vstudio/ms164311.aspx), for example:
+After an installation you can use the vsSolutionBuildEvent with [msbuild.exe](https://msdn.microsoft.com/en-us/library/vstudio/ms164311.aspx), for example:
 
 
 ```bash 
 
 "C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe" "<SolutionFile>.sln" /l:"<fullpath_to>\CI.MSBuild.dll"
 ```
-Also you can set other path to library with `lib` key as: `/l:"<fullpath_to>\CI.MSBuild.dll";lib=<full_path_directory>`, for example: `/l:"D:\CI\CI.MSBuild.dll";lib=D:\lib\`
+Also you can set other path to library with [`lib`](#keys-to-ci-msbuild) key as: `/l:"<fullpath_to>\CI.MSBuild.dll";lib=<full_path_directory>`, for example: `/l:"D:\CI\CI.MSBuild.dll";lib=D:\lib\`
 
 You can also use the `/verbosity` key for details information from vsSolutionBuildEvent - `/verbosity:detailed` or `/verbosity:diagnostic` (**debug mode** for vsSolutionBuildEvent), for example:
 
@@ -94,7 +93,7 @@ MSBUILD : error MSB4017: The build stopped unexpectedly because of an unexpected
 ...
 ```
 
-[Our NuGet Package](https://www.nuget.org/packages/vsSBE.CI.MSBuild/) **is already now** contains most required libraries for working.
+[Our NuGet Package](https://www.nuget.org/packages/vsSBE.CI.MSBuild/) **is already** contains most required libraries for working.
 
 However, the various environments for CI has a different configuration and if you see similar problem and list of this:
  

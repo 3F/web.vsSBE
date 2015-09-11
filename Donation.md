@@ -29,7 +29,13 @@ Some our users are uses this in official job.. so, you can also simply to tell y
 
 Still no money ? don't worry, if you still want to help us... see below
 
-## Bug fixes & Improvement performance ##
+## New Features
+
+For existing or new things. Have ideas ? good! Also you can extend or improve our platform with [Components]({{site.docp}}/Dev/New Component)
+
+Start with [Developer Zone]({{site.docp}}/Dev/)
+
+## Bug fixes & Improving performance ##
 
 You can simply [report](https://bitbucket.org/3F/vssolutionbuildevent/issues/new) about problems - it can be used on different versions & platforms and some errors we can find only with you!
 
@@ -37,28 +43,30 @@ You can simply [report](https://bitbucket.org/3F/vssolutionbuildevent/issues/new
 
 Start with [Developer Zone]({{site.docp}}/Dev/)
 
-## New Features ##
+## Wiki
 
-For existing or new things. Have ideas ? good! Also you can extend or improve our platform with [Components]({{site.docp}}/Dev/New Component)
+You can also add new or improve any existing pages for current wiki.
 
-Start with [Developer Zone]({{site.docp}}/Dev/)
+Share some solutions/examples with community of your experiences. Use [Edit] buttons or Start new [here](../New/)
 
-## UI ##
+*Take a few minutes of your time for helping for others our users. From short useful script/note or any complete solution.*
 
-Improvement or complete replacement the current UI (main GUI, console, tool pane, ..)
+## GUI
 
-* Namespace: net.r_eg.vsSBE.UI
+Improvement or complete replacement of current UI (main GUI, console, tool pane, ..)
 
-Current UI is obsolete and not convenient for all new features, so you can also try to help change this.
+* Namespace: net.r_eg.vsSBE.**UI**
+
+Current UI is obsolete and inconvenient for all new features, so you can also try change this.
 
 Start with [Developer Zone]({{site.docp}}/Dev/)
 
 **Please note:** planned to separate this namespace into the new project (this really needed with [API]({{site.docp}}/API) and all related subprojects). Write before [here](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)
 
-## Share ##
+## Share
 
 Simply to share this project... many users - a more help or something like that.
 
-# Have a questions ? #
+# Have a questions ?
 
 -> [we are help you](https://bitbucket.org/3F/vssolutionbuildevent/issues/new) -_*
