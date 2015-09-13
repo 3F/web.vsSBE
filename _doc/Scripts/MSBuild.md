@@ -35,7 +35,7 @@ $(...)
 $(...:project) - from selected project in your solution
 ```
 
-Escape symbol is a $: 
+To escape an sequences use `$`: 
 
 ```Bash 
 

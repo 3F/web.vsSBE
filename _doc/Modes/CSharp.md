@@ -120,16 +120,44 @@ Don't forget about escaping an sequences, for example:
 cmd.MSBuild.parse(String.Format("$$(mvMap = '{0}')", steps.Peek()));
 ```
 
+*For SBE-Scripts: all elements inside quotes (`"..."`, `'...'`) will be automatically protected from evaluation.*
+
 # Examples
 
-See our source code for more details about [ICommand](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/Actions/ICommand.cs) & [ISolutionEvent](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/Events/ISolutionEvent.cs).
+The optional [ICommand](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/Actions/ICommand.cs) & [ISolutionEvent](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/Events/ISolutionEvent.cs) objects contains most useful points for work with our core.
+For example:
 
-## Write to VS Output window pane through vsSBE
+* Access to [IEnvironment](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/IEnvironment.cs) for getting current build action type:
+
+```csharp 
+
+if(cmd.Env.BuildType != BuildType.Clean) {
+    String.Format("Current type: {0}", cmd.Env.BuildType); // Current type: Rebuild
+    ...
+}
+```
+
+* Or direct access to User-variables ([IUserVariable](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/Scripts/IUserVariable.cs)) for get/set/or evaluation new variables...
+    * For example, with used Bootloader ([IBootloader](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/IBootloader.cs)):
+
+```csharp 
+
+IUserVariable uvar = cmd.SBEScript.Bootloader.UVariable;
+if(!uvar.isExist("name1", "projectA")) {
+    uvar.set("ret", null, "raw");
+    ...
+}
+```
+
+* and others...
+
+## Visual Studio OutputWindow pane through vsSBE
 
 *Of course you can also prepare [OutputWindow](https://msdn.microsoft.com/en-us/library/envdte.outputwindow.aspx) with [DTE2](https://msdn.microsoft.com/en-us/library/envdte80.dte2.aspx) etc.*
 
 * Activate C# Mode
-* Add **'EnvDTE.dll'** reference in `Compiler` - `References`
+* Add **'EnvDTE'** reference in `Compiler` - `References`
+    * Use `SmartReferences` option for automatically finding, including used domain. **Or** use any available syntax for assemblies.
 * Customize cache and check other available flags of optimization. (optional)
 * Use next code, for example:
 
@@ -156,6 +184,18 @@ namespace vsSolutionBuildEvent
 
 * Activate Event and click Apply.
 * Enjoy!
+
+### Using directly SBE-Scripts engine
+
+Parsing data via SBE-Scripts engine from C# Mode, yes [it's possible](#work-with-msbuild-amp-sbe-scripts-engine).
+So you can simply:
+
+```csharp
+
+cmd.SBEScript.parse("#[OWP item(\"My Log\").writeLine(true): Hi :) ]");
+```
+
+*As you can see you have a few variants for any cases. However, the [Script Mode](../Script/) is more right choice if you want simple access to VS Output window.*
 
 ## FTP. Upload Artefacts and similar
 
