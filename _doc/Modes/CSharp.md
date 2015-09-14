@@ -5,7 +5,7 @@ permalink: /doc/Modes/CSharp/
 ---
 # C# Mode
 
-This for work with C# compiler - feel free with all events & actions.
+This action type for work with C# compiler - feel free with all events & actions.
 
 *Available control of caching bytecode and full access to [ICommand](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/Actions/ICommand.cs) & [ISolutionEvent](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/Events/ISolutionEvent.cs) (can be cast [on similars](https://github.com/3F/vsSolutionBuildEvent/tree/master/vsSolutionBuildEvent/Events))*
 
@@ -259,11 +259,11 @@ namespace vsSolutionBuildEvent
 
 * [Processing modes](../../Modes/)
 * [Examples & Features](../../Examples/)
-* [ICommand](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/Actions/ICommand.cs) 
-* [ISolutionEvent](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/Events/ISolutionEvent.cs)
-* [Actions/](https://github.com/3F/vsSolutionBuildEvent/tree/master/vsSolutionBuildEvent/Actions)
-* [Events/](https://github.com/3F/vsSolutionBuildEvent/tree/master/vsSolutionBuildEvent/Events)
+* [IUserVariable](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/Scripts/IUserVariable.cs)
 * [ISBEScript](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/ISBEScript.cs)
 * [IMSBuild](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/MSBuild/IMSBuild.cs)
 * [IBootloader](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/IBootloader.cs)
-* [IUserVariable](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/Scripts/IUserVariable.cs)
+* [Actions/](https://github.com/3F/vsSolutionBuildEvent/tree/master/vsSolutionBuildEvent/Actions)
+    * [ICommand](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/Actions/ICommand.cs) 
+* [Events/](https://github.com/3F/vsSolutionBuildEvent/tree/master/vsSolutionBuildEvent/Events)
+    * [ISolutionEvent](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/Events/ISolutionEvent.cs)
