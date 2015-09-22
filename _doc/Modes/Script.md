@@ -5,11 +5,11 @@ permalink: /doc/Modes/Script/
 ---
 # Script Mode
 
-This for internal support of scripts.
+This action type provides the internal support of scripts from available engines like MSBuild, etc.
 
-*For work with any external script-engines you can use other [mode](../../Modes/)*
+*You can also use other [modes](../../Modes/) for work with any external engines if needed.*
 
-## What available now ?
+## What's available now ?
 
 * [SBE-Scripts](../../Scripts/SBE-Scripts/)
 * [MSBuild](../../Scripts/MSBuild/)

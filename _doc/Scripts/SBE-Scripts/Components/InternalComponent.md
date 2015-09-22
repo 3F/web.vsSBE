@@ -16,7 +16,7 @@ Available events:
 
 ```text 
 
-Pre, Post, Cancel, Warnings, Errors, OWP, Transmitter, Logging
+Pre, Post, Cancel, CommandEvent, Warnings, Errors, OWP, Transmitter, Logging
 ```
 
 Syntax:

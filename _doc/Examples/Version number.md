@@ -11,7 +11,7 @@ permalink: /doc/Examples/Version number/
 
 For simplicity, we consider the [Script Mode](../../Modes/Script/). **However**, feel free - If you don't like this - use many other variants, for example with [Targets Mode](../../Modes/Targets/) or [C# Mode](../../Modes/CSharp/), or with [simple caller](../../Features/Confirmation dialog/) and [others](../../Examples/)
 
-*This variant is also used in our project:  [Full script for assembling the vsSolutionBuildEvent v0.11](https://gist.github.com/3F/3f2f56dfc2a01dc99c63) (actual version in current [script file](https://bitbucket.org/3F/vssolutionbuildevent/src/master/.vssbe))*
+*This variant is also used in our project:  [Full script for assembling the vsSolutionBuildEvent v0.11](https://gist.github.com/3F/3f2f56dfc2a01dc99c63) (actual version in current [script file](https://github.com/3F/vsSolutionBuildEvent/blob/master/.vssbe))*
 
 ## Synopsis
 
