@@ -59,6 +59,18 @@ For more details about Command Line mode see [MSDN documentation](https://msdn.m
 ![Example of work](../../Resources/Devenv_example.png)
 
 
+### Newtonsoft.Json.JsonSerializationException: Error setting value to ...
+
+If you see similar error:
+
+* Try to update manually your old Json library, or remove it. Path, for example:
+
+```
+C:\Program Files\Common Files\Microsoft Shared\Visual Studio\12.0\Newtonsoft.Json.dll
+```
+More details about bug **[here](https://github.com/JamesNK/Newtonsoft.Json/issues/647)**
+
+
 # References
 
 * [vsSolutionBuildEvent CI.MSBuild](../CI.MSBuild/)

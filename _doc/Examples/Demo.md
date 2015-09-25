@@ -72,6 +72,11 @@ It shows how to work with **client.vssbe.dll** features. For external work with 
 How to use, see **[here](../../API/#create-client-vssbe-dll)**
 
 
+![](../../Resources/Demo/DemoClient.png)
+
+![](../../Resources/Demo/DemoClient_cim.png)
+
+
 # References
 
 * [Examples & Features](../../Examples/)
