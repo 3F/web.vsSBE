@@ -16,8 +16,8 @@ For example, this is already implemented in our products as part of vsSolutionBu
 
 ### Bridge
 
-* [Download Bridge_v1.3_[8bde22a][net40].zip](http://sourceforge.net/projects/vssbe/files/API/Bridge/Bridge_v1.3_%5B8bde22a%5D%5Bnet40%5D.zip/download) (SourceForge.net) ~8Kb
-* All binaries of the Bridge: [API/Bridge/](https://sourceforge.net/projects/vssbe/files/API/Bridge/)
+* Download [{{site.lnkCur_API[1]}}]({{site.lnkCur_API[2]}}) (SourceForge.net) ~8Kb
+* All binaries of the Bridge: [{{site.lnkAll_API[0]}}]({{site.lnkAll_API[1]}})
 
 You can use Bridge for accessing to our products.
 
@@ -29,8 +29,8 @@ This contains specification of all available features from the vsSolutionBuildEv
 
 ### Provider
 
-* [Download Provider_v3.0_[8bde22a][net40].zip](http://sourceforge.net/projects/vssbe/files/API/Provider/Provider_v3.0_%5B8bde22a%5D%5Bnet40%5D.zip/download) (SourceForge.net) ~19Kb
-* All binaries of the Bridge: [API/Provider/](https://sourceforge.net/projects/vssbe/files/API/Provider/)
+* Download [{{site.lnkCur_Provider[1]}}]({{site.lnkCur_Provider[2]}}) (SourceForge.net) ~19Kb
+* All binaries of the Bridge: [{{site.lnkAll_Provider[0]}}]({{site.lnkAll_Provider[1]}})
 
 Contains loader of the vsSolutionBuildEvent core and any other methods for rapid accessing and services. Use this for a quick implementation of the basic logic.
 
@@ -51,10 +51,13 @@ Use our **[ClientDemo](https://github.com/3F/vsSolutionBuildEvent/tree/master/Cl
 
 Feel free...
 
-You can also see the [ClientDemo](https://github.com/3F/vsSolutionBuildEvent/tree/master/ClientDemo) project for **basic sample**.
+#### ClientDemo
 
-* Download demo - client.vssbe.dll: [ClientDemo_[8bde22a][net40]&#40;2692&#41;.zip](http://sourceforge.net/projects/vssbe/files/dev/clients/client.vssbe.dll/ClientDemo_%5B8bde22a%5D%5Bnet40%5D%282692%29.zip/download) for a quick testing of work with library.
-    * All binaries of ClientDemo: [/dev/clients/client.vssbe.dll/](https://sourceforge.net/projects/vssbe/files/dev/clients/client.vssbe.dll/)
+For a quick testing of work see [ClientDemo](../Examples/Demo/#clientdemo) project as **basic sample**.
+
+* Download binary: [{{site.lnkCur_ClientDemo[1]}}]({{site.lnkCur_ClientDemo[2]}}).
+
+![](../Resources/Demo/DemoClient.png)
 
 # References
 

@@ -37,8 +37,8 @@ That's all. Now you can use vsSolutionBuildEvent with msbuild.
 
 *For advanced usage, for example with own NuGet private server, custom libraries etc.*
 
-* Download [CI.MSBuild_v1.5_[8bde22a][net40].zip](http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/CI.MSBuild_v1.5_%5B8bde22a%5D%5Bnet40%5D.zip/download) (SourceForge.net) 
-    * All binaries of the CI.MSBuild: [CI-Utilities/CI.MSBuild/](https://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/)
+* Download [{{site.lnkCur_CIMSBuild[1]}}]({{site.lnkCur_CIMSBuild[2]}}) (SourceForge.net) 
+    * All binaries of the CI.MSBuild: [{{site.lnkAll_CIMSBuild[0]}}]({{site.lnkAll_CIMSBuild[1]}})
 * Unpack the CI.MSBuild archive. *(you can delete all .pdb files)*
 * Download the [vsSolutionBuildEvent plugin](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/referral/118151) and extract all files from .**vsix** with any archiver ([it's a simple 'zip' archive](https://msdn.microsoft.com/en-us/library/ff407026.aspx))
     * **Or** simply go to the installed folder (In plugin: `Settings` - `CI Utilities` - `Plugin` - `Open directory with plugin`)

@@ -1,0 +1,19 @@
+<div class="btn-group">
+  <a href="{{lnkCur[2]}}" target="_blank" class="btn btn-default">Download</a>
+  <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
+  <ul class="dropdown-menu">
+    {% for ver in {{lnkList}} %}
+      <li><a href="{{ver[2]}}" target="_blank">{{ver[0]}}</a></li>
+    {% endfor %}
+    {% if lnkOld.size > 0 %}
+      <li class="divider"></li>
+    {% endif %}
+    {% for ver in {{lnkOld}} %}
+      <li><a href="{{ver[2]}}" target="_blank">{{ver[0]}}</a></li>
+    {% endfor %}
+    {% if lnkAll.size > 0 %}
+      <li class="divider"></li>
+      <li><a href="{{lnkAll[1]}}" target="_blank">All releases</a></li>
+    {% endif %}
+  </ul>              
+</div>

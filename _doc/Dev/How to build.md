@@ -25,7 +25,7 @@ Branches status:
 * Microsoft .NET Framework:
     * [minimal v4.0 for develop on Visual Studio 2010](http://www.microsoft.com/en-US/download/details.aspx?id=17718)
     * [minimal v4.5 for develop on Visual Studio 2012+](http://www.microsoft.com/en-US/download/details.aspx?id=30653) (Offline installer: [dotNetFx45_Full_x86_x64.exe](http://go.microsoft.com/fwlink/?LinkId=225702))
-* [vsSBE](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/) v0.11.3+ *we use this for self-assembly*
+* [vsSolutionBuildEvent]({{site.lnkVSGallery}}) v0.11.3+ *we also use this for self-assembly*
 * [NuGet](https://www.nuget.org/) (starting with VS2012, NuGet is included in every edition. For VS2010, NuGet is available through the Extension Manager - [NuGet Package Manager](https://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c))
     * details: http://docs.nuget.org/docs/start-here/installing-nuget
 * [Moq 4](https://github.com/Moq/moq4) or higher
@@ -34,11 +34,11 @@ Branches status:
 * [Ude v0.1](https://code.google.com/p/ude/) or higher
 * [AvalonEdit v5](http://avalonedit.net/) or higher
 
-if you have a some problems with getting libraries through NuGet, you can also use the backups from [/dev/lib/](http://sourceforge.net/projects/vssbe/files/dev/lib/)
+if you have a some problems with getting libraries through NuGet, you can also use the backups from [{{site.lnkBackupLib[0]}}]({{site.lnkBackupLib[1]}})
 
 ### Build & Debug
 
-* Install [latest vsSBE build](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/referral/118151)
+* Install [vsSolutionBuildEvent]({{site.lnkCur_VSPackage[2]}})
 * Open **.sln** file with your Visual studio IDE
     * vsSolutionBuildEvent.sln for Visual Studio 2010
     * vsSolutionBuildEvent_2012.sln for Visual Studio 2012
@@ -78,10 +78,10 @@ Note:
 
 *  **Unit-Tests** should automatically started for all Release-configurations. Or you can manualy start with `Test` > `Run` > `All Tests in Solution`
 
-* **Libraries**: NLog, Json.NET, Moq, Ude, AvalonEdit - managed by NuGet and should be received automatically into `./packages` directory. Otherwise, use the following command: `nuget restore vsSolutionBuildEvent_X.sln` or try to [add manually](http://sourceforge.net/projects/vssbe/files/dev/lib/) if exists a some problems.
+* **Libraries**: NLog, Json.NET, Moq, Ude, AvalonEdit - managed by NuGet and should be received automatically into `./packages` directory. Otherwise, use the following command: `nuget restore vsSolutionBuildEvent_X.sln` or try to [add manually]({{site.lnkBackupLib[1]}}) if exists a some problems.
 
 
-## Variant for Microsoft Build Tools (msbuild.exe) ##
+## Variant for Microsoft Build Tools (msbuild.exe)
 
 `*` Currently this variant still requires installed the Microsoft Visual Studio SDK for your machine *(see above where to find)*
 
@@ -101,7 +101,7 @@ nuget restore vsSolutionBuildEvent_2013.sln
 
 ```bash 
 
-"C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe" "vsSolutionBuildEvent_2013.sln" /verbosity:detailed /l:"packages\vsSBE.CI.MSBuild.1.5.0\bin\CI.MSBuild.dll" /m:4 /p:Configuration=Debug /p:Platform="Any CPU"
+"C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe" "vsSolutionBuildEvent_2013.sln" /verbosity:detailed /l:"packages\vsSBE.CI.MSBuild.{{site.lnkCur_CIMNuGet[0] | replace:'v',''}}\bin\CI.MSBuild.dll" /m:4 /p:Configuration=Debug /p:Platform="Any CPU"
 ```
 or use [build_[CI_Debug]](https://github.com/3F/vsSolutionBuildEvent/blob/master/build_%5BCI_Debug%5D.bat) / [build_[CI_Release]](https://github.com/3F/vsSolutionBuildEvent/blob/master/build_%5BCI_Release%5D.bat)
 
@@ -112,11 +112,11 @@ That's all.
 * `C:\projects\vssolutionbuildevent` - your path to source code.
 * `vsSolutionBuildEvent_2013.sln` - solution file for VS2013. Others available you can see in root directory.
 * `C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe` - full path to your msbuild.exe
-* `C:\projects\vssolutionbuildevent\packages\vsSBE.CI.MSBuild.1.5.0\bin\CI.MSBuild.dll` - full path to the [CI.MSBuild](../../CI/CI.MSBuild/)
+* `C:\projects\vssolutionbuildevent\packages\vsSBE.CI.MSBuild.{{site.lnkCur_CIMNuGet[0] | replace:'v',''}}\bin\CI.MSBuild.dll` - full path to the [CI.MSBuild](../../CI/CI.MSBuild/)
 
 *this variant also used for build automation with [AppVeyor](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent)*
 
-## What's next ? ##
+## What's next ?
 
 * Create [New component](../New%20Component/)
 * Improve all what you want...

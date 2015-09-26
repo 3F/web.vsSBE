@@ -223,7 +223,11 @@ Currently, it's only for internal structures. *It can be later, because it's rea
 
 **But**, today this was not necessary for our users. Otherwise, you should [create](https://bitbucket.org/3F/vssolutionbuildevent/issues/new) issue and **vote** for this - we'll look it as demand among users.
 
-Also, as variant you can see [C# Mode](../../Modes/CSharp/) as equivalent to your actions at runtime.
+Also, as variant you can see already available:
+
+* [C# Mode](../../Modes/CSharp/) as equivalent for your actions at runtime. *+Access to [scripts engines](../../Scripts/), including [SBE-Scripts](../../Scripts/SBE-Scripts/).*
+* [API](../../API/) level.
+    * [client.vssbe.dll](../../API/#client-vssbe-dll) as part of [API](../../API/) for work with events from our core library.
 
 ## Dom & Code Completion
 

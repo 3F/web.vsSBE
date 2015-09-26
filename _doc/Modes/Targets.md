@@ -9,7 +9,7 @@ This action type for work with MSBuild [Targets](https://msdn.microsoft.com/en-u
 
 # Blank Project
 
-* **v0.12.4+**:
+* v0.12.4+:
 
 ```xml
 

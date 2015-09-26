@@ -66,6 +66,7 @@ As result you can see, for example:
 ## ClientDemo
 
 * [Source code on C#](https://github.com/3F/vsSolutionBuildEvent/tree/master/ClientDemo)
+    * All binaries of ClientDemo: [{{site.lnkAll_ClientDemo[0]}}]({{site.lnkAll_ClientDemo[1]}})
 
 It shows how to work with **client.vssbe.dll** features. For external work with events **from** our core library.
 

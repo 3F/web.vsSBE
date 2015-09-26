@@ -14,52 +14,78 @@ title: Downloads
           <td width="22%">VSPackage</td>
           <td width="60%">The main plugin. Contains logic for work with events of Visual Studio and core of different actions for anything.</td>
           <td>
-            <div class="btn-group">
-              <a href="http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/referral/118151" target="pluginDownload" class="btn btn-default">Download</a>
-              <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                {% for ver in {{site.vsixVersions}} %}
-                  <li><a href="http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_{{ver}}.vsix/download" target="pluginDownload">{{ver}}</a></li>
-                {% endfor %}
-                {% if site.vsixVersionsOlder.size >= 0 %}
-                  <li class="divider"></li>
-                {% endif %}
-                {% for ver in {{site.vsixVersionsOlder}} %}
-                  <li><a href="http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_{{ver}}.vsix/download" target="pluginDownload">{{ver}}</a></li>
-                {% endfor %}
-              </ul>
-            </div>
+            {% assign lnkCur = site.lnkCur_VSPackage %}
+            {% assign lnkList = site.lnkList_VSPackage %}
+            {% assign lnkOld = site.lnkOld_VSPackage %}
+            {% assign lnkAll = [] %}
+            {% include pat/vdownload.html %}
           </td>
         </tr>
         <tr>
           <td>CI.MSBuild</td>
           <td>Support of the Microsoft Build Tools (MSBuild).</td>
-          <td><a href="http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/" target="_blank" class="btn btn-default">Download</a></td>
+          <td>
+            {% assign lnkCur = site.lnkCur_CIMSBuild %}
+            {% assign lnkList = site.lnkList_CIMSBuild %}
+            {% assign lnkOld = site.lnkOld_CIMSBuild %}
+            {% assign lnkAll = site.lnkAll_CIMSBuild %}
+            {% include pat/vdownload.html %}
+          </td>
         </tr>
         <tr>
           <td>Devenv</td>
           <td>Support of the Visual Studio Command-Line (devenv.exe/com).</td>
-          <td><a href="http://sourceforge.net/projects/vssbe/files/CI-Utilities/Devenv/" target="_blank" class="btn btn-default">Download</a></td>
+          <td>
+            {% assign lnkCur = site.lnkCur_Devenv %}
+            {% assign lnkList = site.lnkList_Devenv %}
+            {% assign lnkOld = site.lnkOld_Devenv %}
+            {% assign lnkAll = site.lnkAll_Devenv %}
+            {% include pat/vdownload.html %}
+          </td>
         </tr>
         <tr>
           <td>API</td>
           <td>The bridge for work with API level of main library.</td>
-          <td><a href="https://sourceforge.net/projects/vssbe/files/API/Bridge/" target="_blank" class="btn btn-default">Download</a></td>
+          <td>
+            {% assign lnkCur = site.lnkCur_API %}
+            {% assign lnkList = site.lnkList_API %}
+            {% assign lnkOld = site.lnkOld_API %}
+            {% assign lnkAll = site.lnkAll_API %}
+            {% include pat/vdownload.html %}
+          </td>
         </tr>
         <tr>
           <td>Provider</td>
           <td>The loader and helper for a quick work with main library.</td>
-          <td><a href="https://sourceforge.net/projects/vssbe/files/API/Provider/" target="_blank" class="btn btn-default">Download</a></td>
+          <td>
+            {% assign lnkCur = site.lnkCur_Provider %}
+            {% assign lnkList = site.lnkList_Provider %}
+            {% assign lnkOld = site.lnkOld_Provider %}
+            {% assign lnkAll = site.lnkAll_Provider %}
+            {% include pat/vdownload.html %}
+          </td>
         </tr>
         <tr>
           <td>NuGet Package for CI</td>
           <td>The package of the libraries to support the CI /Build Servers.</td>
-          <td><a href="https://www.nuget.org/api/v2/package/vsSBE.CI.MSBuild/" target="_blank" class="btn btn-default">Download</a></td>
+          <td>
+            {% assign lnkCur = site.lnkCur_CIMNuGet %}
+            {% assign lnkList = site.lnkList_CIMNuGet %}
+            {% assign lnkOld = site.lnkOld_CIMNuGet %}
+            {% assign lnkAll = [] %}
+            {% include pat/vdownload.html %}
+          </td>
         </tr>
         <tr>
           <td>ClientDemo</td>
           <td><b>Demo</b> project of the <b>client.vssbe.dll</b> features. For work with events from our core library. <a href="{{site.docp}}/API/#create-client-vssbe-dll">How to use.</a></td>
-          <td><a href="https://sourceforge.net/projects/vssbe/files/dev/clients/client.vssbe.dll/" target="_blank" class="btn btn-default">Download</a></td>
+          <td>
+            {% assign lnkCur = site.lnkCur_ClientDemo %}
+            {% assign lnkList = site.lnkList_ClientDemo %}
+            {% assign lnkOld = site.lnkOld_ClientDemo %}
+            {% assign lnkAll = site.lnkAll_ClientDemo %}
+            {% include pat/vdownload.html %}
+          </td>
         </tr>
         <tr>
           <td colspan="3">
@@ -217,7 +243,7 @@ title: Downloads
       <tbody>
         <tr>
           <td width="30%">The archive of public releases</td>
-          <td colspan="3"><a href="https://sourceforge.net/projects/vssbe/files/dev/sources/" target="_blank" class="btn btn-default">Open</a></td>
+          <td colspan="3"><a href="{{site.lnkBackupSrc[1]}}" target="_blank" class="btn btn-default">Open</a></td>
         </tr>
         <tr>
           <td>releases branch</td>
@@ -259,7 +285,7 @@ title: Downloads
       <tbody>
         <tr>
           <td width="25%">Minimal libraries</td>
-          <td><a href="https://sourceforge.net/projects/vssbe/files/dev/lib/" target="_blank" class="btn btn-default">Download</a></td>
+          <td><a href="{{site.lnkBackupLib[1]}}" target="_blank" class="btn btn-default">Download</a></td>
         </tr>
       </tbody>
     </table>
