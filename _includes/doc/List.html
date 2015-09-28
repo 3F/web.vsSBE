@@ -1,12 +1,11 @@
 <table class="table table-striped table-hover ">
   <tbody>
-  {% assign cprefix = "/Features/" %}
   {% for post in site.doc %} 
     {% if post.url contains {{cprefix}} %}
       {% assign _c = post.url | split: {{cprefix}}  %}
       {% if {{_c.size}} > 1 %}
       <tr>
-        <td><a href="{{site.docp}}/Features/{{_c[1]}}">{{post.title}}</a></td>
+        <td><a href="{{urlPrefix}}{{_c[1]}}">{{post.title}}</a></td>
         <td>{{post.description}}</td>
       </tr>
       {% endif %}

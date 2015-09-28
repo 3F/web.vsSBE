@@ -5,4 +5,6 @@ permalink: /doc/Features/
 ---
 # Some features & others
 
-{% include doc/Features.html %}
+{% assign cprefix = "/Features/" %}
+{% assign urlPrefix = {{site.docp | append: "/Features/"}} %}
+{% include doc/List.html %}

@@ -81,7 +81,7 @@ public override string Condition
 }
 ```
 
-If necessary complex identification, use [CRegex](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/IComponent.cs) flag for regex pattern ( [IgnorePatternWhitespace](http://msdn.microsoft.com/en-us/library/system.text.regularexpressions.regexoptions.aspx) used by default)
+Use [CRegex](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/IComponent.cs) flag if identification needed with regex pattern ( [IgnorePatternWhitespace](http://msdn.microsoft.com/en-us/library/system.text.regularexpressions.regexoptions.aspx) used by default)
 
 You can override this property or use cregex field if your component extends [Component](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/Component.cs). Example with additional handling for already existing component - [BuildComponent](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/BuildComponent.cs):
 
@@ -127,6 +127,9 @@ For example, we'll implement **add()** property, sample:
 #[Demo add(1, 2)]
 ```
 
+
+*Sample with* ***custom*** *parsing of syntax above:*
+
 ```csharp 
 
 public class DemoComponent: Component, IComponent
@@ -161,7 +164,8 @@ public class DemoComponent: Component, IComponent
     }
 }
 ```
-**Note**: the regular expression it's only as variant of implementation i.e. you can use anything else what you like... for example:
+**Note**: the regular expression in sample above it's only as custom variant of implementation i.e. you can use anything else with what you like... 
+For example, you also can use **our [IPM analyzer](../SBE-Scripts/IPM/)** for parsing of any properties & methods:
 
 ```csharp 
 
@@ -174,7 +178,9 @@ public class DemoComponent: Component, IComponent
     
     public override string parse(string data) 
     {
-        return Values.from(1 + 2); 
+        IPM pm = new PM(data);
+        ...
+        return Values.from(a + b);
     } 
 }
 ```
@@ -229,160 +235,14 @@ Also, as variant you can see already available:
 * [API](../../API/) level.
     * [client.vssbe.dll](../../API/#client-vssbe-dll) as part of [API](../../API/) for work with events from our core library.
 
-## Dom & Code Completion
+## Have a question ?
 
-Optional, you can describe your component with [SBEScripts/Dom](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Dom/) for code completion (Intellisense) or to any generation of documentation.
+If you have a question or have a some problem with creating new component, just [create new Issue](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)
 
-It's easy with next attributes:
+# References
 
-### PropertyAttribute
-
-To describe the properties of the component. For example:
-
-```csharp 
-
-[Property("propertyName", "Description of the property", CValueType.Boolean, CValueType.Boolean)]
-protected string yourLogic()
-{
-   ...
-}
-```
-
-```csharp 
-
-[Property(
-    "IsBuildable", 
-    "Gets or Sets whether the project or project item configuration can be built.", 
-    "find", 
-    "stProjectConf", 
-    CValueType.Boolean, 
-    CValueType.Boolean
-)]
-```
-
-
-Syntax:
-
-```csharp 
-[Property(string name, string description, CValueType get, CValueType set)]
-```
-
-```csharp 
-[Property(string name, string parent, string method, CValueType get, CValueType set)]
-```
-
-
-Note:
-
-* Type of the get/set should be as [CValueType](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/CValueType.cs)
-* The **parent** it's optional argument used for linking on parent element (property/method etc.) if exist
-    * The **method** argument should contain the real method name who implements the parent element (property/method etc.) 
-* All available constructors see with the [Dom.PropertyAttribute](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Dom/PropertyAttribute.cs).
-
-### MethodAttribute ###
-
-To describe the methods/functions of the component. For example:
-
-
-```csharp 
-
-[
-    Method
-    (
-        "call", 
-        "Caller of executable files with arguments.", 
-        new string[] { "name", "args" }, 
-        new string[] { "Executable file", "Arguments" }, 
-        CValueType.Void, 
-        CValueType.String, CValueType.String
-    )
-]
-protected string stCall(string data, bool stdOut, bool silent)
-{
-    ...
-}
-```
-
-Syntax:
-
-```csharp 
-
-[Method(string name, string description, CValueType ret, params CValueType[] args)]
-```
-
-```csharp 
-
-[Method(string name, string parent, string method, CValueType ret, params CValueType[] args)]
-```
-
-Note:
-
-* Type of the get/set should be as [CValueType](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/CValueType.cs)
-* The **parent** it's optional argument used for linking on parent element (property/method etc.) if exist
-    * The **method** argument should contain the real method name who implements the parent element (property/method etc.) 
-* All available constructors see with the [Dom.MethodAttribute](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Dom/MethodAttribute.cs)
-
-### ComponentAttribute ###
-
-To describe the new component. For example:
-
-```csharp 
-
-[Component("File", "I/O operations")]
-public class FileComponent: Component, IComponent
-{
-    ...
-}
-```
-Syntax:
-
-```csharp 
-
-[Component(string name, string description)]
-```
-
-All available constructors see with the [Dom.ComponentAttribute](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Dom/ComponentAttribute.cs)
-
-#### Aliases
-
-```csharp 
-
-[Component("Primary", new string[]{ "Alias1", "Alias2", "Alias3" }, "description")]
-```
-
-### DefinitionAttribute ###
-
-To describe the any definition of the component. For example:
-
-```csharp 
-
-[Definition("(true) { }", "Conditionals statements\n\n(1 > 2) {\n ... \n}")]
-public class ConditionComponent: Component, IComponent
-{
-    ...
-}
-```
-
-```csharp 
-[Definition("var name", "Get data from variable the 'name'")]
-[Definition("var name = data", "Set the 'data' for variable the 'name'")]
-```
-
-Syntax:
-
-```csharp 
-
-[Definition(string name, string description)]
-```
-
-All available constructors see with the [Dom.DefinitionAttribute](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Dom/DefinitionAttribute.cs)
-
-## Have a question ? ##
-
-If you have a question or have a some problem with creating new component, just [create the new Issue](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)
-
-For more details you can see:
-
+* [IPM analyzer](../SBE-Scripts/IPM/)
+* [Dom & Code Completion](../SBE-Scripts/Dom/)
 * Interface [IComponent](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/IComponent.cs)
 * abstract  [Component](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/Component.cs)
 * [Bootloader](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Bootloader.cs) ([IBootloader](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/IBootloader.cs))
