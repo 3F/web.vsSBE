@@ -3,17 +3,17 @@ layout: doc
 title: vsSolutionBuildEvent/vsSBE (.vssbe) File
 permalink: /doc/Features/.vssbe/
 ---
-# vsSolutionBuildEvent/vsSBE (.vssbe) File
+# .vssbe
 
-All shared settings for program stored in the solution directory as **.vssbe** text-based file.
+All shared settings for program stored in solution directory as **.vssbe** text-based file.
 
-**[v0.9+](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/referral/118151)** uses the [JSON format](http://json.org) (text-based language-independent data interchange format)
+**[v0.9+](/Changelist/#vsix)** uses the [JSON format](http://json.org) (text-based language-independent data interchange format)
 
 You can also ignore this from your repo with scm ([.gitignore](http://git-scm.com/docs/gitignore), .hgignore, .bzrignore, svn:ignore, etc.,)
 
-# .vssbe for each .sln (Solution File)
+## .vssbe for each .sln (Solution File)
 
-With patch ([v0.11.2](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/referral/118151)) you can also define the special version of configuration file for specific solution.
+For [v0.11.2+](/Changelist/#vsix) you can also define the special version of configuration file for specific solution.
 
 `<SolutionFile>.vssbe`
 
@@ -33,11 +33,19 @@ etc.
 
 The specific configuration in the priority if the **.vssbe** used along with **[SolutionFile].vssbe**. 
 
+## .vssbe.user
+
+The `.vssbe.user` appeared in [v0.12.4](/Changelist/#vsix) as user configuration (for specific user).
+
+We strongly recommend to ignore this from your SCM, 
+because this contains settings e.g.: 
+value of zooming & Word wrapping of main editor, DebugMode & CacheData of binaries for [C# Mode](../../Modes/CSharp/), etc.
+
 # Unified Project name for different .sln
 
 You can see a some problems with [MSBuild](../../Scripts/MSBuild/) / [SBE-Scripts](../../Scripts/SBE-Scripts/), incorrect behaviour with 'Execution Order' feature etc. If used a few .sln versions for your project.
 
-For example, [currently](https://bitbucket.org/3F/vssolutionbuildevent/src) this project used next solutions:
+For example, [currently](https://github.com/3F/vsSolutionBuildEvent) this project used next solutions:
 
 * vsSolutionBuildEvent.sln
 * vsSolutionBuildEvent_2012.sln
@@ -84,5 +92,14 @@ for example:
 
 That's all. Repeat this steps for others your files.
 
-If you have a problems, ask [here](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)
+If you have problems, ask [here](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)
 
+# Optional 'Command__' property
+
+Appeared in [v0.12.4](/Changelist/#vsix) for convenient using directly in file (reading or direct modifications). 
+
+However, the 'Command__' property is temporary and used for compatibility with format **v0.9**.
+
+This can be inconvenient and until new upgrade of format, we also added settings to turn off this field:
+
+* `Settings` - `Plugin` - `Suppress 'Command__' property`
