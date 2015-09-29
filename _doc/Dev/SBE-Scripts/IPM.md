@@ -12,6 +12,46 @@ It useful for a quick implementation of any logic for new or existing component.
 
 ## How to
 
+How about calculating hash value with MD5 & SHA-1 ? and possible syntax like this:
+
+```java
+
+#[Func hash.MD5("test")]
+#[Func hash.SHA1("test")]
+```
+
+ok, here's how to (full minimal logic):
+
+```csharp
+
+IPM pm = new PM(data); // pointed to 'hash' level
+```
+
+```csharp
+if(pm.FinalEmptyIs(1, LevelType.Method, "MD5"))
+{
+    Argument[] args = pm.Levels[1].Args;
+    if(args.Length != 1 || args[0].type != ArgumentType.StringDouble) {
+        throw new InvalidArgumentException("stHash: incorrect arguments to `hash.MD5(string data)`");
+    }
+    return ((string)args[0].data).MD5Hash();
+}
+```
+
+```csharp
+
+if(pm.FinalEmptyIs(1, LevelType.Method, "SHA1"))
+{
+    Argument[] args = pm.Levels[1].Args;
+    if(args.Length != 1 || args[0].type != ArgumentType.StringDouble) {
+        throw new InvalidArgumentException("stHash: incorrect arguments to `hash.SHA1(string data)`");
+    }
+    return ((string)args[0].data).SHA1Hash();
+}
+```
+
+## A more complex example
+
 Let's consider a real example (this, for example, used in [BuildComponent](../../../Scripts/SBE-Scripts/Components/BuildComponent/#solution))
 
 If you want to work with next syntax, for example:
@@ -98,7 +138,7 @@ etc.
 
 ```
 
-With IPM you can simply, like this:
+With IPM you can simply, like this (full logic):
 
 
 ```csharp
@@ -190,7 +230,6 @@ That's really all.. want to see in action ?
 This already implemented in [BuildComponent](../../../Scripts/SBE-Scripts/Components/BuildComponent/#solution):
 
 * `Settings` - `Tools` - `SBE-Scripts Testing tool` then start with #[Build ..
-
 
 ## Work with arguments
 

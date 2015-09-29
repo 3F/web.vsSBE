@@ -50,6 +50,8 @@ This is a simple example ([Readme](https://github.com/3F/CI.MSBuild.Demo/blob/ma
 
 * and others...
 
+**Note:** In v0.12.4+ you can use simply [`#[Build solution.path("app.sln").First.name]`](../../Scripts/SBE-Scripts/Components/BuildComponent/#solution) etc.
+
 As result you can see, for example:
 
 ```

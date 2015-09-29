@@ -39,7 +39,7 @@ Of course all data from external utilities can be used for User-Variables or wit
 
 #[File cmd("echo 'Hello World!'| openssl sha1 | sed 's/^.*\s//'")]
 ```
-Result: `41956c7422fd4f2f8796ccf063a45ab5825372af`
+Result: `2ef7bde608ce5404e97d5f042f95f89f1c232871`
 
 * Sha1 for current time:
 
@@ -50,6 +50,25 @@ Result: `41956c7422fd4f2f8796ccf063a45ab5825372af`
 ```
 Result: `47c14be77bc0a13a0454e1ad2e9a642549f467fc`
 
+Note: For your environment use also: `echo -n "str"`, `printf 'str'` etc. *On Windows platform with standard `echo` you can get incorrect hash value.*
+
+#### Internal support of MD5 & SHA-1
+
+[v0.12.4+ now supports](../../Scripts/SBE-Scripts/Components/FunctionComponent/#hash) calculating MD5 & SHA1 for more convenience.
+
+```java 
+
+#[Func hash.MD5("Hello World!")]
+```
+
+Result: `ED076287532E86365E841E92BFC50D8C`
+
+```java 
+
+#[Func hash.SHA1("Hello World!")]
+```
+
+Result: `2EF7BDE608CE5404E97D5F042F95F89F1C232871`
 
 #### Version number of package from NuGet server
 
@@ -84,4 +103,5 @@ How to work with [7-zip](http://www.7-zip.org) you can see in '[Artefacts](../..
 * [MSBuild](../../Scripts/MSBuild/)
 * [SBE-Scripts](../../Scripts/SBE-Scripts/)
     * [FileComponent](../../Scripts/SBE-Scripts/Components/FileComponent/)
+    * [FunctionComponent](../../Scripts/SBE-Scripts/Components/FunctionComponent/)
 * [Examples & Features](../../Examples/)
