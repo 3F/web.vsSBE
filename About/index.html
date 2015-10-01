@@ -5,7 +5,7 @@ title: About
 
 
 <h4>Flexible actions for all ...</h4>
-<p><a href="/License/"><img src="https://img.shields.io/badge/License-LGPLv3-008033.svg?style=flat-square" /></a></p>
+<p><a href="/License/"><img src="/etc/badges/License.svg" /></a></p>
 <p>The vsSolutionBuildEvent (vsSBE) - are all related projects to support the product line of MS Visual Studio & MSBuild tools.</p>
 <p>It presents advanced handler of most events.</p>
 
@@ -45,93 +45,14 @@ title: About
       <tr>
         <td><p><a class="btn btn-default" href="/">Learn more</a></p></td>
         <td>
-          <a href="/Downloads/">Is Ready for You:</a>
-          <div id="barVSPackage"></div>
+          <a href="/Downloads/">Ready for You:</a>
+          <div><a href="/Changelist/#vsix"><img src="/etc/badges/VSPackage.svg" /></a></div>
           <a href="https://www.nuget.org/packages/vsSBE.CI.MSBuild/" target="_blank"><img src="https://img.shields.io/nuget/v/vsSBE.CI.MSBuild.svg" /></a>
-          <span id="barCIM"></span> <span id="barDevenv"></span> <span id="barProvider"></span> <span id="barAPI"></span>          
+          <a href="/Changelist/#cim"><img src="/etc/badges/CI.MSBuild.svg" /></a>
+          <a href="/Changelist/#devenv"><img src="/etc/badges/Devenv.svg" /></a>
+          <a href="/Changelist/#provider"><img src="/etc/badges/Provider.svg" /></a>
+          <a href="/Changelist/#api"><img src="/etc/badges/API.svg" /></a>
         </td>
       </tr>
     </tbody>
   </table>
-  
-
-
-<script>
-  
-  $(function(){
-      'use strict';
-      
-      var printBars = function()
-      {
-          $.get("{{site.readme}}", function(data)
-          {
-              if(data == null || data.length < 1){
-                return;
-              }
-
-              var mVSPackage  = getBarUrl(data, 'VSPackage');
-              var mCIM        = getBarUrl(data, 'CI.MSBuild');
-              var mDevenv     = getBarUrl(data, 'Devenv');
-              var mProvider   = getBarUrl(data, 'Provider');
-              var mAPI        = getBarUrl(data, 'API');
-              
-              $("#barVSPackage").html(
-                      bar(
-                        mVSPackage, 
-                        "/Changelist/#vsix",
-                        "https://img.shields.io/badge/VSPackage-vX.X.X-68217A.svg"
-                      ));
-              
-              $("#barCIM").html(
-                      bar(
-                        mCIM, 
-                        "/Changelist/#cim",
-                        "https://img.shields.io/badge/CI.MSBuild-vX.X-8080C0.svg?style=flat"
-                      ));
-              
-              $("#barDevenv").html(
-                      bar(
-                        mDevenv, 
-                        "/Changelist/#devenv",
-                        "https://img.shields.io/badge/Devenv-vX.X-B5B5D7.svg?style=flat"
-                      ));
-              
-              $("#barProvider").html(
-                      bar(
-                        mProvider, 
-                        "/Changelist/#provider",
-                        "https://img.shields.io/badge/Provider-vX.X-BAC5C0.svg?style=flat"
-                      ));
-              
-              $("#barAPI").html(
-                      bar(
-                        mAPI, 
-                        "/Changelist/#api",
-                        "https://img.shields.io/badge/API-vX.X-AFCFBE.svg?style=flat"
-                      ));
-              
-          });
-      }
-      
-      var getBarUrl = function(data, pattern)
-      {
-          var r = new RegExp('\\[!\\[' + pattern + '\\]\\((.+?)\\)', 'i');
-          return r.exec(data);
-      }
-      
-      var formatBar = function(img, url)
-      {
-          var img = "<img src='" + img + "' border='0' />";
-          return "<a href='" + url + "'>" + img + "</a>";
-      }
-      
-      var bar = function(data, url, defImg)
-      {
-          var img = (data == null || data.length < 2)? defImg : data[1];
-          return formatBar(img, url);
-      }
-      
-      printBars();
-      
-  });
-</script>
