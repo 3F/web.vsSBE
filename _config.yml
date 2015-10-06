@@ -147,6 +147,8 @@ lnkVSGallery_vsCE: ""
 lnkBackupLib: [ "/dev/lib/", "http://sourceforge.net/projects/vssbe/files/dev/lib/"]
 lnkBackupSrc: [ "/dev/sources/", "https://sourceforge.net/projects/vssbe/files/dev/sources/" ]
 
+lnkSrcClientDemo: [ "ClientDemo", "https://github.com/3F/vsSolutionBuildEvent/tree/master/ClientDemo" ]
+
 
 # other
 

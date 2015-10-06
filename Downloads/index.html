@@ -11,7 +11,9 @@ title: Downloads
     <table class="table table-striped table-hover ">
       <tbody>
         <tr>
-          <td width="22%">VSPackage</td>
+          <td width="22%">
+            <div><a href="/Changelist/#vsix"><img src="/etc/badges/VSPackage.svg" alt="VSPackage" /></a></div>
+          </td>
           <td width="60%">The main plugin. Contains logic for work with events of Visual Studio and core of different actions for anything.</td>
           <td>
             {% assign lnkCur = site.lnkCur_VSPackage %}
@@ -22,7 +24,9 @@ title: Downloads
           </td>
         </tr>
         <tr>
-          <td>CI.MSBuild</td>
+          <td>
+            <div><a href="/Changelist/#cim"><img src="/etc/badges/CI.MSBuild.svg" alt="CI.MSBuild" /></a></div>
+          </td>
           <td>Support of the Microsoft Build Tools (MSBuild).</td>
           <td>
             {% assign lnkCur = site.lnkCur_CIMSBuild %}
@@ -33,7 +37,9 @@ title: Downloads
           </td>
         </tr>
         <tr>
-          <td>Devenv</td>
+          <td>
+            <div><a href="/Changelist/#devenv"><img src="/etc/badges/Devenv.svg" alt="Devenv" /></a></div>
+          </td>
           <td>Support of the Visual Studio Command-Line (devenv.exe/com).</td>
           <td>
             {% assign lnkCur = site.lnkCur_Devenv %}
@@ -44,7 +50,9 @@ title: Downloads
           </td>
         </tr>
         <tr>
-          <td>API</td>
+          <td>
+            <div><a href="/Changelist/#api"><img src="/etc/badges/API.svg" alt="API" /></a></div>
+          </td>
           <td>The bridge for work with API level of main library.</td>
           <td>
             {% assign lnkCur = site.lnkCur_API %}
@@ -55,7 +63,9 @@ title: Downloads
           </td>
         </tr>
         <tr>
-          <td>Provider</td>
+          <td>
+            <div><a href="/Changelist/#provider"><img src="/etc/badges/Provider.svg" alt="Provider" /></a></div>
+          </td>
           <td>The loader and helper for a quick work with main library.</td>
           <td>
             {% assign lnkCur = site.lnkCur_Provider %}
@@ -66,8 +76,10 @@ title: Downloads
           </td>
         </tr>
         <tr>
-          <td>NuGet Package for CI</td>
-          <td>The package of the libraries to support the CI /Build Servers.</td>
+          <td>
+            <div><a href="https://www.nuget.org/packages/vsSBE.CI.MSBuild/" target="_blank"><img src="https://img.shields.io/nuget/v/vsSBE.CI.MSBuild.svg" alt="NuGet Package for CI" /></a></div>
+          </td>
+          <td>The official package of libraries to support the CI /Build Servers.</td>
           <td>
             {% assign lnkCur = site.lnkCur_CIMNuGet %}
             {% assign lnkList = site.lnkList_CIMNuGet %}
@@ -77,8 +89,10 @@ title: Downloads
           </td>
         </tr>
         <tr>
-          <td>ClientDemo</td>
-          <td><b>Demo</b> project of the <b>client.vssbe.dll</b> features. For work with events from our core library. <a href="{{site.docp}}/API/#create-client-vssbe-dll">How to use.</a></td>
+          <td>
+            <a href="{{site.lnkSrcClientDemo[1]}}" target="_blank">ClientDemo</a>
+          </td>
+          <td>Compiled ClientDemo project. As <b>Demo</b> of the <b>client.vssbe.dll</b> features. For work with events from our core library. <a href="{{site.docp}}/API/#create-client-vssbe-dll">How to use.</a></td>
           <td>
             {% assign lnkCur = site.lnkCur_ClientDemo %}
             {% assign lnkList = site.lnkList_ClientDemo %}

@@ -7,11 +7,9 @@ permalink: /doc/Examples/Version number/
 
 ![Version class](../../Resources/examples/VersionClass.gif)
 
-**Please note**: You can achieve this or similar results with [our different modes](../../Modes/). 
+**Please note**: You can achieve this (or similar) result with [our different modes](../../Modes/). 
 
-For simplicity, we consider the [Script Mode](../../Modes/Script/). **However**, feel free - If you don't like this - use many other variants, for example with [Targets Mode](../../Modes/Targets/) or [C# Mode](../../Modes/CSharp/), or with [simple caller](../../Features/Confirmation dialog/) and [others](../../Examples/)
-
-*This variant is also used in our project:  [Full script for assembling the vsSolutionBuildEvent v0.11](https://gist.github.com/3F/3f2f56dfc2a01dc99c63) (actual version in current [script file](https://github.com/3F/vsSolutionBuildEvent/blob/master/.vssbe))*
+For simplicity, we consider the [Script Mode](../../Modes/Script/). **However**, feel free - If you don't like this - use any other variants, for example with [Targets Mode](../../Modes/Targets/) or [C# Mode](../../Modes/CSharp/), or with [simple caller](../../Features/Confirmation dialog/) and [others](../../Examples/)
 
 ## Synopsis
 
@@ -71,22 +69,19 @@ namespace example
 ```
 [etc.,](https://gist.github.com/3F/f54ad9736a9cbb984785)
 
+### What about .vsixmanifest & other static files
 
-**Note:** For example, for **.vsixmanifest** ([VSPackages /VSIX Package](https://msdn.microsoft.com/en-us/library/bb166424.aspx)) *or similar*, it's a little harder... We can't use this directly, therefore we may update this only as replacement, for example: 
-
-* Change "Processing mode" to 'Script Mode'
-* Add action & Activate [SBE-Scripts](../../Scripts/SBE-Scripts/) support
-* Use next script, for example:
+For **.vsixmanifest** ([VSPackages /VSIX Package](https://msdn.microsoft.com/en-us/library/bb166424.aspx)) *and similar*, it's a little harder... We can't use this directly as above, therefore we may update this only as replacement, for example: 
 
 ```java 
 
-#[File replace.Regexp("source.extension.vsixmanifest", "<Version>[0-9\.]+</Version>", "<Version>#[var number]</Version>")]
+#[IO replace.Regexp("source.extension.vsixmanifest", "<Version>[0-9\.]+</Version>", "<Version>#[var number]</Version>")]
 ```
 **Where**, `#[var number]` it's your number(see [UserVariableComponent](../../Scripts/SBE-Scripts/Components/UserVariableComponent/)). You can manage this value with next variants, for example:
 
 * Getting from [MSBuild Property](../../Scripts/MSBuild/) `#[var number = $(name)]` or `$(number = $(name))`
 * Getting from file: `#[var number = #[File get(".version")]]`
-* Getting from your external utility(stdout): `#[var number = #[File sout("updv.exe", "-s new")]]`
+* Getting from your external utility(stdout): `#[var number = #[IO sout("updv.exe", "-s new")]]`
 * Manually set - `#[var number = 1.2.3]` or `$(number = "1.2.3")`
 * Other with [MSBuild](../../Scripts/MSBuild/) & [SBE-Scripts](../../Scripts/SBE-Scripts/)
 * etc.
@@ -96,9 +91,9 @@ namespace example
 * [VSIX Extension Schema 2.0 Reference](http://msdn.microsoft.com/en-us/library/hh696828.aspx)
 * [System.Version](http://msdn.microsoft.com/en-us/library/System.Version%28v=vs.110%29.aspx)
 
-## Generating the Version class & Build/revision Number
+## Generating the Version class with build/revision number
 
-* Create template of Version class e.g.: **Version.tpl** with what you want, using placeholders instead of real values - sample for C#:
+* Create template of Version class, for example: **Version.tpl** with what you want, using placeholders instead of real values - sample for C#:
 
 ```csharp 
 
@@ -116,9 +111,9 @@ namespace example
 }
 ```
 
-* Create file e.g.: **.version** and write current number of your project like a **major**.**minor**. and similar
+* Create file, for example: **.version** and write current number of your project like a `<major>.<minor>.<patch>` and similar
 * Select event type - "Pre-Build".
-* Change "Processing mode" to 'Interpreter Mode' or 'Script Mode'
+* Change "Processing mode" to 'Script Mode'
 * Activate [SBE-Scripts](../../Scripts/SBE-Scripts/) support
 * Activate [MSBuild](../../Scripts/MSBuild/) support
 * Write next script, for example:
@@ -138,7 +133,7 @@ namespace example
 #[" 
     Calculate revBuild
 "]
-$(tStart        = $([System.DateTime]::Parse("2015/08/08").ToBinary()))
+$(tStart        = $([System.DateTime]::Parse("2015/10/01").ToBinary()))
 $(tNow          = $([System.DateTime]::UtcNow.Ticks))
 #[var revBuild  = $([System.TimeSpan]::FromTicks($([MSBuild]::Subtract($(tNow), $(tStart)))).TotalMinutes.ToString("0"))]
 
@@ -156,9 +151,9 @@ $(tNow          = $([System.DateTime]::UtcNow.Ticks))
 
 #[( #[IO exists.directory(".git")] && #[IO exists.file("git.exe", true)] )
 {
-    #[var branchSha1        = #[File sout("git", "rev-parse --short HEAD")]]
-    #[var branchName        = #[File sout("git", "rev-parse --abbrev-ref HEAD")]]
-    #[var branchRevCount    = #[File sout("git", "rev-list HEAD --count")]]
+    #[var branchSha1        = #[IO sout("git", "rev-parse --short HEAD")]]
+    #[var branchName        = #[IO sout("git", "rev-parse --abbrev-ref HEAD")]]
+    #[var branchRevCount    = #[IO sout("git", "rev-list HEAD --count")]]
     
     #[var cs = $(cs.Replace("%branchName%", "#[var branchName]").Replace("%branchSha1%", "#[var branchSha1]").Replace("%branchRevCount%", "#[var branchRevCount]"))]
 }
@@ -178,11 +173,11 @@ else {
 "]
 #[File replace.Regexp("#[var pDir]/source.extension.vsixmanifest", "<Version>[0-9\.]+</Version>", "<Version>#[var ver]</Version>")]
 ```
-* Activate event and click apply.
+* Activate event and click apply. Enjoy.
 
-As result you will see **Version.cs** as above (should be included in main project with the `Build Action` as `Compile`) and **.vsixmanifest** file with updated number.
+As result you will see **Version.cs** as above (should be included in main project with `Build Action` as `Compile`) and **.vsixmanifest** file with updated number.
 
-Also you can use the conditions for rev. number, for example:
+Also you can use conditions for rev. number, for example:
 
 ```minid 
 
@@ -192,11 +187,14 @@ Also you can use the conditions for rev. number, for example:
 ...
 #[File replace.Regexp("source.extension.vsixmanifest", "<Version>[0-9\.]+</Version>", "<Version>#[var ver]</Version>")]
 ```
-In example above, should be 0.9.0.**176489** for **Release** configuration and 0.9.0 for another
+In example above, should be like a 0.12.4.**4187** for **Release** configuration and 0.12.4 for another, for example:
+
+* `v0.12.4.4187 [ f8e9259 ] API: v1.3`
+* `v0.12.4.5192 [ d972b2d ] API: v1.3 /'local_sync':290`
 
 Note:
 
-This hard line in example above:
+The 'hard line' in example above:
 
 ```minid 
 
@@ -216,6 +214,12 @@ and similar...
 * *[Sample of how to use it for 'Assembly' attributes etc.](https://gist.github.com/3F/f54ad9736a9cbb984785)*
 
 You can also test/debug all scripts with our testing tools, look in the `Settings` - `Tools`
+
+# Working example
+
+This also used in our project:  [Full script for assembling vsSolutionBuildEvent v0.11](https://gist.github.com/3F/3f2f56dfc2a01dc99c63) 
+
+* [Actual version and full script file - .vssbe](https://github.com/3F/vsSolutionBuildEvent/blob/master/.vssbe)
 
 # References
 
