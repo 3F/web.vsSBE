@@ -302,5 +302,5 @@ Assert.AreEqual(args[5].data, -1.5d);
 
 # References
 
-* [Creating Component for SBE-Scripts core](../../New Component/)
+* [New Component for SBE-Scripts core](../../New Component/)
 * [SBEScripts/](https://github.com/3F/vsSolutionBuildEvent/tree/master/vsSolutionBuildEvent/SBEScripts)

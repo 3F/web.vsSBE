@@ -221,6 +221,25 @@ This also used in our project:  [Full script for assembling vsSolutionBuildEvent
 
 * [Actual version and full script file - .vssbe](https://github.com/3F/vsSolutionBuildEvent/blob/master/.vssbe)
 
+## Full Automatic Versions. Serial / Sequential numbers.
+
+*Any generating of numbers still may be as you want, see for example - [Increment & Decrement Numbers](../../Features/Custom counters/)*
+
+Some projects can use a simple numbering of build, like a: 1, 2, 3, 4 .. 99, 100, 101 ... 500, 501 etc.
+
+And of course, primarily, this is important feature of [CI servers](../../CI/).
+
+For all of this you should: 
+
+* Define where to store this number: it can be registry, simple file in directory with source code, etc.
+    * By the way, the most CI servers already should provide special environment variable, like a `$(appveyor_build_version)`, `$(BUILD_NUMBER)`, etc.
+* [Increment this](../../Features/Custom counters/) as you want! *if need*
+
+```bash
+
+$(buildNumber = $([MSBuild]::Add($(buildNumber), 1)))
+```
+
 # References
 
 * [Processing modes](../../Modes/)

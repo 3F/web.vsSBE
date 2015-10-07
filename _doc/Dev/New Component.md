@@ -1,9 +1,12 @@
 ---
 layout: doc
-title: Creating Component for SBE-Scripts core
+title: Create component for SBE-Scripts core in 5min.
 permalink: /doc/Dev/New Component/
 ---
-# Creating Component for SBE-Scripts core
+
+# Create component for SBE-Scripts core in 5min.
+
+***For a quick lexical analysis*** *of properties and methods, you can use* ***our [IPM analyzer](../SBE-Scripts/IPM/)*** - *It allows to quickly prepare for semantic analysis all of what you want...*
 
 All components should implement the **[IComponent](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/IComponent.cs)**
 
@@ -51,11 +54,12 @@ public interface IComponent
     string parse(string data);
 }
 ```
-Also available abstract [Component](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/Component.cs) for rapid implementation of all new features. The [Component](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/Component.cs) already contains basic behaviours with available data. Therefore, create the new component really easy.
+
+Also available abstract [Component](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/Component.cs) for rapid implementation of all new features. The [Component](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/Component.cs) is already contains basic behaviours with available data. Therefore, create the new component is really easy.
 
 ## DemoComponent ##
 
-Creating DemoComponent step by step.
+*Creating the new 'DemoComponent' step by step.*
 
 All components should have a postfix **Component** as part of name, for example: MathComponent
 
@@ -120,7 +124,7 @@ public override string parse(string data)
 }
 ```
 
-For example, we'll implement **add()** property, sample:
+For example, we will implement `int add(int a, int b)` method, sample:
 
 ```java 
 
@@ -128,7 +132,7 @@ For example, we'll implement **add()** property, sample:
 ```
 
 
-*Sample with* ***custom*** *parsing of syntax above:*
+*Sample with your* ***custom*** *parsing of syntax above:*
 
 ```csharp 
 
@@ -165,7 +169,7 @@ public class DemoComponent: Component, IComponent
 }
 ```
 **Note**: the regular expression in sample above it's only as custom variant of implementation i.e. you can use anything else with what you like... 
-For example, you also can use **our [IPM analyzer](../SBE-Scripts/IPM/)** for parsing of any properties & methods:
+And **it can be much easier**, with **our [IPM analyzer](../SBE-Scripts/IPM/)** for parsing of any properties & methods:
 
 ```csharp 
 
@@ -217,27 +221,28 @@ That's all. Build and Run vsSBE, open `Tools` - `SBE-Scripts` and try to execute
 #[Demo add(7, 5)]
 ```
 
-Congratulation! DemoComponent() has been implemented.
+Congratulation! The DemoComponent has been implemented.
 
-What's next ? how to implement more complex logic and how to work with MSBuild & User-Variables, you can see with sources with real components - [SBEScripts/](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/)
+What's next ? how to implement more complex logic and how to work with MSBuild, User-Variables, etc., you see see in real components - [SBEScripts/](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/)
 
-Also, if you wish to share your component for current project - use the pull request (on Bitbucket or GitHub), or send directly as .patch file with available contacts.
+Also, if you want share your component for current project - use pull request (on Bitbucket or GitHub), or send directly as .patch file with available contacts.
 
-## How about plugin system for this
+## How about plugin system for this ?
 
-Currently, it's only for internal structures. *It can be later, because it's really useful, or convenient at least.*
+Currently it's for internal structures, mainly. *It can be later, because it's really useful, or convenient at least.*
 
 **But**, today this was not necessary for our users. Otherwise, you should [create](https://bitbucket.org/3F/vssolutionbuildevent/issues/new) issue and **vote** for this - we'll look it as demand among users.
 
-Also, as variant you can see already available:
+Also, **as variant** you **already** can see available:
 
 * [C# Mode](../../Modes/CSharp/) as equivalent for your actions at runtime. *+Access to [scripts engines](../../Scripts/), including [SBE-Scripts](../../Scripts/SBE-Scripts/).*
-* [API](../../API/) level.
-    * [client.vssbe.dll](../../API/#client-vssbe-dll) as part of [API](../../API/) for work with events from our core library.
+* Use [API](../../API/) level.
+    * The [client.vssbe.dll](../../API/#client-vssbe-dll) as part of [API](../../API/) for work with events from our core library.
+
 
 ## Have a question ?
 
-If you have a question or have a some problem with creating new component, just [create new Issue](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)
+If you have a question or have a some problem with creating of new component and similar, just [create new Issue](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)
 
 # References
 

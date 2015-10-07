@@ -154,5 +154,5 @@ All available constructors see with the [Dom.DefinitionAttribute](https://bitbuc
 
 # References
 
-* [Creating Component for SBE-Scripts core](../../New Component/)
+* [New Component for SBE-Scripts core](../../New Component/)
 * [SBEScripts/](https://github.com/3F/vsSolutionBuildEvent/tree/master/vsSolutionBuildEvent/SBEScripts)
