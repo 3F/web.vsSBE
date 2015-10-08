@@ -112,13 +112,13 @@ Syntax:
 
 ```java 
 
-#[OWP out(string name [, string guid])]
+#[OWP out(string ident [, boolean isGuid])]
 ```
 
 Arguments:
 
-* name - Name of pane.
-* guid - Optional Guid of pane. (For vsCE users). [MSDN. Guids of Output Pane](https://msdn.microsoft.com/en-us/library/bb166496.aspx?f=255&MSPPError=-2147217396#Anchor_4)
+* ident - Name of pane.
+* isGuid - Optional flag to use Guid as identifier if true, otherwise as name of item. (For vsCE users). [MSDN. Guids of Output Pane](https://msdn.microsoft.com/en-us/library/bb166496.aspx?f=255&MSPPError=-2147217396#Anchor_4)
     * BuildOrder: `2032b126-7c8d-48ad-8026-0e0348004fc0`
     * BuildOutput: `1BD8A850-02D1-11d1-BEE7-00A0C913D1F8`
     * DebugOutput: `FC076020-078A-11D1-A7DF-00A0C9110051`

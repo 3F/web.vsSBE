@@ -178,6 +178,41 @@ Currently used a strictly limited set:
     * `\U   0-0xF  0-0xF  0-0xF  0-0xF  0-0xF  0-0xF  0-0xF  0-0xF`
 * basic: `\r \n \t \v \a \b \0 \f`
 
+## Dynamic evaluation with both engines MSBuild & SBE-Scripts
+
+Not all values from strings may be automatically evaluated beetween different engines.
+
+*You also should remeber [behaviour of strings for User-variables in MSBuild core](../../Scripts/MSBuild/#user-variables-for-msbuild-core)*
+
+For example:
+
+```java
+#[Func hash.SHA1("$([System.Guid]::NewGuid())")]
+```
+
+For line above:
+
+* Will be **always** value - `2A2C9B690E475D713B35BD1FB8A1AB7F214121C6`, **because** the SHA1 method has looked first argument 'as is' - `$([System.Guid]::NewGuid())`
+
+The result above is not correct **if** you want evaluate this `$([System.Guid]::NewGuid())`.
+
+To force evaluation of similar, you should for example, use throught [variable with this engine](../../Scripts/SBE-Scripts/Components/UserVariableComponent/):
+
+```java
+#[var myvar = $([System.Guid]::NewGuid())]
+...
+#[Func hash.SHA1("#[var myvar]")]
+```
+
+compact variant, may be:
+
+```java
+#[Func hash.SHA1("#[var _=$([System.Guid]::NewGuid())]#[var _]")]
+```
+
+and similar..
+
+
 ### Whitespaces from all results of script
 
 Use [variables](../../Scripts/SBE-Scripts/Components/UserVariableComponent/) as main container to avoid any spaces if needed.

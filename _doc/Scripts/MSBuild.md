@@ -5,9 +5,11 @@ permalink: /doc/Scripts/MSBuild/
 ---
 # MSBuild
 
-The Microsoft Build Engine is a platform for building applications. This engine, which is also known as MSBuild.
+*The Microsoft Build Engine which is also known as MSBuild.*
 
-This page contains information of how to work with MSBuild in vsSolutionBuildEvent context. *Additional syntax & basic samples are contained below.*
+This page contains information of how to work with MSBuild in vsSolutionBuildEvent context. 
+
+*Additional syntax & basic samples are contained below.*
 
 -------
 `*!*` 

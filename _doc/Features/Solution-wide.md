@@ -50,11 +50,16 @@ Use any **[our available modes](../../Modes/)** and ~feel~free~ ...
 
 # What's exists for work without plugins ?
 
-*In some cases*, any extending of Visual Studio may be not suitable or not comfortable for some reasons (for example, your some box solution etc.)
+*In some cases*, any extending of Visual Studio may be not suitable or not comfortable for some reasons (for example, your some box-solution, etc.)
 
-As variant (if it's really needed), you can try other our solution - [Variant 2: Targets & Map of projects](http://stackoverflow.com/a/18311007)
+Firstly, yes, our product may work **without** Visual Studio. 
 
-Complete script of this solution you can find [here](https://gist.github.com/3F/a77129e3978841241927)
+* You should see [CI.MSBuild](../../CI/CI.MSBuild/) (not requires installation, simply use 'as is'), and as full sample of how it's works, see [Sample 1](../../Examples/Demo/#sample-1)
+    * *full [scheme of our projects](../../Scheme/)*
+
+But a some reason may still require a very simple variant without any additions (it's really can be **only** for special case). So you can try other our solution - [Variant 2: Targets & Map of projects](http://stackoverflow.com/a/18311007) (stackoverflow.com/a/18311007)
+
+* Complete script of this solution you can find [here](https://gist.github.com/3F/a77129e3978841241927) - *it's not recomended, but you also may like this*.
 
 
 # References
