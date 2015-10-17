@@ -18,7 +18,7 @@ collections:
 markdown: redcarpet
 
 redcarpet:
-  extensions: ["tables", "no_intra_emphasis", "fenced_code_blocks", "autolink", "strikethrough", "superscript", "with_toc_data"]
+  extensions: ["tables", "no_intra_emphasis", "fenced_code_blocks", "strikethrough", "superscript", "with_toc_data", "space_after_headers", "footnotes", "prettify"]
 
 kramdown:
     smart_quotes: ["apos", "apos", "quot", "quot"]

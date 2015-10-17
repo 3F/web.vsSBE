@@ -10,9 +10,9 @@ All internal operations with vsSBE.
 
 ## events
 
-Work with events.
+For work with events.
 
-Available events:
+Available event types:
 
 ```text 
 
@@ -23,57 +23,63 @@ Syntax:
 
 ```java 
 
-#[vsSBE events.Type.item("name")]
+#[vsSBE events.Type.item(string name)]
 ```
 
 ```java 
 
-#[vsSBE events.Type.item(index)]
+#[vsSBE events.Type.item(integer index)]
 ```
+
+Arguments:
+
+* name  - Full name of action.
+* index - Index number of action from list. Range: 1 - n.
 
 Sample:
 
-```java 
-
-#[vsSBE events.Pre.item("Act1")]
+```java
+ #[vsSBE events.Pre.item("Act1")]
+ #[vsSBE events.Pre.item(1)]
 ```
 
 ### Enabled
 
-Gets or Sets Enabled status for selected event-item.
+Gets or Sets 'Enabled' status for selected event.
 
 Syntax:
 
 ```java 
 
-#[vsSBE events.Pre.item("Act1").Enabled = false]
+ boolean #[vsSBE events.Pre.item("Act1").Enabled = false|true|0|1]
 ```
 
-```java 
-
+```java
 #[vsSBE events.Pre.item("Act1").Enabled]
+#[vsSBE events.Pre.item("Act1").Enabled = false]
 ```
 
 ### Status ###
 
-Available statuses for selected event-item.
+Available statuses for selected event.
 
 #### HasErrors ####
 
-Checking existence of errors after executed action for selected event-item.
+Checking of existence of errors after executed action for selected event.
 
 Syntax:
 
 ```java 
 
-#[vsSBE events.Pre.item("Act1").Status.HasErrors]
+boolean #[vsSBE events.Pre.item("Act1").Status.HasErrors]
 ```
 
 Sample:
 
 ```java 
 
-#[(#[vsSBE events.Pre.item("Act1").Enabled]){
+#[( #[vsSBE events.Pre.item("Act1").Enabled] && !#[vsSBE events.Pre.item("Act1").Status.HasErrors] )
+{
     #[Build projects.find("zlib").IsBuildable = false]
 }]
 ```

@@ -55,11 +55,12 @@ similarly, you can also use any other script language..
 
 ### External logic. Simple caller (or variant for older versions < v0.9)
 
+{% assign infoData = "**Obsolete**. See similar [here](../../Examples/Version number/)" %}
+{% include elem/info %}
+
 See also - [Work with external utilities](../../Features/External utilities/) for details about this.
 
 The information below is an deprecated variant. But if you still like this:
-
-`*!*` *please note it's Obsolete see also [similar with new version](../../Examples/Version number/)* `*!*`
 
 For example, if you have a few subprojects in your solution as here:
 

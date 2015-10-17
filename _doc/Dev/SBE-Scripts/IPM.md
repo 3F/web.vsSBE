@@ -10,6 +10,187 @@ With latest changes you can also use our IPM analyzer for parsing of any propert
 
 It useful for a quick implementation of any logic for new or existing component.
 
+## Overview
+
+All magic of this starts with:
+
+```csharp
+IPM pm = new PM(data)
+```
+
+Where **data** it's your raw data 'as is'. Then, you can work with parsed data via pm instance.
+
+### Properties
+
+### Methods
+
+#### Arguments
+
+[Available types](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/SNode/ArgumentType.cs):
+
+```csharp
+    // Unspecified mixed data.
+    Mixed,
+
+    // Common string.
+    String,
+
+    // String from single quotes.
+    StringSingle,
+
+    // String from double quotes.
+    StringDouble,
+
+    // Boolean data.
+    Boolean,
+
+    // Signed Integer number.
+    Integer,
+
+    // Signed floating-point number with single-precision.
+    Float,
+
+    // Signed floating-point number with double-precision.
+    Double,
+
+    // Unspecified predefined data.
+    EnumOrConst,
+
+    // Predefined data as Enum.
+    Enum,
+
+    // Predefined data as Const.
+    Const,
+
+    // Object data. Similar as array with mixed data. Format: { "p1", true, { 12, 'n', -4.5f }, 12d }
+    Object,
+```
+
+* Samples:
+
+```csharp
+
+IPM pm = new PM("solution(\"str data\", 'str data2', 12, -12, 1.5, -1.5, STDOUT, TestEnum.SpecialType, mixed * data, true)");
+
+Argument[] args = pm.Levels[0].Args;
+Assert.AreEqual(args[0].type, ArgumentType.StringDouble);
+Assert.AreEqual(args[0].data, "str data");
+
+Assert.AreEqual(args[1].type, ArgumentType.StringSingle);
+Assert.AreEqual(args[1].data, "str data2");
+
+Assert.AreEqual(args[2].type, ArgumentType.Integer);
+Assert.AreEqual(args[2].data, 12);
+
+Assert.AreEqual(args[3].type, ArgumentType.Integer);
+Assert.AreEqual(args[3].data, -12);
+
+Assert.AreEqual(args[4].type, ArgumentType.Double);
+Assert.AreEqual(args[4].data, 1.5);
+
+Assert.AreEqual(args[5].type, ArgumentType.Double);
+Assert.AreEqual(args[5].data, -1.5);
+
+Assert.AreEqual(args[6].type, ArgumentType.EnumOrConst);
+Assert.AreEqual(args[6].data, "STDOUT");
+
+Assert.AreEqual(args[7].type, ArgumentType.EnumOrConst);
+Assert.AreEqual(args[7].data, "TestEnum.SpecialType");
+
+Assert.AreEqual(args[8].type, ArgumentType.Mixed);
+Assert.AreEqual(args[8].data, "mixed * data");
+
+Assert.AreEqual(args[9].type, ArgumentType.Boolean);
+Assert.AreEqual(args[9].data, true);
+```
+
+* floating-point numbers:
+
+```csharp
+
+IPM pm = new PM(" solution (1.5, -1.5, 1.5f, -1.5f, 1.5d, -1.5d) ");
+
+Argument[] args = pm.Levels[0].Args;
+Assert.AreEqual(args[0].type, ArgumentType.Double);
+Assert.AreEqual(args[0].data, 1.5d);
+
+Assert.AreEqual(args[1].type, ArgumentType.Double);
+Assert.AreEqual(args[1].data, -1.5d);
+
+Assert.AreEqual(args[2].type, ArgumentType.Float);
+Assert.AreEqual(args[2].data, 1.5f);
+
+Assert.AreEqual(args[3].type, ArgumentType.Float);
+Assert.AreEqual(args[3].data, -1.5f);
+
+Assert.AreEqual(args[4].type, ArgumentType.Double);
+Assert.AreEqual(args[4].data, 1.5d);
+
+Assert.AreEqual(args[5].type, ArgumentType.Double);
+Assert.AreEqual(args[5].data, -1.5d);
+
+```
+
+* Object data. Similar as array with mixed data:
+
+```csharp
+
+    IPM pm = new PM(" m77(\"guid\", 12, {\"p1\", {4, \"test\", 8, 's2'}, true}, {false, \"p2\"}) ");
+
+    Assert.AreEqual(pm.Is(0, LevelType.Method, "m77"), true);
+
+    Argument[] args = pm.Levels[0].Args;
+    Assert.AreEqual(args.Length, 4);
+
+    Assert.AreEqual(args[0].type, ArgumentType.StringDouble);
+    Assert.AreEqual(args[0].data, "guid");
+
+    Assert.AreEqual(args[1].type, ArgumentType.Integer);
+    Assert.AreEqual(args[1].data, 12);
+
+    Assert.AreEqual(args[2].type, ArgumentType.Object);
+    {
+        Argument[] args2 = (Argument[])args[2].data;
+        Assert.AreEqual(args2.Length, 3);
+
+        Assert.AreEqual(args2[0].type, ArgumentType.StringDouble);
+        Assert.AreEqual(args2[0].data, "p1");
+
+        Assert.AreEqual(args2[1].type, ArgumentType.Object);
+        {
+            Argument[] args21 = (Argument[])args2[1].data;
+            Assert.AreEqual(args21.Length, 4);
+
+            Assert.AreEqual(args21[0].type, ArgumentType.Integer);
+            Assert.AreEqual(args21[0].data, 4);
+
+            Assert.AreEqual(args21[1].type, ArgumentType.StringDouble);
+            Assert.AreEqual(args21[1].data, "test");
+
+            Assert.AreEqual(args21[2].type, ArgumentType.Integer);
+            Assert.AreEqual(args21[2].data, 8);
+
+            Assert.AreEqual(args21[3].type, ArgumentType.StringSingle);
+            Assert.AreEqual(args21[3].data, "s2");
+        }
+
+        Assert.AreEqual(args2[2].type, ArgumentType.Boolean);
+        Assert.AreEqual(args2[2].data, true);
+    }
+
+    Assert.AreEqual(args[3].type, ArgumentType.Object);
+    {
+        Argument[] args3 = (Argument[])args[3].data;
+        Assert.AreEqual(args3.Length, 2);
+
+        Assert.AreEqual(args3[0].type, ArgumentType.Boolean);
+        Assert.AreEqual(args3[0].data, false);
+
+        Assert.AreEqual(args3[1].type, ArgumentType.StringDouble);
+        Assert.AreEqual(args3[1].data, "p2");
+    }    
+``` 
+
 ## How to
 
 How about calculating hash value with MD5 & SHA-1 ? and possible syntax like this:
@@ -28,6 +209,7 @@ IPM pm = new PM(data); // pointed to 'hash' level
 ```
 
 ```csharp
+
 if(pm.FinalEmptyIs(1, LevelType.Method, "MD5"))
 {
     Argument[] args = pm.Levels[1].Args;
@@ -50,7 +232,7 @@ if(pm.FinalEmptyIs(1, LevelType.Method, "SHA1"))
 }
 ```
 
-## A more complex example
+### A more complex example
 
 Let's consider a real example (this, for example, used in [BuildComponent](../../../Scripts/SBE-Scripts/Components/BuildComponent/#solution))
 
@@ -135,6 +317,8 @@ If you want to work with next syntax, for example:
 etc.
 
 + control of existing (that should be and that is not) for all levels
+
+and similar..
 
 ```
 
@@ -230,69 +414,6 @@ That's really all.. want to see in action ?
 This already implemented in [BuildComponent](../../../Scripts/SBE-Scripts/Components/BuildComponent/#solution):
 
 * `Settings` - `Tools` - `SBE-Scripts Testing tool` then start with #[Build ..
-
-## Work with arguments
-
-```csharp
-
-PM pm = new PM("solution(\"str data\", 'str data2', 12, -12, 1.5, -1.5, STDOUT, TestEnum.SpecialType, mixed * data, true)");
-
-Argument[] args = pm.Levels[0].Args;
-Assert.AreEqual(args[0].type, ArgumentType.StringDouble);
-Assert.AreEqual(args[0].data, "str data");
-
-Assert.AreEqual(args[1].type, ArgumentType.StringSingle);
-Assert.AreEqual(args[1].data, "str data2");
-
-Assert.AreEqual(args[2].type, ArgumentType.Integer);
-Assert.AreEqual(args[2].data, 12);
-
-Assert.AreEqual(args[3].type, ArgumentType.Integer);
-Assert.AreEqual(args[3].data, -12);
-
-Assert.AreEqual(args[4].type, ArgumentType.Double);
-Assert.AreEqual(args[4].data, 1.5);
-
-Assert.AreEqual(args[5].type, ArgumentType.Double);
-Assert.AreEqual(args[5].data, -1.5);
-
-Assert.AreEqual(args[6].type, ArgumentType.EnumOrConst);
-Assert.AreEqual(args[6].data, "STDOUT");
-
-Assert.AreEqual(args[7].type, ArgumentType.EnumOrConst);
-Assert.AreEqual(args[7].data, "TestEnum.SpecialType");
-
-Assert.AreEqual(args[8].type, ArgumentType.Mixed);
-Assert.AreEqual(args[8].data, "mixed * data");
-
-Assert.AreEqual(args[9].type, ArgumentType.Boolean);
-Assert.AreEqual(args[9].data, true);
-```
-
-```csharp
-
-PM pm = new PM(" solution (1.5, -1.5, 1.5f, -1.5f, 1.5d, -1.5d) ");
-
-Argument[] args = pm.Levels[0].Args;
-Assert.AreEqual(args[0].type, ArgumentType.Double);
-Assert.AreEqual(args[0].data, 1.5d);
-
-Assert.AreEqual(args[1].type, ArgumentType.Double);
-Assert.AreEqual(args[1].data, -1.5d);
-
-Assert.AreEqual(args[2].type, ArgumentType.Float);
-Assert.AreEqual(args[2].data, 1.5f);
-
-Assert.AreEqual(args[3].type, ArgumentType.Float);
-Assert.AreEqual(args[3].data, -1.5f);
-
-Assert.AreEqual(args[4].type, ArgumentType.Double);
-Assert.AreEqual(args[4].data, 1.5d);
-
-Assert.AreEqual(args[5].type, ArgumentType.Double);
-Assert.AreEqual(args[5].data, -1.5d);
-
-```
 
 ## Logic of IPM
 

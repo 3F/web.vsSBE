@@ -106,3 +106,9 @@ table > tbody + tbody {
 .nav-gicon:before {
     padding-right: 7px;
 }
+
+/* colors */
+
+.white {
+  color: #FFFFFF;
+}

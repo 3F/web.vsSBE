@@ -314,8 +314,7 @@ Samples:
 #[( #[File exists.directory("System32", true)] ){
    ...
 }]
-```    
-.
+```
 
 #### file
 

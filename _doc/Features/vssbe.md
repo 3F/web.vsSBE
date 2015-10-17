@@ -43,6 +43,9 @@ value of zooming & Word wrapping of main editor, DebugMode & CacheData of binari
 
 # Unified Project name for different .sln
 
+{% assign infoData = "Obsolete" %}
+{% include elem/info %}
+
 You can see a some problems with [MSBuild](../../Scripts/MSBuild/) / [SBE-Scripts](../../Scripts/SBE-Scripts/), incorrect behaviour with 'Execution Order' feature etc. If used a few .sln versions for your project.
 
 For example, [currently](https://github.com/3F/vsSolutionBuildEvent) this project used next solutions:
@@ -100,6 +103,6 @@ Appeared in [v0.12.4](/Changelist/#vsix) for convenient using directly in file (
 
 However, the 'Command__' property is temporary and used for compatibility with format **v0.9**.
 
-This can be inconvenient and until new upgrade of format, we also added settings to turn off this field:
+This can be inconvenient and we also added settings (until upgrade of format) to turn off this field:
 
 * `Settings` - `Plugin` - `Suppress 'Command__' property`
