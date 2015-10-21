@@ -130,7 +130,7 @@ That's all.
 * `./vsSolutionBuildEvent` - your path for source code (it can be absolute, e.g.: `C:\projects\vsSolutionBuildEvent`).
 * `vsSolutionBuildEvent_2013.sln` - solution file for VS2013. All available you can see in root directory.
 * `C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe` - full path to your msbuild.exe
-* `C:\projects\vssolutionbuildevent\packages\vsSBE.CI.MSBuild.{{site.lnkCur_CIMNuGet[0] | replace:'v',''}}\bin\CI.MSBuild.dll` - full path to the [CI.MSBuild](../../CI/CI.MSBuild/)
+* `packages\vsSBE.CI.MSBuild.{{site.lnkCur_CIMNuGet[0] | replace:'v',''}}\bin\CI.MSBuild.dll` - path to the [CI.MSBuild](../../CI/CI.MSBuild/)
 
 *this variant also used for build automation with [AppVeyor](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent)*
 

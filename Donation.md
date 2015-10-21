@@ -20,28 +20,22 @@ Well, now you can help...
 
 yes, it's a classic.. but it is really helpful for support this! 
 
-* PyPal: [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=P2HRG52AJSA9N&lc=US&item_name=vsSolutionBuildEvent%20%28vsSBE%29%20projects&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted)
+* PyPal: [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=P2HRG52AJSA9N&lc=US&item_name=vsSolutionBuildEvent%20%28vsSBE%29%20Open%20Source%20Projects&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted)
 * Problem with PyPal ? other variant ? write [here](https://bitbucket.org/3F/vssolutionbuildevent/issues/new) or use any direct contacts for private discussion
 
 No money ?
 
-Some our users are uses this in official job.. so, you can also simply to tell your boss about this :)
+Some our users uses this in official job.. so, you can also simply to tell your boss about this :)
 
 Still no money ? don't worry, if you still want to help us... see below
 
-## New Features
+## New Features & bug fixes
 
-For existing or new things. Have ideas ? good! Also you can extend or improve our platform with [Components]({{site.docp}}/Dev/New Component)
-
-Start with [Developer Zone]({{site.docp}}/Dev/)
-
-## Bug fixes & Improving performance ##
-
-You can simply [report](https://bitbucket.org/3F/vssolutionbuildevent/issues/new) about problems - it can be used on different versions & platforms and some errors we can find only with you!
-
-**Or**! try to fix it yourself!
+For existing or new things. Have ideas ? Or is ready for bug fixing or improving performance ? Good!
 
 Start with [Developer Zone]({{site.docp}}/Dev/)
+
+*Also you can extend or improve our platform with [Components]({{site.docp}}/Dev/New Component)*
 
 ## Wiki
 

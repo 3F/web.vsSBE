@@ -9,7 +9,7 @@ This action type for work with C# compiler - feel free with all events & actions
 
 *Available control of caching bytecode and full access to [ICommand](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/Actions/ICommand.cs) & [ISolutionEvent](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/Events/ISolutionEvent.cs) (can be cast [on similars](https://github.com/3F/vsSolutionBuildEvent/tree/master/vsSolutionBuildEvent/Events))*
 
-# Default Entry point
+## Default Entry point
 
 ```csharp 
 
@@ -28,9 +28,9 @@ namespace vsSolutionBuildEvent
 }
 ```
 
-# Compiler settings
+## Compiler settings
 
-## References
+### References
 
 Additional assembly names that are referenced by the source to compile. You can use any formats below, for example:
 
@@ -42,7 +42,7 @@ EnvDTE
 EnvDTE, Version=8.0.0.0, PublicKeyToken=b03f5f7f11d50a3a
 ```
 
-## FilesMode flag
+### FilesMode flag
 
 As variant, you can also use FilesMode flag in Compiler settings for work with external source codes.
 
@@ -63,7 +63,7 @@ So you can also add this in your solution for more productive work, for example:
 
 *Note: In most cases the `Build Action` should be as `None`*
 
-# ICommand & ISolutionEvent objects
+## ICommand & ISolutionEvent objects
 
 The default entry point provides accessing to next objects:
 
@@ -72,9 +72,9 @@ The default entry point provides accessing to next objects:
 
 As you can see, you may work with most operations of vsSolutionBuildEvent core, for example:
 
-## Work with MSBuild & SBE-Scripts engine
+### Work with MSBuild & SBE-Scripts engine
 
-### Define UserVariable with value from C# code
+#### Define UserVariable with value from C# code
 
 You have a few variants for work with UserVariables:
 
@@ -122,7 +122,7 @@ cmd.MSBuild.parse(String.Format("$$(mvMap = '{0}')", steps.Peek()));
 
 *For SBE-Scripts: all elements inside quotes (`"..."`, `'...'`) will be automatically protected from evaluation.*
 
-# Examples
+## Examples
 
 The optional [ICommand](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/Actions/ICommand.cs) & [ISolutionEvent](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/Events/ISolutionEvent.cs) objects contains most useful points for work with our core.
 For example:
@@ -151,7 +151,7 @@ if(!uvar.isExist("name1", "projectA")) {
 
 * and others...
 
-## Visual Studio OutputWindow pane through vsSBE
+### Visual Studio OutputWindow pane through vsSBE
 
 *Of course you can also prepare [OutputWindow](https://msdn.microsoft.com/en-us/library/envdte.outputwindow.aspx) with [DTE2](https://msdn.microsoft.com/en-us/library/envdte80.dte2.aspx) etc.*
 
@@ -185,7 +185,7 @@ namespace vsSolutionBuildEvent
 * Activate Event and click Apply.
 * Enjoy!
 
-### Using directly SBE-Scripts engine
+#### Using directly SBE-Scripts engine
 
 Parsing data via SBE-Scripts engine from C# Mode, yes [it's possible](#work-with-msbuild-amp-sbe-scripts-engine).
 So you can simply:
@@ -197,7 +197,7 @@ cmd.SBEScript.parse("#[OWP item(\"My Log\").writeLine(true): Hi :) ]");
 
 *As you can see you have a few variants for any cases. However, the [Script Mode](../Script/) is more right choice if you want simple access to VS Output window.*
 
-## FTP. Upload Artefacts and similar
+### FTP. Upload Artefacts and similar
 
 * Activate C# Mode
 * Add **'System.dll'** reference in `Compiler` - `References`

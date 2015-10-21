@@ -6,7 +6,7 @@ permalink: /doc/Scripts/SBE-Scripts/Components/InternalComponent/
 ---
 # InternalComponent
 
-All internal operations with vsSBE.
+All internal operations with vsSolutionBuildEvent.
 
 ## events
 

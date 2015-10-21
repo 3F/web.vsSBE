@@ -166,3 +166,10 @@ versionCIM: "https://raw.githubusercontent.com/3F/vsSolutionBuildEvent/master/CI
 versionDevenv: "https://raw.githubusercontent.com/3F/vsSolutionBuildEvent/master/Devenv/.version"
 versionAPI: "https://raw.githubusercontent.com/3F/vsSolutionBuildEvent/master/Bridge/.version"
 versionProvider: "https://raw.githubusercontent.com/3F/vsSolutionBuildEvent/master/Provider/.version"
+
+
+#######################################
+# Services
+##############
+
+editPagePath: "https://github.com/3F/web.vsSBE/edit/gh-pages/"

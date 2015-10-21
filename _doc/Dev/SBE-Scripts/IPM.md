@@ -22,7 +22,11 @@ Where **data** it's your raw data 'as is'. Then, you can work with parsed data v
 
 ### Properties
 
+{% include elem/fillme %}
+
 ### Methods
+
+{% include elem/fillme %}
 
 #### Arguments
 
@@ -40,6 +44,11 @@ Where **data** it's your raw data 'as is'. Then, you can work with parsed data v
 
     // String from double quotes.
     StringDouble,
+
+    /// <summary>
+    /// Single symbol from single quotes. 
+    /// </summary>
+    Char,
 
     // Boolean data.
     Boolean,
@@ -135,60 +144,60 @@ Assert.AreEqual(args[5].data, -1.5d);
 
 ```csharp
 
-    IPM pm = new PM(" m77(\"guid\", 12, {\"p1\", {4, \"test\", 8, 's2'}, true}, {false, \"p2\"}) ");
+IPM pm = new PM(" m77(\"guid\", 12, {\"p1\", {4, \"test\", 8, 'y'}, true}, {false, 'p2'}) ");
 
-    Assert.AreEqual(pm.Is(0, LevelType.Method, "m77"), true);
+Assert.AreEqual(pm.Is(0, LevelType.Method, "m77"), true);
 
-    Argument[] args = pm.Levels[0].Args;
-    Assert.AreEqual(args.Length, 4);
+Argument[] args = pm.Levels[0].Args;
+Assert.AreEqual(args.Length, 4);
 
-    Assert.AreEqual(args[0].type, ArgumentType.StringDouble);
-    Assert.AreEqual(args[0].data, "guid");
+Assert.AreEqual(args[0].type, ArgumentType.StringDouble);
+Assert.AreEqual(args[0].data, "guid");
 
-    Assert.AreEqual(args[1].type, ArgumentType.Integer);
-    Assert.AreEqual(args[1].data, 12);
+Assert.AreEqual(args[1].type, ArgumentType.Integer);
+Assert.AreEqual(args[1].data, 12);
 
-    Assert.AreEqual(args[2].type, ArgumentType.Object);
+Assert.AreEqual(args[2].type, ArgumentType.Object);
+{
+    Argument[] args2 = (Argument[])args[2].data;
+    Assert.AreEqual(args2.Length, 3);
+
+    Assert.AreEqual(args2[0].type, ArgumentType.StringDouble);
+    Assert.AreEqual(args2[0].data, "p1");
+
+    Assert.AreEqual(args2[1].type, ArgumentType.Object);
     {
-        Argument[] args2 = (Argument[])args[2].data;
-        Assert.AreEqual(args2.Length, 3);
+        Argument[] args21 = (Argument[])args2[1].data;
+        Assert.AreEqual(args21.Length, 4);
 
-        Assert.AreEqual(args2[0].type, ArgumentType.StringDouble);
-        Assert.AreEqual(args2[0].data, "p1");
+        Assert.AreEqual(args21[0].type, ArgumentType.Integer);
+        Assert.AreEqual(args21[0].data, 4);
 
-        Assert.AreEqual(args2[1].type, ArgumentType.Object);
-        {
-            Argument[] args21 = (Argument[])args2[1].data;
-            Assert.AreEqual(args21.Length, 4);
+        Assert.AreEqual(args21[1].type, ArgumentType.StringDouble);
+        Assert.AreEqual(args21[1].data, "test");
 
-            Assert.AreEqual(args21[0].type, ArgumentType.Integer);
-            Assert.AreEqual(args21[0].data, 4);
+        Assert.AreEqual(args21[2].type, ArgumentType.Integer);
+        Assert.AreEqual(args21[2].data, 8);
 
-            Assert.AreEqual(args21[1].type, ArgumentType.StringDouble);
-            Assert.AreEqual(args21[1].data, "test");
-
-            Assert.AreEqual(args21[2].type, ArgumentType.Integer);
-            Assert.AreEqual(args21[2].data, 8);
-
-            Assert.AreEqual(args21[3].type, ArgumentType.StringSingle);
-            Assert.AreEqual(args21[3].data, "s2");
-        }
-
-        Assert.AreEqual(args2[2].type, ArgumentType.Boolean);
-        Assert.AreEqual(args2[2].data, true);
+        Assert.AreEqual(args21[3].type, ArgumentType.Char);
+        Assert.AreEqual(args21[3].data, 'y');
     }
 
-    Assert.AreEqual(args[3].type, ArgumentType.Object);
-    {
-        Argument[] args3 = (Argument[])args[3].data;
-        Assert.AreEqual(args3.Length, 2);
+    Assert.AreEqual(args2[2].type, ArgumentType.Boolean);
+    Assert.AreEqual(args2[2].data, true);
+}
 
-        Assert.AreEqual(args3[0].type, ArgumentType.Boolean);
-        Assert.AreEqual(args3[0].data, false);
+Assert.AreEqual(args[3].type, ArgumentType.Object);
+{
+    Argument[] args3 = (Argument[])args[3].data;
+    Assert.AreEqual(args3.Length, 2);
 
-        Assert.AreEqual(args3[1].type, ArgumentType.StringDouble);
-        Assert.AreEqual(args3[1].data, "p2");
-    }    
+    Assert.AreEqual(args3[0].type, ArgumentType.Boolean);
+    Assert.AreEqual(args3[0].data, false);
+
+    Assert.AreEqual(args3[1].type, ArgumentType.StringSingle);
+    Assert.AreEqual(args3[1].data, "p2");
+}
 ``` 
 
 ## How to
