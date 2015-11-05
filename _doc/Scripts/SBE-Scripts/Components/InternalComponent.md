@@ -8,6 +8,22 @@ permalink: /doc/Scripts/SBE-Scripts/Components/InternalComponent/
 
 All internal operations with vsSolutionBuildEvent.
 
+## Entry point for component
+
+The vsSolutionBuildEvent requires the next name for all internal operations:
+
+* `vsSBE` or alias `Core` (v0.12.5+)
+
+Samples:
+
+```java
+#[vsSBE ...]
+```
+
+```java
+#[Core ...]
+```
+
 ## events
 
 For work with events.

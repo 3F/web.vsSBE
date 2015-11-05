@@ -16,12 +16,13 @@ If you also used [StopOnFirstBuildError](http://visualstudiogallery.msdn.microso
 A quick example what it means:
 
 * If your **each project** in your solution requires a long time for full compilation (~5-10min average for example)...
-* Well, congratulation.. you still should a wait the end of building project **where error occurred**(~5-10min average for example).
+* Well, congratulation.. you still should wait the end of building project **where error occurred**(~5-10min average for example).
 
-Why ? and Why not exist any settings for this ? we don't know but this so **because** the StopOnFirstBuildError used subscription with [OnBuildProjConfigDone](https://msdn.microsoft.com/en-us/library/envdte._dispbuildevents.onbuildprojconfigdone%28v=vs.120%29.aspx) - However this should be as is... after when is finished building the project configuration. 
+Why ? and Why is not exists any settings for this ? we don't know but this is so **because** the StopOnFirstBuildError used subscription with [OnBuildProjConfigDone](https://msdn.microsoft.com/en-us/library/envdte._dispbuildevents.onbuildprojconfigdone%28v=vs.120%29.aspx). 
+However this should be 'as is'... after, when is finished building the project configuration. 
 
-It seems useful for some others case, However... not for this ...
-So! what to do with our solutions ? 
+It seems useful for some other case, but not for this above.
+So what to do for this case ? 
 
 Simply add some action for Error-Build event and configure this as you want - see below.
 

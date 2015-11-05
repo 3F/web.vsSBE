@@ -14,18 +14,16 @@ This page contains information of how to work with MSBuild in vsSolutionBuildEve
 -------
 `*!*` 
 
-* Starting with v0.9, you can also use the [SBE-Scripts](../SBE-Scripts/) for additional features.
-* Starting with v0.11, you can use the [CI.MSBuild](../../CI/CI.MSBuild/) for work through msbuild.exe (Microsoft Build Tools)
+* For work with **MSBuild Tools** (Microsoft Build Tools) use the [CI.MSBuild](../../CI/CI.MSBuild/).
+* For work with MSBuild Targets, Tasks and others, use the [Targets Mode](../../Modes/Targets/).
+* You can also use the [SBE-Scripts](../SBE-Scripts/) engine for additional features as a conditions, subcommands, file operations, etc.
 
 -------
-
-MSDN References:
-
-* [MSBuild](http://msdn.microsoft.com/en-us/library/vstudio/dd393574.aspx)
-* [MSBuild Concepts](http://msdn.microsoft.com/en-us/library/vstudio/dd637714.aspx)
-* [Property Functions](http://msdn.microsoft.com/en-us/library/vstudio/dd633440%28v=vs.120%29.aspx)
+&nbsp;
 
 ## MSBuild Property & Property Functions
+
+* MSDN - [Property Functions](http://msdn.microsoft.com/en-us/library/vstudio/dd633440%28v=vs.120%29.aspx)
 
 The vsSolutionBuildEvent uses additional syntax for select specific project. This is so because this can be used for all projects at once as [Solution-wide](http://stackoverflow.com/q/2295454) ([related issue](https://bitbucket.org/3F/vssolutionbuildevent/issue/29/projectdir-doesnt-resolve-properly))
 
@@ -69,7 +67,7 @@ $(SolutionPath.Replace('\', '/'))  -> D:\App\ConsoleApp1.sln to D:/App/ConsoleAp
 $(SolutionPath.Replace('\', '\\')) -> to D:\\App\\ConsoleApp1.sln
 ```
 
-* delta to time:
+* delta for time:
 
 ```Bash 
 
@@ -216,4 +214,11 @@ $([MSBuild]::GetRegistryValueFromView('keyName', 'valueName', null, RegistryView
 
 * [Examples & Features](../../Examples/)
 * [SBE-Scripts](../SBE-Scripts/)
+* [CI.MSBuild](../../CI/CI.MSBuild/)
+* [Processing modes](../../Modes/)
+    * [Targets Mode](../../Modes/Targets/)
+* MSDN:
+    * [MSBuild](http://msdn.microsoft.com/en-us/library/vstudio/dd393574.aspx)
+    * [MSBuild Concepts](http://msdn.microsoft.com/en-us/library/vstudio/dd637714.aspx)
+    * [Property Functions](http://msdn.microsoft.com/en-us/library/vstudio/dd633440%28v=vs.120%29.aspx)
 

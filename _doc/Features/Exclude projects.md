@@ -42,7 +42,7 @@ etc.
 
 
 #[( ($(isAllow) && $(Configuration) === "Debug") || $(sysc) == -1 ) {
-    #[Build projects.find("bzip2.vcxproj").IsBuildable = true]
+    #[Build projects.find("bzip2.vcxproj").IsBuildable = false]
 }]
 ```
 
@@ -68,7 +68,7 @@ etc.
 ]
 ```
 
-* Manage for others projects:
+* Manage for other projects:
 
 ```java 
 

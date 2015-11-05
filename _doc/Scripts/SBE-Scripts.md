@@ -61,6 +61,25 @@ If you have some problems with syntax and documentation for component can't say 
 * See available Unit-tests for component: [vsSolutionBuildEventTest/SBEScripts/Components/](https://github.com/3F/vsSolutionBuildEvent/tree/master/vsSolutionBuildEventTest/SBEScripts/Components)
 * Or, just [create new Issue](https://bitbucket.org/3F/vssolutionbuildevent/issues/new) - we are help you!
 
+# Arguments
+
+{% include elem/fillme %}
+
+## Object type
+
+The object type is new type for work with complex mixed data. Initially it was implemented special for [vsCommandEvent](http://vsce.r-eg.net).
+
+*The vsSBE users should see this starting with v0.12.5+*
+
+Value can be from all available scalar types + complex, like this:
+
+```java
+{}
+{"str", true}
+{"str", {1, 'y', {-12.457f}}, true}
+```
+etc.
+
 ## Dom & Code Completion
 
 With latest versions we use [Dom](../../Dev/New Component/) for inspecting model of SBE-Scripts core. You can see all available features with code completion (Intellisense) in editor.

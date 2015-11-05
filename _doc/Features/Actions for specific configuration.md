@@ -14,7 +14,7 @@ You can use an additional option "Actions for specific configurations" (see belo
 
 ```java 
 
-#[($(Configuration) == Debug){ 
+#[( $(Configuration) == "Debug" ){ 
     ... 
 }]
 ```
@@ -22,14 +22,14 @@ also you can check only part of the name, e.g.:
 
 ```java 
 
-#[($(Configuration) ~= _with_revision) 
+#[($(Configuration) ~= "_with_revision") 
 { 
     All configuration with names:  
      * Debug_with_revision,  
      * Release_with_revision, etc. 
 }]
 ```
-etc. *see [ConditionComponent](../../Scripts/SBE-Scripts/Components/ConditionComponent/) for more details*
+and similar. /*See [ConditionComponent](../../Scripts/SBE-Scripts/Components/ConditionComponent/) for more details*
 
 ## For v0.8+ 
 
@@ -38,8 +38,8 @@ etc. *see [ConditionComponent](../../Scripts/SBE-Scripts/Components/ConditionCom
 Simply:
 
 * Select the event type, mode, add the any actions, and configure other available options.
-* In window "Only For" you can select available configuration for your solution.
-* Activate event and click [apply]. 
+* In window `Only For` you can select available configuration for your solution.
+* Activate event and click **apply**. 
 
 As result: this should work only for selected configurations.
 

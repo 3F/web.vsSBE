@@ -5,48 +5,27 @@ permalink: /doc/Features/Solution-wide/
 ---
 # Solution-wide Build Events
 
-Any actions for Pre-Build / Post-Build event **can be for all projects at once**. (You should remember this for work with [MSBuild](../../Scripts/MSBuild/) engine)
+All your actions for `Pre-Build` / `Post-Build` events are already can be **for all projects at once** or **individually for each**. 
 
-[![scripts for all projects at once](../../Resources/examples/obsolete/vbs_ext.jpg)](../Confirmation dialog/)
+*(You should remember this for work with [MSBuild](../../Scripts/MSBuild/) engine etc.)*
 
-You can use as a [Simple caller - with your external logic](../Confirmation dialog/) or use the [SBE-Scripts](../../Scripts/SBE-Scripts/) or [DTE-Commands](../../Scripts/DTE-Commands/) or similar internal scripts with any interpreter such as php, python, PowerShell, Wscript, Node.js, etc.
+[![](../../Resources/examples/obsolete/vbs_ext.jpg)](../Confirmation dialog/)
 
-for example: notification - send email before/after building of all projects:
+It should be useful for most cases, for example: 
+
+* [Automatic Version Numbering](../../Examples/Version number/) for your projects.
+* Or simple notification like - send email before/after building of all projects:
 
 ```php 
 
 mail('yourmail@example.com', 'Build completed', date('H:i:s'));
 ```
+* etc.
 
-or more complex like this:
+Use it with simple caller (by your external logic) or as internal scripts with any interpreters such as php, python, PowerShell, Wscript, Node.js, etc.
+Or use powerfull [MSBuild](../../Scripts/MSBuild/) & [SBE-Scripts](../../Scripts/SBE-Scripts/) engines, etc.
 
-```php 
-
-class GArtefacts 
-{ 
-    /* ... */   
-    public function render() 
-    { 
-         try{ 
-            $db = new PDO(Factory::sqlite("positions.db")); 
-            $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
- 
-            $res = $db->query("SELECT * FROM exports"); 
-            while($row = $res->fetchObject()){ 
-                Stripper::pack($row->dtmX, $row->dtmY, $row->dtmZ); 
-            } 
-        } 
-        catch(Exception $e){ 
-            $this->_msg('Error: ' . $e->getMessage()); 
-        } 
-    } 
-} 
-$ga = new GArtefacts(); 
-$ga->render();
-```
-
-Use any **[our available modes](../../Modes/)** and ~feel~free~ ...
-
+For more complex scripts see our **[available modes](../../Modes/)** and ~feel~free~ ...
 
 # What's exists for work without plugins ?
 
@@ -64,10 +43,9 @@ But a some reason may still require a very simple variant without any additions 
 
 # References
 
-* [Available Events](../../Events/)
 * [Processing modes](../../Modes/)
+* [Available Events](../../Events/)
 * [Automatic Version Numbering](../../Examples/Version number/)
-* [Artefacts. How to prepare as you want](../../Examples/Artefacts/)
 * [Exclude projects from build on Pre-Build event](../Exclude projects/)
 * [Confirmation dialog](../Confirmation dialog/)
 * [Actions for specific configuration](../Actions for specific configuration/)

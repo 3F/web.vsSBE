@@ -7,7 +7,7 @@ title: Docmap
   
   <div class="list-group">
     {% for post in site.doc %}
-      {% if post.hideDocmap %}
+      {% if post.hideDocmap or post.layout == "redirect" %}
         {% continue %}
       {% endif %}
       <a href="{{post.url}}" class="list-group-item">

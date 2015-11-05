@@ -11,7 +11,7 @@ For work with EnvDTE
 
 ## exec
 
-DTE-command to execution
+Execute the available command.
 
 Syntax:
 
@@ -26,9 +26,10 @@ Sample:
 
 #[DTE exec: Build.SolutionPlatforms(x86)] 
 #[DTE exec: Build.SolutionConfigurations(Debug_Exclude_Plugins_All)]
+#[DTE exec: Build.Cancel]
 ```
 
-Note: Some commands should be available only under certain conditions, for example - some stop before some begin... etc.
+**Note:** Some commands (like `Build.Cancel` etc.) should be available only under certain conditions of your environment.
 
 ## events
 
@@ -72,7 +73,7 @@ Syntax:
 
 ```java 
 
-string #[DTE events.LastCommand.CustomIn]
+object #[DTE events.LastCommand.CustomIn]
 ```
 
 #### CustomOut
@@ -83,7 +84,7 @@ Syntax:
 
 ```java 
 
-string #[DTE events.LastCommand.CustomOut]
+object #[DTE events.LastCommand.CustomOut]
 ```
 
 #### Pre
