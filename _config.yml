@@ -44,15 +44,12 @@ highlighter: pygments
 
 lnkCur_VSPackage:   [ "v0.12.4", "vsSolutionBuildEvent_v0.12.4.4187_[f8e9259][net40].vsix", "http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/referral/118151" ]
 lnkList_VSPackage:  [
-                        [ "v0.12.4", "vsSolutionBuildEvent_v0.12.4.4187_[f8e9259][net40].vsix", "http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.12.4.4187_%5Bf8e9259%5D%5Bnet40%5D.vsix/download" ],
-                        [ "v0.12.3", "vsSolutionBuildEvent_v0.12.3.vsix", "http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.12.3.vsix/download" ],
-                        [ "v0.12.2", "vsSolutionBuildEvent_v0.12.2.vsix", "http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.12.2.vsix/download" ]
+                        [ "v0.12.4", "vsSolutionBuildEvent_v0.12.4.4187_[f8e9259][net40].vsix", "http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.12.4.4187_%5Bf8e9259%5D%5Bnet40%5D.vsix/download" ]
                     ]
 lnkOld_VSPackage:   [
-                        [ "v0.12.1", "vsSolutionBuildEvent_v0.12.1.vsix", "http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.12.1.vsix/download" ],
-                        [ "v0.11.4", "vsSolutionBuildEvent_v0.11.4.vsix", "http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.11.4.vsix/download" ],
-                        [ "v0.10.1", "vsSolutionBuildEvent_v0.10.1.vsix", "http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.10.1.vsix/download" ],
-                        [ "v0.9", "vsSolutionBuildEvent_v0.9.vsix", "http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.9.vsix/download" ]
+                        [ "v0.12.3", "vsSolutionBuildEvent_v0.12.3.vsix", "http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.12.3.vsix/download" ],
+                        [ "v0.12.2", "vsSolutionBuildEvent_v0.12.2.vsix", "http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.12.2.vsix/download" ],
+                        [ "v0.11.4", "vsSolutionBuildEvent_v0.11.4.vsix", "http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.11.4.vsix/download" ]
                     ]
 lnkAll_VSPackage:   [ "/v0.x/", "http://sourceforge.net/projects/vssbe/files/v0.x/" ]
 
