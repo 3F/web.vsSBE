@@ -4,6 +4,24 @@
 
   anchors.options.placement = 'right';
   anchors.add('.post-content > h1, .post-content > h2, .post-content > h3, .post-content > h4, .post-content > h5, .post-content > h6');
+  
+  var fixScroll = function(id)
+  {
+    $('html,body').animate({
+                            scrollTop: $(id).offset().top - 80
+                           }, 250);
+  };
+  
+  $(document).ready(function () {
+    if(window.location.hash) {
+        fixScroll(window.location.hash);
+    }
+  });
+  
+  $("a[href^='#']").bind('click',  function() { 
+      fixScroll($(this).attr('href')); 
+  });
+  
 })();
 </script>
 <script src="{{ site.baseurl }}/js/lightbox.min.js"></script>

@@ -14,11 +14,11 @@ After selecting of this mode, you should write command or list of commands (sepa
 
 All available commands for your IDE you can see with UI-Helper:
 
-* `vsSBE` - `Tools` - `DTE-Commands`
+* `Settings` - `Tools` - `DTE-Commands`
 
 For testing of commands, you can try with testing tool:
 
-* `vsSBE` - `Tools` - `Execution DTE-Commands`
+* `Settings` - `Tools` - `Execution DTE-Commands`
 
 *a few commands should be separated by newline in your list*
 

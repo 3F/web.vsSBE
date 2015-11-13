@@ -33,6 +33,7 @@ Where **data** it's your raw data 'as is'. Then, you can work with parsed data v
 [Available types](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/SNode/ArgumentType.cs):
 
 ```csharp
+
     // Unspecified mixed data.
     Mixed,
 
@@ -45,9 +46,7 @@ Where **data** it's your raw data 'as is'. Then, you can work with parsed data v
     // String from double quotes.
     StringDouble,
 
-    /// <summary>
-    /// Single symbol from single quotes. 
-    /// </summary>
+    // Single symbol from single quotes
     Char,
 
     // Boolean data.

@@ -23,7 +23,7 @@ namespace example
     internal class Version
     {
         public static readonly System.Version number    = new System.Version(0, 12, 2, 1917);
-        public const string numberWithRevString         = "0.12.2.19917";
+        public const string numberWithRevString         = "0.12.2.1917";
         public const string numberString                = "0.12.2";
         public const string branchName                  = "local_API_Reverse";
         public const string branchSha1                  = "f05afc9";
@@ -38,12 +38,19 @@ namespace example
 
 ```cpp 
 
-#ifndef REVISION_H 
-  #define REVISION_STR "%VersionRevString% [ %branchSha1% ] /'%branchName%':%branchRevCount%" 
-  #define L_REVISION_STR L"%VersionRevString% [ %branchSha1% ] /'%branchName%':%branchRevCount%" 
-#endif 
+#pragma once
+
+#ifndef VSSBE_VERSION_H_
+#define VSSBE_VERSION_H_
+
+#define VER_BRANCH_NAME     "develop";
+#define VER_BRANCH_SHA1     "e3de826";
+#define VER_BRANCH_REVCOUNT "296";
+#define VER_INFORMATIONAL   "0.12.4.17639 [ e3de826 ]";
+
+#endif
 ```
-*or similar class as above..*
+*or similar class or struct as above..*
 
 **Then,** you can use this in different places, for example:
 
@@ -93,7 +100,8 @@ For **.vsixmanifest** ([VSPackages /VSIX Package](https://msdn.microsoft.com/en-
 
 ## Generating the Version class with build/revision number
 
-* Create template of Version class, for example: **Version.tpl** with what you want, using placeholders instead of real values - sample for C#:
+* Create template of Version class or struct. 
+    * You can use external file (for example Version.tpl) **or** directly define data inside script, etc. with what you want. Use placeholders instead of real values - sample for C#:
 
 ```csharp 
 
@@ -111,12 +119,14 @@ namespace example
 }
 ```
 
-* Create file, for example: **.version** and write current number of your project like a `<major>.<minor>.<patch>` and similar
+* Define current number of your project like `major.minor.patch` and similar.
+    * You can also use some external file for this, e.g.: `.version`
+    * **Or** some variable, e.g.: `$(Version)` etc.
 * Select event type - "Pre-Build".
 * Change "Processing mode" to 'Script Mode'
 * Activate [SBE-Scripts](../../Scripts/SBE-Scripts/) support
 * Activate [MSBuild](../../Scripts/MSBuild/) support
-* Write next script, for example:
+* Write script, for example:
 
 *See also - [Custom counters](../../Features/Custom counters/) & [Date & Time](../../Features/Date & Time/) features for details about limitations for revBuild if you work in team.*
 
@@ -133,8 +143,8 @@ namespace example
 #[" 
     Calculate revBuild
 "]
-$(tStart        = $([System.DateTime]::Parse("2015/10/01").ToBinary()))
-$(tNow          = $([System.DateTime]::UtcNow.Ticks))
+#[var tStart    = $([System.DateTime]::Parse("2015/11/11").ToBinary())]
+#[var tNow      = $([System.DateTime]::UtcNow.Ticks)]
 #[var revBuild  = $([System.TimeSpan]::FromTicks($([MSBuild]::Subtract($(tNow), $(tStart)))).TotalMinutes.ToString("0"))]
 
 
