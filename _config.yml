@@ -164,6 +164,7 @@ versionDevenv: "https://raw.githubusercontent.com/3F/vsSolutionBuildEvent/master
 versionAPI: "https://raw.githubusercontent.com/3F/vsSolutionBuildEvent/master/Bridge/.version"
 versionProvider: "https://raw.githubusercontent.com/3F/vsSolutionBuildEvent/master/Provider/.version"
 
+sfstat: "http://sourceforge.net/projects/vssbe/files/stats/json?start_date=2013-11-20&end_date=2222-01-01"
 
 #######################################
 # Services

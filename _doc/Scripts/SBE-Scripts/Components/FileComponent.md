@@ -45,6 +45,14 @@ $([System.IO.File]::Exists("D:/tmp/result.log"))
 ```
 *[File.Exists](https://msdn.microsoft.com/en-us/library/system.io.file.exists%28v=vs.100%29.aspx) Method*
 
+#### Regex & Wildcards rules
+
+* Regular Expression Language - [Quick Reference](https://msdn.microsoft.com/en-us/library/az24scfc.aspx)
+* Wildcards - Matches any single character:
+    * `*` - 0 or more times.
+    * `+` - 1 or more times.
+    * `?` - 1 any single character.
+
 ## Available features
 
 ### call 

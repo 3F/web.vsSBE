@@ -5,7 +5,9 @@ permalink: /doc/Examples/
 ---
 # Complete Solutions
 
-* [Automatic Version Numbering](Version number/)
+* [Automatic Version Numbering](Version/)
+    * [Manually variant](Version/Manually/)
+    * [Wizard variant](Version/Wizard/)
 * [Artefacts. How to prepare as you want](Artefacts/)
 * [Stop build on first error](Errors.Stop build/)
 * [Demo projects](Demo/)

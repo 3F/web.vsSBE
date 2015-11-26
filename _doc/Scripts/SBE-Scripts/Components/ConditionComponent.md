@@ -46,7 +46,7 @@ Rules of comparison:
     * Compares as: left != right as string
 * **~=**
     * Compares as: left Contains right ?
-* **^=**
+* **&#094;=**
     * Compares as: left Begins with right ?
 * **=^**
     * Compares as: left Ends with right ?
