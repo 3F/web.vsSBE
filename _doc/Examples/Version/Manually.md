@@ -146,7 +146,7 @@ namespace example
 #[" 
     Calculate revBuild
 "]
-#[var tStart    = $([System.DateTime]::Parse("2015/11/11").ToBinary())]
+#[var tStart    = $([System.DateTime]::Parse("2015/12/02").ToBinary())]
 #[var tNow      = $([System.DateTime]::UtcNow.Ticks)]
 #[var revBuild  = $([System.TimeSpan]::FromTicks($([MSBuild]::Subtract($(tNow), $(tStart)))).TotalMinutes.ToString("0"))]
 
@@ -228,6 +228,10 @@ and similar...
 
 You can also test/debug all scripts with our testing tools, look in the `Settings` - `Tools`
 
+### Wizard or "help me, it's so hard"
+
+ok, try our wizard for common solutions - [Wizard variant](../Wizard/)
+
 # Working example
 
 This also used in our project:  [Full script for assembling vsSolutionBuildEvent v0.11](https://gist.github.com/3F/3f2f56dfc2a01dc99c63) 
@@ -245,7 +249,7 @@ And of course, primarily, this is important feature of [CI servers]({{site.docp}
 For all of this you should: 
 
 * Define where to store this number: it can be registry, simple file in directory with source code, etc.
-    * By the way, the most CI servers already should provide special environment variable, like a `$(appveyor_build_version)`, `$(BUILD_NUMBER)`, etc.
+    * By the way, the most CI servers are already should provide special environment variable like a `$(appveyor_build_version)`, `$(BUILD_NUMBER)`, etc.
 * [Increment this]({{site.docp}}/Features/Custom counters/) as you want! *if need*
 
 ```bash
@@ -263,3 +267,27 @@ $(buildNumber = $([MSBuild]::Add($(buildNumber), 1)))
 * [Visual Studio Gallery page]({{site.lnkVSGallery}})
 * [Wizard variant](../Wizard/)
 * [Examples & Features]({{site.docp}}/Examples/)
+
+
+
+
+
+<!-- Actual date for user script above -->
+<script>
+    var rand = function(min, max)
+    {
+        return Math.round(Math.random() * (max - min) + min);
+    };
+
+    var datePrint = function(date)
+    {
+        var m = date.getMonth() + 1; // 0 - 11: 0 is Jan
+        var d = date.getDate();      // 1 - 31
+
+        return date.getFullYear() + '/' + (m < 10 ? '0' + m : m) + '/' + (d < 10 ? '0' + d : d);
+    };
+
+    var date = new Date();
+    date.setDate(date.getDate() - rand(2, 30));
+    $(".language-minid .s:contains('2015/12/02')").html('"' + datePrint(date) + '"');
+</script>

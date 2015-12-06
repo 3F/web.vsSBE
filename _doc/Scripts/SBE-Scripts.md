@@ -33,7 +33,7 @@ To escape an sequences use `#`:
 
 Try execute this:
 
-```java
+```minid
 
 #["
     Basic example
