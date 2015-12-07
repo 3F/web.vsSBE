@@ -7,11 +7,15 @@ permalink: /doc/Examples/Version/
 
 ## Manually variant
 
+*Full control*
+
 [![Sample of class](../../Resources/examples/VersionClass.gif)](Manually/)
 
 [View](Manually/)
 
 ## Wizard variant
+
+*Fully automatic*
 
 [![Wizard](../../Resources/examples/wizard/version/type.png)](Wizard/)
 

@@ -106,9 +106,8 @@ lnkAll_Provider:    [ "/API/Provider/", "http://sourceforge.net/projects/vssbe/f
 
 ## NuGet Package for CI
 
-lnkCur_CIMNuGet:    [ "v1.5.2", "vsSBE.CI.MSBuild.1.5.2.nupkg", "https://www.nuget.org/api/v2/package/vsSBE.CI.MSBuild/" ]
+lnkCur_CIMNuGet:    [ "v1.5.1", "vsSBE.CI.MSBuild.1.5.1.nupkg", "https://www.nuget.org/api/v2/package/vsSBE.CI.MSBuild/" ]
 lnkList_CIMNuGet:   [
-                        [ "v1.5.2", "vsSBE.CI.MSBuild.1.5.2.nupkg", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/NuGet_packages/vsSBE.CI.MSBuild.1.5.2.nupkg/download" ],
                         [ "v1.5.1", "vsSBE.CI.MSBuild.1.5.1.nupkg", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/NuGet_packages/vsSBE.CI.MSBuild.1.5.1.nupkg/download" ],
                         [ "v1.5.0", "vsSBE.CI.MSBuild.1.5.0.nupkg", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/NuGet_packages/vsSBE.CI.MSBuild.1.5.0.nupkg/download" ]
                     ]

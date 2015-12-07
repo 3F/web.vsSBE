@@ -7,7 +7,7 @@ permalink: /doc/Examples/Version/Wizard/
 
 ![Wizard]({{site.docp}}/Resources/examples/wizard/version/type.png)
 
-The current code generation wizard is available for planned v0.12.5. You can also test this with our [nightly builds](/Downloads/#NightlyBuilds) on [develop branch](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/branch/develop/artifacts).
+The current code generation wizard is available for [v0.12.5+]({{site.lnkCur_VSPackage[2]}})
 
 # How to
 
