@@ -42,7 +42,7 @@ highlighter: pygments
 
 ## VSPackage
 
-lnkCur_VSPackage:   [ "v0.12.5", "vsSolutionBuildEvent_v0.12.5.2477_[d018ea4][net40].vsix", "http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/referral/118151" ]
+lnkCur_VSPackage:   [ "v0.12.5", "vsSolutionBuildEvent_v0.12.5.2477_[d018ea4][net40].vsix", "https://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/referral/118151" ]
 lnkList_VSPackage:  [
                         [ "v0.12.5", "vsSolutionBuildEvent_v0.12.5.2477_[d018ea4][net40].vsix", "http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.12.5.2477_%5Bd018ea4%5D%5Bnet40%5D.vsix/download" ]
                     ]

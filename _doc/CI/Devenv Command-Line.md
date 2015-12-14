@@ -33,8 +33,8 @@ Currently the Devenv Command-Line it's only additional wrapper (~41 kb) for work
 
 * Unpack the Devenv archive into `%HOMEPATH%\Documents\` -> `Visual Studio <num>\Addins` folder (see full instruction in [MSDN](https://msdn.microsoft.com/en-us/library/19dax6cz.aspx)). *(you can also delete all *.pdb files from archive)*
     * For example: `C:\Users\<user>\Documents\Visual Studio 2013\Addins\`
-* The [vsSolutionBuildEvent plugin](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/referral/118151) is already should be installed for your version of the Visual Studio.
-    * **Or** [Download](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/referral/118151) and extract all files from *.vsix with any archiver ([it's a simple 'zip' archive](https://msdn.microsoft.com/en-us/library/ff407026.aspx)) into `%HOMEPATH%\Documents\Visual Studio 2013\Addins\Devenv\`
+* The {% assign lnkT = "vsSolutionBuildEvent plugin" %}{% include elem/vsixlatest %} is already should be installed for your version of the Visual Studio.
+    * **Or** {% assign lnkT = "Download" %}{% include elem/vsixlatest %} and extract all files from *.vsix with any archiver ([it's a simple 'zip' archive](https://msdn.microsoft.com/en-us/library/ff407026.aspx)) into `%HOMEPATH%\Documents\Visual Studio 2013\Addins\Devenv\`
 
 That's all. Now you can use the vsSolutionBuildEvent with msbuild.
 

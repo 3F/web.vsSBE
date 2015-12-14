@@ -31,7 +31,7 @@ You can also read this:
 
 *Full sample you can see in our project, for example:  [Full script for assembling the vsSolutionBuildEvent v0.11](https://gist.github.com/3F/3f2f56dfc2a01dc99c63) (actual version in current [script file](https://bitbucket.org/3F/vssolutionbuildevent/src/master/.vssbe))*
 
-As result [you should see next files](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/build/build-60/artifacts) (i.e. only for example - your variants **can be as you want**) for any deploy or simple use:
+As result [you should see next files](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/build/build-120/artifacts) (i.e. only for example - your variants **can be as you want**) for any deploy or simple use:
 
 Samples:
 
@@ -255,7 +255,7 @@ Working example you can see in:
 
 * [Source code](https://bitbucket.org/3F/vssolutionbuildevent/src)
     * [Script file](https://bitbucket.org/3F/vssolutionbuildevent/src/master/.vssbe) ([Gist](https://gist.github.com/3F/3f2f56dfc2a01dc99c63))
-* [ci.appveyor.com](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/build/build-60)
+* [ci.appveyor.com](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/build/build-120)
 
 # Remote servers
 

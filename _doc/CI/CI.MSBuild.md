@@ -5,7 +5,7 @@ permalink: /doc/CI/CI.MSBuild/
 ---
 # vsSolutionBuildEvent CI.MSBuild
 
-Utility to support the [CI / Special Build servers](http://en.wikipedia.org/wiki/Continuous_integration) for work with [vsSolutionBuildEvent](https://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/) through **[msbuild.exe](https://msdn.microsoft.com/en-us/library/vstudio/ms164311.aspx)** (Microsoft Build Tools)
+Utility to support the [CI /Build servers](http://en.wikipedia.org/wiki/Continuous_integration) for work with [vsSolutionBuildEvent](https://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/) through **[msbuild.exe](https://msdn.microsoft.com/en-us/library/vstudio/ms164311.aspx)** (Microsoft Build Tools)
 
 *see [Devenv Command-Line](../Devenv Command-Line/) if you're searching work in command-line mode of Visual Studio(devenv.exe /.com)*
 
@@ -13,43 +13,47 @@ Utility to support the [CI / Special Build servers](http://en.wikipedia.org/wiki
 
 Currently the CI.MSBuild it's only additional wrapper (~50 kb) for work with vsSolutionBuildEvent plugin through [API](../../API/). *You should also have this library for work it means.*
 
-**However**, [variant with NuGet](https://www.nuget.org/packages/vsSBE.CI.MSBuild/) also provides main libraries for work. Use any convenient variant for you!
+**However**, [variant with NuGet](https://www.nuget.org/packages/vsSBE.CI.MSBuild/) is also provides main libraries for work. Use any convenient variant for you!
 
-### Variant with NuGet
+### Variant with NuGet package
 
 [![nuget vsSBE.CI.MSBuild](https://img.shields.io/nuget/v/vsSBE.CI.MSBuild.svg)](https://www.nuget.org/packages/vsSBE.CI.MSBuild/)
 
-[vsSBE.CI.MSBuild](https://www.nuget.org/packages/vsSBE.CI.MSBuild/) - Full version(with all main libraries), just get and use...
+[vsSBE.CI.MSBuild](https://www.nuget.org/packages/vsSBE.CI.MSBuild/) - Full version (with all main libraries), just get and use...
 
 `nuget install vsSBE.CI.MSBuild`
 
 for example: `nuget install vsSBE.CI.MSBuild -ExcludeVersion -OutputDirectory C:\projectX\bin\`
 
-**OR**
-
-Add this utility for your **.sln** (see [Managing Packages for the Solution](https://docs.nuget.org/consume/package-manager-dialog#managing-packages-for-the-solution)):
+or add for your **.sln** (see [Managing Packages for the Solution](https://docs.nuget.org/consume/package-manager-dialog#managing-packages-for-the-solution)):
 
 * In Visual Studio: right click on solution -> `Manage NuGet Packages for Solution...`
 
-That's all. Now you can use vsSolutionBuildEvent with msbuild.
+#### GetNuTool
+
+You can also get package with lightweight non-binary tool - [GetNuTool](https://github.com/3F/GetNuTool) *~8 Kb*
+
+```bash
+msbuild.exe gnt.core /p:ngpackages="vsSBE.CI.MSBuild"
+```
+```bash
+msbuild.exe gnt.core /p:ngpackages="vsSBE.CI.MSBuild/1.5.1"
+```
 
 ### Custom variant
 
-*For advanced usage, for example with own NuGet private server, custom libraries etc.*
+*For advanced usage, for example, with own private server, custom libraries etc.*
 
 * Download [{{site.lnkCur_CIMSBuild[1]}}]({{site.lnkCur_CIMSBuild[2]}}) (SourceForge.net) 
     * All binaries of the CI.MSBuild: [{{site.lnkAll_CIMSBuild[0]}}]({{site.lnkAll_CIMSBuild[1]}})
 * Unpack the CI.MSBuild archive. *(you can delete all .pdb files)*
-* Download the [vsSolutionBuildEvent plugin](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/referral/118151) and extract all files from .**vsix** with any archiver ([it's a simple 'zip' archive](https://msdn.microsoft.com/en-us/library/ff407026.aspx))
+* Download the {% assign lnkT = "vsSolutionBuildEvent plugin" %}{% include elem/vsixlatest %} and extract all files from .**vsix** with any archiver ([it's a simple 'zip' archive](https://msdn.microsoft.com/en-us/library/ff407026.aspx))
     * **Or** simply go to the installed folder (In plugin: `Settings` - `CI Utilities` - `Plugin` - `Open directory with plugin`)
 * Combine all this files in one folder. **Or** use [`lib=<path>`](#keys-to-ci-msbuild) key to CI.MSBuild.dll library.
 
-That's all. Now you can use vsSolutionBuildEvent with msbuild.
-
 ## How to use
 
-After an installation you can use the vsSolutionBuildEvent with [msbuild.exe](https://msdn.microsoft.com/en-us/library/vstudio/ms164311.aspx), for example:
-
+Ok, now you're ready to use the vsSolutionBuildEvent engine with MSBuild Tools, for example:
 
 ```bash 
 
@@ -103,17 +107,27 @@ You can try add this manually into **/bin** folder.
 
 If you see any problem with installing and/or using, please report [here](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)
 
-*Some references can be removed later special for CI.MSBuild version and/or some libraries can be added later in [our package](https://www.nuget.org/packages/vsSBE.CI.MSBuild/) directly or as dependencies for full automation.*
+*Some references can be removed later special for CI.MSBuild version and/or some libraries can be added later in [our package](https://www.nuget.org/packages/vsSBE.CI.MSBuild/) directly or as dependencies to full automation.*
 
-## Configure for AppVeyor ##
+## Configuring
+
+**Notes:** 
+
+* For nuget clients:
+    * Use key **[-ExcludeVersion](https://docs.nuget.org/consume/command-line-reference)** for path without version number, e.g.: `vsSBE.CI.MSBuild\bin\CI.MSBuild.dll`
+    * You can simply use it with one command - `nuget restore <SolutionFile>.sln`... if the CI.MSBuild added for **.sln** it's easy and useful (see in 'How to get & Install' above)
+* For [GetNuTool](https://github.com/3F/GetNuTool):
+    * Use `version` & `output` keys for managing paths.
+
+### Example for AppVeyor
 
 * http://www.appveyor.com
 
-AppVeyor also provides the private NuGet hosting, and you can use own packages of the vsSolutionBuildEvent CI.MSBuild ([related topic](http://help.appveyor.com/discussions/questions/900-additional-logger-to-msbuild))
+AppVeyor is also provides the private NuGet hosting, and you can use own packages of the vsSolutionBuildEvent CI.MSBuild ([related topic](http://help.appveyor.com/discussions/questions/900-additional-logger-to-msbuild#comment_35869149))
 
-[![Example with AppVeyor](../../Resources/ci_example_appveyor.png)](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/build/build-60)
+[![Example with AppVeyor](../../Resources/ci_example_appveyor.png)](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/build/build-120)
 
-### With AppVeyor NuGet server ###
+#### With AppVeyor NuGet server
 
 See also [AppVeyor documentation](http://www.appveyor.com/docs/nuget) & [Creating and Publishing a Package](http://docs.nuget.org/create/creating-and-publishing-a-package)
 
@@ -132,14 +146,8 @@ nuget install CI.MSBuild -OutputDirectory C:\projects\<your_project>\Build\bin\ 
   & nuget restore <SolutionFile>.sln 
   & "C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe" "<SolutionFile>.sln" /verbosity:detailed /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll" /l:"C:\projects\<your_project>\Build\bin\vsSBE.CI.MSBuild.<ver>\bin\CI.MSBuild.dll" /m
 ```
-Enjoy
 
-**Note:** 
-
-* Use key **[-ExcludeVersion](https://docs.nuget.org/consume/command-line-reference)** for path without version number, e.g.: `vsSBE.CI.MSBuild\bin\CI.MSBuild.dll`
-* You can simply use it with one command - `nuget restore <SolutionFile>.sln`... if the CI.MSBuild added for **.sln** it's easy and useful (see in 'How to get & Install' above)
-
-### With our NuGet package ###
+#### With our NuGet package
 
 Similar as above:
 
@@ -153,16 +161,11 @@ nuget install vsSBE.CI.MSBuild -OutputDirectory C:\projects\<your_project>\Build
 ```
 Yes, that's all.
 
-**Note:** 
-
-* Use key **[-ExcludeVersion](https://docs.nuget.org/consume/command-line-reference)** for path without version number, e.g.: `vsSBE.CI.MSBuild\bin\CI.MSBuild.dll`
-* You can simply use it with one command - `nuget restore <SolutionFile>.sln`... if the CI.MSBuild added for **.sln** it's easy and useful (see in 'How to get & Install' above)
-
-## Example for TeamCity ##
+### Example for TeamCity
 
 * https://www.jetbrains.com/teamcity/
 
-Similar as with AppVeyor above:
+Similar as for AppVeyor above:
 
 * `Build Configuration Settings` - `Build Step` - `Command Line` - `Custom script`
 
@@ -172,12 +175,8 @@ nuget install vsSBE.CI.MSBuild -OutputDirectory C:\projects\<your_project>\Build
   & nuget restore <SolutionFile>.sln 
   & "C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe" "<SolutionFile>.sln" /verbosity:detailed /l:"C:\projects\<your_project>\Build\bin\vsSBE.CI.MSBuild.<ver>\bin\CI.MSBuild.dll" /m:4 /nologo
 ```
-**Note:** 
 
-* Use key **[-ExcludeVersion](https://docs.nuget.org/consume/command-line-reference)** for path without version number, e.g.: `vsSBE.CI.MSBuild\bin\CI.MSBuild.dll`
-* You can simply use it with one command - `nuget restore <SolutionFile>.sln`... if the CI.MSBuild added for **.sln** it's easy and useful (see in 'How to get & Install' above)
-
-for additional NuGet server, use command:
+For additional NuGet server, use command:
 
 * `nuget sources add -Name <FriendlyName> -Source <URL>`
 * For private: `nuget sources add -Name <FriendlyName> -Source <URL> -UserName <user> -Password <pass>`
@@ -188,4 +187,5 @@ for additional NuGet server, use command:
 
 * [vsSolutionBuildEvent Devenv Command-Line](../Devenv Command-Line/)
 * [Scripts & Commands](../../Scripts/)
+* [GetNuTool](https://github.com/3F/GetNuTool)
 * [Examples](../../Examples)

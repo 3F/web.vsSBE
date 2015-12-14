@@ -7,7 +7,7 @@ permalink: /doc/Examples/Version/Wizard/
 
 ![Wizard]({{site.docp}}/Resources/examples/wizard/version/type.png)
 
-The current code generation wizard is available for [v0.12.5+]({{site.lnkCur_VSPackage[2]}})
+The current code generation wizard is available for {% assign lnkT = "v0.12.5+" %}{% include elem/vsixlatest %}
 
 # How to
 

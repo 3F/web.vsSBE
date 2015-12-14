@@ -42,7 +42,7 @@ if you have a some problems with getting libraries through NuGet, you can also u
 
 ### Build & Debug
 
-* Install [vsSolutionBuildEvent]({{site.lnkCur_VSPackage[2]}}) for work with [.vssbe](../../Features/.vssbe/)
+* Install {% assign lnkT = "vsSolutionBuildEvent" %}{% include elem/vsixlatest %} for work with [.vssbe](../../Features/.vssbe/)
 * Open **.sln** file with your Visual studio IDE
     * vsSolutionBuildEvent.sln for Visual Studio 2010
     * vsSolutionBuildEvent_2012.sln for Visual Studio 2012
