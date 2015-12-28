@@ -8,60 +8,15 @@ permalink: /doc/Dev/New Component/
 
 ***For a quick lexical analysis*** *of properties and methods, you can use* ***our [IPM analyzer](../SBE-Scripts/IPM/)*** - *It allows to quickly prepare for semantic analysis all of what you want...*
 
-All components should implement the **[IComponent](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/IComponent.cs)**
+All components should implement the **[IComponent](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/Components/IComponent.cs)** interface.
 
-```csharp 
+Also available abstract [Component](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/Components/Component.cs) for rapid implementation of all new features. The [Component](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/Components/Component.cs) is already contains basic behaviours with available data. Therefore, create the new component is really easy.
 
-public interface IComponent
-{
-    /// <summary>
-    /// Ability to work with data for component
-    /// </summary>
-    string Condition { get; }
+## DemoComponent
 
-    /// <summary>
-    /// Using regex engine for property - condition
-    /// </summary>
-    bool CRegex { get; }
+Let's try to create new 'DemoComponent' step by step.
 
-    /// <summary>
-    /// Activation status
-    /// </summary>
-    bool Enabled { get; set; }
-
-    /// <summary>
-    /// Flag of required post-processing with MSBuild core.
-    /// In general, some components can require immediate processing with evaluation, before passing control to next level
-    /// (e.g. FileComponent etc.) For such components need additional flag about allowed processing, if this used of course...
-    /// </summary>
-    bool PostProcessingMSBuild { get; set; }
-
-    /// <summary>
-    /// Should be located before deepening or not
-    /// </summary>
-    bool BeforeDeepen { get; }
-
-    /// <summary>
-    /// Forced post analysis or not
-    /// </summary>
-    bool PostParse { get; }
-
-    /// <summary>
-    /// Handler for current data
-    /// </summary>
-    /// <param name="data">mixed data</param>
-    /// <returns>prepared and evaluated data</returns>
-    string parse(string data);
-}
-```
-
-Also available abstract [Component](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/Component.cs) for rapid implementation of all new features. The [Component](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/Component.cs) is already contains basic behaviours with available data. Therefore, create the new component is really easy.
-
-## DemoComponent ##
-
-*Creating the new 'DemoComponent' step by step.*
-
-All components should have a postfix **Component** as part of name, for example: MathComponent
+All components should have postfix **Component** as part of name, for example: MathComponent
 
 * Add new class in path `/SBEScripts/Components/DemoComponent.cs`
 
@@ -73,9 +28,13 @@ public class DemoComponent: Component, IComponent
 }
 ```
 
-With [Component](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/Component.cs) we have already implemented common requirements of [IComponent](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/IComponent.cs), therefore, only need to implement own logic. For example:
+With [Component](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/Components/Component.cs) we have already implemented requirements of [IComponent](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/Components/IComponent.cs), therefore we'll implement only own logic.
 
-For Condition property we should set subcontainer to entry, for basic checking of ability to work with data. In example we use:
+### Identifier of new container
+
+Firstly, we should set identifier of your container from new component.
+
+And for basic checking of ability work with data we can simply:
 
 ```csharp 
 
@@ -85,33 +44,22 @@ public override string Condition
 }
 ```
 
-Use [CRegex](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/IComponent.cs) flag if identification needed with regex pattern ( [IgnorePatternWhitespace](http://msdn.microsoft.com/en-us/library/system.text.regularexpressions.regexoptions.aspx) used by default)
-
-You can override this property or use cregex field if your component extends [Component](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/Component.cs). Example with additional handling for already existing component - [BuildComponent](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/BuildComponent.cs):
+*Use [CRegex](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/Components/IComponent.cs) flag if need a complex condition with regex pattern ( [IgnorePatternWhitespace](http://msdn.microsoft.com/en-us/library/system.text.regularexpressions.regexoptions.aspx) used by default)*
 
 ```csharp 
-public class DemoComponent: Component, IComponent
+public override string Condition
 {
-    public override string Condition
-    {
-        get { return "^Build projects\\..+"; }
-        //or as alias: get { return @"(?:Build|Alias)\s"; } etc.
-    }
-    ...
-    /// <summary>
-    /// Use regex engine for the Condition property
-    /// </summary>
-    public override bool CRegex
-    {
-        get { return true; }
-    }
-    
-//or you can (if extends abstract std. Component):
-    public DemoComponent(): base()
-    {
-        cregex = true;
-    }
+    get { return "^Build projects\\..+"; } // additional handling for already existing component:
+}
 ```
+```csharp 
+public override string Condition
+{
+    get { return @"(?:Demo|Alias)\s"; } // alias for Demo word
+}
+```
+
+### Logic of user code
 
 Now you should implement `parse(string data)` with what you want:
 
@@ -120,86 +68,83 @@ Now you should implement `parse(string data)` with what you want:
 public override string parse(string data)
 {
     // TODO
-    return String.Empty;
 }
 ```
 
-For example, we will implement `int add(int a, int b)` method, sample:
+**For example**, we'll implement `int add(int a, int b)` method, sample:
 
 ```java 
 
 #[Demo add(1, 2)]
 ```
 
+For this case you can use **our [IPM analyzer](../SBE-Scripts/IPM/)** to parse this signature.
 
-*Sample with your* ***custom*** *parsing of syntax above:*
+However, you can also use the regular expression as a custom variant of implementation or you can use anything else with what you like...
+
+### Final code of DemoComponent
+
+The final **full source code** of your DemoComponent can be, **for example**:
 
 ```csharp 
+using net.r_eg.vsSBE.SBEScripts.Exceptions;
+using net.r_eg.vsSBE.SBEScripts.SNode;
 
-public class DemoComponent: Component, IComponent
+namespace net.r_eg.vsSBE.SBEScripts.Components
 {
-    public override string Condition
+    public class DemoComponent: Component, IComponent
     {
-        get { return "Demo "; }
-    }
-
-    public override string parse(string data)
-    {
-        Match m = Regex.Match(data, @"^\[Demo
-                                         \s+
-                                         add\(
-                                            \s*
-                                            (\d+)   #1 - left
-                                            \s*,\s*
-                                            (\d+)   #2 - right
-                                            \s*
-                                         \)
-                                      \]$",
-                                      RegexOptions.IgnorePatternWhitespace);
-
-        if(!m.Success) {
-            throw new SyntaxIncorrectException("Failed DemoComponent - '{0}'", data);
+        public override string Condition
+        {
+            get { return "Demo "; }
         }
 
-        int left = Values.toInt32(m.Groups[1].Value);
-        int right = Values.toInt32(m.Groups[2].Value);
+        public override string parse(string data)
+        {
+            var point       = entryPoint(data);
+            string subtype  = point.Key;
+            string request  = point.Value;
 
-        return Values.from(left + right);
+            IPM pm = new PM(request);
+
+            if(pm.FinalEmptyIs(0, LevelType.Method, "add"))
+            {
+                ILevel level = pm.Levels[0]; // root element
+
+                level.Is("int add(int a, int b)", ArgumentType.Integer, ArgumentType.Integer);
+                int a = (int)level.Args[0].data;
+                int b = (int)level.Args[1].data;
+
+                return Value.from(a + b);
+            }
+
+            throw new OperationNotFoundException("'{0}' is not yet supported", request);
+        }
     }
 }
 ```
-**Note**: the regular expression in sample above it's only as custom variant of implementation i.e. you can use anything else with what you like... 
-And **it can be much easier**, with **our [IPM analyzer](../SBE-Scripts/IPM/)** for parsing of any properties & methods:
 
-```csharp 
+*it will work with `int add(int a, int b)` in user code via [IPM analyzer](../SBE-Scripts/IPM/).*
 
-public class DemoComponent: Component, IComponent 
-{ 
-    public override string Condition 
-    { 
-        get { return "Demo "; } 
-    } 
-    
-    public override string parse(string data) 
-    {
-        IPM pm = new PM(data);
-        ...
-        return Values.from(a + b);
-    } 
-}
-```
+**Note:** 
 
-Then, with default [Bootloader](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Bootloader.cs) to register your component, use for example:
+* The [FunctionComponent](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/Components/FunctionComponent.cs) is recent and most simple component with IPM using. Use this for common develop.
+* The [SevenZipComponent](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/Components/SevenZipComponent.cs) is recent IPM component with complex different signatures to help with develop.
+
+### Bootloader. Register new component
+
+Then, with default [Bootloader](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/Bootloader.cs) to register new component, use for example:
 
 ```csharp 
 
 bootloader.register(new DemoComponent());
 ```
 
-You can also use own Bootloaders with implementing the [IBootloader](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/IBootloader.cs) or simply override [Bootloader.register()](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Bootloader.cs):
+#### Custom Bootloader
 
-```csharp 
+You can also use own Bootloaders with implementing [IBootloader](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/IBootloader.cs) or simply override [Bootloader.register()](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/Bootloader.cs):
 
+```csharp
 protected override void register()
 {
     ...
@@ -207,29 +152,29 @@ protected override void register()
 }
 ```
 
-Then to initialize new instance of SBE-Scripts core, use for example:
+To initialize new instance of SBE-Scripts core, use for example:
 
-```csharp 
-
+```csharp
 new Script(new BootloaderCustom())
 ```
 
+### Result
+
 That's all. Build and Run vsSBE, open `Tools` - `SBE-Scripts` and try to execute:
 
-```java 
-
+```java
 #[Demo add(7, 5)]
 ```
 
 Congratulation! The DemoComponent has been implemented.
 
-What's next ? how to implement more complex logic and how to work with MSBuild, User-Variables, etc., you see see in real components - [SBEScripts/](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/)
+What's next ? how to implement a more complex logic and how to work with MSBuild engine, User-Variables, etc., you can look on [real components](https://github.com/3F/vsSolutionBuildEvent/tree/master/vsSolutionBuildEvent/SBEScripts) (Please note, some older components still may use old syntax before using new [IPM](../SBE-Scripts/IPM/))
 
 Also, if you want share your component for current project - use pull request (on Bitbucket or GitHub), or send directly as .patch file with available contacts.
 
 ## How about plugin system for this ?
 
-Currently it's for internal structures, mainly. *It can be later, because it's really useful, or convenient at least.*
+Currently it's for internal structures, mainly. *It can be later, because it's really useful or convenient at least.*
 
 **But**, today this was not necessary for our users. Otherwise, you should [create](https://bitbucket.org/3F/vssolutionbuildevent/issues/new) issue and **vote** for this - we'll look it as demand among users.
 
@@ -248,8 +193,11 @@ If you have a question or have a some problem with creating of new component and
 
 * [IPM analyzer](../SBE-Scripts/IPM/)
 * [Dom & Code Completion](../SBE-Scripts/Dom/)
-* Interface [IComponent](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/IComponent.cs)
-* abstract  [Component](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/Component.cs)
-* [Bootloader](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Bootloader.cs) ([IBootloader](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/IBootloader.cs))
-* **[Existing components](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Components/)** - *more details you can see in the real implementation.*
-* [SBEScripts/](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/) namespace
+* Interface [IComponent](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/Components/IComponent.cs)
+* abstract  [Component](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/Components/Component.cs)
+* [Bootloader](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/Bootloader.cs) ([IBootloader](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/IBootloader.cs))
+* [Existing components](https://github.com/3F/vsSolutionBuildEvent/tree/master/vsSolutionBuildEvent/SBEScripts/Components) - **Please note**, some older components still may use old syntax before using new [IPM](../SBE-Scripts/IPM/)
+    * Recents with IPM using:
+        * [FunctionComponent](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/Components/FunctionComponent.cs)
+        * [SevenZipComponent](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/Components/SevenZipComponent.cs)
+* [SBEScripts/](https://github.com/3F/vsSolutionBuildEvent/tree/master/vsSolutionBuildEvent/SBEScripts) namespace

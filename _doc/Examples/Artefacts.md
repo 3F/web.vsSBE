@@ -73,9 +73,12 @@ Versions:
 
 ```
 
-ready ? ok, see below..
+is ready ? ok, see below..
 
 ### How to
+
+{% assign infoData = "Part of this manual is **obsolete**. For packing data, use [SevenZipComponent](../../Scripts/SBE-Scripts/Components/SevenZipComponent/) " %}
+{% include elem/info %}
 
 *Please note*: 
 

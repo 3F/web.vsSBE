@@ -20,6 +20,37 @@ IPM pm = new PM(data)
 
 Where **data** it's your raw data 'as is'. Then, you can work with parsed data via pm instance.
 
+How about calculating the hash value with MD5 & SHA-1 ? and possible syntax like this:
+
+```java
+
+#[Func hash.MD5("test")]
+#[Func hash.SHA1("test")]
+```
+
+ok, here's how to (**all minimal logic**):
+
+```csharp
+
+IPM pm = new PM(data); // pointed to - ILevel lvlHash
+```
+
+```csharp
+// hash.MD5("data")
+if(pm.FinalEmptyIs(1, LevelType.Method, "MD5")) {
+    lvlHash.Is("hash.MD5(string data)", ArgumentType.StringDouble);
+    return ((string)lvlHash.Args[0].data).MD5Hash();
+}
+
+// hash.SHA1("data")
+if(pm.FinalEmptyIs(1, LevelType.Method, "SHA1")) {
+    lvlHash.Is("hash.SHA1(string data)", ArgumentType.StringDouble);
+    return ((string)lvlHash.Args[0].data).SHA1Hash();
+}
+```
+
+That's all. Now you can calculate hash value from user scripts with allowed syntax above.
+
 ### Properties
 
 {% include elem/fillme %}
@@ -201,47 +232,6 @@ Assert.AreEqual(args[3].type, ArgumentType.Object);
 
 ## How to
 
-How about calculating hash value with MD5 & SHA-1 ? and possible syntax like this:
-
-```java
-
-#[Func hash.MD5("test")]
-#[Func hash.SHA1("test")]
-```
-
-ok, here's how to (full minimal logic):
-
-```csharp
-
-IPM pm = new PM(data); // pointed to 'hash' level
-```
-
-```csharp
-
-if(pm.FinalEmptyIs(1, LevelType.Method, "MD5"))
-{
-    Argument[] args = pm.Levels[1].Args;
-    if(args.Length != 1 || args[0].type != ArgumentType.StringDouble) {
-        throw new InvalidArgumentException("stHash: incorrect arguments to `hash.MD5(string data)`");
-    }
-    return ((string)args[0].data).MD5Hash();
-}
-```
-
-```csharp
-
-if(pm.FinalEmptyIs(1, LevelType.Method, "SHA1"))
-{
-    Argument[] args = pm.Levels[1].Args;
-    if(args.Length != 1 || args[0].type != ArgumentType.StringDouble) {
-        throw new InvalidArgumentException("stHash: incorrect arguments to `hash.SHA1(string data)`");
-    }
-    return ((string)args[0].data).SHA1Hash();
-}
-```
-
-### A more complex example
-
 Let's consider a real example (this, for example, used in [BuildComponent](../../../Scripts/SBE-Scripts/Components/BuildComponent/#solution))
 
 If you want to work with next syntax, for example:
@@ -330,7 +320,7 @@ and similar..
 
 ```
 
-With IPM you can simply, like this (full logic):
+With IPM you can simply, like this (**all logic**):
 
 
 ```csharp
@@ -349,11 +339,9 @@ protected string stSolution(string data)
 
     if(pm.Is(1, LevelType.Method, "path"))
     {
-        Argument[] args = pm.Levels[1].Args;
-        if(args.Length != 1 || args[0].type != ArgumentType.StringDouble) {
-            throw new InvalidArgumentException("stSolution: incorrect arguments to `solution.path(string sln)`");
-        }
-        return stSlnPMap((string)args[0].data, pm.pinTo(2));
+        ILevel lvlPath = pm.Levels[1];
+        lvlPath.Is("solution.path(string sln)", ArgumentType.StringDouble);
+        return stSlnPMap((string)lvlPath.Args[0].data, pm.pinTo(2));
     }
     
     throw new OperationNotFoundException();
@@ -385,11 +373,9 @@ protected string stSlnPMap(string sln, IPM pm)
 
     if(pm.Is(0, LevelType.Method, "projectBy"))
     {
-        Argument[] args = pm.Levels[0].Args;
-        if(args.Length != 1 || args[0].type != ArgumentType.StringDouble) {
-            throw new InvalidArgumentException("stSlnPMap: incorrect arguments to `projectBy(string guid)`");
-        }
-        return projectsMap(map.getProjectBy((string)args[0].data), pm.pinTo(1));
+        ILevel lvlPrjBy = pm.Levels[0];
+        lvlPrjBy.Is("projectBy(string guid)", ArgumentType.StringDouble);
+        return projectsMap(map.getProjectBy((string)lvlPrjBy.Args[0].data), pm.pinTo(1));
     }
 
     throw new OperationNotFoundException();
@@ -417,15 +403,15 @@ protected string projectsMap(ProjectsMap.Project project, IPM pm)
 }
 ```
 
-That's really all.. want to see in action ? 
+That's really all.. do you want to look in action ? 
 
-This already implemented in [BuildComponent](../../../Scripts/SBE-Scripts/Components/BuildComponent/#solution):
+This is already implemented in [BuildComponent](../../../Scripts/SBE-Scripts/Components/BuildComponent/#solution):
 
 * `Settings` - `Tools` - `SBE-Scripts Testing tool` then start with #[Build ..
 
 ## Logic of IPM
 
-* Available tests: [/vsSolutionBuildEventTest/SBEScripts/SNode/PMTest.cs](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEventTest/SBEScripts/SNode/PMTest.cs)
+* Available tests: [/vsSolutionBuildEventTest/SBEScripts/SNode/](https://github.com/3F/vsSolutionBuildEvent/tree/master/vsSolutionBuildEventTest/SBEScripts/SNode) ([PMTest.cs](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEventTest/SBEScripts/SNode/PMTest.cs))
 * [SNode](https://github.com/3F/vsSolutionBuildEvent/tree/master/vsSolutionBuildEvent/SBEScripts/SNode)
     * [PM implementation](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/SNode/PM.cs)
 
