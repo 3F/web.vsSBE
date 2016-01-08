@@ -107,7 +107,7 @@ namespace net.r_eg.vsSBE.SBEScripts.Components
 
             IPM pm = new PM(request);
 
-            if(pm.FinalEmptyIs(0, LevelType.Method, "add"))
+            if(pm.FinalEmptyIs(LevelType.Method, "add"))
             {
                 ILevel level = pm.Levels[0]; // root element
 
@@ -118,7 +118,7 @@ namespace net.r_eg.vsSBE.SBEScripts.Components
                 return Value.from(a + b);
             }
 
-            throw new OperationNotFoundException("'{0}' is not yet supported", request);
+            throw new IncorrectNodeException(pm);
         }
     }
 }

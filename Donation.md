@@ -63,4 +63,4 @@ Simply to share this project... many users - a more help or something like that.
 
 # Have a questions ?
 
--> [we are help you](https://bitbucket.org/3F/vssolutionbuildevent/issues/new) -_*
+-> [we'll help you](https://bitbucket.org/3F/vssolutionbuildevent/issues/new) -_*

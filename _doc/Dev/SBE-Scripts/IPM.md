@@ -37,13 +37,13 @@ IPM pm = new PM(data); // pointed to - ILevel lvlHash
 
 ```csharp
 // hash.MD5("data")
-if(pm.FinalEmptyIs(1, LevelType.Method, "MD5")) {
+if(pm.FinalEmptyIs(LevelType.Method, "MD5")) {
     lvlHash.Is("hash.MD5(string data)", ArgumentType.StringDouble);
     return ((string)lvlHash.Args[0].data).MD5Hash();
 }
 
 // hash.SHA1("data")
-if(pm.FinalEmptyIs(1, LevelType.Method, "SHA1")) {
+if(pm.FinalEmptyIs(LevelType.Method, "SHA1")) {
     lvlHash.Is("hash.SHA1(string data)", ArgumentType.StringDouble);
     return ((string)lvlHash.Args[0].data).SHA1Hash();
 }
@@ -176,7 +176,7 @@ Assert.AreEqual(args[5].data, -1.5d);
 
 IPM pm = new PM(" m77(\"guid\", 12, {\"p1\", {4, \"test\", 8, 'y'}, true}, {false, 'p2'}) ");
 
-Assert.AreEqual(pm.Is(0, LevelType.Method, "m77"), true);
+Assert.AreEqual(pm.Is(LevelType.Method, "m77"), true);
 
 Argument[] args = pm.Levels[0].Args;
 Assert.AreEqual(args.Length, 4);
@@ -329,19 +329,19 @@ protected string stSolution(string data)
 {
     IPM pm = new PM(data);
     
-    if(!pm.Is(0, LevelType.Property, "solution")) {
-        throw new SyntaxIncorrectException("Failed stSolution - '{0}'", data);
+    if(!pm.It(LevelType.Property, "solution")) {
+        throw new IncorrectNodeException(pm);
     }
 
-    if(pm.Is(1, LevelType.Property, "current")) {
-        return stSlnPMap(env.SolutionFile, pm.pinTo(2));
+    if(pm.It(LevelType.Property, "current")) {
+        return stSlnPMap(env.SolutionFile, pm);
     }
 
-    if(pm.Is(1, LevelType.Method, "path"))
+    if(pm.It(LevelType.Method, "path"))
     {
-        ILevel lvlPath = pm.Levels[1];
+        ILevel lvlPath = pm.Levels[0];
         lvlPath.Is("solution.path(string sln)", ArgumentType.StringDouble);
-        return stSlnPMap((string)lvlPath.Args[0].data, pm.pinTo(2));
+        return stSlnPMap((string)lvlPath.Args[0].data, pm);
     }
     
     throw new OperationNotFoundException();
@@ -351,31 +351,31 @@ protected string stSlnPMap(string sln, IPM pm)
 {
     ProjectsMap map = getProjectsMap(sln);
 
-    if(pm.Is(0, LevelType.Property, "First")) {
-        return projectsMap(map.FirstBy(env.BuildType), pm.pinTo(1));
+    if(pm.It(LevelType.Property, "First")) {
+        return projectsMap(map.FirstBy(env.BuildType), pm);
     }
 
-    if(pm.Is(0, LevelType.Property, "Last")) {
-        return projectsMap(map.LastBy(env.BuildType), pm.pinTo(1));
+    if(pm.It(LevelType.Property, "Last")) {
+        return projectsMap(map.LastBy(env.BuildType), pm);
     }
 
-    if(pm.Is(0, LevelType.Property, "FirstRaw")) {
-        return projectsMap(map.First, pm.pinTo(1));
+    if(pm.It(LevelType.Property, "FirstRaw")) {
+        return projectsMap(map.First, pm);
     }
 
-    if(pm.Is(0, LevelType.Property, "LastRaw")) {
-        return projectsMap(map.Last, pm.pinTo(1));
+    if(pm.It(LevelType.Property, "LastRaw")) {
+        return projectsMap(map.Last, pm);
     }
 
-    if(pm.FinalEmptyIs(0, LevelType.Property, "GuidList")) {
+    if(pm.FinalEmptyIs(LevelType.Property, "GuidList")) {
         return Value.from(map.GuidList);
     }
 
-    if(pm.Is(0, LevelType.Method, "projectBy"))
+    if(pm.It(LevelType.Method, "projectBy"))
     {
         ILevel lvlPrjBy = pm.Levels[0];
         lvlPrjBy.Is("projectBy(string guid)", ArgumentType.StringDouble);
-        return projectsMap(map.getProjectBy((string)lvlPrjBy.Args[0].data), pm.pinTo(1));
+        return projectsMap(map.getProjectBy((string)lvlPrjBy.Args[0].data), pm);
     }
 
     throw new OperationNotFoundException();
@@ -383,19 +383,19 @@ protected string stSlnPMap(string sln, IPM pm)
 
 protected string projectsMap(ProjectsMap.Project project, IPM pm)
 {
-    if(pm.FinalEmptyIs(0, LevelType.Property, "name")) {
+    if(pm.FinalEmptyIs(LevelType.Property, "name")) {
         return project.name;
     }
 
-    if(pm.FinalEmptyIs(0, LevelType.Property, "path")) {
+    if(pm.FinalEmptyIs(LevelType.Property, "path")) {
         return project.path;
     }
 
-    if(pm.FinalEmptyIs(0, LevelType.Property, "type")) {
+    if(pm.FinalEmptyIs(LevelType.Property, "type")) {
         return project.type;
     }
 
-    if(pm.FinalEmptyIs(0, LevelType.Property, "guid")) {
+    if(pm.FinalEmptyIs(LevelType.Property, "guid")) {
         return project.guid;
     }
 

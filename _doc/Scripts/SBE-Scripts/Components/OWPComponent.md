@@ -10,7 +10,7 @@ For work with OWP (Output Window Pane) and similar operations.
 
 ## log
 
-**available with v0.11**
+[ v0.11+ ]
 
 Provides data from events of logging.
 
@@ -20,88 +20,122 @@ Current message from log.
 
 Syntax:
 
-```java 
-
-#[OWP log.Message]
+```java
+string log.Message
 ```
 
 ### Level
 
-Level for current property the Message.
+The Level of current Message
 
 Syntax:
 
-```java 
-
-#[OWP log.Level]
+```java
+string log.Level
 ```
 
-## item ##
+## item
 
-**available with v0.11**
+[ v0.11+ ]
 
 Access to item of the Output window by name.
 
 Syntax:
 
-```java 
-
-#[OWP item("name")]
+```java
+item(string name)
 ```
 
-### write ###
+Arguments:
+
+* name - Name of item.
+
+### write
 
 Writes data into selected pane.
 
 Syntax:
 
-```java 
-
-#[OWP item("name").write(boolean createIfNotExist): content]
+```java
+void write(boolean force): content
 ```
 
-### writeLine ###
+Arguments:
 
-Writes data with the newline char into selected pane.
+* force - Creates selected item if it does not exist for true value.
+
+Sample:
+
+```minid
+#[OWP item("My Item").write(true): mixed data]
+```
+
+### writeLine
+
+Writes data with newline symbol into selected pane.
+
+Syntax:
+
+```java
+void writeLine(boolean force): content
+```
+
+Arguments:
+
+* force - Creates selected item if it does not exist for true value.
+
+Sample:
+
+```minid
+#[OWP item("Build").writeLine(false): mixed data]
+```
+
+### delete
+
+Removes pane. Returns false value if item does not exist, otherwise true as a successfully deleted.
+
+Syntax:
+
+```java
+boolean delete = boolean
+```
+
+Sample:
+
+```minid
+#[OWP item("My Item").delete = true]
+```
+
+### clear
+
+To clear contents from OW pane. Returns false value if item does not exist, otherwise true as a successfully cleared.
+
+Syntax:
+
+```java
+boolean clear = boolean
+```
+
+Sample:
+
+```minid
+#[OWP item("My Item").clear = true]
+```
+
+### activate
+
+To activate (display) OW pane by item name.
 
 Syntax:
 
 ```java 
-
-#[OWP item("name").writeLine(boolean createIfNotExist): content]
+boolean activate = boolean
 ```
 
-### delete ###
+Sample:
 
-Removes pane. Returns false if this item not exist, and true value if is successfully deleted.
-
-Syntax:
-
-```java 
-
-#[OWP item("name").delete = true]
-```
-
-### clear ###
-
-Clear contents of item. Returns false if this item not exist, and true value if is clean.
-
-Syntax:
-
-```java 
-
-#[OWP item("name").clear = true]
-```
-
-### activate ###
-
-Activate(Display) item.
-
-Syntax:
-
-```java 
-
-#[OWP item("name").activate = true]
+```minid
+#[OWP item("My Item").activate = true]
 ```
 
 ## out
@@ -144,8 +178,7 @@ Also used as short alias for: `out.All`
 
 Get raw data from selected item if exists:
 
-```java 
-
+```java
 string #[OWP out.All]
 ```
 
@@ -153,8 +186,7 @@ string #[OWP out.All]
 
 For work with warnings from received data. Also used as short alias for: `Warnings.Raw`
 
-```java 
-
+```java
 string #[OWP out.Warnings]
 ```
 
@@ -163,16 +195,17 @@ string #[OWP out.Warnings]
 Returns the partial raw data with warnings if an exists:
 
 ```java
-   string #[OWP out.Warnings.Raw]
+string #[OWP out.Warnings.Raw]
 ```
-   
+
+<!-- -->
+
 #### Count 
 
-Count of warnings from data:
+Count of warnings from data.
 
 ```java
-
-Integer #[OWP out.Warnings.Count]
+integer #[OWP out.Warnings.Count]
 ```
 
 #### Codes
@@ -204,7 +237,7 @@ string #[OWP out.Errors.Raw]
 
 #### Count
 
-Count of errors from data:
+Count of errors from data.
 
 ```java 
 

@@ -56,16 +56,23 @@ $(n = $([System.Math]::Exp( $([MSBuild]::Multiply('$([System.Math]::Log(2))', 16
 $(n)
 ```
 
-If you have some problems with syntax and documentation for component can't say how this should be... don't worry, you can:
+*If you have some problems with syntax and documentation can't say how this should be... don't worry, just [create new Issue](https://bitbucket.org/3F/vssolutionbuildevent/issues/new) - we'll help you.*
 
-* See available Unit-tests for component: [vsSolutionBuildEventTest/SBEScripts/Components/](https://github.com/3F/vsSolutionBuildEvent/tree/master/vsSolutionBuildEventTest/SBEScripts/Components)
-* Or, just [create new Issue](https://bitbucket.org/3F/vssolutionbuildevent/issues/new) - we are help you!
-
-# Arguments
+## Arguments
 
 {% include elem/fillme %}
 
-## Object type
+type   | description
+-------|------------
+integer| Signed 32-bit integer
+string | From double quotes & From single quotes
+char   |
+float  | Signed floating-point number with single-precision. Is required `f` postfix for clarify: 1.25f, -1.25f
+double | Signed floating-point number with double-precision. Optional `d` postfix for clarify: 1.25d or simply 1.25, -1.25
+enum   |
+const  |
+
+### Object type
 
 The object type is new type for work with complex mixed data. Initially it was implemented special for [vsCommandEvent](http://vsce.r-eg.net).
 
@@ -79,6 +86,30 @@ Value can be from all available scalar types + complex, like this:
 {"str", {1, 'y', {-12.457f}}, true}
 ```
 etc.
+
+### Boolean type
+
+Allowed forms:
+
+true  | false
+------|-------
+1     | 0
+True  | False
+TRUE  | FALSE
+true  | false
+
+### Input or mixed data
+
+This is the unspecified or mixed data. Used as defined and the engine will consider it 'as is':
+
+* May contain any count of newline symbols.
+* As and for string arguments may contain other inner sbe-scripts containers that will be evaluated before.
+
+It's also safe for pair symbols of container (`[`, `]`). For unpaired it will be corrupt. Therefore, you should place your data inside quote symbols as a string argument above or use special marker (*v0.12.6+*):
+
+```text
+<#data> ... </#data>
+```
 
 ## Dom & Code Completion
 
