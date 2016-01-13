@@ -7,7 +7,7 @@ permalink: /doc/Events/CommandEvent/
 
 This can be used for catching all Command Events from your VS IDE.
 
-{% assign infoData = "For advanced work with all commands beyond of the solution level, use the[vsCommandEvent](http://vsce.r-eg.net/doc/Modes/EnvCommand/)" %}
+{% assign infoData = "For advanced work with all commands beyond of the solution level, use the [vsCommandEvent](http://vsce.r-eg.net/doc/Modes/EnvCommand/)" %}
 {% include elem/info %}
 
 Also available Sniffer as helper for listening all commands from EnvDTE:

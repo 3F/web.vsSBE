@@ -1,12 +1,12 @@
 ---
 layout: doc
 title: UserVariableComponent
-description: Works with User-Variables.
+description: Support of dynamic variables via User-Variables core.
 permalink: /doc/Scripts/SBE-Scripts/Components/UserVariableComponent/
 ---
 # UserVariableComponent
 
-Works with User-Variables
+Support of dynamic variables via User-Variables core.
 
 Syntax:
 

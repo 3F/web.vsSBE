@@ -1,34 +1,31 @@
 ---
 layout: doc
 title: BuildComponent
-description: Managing of build projects at runtime and similar operations with build processes, solution and projects.
+description: Managing of build process at runtime. And similar operations for projects and solution.
 permalink: /doc/Scripts/SBE-Scripts/Components/BuildComponent/
 ---
 # BuildComponent
 
-Managing of build projects at runtime and similar operations with build processes, solution and projects.
+Managing of build process at runtime. And similar operations for projects and solution.
 
 # Available operations
 
 ## cancel
 
-Cancel build immediately if true.
+To immediately cancel the build task if it's possible.
 
 Syntax:
 
-```java 
-
-#[Build cancel = false|true|1|0]
+```java
+void cancel = boolean
 ```
 
 Sample:
 
-```java 
+```minid 
 
 #[Build cancel = true]
 ```
-
-Note: This command may be not available if build not started.
 
 ## projects
 
@@ -36,7 +33,7 @@ Work with configuration manager of projects through SolutionContexts.
 
 ### find()
 
-Compares as part of name, and you can use simply like a find("ZenLib") or for unique identification full "Zenlib\ZenLib.vcxproj" etc.
+To find project by name. It compares part of name, therefore you can use simply like a "ZenLib" or full name "Zenlib\ZenLib.vcxproj" etc.
 
 Syntax:
 
@@ -180,6 +177,8 @@ Project #[Build solution.path(string sln).Last]
 
 Return type is a [Project](#project-type)
 
+<!-- -->
+
 #### FirstRaw
 
 First project from defined list. Ignores used Build type.
@@ -245,6 +244,8 @@ Samples:
 
 #[Build solution.path("D:\vsSolutionBuildEvent_2013.sln").projectBy("{97F0E2FF-42DB-4506-856D-8694DD99F827}").name]
 ```
+
+<!-- -->
 
 ## Types
 

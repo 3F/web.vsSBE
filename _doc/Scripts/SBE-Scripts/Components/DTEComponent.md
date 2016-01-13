@@ -6,8 +6,7 @@ permalink: /doc/Scripts/SBE-Scripts/Components/DTEComponent/
 ---
 # DTEComponent
 
-For work with EnvDTE 
-(is an assembly-wrapped COM library containing the objects and members for Visual Studio core automation http://msdn.microsoft.com/en-us/library/EnvDTE.aspx)
+For work with EnvDTE (Assembly-wrapped COM library containing the objects and members for Visual Studio core automation. http://msdn.microsoft.com/en-us/library/EnvDTE.aspx)
 
 ## exec
 
@@ -29,7 +28,7 @@ Sample:
 #[DTE exec: Build.Cancel]
 ```
 
-**Note:** Some commands (like `Build.Cancel` etc.) should be available only under certain conditions of your environment.
+**Note:** Some commands should be available only for specific context of your environment. For example the `Build.Cancel`, etc.
 
 ## events
 
@@ -39,13 +38,13 @@ Operations with events.
 
 *available with v0.12+*
 
-Last received command.
+The last received command.
 
 **Note:** Use our [Sniffer]({{site.docp}}/Events/CommandEvent/) to find any commands.
 
 #### Guid
 
-Scope for Command ID
+Scope of Command ID
 
 Syntax:
 
@@ -89,7 +88,7 @@ object #[DTE events.LastCommand.CustomOut]
 
 #### Pre
 
-Flag of the execution command - Before / After
+Flag of execution of the command - Before / After
 
 Syntax:
 

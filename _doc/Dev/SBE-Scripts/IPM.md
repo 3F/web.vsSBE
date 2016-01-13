@@ -337,11 +337,11 @@ protected string stSolution(string data)
         return stSlnPMap(env.SolutionFile, pm);
     }
 
-    if(pm.It(LevelType.Method, "path"))
+    if(pm.Is(LevelType.Method, "path"))
     {
         ILevel lvlPath = pm.Levels[0];
         lvlPath.Is("solution.path(string sln)", ArgumentType.StringDouble);
-        return stSlnPMap((string)lvlPath.Args[0].data, pm);
+        return stSlnPMap((string)lvlPath.Args[0].data, pm.pinTo(1));
     }
     
     throw new OperationNotFoundException();

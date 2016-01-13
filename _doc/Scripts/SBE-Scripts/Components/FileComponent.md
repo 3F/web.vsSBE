@@ -1,16 +1,16 @@
 ---
 layout: doc
 title: FileComponent
-description: Operations with files and standard streams.
+description: I/O File operations.
 permalink: /doc/Scripts/SBE-Scripts/Components/FileComponent/
 ---
 # FileComponent
 
-Operations with files and standard streams.
+I/O File operations.
 
 ### Remarks
 
-#### Redirection for standard streams.
+#### Redirection for standard streams
 
 *for call/scall/sout* etc.:
 
@@ -23,6 +23,11 @@ Operations with files and standard streams.
     * `command` **>** `destination` or `command` **1>** `destination`
     * Where `destination` it's similar as above.
 * For more details see: [MS Q110930](http://support.microsoft.com/kb/110930/en-us)
+
+#### Support of standard streams
+
+* STDOUT - Standard output stream.
+* STDERR - Standard error stream.
 
 #### IO alias
 
@@ -63,24 +68,19 @@ Syntax:
 
 ```java 
 
-void #[File call(string filename, string args)]
-```
-
-```java 
-
-void #[File call(string filename)]
+void #[File call(string filename [, string args])]
 ```
 
 v0.11.3+:
 
 ```java 
 
-void #[File call(string filename, string args, uinteger timeout)]
+void #[File call(string filename [, string args [, integer timeout]])]
 ```
 
 Where,
 
-* filename - Full path to executable file.
+* filename - Path to executable file.
 * args - Arguments to executable file.
 * timeout - How long to wait the execution, in seconds. 0 value - infinitely
 
@@ -92,44 +92,33 @@ Syntax:
 
 ```java 
 
-void #[File scall(string filename, string args)]
-```
-
-```java 
-
-void #[File scall(string filename)]
+void #[File scall(string filename [, string args])]
 ```
 
 v0.11.3+:
 
 ```java 
 
-void #[File scall(string filename, string args, uinteger timeout)]
+void #[File scall(string filename [, string args [, integer timeout]])]
 ```
 * timeout - How long to wait the execution, in seconds. 0 value - infinitely
 
 ### sout
 
-Receives data from standard streams for executed file. To disable errors use the '2>nul' and similar - see above.
+Receives data from standard streams for executed file. To disable errors use the `2>nul` and similar ([Redirection for standard streams](#redirection-for-standard-streams)).
 
 Syntax:
 
 ```java 
 
-string #[File sout(string filename, string args)]
+string #[File sout(string filename [, string args])]
 ```
-
-```java 
-
-string #[File sout(string filename)]
-```
-
 
 v0.11.3+:
 
 ```java 
 
-string #[File sout(string filename, string args, uinteger timeout)]
+string #[File sout(string filename [, string args [, integer timeout]])]
 ```
 * timeout - How long to wait the execution, in seconds. 0 value - infinitely
 
@@ -142,183 +131,175 @@ Alias to sout() for cmd.
 
 Receives data from standard streams for cmd process with arguments.
 
-```java 
-
-string #[File cmd(string args)]
-```
-
-```java 
-
-string #[File cmd(string args, uinteger timeout)]
+```java
+string #[File cmd(string args [, integer timeout])]
 ```
 * timeout - How long to wait the execution, in seconds. 0 value - infinitely
 
 ### get
 
-Gets all data from file.
+Get all data from text file.
 
 Syntax:
 
-```java 
-
+```java
 string #[File get("filename")]
 ```
 
 ### write
 
-Writes text data in file. 
+To write data in a text file.
 
 * Creates if the file does not exist.
-* Overwrites content if already exist.
+* Overwrites content if it already exists.
+* Allows use a [standard streams](#support-of-standard-streams)
 
 Syntax:
 
-```java 
-
-#[File write("filename"): multiline data]
+```java
+void #[File write("filename"): mixed data]
 ```
 
 v0.10+:
  
-```java 
-
-void #[File write(string name, boolean append, boolean line, string encoding): multiline data]
+```java
+void #[File write(string name, boolean append, boolean line, string encoding): mixed data]
 ```
-* name - File name
-* append - Flag of adding data to the end file
-* line - Adds a line terminator
-* encoding - Code page name of the preferred [Encoding](http://msdn.microsoft.com/en-us/library/system.text.encoding.aspx)
+* name - File name.
+* append - Flag to append the content to the end of the file.
+* newline - To write with newline.
+* encoding - Preferred [Encoding](https://msdn.microsoft.com/en-us/library/system.text.encoding.aspx#Anchor_5):
 
-Examples of values of the encoding names:
+```text
+utf-8
+windows-1251
+us or us-ascii	
+utf-16
+...
+```
 
-	utf-8
-	windows-1251
-	us or us-ascii	
-	utf-16
+The `utf-8` is used by default.
+
+[BOM](https://en.wikipedia.org/wiki/Byte_order_mark) (Byte-Order Mark) special names:
+
+v0.12.6+
+
+name      | BOM
+----------|-----
+utf-8     | no
+utf-8-bom | yes - `0xEF 0xBB 0xBF`
 
 
 ### append
 
-Writes text data in file. 
-
-* Creates if the file does not exist.
-* Adds data to the end file if it already exist.
+To append data to the end of a text file or create new if file does not exist.
 
 Syntax:
 
-```java 
-
-#[File append("filename"): multiline data]
+```java
+#[File append("filename"): mixed data]
 ```
 
 ### writeLine
 
-Writes text data with CR/LF in file. 
+To write data with newline in a text file.
 
 * Creates if the file does not exist.
-* Overwrites content if already exist.
+* Overwrites content if it already exists.
+* Allows use a [standard streams](#support-of-standard-streams)
 
 Syntax:
 
-```java 
-
-#[File writeLine("filename"): multiline data]
+```java
+#[File writeLine("filename"): mixed data]
 ```
 
 ### appendLine
 
-Writes text data with CR/LF in file. 
-
-* Creates if the file does not exist.
-* Adds data to the end file if it already exist.
+To append data with newline to the end of a text file or create new if file does not exist.
 
 Syntax:
 
-```java 
-
-#[File appendLine("filename"): multiline data]
+```java
+#[File appendLine("filename"): mixed data]
 ```
 
 ### replace
 
-Replacing the strings in files.
+To replace data in files.
 
 Syntax:
 
 ```java 
-
-#[File replace("file", "pattern", "replacement")]
+void #[File replace(string file, string pattern, string replacement)]
 ```
 
-```java 
-
-#[File replace.Regexp("file", "pattern", "replacement")]
+```java
+void #[File replace.Regexp(string file, string pattern, string replacement)]
 ```
 
-```java 
+* `pattern` should contain [Regular Expression Language](https://msdn.microsoft.com/en-us/library/az24scfc.aspx)
+* `replacement` may contain the following [substitution elements and replacement patterns](https://msdn.microsoft.com/en-us/library/ewy2t5e0.aspx)
 
-#[File replace.Wildcards("file", "pattern", "replacement")]
+```java
+void #[File replace.Wildcards(string file, string pattern, string replacement)]
 ```
 
-v0.10+:
+`pattern` may contain wildcards:
 
-* Alias for Regexp:
-
-```java 
-
-#[File replace.Regex("file", "pattern", "replacement")]
+```text
+Matches any character:
+ *   - 0 or more times.
+ +   - 1 or more times.
+ ?   - 1 single.
 ```
 
-Sample:
+Alias for Regexp (v0.10+):
 
-```java 
-
-#[File replace.Regexp("source.extension.vsixmanifest", "<Version>[0-9\.]+</Version>", "<Version>#[var ver]</Version>")]
+```java
+void #[File replace.Regex(string file, string pattern, string replacement)]
 ```
+
+Samples:
+
+```java
+#[File replace.Regexp("source.extension.vsixmanifest", "<Version>[0-9.]+</Version>", "<Version>#[var version]</Version>")]
+```
+
+```java
+#[File replace.Regexp("file.log", "(\d+)", "~$1~")]
+```
+
 
 ### exists
 
-`v0.10+`
-
-Determines whether the something exists.
+v0.10+
 
 #### directory
 
 Determines whether the given path refers to an existing directory on disk.
 
-```java 
-
-boolean #[File exists.directory(string path)]
+```java
+boolean #[File exists.directory(string path [, boolean environment])]
 ```
-* path - Path to test
-
-Determines whether the given path refers to an existing directory on disk with searching in environment
-
-```java 
-
-boolean #[File exists.directory(string path, boolean environment)]
-```
-* path - Path to test
-* environment - Using the PATH of the Environment for searching. Environment associated with the current process.
+* path - Path to directory
+* environment - Use Environment PATH (Associated for current process).
 
 Samples:
 
-```java 
-
+```java
 #[( #[File exists.directory("log")] ){
    ...
 }]
 ```
 
-```java 
-
+```java
 #[( #[File exists.directory("D:\tmp\log")] ){
    ...
 }]
 ```
 
-```java 
-
+```java
 #[( #[File exists.directory("System32", true)] ){
    ...
 }]
@@ -328,39 +309,27 @@ Samples:
 
 Determines whether the specified file exists.
 
-```java 
-
-boolean #[File exists.file(string path)]
+```java
+boolean #[File exists.file(string path [, boolean environment])]
 ```
-* path - The file to check
-
-Determines whether the specified file exists with searching in environment.
-
-```java 
-
-boolean #[File exists.file(string path, boolean environment)]
-```
-* path - The file to check
-* environment - Using the PATH of the Environment for searching. Environment associated with the current process.
+* path - Path to file
+* environment - Use Environment PATH (Associated for current process).
 
 Samples:
 
-```java 
-
+```java
 #[( #[File exists.file("data.log")] ){
    ...
 }]
 ```
 
-```java 
-
+```java
 #[( #[File exists.file("git.exe", true)] ){
    ...
 }]
 ```
 
-```java 
-
+```java
 #[( #[File exists.file("D:\tmp\data.log")] ){
    ...
 }]

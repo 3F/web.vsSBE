@@ -1,12 +1,12 @@
 ---
 layout: doc
 title: SevenZipComponent
-description: 7-Zip File archiver with a high compression ratio.
+description: 7-Zip File archiver with high compression ratio.
 permalink: /doc/Scripts/SBE-Scripts/Components/SevenZipComponent/
 ---
 # SevenZipComponent
 
-7-Zip. File archiver with a high compression ratio - [www.7-zip.org](http://7-zip.org/)
+7-Zip. File archiver with high compression ratio - [www.7-zip.org](http://7-zip.org/)
 
 [ v0.12.6+ ]
 
