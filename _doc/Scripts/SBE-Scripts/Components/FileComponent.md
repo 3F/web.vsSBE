@@ -334,3 +334,39 @@ Samples:
    ...
 }]
 ```
+
+### remote
+
+v0.12.6+
+
+Remote servers.
+
+#### download
+
+To download file from remote server.
+
+```java
+void #[File remote.download(string addr, string output [, string user, string pwd])]
+```
+* addr - Full address to remote file. e.g.: ftp://... http://...
+* output - Output file name.
+* user - Username.
+* pwd - Password.
+
+Samples of addresses:
+
+```text
+ftp://192.168.17.04/non-api.png
+ftp://192.168.17.04:2021/dir1/non-api.png
+ftp://user1:mypass123@192.168.17.04:2021/dir1/non-api.png
+https://www.nuget.org/api/v2/package/vsSBE.CI.MSBuild/1.5.1
+http://example.com
+```
+
+Examples:
+
+```java
+#[IO remote.download("ftp://192.168.17.04:2021/dir1/non-api.png", "non-api.png", "user1", "mypass123")]
+#[IO remote.download("https://nuget.org/api/v2/package/vsSBE.CI.MSBuild/1.5.1", "CIM.nupkg")]
+#[IO remote.download("http://example.com", "example.com.html")]
+```

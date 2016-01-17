@@ -17,7 +17,7 @@ In examples below, we use the [MSBuild Property Functions](https://msdn.microsof
 * [...](https://msdn.microsoft.com/en-us/library/vstudio/dd633440%28v=vs.120%29.aspx#BKMK_Static)
 
 
-## Remove newline characters and others problematic symbols.
+## Remove newline characters and other problematic symbols.
 
 Some your results may contain a some problematic characters for different functions. In most cases this applies to [MSBuild Property Functions](../../Scripts/MSBuild/).
 
@@ -68,8 +68,8 @@ and similar...
 
 note:
 
-* use the escaping \\\r \\\n if need this
-* use the \x00 - \xFF for other char by code
+* escape \\\r \\\n if need
+* use `\x00 - \xFF` for other chars
 
 
 as result we have:
@@ -79,9 +79,34 @@ as result we have:
 Version is a v1.2 :: debug  :: rev321 !
 ```
 
-## Convenience for single line arguments
+## Escape-Sequences
 
-If you want to pass a long string as argument for some function or method, for example as [here](../../Examples/Artefacts/):
+You can use available escape-sequence in [SBE-Scripts](../../Scripts/SBE-Scripts/) & [MSBuild](../../Scripts/MSBuild/) cores, for example:
+
+```bash 
+
+$([System.String]::Concat("\r\n"))
+```
+
+```bash 
+
+$(ver = "1.2.3")
+$([System.String]::Format("\t version is a {0}", $(ver)))
+```
+
+### What's available ?
+
+Currently used a strictly limited set:
+
+* [hexadecimal-escape-sequence](https://msdn.microsoft.com/en-us/library/aa691087%28v=vs.71%29.aspx): `\x   0-0xF  [0-0xF  [0-0xF  [0-0xF]]]`
+* [unicode-escape-sequence](https://msdn.microsoft.com/en-us/library/aa664669%28v=vs.71%29.aspx): 
+    * `\u   0-0xF  0-0xF  0-0xF  0-0xF` 
+    * `\U   0-0xF  0-0xF  0-0xF  0-0xF  0-0xF  0-0xF  0-0xF  0-0xF`
+* basic: `\r \n \t \v \a \b \0 \f`
+
+## Tricks for the longest string arguments
+
+If you want to pass a long string as argument for some function or method, for example:
 
 ```java 
 
@@ -153,36 +178,14 @@ xcopy NLog.dll.nlog "#[var nupCIMdir]\bin" /Y/R/I
 ```
 and similar..
 
-## Escape-Sequences
-
-You can use available escape-sequence in [SBE-Scripts](../../Scripts/SBE-Scripts/) & [MSBuild](../../Scripts/MSBuild/) cores, for example:
-
-```bash 
-
-$([System.String]::Concat("\r\n"))
-```
-
-```bash 
-
-$(ver = "1.2.3")
-$([System.String]::Format("\t version is a {0}", $(ver)))
-```
-
-### What available ?
-
-Currently used a strictly limited set:
-
-* [hexadecimal-escape-sequence](https://msdn.microsoft.com/en-us/library/aa691087%28v=vs.71%29.aspx): `\x   0-0xF  [0-0xF  [0-0xF  [0-0xF]]]`
-* [unicode-escape-sequence](https://msdn.microsoft.com/en-us/library/aa664669%28v=vs.71%29.aspx): 
-    * `\u   0-0xF  0-0xF  0-0xF  0-0xF` 
-    * `\U   0-0xF  0-0xF  0-0xF  0-0xF  0-0xF  0-0xF  0-0xF  0-0xF`
-* basic: `\r \n \t \v \a \b \0 \f`
-
 ## Dynamic evaluation with both engines MSBuild & SBE-Scripts
 
 Not all values from strings may be automatically evaluated beetween different engines.
 
 *You also should remeber [behaviour of strings for User-variables in MSBuild core](../../Scripts/MSBuild/#user-variables-for-msbuild-core)*
+
+{% assign infoData = "v0.12.6+ Now allows evaluation of string arguments with MSBuild engine in File/Function/BuildComponent + some newer. You can also use the [MSBuildComponent](../../Scripts/SBE-Scripts/Components/MSBuildComponent/) to force evaluation if still needed." %}
+{% include elem/info %}
 
 For example:
 
@@ -192,7 +195,7 @@ For example:
 
 For line above:
 
-* Will be **always** value - `2A2C9B690E475D713B35BD1FB8A1AB7F214121C6`, **because** the SHA1 method has looked first argument 'as is' - `$([System.Guid]::NewGuid())`
+* Will be (v0.12.5 or less) **always** value - `2A2C9B690E475D713B35BD1FB8A1AB7F214121C6`, **because** the SHA1 method has looked first argument 'as is' - `$([System.Guid]::NewGuid())`
 
 The result above is not correct **if** you want evaluate this `$([System.Guid]::NewGuid())`.
 
@@ -211,7 +214,6 @@ compact variant, may be:
 ```
 
 and similar..
-
 
 ### Whitespaces from all results of script
 
