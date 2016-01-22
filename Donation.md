@@ -41,7 +41,7 @@ Start with [Developer Zone]({{site.docp}}/Dev/)
 
 You can also add new or improve any existing pages for current wiki.
 
-Share some solutions/examples with community of your experiences. Use [Edit] buttons or Start new [here](../New/)
+Share some solutions/examples with community of your experiences. Use [Edit] buttons or Start new [here]({{site.docp}}/New/)
 
 *Take a few minutes of your time for helping for others our users. From short useful script/note or any complete solution.*
 
@@ -59,7 +59,7 @@ Start with [Developer Zone]({{site.docp}}/Dev/)
 
 ## Share
 
-Simply to share this project... many users - a more help or something like that.
+Share project... a lot of users - a lot of help or something like that.
 
 # Have a questions ?
 

@@ -228,13 +228,15 @@ and similar...
 
 You can also test/debug all scripts with our testing tools, look in the `Settings` - `Tools`
 
+<!-- -->
+
 ### Wizard or "help me, it's so hard"
 
 ok, try our wizard for common solutions - [Wizard variant](../Wizard/)
 
 # Working example
 
-This also used in our project:  [Full script for assembling vsSolutionBuildEvent v0.11](https://gist.github.com/3F/3f2f56dfc2a01dc99c63) 
+This is also used in our project:  [Full script for assembling vsSolutionBuildEvent v0.11](https://gist.github.com/3F/3f2f56dfc2a01dc99c63) 
 
 * [Actual version and full script file - .vssbe](https://github.com/3F/vsSolutionBuildEvent/blob/master/.vssbe)
 

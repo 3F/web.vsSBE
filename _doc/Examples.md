@@ -3,7 +3,8 @@ layout: doc
 title: Examples
 permalink: /doc/Examples/
 ---
-# Complete Solutions
+
+## Complete solutions
 
 * [Automatic Version Numbering](Version/)
     * [Manually variant](Version/Manually/)
@@ -12,10 +13,10 @@ permalink: /doc/Examples/
 * [Stop build on first error](Errors.Stop build/)
 * [Demo projects](Demo/)
 
-# Some features & others
+## Some features
 
+* [Math operations](../Features/Math/)
 * [Date & Time](../Features/Date & Time/)
-* [Increment & Decrement Numbers [custom counters]](../Features/Custom counters/)
 * [.vssbe File format & Unified Project name for different .sln](../Features/.vssbe/)
 * [Actions for specific configuration](../Features/Actions for specific configuration/)
 * [Solution-wide Build Events](../Features/Solution-wide/)
@@ -23,29 +24,30 @@ permalink: /doc/Examples/
 * [Work with Unit-Tests & EnvDTE](../Features/EnvDTE & Tests/)
 * [Exclude projects from build on Pre-Build event](../Features/Exclude projects/)
 * [Work with external utilities](../Features/External utilities/)
+* [Increment & Decrement Numbers [custom counters]](../Features/Custom counters/)
 * [Operations with strings](../Features/Strings/)
 * [Remote servers](../Features/Remote/)
 
-# Processing modes
+## Processing modes
 
 * [Processing modes](../Modes/)
 
-# Events
+## Events
 
 * [Available Events](../Events/)
 
-# Scheme of vsSolutionBuildEvent
+## Scheme of vsSolutionBuildEvent
 
-You should see [this page](../Scheme/)
+Read [here](../Scheme/)
 
 [![Scheme of vsSolutionBuildEvent projects](../Resources/scheme.png)](../Scheme/)
 
-# For developers
+## For developers
 
 See [Developer Zone](../Dev/) - *How to build plugin; How to create component for current platform; API; etc.*
 
-# Your experience
+## Your experience
 
-You can also improve all current pages or share some solutions/examples with community of your experiences. Click [Edit] button below or Start new [here](../New/)
+Feel free to improve any our pages. Click [Edit] button below or Start new page [here](../New/).
 
-*Take a few minutes of your time for helping for others our users. From short useful script/note or any complete solution. - this can be as part of [donation]({{site.baseurl}}/Donation/) or simple note for themselves or others...*
+*From the short useful script/note to the complete solution for other our users. It can be as part of [donation]({{site.baseurl}}/Donation/) or simple note to self etc.*

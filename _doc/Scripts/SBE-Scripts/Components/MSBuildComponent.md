@@ -8,7 +8,9 @@ permalink: /doc/Scripts/SBE-Scripts/Components/MSBuildComponent/
 
 Forcing evaluation with [MSBuild engine]({{site.docp}}/Scripts/MSBuild/).
 
-This is a very simple component (as a mediator) for immediate result from expression via MSBuild.
+[ v0.12.6+ ]
+
+This is a very simple component (as a mediator) for immediate result from expression via [MSBuild]({{site.docp}}/Scripts/MSBuild/).
 
 Syntax:
 

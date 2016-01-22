@@ -335,6 +335,109 @@ Samples:
 }]
 ```
 
+### copy
+
+v0.12.6+
+
+#### file
+
+To copy the selected file to the destination. Creates the destination path if not exists.
+
+```java
+void copy.file(string src, string dest, bool overwrite [, object except])
+```
+
+Arguments:
+
+* src - Source file. May contain mask as **.dll, **.*, ...
+* dest - The destination path. May contain path to file or directory (end with \ or /).
+* overwrite - Overwrite file/s if already exists.
+* except - List of files to exclude from input source as {"f1", "path\\*.dll", ...}
+
+Samples:
+
+```java
+#[File copy.file("bin\release.7z", "$(out)dep\release.7z", true)]
+```
+
+```java
+#[File copy.file("D:\inc\*.h", "$(SolutionDir)inc/", false, {"ui.core.h", "http.h"})]
+```
+
+Examples:
+
+* To rename file
+
+```java
+#[File copy.file("bin\release.7z", "bin\release_[f5acf6f].7z", false)]
+#[File delete.files({"bin\release.7z"})]
+```
+
+#### directory
+
+To copy the selected directory and subdirectories to the destination.
+
+```java
+void copy.directory(string src, string dest, bool force [, bool overwrite])
+```
+
+Arguments:
+
+* src - The source directory.
+* dest - The destination directory.
+* force - Create the destination path if not exists.
+* overwrite - Overwrite files if already exists.
+
+Samples:
+
+```java
+#[File copy.directory("bin", "$(out)dep/mixed", true)]
+```
+
+<!-- -->
+
+### delete
+
+v0.12.6+
+
+#### files
+
+To delete the selected files.
+
+```java
+void delete.files(object files [, object except])
+```
+
+Arguments:
+
+* files - List of files to deletion as {"f1", "path\\*.dll", ..}
+* except - List of files to exclude from input list.
+
+Samples:
+
+```java
+#[File delete.files({"$(out)dep\*.7z", "$(out)dep\std.zip"}, {"release.7z"})]
+```
+
+#### directory
+
+To delete the selected directory.
+
+```java
+void delete.directory(string dir, bool force)
+```
+
+Arguments:
+
+* dir - Path to directory for deletion.
+* force - To remove non-empty directories.
+
+Samples:
+
+```java
+#[File delete.directory("$(out)dep", true)]
+```
+
 ### remote
 
 v0.12.6+
