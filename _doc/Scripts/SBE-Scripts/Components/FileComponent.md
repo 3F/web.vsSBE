@@ -341,7 +341,7 @@ v0.12.6+
 
 #### file
 
-To copy the selected file to the destination. Creates the destination path if not exists.
+To copy selected file to the destination. Creates the destination path if not exists.
 
 ```java
 void copy.file(string src, string dest, bool overwrite [, object except])
@@ -373,9 +373,10 @@ Examples:
 #[File delete.files({"bin\release.7z"})]
 ```
 
+<!-- -->
 #### directory
 
-To copy the selected directory and subdirectories to the destination.
+To copy selected directory and subdirectories to the destination.
 
 ```java
 void copy.directory(string src, string dest, bool force [, bool overwrite])
@@ -383,7 +384,7 @@ void copy.directory(string src, string dest, bool force [, bool overwrite])
 
 Arguments:
 
-* src - The source directory.
+* src - The source directory. Can be empty as new directory.
 * dest - The destination directory.
 * force - Create the destination path if not exists.
 * overwrite - Overwrite files if already exists.
@@ -394,6 +395,13 @@ Samples:
 #[File copy.directory("bin", "$(out)dep/mixed", true)]
 ```
 
+Examples:
+
+* To create empty directory:
+
+```java
+#[File copy.directory("", "$(SolutionDir)bin\Releases", true)]
+```
 <!-- -->
 
 ### delete
@@ -402,7 +410,7 @@ v0.12.6+
 
 #### files
 
-To delete the selected files.
+To delete selected files.
 
 ```java
 void delete.files(object files [, object except])
@@ -421,7 +429,7 @@ Samples:
 
 #### directory
 
-To delete the selected directory.
+To delete selected directory.
 
 ```java
 void delete.directory(string dir, bool force)
@@ -438,6 +446,7 @@ Samples:
 #[File delete.directory("$(out)dep", true)]
 ```
 
+<!-- -->
 ### remote
 
 v0.12.6+

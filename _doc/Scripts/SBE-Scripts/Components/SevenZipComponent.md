@@ -57,9 +57,7 @@ Packing with 7-zip engine.
 
 ### files
 
-To compress selected files with default settings. 
-
-The solution directory is path by default for all input & output files.
+To compress selected files with default settings.
 
 ```java
 void pack.files(object files, string output [, object except][, enum format, enum method, integer level])
@@ -106,6 +104,42 @@ Samples:
 ```minid
 #[7z pack.files({"bin\xscale.exe", "bin\libintl-8.dll"}, "xscale.tar", Tar, Copy, 0)]
 #[7z pack.files({"xscale.tar"}, "xscale.tar.xz", XZ, Lzma2, 4)]
+```
+
+Notes:
+
+* The solution directory is path by default for all input & output files.
+* The `\` as path separator is used for relative structure of directories in the final archive.
+* The `/` as path separator is used for absolute structure of directories in the final archive.
+
+```minid
+#[7z pack.files({ "$(path)bin\Debug\subdir\File3.dll", "$(path)bin\Debug\File1.dll", "$(path)bin\Debug\File2.dll" }, "$(output)Archive1.zip")]
+```
+
+The final Archive1.zip will be:
+
+```
+│   File1.dll
+│   File2.dll
+│
+└───subdir
+        File3.dll
+```
+
+```minid
+#[7z pack.files({ "$(path)bin/Debug/subdir/File3.dll", "$(path)bin/Debug/File1.dll", "$(path)bin/Debug/File2.dll" }, "$(output)Archive2.zip")]
+```
+
+The final Archive2.zip will be:
+
+```
+└───bin
+    └───Debug
+        │   File1.dll
+        │   File2.dll
+        │
+        └───subdir
+                File3.dll
 ```
 
 ### directory

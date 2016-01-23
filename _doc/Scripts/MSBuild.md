@@ -131,6 +131,22 @@ $(pdir = $(ProjectDir:project))
 $(pdir = $(ProjectDir.Replace('\', '/'):project))
 ```
 
+### Global MSBuild properties
+
+* To define msbuild property via user-variable:
+
+```Bash 
+
+$(+name = ...)
+```
+
+* To undefine msbuild property via user-variable:
+
+```Bash 
+$(-name =)
+$(-name = ...)
+```
+
 ## Nested levels - recursive evaluation for MSBuild Properties
 
 In vsSolutionBuildEvent the most variables can be evaluated with nested levels also for each project.
