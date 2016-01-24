@@ -42,8 +42,9 @@ highlighter: pygments
 
 ## VSPackage
 
-lnkCur_VSPackage:   [ "v0.12.5", "vsSolutionBuildEvent_v0.12.5.2477_[d018ea4][net40].vsix", "https://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/referral/118151" ]
+lnkCur_VSPackage:   [ "v0.12.6", "vsSolutionBuildEvent_v0.12.6.5177_[6ad0511][net40].vsix", "https://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/referral/118151" ]
 lnkList_VSPackage:  [
+                        [ "v0.12.6", "vsSolutionBuildEvent_v0.12.6.5177_[6ad0511][net40].vsix", "http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.12.6.5177_%5B6ad0511%5D%5Bnet40%5D.vsix/download" ],
                         [ "v0.12.5", "vsSolutionBuildEvent_v0.12.5.2477_[d018ea4][net40].vsix", "http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.12.5.2477_%5Bd018ea4%5D%5Bnet40%5D.vsix/download" ]
                     ]
 lnkOld_VSPackage:   [
@@ -106,8 +107,9 @@ lnkAll_Provider:    [ "/API/Provider/", "http://sourceforge.net/projects/vssbe/f
 
 ## NuGet Package for CI
 
-lnkCur_CIMNuGet:    [ "v1.5.1", "vsSBE.CI.MSBuild.1.5.1.nupkg", "https://www.nuget.org/api/v2/package/vsSBE.CI.MSBuild/" ]
+lnkCur_CIMNuGet:    [ "v1.5.1206", "vsSBE.CI.MSBuild.1.5.1.nupkg", "https://www.nuget.org/api/v2/package/vsSBE.CI.MSBuild/" ]
 lnkList_CIMNuGet:   [
+                        [ "v1.5.1206", "vsSBE.CI.MSBuild.1.5.1206.nupkg", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/NuGet_packages/vsSBE.CI.MSBuild.1.5.1206.nupkg/download" ],
                         [ "v1.5.1", "vsSBE.CI.MSBuild.1.5.1.nupkg", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/NuGet_packages/vsSBE.CI.MSBuild.1.5.1.nupkg/download" ],
                         [ "v1.5.0", "vsSBE.CI.MSBuild.1.5.0.nupkg", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/NuGet_packages/vsSBE.CI.MSBuild.1.5.0.nupkg/download" ]
                     ]
