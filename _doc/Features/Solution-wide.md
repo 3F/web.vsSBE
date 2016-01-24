@@ -13,8 +13,8 @@ All your actions for `Pre-Build` / `Post-Build` events are already can be **for 
 
 It should be useful for most cases, for example: 
 
-* [Automatic Version Numbering](../../Examples/Version number/) for your projects.
-* Or simple notification like - send email before/after building of all projects:
+* [Automatic Version Numbering](../../Examples/Version/) for your projects.
+* Or simple notification like ~ send email before/after building of all projects:
 
 ```php 
 
@@ -27,7 +27,26 @@ Or use powerfull [MSBuild](../../Scripts/MSBuild/) & [SBE-Scripts](../../Scripts
 
 For more complex scripts see our **[available modes](../../Modes/)** and ~feel~free~ ...
 
-# What's exists for work without plugins ?
+## How about MSBuild Tool or how to work without Visual Studio
+
+All your action may be handled without Visual Studio, for example, with msbuild.exe etc. 
+
+Moreover, you have different ways:
+
+* [CI Gateways](../../CI/)
+    * [CI.MSBuild](../CI/CI.MSBuild/) - *it easy way for work with all existing features. Powerful processing.*
+* Call the `after.<name>.sln.targets` - *it does not require additional steps, simply action.*
+
+### `after.<name>.sln.targets`
+
+You should already know about this - [MSBuild: Extending the solution build](http://sedodream.com/2010/10/22/MSBuildExtendingTheSolutionBuild.aspx), 
+but you also should know that this variant may work with building from msbuild.exe and not from VS IDE...
+
+But wait, "the any action is already can be for all projects at once". So just call this target in [Targets Mode](../../Modes/Targets/).
+
+As result you should get unified processing in Visual Studio IDE and msbuild.exe.
+
+## What's exists for work without plugins ?
 
 *In some cases*, any extending of Visual Studio may be not suitable or not comfortable for some reasons (for example, your some box-solution, etc.)
 

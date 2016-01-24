@@ -77,7 +77,7 @@ is ready ? ok, see below..
 
 ### How to
 
-{% assign infoData = "Part of this manual is **obsolete**. For packing data, use [SevenZipComponent](../../Scripts/SBE-Scripts/Components/SevenZipComponent/) " %}
+{% assign infoData = "**Obsolete**. Please use new features with [SevenZipComponent](../../Scripts/SBE-Scripts/Components/SevenZipComponent/), [FileComponent](../../Scripts/SBE-Scripts/Components/FileComponent/), [etc.](../../Scripts/SBE-Scripts/Components/)" %}
 {% include elem/info %}
 
 *Please note*: 
