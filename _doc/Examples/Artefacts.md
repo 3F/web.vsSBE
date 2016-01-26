@@ -7,170 +7,181 @@ permalink: /doc/Examples/Artefacts/
 
 ![Packing & Uploading - Artefacts](../../Resources/examples/artefacts_appveyor.gif)
 
-
 *Artefacts / Binaries from build project, etc.*
 
-You can see also a fragment of this from our short overview:
+## About different Environments
 
-[![Short Overview](../../Resources/examples/overview-youtube.png)](http://youtu.be/FX5GiMX0ulI)
+Firstly, it doesn't matter where the planned use this script. It can be unified for all environments.
 
-## CI / Special Build Servers / Devenv
-
-Well., not important where use it.. 
-
-Simply configure and use any scripts for any environments. It means you should see the same result on your PC(for example) and for another with identical script:
+It means you should see the same result as for your PC with Visual Studio (for example) and same for X Build Server (CI):
 
 ![Artefacts on PC](../../Resources/examples/artefacts_pc.png)
 
-You can also read this:
+Read first:
 
 * How to work with [CI components](../../CI/).
-* [.vssbe for each .sln (Solution File)](../../Features/.vssbe/)
+* [.vssbe for each .sln](../../Features/.vssbe/)
 
 ## Releases from a few projects
 
-*Full sample you can see in our project, for example:  [Full script for assembling the vsSolutionBuildEvent v0.11](https://gist.github.com/3F/3f2f56dfc2a01dc99c63) (actual version in current [script file](https://bitbucket.org/3F/vssolutionbuildevent/src/master/.vssbe))*
+*Full example you can see, for example, our project:  [Full script for assembling the vsSolutionBuildEvent v0.12.6+](https://gist.github.com/3F/3f2f56dfc2a01dc99c63) (actual version in current [script file](https://bitbucket.org/3F/vssolutionbuildevent/src/master/.vssbe))*
 
-As result [you should see next files](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/build/build-120/artifacts) (i.e. only for example - your variants **can be as you want**) for any deploy or simple use:
+As result [you will see this files](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/build/build-136/artifacts) (i.e. only for example - your variants **can be as you want**) for deploy or for simple use.
 
-Samples:
+Sample:
 
-File                            | Description
----------------------------- | ---
-bin\Releases\Bridge_v1.0_[399a7e8][net40].zip| Packed binaries from 'Bridge' project as part of main project.
-bin\Releases\CI.MSBuild_v1.0_[399a7e8][net40].zip | Packed binaries from 'CI.MSBuild' project as part of main project.
-bin\Releases\Devenv_v1.0_[399a7e8][net40].zip | Packed binaries from 'Devenv' project as part of main project.
-bin\Releases\Provider_v1.0_[399a7e8][net40].zip | Packed binaries from 'Provider' project as part of main project.
-bin\Releases\Release_notes.txt | Auto-generated notes from current assemblies.
-bin\Releases\vsSBE.CI.MSBuild.1.0.nupkg | NuGet package from 'CI.MSBuild' project.
-bin\Releases\vsSolutionBuildEvent_v0.11.3.47103_[399a7e8][net40].vsix | VSPackage of main project.
+File                                                                    | Description
+------------------------------------------------------------------------|--------------
+bin\Releases\Bridge_v1.3_[df66438][net40].zip                           | Packed binaries from 'Bridge' project as part of main project.
+bin\Releases\CI.MSBuild_v1.5_[df66438][net40].zip                       | Packed binaries from 'CI.MSBuild' project as part of main project.
+bin\Releases\Devenv_v1.3_[df66438][net40].zip                           | Packed binaries from 'Devenv' project as part of main project.
+bin\Releases\Provider_v3.0_[df66438][net40].zip                         | Packed binaries from 'Provider' project as part of main project.
+bin\Releases\Release_notes.txt                                          | Auto-generated notes from current assemblies.
+bin\Releases\vsSBE.CI.MSBuild.1.5.1206.nupkg                            | NuGet package from 'CI.MSBuild' project.
+bin\Releases\vsSolutionBuildEvent_v0.12.6.5585_[df66438]_[net40].vsix    | VSPackage of main project.
 
 
-Contents of the Release_notes.txt:
+Release_notes.txt:
 
 ```text 
 
 This assembled from:
 
 * Configuration:   'CI_Debug' (Folders: Debug)
-* .NET version:     v4.5 (be careful - need a v4.0 to compatibility with VS2010);
-* Build number:     47103;
-* Branch Sha1:      399a7e8;
+* .NET version:     v4.0;
+* MSBuild Tools:    v12.0;
+* Build number:     5585;
+* Branch Sha1:      df66438;
 * Branch Name:      master;
-* Branch revCount:  212;
+* Branch revCount:  323;
 ------------------------------------------
 
 Versions:
 
-* The 'Bridge':                 v1.0;
-* The 'CI.MSBuild':             v1.0;
-* The 'Devenv':                 v1.0;
-* The 'Provider':               v1.0;
-* The 'vsSolutionBuildEvent':   v0.11.3.47103;
+* The 'Bridge':                 v1.3;
+* The 'CI.MSBuild':             v1.5;
+* The 'Devenv':                 v1.3;
+* The 'Provider':               v3.0;
+* The 'vsSolutionBuildEvent':   v0.12.6.5585;
+
+Packages:
+
+* NuGet 'vsSBE.CI.MSBuild': v1.5.1206;
+
+Demo:
+
+* ClientDemo - [df66438][net40](5585)
 
 ------------------------------------------
-					 Generated by vsSolutionBuildEvent
-
+         Generated by vsSolutionBuildEvent
+------------------------------------------
 ```
-
-is ready ? ok, see below..
 
 ### How to
 
-{% assign infoData = "**Obsolete**. Please use new features with [SevenZipComponent](../../Scripts/SBE-Scripts/Components/SevenZipComponent/), [FileComponent](../../Scripts/SBE-Scripts/Components/FileComponent/), [etc.](../../Scripts/SBE-Scripts/Components/)" %}
-{% include elem/info %}
+*Please note*, you can achieve this result with [different modes](../../Modes/).
 
-*Please note*: 
+Firstly, you have to decide how will be numbered versions of all your projects (it's means the format). It can be as [here](../Version/Manually/) or other.
 
-* You can achieve this results with [our different modes](../../Modes/).
-* [Convenience work with single lines arguments /strings](../../Features/Strings/)
+* For work with archives we will use the [SevenZipComponent]({{site.docp}}/Scripts/SBE-Scripts/Components/SevenZipComponent/)
+* For IO operations the [FileComponent]({{site.docp}}/Scripts/SBE-Scripts/Components/FileComponent/)
+    * The old variant with [`xcopy & copy`](http://support.microsoft.com/en-us/kb/240268) is deprecated. We recommend FileComponent for fast operations directly.
 
-Firstly, you should to decide how will be numbered versions of all your projects - this can be as [here](../Version number/) or others.
-
-For packing you can use free [7za](http://sourceforge.net/projects/sevenzip/files/7-Zip/9.20/7za920.zip/download) archiver ([7-Zip Command line version](http://www.7-zip.org)) or similar.
+Ok, now we're ready:
 
 * Select event type - "Post-Build".
 * Change "Processing mode" to 'Script Mode'
 * Add action & Activate [SBE-Scripts](../../Scripts/SBE-Scripts/) support
 
-Write next script, for example:
+The final script can be like this:
 
-* Definitions:
+* Definitions (to prepare data for the convenience):
 
 ```minid 
 
-#[var appzip    = $(SolutionDir)bin/7z/7za.exe]
 #[var odir      = $(SolutionDir)bin/Releases/]
 #[var cfg       = #[($(Configuration) ~= "Release"){Release}else{Debug}]]
 #[var cfgFull   = $(Configuration)]
- 
-#[var netStamp      = net$(TargetFrameworkVersion.Replace(".", "").Replace("v", ""))]
-#[var netVerString  = $(TargetFrameworkVersion)#[($(TargetFrameworkVersion) != v4.0){ (be careful - need a v4.0 to compatibility with VS2010)}]]
-```
+#[var vsixLib   = $(SolutionDir)VsixLib\bin\]
+#[var CIMLib    = $(SolutionDir)CIMLib\bin\]
 
+#[var netStamp      = net$(TargetFrameworkVersion.Replace(".", "").Replace("v", ""))]
+#[var netVerString  = $(TargetFrameworkVersion)#[($(TargetFrameworkVersion) != v4.0){ (be careful - for complete compatibility with VS2010 it should be v4.0)}]]
+#[var msbuildver    = v$(MSBuildToolsVersion)]
+
+#[IO delete.directory("$(odir)", true)]
+#[IO copy.directory("", "$(odir)", true)]
+```
 
 * Packing - 'Bridge'
 
 ```minid 
 
-#[File cmd("cd \"#[var pDirBridge]bin/#[var cfg]/\" & \"#[var appzip]\" a \"#[var odir]Bridge_v#[var numBridge]_[#[var branchSha1]][#[var netStamp]].zip\" *.*")]
+#[IO copy.file("$(odir)\Release_notes.txt", "$(pDirBridge)bin\$(cfg)\\", true)]
+#[7z pack.files({ 
+            "$(pDirBridge)bin\$(cfg)\Bridge.dll", 
+            "$(pDirBridge)bin\$(cfg)\Bridge.pdb",
+            "$(pDirBridge)bin\$(cfg)\Release_notes.txt" }, "$(odir)Bridge_v$(numBridge)_[$(branchSha1)][$(netStamp)].zip")]
 ```
-
-* Packing - 'CI.MSBuild'
-
-```minid 
-
-#[File cmd("cd \"#[var pDirCIM]bin/#[var cfg]/\" & \"#[var appzip]\" a \"#[var odir]CI.MSBuild_v#[var numCIM]_[#[var branchSha1]][#[var netStamp]].zip\" *.*")]
-```
-
 
 * Packing - 'Devenv'
 
 ```minid 
 
-#[File cmd("cd \"#[var pDirDevenv]bin/#[var cfg]/\" & xcopy *.dll Devenv /Y/R/I & xcopy *.pdb Devenv /Y/R/I")] 
-#[File cmd("cd \"#[var pDirDevenv]bin/#[var cfg]/\" & \"#[var appzip]\" a \"#[var odir]Devenv_v#[var numDevenv]_[#[var branchSha1]][#[var netStamp]].zip\" Devenv.AddIn Devenv/*.*")] 
+#[var _DP = $(SolutionDir)$(pDirDevenv)bin\#[var cfg]\]
+
+#[IO delete.directory("$(_DP)Devenv", true)]
+#[IO copy.directory("", "$(_DP)Devenv", true)]
+
+#[IO copy.file("$(_DP)Bridge.*", "$(_DP)Devenv\\", true)]
+#[IO copy.file("$(_DP)Provider.*", "$(_DP)Devenv\\", true)]
+#[IO copy.file("$(_DP)Devenv.*", "$(_DP)Devenv\\", true, {"Devenv.AddIn"})]
+
+#[( #[IO exists.file("$(_DP)Extensibility.dll")] ) {
+    #[IO copy.file("$(_DP)Extensibility.dll", "$(_DP)\Devenv\\", true)]
+}]
+
+#[IO copy.file("$(odir)\Release_notes.txt", "$(_DP)Devenv\\", true)]
+#[7z pack.files({"$(_DP)Devenv.AddIn", "$(_DP)Devenv\*.*"}, "$(odir)Devenv_v$(numDevenv)_[$(branchSha1)][$(netStamp)].zip")]
 ```
 
-
-* Packing - 'Provider'
+* Rename vsix
 
 ```minid 
 
-#[File cmd("cd \"#[var pDirProvider]bin/#[var cfg]/\" & \"#[var appzip]\" a \"#[var odir]Provider_v#[var numProvider]_[#[var branchSha1]][#[var netStamp]].zip\" *.*")]
+#[IO copy.file("$(pDir)bin\$(cfg)\vsSolutionBuildEvent.vsix", "$(odir)vsSolutionBuildEvent_v$(numSBE)_[$(branchSha1)][$(netStamp)].vsix", true)]
 ```
-
-
-* Packing - 'vsSolutionBuildEvent'
-
-```minid 
-
-#[File cmd("cd \"#[var pDir]bin/#[var cfg]/\" & copy vsSolutionBuildEvent.vsix \"#[var odir]vsSolutionBuildEvent_v#[var numSBE]_[#[var branchSha1]][#[var netStamp]].vsix\"")]
-```
-
 
 * NuGet Packing - 'vsSBE.CI.MSBuild'
 
-```minid 
+```minid
 
-
-#[var tplNuspecCIM = #[File get("vsSBE.CI.MSBuild.nuspec.tpl")]]
+#[var tplNuspec = #[File get("vsSBE.CI.MSBuild.nuspec.tpl")]]
 #[var nupCIMdir = $(odir)NuGet-CI.MSBuild-package]
- 
-#[File cmd("mkdir \"#[var nupCIMdir]\" 2>&1")]
-#[File cmd("del /F/Q \"#[var nupCIMdir]\" & del /F/Q \"#[var nupCIMdir]\bin\" 2>&1")]
- 
-#[var nuspecCIM = $(tplNuspecCIM.Replace(%CIMVersion%, "$(numCIM)").Replace(%PackageVersion%, "").Replace(%vsSBEVersion%, "$(numSBE)"))]
-#[File write("#[var nupCIMdir]\vsSBE.CI.MSBuild.nuspec"):#[var nuspecCIM]]
- 
+
+#[IO delete.directory("$(nupCIMdir)", true)]
+#[IO copy.directory("", "$(nupCIMdir)", true)]
+
+#[var nuspec = $(tplNuspec.Replace("%CIM%", "$(numCIM)").Replace("%Lib%", "$(libCoreInt)").Replace("%vsSBE%", "$(numSBE)"))]
+#[File write("$(nupCIMdir)\vsSBE.CI.MSBuild.nuspec"):#[var nuspec]]
+
 #[" files for package "]
- 
-#[File cmd("cd \"#[var pDir]bin/#[var cfg]/\" & xcopy *.dll \"#[var nupCIMdir]\bin\" /Y/R/I & xcopy NLog.dll.nlog \"#[var nupCIMdir]\bin\" /Y/R/I")]
-#[File cmd("cd \"#[var pDirCIM]bin/#[var cfg]/\" & xcopy *.dll \"#[var nupCIMdir]\bin\" /Y/R/I")]
-#[File scall(".nuget\nuget.exe", "pack \"#[var nupCIMdir]\vsSBE.CI.MSBuild.nuspec\" -OutputDirectory \"#[var nupCIMdir]\..\" -NonInteractive")] 
+
+#[IO copy.file("$(CIMLib)\*.dll", "$(nupCIMdir)\bin\\", true)]#[" CIMLib custom "]
+
+#[" vsix dir "]
+#[IO copy.file("$(pDir)bin/$(cfg)\*.dll", "$(nupCIMdir)\bin\\", true)]
+#[IO copy.file("$(pDirCIM)bin/$(cfg)\*.dll", "$(nupCIMdir)\bin\\", true)]
+#[IO copy.file("$(odir)\Release_notes.txt", "$(nupCIMdir)\bin\\", true)]
+#[IO copy.file("3rd-party", "$(nupCIMdir)\bin\\", true)]
+#[IO copy.file("changelog.txt", "$(nupCIMdir)\bin\\", true)]
+#[IO copy.file("LICENSE", "$(nupCIMdir)\bin\\", true)]
+
+#[NuGet gnt.raw("gnt.core /t:pack /p:ngin=\"$(nupCIMdir)\" /p:ngout=\"$(odir)\"")]
+#[IO delete.directory("$(nupCIMdir)", true)]
 ```
 
-Where - '[vsSBE.CI.MSBuild.nuspec.tpl](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSBE.CI.MSBuild.nuspec.tpl)' is a template e.g.:
+Where - '[vsSBE.CI.MSBuild.nuspec.tpl](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSBE.CI.MSBuild.nuspec.tpl)' is a template e.g.:
 
 ```xml 
 
@@ -199,10 +210,11 @@ Where - '[vsSBE.CI.MSBuild.nuspec.tpl](https://bitbucket.org/3F/vssolutionbuilde
 
 ```bat 
 
-#[File write("#[var odir]/Release_notes.txt"):This assembled from:
+#[File write("$(odir)\Release_notes.txt"):This assembled from:
 
 * Configuration:   '#[var cfgFull]' (Folders: #[var cfg])
 * .NET version:     #[var netVerString];
+* MSBuild Tools:    #[var msbuildver];
 * Build number:     #[var revBuild];
 * Branch Sha1:      #[var branchSha1];
 * Branch Name:      #[var branchName];
@@ -217,60 +229,39 @@ Versions:
 * The 'Provider':               v#[var numProvider];
 * The 'vsSolutionBuildEvent':   v#[var numSBE];
 
+Packages:
+
+* NuGet 'vsSBE.CI.MSBuild': v#[var numCIM].#[var libCoreInt];
+
+Demo:
+
+* ClientDemo - [#[var branchSha1]][#[var netStamp]](#[var revBuild])
+
 ------------------------------------------
-\t\t\t\t\t Generated by vsSolutionBuildEvent
+         Generated by vsSolutionBuildEvent
+------------------------------------------
 ]
 ```
-
-#### Explanation for script above
-
-In 'Definitions' section simply defined some variables for a quick accessing to some data. Link to archiver for example:
-
-```minid 
-
-#[var appzip = $(SolutionDir)bin/7z/7za.exe]
-```
-For more details you should see:
-
-* [UserVariableComponent](../../Scripts/SBE-Scripts/Components/UserVariableComponent/)
-* [MSBuild](../../Scripts/MSBuild/)
-
-In 'Packing ...' sections we use [FileComponent](../../Scripts/SBE-Scripts/Components/FileComponent/) for copy & archive our binaries from projects with defined paths and file formats.
-
-For more details you should see:
-
-* Documentation for 7za: Distributive packet contains the '7-zip.chm' - User's Manual in HTML Help format. Otherwise see [7-zip.org](http://www.7-zip.org)
-* System utilities - [xcopy & copy](http://support.microsoft.com/en-us/kb/240268) - Use `copy /?`, `xcopy /?` commands for documentation.
-
-For 'NuGet Packing ...' used all above including:
-
-* [MSBuild Property Functions](https://msdn.microsoft.com/en-us/library/vstudio/dd633440%28v=vs.120%29.aspx)
-* [nuget.exe](https://www.nuget.org/nuget.exe) utility ([documentation](http://docs.nuget.org/Consume/Command-Line-Reference))
-
-And finally generated the 'Release_notes.txt' with [FileComponent](../../Scripts/SBE-Scripts/Components/FileComponent/)
 
 As result:
 
 * All packages should appears in **bin\Release** folder.
-    * You should ignore this folder in your scm ([.gitignore](http://git-scm.com/docs/gitignore), .hgignore, .bzrignore, svn:ignore, etc.,)
+    * You also should ignore this folder in your scm ([.gitignore](http://git-scm.com/docs/gitignore), .hgignore, .bzrignore, svn:ignore, etc.,)
 
 Working example you can see in:
 
-* [Source code](https://bitbucket.org/3F/vssolutionbuildevent/src)
-    * [Script file](https://bitbucket.org/3F/vssolutionbuildevent/src/master/.vssbe) ([Gist](https://gist.github.com/3F/3f2f56dfc2a01dc99c63))
-* [ci.appveyor.com](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/build/build-120)
+* [Source code](https://github.com/3F/vsSolutionBuildEvent)
+    * [Script file](https://github.com/3F/vsSolutionBuildEvent/blob/master/.vssbe) ([Gist](https://gist.github.com/3F/3f2f56dfc2a01dc99c63))
+* [ci.appveyor.com](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/build/build-136)
 
 # Remote servers
 
 * [Examples with FTP and other](../../Features/Remote/)
 
-
 # References
 
-* [Operations with strings](../../Features/Strings/)
-* [Automatic Version Numbering](../Version number/)
 * [Processing modes](../../Modes/)
 * [SBE-Scripts](../../Scripts/SBE-Scripts/)
 * [MSBuild](../../Scripts/MSBuild/)
-* [Visual Studio Gallery page](http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/)
+* [Automatic Version Numbering](../Version/)
 * [Examples & Features](../../Examples/)

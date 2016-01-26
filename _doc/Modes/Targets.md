@@ -5,7 +5,7 @@ permalink: /doc/Modes/Targets/
 ---
 # Targets Mode
 
-This action type for work with MSBuild [Targets](https://msdn.microsoft.com/en-us/library/vstudio/ms171462.aspx) / [Tasks](https://msdn.microsoft.com/en-us/library/vstudio/ms171466.aspx) and [others](https://msdn.microsoft.com/en-us/library/vstudio/dd393574.aspx) 'as is' (classic compatible mode).
+This action type for work with MSBuild [Targets](https://msdn.microsoft.com/en-us/library/vstudio/ms171462.aspx) / [Tasks](https://msdn.microsoft.com/en-us/library/vstudio/ms171466.aspx) [etc.](https://msdn.microsoft.com/en-us/library/vstudio/dd393574.aspx) 'as is' (classic compatible mode).
 
 # Blank Project
 

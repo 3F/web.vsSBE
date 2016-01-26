@@ -199,6 +199,9 @@ cmd.SBEScript.parse("#[OWP item(\"My Log\").writeLine(true): Hi :) ]");
 
 ### FTP. Upload Artefacts and similar
 
+{% assign infoData = "[v0.12.6+](/Changelist/) is already contains features for work with remote servers. Use [FileComponent](../../Scripts/SBE-Scripts/Components/FileComponent/#remote)" %}
+{% include elem/info %}
+
 * Activate C# Mode
 * Add **'System.dll'** reference in `Compiler` - `References`
 * Customize cache and check other available flags of optimization. (optional)

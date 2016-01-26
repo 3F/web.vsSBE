@@ -10,7 +10,17 @@ List of available demo projects as example of basic work, features and similar.
 
 ## CI.MSBuild.Demo
 
-### Sample 1
+For work with MSBuild Tool or for work **without** Visual Studio you have a [few ways](../../Features/Solution-wide/#how-about-msbuild-tool-or-how-to-work-without-visual-studio). And if your choice the [CI.MSBuild](../../CI/CI.MSBuild/) you also should select how it will be automatically distributed on another machines (where some of this utilities may not exist at all).
+
+The most easy variant for use it is the non-binary [GetNuTool](https://github.com/3F/GetNuTool) ~8kb. However, you can also use standard NuGet clients and any other tools.
+
+In samples below we'll consider both variant.
+
+### Sample 2 (via GetNuTool)
+
+{% include elem/fillme %}
+
+### Sample 1 (via NuGet)
 
 * [With native C++ projects](https://github.com/3F/CI.MSBuild.Demo/tree/master/native%20C%2B%2B/Sample1).
     * [![](https://img.shields.io/badge/native_C%2B%2B-passing-brightgreen.svg?style=flat)](https://ci.appveyor.com/project/3Fs/ci-msbuild-demo/build/build-4)

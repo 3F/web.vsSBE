@@ -5,7 +5,10 @@ permalink: /doc/Features/Remote/
 ---
 # Remote servers
 
-For work with remote servers you can use any available variants with [our different modes](../../Modes/)
+For work with remote servers you can use any available variants from [available modes](../../Modes/)
+
+{% assign infoData = "[v0.12.6+](/Changelist/) is already contains features for work with remote servers. Use [FileComponent](../../Scripts/SBE-Scripts/Components/FileComponent/#remote)" %}
+{% include elem/info %}
 
 # FTP
 

@@ -51,6 +51,8 @@ if(pm.FinalEmptyIs(LevelType.Method, "SHA1")) {
 
 That's all. Now you can calculate hash value from user scripts with allowed syntax above.
 
+It can be a more flexible, just use other available way: [SNode.IPM](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/SNode/IPM.cs)
+
 ### Properties
 
 {% include elem/fillme %}
@@ -228,194 +230,21 @@ Assert.AreEqual(args[3].type, ArgumentType.Object);
     Assert.AreEqual(args3[1].type, ArgumentType.StringSingle);
     Assert.AreEqual(args3[1].data, "p2");
 }
-``` 
-
-## How to
-
-Let's consider a real example (this, for example, used in [BuildComponent](../../../Scripts/SBE-Scripts/Components/BuildComponent/#solution))
-
-If you want to work with next syntax, for example:
-
-```java
-
-#[Build solution]
-#[Build solution.current]
-#[Build solution.path("D:\app.sln")]
-
-#[Build solution.current.First]
-#[Build solution.current.FirstRaw]
-#[Build solution.current.projectBy("{47FEEF62-6D0B-4ACE-B888-0F4FDF5089E6}")]
-#[Build solution.current.Last]
-#[Build solution.current.LastRaw]
-
-#[Build solution.path("D:\app.sln").First]
-#[Build solution.path("D:\app.sln").FirstRaw]
-#[Build solution.path("D:\app.sln").projectBy("{47FEEF62-6D0B-4ACE-B888-0F4FDF5089E6}")]
-#[Build solution.path("D:\app.sln").Last]
-#[Build solution.path("D:\app.sln").LastRaw]
-
-#[Build solution.current.GuidList]
-
-#[Build solution.current.First.guid]
-#[Build solution.current.First.name]
-#[Build solution.current.First.path]
-#[Build solution.current.First.type]
-
-#[Build solution.current.FirstRaw.guid]
-#[Build solution.current.FirstRaw.name]
-#[Build solution.current.FirstRaw.path]
-#[Build solution.current.FirstRaw.type]
-
-#[Build solution.current.projectBy("{47FEEF62-6D0B-4ACE-B888-0F4FDF5089E6}").guid]
-#[Build solution.current.projectBy("{47FEEF62-6D0B-4ACE-B888-0F4FDF5089E6}").name]
-#[Build solution.current.projectBy("{47FEEF62-6D0B-4ACE-B888-0F4FDF5089E6}").path]
-#[Build solution.current.projectBy("{47FEEF62-6D0B-4ACE-B888-0F4FDF5089E6}").type]
-
-#[Build solution.current.Last.guid]
-#[Build solution.current.Last.name]
-#[Build solution.current.Last.path]
-#[Build solution.current.Last.type]
-
-#[Build solution.current.LastRaw.guid]
-#[Build solution.current.LastRaw.name]
-#[Build solution.current.LastRaw.path]
-#[Build solution.current.LastRaw.type]
-
-#[Build solution.path("D:\app.sln").GuidList]
-
-#[Build solution.path("D:\app.sln").First.guid]
-#[Build solution.path("D:\app.sln").First.name]
-#[Build solution.path("D:\app.sln").First.path]
-#[Build solution.path("D:\app.sln").First.type]
-
-#[Build solution.path("D:\app.sln").FirstRaw.guid]
-#[Build solution.path("D:\app.sln").FirstRaw.name]
-#[Build solution.path("D:\app.sln").FirstRaw.path]
-#[Build solution.path("D:\app.sln").FirstRaw.type]
-
-#[Build solution.path("D:\app.sln").projectBy("{47FEEF62-6D0B-4ACE-B888-0F4FDF5089E6}").guid]
-#[Build solution.path("D:\app.sln").projectBy("{47FEEF62-6D0B-4ACE-B888-0F4FDF5089E6}").name]
-#[Build solution.path("D:\app.sln").projectBy("{47FEEF62-6D0B-4ACE-B888-0F4FDF5089E6}").path]
-#[Build solution.path("D:\app.sln").projectBy("{47FEEF62-6D0B-4ACE-B888-0F4FDF5089E6}").type]
-
-#[Build solution.path("D:\app.sln").Last.guid]
-#[Build solution.path("D:\app.sln").Last.name]
-#[Build solution.path("D:\app.sln").Last.path]
-#[Build solution.path("D:\app.sln").Last.type]
-
-#[Build solution.path("D:\app.sln").LastRaw.guid]
-#[Build solution.path("D:\app.sln").LastRaw.name]
-#[Build solution.path("D:\app.sln").LastRaw.path]
-#[Build solution.path("D:\app.sln").LastRaw.type]
-
-+ additional managing of right operand for all above on any level, for example:
-
-#[Build solution.current.LastRaw.name = "test"]
-#[Build solution.current.LastRaw.name: "stream input"]
-etc.
-
-+ control of existing (that should be and that is not) for all levels
-
-and similar..
-
 ```
-
-With IPM you can simply, like this (**all logic**):
-
-
-```csharp
-
-protected string stSolution(string data)
-{
-    IPM pm = new PM(data);
-    
-    if(!pm.It(LevelType.Property, "solution")) {
-        throw new IncorrectNodeException(pm);
-    }
-
-    if(pm.It(LevelType.Property, "current")) {
-        return stSlnPMap(env.SolutionFile, pm);
-    }
-
-    if(pm.Is(LevelType.Method, "path"))
-    {
-        ILevel lvlPath = pm.Levels[0];
-        lvlPath.Is("solution.path(string sln)", ArgumentType.StringDouble);
-        return stSlnPMap((string)lvlPath.Args[0].data, pm.pinTo(1));
-    }
-    
-    throw new OperationNotFoundException();
-}
-
-protected string stSlnPMap(string sln, IPM pm)
-{
-    ProjectsMap map = getProjectsMap(sln);
-
-    if(pm.It(LevelType.Property, "First")) {
-        return projectsMap(map.FirstBy(env.BuildType), pm);
-    }
-
-    if(pm.It(LevelType.Property, "Last")) {
-        return projectsMap(map.LastBy(env.BuildType), pm);
-    }
-
-    if(pm.It(LevelType.Property, "FirstRaw")) {
-        return projectsMap(map.First, pm);
-    }
-
-    if(pm.It(LevelType.Property, "LastRaw")) {
-        return projectsMap(map.Last, pm);
-    }
-
-    if(pm.FinalEmptyIs(LevelType.Property, "GuidList")) {
-        return Value.from(map.GuidList);
-    }
-
-    if(pm.It(LevelType.Method, "projectBy"))
-    {
-        ILevel lvlPrjBy = pm.Levels[0];
-        lvlPrjBy.Is("projectBy(string guid)", ArgumentType.StringDouble);
-        return projectsMap(map.getProjectBy((string)lvlPrjBy.Args[0].data), pm);
-    }
-
-    throw new OperationNotFoundException();
-}
-
-protected string projectsMap(ProjectsMap.Project project, IPM pm)
-{
-    if(pm.FinalEmptyIs(LevelType.Property, "name")) {
-        return project.name;
-    }
-
-    if(pm.FinalEmptyIs(LevelType.Property, "path")) {
-        return project.path;
-    }
-
-    if(pm.FinalEmptyIs(LevelType.Property, "type")) {
-        return project.type;
-    }
-
-    if(pm.FinalEmptyIs(LevelType.Property, "guid")) {
-        return project.guid;
-    }
-
-    throw new OperationNotFoundException();
-}
-```
-
-That's really all.. do you want to look in action ? 
-
-This is already implemented in [BuildComponent](../../../Scripts/SBE-Scripts/Components/BuildComponent/#solution):
-
-* `Settings` - `Tools` - `SBE-Scripts Testing tool` then start with #[Build ..
 
 ## Logic of IPM
 
-* Available tests: [/vsSolutionBuildEventTest/SBEScripts/SNode/](https://github.com/3F/vsSolutionBuildEvent/tree/master/vsSolutionBuildEventTest/SBEScripts/SNode) ([PMTest.cs](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEventTest/SBEScripts/SNode/PMTest.cs))
 * [SNode](https://github.com/3F/vsSolutionBuildEvent/tree/master/vsSolutionBuildEvent/SBEScripts/SNode)
-    * [PM implementation](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/SNode/PM.cs)
+    * [IPM interface](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/SNode/IPM.cs)
+* Available tests: 
+    * [PMTest.cs](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEventTest/SBEScripts/SNode/PMTest.cs)
+    * [LevelTest.cs](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEventTest/SBEScripts/SNode/LevelTest.cs)
 
 # References
 
 * [New Component for SBE-Scripts core](../../New Component/)
 * [SBEScripts/](https://github.com/3F/vsSolutionBuildEvent/tree/master/vsSolutionBuildEvent/SBEScripts)
+* [Existing components](https://github.com/3F/vsSolutionBuildEvent/tree/master/vsSolutionBuildEvent/SBEScripts/Components) - **Please note**, some older components still may use old syntax before using new IPM
+    * Recents with IPM using:
+        * [FunctionComponent](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/Components/FunctionComponent.cs)
+        * [SevenZipComponent](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/Components/SevenZipComponent.cs)

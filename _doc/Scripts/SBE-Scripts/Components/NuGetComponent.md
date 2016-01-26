@@ -12,7 +12,7 @@ Support of [NuGet](https://www.nuget.org/) packages.
 
 [ v0.12.6+ ]
 
-For work with packages via [GetNuTool](https://github.com/3F/GetNuTool) logic.
+For work with packages via [GetNuTool](https://github.com/3F/GetNuTool) logic (you do not need the gtn.core, it is already part of this component).
 
 ### raw
 
