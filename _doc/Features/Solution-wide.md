@@ -34,7 +34,7 @@ All your action may be handled without Visual Studio, for example, with msbuild.
 Moreover, you have different ways:
 
 * [CI Gateways](../../CI/)
-    * [CI.MSBuild](../CI/CI.MSBuild/) - *it easy way for work with all existing features. Powerful processing.*
+    * [CI.MSBuild](../../CI/CI.MSBuild/) - *it easy way for work with all existing features. Powerful processing.*
 * Call the `after.<name>.sln.targets` - *it does not require additional steps, simply action.*
 
 ### `after.<name>.sln.targets`

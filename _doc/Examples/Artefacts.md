@@ -7,8 +7,6 @@ permalink: /doc/Examples/Artefacts/
 
 ![Packing & Uploading - Artefacts](../../Resources/examples/artefacts_appveyor.gif)
 
-*Artefacts / Binaries from build project, etc.*
-
 ## About different Environments
 
 Firstly, it doesn't matter where the planned use this script. It can be unified for all environments.
@@ -32,13 +30,12 @@ Sample:
 
 File                                                                    | Description
 ------------------------------------------------------------------------|--------------
-bin\Releases\Bridge_v1.3_[df66438][net40].zip                           | Packed binaries from 'Bridge' project as part of main project.
-bin\Releases\CI.MSBuild_v1.5_[df66438][net40].zip                       | Packed binaries from 'CI.MSBuild' project as part of main project.
-bin\Releases\Devenv_v1.3_[df66438][net40].zip                           | Packed binaries from 'Devenv' project as part of main project.
-bin\Releases\Provider_v3.0_[df66438][net40].zip                         | Packed binaries from 'Provider' project as part of main project.
+bin\Releases\CI.MSBuild_v1.5_[df66438][net40].zip                       | Packed binaries from 'CI.MSBuild' project.
+bin\Releases\Devenv_v1.3_[df66438][net40].zip                           | Packed binaries from 'Devenv' project.
+bin\Releases\Provider_v3.0_[df66438][net40].zip                         | Packed binaries from 'Provider' project.
 bin\Releases\Release_notes.txt                                          | Auto-generated notes from current assemblies.
 bin\Releases\vsSBE.CI.MSBuild.1.5.1206.nupkg                            | NuGet package from 'CI.MSBuild' project.
-bin\Releases\vsSolutionBuildEvent_v0.12.6.5585_[df66438]_[net40].vsix    | VSPackage of main project.
+bin\Releases\vsSolutionBuildEvent_v0.12.6.5585_[df66438][net40].vsix    | VSPackage of main project.
 
 
 Release_notes.txt:
@@ -181,7 +178,7 @@ The final script can be like this:
 #[IO delete.directory("$(nupCIMdir)", true)]
 ```
 
-Where - '[vsSBE.CI.MSBuild.nuspec.tpl](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSBE.CI.MSBuild.nuspec.tpl)' is a template e.g.:
+Where - '[vsSBE.CI.MSBuild.nuspec.tpl](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSBE.CI.MSBuild.nuspec.tpl)' the is a template e.g.:
 
 ```xml 
 

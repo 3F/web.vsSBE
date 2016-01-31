@@ -5,7 +5,7 @@ permalink: /doc/Events/CommandEvent/
 ---
 # CommandEvent (DTE)
 
-This can be used for catching all Command Events from your VS IDE.
+This can be used for catching of the command events from your VS IDE.
 
 {% assign infoData = "For advanced work with all commands beyond of the solution level, use the [vsCommandEvent](http://vsce.r-eg.net/doc/Modes/EnvCommand/)" %}
 {% include elem/info %}
