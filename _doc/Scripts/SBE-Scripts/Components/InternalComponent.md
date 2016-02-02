@@ -75,11 +75,11 @@ Syntax:
 #[vsSBE events.Pre.item("Act1").Enabled = false]
 ```
 
-### Status ###
+### Status
 
 Available statuses for selected event.
 
-#### HasErrors ####
+#### HasErrors
 
 Checking of existence of errors after executed action for selected event.
 
@@ -98,4 +98,49 @@ Sample:
 {
     #[Build projects.find("zlib").IsBuildable = false]
 }]
+```
+
+### stdout
+
+v0.12.7+
+
+Get data from stdout for action which is executed asynchronously.
+
+Syntax:
+
+```java
+string events.Pre.item(integer index | string name).stdout
+```
+
+Samples:
+
+```minid
+#[var sres = #[Core events.Pre.item(1).stdout]]
+#[( $(sres.Length) > 0 ){
+    #[OWP item("stdout").writeLine(true): #[var sres]]
+}]
+```
+```minid
+#[var sres = <#data>#[Core events.Cancel.item("ActData").stdout]</#data>]
+#[( $(sres.Length) > 0 ){
+    #[OWP item("stdout").writeLine(true): #[var sres]]
+}]
+```
+
+### stderr
+
+v0.12.7+
+
+Get data from stderr for action which is executed asynchronously.
+
+Syntax:
+
+```java
+string events.Pre.item(integer index | string name).stderr
+```
+
+Samples:
+
+```minid
+#[var res = $(res)#[Core events.Post.item(1).stderr]]
 ```
