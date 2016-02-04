@@ -42,8 +42,9 @@ highlighter: pygments
 
 ## VSPackage
 
-lnkCur_VSPackage:   [ "v0.12.6", "vsSolutionBuildEvent_v0.12.6.5177_[6ad0511][net40].vsix", "https://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/referral/118151" ]
+lnkCur_VSPackage:   [ "v0.12.7", "vsSolutionBuildEvent_v0.12.7.3805_[48df3db][net40].vsix", "https://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/referral/118151" ]
 lnkList_VSPackage:  [
+                        [ "v0.12.7", "vsSolutionBuildEvent_v0.12.7.3805_[48df3db][net40].vsix", "http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.12.7.3805_%5B48df3db%5D%5Bnet40%5D.vsix/download" ],
                         [ "v0.12.6", "vsSolutionBuildEvent_v0.12.6.5177_[6ad0511][net40].vsix", "http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.12.6.5177_%5B6ad0511%5D%5Bnet40%5D.vsix/download" ],
                         [ "v0.12.5", "vsSolutionBuildEvent_v0.12.5.2477_[d018ea4][net40].vsix", "http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.12.5.2477_%5Bd018ea4%5D%5Bnet40%5D.vsix/download" ]
                     ]
@@ -56,8 +57,9 @@ lnkAll_VSPackage:   [ "/v0.x/", "http://sourceforge.net/projects/vssbe/files/v0.
 
 ## CI.MSBuild
 
-lnkCur_CIMSBuild:   [ "v1.5", "CI.MSBuild_v1.5_[8bde22a][net40].zip", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/CI.MSBuild_v1.5_%5B8bde22a%5D%5Bnet40%5D.zip/download" ]
+lnkCur_CIMSBuild:   [ "v1.6", "CI.MSBuild_v1.6_[48df3db][net40].zip", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/CI.MSBuild_v1.6_%5B48df3db%5D%5Bnet40%5D.zip/download" ]
 lnkList_CIMSBuild:  [ 
+                        [ "v1.6", "CI.MSBuild_v1.6_[48df3db][net40].zip", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/CI.MSBuild_v1.6_%5B48df3db%5D%5Bnet40%5D.zip/download" ],
                         [ "v1.5", "CI.MSBuild_v1.5_[8bde22a][net40].zip", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/CI.MSBuild_v1.5_%5B8bde22a%5D%5Bnet40%5D.zip/download" ]
                     ]                
 lnkOld_CIMSBuild:   [ 
@@ -107,13 +109,14 @@ lnkAll_Provider:    [ "/API/Provider/", "http://sourceforge.net/projects/vssbe/f
 
 ## NuGet Package for CI
 
-lnkCur_CIMNuGet:    [ "v1.5.1206", "vsSBE.CI.MSBuild.1.5.1.nupkg", "https://www.nuget.org/api/v2/package/vsSBE.CI.MSBuild/" ]
+lnkCur_CIMNuGet:    [ "v1.6.1207", "vsSBE.CI.MSBuild.1.6.1207.nupkg", "https://www.nuget.org/api/v2/package/vsSBE.CI.MSBuild/1.6.1207" ]
 lnkList_CIMNuGet:   [
+                        [ "v1.6.1207", "vsSBE.CI.MSBuild.1.6.1207.nupkg", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/NuGet_packages/vsSBE.CI.MSBuild.1.6.1207.nupkg/download" ],
                         [ "v1.5.1206", "vsSBE.CI.MSBuild.1.5.1206.nupkg", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/NuGet_packages/vsSBE.CI.MSBuild.1.5.1206.nupkg/download" ],
-                        [ "v1.5.1", "vsSBE.CI.MSBuild.1.5.1.nupkg", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/NuGet_packages/vsSBE.CI.MSBuild.1.5.1.nupkg/download" ],
-                        [ "v1.5.0", "vsSBE.CI.MSBuild.1.5.0.nupkg", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/NuGet_packages/vsSBE.CI.MSBuild.1.5.0.nupkg/download" ]
+                        [ "v1.5.1", "vsSBE.CI.MSBuild.1.5.1.nupkg", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/NuGet_packages/vsSBE.CI.MSBuild.1.5.1.nupkg/download" ]
                     ]
 lnkOld_CIMNuGet:    [
+                        [ "v1.5.0", "vsSBE.CI.MSBuild.1.5.0.nupkg", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/NuGet_packages/vsSBE.CI.MSBuild.1.5.0.nupkg/download" ],
                         [ "v1.4.0", "vsSBE.CI.MSBuild.1.4.0.nupkg", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/NuGet_packages/vsSBE.CI.MSBuild.1.4.0.nupkg/download" ],
                         [ "v1.3.0", "vsSBE.CI.MSBuild.1.3.0.nupkg", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/NuGet_packages/vsSBE.CI.MSBuild.1.3.0.nupkg/download" ]
                     ]
