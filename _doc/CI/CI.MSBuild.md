@@ -88,6 +88,15 @@ Note for the culture keys: You can also change active console code page with [`c
 If you want disable all msbuild-messages (i.e. allow messages only from vsSolutionBuildEvent), use `/noconsolelogger` [key to msbuild.exe](https://msdn.microsoft.com/en-us/library/vstudio/ms164311.aspx).
 The levels of messages from library are managed by [.vssbe.user](../../Features/.vssbe/#vssbe-user) file.
 
+### Additional MSBuild Properties
+
+List of properties that available as the MSBuild Properties (e.g. `$(name)`)
+
+name                 | description                                   | sample of value  | availability
+---------------------|-----------------------------------------------|------------------|-----
+vsSolutionBuildEvent |The version of the vsSolutionBuildEvent engine.| 0.12.6.19789     | v1.6+
+vssbeCIM             |The version of the CI.MSBuild                  | 1.5.0.19789      | v1.6+
+
 ### Keys to msbuild.exe
 
 Use `msbuild.exe /?` to look all available keys or see [MSDN documentation](https://msdn.microsoft.com/en-us/library/vstudio/ms164311.aspx)

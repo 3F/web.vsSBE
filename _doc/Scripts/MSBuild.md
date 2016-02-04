@@ -58,36 +58,35 @@ $([System.DateTime]::UtcNow.Ticks) | `635645190692933259`
 $([System.DateTime]::Parse("2015/04/01").ToBinary()) | `635634432000000000`
 $([MSBuild]::GetRegistryValue('HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\12.0\Debugger', 'SymbolCacheDir')) | C:\Symbols
 
+* [Math operations]({{site.docp}}/Features/Math/)
 
-* if you see problem with any slashes for path:
+```minid
+$(numYmod = $([MSBuild]::Modulo($(numY), 12)))
+$([MSBuild]::BitwiseAnd($(mask), $(v))) != 0
+```
 
-```minid 
+* [Date & Time]({{site.docp}}/Features/Date & Time/)
 
+```minid
+$([System.TimeSpan]::FromTicks($([MSBuild]::Subtract($(tNow), $(tStart)))).TotalMinutes.ToString("0"))
+```
+
+* [Operations with strings]({{site.docp}}/Features/Strings/)
+
+```minid
 $(SolutionPath.Replace('\', '/'))  -> D:\App\ConsoleApp1.sln to D:/App/ConsoleApp1.sln
 $(SolutionPath.Replace('\', '\\')) -> to D:\\App\\ConsoleApp1.sln
 ```
 
-* delta for time:
+etc.
 
-```Bash 
-
-$([System.TimeSpan]::FromTicks($([MSBuild]::Subtract($(tNow), $(tStart)))).TotalMinutes.ToString("0"))
-```
-
-* manually build with msbuild.exe and call binary with args:
-
-```minid 
-
-$(MSBuildBinPath)\MSBuild.exe "$(ProjectPath.Replace('\', '/'):Version)" /t:Build /p:Configuration=Release 
- 
- & 
- 
+```minid
+$(MSBuildBinPath)\MSBuild.exe "$(ProjectPath.Replace('\', '/'):Version)" /t:Build /p:Configuration=Release  
+ &
 "$(TargetPath:Version)"  
-  "$(SolutionDir)" 
-  "$(ProjectDir:mainApp)Version.cs"  
+  "$(SolutionDir)"  
   "$(ProjectDir:mainApp)source.extension.vsixmanifest"
 ```
-
 
 ## User-variables for MSBuild core
 
@@ -225,6 +224,13 @@ $([MSBuild]::GetRegistryValue('keyName', 'valueName'))
 $([MSBuild]::GetRegistryValueFromView('keyName', 'valueName', null, RegistryView.Registry64, RegistryView.Registry32))
 ```
 
+## Additional MSBuild Properties
+
+List of properties that available as the MSBuild Properties.
+
+name                 | description                                   | sample of value  | availability
+---------------------|-----------------------------------------------|------------------|-------------
+vsSolutionBuildEvent |The version of the vsSolutionBuildEvent engine.| 0.12.6.19789     | v0.12.6+
 
 # References
 
