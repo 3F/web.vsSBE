@@ -12,16 +12,14 @@ You can use an additional option "Actions for specific configurations" (see belo
 * Turn on support: [SBE-Scripts](../../Scripts/SBE-Scripts/) & [MSBuild](../../Scripts/MSBuild/) in control window. 
 * And use for example: 
 
-```java 
-
+```{{site.sbelang1}}
 #[( $(Configuration) == "Debug" ){ 
     ... 
 }]
 ```
 also you can check only part of the name, e.g.:
 
-```java 
-
+```{{site.sbelang1}}
 #[($(Configuration) ~= "_with_revision") 
 { 
     All configuration with names:  
@@ -47,15 +45,13 @@ As result: this should work only for selected configurations.
 
 You can use simple call, for example:
 
-```java 
-
+```{{site.sbelang1}}
 vssbe_h.bat PRE $(Configuration)
 ```
 
 vssbe_h.bat:
 
-```bash 
-
+```{{site.msblang}}
 @echo off 
 REM arguments: 
  

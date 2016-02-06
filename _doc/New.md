@@ -15,7 +15,7 @@ permalink: /doc/New/
 1. Create or select any subpath from `_doc/` directory and name your file as you want with **.md** extension.
 1. Add next header:
 
-```text 
+```text
 ---
 layout: doc
 title: <Your title>
@@ -39,17 +39,15 @@ Use this ([GitHub Flavored Markdown](https://help.github.com/articles/github-fla
 
 <pre>
 ```lang
-
   your data
 ```
 </pre>
 
-* Where `lang` any from available **[here](http://pygments.org/languages/)**
+* Where `lang` any from available **[here](https://github.com/jneen/rouge/wiki/List-of-supported-languages-and-lexers)** ([rouge](http://rouge.jneen.net/))
 
 ### List
 
 ```text
-
 * Item 1
     * Item 2
     * Item 3

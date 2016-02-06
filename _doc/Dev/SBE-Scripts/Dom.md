@@ -14,8 +14,7 @@ It's easy with next attributes:
 
 To describe the properties of the component. For example:
 
-```csharp 
-
+```csharp
 [Property("propertyName", "Description of the property", CValueType.Boolean, CValueType.Boolean)]
 protected string yourLogic()
 {
@@ -23,8 +22,7 @@ protected string yourLogic()
 }
 ```
 
-```csharp 
-
+```csharp
 [Property(
     "IsBuildable", 
     "Gets or Sets whether the project or project item configuration can be built.", 
@@ -38,11 +36,11 @@ protected string yourLogic()
 
 Syntax:
 
-```csharp 
+```csharp
 [Property(string name, string description, CValueType get, CValueType set)]
 ```
 
-```csharp 
+```csharp
 [Property(string name, string parent, string method, CValueType get, CValueType set)]
 ```
 
@@ -59,8 +57,7 @@ Note:
 To describe the methods/functions of the component. For example:
 
 
-```csharp 
-
+```csharp
 [
     Method
     (
@@ -80,13 +77,11 @@ protected string stCall(string data, bool stdOut, bool silent)
 
 Syntax:
 
-```csharp 
-
+```csharp
 [Method(string name, string description, CValueType ret, params CValueType[] args)]
 ```
 
-```csharp 
-
+```csharp
 [Method(string name, string parent, string method, CValueType ret, params CValueType[] args)]
 ```
 
@@ -101,8 +96,7 @@ Note:
 
 To describe the new component. For example:
 
-```csharp 
-
+```csharp
 [Component("File", "I/O operations")]
 public class FileComponent: Component, IComponent
 {
@@ -111,8 +105,7 @@ public class FileComponent: Component, IComponent
 ```
 Syntax:
 
-```csharp 
-
+```csharp
 [Component(string name, string description)]
 ```
 
@@ -120,8 +113,7 @@ All available constructors see with the [Dom.ComponentAttribute](https://bitbuck
 
 ### Aliases
 
-```csharp 
-
+```csharp
 [Component("Primary", new string[]{ "Alias1", "Alias2", "Alias3" }, "description")]
 ```
 
@@ -129,8 +121,7 @@ All available constructors see with the [Dom.ComponentAttribute](https://bitbuck
 
 To describe the any definition of the component. For example:
 
-```csharp 
-
+```csharp
 [Definition("(true) { }", "Conditionals statements\n\n(1 > 2) {\n ... \n}")]
 public class ConditionComponent: Component, IComponent
 {
@@ -138,15 +129,14 @@ public class ConditionComponent: Component, IComponent
 }
 ```
 
-```csharp 
+```csharp
 [Definition("var name", "Get data from variable the 'name'")]
 [Definition("var name = data", "Set the 'data' for variable the 'name'")]
 ```
 
 Syntax:
 
-```csharp 
-
+```csharp
 [Definition(string name, string description)]
 ```
 

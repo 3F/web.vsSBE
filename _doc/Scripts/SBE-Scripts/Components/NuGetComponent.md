@@ -18,7 +18,7 @@ For work with packages via [GetNuTool](https://github.com/3F/GetNuTool) logic (y
 
 Push raw command to GetNuTool core.
 
-```java
+```{{site.sbelang1}}
 void gnt.raw(string command)
 ```
 
@@ -28,10 +28,11 @@ Arguments:
 
 For example:
 
-```minid
+```{{site.sbelang}}
 #[NuGet gnt.raw("/p:ngpackages=\"7z.Libs/15.12.0;vsSBE.CI.MSBuild/1.5.1:../packages/CI.MSBuild\"")]
 ```
-```minid
+
+```{{site.sbelang}}
 #[NuGet gnt.raw("/t:pack /p:ngin=\"D:\tmp\7z.Libs\" /p:ngout=\"newdir/\"")]
 ```
 

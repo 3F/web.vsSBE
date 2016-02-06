@@ -16,34 +16,29 @@ The vsSolutionBuildEvent requires the next name for all internal operations:
 
 Samples:
 
-```java
+```{{site.sbelang1}}
 #[vsSBE ...]
 ```
 
-```java
+```{{site.sbelang1}}
 #[Core ...]
 ```
 
 ## events
 
-For work with events.
-
 Available event types:
 
-```text 
-
-Pre, Post, Cancel, CommandEvent, Warnings, Errors, OWP, Transmitter, Logging
+```text
+Pre, Post, Cancel, CommandEvent, Warnings, Errors, OWP, SlnOpened, SlnClosed, Transmitter, Logging
 ```
 
 Syntax:
 
-```java 
-
+```{{site.sbelang1}}
 #[vsSBE events.Type.item(string name)]
 ```
 
-```java 
-
+```{{site.sbelang1}}
 #[vsSBE events.Type.item(integer index)]
 ```
 
@@ -54,9 +49,9 @@ Arguments:
 
 Sample:
 
-```java
- #[vsSBE events.Pre.item("Act1")]
- #[vsSBE events.Pre.item(1)]
+```{{site.sbelang1}}
+#[vsSBE events.Pre.item("Act1")]
+#[vsSBE events.Pre.item(1)]
 ```
 
 ### Enabled
@@ -65,12 +60,11 @@ Gets or Sets 'Enabled' status for selected event.
 
 Syntax:
 
-```java 
-
- boolean #[vsSBE events.Pre.item("Act1").Enabled = false|true|0|1]
+```{{site.sbelang1}}
+boolean #[vsSBE events.Pre.item("Act1").Enabled = false|true|0|1]
 ```
 
-```java
+```{{site.sbelang1}}
 #[vsSBE events.Pre.item("Act1").Enabled]
 #[vsSBE events.Pre.item("Act1").Enabled = false]
 ```
@@ -85,15 +79,13 @@ Checking of existence of errors after executed action for selected event.
 
 Syntax:
 
-```java 
-
+```{{site.sbelang1}}
 boolean #[vsSBE events.Pre.item("Act1").Status.HasErrors]
 ```
 
 Sample:
 
-```java 
-
+```{{site.sbelang}}
 #[( #[vsSBE events.Pre.item("Act1").Enabled] && !#[vsSBE events.Pre.item("Act1").Status.HasErrors] )
 {
     #[Build projects.find("zlib").IsBuildable = false]
@@ -108,19 +100,19 @@ Get data from stdout for action which is executed asynchronously.
 
 Syntax:
 
-```java
+```{{site.sbelang1}}
 string events.Pre.item(integer index | string name).stdout
 ```
 
 Samples:
 
-```minid
+```{{site.sbelang}}
 #[var sres = #[Core events.Pre.item(1).stdout]]
 #[( $(sres.Length) > 0 ){
     #[OWP item("stdout").writeLine(true): #[var sres]]
 }]
 ```
-```minid
+```{{site.sbelang}}
 #[var sres = <#data>#[Core events.Cancel.item("ActData").stdout]</#data>]
 #[( $(sres.Length) > 0 ){
     #[OWP item("stdout").writeLine(true): #[var sres]]
@@ -135,12 +127,12 @@ Get data from stderr for action which is executed asynchronously.
 
 Syntax:
 
-```java
+```{{site.sbelang1}}
 string events.Pre.item(integer index | string name).stderr
 ```
 
 Samples:
 
-```minid
+```{{site.sbelang}}
 #[var res = $(res)#[Core events.Post.item(1).stderr]]
 ```

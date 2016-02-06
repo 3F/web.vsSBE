@@ -33,8 +33,7 @@ I/O File operations.
 
 *available with v0.12+*
 
-```java 
-
+```{{site.sbelang1}}
 #[IO ...]
 ```
 
@@ -44,8 +43,7 @@ You should also remember, the some features also available with [MSBuild](../../
 
 * Use the [System.IO Namespace](https://msdn.microsoft.com/en-us/library/System.IO%28v=vs.100%29.aspx) for example:
 
-```bash 
-
+```{{site.msblang}}
 $([System.IO.File]::Exists("D:/tmp/result.log"))
 ```
 *[File.Exists](https://msdn.microsoft.com/en-us/library/system.io.file.exists%28v=vs.100%29.aspx) Method*
@@ -66,15 +64,13 @@ Caller of executable files.
 
 Syntax:
 
-```java 
-
+```{{site.sbelang1}}
 void #[File call(string filename [, string args])]
 ```
 
 v0.11.3+:
 
-```java 
-
+```{{site.sbelang1}}
 void #[File call(string filename [, string args [, integer timeout]])]
 ```
 
@@ -90,15 +86,13 @@ Caller of executable files in silent mode.
 
 Syntax:
 
-```java 
-
+```{{site.sbelang1}}
 void #[File scall(string filename [, string args])]
 ```
 
 v0.11.3+:
 
-```java 
-
+```{{site.sbelang1}}
 void #[File scall(string filename [, string args [, integer timeout]])]
 ```
 * timeout - How long to wait the execution, in seconds. 0 value - infinitely
@@ -109,15 +103,13 @@ Receives data from standard streams for executed file. To disable errors use the
 
 Syntax:
 
-```java 
-
+```{{site.sbelang1}}
 string #[File sout(string filename [, string args])]
 ```
 
 v0.11.3+:
 
-```java 
-
+```{{site.sbelang1}}
 string #[File sout(string filename [, string args [, integer timeout]])]
 ```
 * timeout - How long to wait the execution, in seconds. 0 value - infinitely
@@ -131,7 +123,7 @@ Alias to sout() for cmd.
 
 Receives data from standard streams for cmd process with arguments.
 
-```java
+```{{site.sbelang1}}
 string #[File cmd(string args [, integer timeout])]
 ```
 * timeout - How long to wait the execution, in seconds. 0 value - infinitely
@@ -142,7 +134,7 @@ Get all data from text file.
 
 Syntax:
 
-```java
+```{{site.sbelang1}}
 string #[File get("filename")]
 ```
 
@@ -156,13 +148,13 @@ To write data in a text file.
 
 Syntax:
 
-```java
+```{{site.sbelang1}}
 void #[File write("filename"): mixed data]
 ```
 
 v0.10+:
  
-```java
+```{{site.sbelang1}}
 void #[File write(string name, boolean append, boolean line, string encoding): mixed data]
 ```
 * name - File name.
@@ -196,7 +188,7 @@ To append data to the end of a text file or create new if file does not exist.
 
 Syntax:
 
-```java
+```{{site.sbelang1}}
 #[File append("filename"): mixed data]
 ```
 
@@ -210,7 +202,7 @@ To write data with newline in a text file.
 
 Syntax:
 
-```java
+```{{site.sbelang1}}
 #[File writeLine("filename"): mixed data]
 ```
 
@@ -220,7 +212,7 @@ To append data with newline to the end of a text file or create new if file does
 
 Syntax:
 
-```java
+```{{site.sbelang1}}
 #[File appendLine("filename"): mixed data]
 ```
 
@@ -230,18 +222,18 @@ To replace data in files.
 
 Syntax:
 
-```java 
+```{{site.sbelang1}}
 void #[File replace(string file, string pattern, string replacement)]
 ```
 
-```java
+```{{site.sbelang1}}
 void #[File replace.Regexp(string file, string pattern, string replacement)]
 ```
 
 * `pattern` should contain [Regular Expression Language](https://msdn.microsoft.com/en-us/library/az24scfc.aspx)
 * `replacement` may contain the following [substitution elements and replacement patterns](https://msdn.microsoft.com/en-us/library/ewy2t5e0.aspx)
 
-```java
+```{{site.sbelang1}}
 void #[File replace.Wildcards(string file, string pattern, string replacement)]
 ```
 
@@ -256,20 +248,19 @@ Matches any character:
 
 Alias for Regexp (v0.10+):
 
-```java
+```{{site.sbelang1}}
 void #[File replace.Regex(string file, string pattern, string replacement)]
 ```
 
 Samples:
 
-```java
+```{{site.sbelang1}}
 #[File replace.Regexp("source.extension.vsixmanifest", "<Version>[0-9.]+</Version>", "<Version>#[var version]</Version>")]
 ```
 
-```java
+```{{site.sbelang1}}
 #[File replace.Regexp("file.log", "(\d+)", "~$1~")]
 ```
-
 
 ### exists
 
@@ -279,7 +270,7 @@ v0.10+
 
 Determines whether the given path refers to an existing directory on disk.
 
-```java
+```{{site.sbelang1}}
 boolean #[File exists.directory(string path [, boolean environment])]
 ```
 * path - Path to directory
@@ -287,19 +278,13 @@ boolean #[File exists.directory(string path [, boolean environment])]
 
 Samples:
 
-```java
-#[( #[File exists.directory("log")] ){
-   ...
-}]
-```
-
-```java
+```{{site.sbelang}}
 #[( #[File exists.directory("D:\tmp\log")] ){
    ...
 }]
 ```
 
-```java
+```{{site.sbelang}}
 #[( #[File exists.directory("System32", true)] ){
    ...
 }]
@@ -309,7 +294,7 @@ Samples:
 
 Determines whether the specified file exists.
 
-```java
+```{{site.sbelang1}}
 boolean #[File exists.file(string path [, boolean environment])]
 ```
 * path - Path to file
@@ -317,19 +302,13 @@ boolean #[File exists.file(string path [, boolean environment])]
 
 Samples:
 
-```java
-#[( #[File exists.file("data.log")] ){
-   ...
-}]
-```
-
-```java
+```{{site.sbelang}}
 #[( #[File exists.file("git.exe", true)] ){
    ...
 }]
 ```
 
-```java
+```{{site.sbelang}}
 #[( #[File exists.file("D:\tmp\data.log")] ){
    ...
 }]
@@ -343,7 +322,7 @@ v0.12.6+
 
 To copy selected file to the destination. Creates the destination path if not exists.
 
-```java
+```{{site.sbelang1}}
 void copy.file(string src, string dest, bool overwrite [, object except])
 ```
 
@@ -356,11 +335,11 @@ Arguments:
 
 Samples:
 
-```java
+```{{site.sbelang1}}
 #[File copy.file("bin\release.7z", "$(out)dep\release.7z", true)]
 ```
 
-```java
+```{{site.sbelang1}}
 #[File copy.file("D:\inc\*.h", "$(SolutionDir)inc/", false, {"ui.core.h", "http.h"})]
 ```
 
@@ -368,17 +347,16 @@ Examples:
 
 * To rename file
 
-```java
+```{{site.sbelang1}}
 #[File copy.file("bin\release.7z", "bin\release_[f5acf6f].7z", false)]
 #[File delete.files({"bin\release.7z"})]
 ```
 
-<!-- -->
 #### directory
 
 To copy selected directory and subdirectories to the destination.
 
-```java
+```{{site.sbelang1}}
 void copy.directory(string src, string dest, bool force [, bool overwrite])
 ```
 
@@ -391,7 +369,7 @@ Arguments:
 
 Samples:
 
-```java
+```{{site.sbelang1}}
 #[File copy.directory("bin", "$(out)dep/mixed", true)]
 ```
 
@@ -399,10 +377,9 @@ Examples:
 
 * To create empty directory:
 
-```java
+```{{site.sbelang1}}
 #[File copy.directory("", "$(SolutionDir)bin\Releases", true)]
 ```
-<!-- -->
 
 ### delete
 
@@ -412,7 +389,7 @@ v0.12.6+
 
 To delete selected files.
 
-```java
+```{{site.sbelang1}}
 void delete.files(object files [, object except])
 ```
 
@@ -423,7 +400,7 @@ Arguments:
 
 Samples:
 
-```java
+```{{site.sbelang1}}
 #[File delete.files({"$(out)dep\*.7z", "$(out)dep\std.zip"}, {"release.7z"})]
 ```
 
@@ -431,7 +408,7 @@ Samples:
 
 To delete selected directory.
 
-```java
+```{{site.sbelang1}}
 void delete.directory(string dir, bool force)
 ```
 
@@ -442,11 +419,10 @@ Arguments:
 
 Samples:
 
-```java
+```{{site.sbelang1}}
 #[File delete.directory("$(out)dep", true)]
 ```
 
-<!-- -->
 ### remote
 
 v0.12.6+
@@ -457,7 +433,7 @@ Remote servers.
 
 To download file from remote server.
 
-```java
+```{{site.sbelang1}}
 void #[File remote.download(string addr, string output [, string user, string pwd])]
 ```
 * addr - Full address to remote file. e.g.: ftp://... http://...
@@ -477,7 +453,7 @@ http://example.com
 
 Examples:
 
-```java
+```{{site.sbelang1}}
 #[IO remote.download("ftp://192.168.17.04:2021/dir1/non-api.png", "non-api.png", "user1", "mypass123")]
 #[IO remote.download("https://nuget.org/api/v2/package/vsSBE.CI.MSBuild/1.5.1", "CIM.nupkg")]
 #[IO remote.download("http://example.com", "example.com.html")]

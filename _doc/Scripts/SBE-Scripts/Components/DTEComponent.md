@@ -14,15 +14,13 @@ Execute the available command.
 
 Syntax:
 
-```java 
-
+```{{site.sbelang1}}
 #[DTE exec: command(arg)]
 ```
 
 Sample:
 
-```java 
-
+```{{site.sbelang1}}
 #[DTE exec: Build.SolutionPlatforms(x86)] 
 #[DTE exec: Build.SolutionConfigurations(Debug_Exclude_Plugins_All)]
 #[DTE exec: Build.Cancel]
@@ -48,8 +46,7 @@ Scope of Command ID
 
 Syntax:
 
-```java 
-
+```{{site.sbelang1}}
 string #[DTE events.LastCommand.Guid]
 ```
 
@@ -59,8 +56,7 @@ Command ID
 
 Syntax:
 
-```java 
-
+```{{site.sbelang1}}
 integer #[DTE events.LastCommand.Id]
 ```
 
@@ -70,8 +66,7 @@ Custom input parameters.
 
 Syntax:
 
-```java 
-
+```{{site.sbelang1}}
 object #[DTE events.LastCommand.CustomIn]
 ```
 
@@ -81,8 +76,7 @@ Custom output parameters.
 
 Syntax:
 
-```java 
-
+```{{site.sbelang1}}
 object #[DTE events.LastCommand.CustomOut]
 ```
 
@@ -92,7 +86,6 @@ Flag of execution of the command - Before / After
 
 Syntax:
 
-```java 
-
+```{{site.sbelang1}}
 boolean #[DTE events.LastCommand.Pre]
 ```

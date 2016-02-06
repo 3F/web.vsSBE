@@ -16,7 +16,7 @@ The main plugin. Contains logic for work with events of Visual Studio and core o
 
 If you received file with different extension: simply change on [.vsix](https://msdn.microsoft.com/en-us/library/ff407026.aspx) or install manually with command:
 
-```bash
+```{{site.msblang}}
 VSIXInstaller.exe <downloaded_file>
 ```
 Note: Other problems with getting plugin ([Error 500](https://twitter.com/sfnet_ops) etc.) try to ask [here](http://sourceforge.net/support) (our hosting provider)
@@ -27,7 +27,7 @@ Note: Other problems with getting plugin ([Error 500](https://twitter.com/sfnet_
 
 If you need manually:
 
-```bash
+```{{site.msblang}}
 VSIXInstaller.exe /uninstall:94ecd13f-15f3-4f51-9afd-17f0275c6266
 ```
 

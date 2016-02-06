@@ -56,6 +56,7 @@ code {
 }
 pre {
   line-height: 1.28;
+  padding: 6px 8px;
 }
 pre code {
   white-space: inherit;
@@ -65,10 +66,10 @@ pre code {
   margin-bottom: 0px;
 }
 
-/* default table for md */
+/* table */
 
 table {
-  width: 100%;
+  /*width: 100%;*/
   max-width: 100%;
   margin-bottom: 23px;
 }
@@ -99,6 +100,27 @@ table > tbody + tbody {
   border-top: 1px solid #dddddd;
 }
 
+/* markdown table */
+
+table:not([class]) tr {
+  border-top: 1px solid #DDDDDD;
+  margin: 0;
+  padding: 0; 
+}
+table:not([class]) tr:nth-child(2n) {
+  background-color: #F9F9F9;
+}
+table:not([class]) tr th,
+table:not([class]) tr td {
+  border: 1px solid #DDDDDD;
+  text-align: left;
+  margin: 0;
+  padding: 6px 10px;
+}
+table:not([class]) tr th {
+  font-weight: bold;
+  background-color: #F0F1ED;
+}
 
 .collage {
   padding: 2px;

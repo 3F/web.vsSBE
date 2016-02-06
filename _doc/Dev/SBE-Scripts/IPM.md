@@ -22,8 +22,7 @@ Where **data** it's your raw data 'as is'. Then, you can work with parsed data v
 
 How about calculating the hash value with MD5 & SHA-1 ? and possible syntax like this:
 
-```java
-
+```{{site.sbelang1}}
 #[Func hash.MD5("test")]
 #[Func hash.SHA1("test")]
 ```
@@ -31,7 +30,6 @@ How about calculating the hash value with MD5 & SHA-1 ? and possible syntax like
 ok, here's how to (**all minimal logic**):
 
 ```csharp
-
 IPM pm = new PM(data); // pointed to - ILevel lvlHash
 ```
 
@@ -66,7 +64,6 @@ It can be a more flexible, just use other available way: [SNode.IPM](https://git
 [Available types](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/SNode/ArgumentType.cs):
 
 ```csharp
-
     // Unspecified mixed data.
     Mixed,
 
@@ -110,7 +107,6 @@ It can be a more flexible, just use other available way: [SNode.IPM](https://git
 * Samples:
 
 ```csharp
-
 IPM pm = new PM("solution(\"str data\", 'str data2', 12, -12, 1.5, -1.5, STDOUT, TestEnum.SpecialType, mixed * data, true)");
 
 Argument[] args = pm.Levels[0].Args;
@@ -148,7 +144,6 @@ Assert.AreEqual(args[9].data, true);
 * floating-point numbers:
 
 ```csharp
-
 IPM pm = new PM(" solution (1.5, -1.5, 1.5f, -1.5f, 1.5d, -1.5d) ");
 
 Argument[] args = pm.Levels[0].Args;
@@ -175,7 +170,6 @@ Assert.AreEqual(args[5].data, -1.5d);
 * Object data. Similar as array with mixed data:
 
 ```csharp
-
 IPM pm = new PM(" m77(\"guid\", 12, {\"p1\", {4, \"test\", 8, 'y'}, true}, {false, 'p2'}) ");
 
 Assert.AreEqual(pm.Is(LevelType.Method, "m77"), true);

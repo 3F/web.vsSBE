@@ -5,25 +5,23 @@ permalink: /doc/Features/Exclude projects/
 ---
 # Exclude projects from build on Pre-Build event
 
-This features appeared after request from [Q/A](https://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334) ([related issue](https://bitbucket.org/3F/vssolutionbuildevent/issue/24/exclude-projects-from-build-on-pre-build))
+It appeared after request from [Q/A](https://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334) ([related issue](https://bitbucket.org/3F/vssolutionbuildevent/issue/24/exclude-projects-from-build-on-pre-build))
 
-So, if you want to activate or deactivate some projects when building a solution... well **it's possible** with vsSolutionBuildEvent
+So if you want activate or deactivate any projects when build is started... well **it's possible** with vsSolutionBuildEvent
 
 ## How ?
 
-This feature part of [SBE-Scripts](../../Scripts/SBE-Scripts/) core(controlled with [BuildComponent](../../Scripts/SBE-Scripts/Components/BuildComponent/)). Therefore you should activate support of this in the Control section.
+This feature is part of [SBE-Scripts](../../Scripts/SBE-Scripts/) (controlled by [BuildComponent](../../Scripts/SBE-Scripts/Components/BuildComponent/)). Therefore you should activate support of this engine.
 
 Ok, it's simply...
 
-You should use **IsBuildable** property for get/set value for selected project.
+You should use **IsBuildable** property for get/set value of selected project(s).
 
-```java 
-
+```{{site.sbelang1}}
 #[Build projects.find("name").IsBuildable = true|false|1|0]
 ```
 
-```java 
-
+```{{site.sbelang1}}
 #[Build projects.find("name").IsBuildable]
 ```
 
@@ -38,9 +36,7 @@ etc.
 
 * Set true value if next condition also has true
 
-```java 
-
-
+```{{site.sbelang}}
 #[( ($(isAllow) && $(Configuration) === "Debug") || $(sysc) == -1 ) {
     #[Build projects.find("bzip2.vcxproj").IsBuildable = false]
 }]
@@ -48,15 +44,13 @@ etc.
 
 * Set value from external utility:
 
-```java 
-
+```{{site.sbelang}}
 #[Build projects.find("bzip2.vcxproj").IsBuildable = #[File sout("vt.exe", "-s -e bzip", 60)]]
 ```
 
 * Status for Release_notes.txt
 
-```java 
-
+```{{site.sbelang}}
 #[var pBzip = #[Build projects.find("bzip2.vcxproj").IsBuildable]]
 ...
 #[File write("#[var odir]/Release_notes.txt"):This assembled from:
@@ -70,8 +64,7 @@ etc.
 
 * Manage for other projects:
 
-```java 
-
+```{{site.sbelang}}
 #[(#[Build projects.find("boost-regex.vcxproj").IsBuildable])
 {
     #[Build projects.find("client.vcxproj").IsBuildable = true]

@@ -38,8 +38,7 @@ As variant you can use powerful and flexible control with the [SBE-Scripts](../.
 
 Therefore you can use this as you want for example:
 
-```java 
-
+```{{site.sbelang}}
 #[($(Configuration) ~= "Release" && !$(Configuration) ~= "CI_") {
     #[DTE exec: Test.RunAllTestsInSolution]
 }]

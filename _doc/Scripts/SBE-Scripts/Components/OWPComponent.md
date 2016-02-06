@@ -10,7 +10,7 @@ For work with OWP (Output Window Pane) and similar operations.
 
 ## log
 
-[ v0.11+ ]
+v0.11+
 
 Provides data from events of logging.
 
@@ -20,7 +20,7 @@ Current message from log.
 
 Syntax:
 
-```java
+```{{site.sbelang1}}
 string log.Message
 ```
 
@@ -30,7 +30,7 @@ The Level of current Message
 
 Syntax:
 
-```java
+```{{site.sbelang1}}
 string log.Level
 ```
 
@@ -42,7 +42,7 @@ Access to item of the Output window by name.
 
 Syntax:
 
-```java
+```{{site.sbelang1}}
 item(string name)
 ```
 
@@ -56,7 +56,7 @@ Writes data into selected pane.
 
 Syntax:
 
-```java
+```{{site.sbelang1}}
 void write(boolean force): content
 ```
 
@@ -66,7 +66,7 @@ Arguments:
 
 Sample:
 
-```minid
+```{{site.sbelang}}
 #[OWP item("My Item").write(true): mixed data]
 ```
 
@@ -76,7 +76,7 @@ Writes data with newline symbol into selected pane.
 
 Syntax:
 
-```java
+```{{site.sbelang1}}
 void writeLine(boolean force): content
 ```
 
@@ -86,7 +86,7 @@ Arguments:
 
 Sample:
 
-```minid
+```{{site.sbelang}}
 #[OWP item("Build").writeLine(false): mixed data]
 ```
 
@@ -96,13 +96,13 @@ Removes pane. Returns false value if item does not exist, otherwise true as a su
 
 Syntax:
 
-```java
+```{{site.sbelang1}}
 boolean delete = boolean
 ```
 
 Sample:
 
-```minid
+```{{site.sbelang}}
 #[OWP item("My Item").delete = true]
 ```
 
@@ -112,13 +112,13 @@ To clear contents from OW pane. Returns false value if item does not exist, othe
 
 Syntax:
 
-```java
+```{{site.sbelang1}}
 boolean clear = boolean
 ```
 
 Sample:
 
-```minid
+```{{site.sbelang}}
 #[OWP item("My Item").clear = true]
 ```
 
@@ -128,13 +128,13 @@ To activate (display) OW pane by item name.
 
 Syntax:
 
-```java 
+```{{site.sbelang1}}
 boolean activate = boolean
 ```
 
 Sample:
 
-```minid
+```{{site.sbelang}}
 #[OWP item("My Item").activate = true]
 ```
 
@@ -144,8 +144,7 @@ For streaming of getting the mixed data from selected pane.
 
 Syntax:
 
-```java 
-
+```{{site.sbelang1}}
 #[OWP out(string ident [, boolean isGuid])]
 ```
 
@@ -160,15 +159,13 @@ Arguments:
 
 Sample:
 
-```java 
-
+```{{site.sbelang1}}
 #[OWP out("Build")]
 ```
 
 Note: The "Build" item is used by default with property `out` as alias:
 
-```java 
-
+```{{site.sbelang1}}
 #[OWP out]
 ```
 
@@ -178,7 +175,7 @@ Also used as short alias for: `out.All`
 
 Get raw data from selected item if exists:
 
-```java
+```{{site.sbelang1}}
 string #[OWP out.All]
 ```
 
@@ -186,7 +183,7 @@ string #[OWP out.All]
 
 For work with warnings from received data. Also used as short alias for: `Warnings.Raw`
 
-```java
+```{{site.sbelang1}}
 string #[OWP out.Warnings]
 ```
 
@@ -194,17 +191,15 @@ string #[OWP out.Warnings]
 
 Returns the partial raw data with warnings if an exists:
 
-```java
+```{{site.sbelang1}}
 string #[OWP out.Warnings.Raw]
 ```
-
-<!-- -->
 
 #### Count 
 
 Count of warnings from data.
 
-```java
+```{{site.sbelang1}}
 integer #[OWP out.Warnings.Count]
 ```
 
@@ -212,8 +207,7 @@ integer #[OWP out.Warnings.Count]
 
 List of warnings from data as C4702,4505,.. :
 
-```java 
-
+```{{site.sbelang1}}
 List #[OWP out.Warnings.Codes]
 ```
 
@@ -221,17 +215,15 @@ List #[OWP out.Warnings.Codes]
 
 For work with errors from received data. Also used as short alias for: `Errors.Raw`
 
-```java 
-
- string #[OWP out.Errors]
+```{{site.sbelang1}}
+string #[OWP out.Errors]
 ```
  
 #### Raw
 
 Returns the partial raw data with errors if an exists:
 
-```java 
-
+```{{site.sbelang1}}
 string #[OWP out.Errors.Raw]
 ```
 
@@ -239,8 +231,7 @@ string #[OWP out.Errors.Raw]
 
 Count of errors from data.
 
-```java 
-
+```{{site.sbelang1}}
 Integer #[OWP out.Errors.Count]
 ```
 
@@ -248,7 +239,6 @@ Integer #[OWP out.Errors.Count]
 
 List of errors from data as C4702,C4505,.. :
 
-```java 
-
+```{{site.sbelang1}}
 List #[OWP out.Errors.Codes]
 ```

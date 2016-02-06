@@ -33,10 +33,10 @@ or add for your **.sln** (see [Managing Packages for the Solution](https://docs.
 
 You can also get package with lightweight non-binary tool - [GetNuTool](https://github.com/3F/GetNuTool) *~8 Kb* or less.
 
-```bash
+```{{site.msblang}}
 msbuild.exe gnt.core /p:ngpackages="vsSBE.CI.MSBuild"
 ```
-```bash
+```{{site.msblang}}
 msbuild.exe gnt.core /p:ngpackages="vsSBE.CI.MSBuild/{{site.lnkCur_CIMNuGet[0] | remove: "v"}}"
 ```
 
@@ -55,14 +55,14 @@ msbuild.exe gnt.core /p:ngpackages="vsSBE.CI.MSBuild/{{site.lnkCur_CIMNuGet[0] |
 
 Ok, now you're ready to use the vsSolutionBuildEvent engine with MSBuild Tools, for example:
 
-```bash
+```{{site.msblang}}
 msbuild.exe "<SolutionFile>.sln" /l:"<fullpath_to>\CI.MSBuild.dll"
 ```
 Also you can set other path to library with [`lib`](#keys-to-ci-msbuild) key as: `/l:"<path_to>\CI.MSBuild.dll";lib=<path_to_directory>`, for example: `/l:"D:\CI\CI.MSBuild.dll";lib=D:\lib\`
 
 You can also use the `/verbosity` key for details information from vsSolutionBuildEvent - `/verbosity:detailed` or `/verbosity:diagnostic` (**debug mode** for vsSolutionBuildEvent), for example:
 
-```bash
+```{{site.msblang}}
 msbuild.exe "<SolutionFile>.sln" /v:detailed /m:4 /l:"<path_to>\CI.MSBuild.dll" /nologo /noconlog
 ```
 
@@ -109,8 +109,7 @@ name      | description | sample
 
 ### Could not load file or assembly ... or one of its dependencies.
 
-```bash 
-
+```{{site.msblang}}
 MSBUILD : error MSB4017: The build stopped unexpectedly because of an unexpected logger failure.
 ...
 ```
@@ -158,8 +157,7 @@ See also [AppVeyor documentation](http://www.appveyor.com/docs/nuget) & [Creatin
 * Push your packet on AppVeyor server: `nuget push CI.MSBuild.dll.<ver>.nupkg -ApiKey <API key> -Source <Account feed URL>/api/v2/package`
 * On AppVeyor: `Projects` - `Build` - set as `script` and use next script for example:
 
-```bash 
-
+```{{site.msblang}}
 nuget install CI.MSBuild -OutputDirectory C:\projects\<your_project>\Build\bin\ -Source https://ci.appveyor.com/nuget/<your_id> 
   & nuget restore <SolutionFile>.sln 
   & "C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe" "<SolutionFile>.sln" /verbosity:detailed /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll" /l:"C:\projects\<your_project>\Build\bin\vsSBE.CI.MSBuild.<ver>\bin\CI.MSBuild.dll" /m
@@ -171,8 +169,7 @@ Similar as above:
 
 * On AppVeyor: `Projects` - `Build` - set as `script` and use next script for example:
 
-```bash 
-
+```{{site.msblang}}
 nuget install vsSBE.CI.MSBuild -OutputDirectory C:\projects\<your_project>\Build\bin\  
   & nuget restore <SolutionFile>.sln 
   & "C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe" "<SolutionFile>.sln" /verbosity:detailed /logger:"C:\Program Files\AppVeyor\BuildAgent\Appveyor.MSBuildLogger.dll" /l:"C:\projects\<your_project>\Build\bin\vsSBE.CI.MSBuild.<ver>\bin\CI.MSBuild.dll" /m
@@ -187,8 +184,7 @@ Similar as for AppVeyor above:
 
 * `Build Configuration Settings` - `Build Step` - `Command Line` - `Custom script`
 
-```bash 
-
+```{{site.msblang}}
 nuget install vsSBE.CI.MSBuild -OutputDirectory C:\projects\<your_project>\Build\bin\  
   & nuget restore <SolutionFile>.sln 
   & "C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe" "<SolutionFile>.sln" /verbosity:detailed /l:"C:\projects\<your_project>\Build\bin\vsSBE.CI.MSBuild.<ver>\bin\CI.MSBuild.dll" /m:4 /nologo

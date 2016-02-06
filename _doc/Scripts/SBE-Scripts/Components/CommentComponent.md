@@ -12,14 +12,13 @@ The comments for scripts.
 
 The multiline comment:
 
-```minid
+```{{site.sbelang}}
 #[""]
 ```
 
 Samples:
 
-```minid 
-
+```{{site.sbelang}}
 #["
     Example
           " Description 1 "
@@ -27,12 +26,11 @@ Samples:
 "]
 ```
 
-```minid 
-
+```{{site.sbelang}}
 #[" Example "]
 ```
 
-```minid
+```{{site.sbelang}}
 #[" 
     To restore packages with GetNuTool
     It's important for packages of solution-level in VS2015

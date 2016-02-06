@@ -12,7 +12,6 @@ This action type for work with MSBuild [Targets](https://msdn.microsoft.com/en-u
 * v0.12.4+:
 
 ```xml
-
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 
@@ -35,8 +34,7 @@ This action type for work with MSBuild [Targets](https://msdn.microsoft.com/en-u
 
 * Obsolete variant:
 
-```xml 
-
+```xml
 <?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <!-- ... -->
@@ -59,7 +57,6 @@ Use any available version for you, for example:
 Use [MSDN](https://msdn.microsoft.com/en-us/library/vstudio/dd637714.aspx) and feel free...
 
 ```xml
-
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
 

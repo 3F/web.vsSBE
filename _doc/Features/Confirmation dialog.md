@@ -23,9 +23,7 @@ You can use any own dialog if needed, for example:
 * Activate [SBE-Scripts](../../Scripts/SBE-Scripts/) support
 * Use script for example:
 
-```java 
-
-
+```{{site.sbelang1}}
 #[(#[File sout("cscript", "//nologo dialog.vbs")]) {
 
     ... your action if 'Yes'
@@ -35,8 +33,7 @@ You can use any own dialog if needed, for example:
 
 * Where dialog.vbs it's a simple [vbscript](http://ss64.com/vb/) with [msgbox](http://ss64.com/vb/msgbox.html), for example:
 
-```basic 
-
+```vb
 ' Sample of dialog
 ret = MsgBox("... information ...",  vbAbortRetryIgnore + vbDefaultButton3 + vbExclamation , "Custom dialog")
 
@@ -68,8 +65,7 @@ For example, if you have a few subprojects in your solution as here:
 
 and you want to update some file at start build **for all projects at once**(as Solution-wide) for example: revision.h 
 
-```cpp 
-
+```cpp
 #ifndef REVISION_H 
   #define REVISION_STR "31 [support::4b9a0cf]" 
   #define L_REVISION_STR L"31 [support::4b9a0cf]" 
@@ -81,8 +77,7 @@ It can be generated with your some tool, for example, simple revision.bat and si
 
 * revision.bat:
 
-```bash 
-
+```{{site.msblang}}
 ...
   : rev count 
   FOR /F %%i IN ('git rev-list HEAD --count') DO set git_rev_count=%%i 
@@ -93,8 +88,7 @@ It can be generated with your some tool, for example, simple revision.bat and si
 
 revision.vbs:
 
-```basic 
-
+```vb
 ret = MsgBox("Do you want to update revision.h ?", vbYesNo + vbQuestion, "Pre-Build Event :: Updating version") 
  
 If ret = vbYes Then 
@@ -117,7 +111,7 @@ as result you simply call external script with your fully external logic & your 
 
 ![scripts for all projects at once](../../Resources/examples/obsolete/vbs_ext.jpg)
 
-`*!*` *please note it's Obsolete see also [similar with new version](../../Examples/Version number/)* `*!*`
+`*!*` *please note that is deprecated, see also [here](../../Examples/Version/)* `*!*`
 
 # References
 

@@ -35,16 +35,14 @@ Of course all data from external utilities can be used for User-Variables or wit
 
 * Sha1 for 'Hello World!'
 
-```java 
-
+```{{site.sbelang1}}
 #[File cmd("echo 'Hello World!'| openssl sha1 | sed 's/^.*\s//'")]
 ```
 Result: `2ef7bde608ce5404e97d5f042f95f89f1c232871`
 
 * Sha1 for current time:
 
-```java 
-
+```{{site.sbelang1}}
 #[var utcnow = $([System.DateTime]::UtcNow.Ticks)]
 #[File cmd("echo '#[var utcnow]'| openssl sha1 | sed 's/^.*\s//'")]
 ```
@@ -56,15 +54,13 @@ Note: For your environment use also: `echo -n "str"`, `printf 'str'` etc. *On Wi
 
 [v0.12.4+ now supports](../../Scripts/SBE-Scripts/Components/FunctionComponent/#hash) calculating MD5 & SHA1 for more convenience.
 
-```java 
-
+```{{site.sbelang1}}
 #[Func hash.MD5("Hello World!")]
 ```
 
 Result: `ED076287532E86365E841E92BFC50D8C`
 
-```java 
-
+```{{site.sbelang1}}
 #[Func hash.SHA1("Hello World!")]
 ```
 
@@ -76,16 +72,14 @@ NuGet command line tool - [nuget.exe](https://www.nuget.org/nuget.exe) ([documen
 
 for example:
 
-```java 
-
+```{{site.sbelang1}}
 #[File cmd("nuget list Moq | grep -e \"^Moq \"", 30)]
 ```
 Result: `Moq 4.2.1502.0911`
 
 * Next patch number for latest package, for example:
 
-```java 
-
+```{{site.sbelang1}}
 $([MSBuild]::Add(#[File sout("cmd", "/C .nuget\nuget.exe list vsSBE.CI.MSBuild | grep 'vsSBE.CI.MSBuild' | sed -r 's/^.*\s[0-9]+\.[0-9]+\.//'", 30)], 1))
 ```
 Result: `1.0.5` -> `1.0.6`

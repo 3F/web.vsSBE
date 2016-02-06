@@ -22,7 +22,6 @@ For this mode you should configure used interpreter:
 For example, this useful for php:
 
 ```php
-
 class GArtefacts 
 { 
     /* ... */   

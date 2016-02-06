@@ -1,13 +1,9 @@
 ---
 layout: doc
-title: Automatic Version Numbering
+title: Automatic Version Numbering - Variants
 permalink: /doc/Examples/Version/
 ---
 # Automatic Version Numbering
-
-## Manually variant
-
-*Full control*
 
 [![Sample of class](../../Resources/examples/VersionClass.gif)](Manually/)
 
@@ -15,7 +11,7 @@ permalink: /doc/Examples/Version/
 
 ## Wizard variant
 
-*Fully automatic*
+*Automatic code generation*
 
 [![Wizard](../../Resources/examples/wizard/version/type.png)](Wizard/)
 

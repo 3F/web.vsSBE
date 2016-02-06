@@ -79,10 +79,6 @@ Basic work is a:
 * Create and configure any actions for this event above.
 * Enjoy.
 
-# Have a questions ?
-
-Ask [here](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)
-
 # References
 
 * [API](../API/)

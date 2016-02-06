@@ -20,8 +20,7 @@ For work with remote servers you can use any available variants from [available 
     * Customize cache and check other available flags of optimization. (optional)
     * Use next code, for example:
 
-```csharp 
-
+```csharp
 using System;
 using System.Net;
 using ICommand = net.r_eg.vsSBE.Actions.ICommand;

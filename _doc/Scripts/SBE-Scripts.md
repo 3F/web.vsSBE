@@ -17,15 +17,13 @@ SBE-Scripts - it's our engine for additional work over [MSBuild](../MSBuild/) - 
 
 All commands and operations should be wrapped with container:
 
-```java 
-
+```{{site.sbelang1}}
 #[ ... ]
 ```
 
 To escape an sequences use `#`: 
 
-```java 
-
+```{{site.sbelang1}}
 ##[ ... ]
 ```
 
@@ -33,8 +31,7 @@ To escape an sequences use `#`:
 
 Try execute this:
 
-```minid
-
+```{{site.sbelang}}
 #["
     Basic example
 "]
@@ -81,7 +78,7 @@ The object type is new type for work with complex mixed data. Initially it was i
 
 Value can be from all available scalar types + complex, like this:
 
-```java
+```{{site.sbelang1}}
 {}
 {"str", true}
 {"str", {1, 'y', {-12.457f}}, true}
@@ -121,7 +118,6 @@ With latest versions we use [Dom](../../Dev/New Component/) for inspecting model
 The all [available modes](../../Modes/) should provide support of this engine. Moreover, in [C# Mode](../../Modes/CSharp/#work-with-msbuild-amp-sbe-scripts-engine) you can also use engine **directly** as you want! 
 But first read [this](../SBE-Scripts/Direct/).
 
-<!-- -->
 ## New Components for SBE-Scripts core
 
 * [How to create Component in 5min](../../Dev/New Component/) ([Developer Zone](../../Dev/))

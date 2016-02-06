@@ -20,8 +20,7 @@ Calculate hash value with MD5.
 
 Syntax:
 
-```java 
-
+```{{site.sbelang1}}
 string #[Func hash.MD5(string data)]
 ```
 
@@ -31,8 +30,7 @@ Arguments:
 
 Sample:
 
-```java 
-
+```{{site.sbelang1}}
 #[Func hash.MD5("Hello World!")]
 ```
 
@@ -44,8 +42,7 @@ Calculate hash value with SHA-1.
 
 Syntax:
 
-```java 
-
+```{{site.sbelang1}}
 string #[Func hash.SHA1(string data)]
 ```
 
@@ -55,8 +52,7 @@ Arguments:
 
 Sample:
 
-```java 
-
+```{{site.sbelang1}}
 #[Func hash.SHA1("Hello World!")]
 ```
 

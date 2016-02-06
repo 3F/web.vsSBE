@@ -36,8 +36,7 @@ This is a simple example ([Readme](https://github.com/3F/CI.MSBuild.Demo/blob/ma
 
 {% raw %}
 ```csharp
-
-   ...
+...
     ProjectsMap map = new ProjectsMap(@"$(SolutionPath)");
 
     string data = @"

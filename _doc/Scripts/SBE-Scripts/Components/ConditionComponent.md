@@ -10,8 +10,7 @@ Conditional statements for [scripts]({{site.docp}}/Scripts/).
 
 ## Syntax
 
-```java 
-
+```{{site.sbelang1}}
 #[(condition){ 
   body if the condition has true value
 }
@@ -20,22 +19,19 @@ else{
 }]
 ```
 
-```java 
-
+```{{site.sbelang1}}
 #[(condition){ body if condition has true value }]
 ```
 
 
 ## Available operators
 
-```text 
-
+```text
  ===, !==, ~=, ==, !=, >=, <=, !, >, < 
 ```
 **v0.11.3+**:
 
-```text 
-
+```text
  ^=, =^
 ```
 Rules of comparison:
@@ -77,9 +73,7 @@ Composite Conditions **available with v0.11** with limited Short-circuit Evaluat
 
 ### && and || ###
 
-
-```java 
-
+```{{site.sbelang}}
 #[( #[var count] > 10 || ($(isAllow) && !false) ) {
     ...
 }
@@ -88,15 +82,13 @@ else{
 }]
 ```
 
-```java 
-
+```{{site.sbelang}}
 #[($(Configuration) ~= Deb && $(count) > 10 || $(Configuration) == "Release" ) {
     ...
 }]
 ```
 
-```java 
-
+```{{site.sbelang}}
 #[( (1 < 2 && 2 == 2 && ( true || ((false || 2 >= 2) && (1 > 7 && true)))) )
 {
     #[( #[var count] > 10 || ($(isAllow) && !false) ) {
@@ -108,25 +100,21 @@ else{
 }]
 ```
 
-
 ## Examples ##
 
-```java 
-
+```{{site.sbelang}}
 #[($(Configuration) ~= Deb){
     #[var ver = #[var ver].#[var revBuild]]
 }]
 ```
 
-```java 
-
+```{{site.sbelang}}
 #[(#[Build projects.find("ZenLib").IsBuildable]){
     #[var branchSha1 = #[File sout("git", "rev-parse --short HEAD")]]
 }]
 ```
 
-```java 
-
+```{{site.sbelang}}
 #[(!1 > 2){
     is greater
 }]
@@ -136,8 +124,7 @@ else{
 
 You can use the [MSBuild](../../../MSBuild) core and [String.ToLower](https://msdn.microsoft.com/en-us/library/system.string.tolower.aspx) Method for your variables, for example:
 
-```java 
-
+```{{site.sbelang}}
 #[( $(left.ToLower()) ^= $(right.ToLower()) ) {
     Yes
 }

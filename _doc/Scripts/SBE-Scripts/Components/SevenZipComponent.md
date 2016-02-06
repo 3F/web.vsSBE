@@ -51,7 +51,7 @@ Format      | Typically extension of file | +Methods                            
 
 Packing with 7-zip engine.
 
-```java
+```{{site.sbelang1}}
 #[7z pack]
 ```
 
@@ -59,7 +59,7 @@ Packing with 7-zip engine.
 
 To compress selected files with default settings.
 
-```java
+```{{site.sbelang1}}
 void pack.files(object files, string output [, object except][, enum format, enum method, integer level])
 ```
 
@@ -71,16 +71,16 @@ level    | 3 (Normal)
 
 Individual signatures:
 
-```java
+```{{site.sbelang1}}
 void pack.files(object files, string output)
 ```
-```java
+```{{site.sbelang1}}
 void pack.files(object files, string output, object except)
 ```
-```java
+```{{site.sbelang1}}
 void pack.files(object files, string output, enum format, enum method, integer level)
 ```
-```java
+```{{site.sbelang1}}
 void pack.files(object files, string output, object except, enum format, enum method, integer level)
 ```
 
@@ -95,13 +95,13 @@ Arguments:
 
 Samples:
 
-```minid
+```{{site.sbelang}}
 #[7z pack.files({"IntelOCL.log", "IntelChipset.log"}, "ilog.7z")]
 #[7z pack.files({"bin\gpp.exe", "bin\lib\*.dll"}, "gpp.7z", {"bin\lib\stub.dll"}, SevenZip, Lzma2, 4)]
 #[7z pack.files({"C:\Intel\Logs\IntelAMT.log"}, "P:\s01\CodeAnalysisLog.xml"}, "D:\output.zip", Zip, Deflate, 2)]
 ```
 
-```minid
+```{{site.sbelang}}
 #[7z pack.files({"bin\xscale.exe", "bin\libintl-8.dll"}, "xscale.tar", Tar, Copy, 0)]
 #[7z pack.files({"xscale.tar"}, "xscale.tar.xz", XZ, Lzma2, 4)]
 ```
@@ -112,7 +112,7 @@ Notes:
 * The `\` as path separator is used for relative structure of directories in the final archive.
 * The `/` as path separator is used for absolute structure of directories in the final archive.
 
-```minid
+```{{site.sbelang}}
 #[7z pack.files({ "$(path)bin\Debug\subdir\File3.dll", "$(path)bin\Debug\File1.dll", "$(path)bin\Debug\File2.dll" }, "$(output)Archive1.zip")]
 ```
 
@@ -126,7 +126,7 @@ The final Archive1.zip will be:
         File3.dll
 ```
 
-```minid
+```{{site.sbelang}}
 #[7z pack.files({ "$(path)bin/Debug/subdir/File3.dll", "$(path)bin/Debug/File1.dll", "$(path)bin/Debug/File2.dll" }, "$(output)Archive2.zip")]
 ```
 
@@ -146,16 +146,16 @@ The final Archive2.zip will be:
 
 To compress selected directory with default settings.
 
-```java
+```{{site.sbelang1}}
 void pack.directory(string dir, string output [, enum format, enum method, integer level])
 ```
 
 Individual signatures:
 
-```java
+```{{site.sbelang1}}
 void pack.directory(string dir, string output)
 ```
-```java
+```{{site.sbelang1}}
 void pack.directory(string dir, string output, enum format, enum method, integer level)
 ```
 
@@ -169,14 +169,14 @@ Arguments:
 
 Samples:
 
-```minid
+```{{site.sbelang}}
 #[7z pack.directory("bin", "release.zip")]
 #[7z pack.directory("D:\log", "log.7z", SevenZip, Lzma2, 4)]
 ```
 
 ## check
 
-```java
+```{{site.sbelang1}}
 #[7z check]
 ```
 
@@ -184,16 +184,16 @@ Samples:
 
 Verification data of archive. Returns true if no any errors for archive.
 
-```java
+```{{site.sbelang1}}
 boolean check(string file [, string pwd])
 ```
 
 Individual signatures:
 
-```java
+```{{site.sbelang1}}
 boolean check(string file)
 ```
-```java
+```{{site.sbelang1}}
 boolean check(string file, string pwd)
 ```
 
@@ -204,13 +204,13 @@ Arguments:
 
 Samples:
 
-```minid
+```{{site.sbelang}}
 #[( !#[7z check("arch.tar.xz")] ){
     #[Build cancel = true]
 }]
 ```
 
-```minid
+```{{site.sbelang}}
 #[var arch = #[7z check("arch.tar.xz", "pass-123")]]
 ```
 
@@ -220,7 +220,7 @@ Samples:
 
 Extract archive data.
 
-```java
+```{{site.sbelang1}}
 void unpack(string file [, string output][, boolean delete][, string pwd])
 ```
 
@@ -228,43 +228,43 @@ void unpack(string file [, string output][, boolean delete][, string pwd])
 
 Extract archive data into same directory:
 
-```java
+```{{site.sbelang1}}
 void unpack(string file)
 ```
 
 Extract archive data into selected directory:
 
-```java
+```{{site.sbelang1}}
 void unpack(string file, string output)
 ```
 
 Extract data from protected archive into selected directory:
 
-```java
+```{{site.sbelang1}}
 void unpack(string file, string output, string pwd)
 ```
 
 Extract archive data into selected directory and delete it after extraction if needed:
 
-```java
+```{{site.sbelang1}}
 void unpack(string file, string output, boolean delete)
 ```
 
 Extract data from protected archive into selected directory and delete it after extraction if needed:
 
-```java
+```{{site.sbelang1}}
 void unpack(string file, string output, boolean delete, string pwd)
 ```
 
 Extract archive data into same directory and delete it after extraction if needed:
 
-```java
+```{{site.sbelang1}}
 void unpack(string file, boolean delete)
 ```
 
 Extract data from protected archive into same directory and delete it after extraction if needed:
 
-```java
+```{{site.sbelang1}}
 void unpack(string file, boolean delete, string pwd)
 ```
 
@@ -277,11 +277,11 @@ Arguments:
 
 Samples:
 
-```minid
+```{{site.sbelang}}
 #[7z unpack("release.7z", true)]
 ```
 
-```minid
+```{{site.sbelang}}
 #[7z unpack("xscale.zip", "D:\app\xscale", false, "pass-123")]
 ```
 

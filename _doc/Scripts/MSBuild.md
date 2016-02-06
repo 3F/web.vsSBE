@@ -29,16 +29,14 @@ The vsSolutionBuildEvent uses additional syntax for select specific project. Thi
 
 Syntax:
 
-```Bash 
-
+```{{site.msblang}}
 $(...)
 $(...:project) - from selected project in your solution
 ```
 
 To escape an sequences use `$`: 
 
-```Bash 
-
+```{{site.msblang}}
 $$(...) / $$(...:project)
 ```
 Where '**...**' - is any allowed syntax with MSBuild data. See MSDN.
@@ -47,40 +45,40 @@ Where '**...**' - is any allowed syntax with MSBuild data. See MSDN.
 
 vsSBE                        | Result
 ---------------------------- | ---
-$([System.Guid]::NewGuid())| `2d2c4ac4-b48d-4509-b42b-aaf6b6047866`
-$(SolutionDir.Substring(0,3))|  d:\
-$([System.DateTime]::Now.ToString("yyyy.MM.dd HH:mm:ss"))| 2014.06.19 17:32:53
-$(EntityDeployIntermediateResourcePath.Substring(0,1)**:boost**)|  F
+$([System.Guid]::NewGuid())                                                                                         | `2d2c4ac4-b48d-4509-b42b-aaf6b6047866`
+$(SolutionDir.Substring(0,3))                                                                                       |  d:\
+$([System.DateTime]::Now.ToString("yyyy.MM.dd HH:mm:ss"))                                                           | 2014.06.19 17:32:53
+$(EntityDeployIntermediateResourcePath.Substring(0,1)**:boost**)                                                    |  F
 $([MSBuild]::GetRegistryValueFromView ('HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Microsoft SDKs\Silverlight\\\v3.0\ReferenceAssemblies', 'SLRuntimeInstallPath', null, RegistryView.Registry64, RegistryView.Registry32)) | C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\Silverlight\v3.0\
-$([System.IO.Path]::Combine($(OS), $(Platform))) | Windows_NT\\x86
-$(MSBuildBinPath)\MSBuild.exe "$(ProjectPath.Replace('\', '/')**:Version**)" /t:Build /p:Configuration=Release | C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe "D:/prg/projects/vsSolutionBuildEvent/Version/Version.csproj" /t:Build /p:Configuration=Release
-$([System.DateTime]::UtcNow.Ticks) | `635645190692933259`
-$([System.DateTime]::Parse("2015/04/01").ToBinary()) | `635634432000000000`
+$([System.IO.Path]::Combine($(OS), $(Platform)))                                                                    | Windows_NT\\x86
+$(MSBuildBinPath)\MSBuild.exe "$(ProjectPath.Replace('\', '/')**:Version**)" /t:Build /p:Configuration=Release      | C:\Windows\Microsoft.NET\Framework\v4.0.30319\MSBuild.exe "D:/prg/projects/vsSolutionBuildEvent/Version/Version.csproj" /t:Build /p:Configuration=Release
+$([System.DateTime]::UtcNow.Ticks)                                                                                  | `635645190692933259`
+$([System.DateTime]::Parse("2015/04/01").ToBinary())                                                                | `635634432000000000`
 $([MSBuild]::GetRegistryValue('HKEY_CURRENT_USER\Software\Microsoft\VisualStudio\12.0\Debugger', 'SymbolCacheDir')) | C:\Symbols
 
 * [Math operations]({{site.docp}}/Features/Math/)
 
-```minid
+```{{site.sbelang}}
 $(numYmod = $([MSBuild]::Modulo($(numY), 12)))
 $([MSBuild]::BitwiseAnd($(mask), $(v))) != 0
 ```
 
 * [Date & Time]({{site.docp}}/Features/Date & Time/)
 
-```minid
+```{{site.sbelang}}
 $([System.TimeSpan]::FromTicks($([MSBuild]::Subtract($(tNow), $(tStart)))).TotalMinutes.ToString("0"))
 ```
 
 * [Operations with strings]({{site.docp}}/Features/Strings/)
 
-```minid
+```{{site.sbelang}}
 $(SolutionPath.Replace('\', '/'))  -> D:\App\ConsoleApp1.sln to D:/App/ConsoleApp1.sln
 $(SolutionPath.Replace('\', '\\')) -> to D:\\App\\ConsoleApp1.sln
 ```
 
 etc.
 
-```minid
+```{{site.sbelang}}
 $(MSBuildBinPath)\MSBuild.exe "$(ProjectPath.Replace('\', '/'):Version)" /t:Build /p:Configuration=Release  
  &
 "$(TargetPath:Version)"  
@@ -94,8 +92,7 @@ It's a strictly limited version compared with [UserVariableComponent](../SBE-Scr
 
 Syntax:
 
-```Bash 
-
+```{{site.msblang}}
 $(name = $(...))
 ```
 
@@ -106,8 +103,7 @@ In **v0.11.4** added strings:
 
 *'\' and "\" used 'as is' for compatibility with MSBuild*
 
-```Bash 
-
+```{{site.msblang}}
 $(name = "  - Platform is a $(Platform)  ")
 ```
 
@@ -115,18 +111,15 @@ $(name = "  - Platform is a $(Platform)  ")
 
 Samples:
 
-```Bash 
-
+```{{site.msblang}}
 $(start = $([System.DateTime]::Parse("2015/04/01").ToBinary()))
 ```
 
-```Bash 
-
+```{{site.msblang}}
 $(pdir = $(ProjectDir:project))
 ```
 
-```Bash 
-
+```{{site.msblang}}
 $(pdir = $(ProjectDir.Replace('\', '/'):project))
 ```
 
@@ -134,14 +127,13 @@ $(pdir = $(ProjectDir.Replace('\', '/'):project))
 
 * To define msbuild property via user-variable:
 
-```Bash 
-
+```{{site.msblang}}
 $(+name = ...)
 ```
 
 * To undefine msbuild property via user-variable:
 
-```Bash 
+```{{site.msblang}}
 $(-name =)
 $(-name = ...)
 ```
@@ -150,13 +142,11 @@ $(-name = ...)
 
 In vsSolutionBuildEvent the most variables can be evaluated with nested levels also for each project.
 
-```Bash 
-
+```{{site.msblang}}
 $($(...:$(...)))
 ```
 
-```Bash 
-
+```{{site.msblang}}
 $($(...:$($(...:$(...)))))
 ```
 and similar,
@@ -187,22 +177,19 @@ $(Platform:**project**) | Platform for specific project
 
 The [Registry Properties](https://msdn.microsoft.com/en-us/library/vstudio/ms171458.aspx) are allowed in **v0.11.4+**:
 
-```Bash 
-
+```{{site.msblang}}
 $(registry:Hive\MyKey\MySubKey@ValueName) - gets value for ValueName from subkey.
 $(registry:Hive\MyKey\MySubKey) - gets the default subkey value.
 ```
 
 **for older versions** you can also use the registry properties but only with a little trick, for example:
 
-```Bash 
-
+```{{site.msblang}}
 #[var k = :Hive\MyKey\MySubKey]
 $(registry$(k))
 ```
 
-```Bash 
-
+```{{site.msblang}}
 #[var k = :Hive\MyKey\MySubKey@ValueName]
 $(registry$(k))
 ```
@@ -212,15 +199,13 @@ $(registry$(k))
 
 * [MSBuild GetRegistryValue](https://msdn.microsoft.com/en-us/library/vstudio/dd633440%28v=vs.120%29.aspx#BKMK_GetRegistryValue) -  returns the value of a registry key:
 
-```Bash 
-
+```{{site.msblang}}
 $([MSBuild]::GetRegistryValue('keyName', 'valueName'))
 ```
 
 * [MSBuild GetRegistryValueFromView](https://msdn.microsoft.com/en-us/library/vstudio/dd633440%28v=vs.120%29.aspx#BKMK_GetRegistryValueFromView) - gets system registry data. The key and value are searched in each registry view(e.g. 32-bit & 64-bit registry view) in order until they are found. Sample of how to look first in the 64-bit then in the 32-bit registry view:
 
-```Bash 
-
+```{{site.msblang}}
 $([MSBuild]::GetRegistryValueFromView('keyName', 'valueName', null, RegistryView.Registry64, RegistryView.Registry32))
 ```
 

@@ -17,8 +17,7 @@ After selecting of this mode you should write file name or list of file names (s
 
 Sample:
 
-```batch
-
+```{{site.msblang}}
 rev.exe -b 1024
 c:\tmp\build.bat
 $(SolutionDir)\clean.bat

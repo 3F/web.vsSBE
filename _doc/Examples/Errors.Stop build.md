@@ -48,8 +48,7 @@ Also as variant you can use - [MSBuild](../../Scripts/MSBuild/) & [SBE-Scripts](
 
 For example:
 
-```java 
-
+```{{site.sbelang}}
 #[( $(isAllow) && $(sysc) == "break" || $(cmdc) > 10 ) {
     #[Build cancel = #[File sout("state", "-s")]
 }]

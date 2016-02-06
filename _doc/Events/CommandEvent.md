@@ -22,8 +22,7 @@ You can use [DTEComponent](../../Scripts/SBE-Scripts/Components/DTEComponent/) o
 
 Samples:
 
-```java 
-
+```{{site.sbelang}}
 $(lcGuid = #[DTE events.LastCommand.Guid])
 $(lcId   = #[DTE events.LastCommand.Id])
 

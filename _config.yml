@@ -15,7 +15,7 @@ collections:
 
 
 # Build settings
-markdown: redcarpet
+markdown: kramdown
 
 redcarpet:
   extensions: ["tables", "no_intra_emphasis", "fenced_code_blocks", "strikethrough", "superscript", "with_toc_data", "space_after_headers", "footnotes", "prettify"]
@@ -25,7 +25,17 @@ kramdown:
     auto_ids: true # generate ID for headings
     input: GFM # +GitHub Flavored Markdown
   
-highlighter: pygments
+#highlighter: pygments
+highlighter: rouge
+
+# suitable langs with rouge as the SBE-Scripts
+sbelang: clojure
+sbelang1: java
+sbelang2: tcl
+sbelang3: ocaml
+
+# suitable langs with rouge as the MSBuild properties and Property Functions
+msblang: bash
 
 
 #######################################

@@ -16,8 +16,9 @@ In examples below, we use the [MSBuild Property Functions](https://msdn.microsof
 * [System.Enum](https://msdn.microsoft.com/en-us/library/system.enum_methods%28v=vs.100%29.aspx)
 * [...](https://msdn.microsoft.com/en-us/library/vstudio/dd633440%28v=vs.120%29.aspx#BKMK_Static)
 
+{% assign infoData = "v0.12.6+ Now allows evaluation of string arguments with MSBuild engine in File/Function/BuildComponent + some newer. You can also use the [MSBuildComponent](../../Scripts/SBE-Scripts/Components/MSBuildComponent/) to force evaluation if still needed." %}
 
-## Remove newline characters and other problematic symbols.
+## Remove newline characters and other problematic symbols
 
 Some your results may contain a some problematic characters for different functions. In most cases this applies to [MSBuild Property Functions](../../Scripts/MSBuild/).
 
@@ -25,23 +26,20 @@ You can use [System.String](https://msdn.microsoft.com/en-us/library/system.stri
 
 For example:
 
-```bash 
-
+```{{site.msblang}}
 $(cs.Replace("\r\n", ""))
 ```
 
 or with different combination CR/LF ([Newline - representations](http://en.wikipedia.org/wiki/Newline#Representations))
 
-```bash 
-
+```{{site.msblang}}
 $(cs.Replace("\r", "").Replace("\n", ""))
 ```
 
 
 So, if you have a multiline value in your variable **projectRev**:
 
-```java 
-
+```{{site.sbelang1}}
 #[var cs = Version is a %ver% !] 
 
 #[var projectRev = v1.2
@@ -51,17 +49,14 @@ rev321]
 
 you can use the Replace() method for changing on any compatible sequence, e.g.:
 
-```java 
-
-
+```{{site.sbelang}}
 #[var projectRev = $(projectRev.Replace("\r\n", " :: "))]
 #[var cs = $(cs.Replace("%ver%", "#[var projectRev]"))]
 ```
 
 or as variant:
 
-```java 
-
+```{{site.sbelang}}
 #[var cs = $(cs.Replace("%ver%", $(projectRev.Replace("\r\n", " :: "))))]
 ```
 and similar...
@@ -74,8 +69,7 @@ note:
 
 as result we have:
 
-```java 
-
+```{{site.sbelang1}}
 Version is a v1.2 :: debug  :: rev321 !
 ```
 
@@ -83,13 +77,11 @@ Version is a v1.2 :: debug  :: rev321 !
 
 You can use available escape-sequence in [SBE-Scripts](../../Scripts/SBE-Scripts/) & [MSBuild](../../Scripts/MSBuild/) cores, for example:
 
-```bash 
-
+```{{site.msblang}}
 $([System.String]::Concat("\r\n"))
 ```
 
-```bash 
-
+```{{site.msblang}}
 $(ver = "1.2.3")
 $([System.String]::Format("\t version is a {0}", $(ver)))
 ```
@@ -106,10 +98,11 @@ Currently used a strictly limited set:
 
 ## Tricks for the longest string arguments
 
+{% include elem/info %}
+
 If you want to pass a long string as argument for some function or method, for example:
 
-```java 
-
+```{{site.sbelang1}}
 #[File sout("cmd", "/C cd \"#[var pDir]bin/#[var cfg]/\" & xcopy *.dll \"#[var nupCIMdir]\bin\" /Y/R/I & xcopy NLog.dll.nlog \"#[var nupCIMdir]\bin\" /Y/R/I")]
 ```
 
@@ -121,8 +114,7 @@ You can for example:
 
 The [UserVariableComponent](../../Scripts/SBE-Scripts/Components/UserVariableComponent/) is  more useful because for current component allowed the multiline mixed definition and therefore you can for example:
 
-```java 
-
+```{{site.sbelang}}
 #[var arg = cd \"D:/tmp/\" 
 dir
 cd ..
@@ -134,8 +126,7 @@ Evaluated value for **arg** variable above should be as `cd \"D:/tmp/\"  & dir &
 
 You can also automatically escape the '"' (double quotes), erase the first & last the newline symbols etc.:
 
-```java 
-
+```{{site.sbelang1}}
 #[var arg = 
 cd "D:/tmp/" 
 dir
@@ -147,8 +138,7 @@ $(arg.Trim("\r\n").Replace('"', '\"').Replace("\r\n", " & "))
 
 Therefore the long single line from example above also can be as:
 
-```java 
-
+```{{site.sbelang}}
 #[var arg = 
 
 cd \"#[var pDir]bin/#[var cfg]/\"
@@ -163,8 +153,7 @@ xcopy NLog.dll.nlog \"#[var nupCIMdir]\bin\" /Y/R/I
 
 also with [cmd](../../Scripts/SBE-Scripts/Components/FileComponent/) alias it can be as:
 
-```java 
-
+```{{site.sbelang1}}
 #[var arg = 
 
 cd "#[var pDir]bin/#[var cfg]/"
@@ -184,12 +173,11 @@ Not all values from strings may be automatically evaluated beetween different en
 
 *You also should remeber [behaviour of strings for User-variables in MSBuild core](../../Scripts/MSBuild/#user-variables-for-msbuild-core)*
 
-{% assign infoData = "v0.12.6+ Now allows evaluation of string arguments with MSBuild engine in File/Function/BuildComponent + some newer. You can also use the [MSBuildComponent](../../Scripts/SBE-Scripts/Components/MSBuildComponent/) to force evaluation if still needed." %}
 {% include elem/info %}
 
 For example:
 
-```java
+```{{site.sbelang1}}
 #[Func hash.SHA1("$([System.Guid]::NewGuid())")]
 ```
 
@@ -201,7 +189,7 @@ The result above is not correct **if** you want evaluate this `$([System.Guid]::
 
 To force evaluation of similar, you should for example, use throught [variable with this engine](../../Scripts/SBE-Scripts/Components/UserVariableComponent/):
 
-```java
+```{{site.sbelang1}}
 #[var myvar = $([System.Guid]::NewGuid())]
 ...
 #[Func hash.SHA1("#[var myvar]")]
@@ -209,7 +197,7 @@ To force evaluation of similar, you should for example, use throught [variable w
 
 compact variant, may be:
 
-```java
+```{{site.sbelang1}}
 #[Func hash.SHA1("#[var _=$([System.Guid]::NewGuid())]#[var _]")]
 ```
 
@@ -219,7 +207,7 @@ and similar..
 
 Use [variables](../../Scripts/SBE-Scripts/Components/UserVariableComponent/) as main container to avoid any spaces if needed.
 
-```java
+```{{site.sbelang1}}
 #[var name = 
 
     ... all of what you want ...
@@ -228,8 +216,7 @@ Use [variables](../../Scripts/SBE-Scripts/Components/UserVariableComponent/) as 
 
 Example:
 
-```java
-
+```{{site.sbelang}}
 #[var nul = 
 
     #["

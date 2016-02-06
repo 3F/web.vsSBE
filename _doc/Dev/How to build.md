@@ -80,8 +80,7 @@ Find the CI.MSBuild project in solution:
     * Optional, add path to vsSolutionBuildEvent sources in `Working Directory` field, for example: D:\projects\vsSolutionBuildEvent\
     * In `Start Options` > `Command line arguments` write for example:
 
-```bat 
-
+```{{site.msblang}}
 "<path_to_SolutionFile_for_debugging>.sln" /nologo /noconsolelogger 
 /l:"CI.MSBuild\bin\<Current_Configuration_Name>\CI.MSBuild.dll";lib=vsSolutionBuildEvent\bin\<Current_Configuration_Name>\ /verbosity:Diagnostic /t:Rebuild /p:Configuration=<Configuration>;Platform=<Platform>
 ```
@@ -105,20 +104,17 @@ Note:
 
 * [Clone repository](/Downloads/#Code) with git:
 
-```bash 
-
+```{{site.msblang}}
 git clone --branch=master https://github.com/3F/vsSolutionBuildEvent.git ./vsSolutionBuildEvent
 ```
 * Restore all packages with [nuget.exe](https://www.nuget.org/nuget.exe) ([documentation](http://docs.nuget.org/Consume/Command-Line-Reference))
 
-```bash 
-
+```{{site.msblang}}
 nuget restore vsSolutionBuildEvent_2013.sln 
 ```
 * And use msbuild.exe for build:
 
-```bash 
-
+```{{site.msblang}}
 "C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe" "vsSolutionBuildEvent_2013.sln" /verbosity:detailed /l:"packages\vsSBE.CI.MSBuild.{{site.lnkCur_CIMNuGet[0] | replace:'v',''}}\bin\CI.MSBuild.dll" /m:4 /p:Configuration=Debug /p:Platform="Any CPU"
 ```
 or use [build_[CI_Debug]](https://github.com/3F/vsSolutionBuildEvent/blob/master/build_%5BCI_Debug%5D.bat) / [build_[CI_Release]](https://github.com/3F/vsSolutionBuildEvent/blob/master/build_%5BCI_Release%5D.bat)

@@ -20,8 +20,7 @@ All components should have postfix **Component** as part of name, for example: M
 
 * Add new class in path `/SBEScripts/Components/DemoComponent.cs`
 
-```csharp 
-
+```csharp
 public class DemoComponent: Component, IComponent
 {
 
@@ -36,8 +35,7 @@ Firstly, we should set identifier of your container from new component.
 
 And for basic checking of ability work with data we can simply:
 
-```csharp 
-
+```csharp
 public override string Condition
 {
     get { return "Demo "; }
@@ -46,13 +44,13 @@ public override string Condition
 
 *Use [CRegex](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/Components/IComponent.cs) flag if need a complex condition with regex pattern ( [IgnorePatternWhitespace](http://msdn.microsoft.com/en-us/library/system.text.regularexpressions.regexoptions.aspx) used by default)*
 
-```csharp 
+```csharp
 public override string Condition
 {
     get { return "^Build projects\\..+"; } // additional handling for already existing component:
 }
 ```
-```csharp 
+```csharp
 public override string Condition
 {
     get { return @"(?:Demo|Alias)\s"; } // alias for Demo word
@@ -63,8 +61,7 @@ public override string Condition
 
 Now you should implement `parse(string data)` with what you want:
 
-```csharp 
-
+```csharp
 public override string parse(string data)
 {
     // TODO
@@ -73,8 +70,7 @@ public override string parse(string data)
 
 **For example**, we'll implement `int add(int a, int b)` method, sample:
 
-```java 
-
+```{{site.sbelang1}}
 #[Demo add(1, 2)]
 ```
 
@@ -86,7 +82,7 @@ However, you can also use the regular expression as a custom variant of implemen
 
 The final **full source code** of your DemoComponent can be, **for example**:
 
-```csharp 
+```csharp
 using net.r_eg.vsSBE.SBEScripts.Exceptions;
 using net.r_eg.vsSBE.SBEScripts.SNode;
 
@@ -135,8 +131,7 @@ namespace net.r_eg.vsSBE.SBEScripts.Components
 
 Then, with default [Bootloader](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/Bootloader.cs) to register new component, use for example:
 
-```csharp 
-
+```csharp
 bootloader.register(new DemoComponent());
 ```
 
@@ -162,7 +157,7 @@ new Script(new BootloaderCustom())
 
 That's all. Build and Run vsSBE, open `Tools` - `SBE-Scripts` and try to execute:
 
-```java
+```{{site.sbelang1}}
 #[Demo add(7, 5)]
 ```
 

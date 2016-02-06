@@ -16,11 +16,10 @@ It should be useful for most cases, for example:
 * [Automatic Version Numbering](../../Examples/Version/) for your projects.
 * Or simple notification like ~ send email before/after building of all projects:
 
-```php 
-
+```php
 mail('yourmail@example.com', 'Build completed', date('H:i:s'));
 ```
-* etc.
+* and other.
 
 Use it with simple caller (by your external logic) or as internal scripts with any interpreters such as php, python, PowerShell, Wscript, Node.js, etc.
 Or use powerfull [MSBuild](../../Scripts/MSBuild/) & [SBE-Scripts](../../Scripts/SBE-Scripts/) engines, etc.

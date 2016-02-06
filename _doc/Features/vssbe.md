@@ -103,7 +103,7 @@ The most easy way, just:
 * Enable [MSBuild](../../Scripts/MSBuild/) support.
 * Define new `ProjectName` property:
 
-```bash
+```{{site.msblang}}
 $(+ProjectName = 'MyUnifiedName')
 ```
 
@@ -113,7 +113,7 @@ That's all. Restart your IDE and have fun.
 
 ## Obsolete variant or variant for old versions
 
-{% assign infoData = "Obsolete" %}
+{% assign infoData = "Obsolete. Please use the variant above - '[Via User-Variables](#via-user-variables--global-msbuild-properties)'" %}
 {% include elem/info %}
 
 * Open your solution file in Visual Studio, right click on your project in 'Solution Explorer' and click `Unload Project`:
@@ -126,8 +126,7 @@ That's all. Restart your IDE and have fun.
 
 * Find or define new **PropertyGroup** and place inside the property **ProjectName**
 
-```xml 
-
+```xml
   <PropertyGroup>
       ...
       <ProjectName>YourProjectName</ProjectName>

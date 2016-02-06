@@ -14,16 +14,17 @@ This is a very simple component (as a mediator) for immediate result from expres
 
 Syntax:
 
-```java
+```{{site.sbelang1}}
 #[$(...)]
 ```
 
 Samples:
 
-```java
+```{{site.sbelang}}
 #[$(name)]
 ```
-```java
+
+```{{site.sbelang}}
 #[$([System.String]::Format("v{0}/{1}", $(v), $(r)))]
 ```
 

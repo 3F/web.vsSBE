@@ -10,73 +10,64 @@ Support of dynamic variables via User-Variables core.
 
 Syntax:
 
-```java 
-
+```{{site.sbelang1}}
 #[var name]
 ```
 
-```java 
-
+```{{site.sbelang1}}
 #[var name = mixed value]
 ```
 
 Samples:
 
-```java 
-
+```{{site.sbelang}}
 #[var branchSha1 = #[File sout("git", "rev-parse --short HEAD")]]
 ```
 
-```java 
-
+```{{site.sbelang}}
 #[var ver = #[var ver].#[var revBuild]]
 ```
 
-# Operations
+## Operations
 
-**v0.11.3+**
+v0.11.3+
 
-## Unset variable
+### Unset variable
 
 Operator the '**-**'(minus). Use this as first symbol for variable name that must be removed:
 
-```java 
-
+```{{site.sbelang1}}
 #[var -name]
 ```
 
-## Default value for variable
+### Default value for variable
 
 You can use this for re/definition variable with default value for compatibility with variables from [MSBuild](../../../MSBuild/) core.
 
 Operator the '**+**'(plus). Use this as first symbol for variable name that must be re/defined by default:
 
-```java 
-
+```{{site.sbelang1}}
 #[var +name]
 ```
 
+## Examples
 
-# Examples
-
-## Empty string
+### Empty string
 
 Allowed in **v0.11.3+**
 
-```java 
-
+```{{site.sbelang1}}
 #[var name =]
 ```
 
 For older versions - you should use 1 or more symbols (whitespace characters or any other value), for example:
 
-```java 
-
+```{{site.sbelang1}}
 #[var name = ]
 ```
 * *you can trim this if needed later with [MSBuild](../../../MSBuild/)*
 
-## Whitespace characters for values
+### Whitespace characters for values
 
 The all variables should skip the first whitespace characters to set values for compatibility. However, you can use the [MSBuild](../../../MSBuild/) core and static methods, for example:
 
@@ -87,15 +78,13 @@ The all variables should skip the first whitespace characters to set values for 
 
 Example - only 5 whitespace character as value:
 
-```java 
-
+```{{site.sbelang}}
 #[var name = $([System.String]::Concat("     "))]
 ```
 
-Others:
+Other:
 
-```java 
-
+```{{site.sbelang}}
 #[var name = $([System.String]::Concat("  ")) mixed value]
 #[var name = $([System.String]::Format("{0} - {1}", "      ", "test"))]
 ```
@@ -104,8 +93,7 @@ Others:
 
 **Or** you can use [MSBuild core](../../../MSBuild/) for work with User-Variables, for example:
 
-```bash 
-
+```{{site.msblang}}
 $(name = " ")
 $(name = "  - Platform is a $(Platform)  ")
 ```

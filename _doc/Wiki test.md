@@ -11,7 +11,7 @@ permalink: /doc/Wiki test/
 
 ## Pygments style
 
-```csharp 
+```csharp
 using ICommand = net.r_eg.vsSBE.Actions.ICommand;
 using ISolutionEvent = net.r_eg.vsSBE.Events.ISolutionEvent;
 

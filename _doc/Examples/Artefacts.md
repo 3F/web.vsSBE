@@ -40,8 +40,7 @@ bin\Releases\vsSolutionBuildEvent_v0.12.6.5585_[df66438][net40].vsix    | VSPack
 
 Release_notes.txt:
 
-```text 
-
+```text
 This assembled from:
 
 * Configuration:   'CI_Debug' (Folders: Debug)
@@ -94,8 +93,7 @@ The final script can be like this:
 
 * Definitions (to prepare data for the convenience):
 
-```minid 
-
+```{{site.sbelang}}
 #[var odir      = $(SolutionDir)bin/Releases/]
 #[var cfg       = #[($(Configuration) ~= "Release"){Release}else{Debug}]]
 #[var cfgFull   = $(Configuration)]
@@ -112,8 +110,7 @@ The final script can be like this:
 
 * Packing - 'Bridge'
 
-```minid 
-
+```{{site.sbelang}}
 #[IO copy.file("$(odir)\Release_notes.txt", "$(pDirBridge)bin\$(cfg)\\", true)]
 #[7z pack.files({ 
             "$(pDirBridge)bin\$(cfg)\Bridge.dll", 
@@ -123,8 +120,7 @@ The final script can be like this:
 
 * Packing - 'Devenv'
 
-```minid 
-
+```{{site.sbelang}}
 #[var _DP = $(SolutionDir)$(pDirDevenv)bin\#[var cfg]\]
 
 #[IO delete.directory("$(_DP)Devenv", true)]
@@ -144,15 +140,13 @@ The final script can be like this:
 
 * Rename vsix
 
-```minid 
-
+```{{site.sbelang}}
 #[IO copy.file("$(pDir)bin\$(cfg)\vsSolutionBuildEvent.vsix", "$(odir)vsSolutionBuildEvent_v$(numSBE)_[$(branchSha1)][$(netStamp)].vsix", true)]
 ```
 
 * NuGet Packing - 'vsSBE.CI.MSBuild'
 
-```minid
-
+```{{site.sbelang}}
 #[var tplNuspec = #[File get("vsSBE.CI.MSBuild.nuspec.tpl")]]
 #[var nupCIMdir = $(odir)NuGet-CI.MSBuild-package]
 
@@ -180,8 +174,7 @@ The final script can be like this:
 
 Where - '[vsSBE.CI.MSBuild.nuspec.tpl](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSBE.CI.MSBuild.nuspec.tpl)' the is a template e.g.:
 
-```xml 
-
+```xml
 <?xml version="1.0"?>
 <package >
   <metadata>
@@ -205,8 +198,7 @@ Where - '[vsSBE.CI.MSBuild.nuspec.tpl](https://github.com/3F/vsSolutionBuildEven
 
 * 'Release_notes.txt' for current assemblies:
 
-```bat 
-
+```{{site.sbelang3}}
 #[File write("$(odir)\Release_notes.txt"):This assembled from:
 
 * Configuration:   '#[var cfgFull]' (Folders: #[var cfg])

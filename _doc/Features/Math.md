@@ -29,14 +29,14 @@ In examples below, we use the [MSBuild Property Functions](https://msdn.microsof
 
 **To convert from** you can use the [Double.Parse()](https://msdn.microsoft.com/en-us/library/system.double.parse.aspx) and similar methods:
 
-```bash
+```{{site.msblang}}
 $([System.Double]::Parse('1,19E+7'))
 $([System.Double]::Parse('1.19E+7')) - Fail: The expression "[System.Double]::Parse(1.19E+7)" cannot be evaluated. Input string was not in a correct format.
 ```
 
 To avoid error above (for your selected culture) use for example:
 
-```bash
+```{{site.msblang}}
 $([System.Double]::Parse('1.19E+7', '$([System.Globalization.CultureInfo]::CurrentUICulture)'))
 $([System.Double]::Parse('1.19E+7', '$([System.Globalization.CultureInfo]::CurrentUICulture.NumberFormat)'))
 $([System.Double]::Parse('1.19E+7', $$([System.Globalization.CultureInfo]::CurrentUICulture)))
@@ -49,8 +49,7 @@ All data inside single quotes `'..'` is not processed and will be entirely sent 
 
 What it means, for example:
 
-```text
-
+```{{site.msblang}}
     $([MSBuild]::Multiply("$([System.Math]::Log(2))", 16)) -> 1,10903548889591E+16
     \                     \_(1) 0,693147180559945_/
     \_______________(2)__________________________________/
@@ -77,7 +76,7 @@ $([System.Math]::Exp('$([MSBuild]::Multiply($([System.Math]::Log(2)), 16))')) | 
 
 ### Add()
 
-```Bash
+```{{site.msblang}}
 $(number = $([MSBuild]::Add(1024, 12)))
 $(number = $([MSBuild]::Add($(number), 1)))
 ``` 
@@ -86,7 +85,7 @@ $(number = $([MSBuild]::Add($(number), 1)))
 
 **Set**
 
-```bash
+```{{site.msblang}}
 $(mask = 0)
 
 $(mask = $([MSBuild]::BitwiseOr($(mask), 1)))
@@ -100,8 +99,7 @@ Result: `1101`
 
 **Check**
 
-```java
-
+```{{site.sbelang}}
 #[$(v = 2)]
 
 #[( $([MSBuild]::BitwiseAnd($(mask), $(v))) != 0 ){ 

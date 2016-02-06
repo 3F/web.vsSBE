@@ -20,15 +20,13 @@ For example, for [C# Mode]({{site.docp}}/Modes/CSharp/):
 
 * With [MSBuild Property Functions](http://msdn.microsoft.com/en-us/library/vstudio/dd633440%28v=vs.120%29.aspx):
 
-```csharp 
-
+```csharp
 string type = $([System.String]::Format('"{0}";', #[Build type]))
 ```
 
 * With [UserVariableComponent](../Components/UserVariableComponent/)
 
-```csharp 
-
+```csharp
 #[var _type = "#[Build type]"]
 ...
 string type = #[var _type];
@@ -36,8 +34,7 @@ string type = #[var _type];
 
 * With User-variables *(MSBuild or SBE-Scripts)*:
 
-```csharp 
-
+```csharp
 $(q = '"')
 .. .
 string type = $(q)#[Build type]$(q);
@@ -48,7 +45,6 @@ and others..
 As result for all above you should see, for example:
 
 ```csharp
-
 string type = "Rebuild";
 ```
 

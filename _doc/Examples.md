@@ -7,8 +7,8 @@ permalink: /doc/Examples/
 ## Complete solutions
 
 * [Automatic Version Numbering](Version/)
-    * [Manually variant](Version/Manually/)
-    * [Wizard variant](Version/Wizard/)
+    * [Manually](Version/Manually/)
+    * [Wizard variant](Version/Wizard/) - *Automatic code generation*
 * [Artefacts. How to prepare as you want](Artefacts/)
 * [Stop build on first error](Errors.Stop build/)
 * [Demo projects](Demo/)

@@ -27,16 +27,14 @@ For testing of commands, you can try with testing tool:
 
 ### Activation of specific configuration & platform
 
-```java 
-
+```{{site.sbelang1}}
 Build.SolutionConfigurations(Debug)
 Build.SolutionPlatforms(x86)
 ```
 
 ### To cancel build operation ###
 
-```java 
-
+```{{site.sbelang1}}
 Build.Cancel
 ```
 
@@ -46,8 +44,7 @@ As variant you can use powerful and flexible control with [SBE-Scripts](../../Sc
 
 * For this case you should use the [DTEComponent](../../Scripts/SBE-Scripts/Components/DTEComponent/)
 
-```java 
-
+```{{site.sbelang}}
 #[( $(isAllow) && ($(Configuration) ^= "Release" || $(sysLim) > 16) )
 {
     #[DTE exec: Build.Cancel]

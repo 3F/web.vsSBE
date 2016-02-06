@@ -27,8 +27,7 @@ In examples below, we use the [MSBuild Property Functions](https://msdn.microsof
 
 Example of counter in the range 1 - 10:
 
-```java 
-
+```{{site.sbelang}}
 #[( $(counter) == "*Undefined*" ) {
     #[var counter = 0]
 }]
@@ -46,8 +45,7 @@ Example of counter in the range 1 - 10:
 
 Needed a more exotic control ? no problem:
 
-```java 
-
+```{{site.sbelang}}
 #[($(numX) == "*Undefined*") {
     #[var numX    = 0]
     #[var numY    = 0]
@@ -74,8 +72,7 @@ The most CI servers already should provide special environment variable, like a 
 
 * You can also use any cryptographic hash function ([sha1](https://en.wikipedia.org/wiki/SHA-1), [MD5](https://en.wikipedia.org/wiki/MD5), [TTH](https://en.wikipedia.org/wiki/Merkle_tree#Tiger_tree_hash) etc.) with your specific unique identification (timestamp + computer identifier + ... and similar), for example:
 
-```java 
-
+```{{site.sbelang1}}
 #[var utcnow = $([System.DateTime]::UtcNow.Ticks)]
 #[File sout("cmd", "/C echo \"#[var utcnow]\" | openssl sha1 | sed 's/^.*\s//'")]
 ```
@@ -85,16 +82,14 @@ The most CI servers already should provide special environment variable, like a 
 
 * Of course you can use the [Globally Unique Identifier (GUID)](https://en.wikipedia.org/wiki/Globally_unique_identifier) as part of mscorlib.dll - [System.Guid](https://msdn.microsoft.com/en-us/library/system.guid%28v=vs.100%29.aspx):
 
-```java 
-
+```{{site.sbelang1}}
 $([System.Guid]::NewGuid())
 ```
 `364c741c-21da-4c85-8d33-abf15b7c9672`
 
 if needed sha1 you can also recalculate this:
 
-```java 
-
+```{{site.sbelang1}}
 #[var guid = $([System.Guid]::NewGuid())]
 #[File sout("cmd", "/C echo \"#[var guid]\" | openssl sha1 | sed 's/^.*\s//'")]
 ```

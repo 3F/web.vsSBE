@@ -17,7 +17,7 @@ For the same or similar case it can be is really easy for this event type:
 * Enable [MSBuild](../../Scripts/MSBuild/) support.
 * Define what you need:
 
-```bash
+```{{site.msblang}}
 $(+ProjectName = 'MyUnifiedName')
 ```
 

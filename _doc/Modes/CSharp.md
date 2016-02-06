@@ -11,8 +11,7 @@ This action type for work with C# compiler - feel free with all events & actions
 
 ## Default Entry point
 
-```csharp 
-
+```csharp
 using ICommand = net.r_eg.vsSBE.Actions.ICommand;
 using ISolutionEvent = net.r_eg.vsSBE.Events.ISolutionEvent;
 
@@ -34,8 +33,7 @@ namespace vsSolutionBuildEvent
 
 Additional assembly names that are referenced by the source to compile. You can use any formats below, for example:
 
-```bat 
-
+```{{site.msblang}}
 EnvDTE.dll
 C:\WINDOWS\assembly\GAC\EnvDTE\<ver>\EnvDTE.dll
 EnvDTE
@@ -48,8 +46,7 @@ As variant, you can also use FilesMode flag in Compiler settings for work with e
 
 Then you should use list of files instead of code, for example:
 
-```bat 
-
+```{{site.msblang}}
 hooks\*.cs
 scripts\vssbe\main.cs
 scripts\vssbe\ftp.cs
@@ -86,8 +83,7 @@ You have a few variants for work with UserVariables:
 
 SBE-Scripts engine. For example:
 
-```csharp 
-
+```csharp
 Stack<string> mv = new Stack<string>();
 mv.Push("One");
 mv.Push("Two");
@@ -105,8 +101,7 @@ As result you can get this value from other actions with standard operations, fo
 
 if also used the `MSBuild support` option for C# code, for example, for work with msbuild properties:
 
-```csharp 
-
+```csharp
 using(StreamReader reader = new StreamReader(@"$(SolutionPath)", Encoding.Default))
 {
     ...
@@ -115,8 +110,7 @@ using(StreamReader reader = new StreamReader(@"$(SolutionPath)", Encoding.Defaul
 
 Don't forget about escaping an sequences, for example:
 
-```csharp 
-
+```csharp
 cmd.MSBuild.parse(String.Format("$$(mvMap = '{0}')", steps.Peek()));
 ```
 
@@ -129,8 +123,7 @@ For example:
 
 * Access to [IEnvironment](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/IEnvironment.cs) for getting current build action type:
 
-```csharp 
-
+```csharp
 if(cmd.Env.BuildType != BuildType.Clean) {
     String.Format("Current type: {0}", cmd.Env.BuildType); // Current type: Rebuild
     ...
@@ -140,8 +133,7 @@ if(cmd.Env.BuildType != BuildType.Clean) {
 * Or direct access to User-variables ([IUserVariable](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/Scripts/IUserVariable.cs)) for get/set/or evaluation new variables...
     * For example, with used Bootloader ([IBootloader](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/IBootloader.cs)):
 
-```csharp 
-
+```csharp
 IUserVariable uvar = cmd.SBEScript.Bootloader.UVariable;
 if(!uvar.isExist("name1", "projectA")) {
     uvar.set("ret", null, "raw");
@@ -161,8 +153,7 @@ if(!uvar.isExist("name1", "projectA")) {
 * Customize cache and check other available flags of optimization. (optional)
 * Use next code, for example:
 
-```csharp 
-
+```csharp
 using net.r_eg.vsSBE;
 using ICommand = net.r_eg.vsSBE.Actions.ICommand;
 using ISolutionEvent = net.r_eg.vsSBE.Events.ISolutionEvent;
@@ -191,7 +182,6 @@ Parsing data via SBE-Scripts engine from C# Mode, yes [it's possible](#work-with
 So you can simply:
 
 ```csharp
-
 cmd.SBEScript.parse("#[OWP item(\"My Log\").writeLine(true): Hi :) ]");
 ```
 
@@ -207,8 +197,7 @@ cmd.SBEScript.parse("#[OWP item(\"My Log\").writeLine(true): Hi :) ]");
 * Customize cache and check other available flags of optimization. (optional)
 * Use next code, for example:
 
-```csharp 
-
+```csharp
 using System;
 using System.Net;
 using ICommand = net.r_eg.vsSBE.Actions.ICommand;
