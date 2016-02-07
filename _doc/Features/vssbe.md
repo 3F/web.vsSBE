@@ -116,6 +116,18 @@ That's all. Restart your IDE and have fun.
 {% assign infoData = "Obsolete. Please use the variant above - '[Via User-Variables](#via-user-variables--global-msbuild-properties)'" %}
 {% include elem/info %}
 
+You can define the `ProjectName` property in your project files (*.csproj, *.vcxproj, etc.)
+
+### The Rename feature
+
+Use this:
+
+![rename project](../../Resources/projectName/vs_rename_project_219.png)
+
+Or:
+
+### Define directly
+
 * Open your solution file in Visual Studio, right click on your project in 'Solution Explorer' and click `Unload Project`:
 
 ![Step 1](../../Resources/projectName/step1.png)

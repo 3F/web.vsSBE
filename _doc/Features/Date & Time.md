@@ -90,9 +90,32 @@ $([System.TimeSpan]::FromTicks($([MSBuild]::Subtract(635618821282084745, 6356187
 $([System.TimeSpan]::FromTicks($([MSBuild]::Subtract(635618821282084745, 635618792404338780))).TotalSeconds.ToString("0"))
 ```
 
+## Custom Date and Time Format Strings
+
+[MSDN](https://msdn.microsoft.com/en-us/library/8kb3ddd4%28v=vs.110%29.aspx)
+
+```{{msblang}}
+$([System.DateTime]::UtcNow.ToString("yyyy.MM.dd_HH;mm;ss.ffff"))
+```
+Result: `2016.02.07_10;56;54.8265`
+
+## Standard Date and Time Format Strings
+
+[MSDN](https://msdn.microsoft.com/library/az4se3k1%28v=vs.100%29.aspx)
+
+```{{msblang}}
+$([System.DateTime]::UtcNow.ToString("o"))
+```
+Result: `2016-02-07T10:57:59.4937445Z`
+
+```{{msblang}}
+$([System.DateTime]::UtcNow.ToString("R"))
+```
+Result: `Sun, 07 Feb 2016 10:59:03 GMT`
+
 ## Full example for build number
 
-You can [try this](../../Examples/Version number/) If needed a some additional build number and similar.
+You can [try this](../../Examples/Version/Manually/) If needed a some additional build number and similar.
 
 **Notes**: 
 
@@ -101,7 +124,8 @@ You can [try this](../../Examples/Version number/) If needed a some additional b
 
 # References #
 
-* [Automatic Version Numbering for VSIX Package](../../Examples/Version number/)
+* [Math operations](../Math/)
+* [Automatic Versioning](../../Examples/Version/)
 * [CI](../../CI/)
 * [Custom counters](../Custom counters/)
 * [MSBuild](../../Scripts/MSBuild/)

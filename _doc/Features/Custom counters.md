@@ -103,8 +103,9 @@ and similar..
     * [ConditionComponent](../../Scripts/SBE-Scripts/Components/ConditionComponent/)
     * [FunctionComponent](../../Scripts/SBE-Scripts/Components/FunctionComponent/#hash)
 * [MSBuild](../../Scripts/MSBuild/)
+* [Math operations](../Math/)
 * [Date & Time](../Date & Time/)
-* [Automatic Version Numbering](../../Examples/Version number/)
+* [Automatic Versioning](../../Examples/Version/)
 * [OpenSSL Project](https://openssl.org)
 * MSDN:
     * [System.Guid](https://msdn.microsoft.com/en-us/library/system.guid%28v=vs.100%29.aspx)

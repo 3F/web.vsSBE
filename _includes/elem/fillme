@@ -1,7 +1,7 @@
 {% if page.path contains "/index.html" %}
   {% assign path = page.path %}
 {% else %}
-  {% assign docPath = {{page.path}} | split: '/_doc/' %}
+  {% assign docPath = {{page.path}} | split: '_doc/' %}
   {% assign path = "_doc/" | append: docPath[1] %}
 {% endif %}
 
