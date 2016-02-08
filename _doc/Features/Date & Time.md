@@ -29,15 +29,15 @@ We can use the next methods:
 
 for example:
 
-```{{site.sbelang1}}
+```{{site.msblang}}
 $([System.DateTime]::Parse("2015/02/17").ToBinary())
 ```
 
-```{{site.sbelang1}}
+```{{site.msblang}}
 $([System.DateTime]::Parse("2015/02/17 07:21").ToBinary())
 ```
 
-```{{site.sbelang1}}
+```{{site.msblang}}
 $([System.DateTime]::Parse("17.02.2015 17:41").ToBinary())
 ```
 etc.
@@ -51,7 +51,7 @@ We also should use the next properties:
 
 for example ![UtcNow.Ticks](https://bitbucket.org/3F/vssolutionbuildevent/wiki/Resources/examples/UtcNow-Ticks.gif):
 
-```{{site.sbelang1}}
+```{{site.msblang}}
 $([System.DateTime]::UtcNow.Ticks)
 ```
 
@@ -65,13 +65,13 @@ You should use the [TimeSpan Properties](https://msdn.microsoft.com/en-us/librar
 
 and [TimeSpan.FromTicks](https://msdn.microsoft.com/en-us/library/system.timespan.fromticks%28v=vs.100%29.aspx) method, for example:
 
-```{{site.sbelang1}}
+```{{site.msblang}}
 $([System.TimeSpan]::FromTicks(635618792404338780).TotalHours)
 $([System.TimeSpan]::FromTicks(635618792404338780).TotalMinutes)
 ```
 You also can use the [ToString(string)](https://msdn.microsoft.com/en-us/library/kfsatb94%28v=vs.110%29.aspx) method to get an integer value, e.g.:
 
-```{{site.sbelang1}}
+```{{site.msblang}}
 $([System.TimeSpan]::FromTicks(635618792404338780).TotalHours.ToString("0"))
 $([System.TimeSpan]::FromTicks(635618792404338780).TotalMinutes.ToString("0"))
 ```
@@ -80,13 +80,13 @@ $([System.TimeSpan]::FromTicks(635618792404338780).TotalMinutes.ToString("0"))
 
 * Total **minutes** from Ticks 1 to Ticks 2:
 
-```{{site.sbelang1}}
+```{{site.msblang}}
 $([System.TimeSpan]::FromTicks($([MSBuild]::Subtract(635618821282084745, 635618792404338780))).TotalMinutes.ToString("0"))
 ```
 
 * Total **seconds** from Ticks 1 to Ticks 2:
 
-```{{site.sbelang1}}
+```{{site.msblang}}
 $([System.TimeSpan]::FromTicks($([MSBuild]::Subtract(635618821282084745, 635618792404338780))).TotalSeconds.ToString("0"))
 ```
 
@@ -94,7 +94,7 @@ $([System.TimeSpan]::FromTicks($([MSBuild]::Subtract(635618821282084745, 6356187
 
 [MSDN](https://msdn.microsoft.com/en-us/library/8kb3ddd4%28v=vs.110%29.aspx)
 
-```{{msblang}}
+```{{site.msblang}}
 $([System.DateTime]::UtcNow.ToString("yyyy.MM.dd_HH;mm;ss.ffff"))
 ```
 Result: `2016.02.07_10;56;54.8265`
@@ -103,12 +103,12 @@ Result: `2016.02.07_10;56;54.8265`
 
 [MSDN](https://msdn.microsoft.com/library/az4se3k1%28v=vs.100%29.aspx)
 
-```{{msblang}}
+```{{site.msblang}}
 $([System.DateTime]::UtcNow.ToString("o"))
 ```
 Result: `2016-02-07T10:57:59.4937445Z`
 
-```{{msblang}}
+```{{site.msblang}}
 $([System.DateTime]::UtcNow.ToString("R"))
 ```
 Result: `Sun, 07 Feb 2016 10:59:03 GMT`

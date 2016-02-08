@@ -5,7 +5,7 @@ permalink: /doc/Scripts/SBE-Scripts/
 ---
 # SBE-Scripts
 
-SBE-Scripts - it's our engine for additional work over [MSBuild](../MSBuild/) - conditions, subcommands, file operations, etc. by components.
+SBE-Scripts - it is our engine for additional work over [MSBuild](../MSBuild/) - conditions, subcommands, file operations, etc. by components.
 
 *you can use this as an additional variant and/or if need a some features, for example, special for Visual Studio etc. all of that are not exists/available with [MSBuild](../MSBuild/)*
 

@@ -165,7 +165,7 @@ Congratulation! The DemoComponent has been implemented.
 
 What's next ? how to implement a more complex logic and how to work with MSBuild engine, User-Variables, etc., you can look on [real components](https://github.com/3F/vsSolutionBuildEvent/tree/master/vsSolutionBuildEvent/SBEScripts) (Please note, some older components still may use old syntax before using new [IPM](../SBE-Scripts/IPM/))
 
-Also, if you want share your component for current project - use pull request (on Bitbucket or GitHub), or send directly as .patch file with available contacts.
+Also, if you want share your component for current project - use pull request (on Bitbucket or GitHub), or send directly as .patch file.
 
 ## How about plugin system for this ?
 

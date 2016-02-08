@@ -29,14 +29,14 @@ Branches status:
 * .NET Framework:
     * [minimal v4.5 for develop on Visual Studio 2012+](http://www.microsoft.com/en-US/download/details.aspx?id=30653) (Offline installer: [dotNetFx45_Full_x86_x64.exe](http://go.microsoft.com/fwlink/?LinkId=225702))
     * [minimal v4.0 for develop on Visual Studio 2010](http://www.microsoft.com/en-US/download/details.aspx?id=17718)
-* [vsSolutionBuildEvent]({{site.lnkVSGallery}}) v0.12.6+ *we also use this for self-assembly*
-* [NuGet](https://www.nuget.org/) (starting with VS2012, NuGet is included in every edition. For VS2010, NuGet is available through the Extension Manager - [NuGet Package Manager](https://visualstudiogallery.msdn.microsoft.com/27077b70-9dad-4c64-adcf-c7cf6bc9970c))
-    * details: http://docs.nuget.org/docs/start-here/installing-nuget
-* [Moq 4](https://github.com/Moq/moq4) or higher
-* [NLog v2](http://nlog-project.org/) or higher
-* [Json.NET v6](http://json.codeplex.com/) or higher
-* [Ude v0.1](https://code.google.com/p/ude/) or higher
-* [AvalonEdit v5](http://avalonedit.net/) or higher
+* [Moq v4.2+](https://github.com/Moq/moq4)
+* [NLog v3.1+](http://nlog-project.org/)
+* [Json.NET v6+](http://json.codeplex.com/)
+* [Ude v0.1+](https://code.google.com/p/ude/)
+* [AvalonEdit v5+](http://avalonedit.net/)
+* 7-Zip: [SevenZipSharp v0.64+](http://sevenzipsharp.codeplex.com/) & [Libraries](http://www.7-zip.org/)
+* [vsSolutionBuildEvent]({{site.lnkVSGallery}}) v0.12.6+
+* [GetNuTool v1.3+](https://github.com/3F/GetNuTool)
 
 if you have a some problems with getting libraries through NuGet, you can also use the backups from [{{site.lnkBackupLib[0]}}]({{site.lnkBackupLib[1]}})
 

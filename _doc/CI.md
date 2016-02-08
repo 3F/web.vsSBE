@@ -7,14 +7,14 @@ permalink: /doc/CI/
 
 *and other work* ***without Visual Studio***.
 
-The vsSolutionBuildEvent is also can be used for [continuous Integration](http://en.wikipedia.org/wiki/Continuous_integration) etc.
+The vsSolutionBuildEvent is also supports CI features [[?](http://en.wikipedia.org/wiki/Continuous_integration)]
 
 [![Example with AppVeyor](../Resources/ci_example_appveyor.png)](../CI/CI.MSBuild/)
 
-It's possible with additional features:
+It's possible with additional components:
 
-* [CI.MSBuild](../CI/CI.MSBuild/) - for work through msbuild.exe (MSBuild Tools)
-* [Devenv Command-Line](../CI/Devenv Command-Line/) - for work through devenv of the Visual Studio
+* [CI.MSBuild](../CI/CI.MSBuild/) - for work via msbuild.exe (MSBuild Tools)
+* [Devenv Command-Line](../CI/Devenv Command-Line/) - for work via devenv instance of the Visual Studio
 
 ## Other utilities
 
@@ -24,4 +24,4 @@ The vsSolutionBuildEvent provides [API level](../Scheme/) for work in any places
 
 Don't forget about `after.<name>.sln.targets` features if you only want action [for all projects at once](../Features/Solution-wide/).
 
-* [Read here](../Features/Solution-wide/#after-lt-name-gt-sln-targets)
+* [Read here](../Features/Solution-wide/#afternameslntargets)
