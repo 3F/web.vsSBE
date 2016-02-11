@@ -1,43 +1,47 @@
 ---
 layout: page
 title: Help for project to help for you!
+hidetitle: true
 permalink: /Donation/
 ---
-
 The vsSolutionBuildEvent - is **open** and **free** projects for all!
 
-Today, need a lot of description of many-many features to describe of this.. well, simply use it for what you need :)
+Today, need a lot of description of many-many features (Changelog [here]({{site.baseurl}}/Changelist/), Scheme [here]({{site.docp}}/Scheme/)) to describe all of what we may... 
+well, simply use it only for what you need *and have fun...* :)
 
-*and have fun...*
+Do you want support us also ?
 
-Want to help us also, and want to see a more new features, support etc. ? (Changelog [here]({{site.baseurl}}/Changelist/))
+Now you can !
 
-Well, now you can help...
+<br />
 
-# What you may #
+## What you may
 
-## Money ##
+### Money
 
-yes, it's a classic.. but it is really helpful for support this! 
+*yes, it's a classic.. but it is really helpful for support.* 
+
+**Note:** the USD by default, but we also accept the EUR and RUB (Russian Ruble). Contact if needed.
 
 * PyPal: [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=P2HRG52AJSA9N&lc=US&item_name=vsSolutionBuildEvent%20%28vsSBE%29%20Open%20Source%20Projects&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted)
-* Problem with PyPal ? other variant ? write [here](https://bitbucket.org/3F/vssolutionbuildevent/issues/new) or use any direct contacts for private discussion
+* alternatives ? write [here](https://bitbucket.org/3F/vssolutionbuildevent/issues/new) or use any contacts for private discussion:
+    * <entry.reg@gmail.com> (please inform details if you do not want that your message was deleted as spam)
 
-No money ?
+Thank **you** for your important support !
+
+#### No money ?
 
 Some our users uses this in official job.. so, you can also simply to tell your boss about this :)
 
-Still no money ? don't worry, if you still want to help us... see below
+Still no money ? don't worry if you still want support us. see below
 
-## New Features & bug fixes
+### New Features & bug fixes
 
 For existing or new things. Have ideas ? Or is ready for bug fixing or improving performance ? Good!
 
 Start with [Developer Zone]({{site.docp}}/Dev/)
 
-*Also you can extend or improve our platform with [Components]({{site.docp}}/Dev/New Component)*
-
-## Wiki
+### Wiki
 
 You can also add new or improve any existing pages for current wiki.
 
@@ -45,7 +49,7 @@ Share some solutions/examples with community of your experiences. Use [Edit] but
 
 *Take a few minutes of your time for helping for others our users. From short useful script/note or any complete solution.*
 
-## GUI
+### GUI
 
 Improvement or complete replacement of current UI (main GUI, console, tool pane, ..)
 
@@ -55,12 +59,12 @@ Current UI is obsolete and inconvenient for all new features, so you can also tr
 
 Start with [Developer Zone]({{site.docp}}/Dev/)
 
-**Please note:** planned to separate this namespace into the new project (this really needed with [API]({{site.docp}}/API) and all related subprojects). Write before [here](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)
+**Please note:** planned to separate this namespace into the new project (this is really needed with [API]({{site.docp}}/API) and all [related subprojects]({{site.docp}}/Scheme/)). Write before [here](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)
 
-## Share
+### Share
 
 Share project... a lot of users - a lot of help or something like that.
 
-# Have a questions ?
+## Have a questions ?
 
 -> [we'll help you](https://bitbucket.org/3F/vssolutionbuildevent/issues/new) -_*

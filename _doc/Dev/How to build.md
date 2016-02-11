@@ -38,7 +38,7 @@ Branches status:
 * [vsSolutionBuildEvent]({{site.lnkVSGallery}}) v0.12.6+
 * [GetNuTool v1.3+](https://github.com/3F/GetNuTool)
 
-if you have a some problems with getting libraries through NuGet, you can also use the backups from [{{site.lnkBackupLib[0]}}]({{site.lnkBackupLib[1]}})
+You can also use the backups from [{{site.lnkBackupLib[0]}}]({{site.lnkBackupLib[1]}}) if you can't get automatically any libraries above.
 
 ### Build & Debug
 
@@ -89,14 +89,15 @@ Find the CI.MSBuild project in solution:
 
 Click on `Build` > `Build Solution`
 
-Congratulation! Now, you can run the vsSBE extension over experimental VS IDE for debugging *inc. Devenv & CI.MSBuild if you need*.
+Congratulation! Now you can run the vsSBE extension over experimental VS IDE for debugging *inc. Devenv & CI.MSBuild if you need*.
 
 Note:
 
 *  **Unit-Tests** should automatically started for all Release-configurations. Or you can manualy start with `Test` > `Run` > `All Tests in Solution`
 
-* **Libraries**: NLog, Json.NET, Moq, Ude, AvalonEdit - managed by NuGet and should be received automatically into `./packages` directory. Otherwise, use the following command: `nuget restore vsSolutionBuildEvent_X.sln` or try to [add manually]({{site.lnkBackupLib[1]}}) if exists a some problems.
-
+* The **Libraries** is managed by GetNuTool & NuGet and will be received automatically into `./packages` directory. Otherwise use the following command: 
+    * `gnt.core /p:ngconfig="packages.config|..."` / `nuget restore vsSolutionBuildEvent_X.sln` 
+    * or [add manually]({{site.lnkBackupLib[1]}}) if you can't get it automatically.
 
 ## Variant for Microsoft Build Tools (msbuild.exe)
 
@@ -128,13 +129,13 @@ That's all.
 * `C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe` - full path to your msbuild.exe
 * `packages\vsSBE.CI.MSBuild.{{site.lnkCur_CIMNuGet[0] | replace:'v',''}}\bin\CI.MSBuild.dll` - path to the [CI.MSBuild](../../CI/CI.MSBuild/)
 
-*this variant also used for build automation with [AppVeyor](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent)*
+*this variant is also used for build automation with [AppVeyor](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent)*
 
 ## What's next ?
 
 * Create [New component](../New%20Component/)
 * Improve all what you want...
 
-Is also ready for collaboration ? use pull request features *(on [Bitbucket](https://bitbucket.org/3F/vssolutionbuildevent/) or [GitHub](https://github.com/3F/vsSolutionBuildEvent/))*, or send this directly as **.patch** file with available contacts.
+Is also ready for collaboration ? use pull request features *([GitHub](https://github.com/3F/vsSolutionBuildEvent/) / [Bitbucket](https://bitbucket.org/3F/vssolutionbuildevent/))*, or send it directly as **.patch** file.
 *For complex logic(as for our lexers, analyzers etc.) please also provide a correct new unit-tests.*
 

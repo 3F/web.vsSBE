@@ -9,46 +9,9 @@ permalink: /doc/Wiki test/
 
 # Highlighting
 
-## Pygments style
-
-```csharp
-using ICommand = net.r_eg.vsSBE.Actions.ICommand;
-using ISolutionEvent = net.r_eg.vsSBE.Events.ISolutionEvent;
-
-namespace vsSolutionBuildEvent
-{
-    public class CSharpMode
-    {
-        public static int Init(ICommand cmd, ISolutionEvent evt)
-        {
-            return 0;
-        }
-    }
-}
-```
-
 ## GitHub Flavored Markdown
 
 ```csharp
-using ICommand = net.r_eg.vsSBE.Actions.ICommand;
-using ISolutionEvent = net.r_eg.vsSBE.Events.ISolutionEvent;
-
-namespace vsSolutionBuildEvent
-{
-    public class CSharpMode
-    {
-        public static int Init(ICommand cmd, ISolutionEvent evt)
-        {
-            return 0;
-        }
-    }
-}
-```
-
-## Bitbucket style
-
-```
-#!csharp
 using ICommand = net.r_eg.vsSBE.Actions.ICommand;
 using ISolutionEvent = net.r_eg.vsSBE.Events.ISolutionEvent;
 
