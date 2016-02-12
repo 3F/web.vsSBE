@@ -43,7 +43,7 @@ Example of counter in the range 1 - 10:
 }]
 ```
 
-Needed a more exotic control ? no problem:
+a more exotic control ? no problem:
 
 ```{{site.sbelang}}
 #[($(numX) == "*Undefined*") {
@@ -64,11 +64,15 @@ $(numYmod = $([MSBuild]::Modulo($(numY), 12)))
 
 The variable **spec** in example above should contain the next values - ![Value of variable - spec](../../Resources/examples/ver_spec.gif)
 
-# Unique number for team
+## Other math
 
-In example on page [Date & Time](../Date & Time/) now you know that the UTC it does not give any warranty for unique numbers and you should use the our **[CI features](../../CI/)** or something else...
+* [Math operations](../Math/)
 
-The most CI servers already should provide special environment variable, like a `$(appveyor_build_version)`, `$(BUILD_NUMBER)`, etc. You may use this variable, or:
+## Unique number for team
+
+In example on page [Date & Time](../Date & Time/) now you know that the UTC does not give any warranty for unique numbers and you should use the our **[CI features](../../CI/)** or something else...
+
+The most CI servers are already should provide special environment variable, like a `$(appveyor_build_version)`, `$(BUILD_NUMBER)`, etc. You may use this variable, or:
 
 * You can also use any cryptographic hash function ([sha1](https://en.wikipedia.org/wiki/SHA-1), [MD5](https://en.wikipedia.org/wiki/MD5), [TTH](https://en.wikipedia.org/wiki/Merkle_tree#Tiger_tree_hash) etc.) with your specific unique identification (timestamp + computer identifier + ... and similar), for example:
 
@@ -97,7 +101,7 @@ if needed sha1 you can also recalculate this:
 
 and similar..
 
-# References #
+# References
 
 * [SBE-Scripts](../../Scripts/SBE-Scripts/)
     * [ConditionComponent](../../Scripts/SBE-Scripts/Components/ConditionComponent/)

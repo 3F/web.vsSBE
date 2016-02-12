@@ -3,7 +3,7 @@ layout: doc
 title: Features
 permalink: /doc/Features/
 ---
-# Some features & others
+# Some features
 
 {% assign cprefix = "/Features/" %}
 {% assign urlPrefix = {{site.docp | append: "/Features/"}} %}

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Help for project to help for you!
+title: Help for project for help for you!
 hidetitle: true
 permalink: /Donation/
 ---
