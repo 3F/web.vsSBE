@@ -75,8 +75,8 @@ In general, the vsSolutionBuildEvent works on the event model, i.e.:
 
 Basic work is a:
 
-* Choose Event type.
-* Create and configure any actions for this event above.
+* Choose the Event type.
+* Create and configure any actions for this.
 * Enjoy.
 
 # References

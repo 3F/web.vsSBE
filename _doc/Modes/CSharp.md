@@ -46,13 +46,12 @@ As variant, you can also use FilesMode flag in Compiler settings for work with e
 
 Then you should use list of files instead of code, for example:
 
-```{{site.msblang}}
+```text
 hooks\*.cs
 scripts\vssbe\main.cs
 scripts\vssbe\ftp.cs
 D:\app\scripts\*.*
 ```
-etc.
 
 So you can also add this in your solution for more productive work, for example:
 
@@ -99,22 +98,17 @@ As result you can get this value from other actions with standard operations, fo
 
 **Please note:** 
 
-if also used the `MSBuild support` option for C# code, for example, for work with msbuild properties:
+For work with msbuild properties in C# code if used the `MSBuild support`, for example:
 
 ```csharp
-using(StreamReader reader = new StreamReader(@"$(SolutionPath)", Encoding.Default))
-{
-    ...
+using(StreamReader reader = new StreamReader(@"$(SolutionPath)", Encoding.Default)) {
+    cmd.MSBuild.parse(String.Format("$(mvMap = '{0}')", steps.Peek()));
 }
 ```
 
-Don't forget about escaping an sequences, for example:
+Do not forget escape an sequences to avoid evaluation: `$(SolutionPath)` -> `$$(SolutionPath)` [[?]({{site.docp}}/Scripts/MSBuild/#msbuild-property--property-functions)]
 
-```csharp
-cmd.MSBuild.parse(String.Format("$$(mvMap = '{0}')", steps.Peek()));
-```
-
-*For SBE-Scripts: all elements inside quotes (`"..."`, `'...'`) will be automatically protected from evaluation.*
+*For SBE-Scripts: all elements inside quotes (`"..."`, `'...'`) will be automatically protected from evaluation.* [[?]({{site.docp}}/Scripts/SBE-Scripts/Direct/)]
 
 ## Examples
 

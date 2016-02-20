@@ -19,6 +19,10 @@ permalink: /doc/Events/
 
 {% include elem/fillme %}
 
+## Beyond of the solution level
+
+Use the [vsCommandEvent](http://vsce.r-eg.net)
+
 # References
 
 * [Processing modes](../Modes/)

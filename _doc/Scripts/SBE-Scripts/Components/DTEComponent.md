@@ -28,6 +28,9 @@ Sample:
 
 **Note:** Some commands should be available only for specific context of your environment. For example the `Build.Cancel`, etc.
 
+{% assign infoData = "The `raise(guid, id, customIn, customOut)` method is available [for vsCE users](http://vsce.r-eg.net/doc/Scripts/SBE-Scripts/Components/DTEComponent/#method-raise)." %}
+{% include elem/info %}
+
 ## events
 
 Operations with events.

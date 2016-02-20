@@ -31,7 +31,7 @@ Thank **you** for your important support !
 
 #### No money ?
 
-Some our users uses this in official job.. so, you can also simply to tell your boss about this :)
+Some our users uses this in official job.. so, you can also simply to tell your boss about it :)
 
 Still no money ? don't worry if you still want support us. see below
 
