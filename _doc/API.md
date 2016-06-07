@@ -21,7 +21,7 @@ For example, this is already implemented in our products as part of vsSolutionBu
 
 You can use Bridge for accessing to our products.
 
-This contains specification of all available features from the vsSolutionBuildEvent and any others specifications of available operations with library, for example:
+This contains specification of all available features from the vsSolutionBuildEvent and any other specifications of available operations with library, for example:
 
 * [IEvent](https://github.com/3F/vsSolutionBuildEvent/blob/master/Bridge/IEvent.cs)
 * [Bridge/](https://github.com/3F/vsSolutionBuildEvent/tree/master/Bridge) - all specifications of Bridge

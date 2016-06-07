@@ -7,12 +7,12 @@ permalink: /doc/Examples/Version/Manually/
 
 ![Sample of class]({{site.docp}}/Resources/examples/VersionClass.gif)
 
-{% assign infoData = "Looking for a **[<span class='glyphicon glyphicon-indent-left' aria-hidden='true'></span> Wizard](../Wizard/)** ? *Easy steps for quick results.*" %}
+{% assign infoData = "You can also use the **[<span class='glyphicon glyphicon-indent-left' aria-hidden='true'></span> Wizard](../Wizard/#how-to)**. *Easy steps for quick results.*" %}
 {% include elem/info %}
 
 Before reading, **please note**: You can achieve this (or similar) result with [our different modes]({{site.docp}}/Modes/). 
 
-For simplicity, we consider the [Script Mode]({{site.docp}}/Modes/Script/). **However**, feel free - If you don't like this - use any other variants, for example with [Targets Mode]({{site.docp}}/Modes/Targets/) or [C# Mode]({{site.docp}}/Modes/CSharp/), or with [simple caller]({{site.docp}}/Features/Confirmation dialog/) and [others]({{site.docp}}/Examples/)
+For simplicity, we consider the [Script Mode]({{site.docp}}/Modes/Script/). **However**, feel free. Use any other variants if you don't like this, for example: [Targets Mode]({{site.docp}}/Modes/Targets/) or [C# Mode]({{site.docp}}/Modes/CSharp/), or with [simple caller]({{site.docp}}/Features/Confirmation dialog/) and [other]({{site.docp}}/Examples/)
 
 ## Synopsis
 
@@ -74,9 +74,10 @@ toolVersion.Text = string.Format("v{0} [ {1} ]", Version.numberString, Version.b
 ```
 [etc.,](https://gist.github.com/3F/f54ad9736a9cbb984785)
 
-### What about .vsixmanifest & other static files
+### What about static files
 
-For **.vsixmanifest** ([VSPackages /VSIX Package](https://msdn.microsoft.com/en-us/library/bb166424.aspx)) *and similar*, it's a little harder... We can't use this directly as above, therefore we may update this only as replacement, for example: 
+For example, for **.vsixmanifest** *(it used for [VSPackages /VSIX Package](https://msdn.microsoft.com/en-us/library/bb166424.aspx))* is a little harder than above to simply manage of versions... 
+We can't use this directly as above, therefore we may update it only as replacement, for example: 
 
 ```{{site.sbelang1}}
 #[IO replace.Regexp("source.extension.vsixmanifest", "<Version>[0-9.]+</Version>", "<Version>#[var number]</Version>")]
@@ -98,12 +99,12 @@ For **.vsixmanifest** ([VSPackages /VSIX Package](https://msdn.microsoft.com/en-
 ## Generating the Version class with build/revision number
 
 * Create template of Version class or struct. 
-    * You can use external file (for example Version.tpl) **or** directly define data inside script, etc. with what you want. Use placeholders instead of real values - sample for C#:
+    * You can use external file (for example Version.tpl) **or** directly define data **inside script**, etc. with what you want. Use placeholders instead of real values - sample for C#:
 
 ```csharp
 namespace example
 {
-    class Version
+    internal sealed class Version
     {
         public static readonly System.Version number    = new System.Version(%Version%);
         public const string numberWithRevString         = "%VersionRevString%";
@@ -219,13 +220,14 @@ You can also test/debug all scripts with our testing tools, look in the `Setting
 
 ### Wizard or "help me, it's so hard"
 
-ok, try our wizard for common solutions - [Wizard variant](../Wizard/)
+ok, try the wizard for common solutions - [Wizard variant](../Wizard/#how-to)
 
 # Working example
 
-This is also used in our project:  [Full script for assembling vsSolutionBuildEvent v0.12.6+](https://gist.github.com/3F/3f2f56dfc2a01dc99c63) 
+It also used for this project:
 
-* [Actual version and full script file - .vssbe](https://github.com/3F/vsSolutionBuildEvent/blob/master/.vssbe)
+* [Sample of build ![](https://img.shields.io/badge/Build143-passing-brightgreen.svg?style=flat)](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/build/build-143)
+* [Gist of script for assembling v0.12.6](https://gist.github.com/3F/3f2f56dfc2a01dc99c63) ([Actual full `.vssbe`](https://github.com/3F/vsSolutionBuildEvent/blob/master/.vssbe))
 
 ## Full Automatic Versions. Serial / Sequential numbers.
 
@@ -277,5 +279,5 @@ $(buildNumber = $([MSBuild]::Add($(buildNumber), 1)))
 
     var date = new Date();
     date.setDate(date.getDate() - rand(2, 30));
-    $(".language-minid .s:contains('2015/12/02')").html('"' + datePrint(date) + '"');
+    $(".language-{{site.sbelang}} .s:contains('2015/12/02')").html('"' + datePrint(date) + '"');
 </script>

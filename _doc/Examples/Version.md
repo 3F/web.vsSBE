@@ -7,7 +7,10 @@ permalink: /doc/Examples/Version/
 
 [![Sample of class](../../Resources/examples/VersionClass.gif)](Manually/)
 
-[View](Manually/)
+[ [View](Manually/) ]
+
+<hr />
+<br />
 
 ## Wizard variant
 
@@ -15,4 +18,4 @@ permalink: /doc/Examples/Version/
 
 [![Wizard](../../Resources/examples/wizard/version/type.png)](Wizard/)
 
-[View](Wizard/)
+[ [View](Wizard/) ]

@@ -40,7 +40,7 @@ Simply add some action for Error-Build event and configure this as you want - se
 
 ## A more flexible actions
 
-You can also configure specific projects, configurations, specific errors and many others with available settings for this.
+You can also configure specific projects, configurations, specific errors and many other with available settings for this.
 
 Also as variant you can use - [MSBuild](../../Scripts/MSBuild/) & [SBE-Scripts](../../Scripts/SBE-Scripts/) for manual work with termination build or some additional actions before/after this.
 

@@ -47,7 +47,7 @@ You can also add new or improve any existing pages for current wiki.
 
 Share some solutions/examples with community of your experiences. Use [Edit] buttons or Start new [here]({{site.docp}}/New/)
 
-*Take a few minutes of your time for helping for others our users. From short useful script/note or any complete solution.*
+*Take a few minutes of your time for helping for other our users. From short useful script/note or any complete solution.*
 
 ### GUI
 

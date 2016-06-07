@@ -3,11 +3,11 @@ layout: doc
 title: Scheme of vsSolutionBuildEvent projects and their work
 permalink: /doc/Scheme/
 ---
-# Scheme of vsSolutionBuildEvent projects and their work
+# Scheme of vsSolutionBuildEvent projects
 
-This page should describe structure of all components of the vsSolutionBuildEvent, basic scheme of work, and give an understanding of how it works with Visual Studio Command-Line & MSBuild tools.
+It describes the structure of existing components, illustrates scheme of their work and also shows how it works for Visual Studio Command-Line, MSBuild tools, etc.
 
-## Basic scheme for versions v0.11+
+## Basic scheme for v0.12+
 
 ![Scheme of vsSolutionBuildEvent projects](../Resources/scheme.png)
 
@@ -15,7 +15,7 @@ Where:
 
 ### vsSolutionBuildEvent
 
-The [vsSolutionBuildEvent](https://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/) - is the main plugin as a [VSPackage](https://msdn.microsoft.com/en-us/library/bb166424.aspx). Contains main logic for work with events of Visual Studio through [Microsoft.VisualStudio.Shell.Interop](http://stackoverflow.com/a/18311007).
+The [vsSolutionBuildEvent](https://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/) - is the main plugin as a [VSPackage](https://msdn.microsoft.com/en-us/library/bb166424.aspx). Contains main logic for work with events of Visual Studio via [Microsoft.VisualStudio.Shell.Interop](http://stackoverflow.com/a/18311007).
 
 * Implements basic model of events with IVsSolutionEvents and IVsUpdateSolutionEvents2
 * Works with [priority processing](http://stackoverflow.com/q/27018762) (i.e. with 'Advise..' methods instead of simple subscription with Events from DTE). See [MSDN](https://msdn.microsoft.com/en-us/library/Microsoft.VisualStudio.Shell.Interop.aspx) for more details.
@@ -41,28 +41,33 @@ The [vsSolutionBuildEvent Devenv Command-Line](../CI/Devenv Command-Line/) - is 
 
 **Why is so strange ?**
 
-[VSPackage](https://msdn.microsoft.com/en-us/library/bb166424.aspx) not allows any accessing to [Command line](https://msdn.microsoft.com/en-us/library/vstudio/xee0c8y7.aspx)(devenv.exe /devenv.com). This problem also reported [here](https://connect.microsoft.com/VisualStudio/feedback/details/1075033)
+The [VSPackage](https://msdn.microsoft.com/en-us/library/bb166424.aspx) does not allow any access to [Command-line](https://msdn.microsoft.com/en-us/library/vstudio/xee0c8y7.aspx) (devenv.exe /devenv.com). This problem is also reported [here](https://connect.microsoft.com/VisualStudio/feedback/details/1075033)
 
-However! we can play with command-Line in [Add-Ins](https://msdn.microsoft.com/en-us/library/ms228754.aspx)... well, this component should resolve main problem above. Details of main idea [here](https://bitbucket.org/3F/vssolutionbuildevent/issue/25/does-this-work-for-command-line-builds-as#comment-14586721)
+However! we can play with command-Line in [Add-Ins](https://msdn.microsoft.com/en-us/library/ms228754.aspx)... well, current component will resolve main problem above. Details of main idea [here](https://bitbucket.org/3F/vssolutionbuildevent/issue/25/does-this-work-for-command-line-builds-as#comment-14586721)
 
-*You can see our sources if you want to reproduce this trick for your any other plugin. Also see our documentation in links above.*
+*You can also see our source code if you want to reproduce this trick for your any other plugin. Read the documentation in links above.*
 
 ### CI.MSBuild
 
 * [vsSolutionBuildEvent CI.MSBuild](../CI/CI.MSBuild/) - is a more powerful and flexible tool in comparison with [Devenv](../CI/Devenv Command-Line/). Because this works with the Microsoft Build Tools.
 
-It also a wrapper but a little harder.. For work with basic model of events the Visual Studio need a some converting/adaptation of all available units for our main library. Therefore, we should convert this for translations to main library.
+It is also a wrapper but a little harder.. For work with basic model of events the Visual Studio need a some converting/adaptation of all available units for our main library. Therefore, we should convert this for translations to main library.
 
-*This is not Add-Ins and this not require any additional installation for any your environments. Simply configure and use this as stated in the [documentation](../CI/CI.MSBuild/). You can also see real sample of work on our project [here](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/build/build-31)*
+*This is not Add-Ins and this requires no any additional installation for any your environments. Simply configure and use this as stated in the [documentation](../CI/CI.MSBuild/). You can also see real sample of work on our project [here](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/build/build-143)*
 
 #### Full version with standard libraries - vsSBE.CI.MSBuild
 
-CI.MSBuild also works through [Provider](../API/) and also requires main library. All this can be selected and configured manually, but you can also use full version with standard libraries - [vsSBE.CI.MSBuild](https://www.nuget.org/packages/vsSBE.CI.MSBuild/) - [just get and use](../CI/CI.MSBuild/)...
+The CI.MSBuild is also works via [Provider](../API/) and also requires main library. All this can be selected and configured manually, but you can also use full version with standard libraries - [vsSBE.CI.MSBuild](https://www.nuget.org/packages/vsSBE.CI.MSBuild/) - [just get and use](../CI/CI.MSBuild/)...
 
+### Scripts ...
+
+Script-engines, C# compiler, .target features - all this as part of user-script layer to work with all what you need at runtime, for example, affecting on the build processes and other.
+
+Basic examples of this [here]({{site.docp}}/Examples/Version/) or [here]({{site.docp}}/Modes/), etc.
 
 ### Other Applications
 
-All this above can be used in some other your tools through [API/Provider](../API/) and similar. You can, for example, use a custom model of events for additional build and/or provide additional GUI for settings/commands/scripts and many others...
+All this above can be used in some other your tools via [API & Provider](../API/). You can, for example, use a custom model of events for additional build and/or provide additional GUI for the settings/commands/scripts and other...
 
 # Model of events
 

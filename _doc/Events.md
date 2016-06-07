@@ -25,5 +25,5 @@ Use the [vsCommandEvent](http://vsce.r-eg.net)
 
 # References
 
-* [Processing modes](../Modes/)
+* **[Processing modes](../Modes/)**
 * [Examples & Features](../Examples/)

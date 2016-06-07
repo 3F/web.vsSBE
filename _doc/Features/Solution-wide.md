@@ -14,14 +14,10 @@ All your actions for `Pre-Build` / `Post-Build` events are already can be **for 
 It should be useful for most cases, for example: 
 
 * [Automatic Version Numbering](../../Examples/Version/) for your projects.
-* Or simple notification like ~ send email before/after building of all projects:
-
-```php
-mail('yourmail@example.com', 'Build completed', date('H:i:s'));
-```
+* Or simple notification like ~ send email before/after building of all projects: `mail('yourmail@example.com', 'Build completed', date('H:i:s'));`
 * and other.
 
-Use it with simple caller (by your external logic) or as internal scripts with any interpreters such as php, python, PowerShell, Wscript, Node.js, etc.
+Use it with simple caller (external logic) or as internal scripts with any interpreters such as php, python, PowerShell, Wscript, Node.js, etc.
 Or use powerfull [MSBuild](../../Scripts/MSBuild/) & [SBE-Scripts](../../Scripts/SBE-Scripts/) engines, etc.
 
 For more complex scripts see our **[available modes](../../Modes/)** and ~feel~free~ ...
