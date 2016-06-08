@@ -240,8 +240,8 @@ And of course, primarily, this is important feature of [CI servers]({{site.docp}
 For all of this you should: 
 
 * Define where to store this number: it can be registry, simple file in directory with source code, etc.
-    * By the way, the most CI servers are already should provide special environment variable like a `$(appveyor_build_version)`, `$(BUILD_NUMBER)`, etc.
-* [Increment this]({{site.docp}}/Features/Custom counters/) as you want! *if need*
+    * By the way, the most CI servers are already should provide **special environment variable** like a `$(appveyor_build_version)`, `$(BUILD_NUMBER)`, etc.
+* [Increment this]({{site.docp}}/Features/Custom counters/) as you want !
 
 ```{{site.msblang}}
 $(buildNumber = $([MSBuild]::Add($(buildNumber), 1)))
@@ -279,5 +279,5 @@ $(buildNumber = $([MSBuild]::Add($(buildNumber), 1)))
 
     var date = new Date();
     date.setDate(date.getDate() - rand(2, 30));
-    $(".language-{{site.sbelang}} .s:contains('2015/12/02')").html('"' + datePrint(date) + '"');
+    $(".highlighter-rouge .s:contains('2015/12/02')").html('"' + datePrint(date) + '"');
 </script>
