@@ -8,6 +8,8 @@ permalink: /doc/Scripts/SBE-Scripts/Components/CommentComponent/
 
 The comments for scripts.
 
+**Tip:** the alternative way to fully avoid evaluation from containers of any components - simply remove the first symbol `#`.
+
 **Available syntax**
 
 The multiline comment:

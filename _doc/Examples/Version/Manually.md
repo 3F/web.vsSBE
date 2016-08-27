@@ -10,6 +10,10 @@ permalink: /doc/Examples/Version/Manually/
 {% assign infoData = "You can also use the **[<span class='glyphicon glyphicon-indent-left' aria-hidden='true'></span> Wizard](../Wizard/#how-to)**. *Easy steps for quick results.*" %}
 {% include elem/info %}
 
+{% assign infoColor = "#5C9ECF" %}
+{% assign infoData = "The most easy manually way **[here](../Simple/)**." %}
+{% include elem/info %}
+
 Before reading, **please note**: You can achieve this (or similar) result with [our different modes]({{site.docp}}/Modes/). 
 
 For simplicity, we consider the [Script Mode]({{site.docp}}/Modes/Script/). **However**, feel free. Use any other variants if you don't like this, for example: [Targets Mode]({{site.docp}}/Modes/Targets/) or [C# Mode]({{site.docp}}/Modes/CSharp/), or with [simple caller]({{site.docp}}/Features/Confirmation dialog/) and [other]({{site.docp}}/Examples/)

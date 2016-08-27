@@ -3,7 +3,7 @@ layout: doc
 title: Automatic Version Numbering - Variants
 permalink: /doc/Examples/Version/
 ---
-# Automatic Version Numbering
+## Automatic Version Numbering
 
 [![Sample of class](../../Resources/examples/VersionClass.gif)](Manually/)
 
@@ -12,10 +12,19 @@ permalink: /doc/Examples/Version/
 <hr />
 <br />
 
-## Wizard variant
+### Wizard
 
 *Automatic code generation*
 
 [![Wizard](../../Resources/examples/wizard/version/type.png)](Wizard/)
 
 [ [View](Wizard/) ]
+
+<hr />
+<br />
+
+### Simple variant
+
+*The most easy manually way.*
+
+[![](../../Resources/other/coffee.png)](Simple/) [ [View](Simple/) ]

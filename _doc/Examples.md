@@ -8,7 +8,8 @@ permalink: /doc/Examples/
 
 * [Automatic Version Numbering](Version/)
     * [Manually](Version/Manually/)
-    * [Wizard variant](Version/Wizard/) - *Automatic code generation*
+    * [Wizard](Version/Wizard/) - *Automatic code generation*
+    * [Simple variant](Version/Simple/)
 * [Artefacts. How to prepare as you want](Artefacts/)
 * [Stop build on first error](Errors.Stop build/)
 * [Demo projects](Demo/)

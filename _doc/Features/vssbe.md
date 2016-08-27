@@ -3,7 +3,7 @@ layout: doc
 title: vsSolutionBuildEvent/vsSBE (.vssbe) File
 permalink: /doc/Features/.vssbe/
 ---
-# .vssbe
+## .vssbe
 
 All shared settings will be located in solution directory as **.vssbe** text-based file.
 
@@ -27,8 +27,8 @@ etc.
 
 you can also define specific configuration like this:
 
-* app_2012.vssbe
-* app_2013.vssbe
+* app_2012**.vssbe**
+* app_2013**.vssbe**
 etc.
 
 The specific configuration in the priority if the **.vssbe** used along with **[SolutionFile].vssbe**. 
@@ -41,7 +41,17 @@ We strongly recommend to ignore this from your SCM,
 because this contains settings e.g.: 
 value of zooming & Word wrapping of main editor, DebugMode & CacheData of binaries for [C# Mode](../../Modes/CSharp/), etc.
 
-# Unified Project name for different .sln
+## .vssbe optional 'Command__' property
+
+Appeared in [v0.12.4](/Changelist/#vsix) for convenient using directly in file (reading or direct modifications). 
+
+However, the 'Command__' property is temporary and used for compatibility with format **v0.9**.
+
+This can be inconvenient and we also added settings (until upgrade of format) to turn off this field:
+
+* `Settings` - `Plugin` - `Suppress 'Command__' property`
+
+## Unified Project name for different .sln
 
 You can see the inconvenience with [MSBuild](../../Scripts/MSBuild/) / [SBE-Scripts](../../Scripts/SBE-Scripts/) engines or any incorrect behaviour in UI if you have a few .sln versions for your project.
 
@@ -71,7 +81,23 @@ Some projects may be manually configured for using with one unified project file
   ...
 ```
 
-or for example
+or:
+
+```xml
+  <PropertyGroup>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <NetTargetVName>net40</NetTargetVName>
+    <DefineConstants>NET_40</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release_net45|AnyCPU'">
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <NetTargetVName>net45</NetTargetVName>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>NET_45;CODE_ANALYSIS;CODE_ANALYSIS</DefineConstants>
+  </PropertyGroup>
+```
+
+or for example:
 
 ```xml
   <PropertyGroup>
@@ -89,13 +115,14 @@ or for example
   </ItemGroup>
 ```
 
+etc.
 
 But some not...
 
-And if your project cannot be shared between versions of Visual Studio (for example, if you use the Experimental instance for debugging, etc.)
+And if your project cannot be shared between several versions of Visual Studio (for example, if you use the Experimental instance for debugging, etc.)
 Or if you only need the unified name and similar: you should define the **unified project** name for all used .sln with **ProjectName** property for specific project file.
 
-## Via User-Variables & Global MSBuild properties
+### Via User-Variables & Global MSBuild properties
 
 The most easy way, just:
 
@@ -111,22 +138,17 @@ $(+ProjectName = 'MyUnifiedName')
 
 That's all. Restart your IDE and have fun.
 
-## Obsolete variant or variant for old versions
-
-{% assign infoData = "Obsolete. Please use the variant above - '[Via User-Variables](#via-user-variables--global-msbuild-properties)'" %}
-{% include elem/info %}
+### Other or variant for old versions
 
 You can define the `ProjectName` property in your project files (*.csproj, *.vcxproj, etc.)
 
-### The Rename feature
-
-Use this:
+Firstly, try the Rename feature:
 
 ![rename project](../../Resources/projectName/vs_rename_project_219.png)
 
 Or:
 
-### Define directly
+**Define directly**
 
 * Open your solution file in Visual Studio, right click on your project in 'Solution Explorer' and click `Unload Project`:
 
@@ -156,12 +178,3 @@ for example:
 
 Repeat all steps for other files.
 
-# Optional 'Command__' property
-
-Appeared in [v0.12.4](/Changelist/#vsix) for convenient using directly in file (reading or direct modifications). 
-
-However, the 'Command__' property is temporary and used for compatibility with format **v0.9**.
-
-This can be inconvenient and we also added settings (until upgrade of format) to turn off this field:
-
-* `Settings` - `Plugin` - `Suppress 'Command__' property`
