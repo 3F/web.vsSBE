@@ -80,8 +80,8 @@ In general, the vsSolutionBuildEvent works on the event model, i.e.:
 
 Basic work is a:
 
-* Choose the Event type.
-* Create and configure any actions for this.
+* [Choose the Event type](../Events/).
+* [Create and configure any actions for this](../Modes/).
 * Enjoy.
 
 # References

@@ -23,6 +23,9 @@ Branches status:
 
 ### Requirements
 
+* C# Language version support:
+    * C# 6.0+ starting after [2616b53ae03e9795584cfcde38df4b4bda56e818](https://github.com/3F/vsSolutionBuildEvent/commit/2616b53ae03e9795584cfcde38df4b4bda56e818)
+    * C# 4.0+ initially
 * MS Visual Studio 2010 or higher (You can use free [Visual Studio Community 2013](http://www.visualstudio.com/products/visual-studio-community-vs) or higher)
 * Installed Microsoft Visual Studio SDK:
     * For Visual Studio 2015+ - The SDK is no longer offered as a separate download and included as an optional feature in Visual Studio setup ([How to enable](https://msdn.microsoft.com/en-us/library/bb166441(v=vs.140).aspx))

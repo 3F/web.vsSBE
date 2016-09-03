@@ -103,19 +103,30 @@ else{
 ## Examples ##
 
 ```{{site.sbelang}}
-#[($(Configuration) ~= Deb){
+#[7z pack.files({ 
+            "$(pDirBridge)bin\$(cfg)\Bridge.dll", 
+            "$(pDirBridge)bin\$(cfg)\Bridge.pdb",
+            
+#[( $(DocumentationFile) != "" && $(DocumentationFile) != "*Undefined*" ) { 
+            "$(pDirBridge)bin\$(cfg)\Bridge.xml",
+}]
+            "$(pDirBridge)bin\$(cfg)\Release_notes.txt" }, "$(odir)Bridge_v$(numBridge)_[$(branchSha1)][$(netStamp)].zip")]
+```
+
+```{{site.sbelang}}
+#[( $(Configuration) ~= "Release" ) {  CI_Release, Release_net45
     #[var ver = #[var ver].#[var revBuild]]
 }]
 ```
 
 ```{{site.sbelang}}
-#[(#[Build projects.find("ZenLib").IsBuildable]){
+#[(#[Build projects.find("ZenLib").IsBuildable]) {
     #[var branchSha1 = #[File sout("git", "rev-parse --short HEAD")]]
 }]
 ```
 
 ```{{site.sbelang}}
-#[(!1 > 2){
+#[( !(1 > 2) ) {
     is greater
 }]
 ```

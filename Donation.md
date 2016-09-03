@@ -23,7 +23,7 @@ Now you can !
 
 **Note:** the USD by default, but we also accept the EUR and RUB (Russian Ruble). Contact if needed.
 
-* PyPal: [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=P2HRG52AJSA9N&lc=US&item_name=vsSolutionBuildEvent%20%28vsSBE%29%20Open%20Source%20Projects&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted)
+* PyPal: [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=entry%2ereg%40gmail%2ecom&lc=US&item_name=3F%2dOpenSource%20%5b%20github%2ecom%2f3F&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted)
 * alternatives ? write [here](https://bitbucket.org/3F/vssolutionbuildevent/issues/new) or use any contacts for private discussion:
     * <entry.reg@gmail.com> (please inform details if you do not want that your message was deleted as spam)
 

@@ -130,6 +130,16 @@ $(pdir = $(ProjectDir.Replace('\', '/'):project))
 ```{{site.msblang}}
 $(+name = ...)
 ```
+Then, it should be as part of other msbuild properties. Sample for [CIM](../../CI/CI.MSBuild/) & [SlnOpened event](../../Events/):
+
+```{{site.msblang}}
+$(+MyProperty = "val1")
+```
+```xml
+<Target Name="Spec">
+    <Message Text="MyProperty = $(MyProperty)" Importance="high" /> 
+</Target>
+```
 
 * To undefine msbuild property via user-variable:
 

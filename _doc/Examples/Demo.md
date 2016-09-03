@@ -4,9 +4,15 @@ title: Demo projects
 permalink: /doc/Examples/Demo/
 ---
 
-# Demo projects
-
 List of available demo projects as example of basic work, features and similar.
+
+## Real projects
+
+Some features and scripts you can see on the following latest real projects:
+
+* [https://github.com/3F/Conari](https://github.com/3F/Conari)
+* [https://github.com/3F/LunaRoad](https://github.com/3F/LunaRoad)
+* [https://github.com/3F/DllExport](https://github.com/3F/DllExport)
 
 ## CI.MSBuild.Demo
 

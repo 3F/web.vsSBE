@@ -9,7 +9,7 @@ permalink: /doc/Examples/Version/Simple/
 
 Did you know: 
 
-The most easy versioning for your projects can be lighter than it described in [Manually](../Manually/) variant.
+The most easy versioning for your projects can be lighter than it described in '[Manually](../Manually/) variant'.
 And if you want configure all this manually instead of a [Wizard](../Wizard/), I'll tell you about a simple but still powerful way.
 
 
