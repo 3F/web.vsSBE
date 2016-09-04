@@ -10,7 +10,7 @@ Utility to support the command-line mode of the Visual Studio for work with [vsS
 **Please note**: you can use the **[CI.MSBuild](../../CI/CI.MSBuild/)** utility for work through msbuild.exe for special build server etc.
 
 -------
-`*!*` 
+{% assign icon = "glyphicon-check" %}{% include elem/gicon %} 
 
 The [Add-ins are deprecated in Visual Studio 2013](http://msdn.microsoft.com/en-us/library/80493a3w.aspx) and removed in [14CTP's](http://www.visualstudioextensibility.com/2014/06/05/visual-studio-14-ctp-add-ins-are-gone/) (also in VS2015 RC)
 
@@ -26,7 +26,7 @@ This reported on MS Connect Issue #[1075033](https://connect.microsoft.com/Visua
 
 ## How to get & Install
 
-* Download [{{site.lnkCur_Devenv[1]}}]({{site.lnkCur_Devenv[2]}}) (SourceForge.net) 
+* Download *[{{site.lnkCur_Devenv[1]}}]({{site.lnkCur_Devenv[2]}})* (SourceForge.net) 
     * All binaries of the CI.MSBuild: [{{site.lnkAll_Devenv[0]}}]({{site.lnkAll_Devenv[1]}})
 
 Currently the Devenv Command-Line it's only additional wrapper (~41 kb) for work with vsSolutionBuildEvent plugin through [API](../../API/). It means, you should also have this library for work.

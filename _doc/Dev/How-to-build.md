@@ -109,33 +109,31 @@ Note:
 
 ## Variant for Microsoft Build Tools (msbuild.exe)
 
-`*!*` Currently, this variant still requires installed the Visual Studio SDK for your machine *(see above where to find)*
+{% assign icon = "glyphicon-check" %}{% include elem/gicon %} Currently, this variant still requires installed the Visual Studio SDK for your machine *(see above where to find)*
 
 * [Clone repository](/Downloads/#Code) with git:
 
 ```{{site.msblang}}
 git clone --branch=master https://github.com/3F/vsSolutionBuildEvent.git ./vsSolutionBuildEvent
 ```
-* Restore all packages with [nuget.exe](https://www.nuget.org/nuget.exe) ([documentation](http://docs.nuget.org/Consume/Command-Line-Reference))
+* Restore all packages with 
+    * [GetNuTool](https://github.com/3F/GetNuTool): `msbuild gnt.core` (or simply [gnt](https://github.com/3F/GetNuTool/releases/download/v1.5/gnt.bat))
+    * or with [nuget.exe](https://www.nuget.org/nuget.exe)
+
+* And use [msbuild.exe](https://github.com/3F/vsSolutionBuildEvent/blob/master/tools/msbuild.bat) for build:
 
 ```{{site.msblang}}
-nuget restore vsSolutionBuildEvent_2013.sln 
+msbuild "vsSolutionBuildEvent.sln" /l:"packages\vsSBE.CI.MSBuild\bin\CI.MSBuild.dll" /m:4 /p:Configuration=Debug
 ```
-* And use msbuild.exe for build:
+build-helpers here:
 
-```{{site.msblang}}
-"C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe" "vsSolutionBuildEvent_2013.sln" /verbosity:detailed /l:"packages\vsSBE.CI.MSBuild.{{site.lnkCur_CIMNuGet[0] | replace:'v',''}}\bin\CI.MSBuild.dll" /m:4 /p:Configuration=Debug /p:Platform="Any CPU"
-```
-or use [build_[CI_Debug]](https://github.com/3F/vsSolutionBuildEvent/blob/master/build_%5BCI_Debug%5D.bat) / [build_[CI_Release]](https://github.com/3F/vsSolutionBuildEvent/blob/master/build_%5BCI_Release%5D.bat)
+* [build_[CI_Debug]](https://github.com/3F/vsSolutionBuildEvent/blob/master/build_%5BCI_Debug%5D.bat) / [build_[CI_Release]](https://github.com/3F/vsSolutionBuildEvent/blob/master/build_%5BCI_Release%5D.bat)
+* [msbuild.bat](https://github.com/3F/vsSolutionBuildEvent/blob/master/tools/msbuild.bat)
 
-That's all.
-
-**Note** for example above:
+**Note**:
 
 * `./vsSolutionBuildEvent` - your path for source code (it can be absolute, e.g.: `C:\projects\vsSolutionBuildEvent`).
-* `vsSolutionBuildEvent_2013.sln` - solution file for VS2013. All available you can see in root directory.
-* `C:\Program Files (x86)\MSBuild\12.0\bin\msbuild.exe` - full path to your msbuild.exe
-* `packages\vsSBE.CI.MSBuild.{{site.lnkCur_CIMNuGet[0] | replace:'v',''}}\bin\CI.MSBuild.dll` - path to the [CI.MSBuild](../../CI/CI.MSBuild/)
+* `packages\vsSBE.CI.MSBuild\bin\CI.MSBuild.dll` - path to [CI.MSBuild](../../CI/CI.MSBuild/)
 
 *this variant is also used for build automation with [AppVeyor](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent)*
 

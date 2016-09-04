@@ -111,7 +111,7 @@ as result you simply call external script with your fully external logic & your 
 
 ![scripts for all projects at once](../../Resources/examples/obsolete/vbs_ext.jpg)
 
-`*!*` *please note that is deprecated, see also [here](../../Examples/Version/)* `*!*`
+{% assign icon = "glyphicon-check" %}{% include elem/gicon %} *please note that is deprecated, see also [here](../../Examples/Version/)* {% assign icon = "glyphicon-check" %}{% include elem/gicon %}
 
 # References
 

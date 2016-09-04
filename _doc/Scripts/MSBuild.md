@@ -12,7 +12,7 @@ This page contains information of how to work with MSBuild in vsSolutionBuildEve
 *Additional syntax & basic samples are contained below.*
 
 -------
-`*!*` 
+{% assign icon = "glyphicon-check" %}{% include elem/gicon %} 
 
 * For work with **MSBuild Tools** (Microsoft Build Tools) use the [CI.MSBuild](../../CI/CI.MSBuild/).
 * For work with MSBuild Targets, Tasks and others, use the [Targets Mode](../../Modes/Targets/).
@@ -205,7 +205,7 @@ $(registry$(k))
 ```
 *and similar..*
 
-`*!*` **OR** you can read system registry values with:
+{% assign icon = "glyphicon-check" %}{% include elem/gicon %} **OR** you can read system registry values with:
 
 * [MSBuild GetRegistryValue](https://msdn.microsoft.com/en-us/library/vstudio/dd633440%28v=vs.120%29.aspx#BKMK_GetRegistryValue) -  returns the value of a registry key:
 

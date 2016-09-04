@@ -5,9 +5,9 @@ permalink: /doc/CI/
 ---
 # Continuous Integration (CI) 
 
-*and other work* ***without Visual Studio***.
+***world without Visual Studio***.
 
-The vsSolutionBuildEvent is also supports CI features [[?](http://en.wikipedia.org/wiki/Continuous_integration)]
+The vsSolutionBuildEvent also supports CI features [[?](http://en.wikipedia.org/wiki/Continuous_integration)]
 
 [![Example with AppVeyor](../Resources/ci_example_appveyor.png)](../CI/CI.MSBuild/)
 
