@@ -271,7 +271,7 @@ v0.10+
 Determines whether the given path refers to an existing directory on disk.
 
 ```{{site.sbelang1}}
-boolean #[File exists.directory(string path [, boolean environment])]
+boolean #[IO exists.directory(string path [, boolean environment])]
 ```
 * path - Path to directory
 * environment - Use Environment PATH (Associated for current process).
@@ -279,13 +279,13 @@ boolean #[File exists.directory(string path [, boolean environment])]
 Samples:
 
 ```{{site.sbelang}}
-#[( #[File exists.directory("D:\tmp\log")] ){
+#[( #[IO exists.directory("D:\tmp\log")] ){
    ...
 }]
 ```
 
 ```{{site.sbelang}}
-#[( #[File exists.directory("System32", true)] ){
+#[( #[IO exists.directory("System32", true)] ){
    ...
 }]
 ```
@@ -295,7 +295,7 @@ Samples:
 Determines whether the specified file exists.
 
 ```{{site.sbelang1}}
-boolean #[File exists.file(string path [, boolean environment])]
+boolean #[IO exists.file(string path [, boolean environment])]
 ```
 * path - Path to file
 * environment - Use Environment PATH (Associated for current process).
@@ -303,13 +303,13 @@ boolean #[File exists.file(string path [, boolean environment])]
 Samples:
 
 ```{{site.sbelang}}
-#[( #[File exists.file("git.exe", true)] ){
+#[( #[IO exists.file("git.exe", true)] ){
    ...
 }]
 ```
 
 ```{{site.sbelang}}
-#[( #[File exists.file("D:\tmp\data.log")] ){
+#[( #[IO exists.file("D:\tmp\data.log")] ){
    ...
 }]
 ```
@@ -323,24 +323,42 @@ v0.12.6+
 To copy selected file to the destination. Creates the destination path if not exists.
 
 ```{{site.sbelang1}}
-void copy.file(string src, string dest, bool overwrite [, object except])
+void copy.file((string src | object srclist), string dest, bool overwrite [, object except])
 ```
 
 Arguments:
 
 * src - Source file. May contain mask as **.dll, **.*, ...
-* dest - The destination path. May contain path to file or directory (end with \ or /).
+* srclist - **v0.12.8+** List of source files as {\"f1\", \"path\\*.dll\", ..}
+* dest - The destination path. May contain path to file (only when used `src` instead of `srclist`) or directory (end with \ or /).
 * overwrite - Overwrite file/s if already exists.
 * except - List of files to exclude from input source as {"f1", "path\\*.dll", ...}
 
 Samples:
 
 ```{{site.sbelang1}}
-#[File copy.file("bin\release.7z", "$(out)dep\release.7z", true)]
+#[IO copy.file("bin\release.7z", "$(out)dep\release.7z", true)]
 ```
 
 ```{{site.sbelang1}}
-#[File copy.file("D:\inc\*.h", "$(SolutionDir)inc/", false, {"ui.core.h", "http.h"})]
+#[IO copy.file("D:\inc\*.h", "$(SolutionDir)inc/", false, {"ui.core.h", "http.h"})]
+```
+
+```{{site.sbelang1}}
+#[IO copy.file({"bin\client.zip", "bin\server.zip"}, "$(out)dep\release", true)]
+```
+
+```{{site.sbelang1}}
+#[IO copy.file({
+                    "bin\client.zip", 
+                    "bin\server\*.*"
+               }, 
+               "$(plugin)\beta", 
+               true, 
+               { 
+                    "*debug*",
+                    "*.pdb"
+               })]
 ```
 
 Examples:
@@ -348,8 +366,8 @@ Examples:
 * To rename file
 
 ```{{site.sbelang1}}
-#[File copy.file("bin\release.7z", "bin\release_[f5acf6f].7z", false)]
-#[File delete.files({"bin\release.7z"})]
+#[IO copy.file("bin\release.7z", "bin\release_[f5acf6f].7z", false)]
+#[IO delete.files({"bin\release.7z"})]
 ```
 
 #### directory
@@ -370,7 +388,7 @@ Arguments:
 Samples:
 
 ```{{site.sbelang1}}
-#[File copy.directory("bin", "$(out)dep/mixed", true)]
+#[IO copy.directory("bin", "$(out)dep/mixed", true)]
 ```
 
 Examples:
@@ -378,7 +396,7 @@ Examples:
 * To create empty directory:
 
 ```{{site.sbelang1}}
-#[File copy.directory("", "$(SolutionDir)bin\Releases", true)]
+#[IO copy.directory("", "$(SolutionDir)bin\Releases", true)]
 ```
 
 ### delete
@@ -401,7 +419,7 @@ Arguments:
 Samples:
 
 ```{{site.sbelang1}}
-#[File delete.files({"$(out)dep\*.7z", "$(out)dep\std.zip"}, {"release.7z"})]
+#[IO delete.files({"$(out)dep\*.7z", "$(out)dep\std.zip"}, {"release.7z"})]
 ```
 
 #### directory
@@ -420,7 +438,7 @@ Arguments:
 Samples:
 
 ```{{site.sbelang1}}
-#[File delete.directory("$(out)dep", true)]
+#[IO delete.directory("$(out)dep", true)]
 ```
 
 ### remote
@@ -434,7 +452,7 @@ Remote servers.
 To download file from remote server.
 
 ```{{site.sbelang1}}
-void #[File remote.download(string addr, string output [, string user, string pwd])]
+void #[IO remote.download(string addr, string output [, string user, string pwd])]
 ```
 * addr - Full address to remote file. e.g.: ftp://... http://...
 * output - Output file name.

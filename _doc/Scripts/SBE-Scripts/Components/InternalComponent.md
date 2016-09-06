@@ -136,3 +136,57 @@ Samples:
 ```{{site.sbelang}}
 #[var res = $(res)#[Core events.Post.item(1).stderr]]
 ```
+
+## StartUpProject
+
+[v0.12.8+]
+
+To get/set the project by default or "StartUp Project".
+
+Syntax:
+
+```{{site.sbelang1}}
+string StartUpProject [= string]
+```
+
+**note:** use full string as it presented in .sln file, for example:
+
+```xml
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{94C2EB4A-A5BF-4E78-8D2E-EE15A9D939BE}"
+```
+
+The correct value will be `ConsoleApplication1\ConsoleApplication1.csproj`
+
+Samples:
+
+```{{site.sbelang}}
+#[Core StartUpProject = "ConsoleApplication1\ConsoleApplication1.csproj"]
+#[Core StartUpProject = TestDllMain\TestDllMain.csproj]
+```
+
+```{{site.sbelang}}
+#[( #[Core StartUpProject] ~= "DllMain" ){
+    ...
+}]
+```
+
+Examples:
+
+```{{site.sbelang}}
+$(pdir      = "$(ProjectDir)")              \ConsoleApplication1\ConsoleApplication1
+$(pdirDM    = "$(ProjectDir:DllMain)")      \ConsoleApplication1\DllMain
+
+...
+#[Core StartUpProject = "DllMain\DllMain.csproj"]
+...
+
+$(pdir = "$(ProjectDir)")                   \ConsoleApplication1\DllMain
+```
+
+To reset behavior:
+
+```{{site.sbelang}}
+#[Core StartUpProject = ""]
+or
+#[Core StartUpProject =]
+```
