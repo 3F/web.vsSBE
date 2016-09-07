@@ -25,6 +25,38 @@ $(+ProjectName = 'MyUnifiedName')
 
 Enjoy.
 
+## Context 
+
+[ v0.12.8+ ]
+
+The new version provides additional contexts of `Sln-Opened` events.
+
+**What does it mean ?** 
+
+Working in Visual Studio IDE you may have the following cases:
+
+* When you need to do something Before initializing projects, for example: 
+    * to get (if it's not yet) git submodules when you open .sln etc.
+* When you need to do something only if all projects are loaded (that should be) in IDE, for example:
+    * Like above, to redefine the MSBuild properties `ProjectName` etc. for specific projects.
+
+**How to ?** 
+
+To support *Early / Late Sln-Opened* you should configure context:
+
+* Select event `Sln-Opened`
+* `Settings` - `Control` - `Context`:
+    * `Before` - Your action should be executed only Before initializing projects.
+    * `After`  - Your action should be executed only When all projects are opened in IDE.
+    * `Before & After` - Your action should be executed Before initializing projects **and** When all projects are opened.
+
+**Notes:**
+
+* By default v0.12.8 uses `Before` context for Sln-Opened in Visual Studio IDE.
+* Other products without Visual Studio ([API](../../API) -> [CI](../../CI/)) may use other behavior:
+  * [CI.MSBuild](../../CI/CI.MSBuild/) uses `common` context, so it's not important Before/After like above.
+
+
 # References
 
 * [Available Events](../../Events/)
