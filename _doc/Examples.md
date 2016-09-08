@@ -13,6 +13,7 @@ permalink: /doc/Examples/
 * [Artefacts. How to prepare as you want](Artefacts/)
 * [Stop build on first error](Errors.Stop build/)
 * [Demo projects](Demo/)
+* [Reload projects in solution](ReloadProjects/)
 
 ## Some features
 

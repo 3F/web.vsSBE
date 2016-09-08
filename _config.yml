@@ -143,6 +143,9 @@ lnkList_ClientDemo: [
 lnkOld_ClientDemo:  []
 lnkAll_ClientDemo:  [ "/dev/clients/client.vssbe.dll/", "https://sourceforge.net/projects/vssbe/files/dev/clients/client.vssbe.dll/" ]
 
+## get.CIM.bat
+
+lnkCur_getCIM:  [ "get.CIM.bat", "get.CIM.bat", "http://vssbe.r-eg.net/doc/CI/get.CIM.bat" ]
 
 #######################################
 # Sources

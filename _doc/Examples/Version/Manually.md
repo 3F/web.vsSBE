@@ -244,7 +244,7 @@ And of course, primarily, this is important feature of [CI servers]({{site.docp}
 For all of this you should: 
 
 * Define where to store this number: it can be registry, simple file in directory with source code, etc.
-    * By the way, the most CI servers are already should provide **special environment variable** like a `$(appveyor_build_version)`, `$(BUILD_NUMBER)`, etc.
+    * By the way, the most CI servers already should provide **special environment variable** like a `$(appveyor_build_version)`, `$(BUILD_NUMBER)`, etc.
 * [Increment this]({{site.docp}}/Features/Custom counters/) as you want !
 
 ```{{site.msblang}}

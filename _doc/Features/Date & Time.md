@@ -119,8 +119,9 @@ You can [try this](../../Examples/Version/Manually/) If needed a some additional
 
 **Notes**: 
 
-* In general, the TotalMinutes possible only if you have one or less assemblies for 1 **minute**. Otherwise, you should use the similar TotalSeconds again only if you have one or less assemblies for 1 **second** etc.
-* You should use **UTC** (Coordinated Universal Time) **However!** it does not give any warranty for unique numbers. Please remember about this, and be careful for developing in team - for this case use the our **[CI features](../../CI/)** and others... see also - [custom counters](../Custom counters/)
+* If you plan use the TotalMinutes as base of rev. you should note that's correct way **only if** you have one or less assemblies for 1 minute. Otherwise, you should use the similar TotalSeconds, but again only if you have one or less assemblies for 1 second etc.
+* Give preference to UTC (Coordinated Universal Time) **However!** it does not give any warranty for unique numbers. Please remember about this, and be careful for developing **in team** - for this case use the our **[CI features](../../CI/)** and others...
+* Use our [Wizard](../../Examples/Version/Wizard/) as an easy step for quick results.
 
 # References #
 

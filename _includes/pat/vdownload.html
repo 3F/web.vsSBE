@@ -1,5 +1,6 @@
 <div class="btn-group">
   <a href="{{lnkCur[2]}}" target="_blank" rel="noreferrer" class="btn btn-default">Download</a>
+  {% if lnkList.size > 0 %}
   <a href="#" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></a>
   <ul class="dropdown-menu">
     {% for ver in {{lnkList}} %}
@@ -16,4 +17,5 @@
       <li><a href="{{lnkAll[1]}}" target="_blank">All releases</a></li>
     {% endif %}
   </ul>
+  {% endif %}
 </div>

@@ -221,11 +221,14 @@ $([MSBuild]::GetRegistryValueFromView('keyName', 'valueName', null, RegistryView
 
 ## Additional MSBuild Properties
 
-List of properties that available as the MSBuild Properties.
+List of properties that available as MSBuild Properties.
 
-name                 | description                                   | sample of value  | availability
----------------------|-----------------------------------------------|------------------|-------------
-vsSolutionBuildEvent |The version of the vsSolutionBuildEvent engine.| 0.12.6.19789     | v0.12.6+
+name                 | description                                    | sample of value                                                                 | availability
+---------------------|------------------------------------------------|---------------------------------------------------------------------------------|-------------
+vsSolutionBuildEvent |The version of the vsSolutionBuildEvent engine. | 0.12.6.19789                                                                    | v0.12.6+
+vsSBE_LibPath        |Full path to library.                           | C:\Users\reg\AppData\Local\Microsoft\VisualStudio\14.0\Extensions\qt3l02lc.ntf\ | v0.12.8+
+vsSBE_CommonPath     |Common path of library.                         | C:\Users\reg\Documents\Visual Studio 2015\vsSolutionBuildEvent\                 | v0.12.8+
+vsSBE_WorkPath       |Working path for library.                       | D:\prg\projects\LunaRoad\LunaRoad\                                              | v0.12.8+
 
 # References
 

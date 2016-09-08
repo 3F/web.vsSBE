@@ -64,16 +64,16 @@ $(numYmod = $([MSBuild]::Modulo($(numY), 12)))
 
 The variable **spec** in example above should contain the next values - ![Value of variable - spec](../../Resources/examples/ver_spec.gif)
 
-## Other math
+## Other Math
 
 * [Math operations](../Math/)
 
 ## Unique number for team
 
-In example on page [Date & Time](../Date & Time/) now you know that the UTC does not give any warranty for unique numbers and you should use the our **[CI features](../../CI/)** or something else...
+The most CI servers already should provide special environment variable, like a `$(appveyor_build_version)`, `$(BUILD_NUMBER)`, etc. You may use this variable, or:
 
-The most CI servers are already should provide special environment variable, like a `$(appveyor_build_version)`, `$(BUILD_NUMBER)`, etc. You may use this variable, or:
-
+* [Date & Time](../Date & Time/) features, but it does not give any warranty for unique numbers in team, and you should use the our **[CI features](../../CI/)** or something else...
+* [Sequential numbers](../../Examples/Version/Manually/#full-automatic-versions-serial--sequential-numbers)
 * You can also use any cryptographic hash function ([sha1](https://en.wikipedia.org/wiki/SHA-1), [MD5](https://en.wikipedia.org/wiki/MD5), [TTH](https://en.wikipedia.org/wiki/Merkle_tree#Tiger_tree_hash) etc.) with your specific unique identification (timestamp + computer identifier + ... and similar), for example:
 
 ```{{site.sbelang1}}
@@ -84,14 +84,19 @@ The most CI servers are already should provide special environment variable, lik
 
 **Note:** In example above we use the [openssl](https://www.openssl.org/docs/apps/openssl.html). However, **[v0.12.4+ now supports](../../Scripts/SBE-Scripts/Components/FunctionComponent/#hash)** calculating MD5 & SHA1 for more convenience.
 
-* Of course you can use the [Globally Unique Identifier (GUID)](https://en.wikipedia.org/wiki/Globally_unique_identifier) as part of mscorlib.dll - [System.Guid](https://msdn.microsoft.com/en-us/library/system.guid%28v=vs.100%29.aspx):
+```{{site.sbelang}}
+#[Func hash.SHA1("")]
+#[Func hash.MD5("")]
+```
+
+* And of course, you can also use the [Globally Unique Identifier (GUID)](https://en.wikipedia.org/wiki/Globally_unique_identifier) as part of mscorlib.dll - [System.Guid](https://msdn.microsoft.com/en-us/library/system.guid%28v=vs.100%29.aspx):
 
 ```{{site.sbelang1}}
 $([System.Guid]::NewGuid())
 ```
 `364c741c-21da-4c85-8d33-abf15b7c9672`
 
-if needed sha1 you can also recalculate this:
+if need sha1 you can also recalculate this:
 
 ```{{site.sbelang1}}
 #[var guid = $([System.Guid]::NewGuid())]
@@ -100,6 +105,8 @@ if needed sha1 you can also recalculate this:
 `2580219018d287e84de683f4cd74822ba952c96f`
 
 and similar..
+
+* Use our [Wizard](../../Examples/Version/Wizard/) as an easy step for quick results.
 
 # References
 

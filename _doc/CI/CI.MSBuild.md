@@ -7,9 +7,12 @@ permalink: /doc/CI/CI.MSBuild/
 
 Utility to support the [CI /Build servers](http://en.wikipedia.org/wiki/Continuous_integration) for work with [vsSolutionBuildEvent](https://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/) via **[msbuild.exe](https://msdn.microsoft.com/en-us/library/vstudio/ms164311.aspx)** (Microsoft Build Tools)
 
-*see [Devenv Command-Line](../Devenv Command-Line/) if you're searching work in command-line mode of Visual Studio(devenv.exe /.com)*
+*see [Devenv Command-Line](../Devenv Command-Line/) if you need command-line mode of Visual Studio(devenv.exe /.com)*
 
 ## How to get & Install
+
+{% assign infoData  = "Use [get.CIM.bat](http://vssbe.r-eg.net/doc/CI/get.CIM.bat) (~10 Kb) to get it in one click. (Compiled by [GetNuTool](https://github.com/3F/GetNuTool))" %}
+{% include elem/info %}
 
 Currently the CI.MSBuild it's [only additional wrapper (~50 kb)](../../Scheme/) for work with vsSolutionBuildEvent plugin through [API](../../API/). *You should also have this library for work it means.*
 

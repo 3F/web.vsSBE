@@ -16,8 +16,6 @@ In examples below, we use the [MSBuild Property Functions](https://msdn.microsof
 * [System.Enum](https://msdn.microsoft.com/en-us/library/system.enum_methods%28v=vs.100%29.aspx)
 * [...](https://msdn.microsoft.com/en-us/library/vstudio/dd633440%28v=vs.120%29.aspx#BKMK_Static)
 
-{% assign infoData = "v0.12.6+ Now allows evaluation of string arguments with MSBuild engine in File/Function/BuildComponent + some newer. You can also use the [MSBuildComponent](../../Scripts/SBE-Scripts/Components/MSBuildComponent/) to force evaluation if still needed." %}
-
 ## Remove newline characters and other problematic symbols
 
 Some your results may contain a some problematic characters for different functions. In most cases this applies to [MSBuild Property Functions](../../Scripts/MSBuild/).
@@ -98,74 +96,22 @@ Currently used a strictly limited set:
 
 ## Tricks for the longest string arguments
 
-{% include elem/info %}
-
-If you want to pass a long string as argument for some function or method, for example:
+If you need to pass a long string as argument for some function or method, for example:
 
 ```{{site.sbelang1}}
 #[File sout("cmd", "/C cd \"#[var pDir]bin/#[var cfg]/\" & xcopy *.dll \"#[var nupCIMdir]\bin\" /Y/R/I & xcopy NLog.dll.nlog \"#[var nupCIMdir]\bin\" /Y/R/I")]
 ```
 
-You can for example:
-
-* Use the User-Variables for splitting the logic:
-    * With [MSBuild](../../Scripts/MSBuild/) core
-    * With [UserVariableComponent](../../Scripts/SBE-Scripts/Components/UserVariableComponent/) ([SBE-Scripts](../../Scripts/SBE-Scripts/) core)
-
-The [UserVariableComponent](../../Scripts/SBE-Scripts/Components/UserVariableComponent/) is  more useful because for current component allowed the multiline mixed definition and therefore you can for example:
-
-```{{site.sbelang}}
-#[var arg = cd \"D:/tmp/\" 
-dir
-cd ..
-dir]
-
-#[var arg = $(arg.Replace("\r\n", " & "))]
-```
-Evaluated value for **arg** variable above should be as `cd \"D:/tmp/\"  & dir & cd .. & dir`
-
-You can also automatically escape the '"' (double quotes), erase the first & last the newline symbols etc.:
+The best way to use the User-Variables via [MSBuild](../../Scripts/MSBuild/) or [SBE-Scripts](../../Scripts/SBE-Scripts/) core (see also [UserVariableComponent](../../Scripts/SBE-Scripts/Components/UserVariableComponent/))
 
 ```{{site.sbelang1}}
-#[var arg = 
-cd "D:/tmp/" 
-dir
-cd ..
-dir
-]
-$(arg.Trim("\r\n").Replace('"', '\"').Replace("\r\n", " & "))
+$(src = "$(pDir)bin/$(cfg)/")
+$(dir = "$(nupCIMdir)\bin\\")
+#[var cim = xcopy NLog.dll.nlog \"$(nupCIMdir)\bin\" ]
+...
 ```
 
-Therefore the long single line from example above also can be as:
-
-```{{site.sbelang}}
-#[var arg = 
-
-cd \"#[var pDir]bin/#[var cfg]/\"
-xcopy *.dll \"#[var nupCIMdir]\bin\" /Y/R/I
-xcopy NLog.dll.nlog \"#[var nupCIMdir]\bin\" /Y/R/I
-
-]
-
-#[var arg = $(arg.Trim("\r\n").Replace("\r\n", " & "))]
-#[File sout("cmd", "/C  #[var arg]")]
-```
-
-also with [cmd](../../Scripts/SBE-Scripts/Components/FileComponent/) alias it can be as:
-
-```{{site.sbelang1}}
-#[var arg = 
-
-cd "#[var pDir]bin/#[var cfg]/"
-xcopy *.dll "#[var nupCIMdir]\bin" /Y/R/I
-xcopy NLog.dll.nlog "#[var nupCIMdir]\bin" /Y/R/I
-
-]
-
-#[var arg = $(arg.Trim("\r\n").Replace('"', '\"').Replace("\r\n", " & "))]
-#[File cmd("#[var arg]")]
-```
-and similar..
+[other tricks](Tricks/)
 
 ## Dynamic evaluation with both engines MSBuild & SBE-Scripts
 
@@ -173,6 +119,7 @@ Not all values from strings may be automatically evaluated beetween different en
 
 *You also should remeber [behaviour of strings for User-variables in MSBuild core](../../Scripts/MSBuild/#user-variables-for-msbuild-core)*
 
+{% assign infoData = "v0.12.6+ Allows evaluation of string arguments with MSBuild engine in File/Function/BuildComponent + some newer. You can also use the [MSBuildComponent](../../Scripts/SBE-Scripts/Components/MSBuildComponent/) to force evaluation if still needed." %}
 {% include elem/info %}
 
 For example:

@@ -77,13 +77,26 @@ title: Downloads
         </tr>
         <tr>
           <td>
-            <div><a href="https://www.nuget.org/packages/vsSBE.CI.MSBuild/" target="_blank"><img src="https://img.shields.io/nuget/v/vsSBE.CI.MSBuild.svg" alt="NuGet Package for CI" /></a></div>
+            <div><a href="https://www.nuget.org/packages/vsSBE.CI.MSBuild/" target="_blank"><img src="https://img.shields.io/nuget/v/vsSBE.CI.MSBuild.svg" alt="NuGet Package" /></a></div>
           </td>
           <td>The official package of libraries to support the CI /Build Servers.</td>
           <td>
             {% assign lnkCur = site.lnkCur_CIMNuGet %}
             {% assign lnkList = site.lnkList_CIMNuGet %}
             {% assign lnkOld = site.lnkOld_CIMNuGet %}
+            {% assign lnkAll = [] %}
+            {% include pat/vdownload.html %}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div><a href="http://vssbe.r-eg.net/doc/CI/get.CIM.bat" target="_blank">get.CIM.bat</a></div>
+          </td>
+          <td>~10 Kb. To get CI.MSBuild in one click (Compiled by <a href="https://github.com/3F/GetNuTool" target="_blank">GetNuTool</a>).</td>
+          <td>
+            {% assign lnkCur = site.lnkCur_getCIM %}
+            {% assign lnkList = [] %}
+            {% assign lnkOld = [] %}
             {% assign lnkAll = [] %}
             {% include pat/vdownload.html %}
           </td>
