@@ -148,6 +148,42 @@ $(-name =)
 $(-name = ...)
 ```
 
+## Syntactic sugar
+
+### Increment & Decrement operators for numbers and strings
+
+[ v0.12.8+ ]
+
+* numbers:
+
+ operators | equivalent to
+-----------|--------------
+`$(i += 1)`| `$(i = $([MSBuild]::Add($(i), 1)))`
+`$(i -= 1)`| `$(i = $([MSBuild]::Subtract($(i), 1)))`
+
+**note**: by default, `+=` and `-=` also initializes variable to **0** if it's not defined before.
+
+Samples:
+
+```{{site.sbelang}}
+$(n = 0)
+$(n += 3.14)
+$(n += $(n))
+```
+
+* strings:
+
+ operators        | equivalent to
+------------------|--------------
+`$(name += "str")`| `$(name = $([System.String]::Concat($(name), "str")))`
+
+Samples:
+
+```{{site.sbelang}}
+$(desc = "Hello ")
+$(desc += "world !")
+```
+
 ## Nested levels - recursive evaluation for MSBuild Properties
 
 In vsSolutionBuildEvent the most variables can be evaluated with nested levels also for each project.

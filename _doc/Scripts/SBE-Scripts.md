@@ -60,15 +60,16 @@ $(n)
 
 {% include elem/fillme %}
 
-type   | description
--------|------------
-integer| Signed 32-bit integer
-string | From double quotes & From single quotes
-char   |
-float  | Signed floating-point number with single-precision. The `f` postfix for clarify: 1.25f, -1.25f
-double | Signed floating-point number with double-precision. The optional `d` postfix for clarify: 1.25d or simply 1.25, -1.25
-enum   |
-const  |
+type       | description
+-----------|------------
+integer    | Signed 32-bit integer
+string     | From double quotes & From single quotes
+char       |
+float      | Signed floating-point number with single-precision. The `f` postfix for clarify: 1.25f, -1.25f
+double     | Signed floating-point number with double-precision. The optional `d` postfix for clarify: 1.25d or simply 1.25, -1.25
+enum       |
+const      |
+expression | The composite definition, like a conditional expression ~ `(((1 < 2) && true) || $(debug) != "r200")` etc.
 
 ### Object type
 

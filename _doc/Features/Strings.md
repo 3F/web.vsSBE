@@ -16,6 +16,23 @@ In examples below, we use the [MSBuild Property Functions](https://msdn.microsof
 * [System.Enum](https://msdn.microsoft.com/en-us/library/system.enum_methods%28v=vs.100%29.aspx)
 * [...](https://msdn.microsoft.com/en-us/library/vstudio/dd633440%28v=vs.120%29.aspx#BKMK_Static)
 
+## Concatenation
+
+v0.12.8+ [Contains syntactic sugar](../../Scripts/MSBuild/#syntactic-sugar) `+=`:
+
+```{{site.sbelang}}
+$(desc = "Hello ")
+$(desc += "world !")
+```
+
+or you can use:
+
+```{{site.sbelang}}
+$(desc = "Hello ")
+$(desc = $([System.String]::Concat($(desc), "world !")) )
+```
+
+
 ## Remove newline characters and other problematic symbols
 
 Some your results may contain a some problematic characters for different functions. In most cases this applies to [MSBuild Property Functions](../../Scripts/MSBuild/).

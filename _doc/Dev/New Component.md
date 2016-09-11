@@ -105,7 +105,7 @@ namespace net.r_eg.vsSBE.SBEScripts.Components
 
             if(pm.FinalEmptyIs(LevelType.Method, "add"))
             {
-                ILevel level = pm.Levels[0]; // root element
+                ILevel level = pm.FirstLevel; // root element
 
                 level.Is("int add(int a, int b)", ArgumentType.Integer, ArgumentType.Integer);
                 int a = (int)level.Args[0].data;

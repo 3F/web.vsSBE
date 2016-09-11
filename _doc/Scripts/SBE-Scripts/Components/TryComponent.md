@@ -71,3 +71,14 @@ catch(err, msg)
     }]        
 }]
 ```
+
+```{{site.sbelang}}
+#[try {
+
+    #[Box data.pack("header", false): 
+    
+        ...
+    ]
+
+}catch{ }]
+```

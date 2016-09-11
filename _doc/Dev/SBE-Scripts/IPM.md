@@ -109,7 +109,7 @@ It can be a more flexible, just use other available way: [SNode.IPM](https://git
 ```csharp
 IPM pm = new PM("solution(\"str data\", 'str data2', 12, -12, 1.5, -1.5, STDOUT, TestEnum.SpecialType, mixed * data, true)");
 
-Argument[] args = pm.Levels[0].Args;
+Argument[] args = pm.FirstLevel.Args;
 Assert.AreEqual(args[0].type, ArgumentType.StringDouble);
 Assert.AreEqual(args[0].data, "str data");
 
@@ -146,7 +146,7 @@ Assert.AreEqual(args[9].data, true);
 ```csharp
 IPM pm = new PM(" solution (1.5, -1.5, 1.5f, -1.5f, 1.5d, -1.5d) ");
 
-Argument[] args = pm.Levels[0].Args;
+Argument[] args = pm.FirstLevel.Args;
 Assert.AreEqual(args[0].type, ArgumentType.Double);
 Assert.AreEqual(args[0].data, 1.5d);
 
@@ -174,7 +174,7 @@ IPM pm = new PM(" m77(\"guid\", 12, {\"p1\", {4, \"test\", 8, 'y'}, true}, {fals
 
 Assert.AreEqual(pm.Is(LevelType.Method, "m77"), true);
 
-Argument[] args = pm.Levels[0].Args;
+Argument[] args = pm.FirstLevel.Args;
 Assert.AreEqual(args.Length, 4);
 
 Assert.AreEqual(args[0].type, ArgumentType.StringDouble);

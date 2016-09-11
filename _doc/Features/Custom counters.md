@@ -25,6 +25,22 @@ In examples below, we use the [MSBuild Property Functions](https://msdn.microsof
 * [System.DateTime](https://msdn.microsoft.com/en-us/library/system.datetime_methods%28v=vs.100%29.aspx)
 * [...](https://msdn.microsoft.com/en-us/library/vstudio/dd633440%28v=vs.120%29.aspx#BKMK_Static)
 
+
+**Syntactic sugar of v0.12.8+**
+
+{% assign infoData = "v0.12.8+ [Contains syntactic sugar](../../Scripts/MSBuild/#syntactic-sugar): `+=` & `-=`" %}
+{% include elem/info %}
+
+```{{site.sbelang3}}
+#[Box iterate(i = 0; $(i) < 10; i += 1): 
+    ...
+    $(numA += 3.14)
+    $(numB -= 1)
+]
+```
+
+### other
+
 Example of counter in the range 1 - 10:
 
 ```{{site.sbelang}}

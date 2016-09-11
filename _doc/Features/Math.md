@@ -79,7 +79,20 @@ $([System.Math]::Exp('$([MSBuild]::Multiply($([System.Math]::Log(2)), 16))')) | 
 ```{{site.msblang}}
 $(number = $([MSBuild]::Add(1024, 12)))
 $(number = $([MSBuild]::Add($(number), 1)))
-``` 
+```
+
+{% assign infoData = "v0.12.8+ [Contains syntactic sugar](../../Scripts/MSBuild/#syntactic-sugar) `+=` for this important operation, e.g.: `$(i += 1)`" %}
+{% include elem/info %}
+
+### Subtract()
+
+```{{site.msblang}}
+$(number = $([MSBuild]::Subtract(1024, 12)))
+$(number = $([MSBuild]::Subtract($(number), 1)))
+```
+
+{% assign infoData = "v0.12.8+ [Contains syntactic sugar](../../Scripts/MSBuild/#syntactic-sugar) `-=` for this important operation, e.g.: `$(i -= 1)`" %}
+{% include elem/info %}
 
 ### Bit mask
 

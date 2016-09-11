@@ -248,6 +248,8 @@ For all of this you should:
 * [Increment this]({{site.docp}}/Features/Custom counters/) as you want !
 
 ```{{site.msblang}}
+$(buildNumber += 1)
+or
 $(buildNumber = $([MSBuild]::Add($(buildNumber), 1)))
 ```
 
