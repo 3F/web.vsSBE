@@ -69,6 +69,15 @@ You can also use the `/verbosity` key for details information from vsSolutionBui
 msbuild.exe "<SolutionFile>.sln" /v:detailed /m:4 /l:"<path_to>\CI.MSBuild.dll" /nologo /noconlog
 ```
 
+Use also the [CI.MSBuild.bat](https://github.com/3F/vsSolutionBuildEvent/blob/master/CI.MSBuild/CI.MSBuild.bat) helper (included with latest assemblies):
+
+```bash
+<fullpath_to>\CI.MSBuild" <SolutionFile.sln> <optional_keys>
+```
+```bash
+> bin\CI.MSBuild ConsoleApplication1.sln
+```
+
 ![Example of work](../../Resources/CI.MSBuild_example_console.png)
 
 ### Keys to CI.MSBuild
