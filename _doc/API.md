@@ -14,6 +14,10 @@ For example, this is already implemented in our products as part of vsSolutionBu
 
 ## Where to begin
 
+Scheme of vsSolutionBuildEvent projects:
+
+[![Scheme of vsSolutionBuildEvent projects](../Resources/scheme.png)](../Scheme/)
+
 ### Bridge
 
 * Download [{{site.lnkCur_API[1]}}]({{site.lnkCur_API[2]}}) (SourceForge.net) ~8Kb

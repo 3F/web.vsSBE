@@ -52,42 +52,42 @@ msblang: bash
 
 ## VSPackage
 
-lnkCur_VSPackage:   [ "v0.12.8", "vsSolutionBuildEvent_v0.12.8.4975_[50e9a29][net40].vsix", "https://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/referral/118151" ]
+lnkCur_VSPackage:   [ "v0.12.8", "vsSolutionBuildEvent&#95;v0.12.8.4975&#95;[50e9a29][net40].vsix", "https://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/referral/118151" ]
 lnkList_VSPackage:  [
-                        [ "v0.12.8_net40", "vsSolutionBuildEvent_v0.12.8.4975_[50e9a29][net40].vsix", "https://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.12.8.4975_%5B50e9a29%5D%5Bnet40%5D.vsix/download" ],
-                        [ "v0.12.8_net45", "vsSolutionBuildEvent_v0.12.8.4976_[50e9a29][net45].vsix", "https://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.12.8.4976_%5B50e9a29%5D%5Bnet45%5D.vsix/download" ],
-                        [ "v0.12.7", "vsSolutionBuildEvent_v0.12.7.3805_[48df3db][net40].vsix", "http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.12.7.3805_%5B48df3db%5D%5Bnet40%5D.vsix/download" ]
+                        [ "v0.12.8_net40", "vsSolutionBuildEvent&#95;v0.12.8.4975&#95;[50e9a29][net40].vsix", "https://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.12.8.4975_%5B50e9a29%5D%5Bnet40%5D.vsix/download" ],
+                        [ "v0.12.8_net45", "vsSolutionBuildEvent&#95;v0.12.8.4976&#95;[50e9a29][net45].vsix", "https://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.12.8.4976_%5B50e9a29%5D%5Bnet45%5D.vsix/download" ],
+                        [ "v0.12.7", "vsSolutionBuildEvent&#95;v0.12.7.3805&#95;[48df3db][net40].vsix", "http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.12.7.3805_%5B48df3db%5D%5Bnet40%5D.vsix/download" ]
                     ]
 lnkOld_VSPackage:   [
-                        [ "v0.12.6", "vsSolutionBuildEvent_v0.12.6.5177_[6ad0511][net40].vsix", "http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.12.6.5177_%5B6ad0511%5D%5Bnet40%5D.vsix/download" ],
-                        [ "v0.12.5", "vsSolutionBuildEvent_v0.12.5.2477_[d018ea4][net40].vsix", "http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.12.5.2477_%5Bd018ea4%5D%5Bnet40%5D.vsix/download" ],
-                        [ "v0.12.4", "vsSolutionBuildEvent_v0.12.4.4187_[f8e9259][net40].vsix", "http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.12.4.4187_%5Bf8e9259%5D%5Bnet40%5D.vsix/download" ],
-                        [ "v0.12.3", "vsSolutionBuildEvent_v0.12.3.vsix", "http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.12.3.vsix/download" ],
-                        [ "v0.11.4", "vsSolutionBuildEvent_v0.11.4.vsix", "http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.11.4.vsix/download" ]
+                        [ "v0.12.6", "vsSolutionBuildEvent&#95;v0.12.6.5177&#95;[6ad0511][net40].vsix", "http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.12.6.5177_%5B6ad0511%5D%5Bnet40%5D.vsix/download" ],
+                        [ "v0.12.5", "vsSolutionBuildEvent&#95;v0.12.5.2477&#95;[d018ea4][net40].vsix", "http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.12.5.2477_%5Bd018ea4%5D%5Bnet40%5D.vsix/download" ],
+                        [ "v0.12.4", "vsSolutionBuildEvent&#95;v0.12.4.4187&#95;[f8e9259][net40].vsix", "http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.12.4.4187_%5Bf8e9259%5D%5Bnet40%5D.vsix/download" ],
+                        [ "v0.12.3", "vsSolutionBuildEvent&#95;v0.12.3.vsix", "http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.12.3.vsix/download" ],
+                        [ "v0.11.4", "vsSolutionBuildEvent&#95;v0.11.4.vsix", "http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.11.4.vsix/download" ]
                     ]
 lnkAll_VSPackage:   [ "/v0.x/", "http://sourceforge.net/projects/vssbe/files/v0.x/" ]
 
 ## CI.MSBuild
 
-lnkCur_CIMSBuild:   [ "v1.6", "CI.MSBuild_v1.6_[48df3db][net40].zip", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/CI.MSBuild_v1.6_%5B48df3db%5D%5Bnet40%5D.zip/download" ]
+lnkCur_CIMSBuild:   [ "v1.6", "CI.MSBuild&#95;v1.6&#95;[48df3db][net40].zip", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/CI.MSBuild_v1.6_%5B48df3db%5D%5Bnet40%5D.zip/download" ]
 lnkList_CIMSBuild:  [ 
-                        [ "v1.6", "CI.MSBuild_v1.6_[48df3db][net40].zip", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/CI.MSBuild_v1.6_%5B48df3db%5D%5Bnet40%5D.zip/download" ],
-                        [ "v1.5", "CI.MSBuild_v1.5_[8bde22a][net40].zip", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/CI.MSBuild_v1.5_%5B8bde22a%5D%5Bnet40%5D.zip/download" ]
+                        [ "v1.6", "CI.MSBuild&#95;v1.6&#95;[48df3db][net40].zip", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/CI.MSBuild_v1.6_%5B48df3db%5D%5Bnet40%5D.zip/download" ],
+                        [ "v1.5", "CI.MSBuild&#95;v1.5&#95;[8bde22a][net40].zip", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/CI.MSBuild_v1.5_%5B8bde22a%5D%5Bnet40%5D.zip/download" ]
                     ]                
 lnkOld_CIMSBuild:   [ 
-                        [ "v1.4", "CI.MSBuild_v1.4_[1e67da9][net40].zip", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/CI.MSBuild_v1.4_%5B1e67da9%5D%5Bnet40%5D.zip/download" ],
-                        [ "v1.3", "CI.MSBuild_v1.3_[120ea89][net40].zip", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/CI.MSBuild_v1.3_%5B120ea89%5D%5Bnet40%5D.zip/download" ]
+                        [ "v1.4", "CI.MSBuild&#95;v1.4&#95;[1e67da9][net40].zip", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/CI.MSBuild_v1.4_%5B1e67da9%5D%5Bnet40%5D.zip/download" ],
+                        [ "v1.3", "CI.MSBuild&#95;v1.3&#95;[120ea89][net40].zip", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/CI.MSBuild_v1.3_%5B120ea89%5D%5Bnet40%5D.zip/download" ]
                     ]
 lnkAll_CIMSBuild:   [ "/CI-Utilities/CI.MSBuild/", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/"]
 
 ## Devenv
 
-lnkCur_Devenv:  [ "v1.3", "Devenv_v1.3_[e3b9d87][net40].zip", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/Devenv/Devenv_v1.3_%5Be3b9d87%5D%5Bnet40%5D.zip/download" ]
+lnkCur_Devenv:  [ "v1.3", "Devenv&#95;v1.3&#95;[e3b9d87][net40].zip", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/Devenv/Devenv_v1.3_%5Be3b9d87%5D%5Bnet40%5D.zip/download" ]
 lnkList_Devenv: [
-                    [ "v1.3", "Devenv_v1.3_[e3b9d87][net40].zip", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/Devenv/Devenv_v1.3_%5Be3b9d87%5D%5Bnet40%5D.zip/download" ],
-                    [ "v1.2", "Devenv_v1.2_[f9bf5fc][net40].zip", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/Devenv/Devenv_v1.2_%5Bf9bf5fc%5D%5Bnet40%5D.zip/download" ],
-                    [ "v1.1", "Devenv_v1.1_[e9ad3bd][net40].zip", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/Devenv/Devenv_v1.1_%5Be9ad3bd%5D%5Bnet40%5D.zip/download" ],
-                    [ "v1.0", "Devenv_v1.0_[5d7aa0c].zip", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/Devenv/Devenv_v1.0_%5B5d7aa0c%5D.zip/download" ]
+                    [ "v1.3", "Devenv&#95;v1.3&#95;[e3b9d87][net40].zip", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/Devenv/Devenv_v1.3_%5Be3b9d87%5D%5Bnet40%5D.zip/download" ],
+                    [ "v1.2", "Devenv&#95;v1.2&#95;[f9bf5fc][net40].zip", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/Devenv/Devenv_v1.2_%5Bf9bf5fc%5D%5Bnet40%5D.zip/download" ],
+                    [ "v1.1", "Devenv&#95;v1.1&#95;[e9ad3bd][net40].zip", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/Devenv/Devenv_v1.1_%5Be9ad3bd%5D%5Bnet40%5D.zip/download" ],
+                    [ "v1.0", "Devenv&#95;v1.0&#95;[5d7aa0c].zip", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/Devenv/Devenv_v1.0_%5B5d7aa0c%5D.zip/download" ]
                 ]
 lnkOld_Devenv:  []
 lnkAll_Devenv:  [ "/CI-Utilities/Devenv/", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/Devenv/" ]
@@ -95,27 +95,27 @@ lnkAll_Devenv:  [ "/CI-Utilities/Devenv/", "http://sourceforge.net/projects/vssb
 
 ## API
 
-lnkCur_API:     [ "v1.4", "Bridge_v1.4_[50e9a29][net40].zip", "https://sourceforge.net/projects/vssbe/files/API/Bridge/Bridge_v1.4_%5B50e9a29%5D%5Bnet40%5D.zip/download" ]
+lnkCur_API:     [ "v1.4", "Bridge&#95;v1.4&#95;[50e9a29][net40].zip", "https://sourceforge.net/projects/vssbe/files/API/Bridge/Bridge_v1.4_%5B50e9a29%5D%5Bnet40%5D.zip/download" ]
 lnkList_API:    [
-                    [ "v1.4", "Bridge_v1.4_[50e9a29][net40].zip", "https://sourceforge.net/projects/vssbe/files/API/Bridge/Bridge_v1.4_%5B50e9a29%5D%5Bnet40%5D.zip/download" ],
-                    [ "v1.3", "Bridge_v1.3_[8bde22a][net40].zip", "http://sourceforge.net/projects/vssbe/files/API/Bridge/Bridge_v1.3_%5B8bde22a%5D%5Bnet40%5D.zip/download" ],
-                    [ "v1.2", "Bridge_v1.2_[dc72d4c][net40].zip", "http://sourceforge.net/projects/vssbe/files/API/Bridge/Bridge_v1.2_%5Bdc72d4c%5D%5Bnet40%5D.zip/download" ],
-                    [ "v1.1", "Bridge_v1.1_[e9ad3bd][net40].zip", "http://sourceforge.net/projects/vssbe/files/API/Bridge/Bridge_v1.1_%5Be9ad3bd%5D%5Bnet40%5D.zip/download" ],
-                    [ "v1.0", "Bridge_v1.0_[5d7aa0c].zip", "http://sourceforge.net/projects/vssbe/files/API/Bridge/Bridge_v1.0_%5B5d7aa0c%5D.zip/download" ]
+                    [ "v1.4", "Bridge&#95;v1.4&#95;[50e9a29][net40].zip", "https://sourceforge.net/projects/vssbe/files/API/Bridge/Bridge_v1.4_%5B50e9a29%5D%5Bnet40%5D.zip/download" ],
+                    [ "v1.3", "Bridge&#95;v1.3&#95;[8bde22a][net40].zip", "http://sourceforge.net/projects/vssbe/files/API/Bridge/Bridge_v1.3_%5B8bde22a%5D%5Bnet40%5D.zip/download" ],
+                    [ "v1.2", "Bridge&#95;v1.2&#95;[dc72d4c][net40].zip", "http://sourceforge.net/projects/vssbe/files/API/Bridge/Bridge_v1.2_%5Bdc72d4c%5D%5Bnet40%5D.zip/download" ],
+                    [ "v1.1", "Bridge&#95;v1.1&#95;[e9ad3bd][net40].zip", "http://sourceforge.net/projects/vssbe/files/API/Bridge/Bridge_v1.1_%5Be9ad3bd%5D%5Bnet40%5D.zip/download" ],
+                    [ "v1.0", "Bridge&#95;v1.0&#95;[5d7aa0c].zip", "http://sourceforge.net/projects/vssbe/files/API/Bridge/Bridge_v1.0_%5B5d7aa0c%5D.zip/download" ]
                 ]
 lnkOld_API:     []
 lnkAll_API:     [ "/API/Bridge/", "http://sourceforge.net/projects/vssbe/files/API/Bridge/" ]
 
 ## Provider
 
-lnkCur_Provider:    [ "v3.0", "Provider_v3.0_[8bde22a][net40].zip", "http://sourceforge.net/projects/vssbe/files/API/Provider/Provider_v3.0_%5B8bde22a%5D%5Bnet40%5D.zip/download" ]
+lnkCur_Provider:    [ "v3.0", "Provider&#95;v3.0&#95;[8bde22a][net40].zip", "http://sourceforge.net/projects/vssbe/files/API/Provider/Provider_v3.0_%5B8bde22a%5D%5Bnet40%5D.zip/download" ]
 lnkList_Provider:   [
-                        [ "v3.0", "Provider_v3.0_[8bde22a][net40].zip", "http://sourceforge.net/projects/vssbe/files/API/Provider/Provider_v3.0_%5B8bde22a%5D%5Bnet40%5D.zip/download" ]
+                        [ "v3.0", "Provider&#95;v3.0&#95;[8bde22a][net40].zip", "http://sourceforge.net/projects/vssbe/files/API/Provider/Provider_v3.0_%5B8bde22a%5D%5Bnet40%5D.zip/download" ]
                     ]
 lnkOld_Provider:    [
-                        [ "v2.1", "Provider_v2.1_[f9bf5fc][net40].zip", "http://sourceforge.net/projects/vssbe/files/API/Provider/Provider_v2.1_%5Bf9bf5fc%5D%5Bnet40%5D.zip/download" ],
-                        [ "v2.0", "Provider_v2.0_[e9ad3bd][net40].zip", "http://sourceforge.net/projects/vssbe/files/API/Provider/Provider_v2.0_%5Be9ad3bd%5D%5Bnet40%5D.zip/download" ],
-                        [ "v1.0", "Provider_v1.0_[5d7aa0c].zip", "http://sourceforge.net/projects/vssbe/files/API/Provider/Provider_v1.0_%5B5d7aa0c%5D.zip/download" ]
+                        [ "v2.1", "Provider&#95;v2.1&#95;[f9bf5fc][net40].zip", "http://sourceforge.net/projects/vssbe/files/API/Provider/Provider_v2.1_%5Bf9bf5fc%5D%5Bnet40%5D.zip/download" ],
+                        [ "v2.0", "Provider&#95;v2.0&#95;[e9ad3bd][net40].zip", "http://sourceforge.net/projects/vssbe/files/API/Provider/Provider_v2.0_%5Be9ad3bd%5D%5Bnet40%5D.zip/download" ],
+                        [ "v1.0", "Provider&#95;v1.0&#95;[5d7aa0c].zip", "http://sourceforge.net/projects/vssbe/files/API/Provider/Provider_v1.0_%5B5d7aa0c%5D.zip/download" ]
                     ]
 lnkAll_Provider:    [ "/API/Provider/", "http://sourceforge.net/projects/vssbe/files/API/Provider/" ]
 

@@ -141,7 +141,7 @@ table:not([class]) tr th {
 /* ghbtn */
 
 .ghbtn {
-    cursor:pointer;
+    cursor:default;
     display:inline-block;
     vertical-align:middle;
     border:1px solid #d5d5d5;
