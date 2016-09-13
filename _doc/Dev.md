@@ -11,4 +11,4 @@ permalink: /doc/Dev/
     * [Dom & Code Completion](SBE-Scripts/Dom/)
 * [API](../API/)
 * [Scheme of vsSolutionBuildEvent projects](../Scheme/)
-* [Ask a question](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)
+* [Ask a question]({{site.issueNew}})

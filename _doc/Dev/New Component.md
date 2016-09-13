@@ -171,7 +171,7 @@ Also, if you want share your component for current project - use pull request (o
 
 Currently it's for internal structures, mainly. *It can be later, because it's really useful or convenient at least.*
 
-**But**, today this was not necessary for our users. Otherwise, you should [create](https://bitbucket.org/3F/vssolutionbuildevent/issues/new) issue and **vote** for this - we'll look it as demand among users.
+**But**, today this was not necessary for our users. Otherwise, you should [create]({{site.issueNew}}) issue and **vote** for this - we'll look it as demand among users.
 
 Also, **as variant** you **already** can see available:
 
@@ -182,7 +182,7 @@ Also, **as variant** you **already** can see available:
 
 ## Have a question ?
 
-If you have a question or have a some problem with creating of new component and similar, just [create new Issue](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)
+If you have a question or have a some problem with creating of new component and similar, just [create new Issue]({{site.issueNew}})
 
 # References
 

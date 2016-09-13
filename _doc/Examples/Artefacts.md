@@ -22,7 +22,7 @@ Read first:
 
 ## Releases from a few projects
 
-*Full example you can see, for example, our project:  [Full script for assembling the vsSolutionBuildEvent v0.12.6+](https://gist.github.com/3F/3f2f56dfc2a01dc99c63) (actual version in current [script file](https://bitbucket.org/3F/vssolutionbuildevent/src/master/.vssbe))*
+*Full example you can see, for example, our project:  [Full script for assembling the vsSolutionBuildEvent v0.12.6+](https://gist.github.com/3F/3f2f56dfc2a01dc99c63) (actual version in current [script file](https://github.com/3F/vsSolutionBuildEvent/blob/master/.vssbe))*
 
 As result [you will see this files](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/build/build-136/artifacts) (i.e. only for example - your variants **can be as you want**) for deploy or for simple use.
 

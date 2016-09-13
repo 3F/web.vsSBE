@@ -1,5 +1,7 @@
 <header>
 
+{% include components/ghRibbon.html %}
+
 <!-- cse -->
 <script>
   (function() {
@@ -51,7 +53,7 @@
                   </form>
                 </li>
                 <li>
-                  <a href="https://bitbucket.org/3F/vssolutionbuildevent/issues/new" target="_blank" title="bug ? question ?">
+                  <a href="{{site.issueNew}}" target="_blank" title="bug ? question ?">
                     <span class="glyphicon glyphicon-bullhorn nav-gicon" aria-hidden="true"></span> Create Issue
                   </a>
                 </li>

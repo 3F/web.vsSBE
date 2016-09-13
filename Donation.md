@@ -24,7 +24,7 @@ Now you can !
 **Note:** the USD by default, but we also accept the EUR and RUB (Russian Ruble). Contact if needed.
 
 * PyPal: [![Donate](https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=entry%2ereg%40gmail%2ecom&lc=US&item_name=3F%2dOpenSource%20%5b%20github%2ecom%2f3F&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted)
-* alternatives ? write [here](https://bitbucket.org/3F/vssolutionbuildevent/issues/new) or use any contacts for private discussion:
+* alternatives ? write [here]({{site.issueNew}}) or use any contacts for private discussion:
     * <entry.reg@gmail.com> (please inform details if you do not want that your message was deleted as spam)
 
 Thank **you** for your important support !
@@ -59,7 +59,7 @@ Current UI is obsolete and inconvenient for all new features, so you can also tr
 
 Start with [Developer Zone]({{site.docp}}/Dev/)
 
-**Please note:** planned to separate this namespace into the new project (this is really needed with [API]({{site.docp}}/API) and all [related subprojects]({{site.docp}}/Scheme/)). Write before [here](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)
+**Please note:** planned to separate this namespace into the new project (this is really needed with [API]({{site.docp}}/API) and all [related subprojects]({{site.docp}}/Scheme/)). Write before [here]({{site.issueNew}})
 
 ### Share
 
@@ -67,4 +67,4 @@ Share project... a lot of users - a lot of help or something like that.
 
 ## Have a questions ?
 
--> [we'll help you](https://bitbucket.org/3F/vssolutionbuildevent/issues/new) -_*
+-> [we'll help you]({{site.issueNew}}) -_*

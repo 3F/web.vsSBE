@@ -6,7 +6,7 @@ permalink: /doc/Dev/SBE-Scripts/Dom/
 
 # Dom & Code Completion
 
-Optional, you can describe your component with [SBEScripts/Dom](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Dom/) for code completion (Intellisense) or to any generation of documentation.
+Optional, you can describe your component with [SBEScripts/Dom](https://github.com/3F/vsSolutionBuildEvent/tree/master/vsSolutionBuildEvent/SBEScripts/Dom) for code completion (Intellisense) or to any generation of documentation.
 
 It's easy with next attributes:
 
@@ -47,10 +47,10 @@ Syntax:
 
 Note:
 
-* Type of the get/set should be as [CValueType](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/CValueType.cs)
+* Type of the get/set should be as [CValueType](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/CValueType.cs)
 * The **parent** it's optional argument used for linking on parent element (property/method etc.) if exist
     * The **method** argument should contain the real method name who implements the parent element (property/method etc.) 
-* All available constructors see with the [Dom.PropertyAttribute](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Dom/PropertyAttribute.cs).
+* All available constructors see with the [Dom.PropertyAttribute](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/Dom/PropertyAttribute.cs).
 
 ## MethodAttribute
 
@@ -87,10 +87,10 @@ Syntax:
 
 Note:
 
-* Type of the get/set should be as [CValueType](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/CValueType.cs)
+* Type of the get/set should be as [CValueType](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/CValueType.cs)
 * The **parent** it's optional argument used for linking on parent element (property/method etc.) if exist
     * The **method** argument should contain the real method name who implements the parent element (property/method etc.) 
-* All available constructors see with the [Dom.MethodAttribute](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Dom/MethodAttribute.cs)
+* All available constructors see with the [Dom.MethodAttribute](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/Dom/MethodAttribute.cs)
 
 ## ComponentAttribute
 
@@ -109,7 +109,7 @@ Syntax:
 [Component(string name, string description)]
 ```
 
-All available constructors see with the [Dom.ComponentAttribute](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Dom/ComponentAttribute.cs)
+All available constructors see with the [Dom.ComponentAttribute](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/Dom/ComponentAttribute.cs)
 
 ### Aliases
 
@@ -140,7 +140,7 @@ Syntax:
 [Definition(string name, string description)]
 ```
 
-All available constructors see with the [Dom.DefinitionAttribute](https://bitbucket.org/3F/vssolutionbuildevent/src/master/vsSolutionBuildEvent/SBEScripts/Dom/DefinitionAttribute.cs)
+All available constructors see with the [Dom.DefinitionAttribute](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/SBEScripts/Dom/DefinitionAttribute.cs)
 
 # References
 

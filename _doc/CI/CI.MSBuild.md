@@ -134,7 +134,7 @@ However, the various environments for CI has a different configuration and if yo
  
 You can try add this manually into **/bin** folder.
 
-If you see any problem with installing and/or using, please report [here](https://bitbucket.org/3F/vssolutionbuildevent/issues/new)
+If you see any problem with installing and/or using, please report [here]({{site.issueNew}})
 
 *Some references can be removed later special for CI.MSBuild version and/or some libraries can be added later in [our package](https://www.nuget.org/packages/vsSBE.CI.MSBuild/) directly or as dependencies to full automation.*
 
@@ -154,7 +154,7 @@ If you see any problem with installing and/or using, please report [here](https:
 
 AppVeyor is also provides the private NuGet hosting, and you can use own packages of the vsSolutionBuildEvent CI.MSBuild ([related topic](http://help.appveyor.com/discussions/questions/900-additional-logger-to-msbuild#comment_35869149))
 
-[![Example with AppVeyor](../../Resources/ci_example_appveyor.png)](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/build/build-143)
+[![Example with AppVeyor](../../Resources/ci_example_appveyor.png)](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/build/build-164)
 
 #### With AppVeyor NuGet server
 

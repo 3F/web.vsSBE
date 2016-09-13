@@ -54,7 +54,7 @@ $(n = $([System.Math]::Exp( $([MSBuild]::Multiply('$([System.Math]::Log(2))', 16
 $(n)
 ```
 
-*If you have some problems with syntax and documentation can't say how it should be... don't worry, just [create new Issue](https://bitbucket.org/3F/vssolutionbuildevent/issues/new) - we'll help you.*
+*If you have some problems with syntax and documentation can't say how it should be... don't worry, just [create new Issue]({{site.issueNew}}) - we'll help you.*
 
 ## Arguments
 

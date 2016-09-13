@@ -37,11 +37,6 @@ $([System.DateTime]::Parse("2015/02/17").ToBinary())
 $([System.DateTime]::Parse("2015/02/17 07:21").ToBinary())
 ```
 
-```{{site.msblang}}
-$([System.DateTime]::Parse("17.02.2015 17:41").ToBinary())
-```
-etc.
-
 ### Number of ticks from current date and time
 
 We also should use the next properties:
@@ -49,7 +44,7 @@ We also should use the next properties:
 * [DateTime.UtcNow](https://msdn.microsoft.com/en-us/library/system.datetime.utcnow%28v=vs.100%29.aspx)
 * [DateTime.Ticks](https://msdn.microsoft.com/en-us/library/system.datetime.ticks%28v=vs.100%29.aspx)
 
-for example ![UtcNow.Ticks](https://bitbucket.org/3F/vssolutionbuildevent/wiki/Resources/examples/UtcNow-Ticks.gif):
+for example ![UtcNow.Ticks]({{site.docp}}/Resources/examples/UtcNow-Ticks.gif):
 
 ```{{site.msblang}}
 $([System.DateTime]::UtcNow.Ticks)
