@@ -9,16 +9,32 @@ permalink: /doc/Features/Date & Time/
 
 In examples below, we use the [MSBuild Property Functions](https://msdn.microsoft.com/en-us/library/vstudio/dd633440%28v=vs.120%29.aspx#BKMK_PropertyFunctions) and you can use any static method or property of these system classes:
 
-* [System.DateTime](https://msdn.microsoft.com/en-us/library/system.datetime_methods%28v=vs.100%29.aspx)
-* [System.TimeSpan](https://msdn.microsoft.com/en-us/library/system.timespan_methods%28v=vs.100%29.aspx)
-* [System.Math](https://msdn.microsoft.com/en-us/library/system.math_methods%28v=vs.100%29.aspx)
-* [System.String](https://msdn.microsoft.com/en-us/library/system.string_methods%28v=vs.100%29.aspx)
-* [System.Decimal](https://msdn.microsoft.com/en-us/library/system.decimal_methods%28v=vs.100%29.aspx)
-* [System.Double](https://msdn.microsoft.com/en-us/library/system.double_methods%28v=vs.100%29.aspx)
-* [System.UInt32](https://msdn.microsoft.com/en-us/library/system.uint32_methods%28v=vs.100%29.aspx)
-* [System.Int32](https://msdn.microsoft.com/en-us/library/system.int32_methods%28v=vs.100%29.aspx)
+* [System.DateTime](https://msdn.microsoft.com/en-us/library/system.datetime_methods.aspx)
+* [System.TimeSpan](https://msdn.microsoft.com/en-us/library/system.timespan_methods.aspx)
+* [System.Math](https://msdn.microsoft.com/en-us/library/system.math_methods.aspx)
+* [System.String](https://msdn.microsoft.com/en-us/library/system.string_methods.aspx)
+* [System.Decimal](https://msdn.microsoft.com/en-us/library/system.decimal_methods.aspx)
+* [System.Double](https://msdn.microsoft.com/en-us/library/system.double_methods.aspx)
+* [System.UInt32](https://msdn.microsoft.com/en-us/library/system.uint32_methods.aspx)
+* [System.Int32](https://msdn.microsoft.com/en-us/library/system.int32_methods.aspx)
 * [...](https://msdn.microsoft.com/en-us/library/vstudio/dd633440%28v=vs.120%29.aspx#BKMK_Static)
 
+## Format & Culture
+
+* [Custom Date and Time Format Strings](https://msdn.microsoft.com/en-us/library/8kb3ddd4)
+* [Standard Date and Time Format Strings](https://msdn.microsoft.com/en-us/library/az4se3k1)
+
+*Sortable format: ~ `yyyy/MM/dd`, e.g.: `2016/08/21` for InvariantCulture*
+
+For specific culture, use for example:
+
+```{{site.msblang}}
+$([System.DateTime]::Parse("21.08.2016", '$([System.Globalization.CultureInfo]::GetCultureInfo("ru-RU"))'))
+```
+
+```{{site.msblang}}
+$([System.DateTime]::Parse("08/21/2016", '$([System.Globalization.CultureInfo]::GetCultureInfo("en-US"))'))
+```
 
 ## How to get the number of ticks from specific date
 

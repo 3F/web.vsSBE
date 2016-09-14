@@ -37,9 +37,11 @@ $([System.Double]::Parse('1.19E+7')) - Fail: The expression "[System.Double]::Pa
 To avoid error above (for your selected culture) use for example:
 
 ```{{site.msblang}}
+$([System.Double]::Parse('1.19E+7', '$([System.Globalization.CultureInfo]::GetCultureInfo("en-US"))'))
 $([System.Double]::Parse('1.19E+7', '$([System.Globalization.CultureInfo]::CurrentUICulture)'))
 $([System.Double]::Parse('1.19E+7', '$([System.Globalization.CultureInfo]::CurrentUICulture.NumberFormat)'))
 $([System.Double]::Parse('1.19E+7', $$([System.Globalization.CultureInfo]::CurrentUICulture)))
+...
 ```
 
 ### Difference between quotes. Exponential notation problem.

@@ -2,19 +2,7 @@
 
 {% include components/ghRibbon.html %}
 
-<!-- cse -->
-<script>
-  (function() {
-    var cx = '015940813846195949799:g4jcvddxv9y';
-    var gcse = document.createElement('script');
-    gcse.type = 'text/javascript';
-    gcse.async = true;
-    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
-        '//cse.google.com/cse.js?cx=' + cx;
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(gcse, s);
-  })();
-</script>
+<!-- include components/cse -->
 <div style="width:0; height:0; overflow: hidden;">
   <gcse:search linktarget="_self"></gcse:search>
 </div>
@@ -44,10 +32,12 @@
               </a>
               <ul class="dropdown-menu" role="menu">
                 <li>
-                  <form id="searchbox_015940813846195949799:g4jcvddxv9y" action="" class="navbar-form navbar-left" role="search">
-                    <input value="015940813846195949799:g4jcvddxv9y" name="cx" type="hidden"/>
+                  <form action="https://www.google.com/search" class="navbar-form navbar-left" role="search" target="_blank">
+                  <!--<form id="searchbox_015940813846195949799:g4jcvddxv9y" action="" class="navbar-form navbar-left" role="search">-->
+                    <!--<input value="015940813846195949799:g4jcvddxv9y" name="cx" type="hidden"/>-->
+                    <input name="sitesearch" value="{{site.domain}}" type="hidden" />
                     <span class="form-group">
-                      <input id="q" name="q" class="form-control" placeholder="Search" type="text" />
+                      <input id="q" name="q" class="form-control" placeholder="Search" type="text" title="put the words and press enter" />
                     </span>
                     <!--<button type="submit" name="sa" class="btn btn-default">~</button>-->
                   </form>

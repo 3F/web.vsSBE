@@ -4,6 +4,7 @@ subtitle: Flexible actions for all  ...
 email: entry.reg@gmail.com
 baseurl: ""
 url: "http://vssbe.r-eg.net" # base hostname
+domain: "vssbe.r-eg.net"
 
 # root path to doc structure
 docp: "/doc"
