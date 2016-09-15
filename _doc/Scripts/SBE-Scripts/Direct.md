@@ -1,10 +1,10 @@
 ---
 layout: doc
-title: Direct use the SBE-Scripts engine.
+title: Direct using of the SBE-Scripts engine.
 permalink: /doc/Scripts/SBE-Scripts/Direct/
 ---
 
-# Direct use the SBE-Scripts engine
+# Direct using of the SBE-Scripts engine
 
 If you want to work directly with engine, you should remember about protection of evaluation from used strings:
 

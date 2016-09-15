@@ -194,6 +194,8 @@ versionProvider: "https://raw.githubusercontent.com/3F/vsSolutionBuildEvent/mast
 sfstat: "https://sourceforge.net/projects/vssbe/files/stats/json?start_date=2013-11-20&end_date=2222-01-01"
 
 issueNew: "https://github.com/3F/vsSolutionBuildEvent/issues/new"
+issueList: "https://github.com/3F/vsSolutionBuildEvent/issues"
+issueListAll: "https://github.com/3F/vsSolutionBuildEvent/issues?q=is%3Aissue"
 repoMain: "https://github.com/3F/vsSolutionBuildEvent"
 repoMainFork: "https://github.com/3F/vsSolutionBuildEvent/fork"
 repoMainStar: "https://github.com/3F/vsSolutionBuildEvent/star"
@@ -203,3 +205,4 @@ repoMainStar: "https://github.com/3F/vsSolutionBuildEvent/star"
 ##############
 
 editPagePath: "https://github.com/3F/web.vsSBE/edit/gh-pages/"
+ghPagePrefix: "https://github.com/3F/web.vsSBE"

@@ -5,10 +5,12 @@ permalink: /doc/New/
 ---
 
 <div style="text-align: left;">
-<a style="width: 150px;" href="https://github.com/3F/web.vsSBE/new/gh-pages/_doc" class="btn btn-success" title="Create new wiki page">
+<a style="width: 150px;" href="{{site.ghPagePrefix}}/new/gh-pages/_doc" class="btn btn-success" title="Create new wiki page">
 <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Create </a></div>
 
-The our Wiki based on GitHub services, so simply click **[here](https://github.com/3F/web.vsSBE/new/gh-pages/_doc)**
+<br />
+
+The our Wiki based on GitHub services, so simply click **[here]({{site.ghPagePrefix}}/new/gh-pages/_doc)**
 
 1. Then create or select any subpath from `_doc/` directory and name your file as you want with **.md** extension.
 1. Just add the following header:
@@ -21,9 +23,12 @@ permalink: /doc/<path>/
 ---
 ```
 
-* Where `<path>` should be to **.md** file without extension. For example, set `/doc/My Page/` if you will add the **My Page.md** in root [_doc directory](https://github.com/3F/web.vsSBE/tree/gh-pages/_doc).
+* Where `<path>` should be to **.md** file without extension. For example, set `/doc/My-Page/` if you will add the **My Page.md** in root [_doc directory]({{site.ghPagePrefix}}/tree/gh-pages/_doc).
 
 Now you're ready to create your awesome page below from this header. Use [markdown](https://help.github.com/articles/markdown-basics/) syntax or see existing pages.
+
+<br /><br /><br /><br /><br />
+<hr />
 
 ## Markdown syntax
 

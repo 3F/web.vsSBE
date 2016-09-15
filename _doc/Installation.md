@@ -8,7 +8,7 @@ permalink: /doc/Installation/
 
 ## VSPackage
 
-The main plugin. Contains logic for work with events of Visual Studio and core of different actions for anything.
+[The main plugin](../Scheme/). Contains logic for work with events of Visual Studio and core of different actions for anything.
 
 **To install:**
 

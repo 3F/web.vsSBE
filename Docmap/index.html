@@ -12,7 +12,8 @@ title: Docmap
       {% endif %}
       <a href="{{post.url}}" class="list-group-item">
         <h5 class="list-group-item-heading">{{post.title}}</h5>
-        <!--<p class="list-group-item-text">description</p>-->
+        <!-- post.content | escape -->
+        <p class="list-group-item-text small">{{ post.content | strip_html | slice: 0, 700  }} ...</p>
       </a>      
     {% endfor %}
   </div>
