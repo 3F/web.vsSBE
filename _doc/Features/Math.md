@@ -27,14 +27,14 @@ In examples below, we use the [MSBuild Property Functions](https://msdn.microsof
 
 ### Numbers in scientific (exponential) notation
 
-**To convert from** you can use the [Double.Parse()](https://msdn.microsoft.com/en-us/library/system.double.parse.aspx) and similar methods:
+For example - [Double.Parse()](https://msdn.microsoft.com/en-us/library/system.double.parse.aspx):
 
 ```{{site.msblang}}
 $([System.Double]::Parse('1,19E+7'))
 $([System.Double]::Parse('1.19E+7')) - Fail: The expression "[System.Double]::Parse(1.19E+7)" cannot be evaluated. Input string was not in a correct format.
 ```
 
-To avoid error above (for your selected culture) use for example:
+To avoid error above (for your selected culture) you can use, for example:
 
 ```{{site.msblang}}
 $([System.Double]::Parse('1.19E+7', '$([System.Globalization.CultureInfo]::GetCultureInfo("en-US"))'))
@@ -46,7 +46,7 @@ $([System.Double]::Parse('1.19E+7', $$([System.Globalization.CultureInfo]::Curre
 
 ### Difference between quotes. Exponential notation problem.
 
-All data inside double quotes `".."` will be evaluated manually (standard move upward from deepest).
+All data inside double quotes `".."` will be evaluated manually (standard moving: upward from deepest).
 All data inside single quotes `'..'` is not processed and will be entirely sent into engine for single final evaluation.
 
 What it means, for example:

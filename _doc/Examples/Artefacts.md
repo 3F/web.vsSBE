@@ -22,9 +22,9 @@ Read first:
 
 ## Releases from a few projects
 
-*Full example you can see, for example, our project:  [Full script for assembling the vsSolutionBuildEvent v0.12.6+](https://gist.github.com/3F/3f2f56dfc2a01dc99c63) (actual version in current [script file](https://github.com/3F/vsSolutionBuildEvent/blob/master/.vssbe))*
+*Full example you can see in our project:  [Full script for assembling the vsSolutionBuildEvent v0.12.6](https://gist.github.com/3F/3f2f56dfc2a01dc99c63) (actual version in current [script file](https://github.com/3F/vsSolutionBuildEvent/blob/master/.vssbe))*
 
-As result [you will see this files](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/build/build-136/artifacts) (i.e. only for example - your variants **can be as you want**) for deploy or for simple use.
+As result [you will see this files](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/build/build-164/artifacts) (i.e. only for example - your variants **can be as you want**) for deploy or for simple use.
 
 Sample:
 
@@ -77,11 +77,14 @@ Demo:
 
 *Please note*, you can achieve this result with [different modes](../../Modes/).
 
-Firstly, you have to decide how will be numbered versions of all your projects (it's means the format). It can be as [here](../Version/Manually/) or other.
+Firstly, you need to decide how will be numbered the versions of all your projects (means the format). It can be as [here](../Version/Manually/) or other.
 
 * For work with archives we will use the [SevenZipComponent]({{site.docp}}/Scripts/SBE-Scripts/Components/SevenZipComponent/)
 * For IO operations the [FileComponent]({{site.docp}}/Scripts/SBE-Scripts/Components/FileComponent/)
     * The old variant with [`xcopy & copy`](http://support.microsoft.com/en-us/kb/240268) is deprecated. We recommend FileComponent for fast operations directly.
+
+{% assign infoData = "Available components of SBE-Scripts: [Official list](../../Scripts/SBE-Scripts/Components/). Or use [other mode](../../Modes/) !" %}
+{% include elem/info %}
 
 Ok, now we're ready:
 
@@ -91,30 +94,16 @@ Ok, now we're ready:
 
 The final script can be like this:
 
-* Definitions (to prepare data for the convenience):
-
-```{{site.sbelang}}
-#[var odir      = $(SolutionDir)bin/Releases/]
-#[var cfg       = #[($(Configuration) ~= "Release"){Release}else{Debug}]]
-#[var cfgFull   = $(Configuration)]
-#[var vsixLib   = $(SolutionDir)VsixLib\bin\]
-#[var CIMLib    = $(SolutionDir)CIMLib\bin\]
-
-#[var netStamp      = net$(TargetFrameworkVersion.Replace(".", "").Replace("v", ""))]
-#[var netVerString  = $(TargetFrameworkVersion)#[($(TargetFrameworkVersion) != v4.0){ (be careful - for complete compatibility with VS2010 it should be v4.0)}]]
-#[var msbuildver    = v$(MSBuildToolsVersion)]
-
-#[IO delete.directory("$(odir)", true)]
-#[IO copy.directory("", "$(odir)", true)]
-```
-
 * Packing - 'Bridge'
 
 ```{{site.sbelang}}
-#[IO copy.file("$(odir)\Release_notes.txt", "$(pDirBridge)bin\$(cfg)\\", true)]
 #[7z pack.files({ 
             "$(pDirBridge)bin\$(cfg)\Bridge.dll", 
             "$(pDirBridge)bin\$(cfg)\Bridge.pdb",
+            
+#[( $(Configuration) ~= "Release" ) { 
+            "$(pDirBridge)bin\$(cfg)\Bridge.xml",
+}]
             "$(pDirBridge)bin\$(cfg)\Release_notes.txt" }, "$(odir)Bridge_v$(numBridge)_[$(branchSha1)][$(netStamp)].zip")]
 ```
 
@@ -126,9 +115,12 @@ The final script can be like this:
 #[IO delete.directory("$(_DP)Devenv", true)]
 #[IO copy.directory("", "$(_DP)Devenv", true)]
 
-#[IO copy.file("$(_DP)Bridge.*", "$(_DP)Devenv\\", true)]
-#[IO copy.file("$(_DP)Provider.*", "$(_DP)Devenv\\", true)]
-#[IO copy.file("$(_DP)Devenv.*", "$(_DP)Devenv\\", true, {"Devenv.AddIn"})]
+#[IO copy.file({
+                "$(_DP)Bridge.*",
+                "$(_DP)Provider.*",
+                "$(_DP)Devenv.*"
+               },
+               "$(_DP)Devenv\\", true, {"Devenv.AddIn"})]
 
 #[( #[IO exists.file("$(_DP)Extensibility.dll")] ) {
     #[IO copy.file("$(_DP)Extensibility.dll", "$(_DP)\Devenv\\", true)]
@@ -141,7 +133,10 @@ The final script can be like this:
 * Rename vsix
 
 ```{{site.sbelang}}
-#[IO copy.file("$(pDir)bin\$(cfg)\vsSolutionBuildEvent.vsix", "$(odir)vsSolutionBuildEvent_v$(numSBE)_[$(branchSha1)][$(netStamp)].vsix", true)]
+#[IO copy.file(
+            "$(pDir)bin\$(cfg)\vsSolutionBuildEvent.vsix", 
+            "$(odir)vsSolutionBuildEvent_v$(numSBE)_[$(branchSha1)][$(netStamp)].vsix", 
+            true)]
 ```
 
 * NuGet Packing - 'vsSBE.CI.MSBuild'
@@ -161,12 +156,16 @@ The final script can be like this:
 #[IO copy.file("$(CIMLib)\*.dll", "$(nupCIMdir)\bin\\", true)]#[" CIMLib custom "]
 
 #[" vsix dir "]
-#[IO copy.file("$(pDir)bin/$(cfg)\*.dll", "$(nupCIMdir)\bin\\", true)]
-#[IO copy.file("$(pDirCIM)bin/$(cfg)\*.dll", "$(nupCIMdir)\bin\\", true)]
-#[IO copy.file("$(odir)\Release_notes.txt", "$(nupCIMdir)\bin\\", true)]
-#[IO copy.file("3rd-party", "$(nupCIMdir)\bin\\", true)]
-#[IO copy.file("changelog.txt", "$(nupCIMdir)\bin\\", true)]
-#[IO copy.file("LICENSE", "$(nupCIMdir)\bin\\", true)]
+#[IO copy.file({
+                 "$(pDir)bin/$(cfg)\*.dll",
+                 "$(pDirCIM)bin/$(cfg)\*.dll",
+                 "$(odir)\Release_notes.txt",
+                 "3rd-party",
+                 "changelog.txt",
+                 "LICENSE",
+                 "$(pDirCIM)bin/$(cfg)\*.bat" 
+               },
+               "$(nupCIMdir)\bin\\", true)]
 
 #[NuGet gnt.raw("gnt.core /t:pack /p:ngin=\"$(nupCIMdir)\" /p:ngout=\"$(odir)\"")]
 #[IO delete.directory("$(nupCIMdir)", true)]
@@ -196,52 +195,30 @@ Where - '[vsSBE.CI.MSBuild.nuspec.tpl](https://github.com/3F/vsSolutionBuildEven
 </package>
 ```
 
-* 'Release_notes.txt' for current assemblies:
+* For 'Release_notes.txt', use simply:
 
 ```{{site.sbelang3}}
-#[File write("$(odir)\Release_notes.txt"):This assembled from:
-
-* Configuration:   '#[var cfgFull]' (Folders: #[var cfg])
-* .NET version:     #[var netVerString];
-* MSBuild Tools:    #[var msbuildver];
-* Build number:     #[var revBuild];
-* Branch Sha1:      #[var branchSha1];
-* Branch Name:      #[var branchName];
-* Branch revCount:  #[var branchRevCount];
-------------------------------------------
-
+#[File write("$(odir)\Release_notes.txt"):
+...
 Versions:
 
-* The 'Bridge':                 v#[var numBridge];
-* The 'CI.MSBuild':             v#[var numCIM];
-* The 'Devenv':                 v#[var numDevenv];
-* The 'Provider':               v#[var numProvider];
-* The 'vsSolutionBuildEvent':   v#[var numSBE];
-
-Packages:
-
+* The 'Bridge': #[$(numBridge)]
+....
 * NuGet 'vsSBE.CI.MSBuild': v#[var numCIM].#[var libCoreInt];
-
-Demo:
-
-* ClientDemo - [#[var branchSha1]][#[var netStamp]](#[var revBuild])
-
-------------------------------------------
-         Generated by vsSolutionBuildEvent
-------------------------------------------
+...
 ]
 ```
 
 As result:
 
-* All packages should appears in **bin\Release** folder.
+* All packages should appear in **bin\Release** folder.
     * You also should ignore this folder in your scm ([.gitignore](http://git-scm.com/docs/gitignore), .hgignore, .bzrignore, svn:ignore, etc.,)
 
 Working example you can see in:
 
 * [Source code](https://github.com/3F/vsSolutionBuildEvent)
-    * [Script file](https://github.com/3F/vsSolutionBuildEvent/blob/master/.vssbe) ([Gist](https://gist.github.com/3F/3f2f56dfc2a01dc99c63))
-* [ci.appveyor.com](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/build/build-136)
+    * [Script file](https://github.com/3F/vsSolutionBuildEvent/blob/master/.vssbe) (old version via [Gist](https://gist.github.com/3F/3f2f56dfc2a01dc99c63))
+* [ci.appveyor.com](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/build/build-164)
 
 # Remote servers
 

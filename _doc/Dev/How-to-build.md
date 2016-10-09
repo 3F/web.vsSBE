@@ -42,7 +42,7 @@ Branches status:
 * [Ude v0.1+](https://code.google.com/p/ude/)
 * [AvalonEdit v5+](http://avalonedit.net/)
 * 7-Zip: [SevenZipSharp v0.64+](http://sevenzipsharp.codeplex.com/) & [Libraries](http://www.7-zip.org/)
-* [vsSolutionBuildEvent]({{site.lnkVSGallery}}) v0.12.6+
+* [vsSolutionBuildEvent]({{site.lnkVSGallery}}) v0.12.8+
 * [GetNuTool v1.3+](https://github.com/3F/GetNuTool)
 * [vsSBE.SDK v1.0+](https://www.nuget.org/packages/vsSBE.SDK/)
 

@@ -15,14 +15,14 @@ The current code generation wizard is available for {% assign lnkT = "v0.12.5+" 
 
 Open wizard from `Settings` - `Wizards` - `Automatic Version Numbering` and choose type of generation.
 
-Currently are available:
+What available:
 
 * C# Struct
 * C++ Struct
 * C++ macro definitions ( #define )
 * Direct replacement
 
-Configure all available fields for each steps and move to final by pressing `Next step`
+Configure all required fields for each steps and move to final by pressing `Next step`
 
 ![Configuring of C++ struct]({{site.docp}}/Resources/examples/wizard/version/struct.png)
 

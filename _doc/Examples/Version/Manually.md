@@ -230,7 +230,7 @@ ok, try the wizard for common solutions - [Wizard variant](../Wizard/#how-to)
 
 It also used for this project:
 
-* [Sample of build ![](https://img.shields.io/badge/Build143-passing-brightgreen.svg?style=flat)](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/build/build-143)
+* [Sample of build ![](https://img.shields.io/badge/Build164-passing-brightgreen.svg?style=flat)](https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/build/build-164)
 * [Gist of script for assembling v0.12.6](https://gist.github.com/3F/3f2f56dfc2a01dc99c63) ([Actual full `.vssbe`](https://github.com/3F/vsSolutionBuildEvent/blob/master/.vssbe))
 
 ## Full Automatic Versions. Serial / Sequential numbers.
