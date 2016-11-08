@@ -255,9 +255,9 @@ $([MSBuild]::GetRegistryValue('keyName', 'valueName'))
 $([MSBuild]::GetRegistryValueFromView('keyName', 'valueName', null, RegistryView.Registry64, RegistryView.Registry32))
 ```
 
-## Additional MSBuild Properties
+## Special MSBuild Properties
 
-List of properties that available as MSBuild Properties.
+List of special properties that available as MSBuild Properties.
 
 name                 | description                                    | sample of value                                                                 | availability
 ---------------------|------------------------------------------------|---------------------------------------------------------------------------------|-------------

@@ -159,8 +159,8 @@ lnkCur_getCIM:  [ "get.CIM.bat", "get.CIM.bat", "http://vssbe.r-eg.net/doc/CI/ge
 
 # Web
 
-lnkVSGallery: "http://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/"
-lnkVSGallery_vsCE: ""
+lnkVSGallery: "https://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/"
+lnkVSGallery_vsCE: "https://visualstudiogallery.msdn.microsoft.com/ad9f19b2-04c0-46fe-9637-9a52ce4ca661/"
 
 # Dev
 

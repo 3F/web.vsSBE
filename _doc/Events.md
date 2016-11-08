@@ -5,14 +5,14 @@ permalink: /doc/Events/
 ---
 # Available Events
 
-* **Pre-Build** - Before build.
+* [Pre-Build](../Events/Pre-Build/) - Before build.
 * **Post-Build** - After build.
 * **Cancel-Build** - by user or when occurs error.
-* **[CommandEvent (DTE)](../Events/CommandEvent/)** - The Command Events from EnvDTE.
+* [CommandEvent (DTE)](../Events/CommandEvent/) - The Command Events from EnvDTE.
 * **Warnings-Build** - Warnings during assembly processing.
 * **Errors-Build** - Errors during assembly processing.
 * **Output-Build** - Customization and full control by using listener.
-* **[Sln-Opened](../Events/SlnOpened/)** - When solution has been opened.
+* [Sln-Opened](../Events/SlnOpened/) - When solution has been opened.
 * **Sln-Closed** - When solution has been closed.
 * **Transmitter** - Transmission of the build-data to outer handler.
 * **Logging** - All processes with internal logging.
@@ -21,7 +21,7 @@ permalink: /doc/Events/
 
 ## Beyond of the solution level
 
-Use the [vsCommandEvent](http://vsce.r-eg.net)
+Use the [vsCommandEvent]({{site.lnkVSGallery_vsCE}})
 
 # References
 

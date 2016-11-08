@@ -5,7 +5,7 @@ permalink: /doc/Features/Solution-wide/
 ---
 # Solution-wide Build Events
 
-All your actions for `Pre-Build` / `Post-Build` events are already can be **for all projects at once** or **individually for each**. 
+All your actions for [Pre-Build](../../Events/Pre-Build/) / [Post-Build](../../Events/) events are already can be **for all projects at once** or **individually for each**. 
 
 *(You should remember this for work with [MSBuild](../../Scripts/MSBuild/) engine etc.)*
 

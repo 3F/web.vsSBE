@@ -72,6 +72,18 @@ $([System.Math]::Log(2))                                                      | 
 $([MSBuild]::Multiply('$([System.Math]::Log(2))', 16))                        | 11,0903548889591
 $([System.Math]::Exp('$([MSBuild]::Multiply($([System.Math]::Log(2)), 16))')) | 65536
 
+
+```{{site.msblang}}
+$([System.Math]::Exp($([MSBuild]::Multiply('$([System.Math]::Log(10))', 4)))) 
+= 9999.99999999997
+
+$([System.Math]::Exp($([MSBuild]::Multiply($([System.Math]::Log(10)), 4)))) 
+= 10000.0000000002
+
+$([System.Math]::Exp('$([MSBuild]::Multiply($([System.Math]::Log(10)), 4))')) 
+= 10000
+```
+
 ## Popular methods
 
 {% include elem/fillme %}
@@ -95,6 +107,40 @@ $(number = $([MSBuild]::Subtract($(number), 1)))
 
 {% assign infoData = "v0.12.8+ [Contains syntactic sugar](../../Scripts/MSBuild/#syntactic-sugar) `-=` for this important operation, e.g.: `$(i -= 1)`" %}
 {% include elem/info %}
+
+### Min / Max
+
+* 0 - n & n - 18:
+
+```{{site.msblang}}
+$([System.Math]::Max(0, $(n)))
+$([System.Math]::Min($(n), 18))
+```
+
+* n - m (`min(max($(n), $(val)), $(m))`):
+
+```{{site.msblang}}
+$([System.Math]::Min( $([System.Math]::Max( $(n), $(val) )), $(m) ))
+```
+
+For errors: `Fail: Value was either too large or too small for a ...` you should provide a correct type [for specific methods](https://msdn.microsoft.com/en-us/library/system.math_methods.aspx):
+
+```csharp
+int Min(int val1, int val2);
+decimal Min(decimal val1, decimal val2);
+double Min(double val1, double val2);
+float Min(float val1, float val2);
+ulong Min(ulong val1, ulong val2);
+long Min(long val1, long val2);
+...
+```
+
+i.e.: you can try like this:
+
+```{{site.msblang}}
+$([System.Math]::Min('$([System.Math]::Max($([System.Int32]::Parse($(n))), $([System.Int32]::Parse($(val)))))', '$([System.Int32]::Parse($(m)))'))
+```
+etc.
 
 ### Bit mask
 
@@ -126,6 +172,43 @@ else{
 ```
 
 `"2" is not defined in the mask(1101)`
+
+## Samples
+
+### The numbers of modulo
+
+* 0 - 99:
+
+```{{site.msblang}}
+$([MSBuild]::Modulo($(num), 100))
+0, 1, 2, 3, 4 ... 98, 99, 0, 1, 2 ...
+```
+
+* n - m (e.g. 10 - 99):
+
+Same as above, only use limit like: 
+```
+ = (val % (max - min)) + min
+```
+
+```{{site.msblang}}
+$([MSBuild]::Add($(minrev), $([MSBuild]::Modulo($(num), $([MSBuild]::Subtract($(maxrev), $(minrev)))))))
+10, 11, 12, ... 98, 99, 10, 11, 12 ...
+```
+
+### Raise number to the specified power
+
+```{{site.msblang}}
+$([System.Math]::Pow(10, 4)) 
+= 10000
+```
+
+or via exp:
+
+```{{site.msblang}}
+$([System.Math]::Exp('$([MSBuild]::Multiply($([System.Math]::Log(10)), 4))')) 
+= 10000
+```
 
 # References
 
