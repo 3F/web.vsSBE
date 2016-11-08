@@ -218,7 +218,18 @@ Same as above, only use limit like:
 ```
 
 ```{{site.sbelang}}
-$([MSBuild]::Add($(minrev), $([MSBuild]::Modulo($(rev), $([MSBuild]::Subtract($(maxrev), $(minrev)))))))
+#[$(
+    [MSBuild]::Add(
+        $(minrev), 
+        $([MSBuild]::Modulo(
+            $(rev), 
+            $([MSBuild]::Subtract(
+                $(maxrev), 
+                $(minrev)
+             ))
+        ))
+    )
+)]
 ```
 
 *[Sample of how to use it for 'Assembly' attributes etc.](https://gist.github.com/3F/f54ad9736a9cbb984785)*

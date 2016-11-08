@@ -84,6 +84,18 @@ $([System.Math]::Exp('$([MSBuild]::Multiply($([System.Math]::Log(10)), 4))'))
 = 10000
 ```
 
+```{{site.sbelang}}
+#[$(
+    [System.Math]::Exp('$(
+        [MSBuild]::Multiply(
+            $([System.Math]::Log(10)), 
+            4
+        ))'
+    )
+)]
+= 10000
+```
+
 ## Popular methods
 
 {% include elem/fillme %}
@@ -191,8 +203,19 @@ Same as above, only use limit like:
  = (val % (max - min)) + min
 ```
 
-```{{site.msblang}}
-$([MSBuild]::Add($(minrev), $([MSBuild]::Modulo($(num), $([MSBuild]::Subtract($(maxrev), $(minrev)))))))
+```{{site.sbelang}}
+#[$(
+    [MSBuild]::Add(
+        $(minrev), 
+        $([MSBuild]::Modulo(
+            $(num), 
+            $([MSBuild]::Subtract(
+                $(maxrev), 
+                $(minrev)
+             ))
+         ))
+    )
+)]
 10, 11, 12, ... 98, 99, 10, 11, 12 ...
 ```
 
@@ -206,7 +229,7 @@ $([System.Math]::Pow(10, 4))
 or via exp:
 
 ```{{site.msblang}}
-$([System.Math]::Exp('$([MSBuild]::Multiply($([System.Math]::Log(10)), 4))')) 
+$([System.Math]::Exp('$([MSBuild]::Multiply($([System.Math]::Log(10)), 4))'))
 = 10000
 ```
 
@@ -214,5 +237,6 @@ $([System.Math]::Exp('$([MSBuild]::Multiply($([System.Math]::Log(10)), 4))'))
 
 * [MSBuild](../../Scripts/MSBuild/)
 * [SBE-Scripts](../../Scripts/SBE-Scripts/)
+    * [MSBuildComponent]({{site.docp}}/Scripts/SBE-Scripts/Components/MSBuildComponent/)
 * [Examples & Features](../../Examples/)
 

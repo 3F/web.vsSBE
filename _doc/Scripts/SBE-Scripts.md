@@ -40,10 +40,18 @@ Try execute this:
 
 #[($(Configuration) ~= Deb || true)
 {
-    #[var tStart    = $([System.DateTime]::Parse('2015/10/01').ToBinary())]
+    #[var tBase     = $([System.DateTime]::Parse('2015/10/01').ToBinary())]
     #[var tNow      = $([System.DateTime]::UtcNow.Ticks)]
-    #[var revBuild  = $([System.TimeSpan]::FromTicks('$([MSBuild]::Subtract(#[var tNow], #[var tStart]))').TotalMinutes.ToString('0'))]
-    #[var v         = #[var v].$([MSBuild]::Modulo($(revBuild), $([System.Math]::Pow(2, 14))))]
+    #[var revBuild  = #[$(
+                        [System.TimeSpan]::FromTicks('$(
+                            [MSBuild]::Subtract(
+                            $(tNow), 
+                            $(tBase))
+                        )')
+                        .TotalMinutes
+                        .ToString('0'))]]
+    
+    #[var v = $(v).$([MSBuild]::Modulo($(revBuild), $([System.Math]::Pow(2, 14))))]
 }]
 
 #[var v = $([System.String]::Format("v{0}\r\n\t", $(v)))]
