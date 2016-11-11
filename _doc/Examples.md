@@ -14,6 +14,7 @@ permalink: /doc/Examples/
 * [Stop build on first error](Errors.Stop build/)
 * [Demo projects](Demo/)
 * [Reload projects in solution](ReloadProjects/)
+* [Advanced work with Git submodules](Git/Submodules/)
 
 ## Some features
 

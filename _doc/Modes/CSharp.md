@@ -38,7 +38,10 @@ EnvDTE.dll
 C:\WINDOWS\assembly\GAC\EnvDTE\<ver>\EnvDTE.dll
 EnvDTE
 EnvDTE, Version=8.0.0.0, PublicKeyToken=b03f5f7f11d50a3a
+$(vsSBE_LibPath)EnvDTE.dll
 ```
+
+* [$(vsSBE_LibPath)](../../Scripts/MSBuild/#special-msbuild-properties)
 
 ### FilesMode flag
 
@@ -135,7 +138,18 @@ if(!uvar.isExist("name1", "projectA")) {
 }
 ```
 
-* and others...
+etc.
+
+### Path to solution directory
+
+The most easy way provide data via MSBuild Property `$(SolutionDir)`. Enable [MSBuild Support](../../Scripts/MSBuild/) and use like this:
+
+```csharp
+System.Diagnostics.Process.Start(@"$(SolutionDir)submodules.bat").WaitForExit();
+string path1 = "$(SolutionDir.Replace('\', '\\'))";
+string path2 = "$(SolutionDir.Replace('\', '/'))";
+...
+```
 
 ### Visual Studio OutputWindow pane through vsSBE
 

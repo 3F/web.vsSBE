@@ -9,23 +9,6 @@ permalink: /doc/Features/Custom counters/
 
 ## Increment & Decrement Numbers
 
-In examples below, we use the [MSBuild Property Functions](https://msdn.microsoft.com/en-us/library/vstudio/dd633440%28v=vs.120%29.aspx#BKMK_PropertyFunctions) and you can use any static method or property of these system classes:
-
-* [System.Math](https://msdn.microsoft.com/en-us/library/system.math_methods%28v=vs.100%29.aspx)
-    * Other available arithmetic methods [here](https://msdn.microsoft.com/en-us/library/dd633440.aspx?f=255&MSPPError=-2147217396#BKMK_PropertyFunctions)
-* [System.Decimal](https://msdn.microsoft.com/en-us/library/system.decimal_methods%28v=vs.100%29.aspx)
-* [System.Double](https://msdn.microsoft.com/en-us/library/system.double_methods%28v=vs.100%29.aspx)
-* [System.UInt16](https://msdn.microsoft.com/en-us/library/system.uint16_methods%28v=vs.100%29.aspx)
-* [System.UInt32](https://msdn.microsoft.com/en-us/library/system.uint32_methods%28v=vs.100%29.aspx)
-* [System.UInt64](https://msdn.microsoft.com/en-us/library/system.uint64_methods%28v=vs.100%29.aspx)
-* [System.Int16](https://msdn.microsoft.com/en-us/library/system.int16_methods%28v=vs.100%29.aspx)
-* [System.Int32](https://msdn.microsoft.com/en-us/library/system.int32_methods%28v=vs.100%29.aspx)
-* [System.Int64](https://msdn.microsoft.com/en-us/library/system.int64_methods%28v=vs.100%29.aspx)
-* [System.TimeSpan](https://msdn.microsoft.com/en-us/library/system.timespan_methods%28v=vs.100%29.aspx)
-* [System.DateTime](https://msdn.microsoft.com/en-us/library/system.datetime_methods%28v=vs.100%29.aspx)
-* [...](https://msdn.microsoft.com/en-us/library/vstudio/dd633440%28v=vs.120%29.aspx#BKMK_Static)
-
-
 **Syntactic sugar of v0.12.8+**
 
 {% assign infoData = "v0.12.8+ [Contains syntactic sugar](../../Scripts/MSBuild/#syntactic-sugar): `+=` & `-=`" %}
@@ -41,9 +24,13 @@ In examples below, we use the [MSBuild Property Functions](https://msdn.microsof
 
 ### other
 
+{% assign infoData = "Very old examples: Read **[Math](../../Features/Math/)** page + please fix me" %}
+{% include elem/info %}
+{% include elem/fillme %}
+
 Example of counter in the range 1 - 10:
 
-```{{site.sbelang}}
+```{{site.sbelang3}}
 #[( $(counter) == "*Undefined*" ) {
     #[var counter = 0]
 }]
@@ -61,7 +48,7 @@ Example of counter in the range 1 - 10:
 
 a more exotic control ? no problem:
 
-```{{site.sbelang}}
+```{{site.sbelang3}}
 #[($(numX) == "*Undefined*") {
     #[var numX    = 0]
     #[var numY    = 0]
@@ -138,4 +125,20 @@ and similar..
     * [System.Guid](https://msdn.microsoft.com/en-us/library/system.guid%28v=vs.100%29.aspx)
 * [Examples & Features](../../Examples/)
 
+
+[MSBuild Property Functions](https://msdn.microsoft.com/en-us/library/vstudio/dd633440%28v=vs.120%29.aspx#BKMK_PropertyFunctions) - you can use any static method or property of these system classes:
+
+* [System.Math](https://msdn.microsoft.com/en-us/library/system.math_methods%28v=vs.100%29.aspx)
+    * Other available arithmetic methods [here](https://msdn.microsoft.com/en-us/library/dd633440.aspx?f=255&MSPPError=-2147217396#BKMK_PropertyFunctions)
+* [System.Decimal](https://msdn.microsoft.com/en-us/library/system.decimal_methods%28v=vs.100%29.aspx)
+* [System.Double](https://msdn.microsoft.com/en-us/library/system.double_methods%28v=vs.100%29.aspx)
+* [System.UInt16](https://msdn.microsoft.com/en-us/library/system.uint16_methods%28v=vs.100%29.aspx)
+* [System.UInt32](https://msdn.microsoft.com/en-us/library/system.uint32_methods%28v=vs.100%29.aspx)
+* [System.UInt64](https://msdn.microsoft.com/en-us/library/system.uint64_methods%28v=vs.100%29.aspx)
+* [System.Int16](https://msdn.microsoft.com/en-us/library/system.int16_methods%28v=vs.100%29.aspx)
+* [System.Int32](https://msdn.microsoft.com/en-us/library/system.int32_methods%28v=vs.100%29.aspx)
+* [System.Int64](https://msdn.microsoft.com/en-us/library/system.int64_methods%28v=vs.100%29.aspx)
+* [System.TimeSpan](https://msdn.microsoft.com/en-us/library/system.timespan_methods%28v=vs.100%29.aspx)
+* [System.DateTime](https://msdn.microsoft.com/en-us/library/system.datetime_methods%28v=vs.100%29.aspx)
+* [...](https://msdn.microsoft.com/en-us/library/vstudio/dd633440%28v=vs.120%29.aspx#BKMK_Static)
 

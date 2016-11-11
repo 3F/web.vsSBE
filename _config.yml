@@ -60,8 +60,6 @@ lnkList_VSPackage:  [
                         [ "v0.12.7", "vsSolutionBuildEvent&#95;v0.12.7.3805&#95;[48df3db][net40].vsix", "http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.12.7.3805_%5B48df3db%5D%5Bnet40%5D.vsix/download" ]
                     ]
 lnkOld_VSPackage:   [
-                        [ "v0.12.8_net40", "vsSolutionBuildEvent&#95;v0.12.8.4975&#95;[50e9a29][net40].vsix", "https://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.12.8.4975_%5B50e9a29%5D%5Bnet40%5D.vsix/download" ],
-                        [ "v0.12.8_net45", "vsSolutionBuildEvent&#95;v0.12.8.4976&#95;[50e9a29][net45].vsix", "https://sourceforge.net/projects/vssbe/files/v0.x/net45/vsSolutionBuildEvent_v0.12.8.4976_%5B50e9a29%5D%5Bnet45%5D.vsix/download" ],
                         [ "v0.12.6", "vsSolutionBuildEvent&#95;v0.12.6.5177&#95;[6ad0511][net40].vsix", "http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.12.6.5177_%5B6ad0511%5D%5Bnet40%5D.vsix/download" ],
                         [ "v0.11.4", "vsSolutionBuildEvent&#95;v0.11.4.vsix", "http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.11.4.vsix/download" ]
                     ]

@@ -56,6 +56,10 @@ To support *Early / Late Sln-Opened* you should configure context:
 * Other products without Visual Studio ([API](../../API) -> [CI](../../CI/)) may use other behavior:
   * [CI.MSBuild](../../CI/CI.MSBuild/) uses `common` context, so it's not important Before/After like above.
 
+### Examples
+
+* [Restore all git submodules when opening Visual Studio IDE](../../Examples/Git/Submodules/#restore-all-git-submodules-when-opening-visual-studio-ide)
+
 
 # References
 

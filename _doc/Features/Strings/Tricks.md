@@ -11,6 +11,18 @@ Some additional custom tricks of common operations with strings -> [Operations w
 
 {% include elem/info %}
 
+Did you know: v0.12.10+ has multiline support for MSBuild expressions via [MSBuildComponent]({{site.docp}}/Scripts/SBE-Scripts/Components/MSBuildComponent/):
+
+```{{site.sbelang}}
+#[$(
+    [System.Math]::Exp('$(
+        [MSBuild]::Multiply(
+            $([System.Math]::Log(10)), 
+            4
+        ))'
+    )
+)]
+```
 
 Did you know: The [UserVariableComponent](../../../Scripts/SBE-Scripts/Components/UserVariableComponent/) allows the multiline mixed definition:
 

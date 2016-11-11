@@ -89,6 +89,7 @@ Arguments:
 * files - List of files as `{"f1", "path\*.dll", ..}`. May contain file mask.
 * output - Archive name.
 * except - List of files to exclude from input list. May contain file mask.
+    * **requires path** to file as it presented for input list, for example: `{ "$(dir)*.iobj", "$(dir)/rel/*.*" }`
 * format - Type of archive: `SevenZip`, `Zip`, `GZip`, `BZip2`, `Tar`, `XZ`
 * method - Compression method: `Copy`, `Deflate`, `Deflate64`, `BZip2`, `Lzma`, `Lzma2`, `Ppmd`
 * level - Compression level: 0 (None) to 5 (Maximum)

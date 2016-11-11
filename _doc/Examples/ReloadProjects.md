@@ -12,6 +12,9 @@ For example, you have added git submodules for your projects, and you want to up
 {% assign infoData  = "Starting with v0.12.8 you have also the [Contexts for Sln-Opened event](../../Events/SlnOpened/#context)." %}
 {% include elem/info %}
 
+{% assign infoColor = "#5C9ECF" %}
+{% assign infoData  = "Modern way to [Restore all git submodules when opening Visual Studio IDE](../../Examples/Git/Submodules/#restore-all-git-submodules-when-opening-visual-studio-ide)" %}
+{% include elem/info %}
 
 ### How to
 
@@ -66,14 +69,14 @@ __VSENUMPROJFLAGS.`EPF_UNLOADEDINSOLUTION` for unloaded projects only and __VSEN
 
 * In `Compiler` settings - `References` add the following assemblies:
 
-```csharp
+```{{site.msblang}}
 System
-$(vsSBE_LibPath)\Microsoft.VisualStudio.Shell.Interop.10.0.dll
-$(vsSBE_LibPath)\Microsoft.VisualStudio.Shell.Interop.dll
-$(vsSBE_LibPath)\Microsoft.VisualStudio.Shell.10.0.dll
-$(vsSBE_LibPath)\Microsoft.VisualStudio.Shell.Interop.9.0.dll
-$(vsSBE_LibPath)\Microsoft.VisualStudio.Shell.Interop.8.0.dll
-$(vsSBE_LibPath)\Microsoft.VisualStudio.OLE.Interop.dll
+$(vsSBE_LibPath)Microsoft.VisualStudio.Shell.Interop.10.0.dll
+$(vsSBE_LibPath)Microsoft.VisualStudio.Shell.Interop.dll
+$(vsSBE_LibPath)Microsoft.VisualStudio.Shell.10.0.dll
+$(vsSBE_LibPath)Microsoft.VisualStudio.Shell.Interop.9.0.dll
+$(vsSBE_LibPath)Microsoft.VisualStudio.Shell.Interop.8.0.dll
+$(vsSBE_LibPath)Microsoft.VisualStudio.OLE.Interop.dll
 ```
 
 Done.

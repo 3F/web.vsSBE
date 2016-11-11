@@ -5,16 +5,18 @@ permalink: /doc/Features/Strings/
 ---
 # Operations with strings
 
-*Should be enabled the [MSBuild](../../Scripts/MSBuild/) support at least.*
+Did you know: v0.12.10+ has multiline support for MSBuild expressions via [MSBuildComponent]({{site.docp}}/Scripts/SBE-Scripts/Components/MSBuildComponent/):
 
-In examples below, we use the [MSBuild Property Functions](https://msdn.microsoft.com/en-us/library/vstudio/dd633440%28v=vs.120%29.aspx#BKMK_PropertyFunctions) and you can use any static method or property of these system classes:
-
-* [System.String](https://msdn.microsoft.com/en-us/library/system.string_methods%28v=vs.100%29.aspx)
-* [System.StringComparer](https://msdn.microsoft.com/en-us/library/system.stringcomparer_methods%28v=vs.100%29.aspx)
-* [System.Char](https://msdn.microsoft.com/en-us/library/system.char_methods%28v=vs.100%29.aspx)
-* [System.Convert](https://msdn.microsoft.com/en-us/library/system.convert_methods%28v=vs.100%29.aspx)
-* [System.Enum](https://msdn.microsoft.com/en-us/library/system.enum_methods%28v=vs.100%29.aspx)
-* [...](https://msdn.microsoft.com/en-us/library/vstudio/dd633440%28v=vs.120%29.aspx#BKMK_Static)
+```{{site.sbelang}}
+ #[$(
+    [System.TimeSpan]::FromTicks('$(
+        [MSBuild]::Subtract(
+        $(tNow), 
+        $(tBase))
+    )')
+    .TotalMinutes
+    .ToString('0'))]
+```
 
 ## Concatenation
 
@@ -211,4 +213,13 @@ Example:
 * [MSBuild](../../Scripts/MSBuild/)
 * [SBE-Scripts](../../Scripts/SBE-Scripts/)
 * [Examples & Features](../../Examples/)
+
+[MSBuild Property Functions](https://msdn.microsoft.com/en-us/library/vstudio/dd633440%28v=vs.120%29.aspx#BKMK_PropertyFunctions) - use any static method or property of these system classes:
+
+* [System.String](https://msdn.microsoft.com/en-us/library/system.string_methods%28v=vs.100%29.aspx)
+* [System.StringComparer](https://msdn.microsoft.com/en-us/library/system.stringcomparer_methods%28v=vs.100%29.aspx)
+* [System.Char](https://msdn.microsoft.com/en-us/library/system.char_methods%28v=vs.100%29.aspx)
+* [System.Convert](https://msdn.microsoft.com/en-us/library/system.convert_methods%28v=vs.100%29.aspx)
+* [System.Enum](https://msdn.microsoft.com/en-us/library/system.enum_methods%28v=vs.100%29.aspx)
+* [...](https://msdn.microsoft.com/en-us/library/vstudio/dd633440%28v=vs.120%29.aspx#BKMK_Static)
 
