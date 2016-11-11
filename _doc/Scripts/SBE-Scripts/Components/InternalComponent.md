@@ -10,7 +10,7 @@ All internal operations with vsSolutionBuildEvent.
 
 ## Entry point for component
 
-The vsSolutionBuildEvent requires the next name for all internal operations:
+The vsSolutionBuildEvent requires the following name for all internal operations:
 
 * `vsSBE` or alias `Core` (v0.12.5+)
 
@@ -56,22 +56,44 @@ Sample:
 
 ### Enabled
 
-Gets or Sets 'Enabled' status for selected event.
+Gets or Sets 'Enabled' status for selected action.
 
 Syntax:
 
 ```{{site.sbelang1}}
-boolean #[vsSBE events.Pre.item("Act1").Enabled = false|true|0|1]
+boolean events.Pre.item(index | name).Enabled [= boolean]
 ```
 
 ```{{site.sbelang1}}
 #[vsSBE events.Pre.item("Act1").Enabled]
-#[vsSBE events.Pre.item("Act1").Enabled = false]
+#[vsSBE events.Post.item(4).Enabled = false]
+```
+
+### run
+
+To Execute Action with specific context. Returns true value if it was handled.
+
+Syntax:
+
+```{{site.sbelang}}
+boolean events.Pre.item(index | name).run([enum context])
+```
+
+Where:
+
+* *optional* **context** - Any available from [BuildType](https://github.com/3F/vsSolutionBuildEvent/blob/master/Bridge/BuildType.cs), like: `Common`, `Clean`, `After`, `Compile` ...
+    * `Common` is used by default.
+
+Sample:
+
+```{{site.sbelang}}
+#[Core events.Pre.item("SpecBuild").run()]
+#[Core events.Pre.item(5).run(Build)]
 ```
 
 ### Status
 
-Available statuses for selected event.
+Available states for selected action.
 
 #### HasErrors
 
