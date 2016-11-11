@@ -53,13 +53,15 @@ msblang: bash
 
 ## VSPackage
 
-lnkCur_VSPackage:   [ "v0.12.9", "vsSolutionBuildEvent&#95;v0.12.9.8224&#95;[b8bc007][net40].vsix", "https://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/referral/118151" ]
+lnkCur_VSPackage:   [ "v0.12.10", "vsSolutionBuildEvent&#95;v0.12.10.10901&#95;[d37fe51][net40].vsix", "https://visualstudiogallery.msdn.microsoft.com/0d1dbfd7-ed8a-40af-ae39-281bfeca2334/referral/118151" ]
 lnkList_VSPackage:  [
-                        [ "v0.12.9_net40", "vsSolutionBuildEvent&#95;v0.12.9.8224&#95;[b8bc007][net40].vsix", "https://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.12.9.8224_%5Bb8bc007%5D%5Bnet40%5D.vsix/download" ],
-                        [ "v0.12.9_net45", "vsSolutionBuildEvent&#95;v0.12.9.8225&#95;[b8bc007][net45].vsix", "https://sourceforge.net/projects/vssbe/files/v0.x/net45/vsSolutionBuildEvent_v0.12.9.8225_%5Bb8bc007%5D%5Bnet45%5D.vsix/download" ],
+                        [ "v0.12.10_net40", "vsSolutionBuildEvent&#95;v0.12.10.10901&#95;[d37fe51][net40].vsix", "https://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.12.10.10901_%5Bd37fe51%5D%5Bnet40%5D.vsix/download" ],
+                        [ "v0.12.10_net45", "vsSolutionBuildEvent&#95;v0.12.10.10902&#95;[d37fe51][net45].vsix", "https://sourceforge.net/projects/vssbe/files/v0.x/net45/vsSolutionBuildEvent_v0.12.10.10902_%5Bd37fe51%5D%5Bnet45%5D.vsix/download" ],
                         [ "v0.12.7", "vsSolutionBuildEvent&#95;v0.12.7.3805&#95;[48df3db][net40].vsix", "http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.12.7.3805_%5B48df3db%5D%5Bnet40%5D.vsix/download" ]
                     ]
 lnkOld_VSPackage:   [
+                        [ "v0.12.9_net40", "vsSolutionBuildEvent&#95;v0.12.9.8224&#95;[b8bc007][net40].vsix", "https://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.12.9.8224_%5Bb8bc007%5D%5Bnet40%5D.vsix/download" ],
+                        [ "v0.12.9_net45", "vsSolutionBuildEvent&#95;v0.12.9.8225&#95;[b8bc007][net45].vsix", "https://sourceforge.net/projects/vssbe/files/v0.x/net45/vsSolutionBuildEvent_v0.12.9.8225_%5Bb8bc007%5D%5Bnet45%5D.vsix/download" ],
                         [ "v0.12.6", "vsSolutionBuildEvent&#95;v0.12.6.5177&#95;[6ad0511][net40].vsix", "http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.12.6.5177_%5B6ad0511%5D%5Bnet40%5D.vsix/download" ],
                         [ "v0.11.4", "vsSolutionBuildEvent&#95;v0.11.4.vsix", "http://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.11.4.vsix/download" ]
                     ]
@@ -121,12 +123,12 @@ lnkAll_Provider:    [ "/API/Provider/", "http://sourceforge.net/projects/vssbe/f
 
 ## NuGet Package for CI
 
-lnkCur_CIMNuGet:    [ "v1.6.1209", "vsSBE.CI.MSBuild.1.6.1209_net40.nupkg", "https://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/NuGet_packages/vsSBE.CI.MSBuild.1.6.1209.nupkg/download" ]
+lnkCur_CIMNuGet:    [ "v1.6.12010", "vsSBE.CI.MSBuild.1.6.12010_net40.nupkg", "https://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/NuGet_packages/vsSBE.CI.MSBuild.1.6.12010.nupkg/download" ]
 lnkList_CIMNuGet:   [
+                        [ "v1.6.12010_net40", "vsSBE.CI.MSBuild.1.6.12010_net40.nupkg", "https://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/NuGet_packages/vsSBE.CI.MSBuild.1.6.12010.nupkg/download" ],
+                        [ "v1.6.12010_net45", "vsSBE.CI.MSBuild.1.6.12010_net45.nupkg", "https://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/NuGet_packages/net45/vsSBE.CI.MSBuild.1.6.12010.nupkg/download" ],
                         [ "v1.6.1209_net40", "vsSBE.CI.MSBuild.1.6.1209_net40.nupkg", "https://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/NuGet_packages/vsSBE.CI.MSBuild.1.6.1209.nupkg/download" ],
                         [ "v1.6.1209_net45", "vsSBE.CI.MSBuild.1.6.1209_net45.nupkg", "https://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/NuGet_packages/net45/vsSBE.CI.MSBuild.1.6.1209.nupkg/download" ],
-                        [ "v1.6.1208_net40", "vsSBE.CI.MSBuild.1.6.1208_net40.nupkg", "https://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/NuGet_packages/vsSBE.CI.MSBuild.1.6.1208.nupkg/download" ],
-                        [ "v1.6.1208_net45", "vsSBE.CI.MSBuild.1.6.1208_net45.nupkg", "https://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/NuGet_packages/net45/vsSBE.CI.MSBuild.1.6.1208.nupkg/download" ],
                         [ "v1.6.1207", "vsSBE.CI.MSBuild.1.6.1207.nupkg", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/NuGet_packages/vsSBE.CI.MSBuild.1.6.1207.nupkg/download" ]
                     ]
 lnkOld_CIMNuGet:    [

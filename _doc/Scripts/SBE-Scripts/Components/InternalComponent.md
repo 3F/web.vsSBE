@@ -71,6 +71,8 @@ boolean events.Pre.item(index | name).Enabled [= boolean]
 
 ### run
 
+[v0.12.10]+
+
 To Execute Action with specific context. Returns true value if it was handled.
 
 Syntax:
@@ -84,11 +86,13 @@ Where:
 * *optional* **context** - Any available from [BuildType](https://github.com/3F/vsSolutionBuildEvent/blob/master/Bridge/BuildType.cs), like: `Common`, `Clean`, `After`, `Compile` ...
     * `Common` is used by default.
 
+Now you can easy execute any actions from other actions.
+
 Sample:
 
 ```{{site.sbelang}}
 #[Core events.Pre.item("SpecBuild").run()]
-#[Core events.Pre.item(5).run(Build)]
+#[Core events.Post.item(5).run(Build)]
 ```
 
 ### Status
