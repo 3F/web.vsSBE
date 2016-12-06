@@ -7,7 +7,7 @@ permalink: /doc/Modes/CSharp/
 
 This action type for work with C# compiler - feel free with all events & actions.
 
-*Available control of caching bytecode and full access to [ICommand](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/Actions/ICommand.cs) & [ISolutionEvent](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/Events/ISolutionEvent.cs) (can be cast [on similars](https://github.com/3F/vsSolutionBuildEvent/tree/master/vsSolutionBuildEvent/Events))*
+*Available control of caching bytecode and full access to [ICommand](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/Actions/ICommand.cs) & [ISolutionEvent](https://github.com/3F/vsSolutionBuildEvent/blob/master/vsSolutionBuildEvent/Events/ISolutionEvent.cs) (see [/Events](https://github.com/3F/vsSolutionBuildEvent/tree/master/vsSolutionBuildEvent/Events))*
 
 ## Default Entry point
 
@@ -153,13 +153,15 @@ string path2 = "$(SolutionDir.Replace('\', '/'))";
 
 ### Visual Studio OutputWindow pane through vsSBE
 
-*Of course you can also prepare [OutputWindow](https://msdn.microsoft.com/en-us/library/envdte.outputwindow.aspx) with [DTE2](https://msdn.microsoft.com/en-us/library/envdte80.dte2.aspx) etc.*
+[OutputWindow](https://msdn.microsoft.com/en-us/library/envdte.outputwindow.aspx)
+
+For example below we'll use IOW, but you can also prepare it manually via [DTE2](https://msdn.microsoft.com/en-us/library/envdte80.dte2.aspx) etc.
 
 * Activate C# Mode
 * Add **'EnvDTE'** reference in `Compiler` - `References`
     * Use `SmartReferences` option for automatically finding, including used domain. **Or** use any available syntax for assemblies.
 * Customize cache and check other available flags of optimization. (optional)
-* Use next code, for example:
+* Use the following code, for example:
 
 ```csharp
 using net.r_eg.vsSBE;
@@ -182,11 +184,10 @@ namespace vsSolutionBuildEvent
 ```
 
 * Activate Event and click Apply.
-* Enjoy!
 
 #### Using directly SBE-Scripts engine
 
-Parsing data via SBE-Scripts engine from C# Mode, yes [it's possible](#work-with-msbuild-amp-sbe-scripts-engine).
+Parsing data via SBE-Scripts engine from C# Mode, yes [it's possible](#work-with-msbuild--sbe-scripts-engine).
 So you can simply:
 
 ```csharp

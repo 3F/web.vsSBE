@@ -13,12 +13,12 @@ $(document).ready(function ()
             sum += data.countries[idx][1];
         }
         
-        var ret = "[Top-Country:";
+        var ret = "[";
         for(var i = 0, n = Math.min(limit, data.countries.length); i < n; ++i)
         {
             ret += format(data.countries[i][0], data.countries[i][1], sum);
             if(i == 0){
-                ret += "]";
+                ret += " ]";
                 continue;
             }
             ret += ",";

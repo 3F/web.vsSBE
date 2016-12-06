@@ -14,6 +14,9 @@ Utility to support the [CI /Build servers](http://en.wikipedia.org/wiki/Continuo
 {% assign infoData  = "Use [get.CIM.bat](http://vssbe.r-eg.net/doc/CI/get.CIM.bat) (~10 Kb) to get it in one click. (Compiled by [GetNuTool](https://github.com/3F/GetNuTool))" %}
 {% include elem/info %}
 
+{% assign infoData  = "[How to configure project that does not use Visual Studio at all.](../../Examples/NativeScripting/)" %}
+{% include elem/info %}
+
 Currently the CI.MSBuild it's [only additional wrapper (~50 kb)](../../Scheme/) for work with vsSolutionBuildEvent plugin through [API](../../API/). *You should also have this library for work it means.*
 
 **However**, [variant with NuGet](https://www.nuget.org/packages/vsSBE.CI.MSBuild/) is also provides main libraries for complete work. Use any convenient variant for you!
@@ -34,10 +37,10 @@ or add for your **.sln** (see [Managing Packages for the Solution](https://docs.
 
 #### GetNuTool
 
-You can also get package with lightweight non-binary tool - [GetNuTool](https://github.com/3F/GetNuTool) *~8 Kb* or less.
+You can get package with lightweight non-binary tool - [GetNuTool](https://github.com/3F/GetNuTool) *~10 Kb*
 
 ```{{site.msblang}}
-msbuild.exe gnt.core /p:ngpackages="vsSBE.CI.MSBuild"
+gnt /p:ngpackages="vsSBE.CI.MSBuild"
 ```
 ```{{site.msblang}}
 msbuild.exe gnt.core /p:ngpackages="vsSBE.CI.MSBuild/{{site.lnkCur_CIMNuGet[0] | remove: "v"}}"
@@ -69,7 +72,7 @@ You can also use the `/verbosity` key for details information from vsSolutionBui
 msbuild.exe "<SolutionFile>.sln" /v:detailed /m:4 /l:"<path_to>\CI.MSBuild.dll" /nologo /noconlog
 ```
 
-Use also the [CI.MSBuild.bat](https://github.com/3F/vsSolutionBuildEvent/blob/master/CI.MSBuild/CI.MSBuild.bat) helper (included with latest assemblies):
+Use the [CI.MSBuild.bat](https://github.com/3F/vsSolutionBuildEvent/blob/master/CI.MSBuild/CI.MSBuild.bat) helper (it already included with latest assemblies):
 
 ```bash
 <fullpath_to>\CI.MSBuild" <SolutionFile.sln> <optional_keys>

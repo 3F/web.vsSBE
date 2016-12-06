@@ -151,7 +151,7 @@ lnkAll_ClientDemo:  [ "/dev/clients/client.vssbe.dll/", "https://sourceforge.net
 
 ## get.CIM.bat
 
-lnkCur_getCIM:  [ "get.CIM.bat", "get.CIM.bat", "http://vssbe.r-eg.net/doc/CI/get.CIM.bat" ]
+lnkCur_getCIM:  [ "get.CIM.bat", "get.CIM.bat", "https://github.com/3F/vsSolutionBuildEvent/releases/download/release_v0.12.10/get.CIM.bat" ]
 
 #######################################
 # Sources

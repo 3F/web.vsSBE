@@ -15,6 +15,7 @@ permalink: /doc/Examples/
 * [Demo projects](Demo/)
 * [Reload projects in solution](ReloadProjects/)
 * [Advanced work with Git submodules](Git/Submodules/)
+* [Native scripting. World without Visual Studio](NativeScripting/)
 
 ## Some features
 

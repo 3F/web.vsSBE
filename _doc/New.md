@@ -10,7 +10,7 @@ permalink: /doc/New/
 
 <br />
 
-The our Wiki based on GitHub services, so simply click **[here]({{site.ghPagePrefix}}/new/gh-pages/_doc)**
+This Wiki works via GitHub services, so simply click **[here]({{site.ghPagePrefix}}/new/gh-pages/_doc)**
 
 1. Then create or select any subpath from `_doc/` directory and name your file as you want with **.md** extension.
 1. Just add the following header:

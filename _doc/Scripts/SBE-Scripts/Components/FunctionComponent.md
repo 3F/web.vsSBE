@@ -12,7 +12,7 @@ Mixed supported functions.
 
 *v0.12.4+*
 
-Work with hash.
+To work with hash.
 
 ### MD5
 

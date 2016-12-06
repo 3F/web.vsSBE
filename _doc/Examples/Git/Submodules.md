@@ -18,7 +18,7 @@ Then add simple script:
 ```{{site.sbelang}}
 #[$(moduleConari = "Conari/Conari.sln")]
 
-#[( #[File exists.file("$(moduleConari)")] )
+#[( #[IO exists.file("$(moduleConari)")] )
 { 
     #[File scall("submodules.bat", "$(moduleConari)", 400)]
 }
@@ -65,13 +65,13 @@ echo.  1>&2
 
 Activate action and click [Apply]
 
-Now when user will clone your repository without `--recursive` or in some other case when submodule does not exists in solution directory:
+Now when user will clone your repository without `--recursive` or in some other case when submodule does not exist in solution directory:
 
 * Before first loading solution (after click on **.sln**) will be a black window with automatic restoring submodules.
     * 'black window' can be hidden, but it can take a long time for restoring all packages. For this case the best way to show some information.
 * And no any windows (info) when all submodules has been restored.
 
-**To support msbuild.exe**, just call `call submodules "Conari/Conari.sln" || goto err` before build, like this:
+**To support msbuild.exe**, just use `call submodules "Conari/Conari.sln" || goto err` before build, like this:
 
 ```bash
 @echo off
