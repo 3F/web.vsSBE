@@ -11,6 +11,10 @@ All shared settings will be located in solution directory as **.vssbe** text-bas
 
 You can also ignore this from your repo with scm if needed ([.gitignore](http://git-scm.com/docs/gitignore), .hgignore, .bzrignore, svn:ignore, etc.,)
 
+## Samples
+
+* [Simple .vssbe from GetNuTool project](https://github.com/3F/GetNuTool/blob/master/.vssbe): for build, test, and zip-packing of binaries.
+
 ## .vssbe for each .sln (Solution File)
 
 For [v0.11.2+](/Changelist/#vsix) you can also define the special version of configuration file for specific solution.

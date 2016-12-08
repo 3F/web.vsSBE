@@ -149,6 +149,21 @@ lnkList_ClientDemo: [
 lnkOld_ClientDemo:  []
 lnkAll_ClientDemo:  [ "/dev/clients/client.vssbe.dll/", "https://sourceforge.net/projects/vssbe/files/dev/clients/client.vssbe.dll/" ]
 
+## GetNuTool
+
+lnkCur_GetNuTool:  [ "v1.6", "gnt.bat v1.6", "https://github.com/3F/GetNuTool/releases/download/v1.6/gnt.bat" ]
+lnkList_GetNuTool: [
+                        [ "v1.6 Ex", "GetNuTool-v1.6 Ex", "https://github.com/3F/GetNuTool/releases/download/v1.6/gnt.bat" ],
+                        [ "v1.6 Full", "GetNuTool-v1.6 Full", "https://github.com/3F/GetNuTool/releases/download/v1.6/GetNuTool.zip" ]
+                    ]
+lnkOld_GetNuTool:  [
+                        [ "v1.5 Ex", "GetNuTool-v1.5 Ex", "https://github.com/3F/GetNuTool/releases/download/v1.5/gnt.bat" ],
+                        [ "v1.5 Full", "GetNuTool-v1.5 Full", "https://github.com/3F/GetNuTool/releases/download/v1.5/GetNuTool_v1.5.zip" ]
+                    ]
+lnkAll_GetNuTool:  [ "github.com/3F/GetNuTool/releases", "https://github.com/3F/GetNuTool/releases" ]
+lnkToCompt_GetNuTool: [ "v1.5", "https://github.com/3F/GetNuTool" ]
+
+
 ## get.CIM.bat
 
 lnkCur_getCIM:  [ "get.CIM.bat", "get.CIM.bat", "https://github.com/3F/vsSolutionBuildEvent/releases/download/release_v0.12.10/get.CIM.bat" ]

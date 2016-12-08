@@ -6,7 +6,7 @@ $(document).ready(function ()
     var url = "{{site.sfstat}}";
     $.get(url, function(data)
     {
-        var limit = 8; // max countries
+        var limit = 9; // max countries
         
         var sum = 0;
         for(var idx in data.countries){

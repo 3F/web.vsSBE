@@ -90,7 +90,7 @@ title: Downloads
         </tr>
         <tr>
           <td>
-            <div><a href="http://vssbe.r-eg.net/doc/CI/get.CIM.bat" target="_blank">get.CIM.bat</a></div>
+            <div><a href="http://vssbe.r-eg.net/doc/CI/get.CIM.bat">get.CIM.bat</a></div>
           </td>
           <td>~10 Kb. To get CI.MSBuild in one click (Compiled by <a href="https://github.com/3F/GetNuTool" target="_blank">GetNuTool</a>).</td>
           <td>
@@ -98,6 +98,21 @@ title: Downloads
             {% assign lnkList = [] %}
             {% assign lnkOld = [] %}
             {% assign lnkAll = [] %}
+            {% include pat/vdownload.html %}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            GetNuTool 
+            <a href="{{site.lnkToCompt_GetNuTool[1]}}" title="Current compatibility"><img src="/etc/badges/GetNuTool.svg" alt="" /></a>
+            <a href="https://github.com/3F/GetNuTool/releases/latest" title="Latest release"><img src="https://img.shields.io/github/release/3F/GetNuTool.svg" alt="" /></a>
+          </td>
+          <td>The lightweight non-binary NuGet Client as a portable & embeddable tool for work with NuGet packages via basic MSBuild (it does not require any additional extensions).</td>
+          <td>
+            {% assign lnkCur = site.lnkCur_GetNuTool %}
+            {% assign lnkList = site.lnkList_GetNuTool %}
+            {% assign lnkOld = site.lnkOld_GetNuTool %}
+            {% assign lnkAll = site.lnkAll_GetNuTool %}
             {% include pat/vdownload.html %}
           </td>
         </tr>
