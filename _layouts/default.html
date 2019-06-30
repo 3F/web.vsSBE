@@ -6,7 +6,7 @@
     {% include header.html %}
     
     <!-- nav line -->
-    {% assign _page = {{page.url | remove: "index.html"}} | split: "/" %}
+    {% assign _page = page.url | remove: "index.html" | split: "/" %}
     {% if _page.size > 2 %}
     
       <div class="wrapper small">
@@ -16,14 +16,13 @@
             <a href="/">Home</a>
           </li>
           
-          {% assign url = {{site.docp}} %}
-          {% for p in _page | offset: 2 %}
-            {% assign url = {{url}} | append: "/" | append: {{p}} %}
+          {% assign url = site.docp %}
+          {% for p in _page offset: 2 %}
             {% if forloop.last %}
               <li class="active">{{p}}</li>
               {% break %}
             {% endif %}
-            <li><a href="{{url}}/">{{p}}</a></li>
+            <li><a href="{{url}}/{{p}}/">{{p}}</a></li>
           {% endfor %}
         </ul>
       </div>

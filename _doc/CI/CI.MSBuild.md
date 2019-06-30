@@ -11,7 +11,7 @@ Utility to support the [CI /Build servers](http://en.wikipedia.org/wiki/Continuo
 
 ## How to get & Install
 
-{% assign infoData  = "Use [get.CIM.bat](http://vssbe.r-eg.net/doc/CI/get.CIM.bat) (~10 Kb) to get it in one click. (Compiled by [GetNuTool](https://github.com/3F/GetNuTool))" %}
+{% assign infoData  = "Use [" | append: site.lnkCur_getCIM[1] | append: "](" | append: site.lnkCur_getCIM[2] | append: ") (~10 Kb) to get it in one click. (Compiled by [GetNuTool](https://github.com/3F/GetNuTool))" %}
 {% include elem/info %}
 
 {% assign infoData  = "[How to configure project that does not use Visual Studio at all.](../../Examples/NativeScripting/)" %}

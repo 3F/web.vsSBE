@@ -2,9 +2,8 @@
 
 {% include components/ghRibbon.html %}
 
-<!-- include components/cse -->
 <div style="width:0; height:0; overflow: hidden;">
-  <gcse:search linktarget="_self"></gcse:search>
+
 </div>
     
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -19,7 +18,7 @@
           <a href="{{ site.baseurl }}/">
             <img style="float: left;" src="{{ site.baseurl }}/img/logo.png" width="64" height="64" border="0" />
           </a>
-          <span class="navbar-brand" style="font-size: 18px; margin-left: 1px;" title="{{ site.subtitle }}">{{ site.title }}</span>
+          <span class="navbar-brand" style="font-size: 18px; margin-left: 1px;" title="{{ site.subtitle }}"><a href="https://github.com/3F/vsSolutionBuildEvent">{{ site.title }}</a></span>
         </div>
 
         <div aria-expanded="true" class="navbar-collapse collapse" id="navbar-collapse-top">
@@ -32,15 +31,8 @@
               </a>
               <ul class="dropdown-menu" role="menu">
                 <li>
-                  <form action="https://www.google.com/search" class="navbar-form navbar-left" role="search" target="_blank">
-                  <!--<form id="searchbox_015940813846195949799:g4jcvddxv9y" action="" class="navbar-form navbar-left" role="search">-->
-                    <!--<input value="015940813846195949799:g4jcvddxv9y" name="cx" type="hidden"/>-->
-                    <input name="sitesearch" value="{{site.domain}}" type="hidden" />
-                    <span class="form-group">
-                      <input id="q" name="q" class="form-control" placeholder="Search" type="text" title="put the words and press enter" />
-                    </span>
-                    <!--<button type="submit" name="sa" class="btn btn-default">~</button>-->
-                  </form>
+                  <!-- https://duckduckgo.com/search_box -->
+                  <iframe src="https://duckduckgo.com/search.html?width=180&site=vssbe.r-eg.net,vsce.r-eg.net&prefill=Search DuckDuckGo" style="overflow:hidden;margin:0;padding:0;width:238px;height:40px;" frameborder="0"></iframe>
                 </li>
                 <li>
                   <a href="{{site.issueNew}}" target="_blank" title="bug ? question ?">
@@ -72,7 +64,7 @@
                 <li class="divider"></li>
                 <li>
                   <a href="{{site.lnkVSGallery}}" target="_blank">
-                    <span class="glyphicon glyphicon-blackboard nav-gicon" aria-hidden="true"></span> VS Gallery Page
+                    <span class="glyphicon glyphicon-blackboard nav-gicon" aria-hidden="true"></span> VS Marketplace
                   </a>
                 </li>
                 <li>
@@ -92,7 +84,7 @@
                 </li>
                 <li class="divider"></li>
                 <li>
-                  <a href="{{ site.baseurl }}/License/">
+                  <a href="https://github.com/3F/vsSolutionBuildEvent/blob/master/LICENSE">
                     <span class="glyphicon glyphicon-ok nav-gicon" aria-hidden="true"></span> License
                   </a>
                 </li>
@@ -104,7 +96,7 @@
               </a>
             </li>
             <li>
-              <a class="page-link" target="_blank" href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=entry%2ereg%40gmail%2ecom&lc=US&item_name=3F%2dOpenSource%20%5b%20github%2ecom%2f3F&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted">
+              <a class="page-link" target="_blank" href="https://3F.github.com/Donation/">
                 <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span> Donate
               </a>
             </li>

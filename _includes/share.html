@@ -1,33 +1,22 @@
 {% if page.shareOff != true %}
 <p>
-  <a class="twitter-share-button" href="https://twitter.com/intent/tweet">Tweet</a>
-  <span class="g-plusone" data-size="medium" data-annotation="inline" data-width="300"></span>
+  Share:
+
+  <!--
+    https://developer.twitter.com/en/docs/twitter-for-websites/tweet-button/overview.html
+    https://publish.twitter.com/?buttonType=TweetButton&widget=Button
+   -->
+  <a class="twitter-share-button label label-primary small" href="https://twitter.com/intent/tweet?url={{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}&text={{page.title}}&via=GitHub3F&hashtags={{site.title}}">
+    <svg width="12" height="12" viewBox="0 0 512 512" xml:space="preserve">
+      <path fill="#FFF" d="M503.8,106.1c-18.4,8.2-38.2,13.7-58.9,16.2c21.2-12.7,37.4-32.8,45.1-56.8c-19.8,11.8-41.8,20.3-65.1,24.9  C406.1,70.5,379.4,58,349.9,58c-56.7,0-102.6,45.9-102.6,102.6c0,8,0.9,15.9,2.7,23.4c-85.3-4.3-160.8-45.1-211.4-107.2  c-8.8,15.1-13.9,32.8-13.9,51.6c0,35.6,18.1,67,45.6,85.4c-16.8-0.5-32.6-5.1-46.5-12.8c0,0.4,0,0.9,0,1.3  c0,49.7,35.4,91.2,82.3,100.6c-8.6,2.3-17.7,3.6-27,3.6c-6.6,0-13-0.6-19.3-1.8c13.1,40.8,50.9,70.4,95.8,71.2  c-35.1,27.5-79.3,43.9-127.4,43.9c-8.3,0-16.4-0.5-24.5-1.4c45.4,29.1,99.3,46.1,157.2,46.1c188.7,0,291.9-156.3,291.9-291.9  c0-4.4-0.1-8.9-0.3-13.3C472.6,144.8,490,126.7,503.8,106.1z"/>
+    </svg>
+    Tweet
+  </a>
+
+  <a class="reddit-share-button" href="https://www.reddit.com/submit">
+    <img width="12" height="12" src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgaWQ9IkxheWVyXzEiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDEwMDAgMTAwMDsiIHZlcnNpb249IjEuMSIgdmlld0JveD0iMCAwIDEwMDAgMTAwMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayI+PHN0eWxlIHR5cGU9InRleHQvY3NzIj4KCS5zdDB7ZmlsbDojRkY0NTAwO30KCS5zdDF7ZmlsbDojRkZGRkZGO30KPC9zdHlsZT48dGl0bGUvPjxnPjxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik01MDAsMTAwMEw1MDAsMTAwMEMyMjMuOSwxMDAwLDAsNzc2LjEsMCw1MDB2MEMwLDIyMy45LDIyMy45LDAsNTAwLDBoMGMyNzYuMSwwLDUwMCwyMjMuOSw1MDAsNTAwdjAgICBDMTAwMCw3NzYuMSw3NzYuMSwxMDAwLDUwMCwxMDAweiIvPjxwYXRoIGNsYXNzPSJzdDEiIGQ9Ik02MTQuNiw2MDQuMmMtMjguNywwLTUyLjEtMjMuNC01Mi4xLTUyLjFjMC0yOC43LDIzLjQtNTIuMSw1Mi4xLTUyLjFzNTIuMSwyMy40LDUyLjEsNTIuMSAgIEM2NjYuNyw1ODAuOCw2NDMuMyw2MDQuMiw2MTQuNiw2MDQuMiBNNjIzLjgsNjg5LjdDNTg4LjIsNzI1LjIsNTIwLjEsNzI4LDUwMC4xLDcyOGMtMjAsMC04OC4yLTIuOC0xMjMuNy0zOC4zICAgYy01LjMtNS4zLTUuMy0xMy44LDAtMTkuMWM1LjMtNS4zLDEzLjgtNS4zLDE5LjEsMEM0MTcuOSw2OTMsNDY1LjgsNzAxLDUwMC4xLDcwMWMzNC4yLDAsODIuMi04LDEwNC42LTMwLjQgICBjNS4zLTUuMywxMy44LTUuMywxOS4xLDBDNjI5LDY3NS45LDYyOSw2ODQuNCw2MjMuOCw2ODkuNyBNMzMzLjMsNTUyLjFjMC0yOC43LDIzLjQtNTIuMSw1Mi4xLTUyLjFjMjguNywwLDUyLjEsMjMuNCw1Mi4xLDUyLjEgICBjMCwyOC43LTIzLjQsNTIuMS01Mi4xLDUyLjFDMzU2LjcsNjA0LjIsMzMzLjMsNTgwLjgsMzMzLjMsNTUyLjEgTTgzMy4zLDUwMGMwLTQwLjMtMzIuNi03Mi45LTcyLjktNzIuOSAgIGMtMTkuNywwLTM3LjUsNy44LTUwLjYsMjAuNWMtNDkuOC0zNi0xMTguNS01OS4yLTE5NS02MS45TDU0OCwyMjkuNGwxMDguNSwyMy4xYzEuMywyNy42LDIzLjksNDkuNiw1MS44LDQ5LjYgICBjMjguOCwwLDUyLjEtMjMuMyw1Mi4xLTUyLjFjMC0yOC44LTIzLjMtNTIuMS01Mi4xLTUyLjFjLTIwLjUsMC0zOCwxMS45LTQ2LjUsMjkuMWwtMTIxLjItMjUuOGMtMy40LTAuNy02LjktMC4xLTkuOCwxLjggICBjLTIuOSwxLjktNC45LDQuOC01LjYsOC4ybC0zNi40LDE3MS41Yy0wLjIsMSwwLDEuOSwwLDIuOWMtNzcuOSwyLTE0Ny45LDI1LjMtMTk4LjUsNjEuOGMtMTMuMS0xMi42LTMwLjgtMjAuMy01MC40LTIwLjMgICBjLTQwLjMsMC03Mi45LDMyLjctNzIuOSw3Mi45YzAsMjkuNiwxNy43LDU1LjEsNDMuMSw2Ni41Yy0xLjEsNy4yLTEuNywxNC42LTEuNywyMi4xYzAsMTEyLjIsMTMwLjYsMjAzLjEsMjkxLjcsMjAzLjEgICBjMTYxLjEsMCwyOTEuNy05MC45LDI5MS43LTIwMy4xYzAtNy40LTAuNi0xNC43LTEuNy0yMS45QzgxNS40LDU1NS4zLDgzMy4zLDUyOS44LDgzMy4zLDUwMCIgaWQ9IkZpbGwtMyIvPjwvZz48L3N2Zz4=" />
+    reddit
+  </a>
+
 </p>
-
-<!-- Twitter -->
-<script>window.twttr = (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0],
-    t = window.twttr || {};
-  if (d.getElementById(id)) return t;
-  js = d.createElement(s);
-  js.id = id;
-  js.src = "https://platform.twitter.com/widgets.js";
-  fjs.parentNode.insertBefore(js, fjs);
- 
-  t._e = [];
-  t.ready = function(f) {
-    t._e.push(f);
-  };
- 
-  return t;
-}(document, "script", "twitter-wjs"));</script>
-
-<!-- Google +1 -->
-<script type="text/javascript">
-  (function() {
-    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-    po.src = 'https://apis.google.com/js/platform.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-  })();
-</script>
 {% endif %}

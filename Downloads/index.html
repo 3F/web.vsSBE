@@ -14,38 +14,25 @@ title: Downloads
           <td width="22%">
             <div><a href="/Changelist/#vsix"><img src="/etc/badges/VSPackage.svg" alt="VSPackage" /></a></div>
           </td>
-          <td>The main plugin. Contains logic for work with events of Visual Studio and core of different actions for anything.</td>
+          <td>The main plugin for Visual Studio.</td>
           <td width="150px">
             {% assign lnkCur = site.lnkCur_VSPackage %}
             {% assign lnkList = site.lnkList_VSPackage %}
             {% assign lnkOld = site.lnkOld_VSPackage %}
-            {% assign lnkAll = [] %}
+            {% assign lnkAll = "" %}
             {% include pat/vdownload.html %}
           </td>
         </tr>
         <tr>
           <td>
-            <div><a href="/Changelist/#cim"><img src="/etc/badges/CI.MSBuild.svg" alt="CI.MSBuild" /></a></div>
+            <div><a href="https://www.nuget.org/packages/vsSBE.CI.MSBuild/" target="_blank"><img src="https://img.shields.io/nuget/v/vsSBE.CI.MSBuild.svg" alt="NuGet Package" /></a></div>
           </td>
-          <td>To support of Microsoft Build Tools (MSBuild).</td>
+          <td>The official package for work with CI /Build Servers.</td>
           <td>
-            {% assign lnkCur = site.lnkCur_CIMSBuild %}
-            {% assign lnkList = site.lnkList_CIMSBuild %}
-            {% assign lnkOld = site.lnkOld_CIMSBuild %}
-            {% assign lnkAll = site.lnkAll_CIMSBuild %}
-            {% include pat/vdownload.html %}
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div><a href="/Changelist/#devenv"><img src="/etc/badges/Devenv.svg" alt="Devenv" /></a></div>
-          </td>
-          <td>To support of Microsoft Visual Studio Command-Line (devenv.exe/com).</td>
-          <td>
-            {% assign lnkCur = site.lnkCur_Devenv %}
-            {% assign lnkList = site.lnkList_Devenv %}
-            {% assign lnkOld = site.lnkOld_Devenv %}
-            {% assign lnkAll = site.lnkAll_Devenv %}
+            {% assign lnkCur = site.lnkCur_CIMNuGet %}
+            {% assign lnkList = site.lnkList_CIMNuGet %}
+            {% assign lnkOld = site.lnkOld_CIMNuGet %}
+            {% assign lnkAll = site.lnkAll_CIMNuGet %}
             {% include pat/vdownload.html %}
           </td>
         </tr>
@@ -53,12 +40,38 @@ title: Downloads
           <td>
             <div><a href="/Changelist/#api"><img src="/etc/badges/API.svg" alt="API" /></a></div>
           </td>
-          <td>The bridge for work with API level of main library.</td>
+          <td>The bridge for work with our API.</td>
           <td>
             {% assign lnkCur = site.lnkCur_API %}
             {% assign lnkList = site.lnkList_API %}
             {% assign lnkOld = site.lnkOld_API %}
-            {% assign lnkAll = site.lnkAll_API %}
+            {% assign lnkAll = "" %}
+            {% include pat/vdownload.html %}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div><a href="/Changelist/#cim"><img src="/etc/badges/CI.MSBuild.svg" alt="CI.MSBuild" /></a></div>
+          </td>
+          <td>To support Microsoft Build Tools (MSBuild).</td>
+          <td>
+            {% assign lnkCur = site.lnkCur_CIMSBuild %}
+            {% assign lnkList = site.lnkList_CIMSBuild %}
+            {% assign lnkOld = site.lnkOld_CIMSBuild %}
+            {% assign lnkAll = "" %}
+            {% include pat/vdownload.html %}
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div><a href="/Changelist/#devenv"><img src="/etc/badges/Devenv.svg" alt="Devenv" /></a></div>
+          </td>
+          <td>To support Microsoft Visual Studio Command-Line (devenv).</td>
+          <td>
+            {% assign lnkCur = site.lnkCur_Devenv %}
+            {% assign lnkList = site.lnkList_Devenv %}
+            {% assign lnkOld = site.lnkOld_Devenv %}
+            {% assign lnkAll = "" %}
             {% include pat/vdownload.html %}
           </td>
         </tr>
@@ -71,43 +84,30 @@ title: Downloads
             {% assign lnkCur = site.lnkCur_Provider %}
             {% assign lnkList = site.lnkList_Provider %}
             {% assign lnkOld = site.lnkOld_Provider %}
-            {% assign lnkAll = site.lnkAll_Provider %}
+            {% assign lnkAll = "" %}
             {% include pat/vdownload.html %}
           </td>
         </tr>
         <tr>
           <td>
-            <div><a href="https://www.nuget.org/packages/vsSBE.CI.MSBuild/" target="_blank"><img src="https://img.shields.io/nuget/v/vsSBE.CI.MSBuild.svg" alt="NuGet Package" /></a></div>
+            <div><a href="{{site.lnkCur_getCIM[2]}}">{{site.lnkCur_getCIM[0]}}</a></div>
           </td>
-          <td>The official package of libraries to support the CI /Build Servers.</td>
-          <td>
-            {% assign lnkCur = site.lnkCur_CIMNuGet %}
-            {% assign lnkList = site.lnkList_CIMNuGet %}
-            {% assign lnkOld = site.lnkOld_CIMNuGet %}
-            {% assign lnkAll = [] %}
-            {% include pat/vdownload.html %}
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <div><a href="http://vssbe.r-eg.net/doc/CI/get.CIM.bat">get.CIM.bat</a></div>
-          </td>
-          <td>~10 Kb. To get CI.MSBuild in one click (Compiled by <a href="https://github.com/3F/GetNuTool" target="_blank">GetNuTool</a>).</td>
+          <td>~9 Kb. Remote access to official package for work with CI in one click (Compiled by <a href="https://github.com/3F/GetNuTool" target="_blank">GetNuTool</a>).</td>
           <td>
             {% assign lnkCur = site.lnkCur_getCIM %}
-            {% assign lnkList = [] %}
-            {% assign lnkOld = [] %}
-            {% assign lnkAll = [] %}
+            {% assign lnkList = site.lnkList_getCIM %}
+            {% assign lnkOld = site.lnkOld_getCIM %}
+            {% assign lnkAll = site.lnkAll_getCIM %}
             {% include pat/vdownload.html %}
           </td>
         </tr>
-        <tr>
+        <!-- <tr>
           <td>
             GetNuTool 
             <a href="{{site.lnkToCompt_GetNuTool[1]}}" title="Current compatibility"><img src="/etc/badges/GetNuTool.svg" alt="" /></a>
             <a href="https://github.com/3F/GetNuTool/releases/latest" title="Latest release"><img src="https://img.shields.io/github/release/3F/GetNuTool.svg" alt="" /></a>
           </td>
-          <td>The lightweight non-binary NuGet Client as a portable & embeddable tool for work with NuGet packages via basic MSBuild (it does not require any additional extensions).</td>
+          <td>Cross-Platform Embeddable Package Manager [gnt.core]. NuGet / Chocolatey Client and the lightweight portable tool for work with packages.</td>
           <td>
             {% assign lnkCur = site.lnkCur_GetNuTool %}
             {% assign lnkList = site.lnkList_GetNuTool %}
@@ -115,12 +115,12 @@ title: Downloads
             {% assign lnkAll = site.lnkAll_GetNuTool %}
             {% include pat/vdownload.html %}
           </td>
-        </tr>
+        </tr> -->
         <tr>
           <td>
             <a href="{{site.lnkSrcClientDemo[1]}}" target="_blank">ClientDemo</a>
           </td>
-          <td>Compiled ClientDemo project. As <b>Demo</b> of the <b>client.vssbe.dll</b> features. For work with events from our core library. <a href="{{site.docp}}/API/#create-client-vssbe-dll">How to use.</a></td>
+          <td>Compiled ClientDemo project of the <b>client.vssbe.dll</b> features. For work with events from our core library. <a href="{{site.docp}}/API/#how-to">How to use.</a></td>
           <td>
             {% assign lnkCur = site.lnkCur_ClientDemo %}
             {% assign lnkList = site.lnkList_ClientDemo %}
@@ -133,25 +133,27 @@ title: Downloads
           <td colspan="3">
             <div class="panel panel-default small">
               <div class="panel-heading small">
-                <h3 class="panel-title small">Mirrors</h3>
+                <h3 class="panel-title small">OLD RELEASES <a href="https://sourceforge.net/projects/vssbe/" rel="noreferrer" target="_blank"><img src="https://img.shields.io/sourceforge/dt/vssbe.svg" /></a></h3>
               </div>
               <div class="panel-body small">
-                In the last time we are seeing a lot of errors with SourceForge.net <i>(<a href="https://twitter.com/sfnet_ops" target="_blank">such as</a>)</i><br />
-                As variant, you can try get all binaries from available mirrors, for example:
-                
+                  We're using now <a href="https://github.com/3F/vsSolutionBuildEvent">GitHub</a>. But you can still access to old binaries that was released before <b>v0.12.11</b>.
+
+                  <script src="{{ site.baseurl }}/js/sfstat.js"></script>
+                  <div id="sfstat" style="font-size: 75%;"></div>
+
                 <table class="table table-striped table-hover ">
                   <tbody>
                     <tr>
-                      <td>Unofficial</td>
-                      <td>osdn.jp</td>
-                      <td><b>All binaries.</b> Automatic collector from sf.net</td>
-                      <td><a href="http://osdn.jp/projects/sfnet_vssbe/releases/" target="_blank">osdn.jp/projects/sfnet_vssbe/releases/</a></td>
+                      <td>Official</td>
+                      <td>sourceforge.net</td>
+                      <td>All binaries Before v0.12.11</td>
+                      <td><a href="https://sourceforge.net/projects/vssbe/files/" target="_blank">sourceforge.net/projects/vssbe/files/</a></td>
                     </tr>
                     <tr>
-                      <td>Official</td>
-                      <td>github.com</td>
-                      <td>{{ "**Only** latest binaries and only as a single archive with all available components ~`release_v...`" | markdownify}}</td>
-                      <td><a href="https://github.com/3F/vsSolutionBuildEvent/releases" target="_blank">github.com/3F/vsSolutionBuildEvent/releases</a></td>
+                      <td>Unofficial Mirror</td>
+                      <td>osdn.jp</td>
+                      <td>Automatic collector from sf.net</td>
+                      <td><a href="https://osdn.jp/projects/sfnet_vssbe/releases/" target="_blank">osdn.jp/projects/sfnet_vssbe/releases/</a></td>
                     </tr>
                   </tbody>
                 </table>
@@ -171,15 +173,12 @@ title: Downloads
   </div>
   <div class="panel-body">
     <p>
-      Use pull request in any services below for your awesome improvements and patches.  
-      Or send this directly as <strong>.patch</strong> file. 
-      <i>For complex logic(as for our lexers, analyzers etc.) please also provide a correct new unit-tests.</i>
+      We are waiting for your awesome contributions! Start with <a href="{{site.docp}}/Dev/"><b>Developer Zone</b></a>
     </p>
     <table class="table table-striped table-hover ">
       <tbody>
         <tr>
-          <td width="24%">Repository on <img src="{{ site.baseurl }}/img/GitHub_Logo_57x23.png" width="57" height="23" border="0" /></td>
-          <td width="70%">
+          <td width="80%">
             <div class="form-group has-success">
               <label class="control-label" for="inputSuccess">Clone with HTTPS:</label>
               <input class="form-control" id="inputSuccess" type="text" value="git clone https://github.com/3F/vsSolutionBuildEvent.git" />
@@ -203,44 +202,6 @@ title: Downloads
             </div>
           </td>
         </tr>
-        <tr>
-          <td><span class="label label-warning">Deprecated</span><br />Repository on <img src="{{ site.baseurl }}/img/logoBitBucketPNG_97x28.png" width="97" height="28" border="0" /></td>
-          <td>
-            <div class="form-group has-success">
-              <label class="control-label" for="inputSuccess">Clone with HTTPS:</label>
-              <input class="form-control" id="inputSuccess" type="text" value="git clone https://bitbucket.org/3F/vssolutionbuildevent.git" />
-            </div>
-            <div class="form-group has-success">
-              <label class="control-label" for="inputSuccess">Clone with SSH:</label>
-              <input class="form-control" id="inputSuccess" type="text" value="git clone git@bitbucket.org:3F/vssolutionbuildevent.git" />
-            </div>            
-          </td>
-          <td>
-            <div class="panel panel-success small">
-              <div class="panel-heading">
-                <h3 class="panel-title">Fork me on Bitbucket</h3>
-              </div>
-              <div class="panel-body small">
-                <div class="list-group">
-                  <a href="https://bitbucket.org/3F/vssolutionbuildevent/overview" target="_blank" class="list-group-item">vssolutionbuildevent/</a>
-                  <a href="https://bitbucket.org/3F/vssolutionbuildevent/fork" target="_blank" class="list-group-item">vssolutionbuildevent/fork</a>
-                </div>
-              </div>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <a href="https://bitbucket.org/3F/vssolutionbuildevent/commits/all" target="_blank">Commits log</a>
-          </td>
-          <td colspan="2">
-            <ul>
-              <li><img src="https://ci.appveyor.com/api/projects/status/l38xn0j2c5an28e1/branch/master?svg=true&passingText=master:%20%20passing&failingText=master:%20%20failing&pendingText=master:%20%20pending" title="master branch" /></li>
-              <li><img src="https://ci.appveyor.com/api/projects/status/l38xn0j2c5an28e1/branch/develop?svg=true&passingText=develop:%20passing&failingText=develop:%20failing&pendingText=develop:%20pending" title="develop branch" /></li>
-              <li><img src="https://ci.appveyor.com/api/projects/status/l38xn0j2c5an28e1/branch/hotfixes?svg=true&passingText=hotfixes:%20passing&failingText=hotfixes:%20failing&pendingText=hotfixes:%20pending" title="hotfixes branch" /></li>
-            </ul>
-          </td>
-        </tr>
       </tbody>
     </table>
   </div>
@@ -258,85 +219,17 @@ title: Downloads
     <table class="table table-striped table-hover ">
       <tbody>
         <tr>
-          <td width="15%">hotfixes</td>
-          <td>Latest binaries from <a href="https://bitbucket.org/3F/vssolutionbuildevent/commits/branch/hotfixes" target="branch">hotfixes branch</a>.</td>
-          <td width="50%"><a href="https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/branch/hotfixes/artifacts" target="_blank" class="btn btn-default">Test</a></td>
+          <td width="10%"><a href="https://github.com/3F/vsSolutionBuildEvent/releases" target="_blank" class="btn btn-default">Test</a></td>
+          <td width="90%">CI Builds via GitHub Pre-Releases</td>
         </tr>
         <tr>
-          <td>master</td>
-          <td>Latest binaries from <a href="https://bitbucket.org/3F/vssolutionbuildevent/commits/branch/master" target="branch">master branch</a>.</td>
-          <td><a href="https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/branch/master/artifacts" target="_blank" class="btn btn-default">Test</a></td>
-        </tr>
-        <tr>
-          <td>develop</td>
-          <td>Latest binaries from <a href="https://bitbucket.org/3F/vssolutionbuildevent/commits/branch/develop" target="branch">develop branch</a>.</td>
-          <td><a href="https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/branch/develop/artifacts" target="_blank" class="btn btn-default">Test</a></td>
-        </tr>
-        <tr>
-          <td>~</td>
-          <td><a href="https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/history" target="branch">All branch-binaries</a></td>
-          <td>&nbsp;</td>
-        </tr>
+            <td><a href="https://ci.appveyor.com/project/3Fs/vssolutionbuildevent/history" target="_blank" class="btn btn-default">Test</a></td>
+            <td width="90%">AppVeyor</td>
+          </tr>
       </tbody>
     </table> 
   </div>
 </div>
 
-<div id="Snapshots" class="panel panel-warning">
-  <div class="panel-heading">
-    <h3 class="panel-title"><a href="#Snapshots">Snapshots</a></h3>
-  </div>
-  <div class="panel-body">
-    <table class="table table-striped table-hover ">
-      <tbody>
-        <tr>
-          <td width="30%">The archive of public releases</td>
-          <td colspan="3"><a href="{{site.lnkBackupSrc[1]}}" target="_blank" class="btn btn-default">Open</a></td>
-        </tr>
-        <tr>
-          <td>releases branch</td>
-          <td width="5%"><a href="https://bitbucket.org/3F/vssolutionbuildevent/get/releases.tar.gz" target="snapshot" class="btn btn-primary">tar.gz</a></td>
-          <td width="5%"><a href="https://bitbucket.org/3F/vssolutionbuildevent/get/releases.tar.bz2" target="snapshot" class="btn btn-info">tar.bz2</a></td>
-          <td width="60%"><a href="https://bitbucket.org/3F/vssolutionbuildevent/get/releases.zip" target="snapshot" class="btn btn-warning">zip</a></td>
-        </tr>
-        <tr>
-          <td>master branch</td>
-          <td><a href="https://bitbucket.org/3F/vssolutionbuildevent/get/master.tar.gz" target="snapshot" class="btn btn-primary">tar.gz</a></td>
-          <td><a href="https://bitbucket.org/3F/vssolutionbuildevent/get/master.tar.bz2" target="snapshot" class="btn btn-info">tar.bz2</a></td>
-          <td><a href="https://bitbucket.org/3F/vssolutionbuildevent/get/master.zip" target="snapshot" class="btn btn-warning">zip</a></td>
-        </tr>
-        <tr>
-          <td>hotfixes branch</td>
-          <td><a href="https://bitbucket.org/3F/vssolutionbuildevent/get/hotfixes.tar.gz" target="snapshot" class="btn btn-primary">tar.gz</a></td>
-          <td><a href="https://bitbucket.org/3F/vssolutionbuildevent/get/hotfixes.tar.bz2" target="snapshot" class="btn btn-info">tar.bz2</a></td>
-          <td><a href="https://bitbucket.org/3F/vssolutionbuildevent/get/hotfixes.zip" target="snapshot" class="btn btn-warning">zip</a></td>
-        </tr>
-        <tr>
-          <td>develop branch</td>
-          <td><a href="https://bitbucket.org/3F/vssolutionbuildevent/get/develop.tar.gz" target="snapshot" class="btn btn-primary">tar.gz</a></td>
-          <td><a href="https://bitbucket.org/3F/vssolutionbuildevent/get/develop.tar.bz2" target="snapshot" class="btn btn-info">tar.bz2</a></td>
-          <td><a href="https://bitbucket.org/3F/vssolutionbuildevent/get/develop.zip" target="snapshot" class="btn btn-warning">zip</a></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
 
-<div id="Build" class="panel panel-default">
-  <div class="panel-heading">
-    <h3 class="panel-title"><a href="#Build">Build</a></h3>
-  </div>
-  <div class="panel-body">
-    <p>Information of how to build and all requirements for this you should see on <strong><a href="{{site.docp}}/Dev/How to build/">this page</a></strong>.</p>
-    <p>The <strong>archive</strong> of dependencies:</p>
-    <table class="table table-striped table-hover ">
-      <tbody>
-        <tr>
-          <td width="25%">Minimal libraries</td>
-          <td><a href="{{site.lnkBackupLib[1]}}" target="_blank" class="btn btn-default">Download</a></td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
 

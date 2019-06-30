@@ -5,7 +5,7 @@ permalink: /doc/API/
 ---
 # vsSolutionBuildEvent API
 
-The vsSolutionBuildEvent is also provides the API level. This can be used with [any external application](../Scheme/) for work with events/actions.
+vsSolutionBuildEvent also provides the API level. This can be used with [any external application](../Scheme/) for work with events/actions.
 
 For example, this is already implemented in our products as part of vsSolutionBuildEvent project:
 

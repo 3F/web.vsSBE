@@ -9,7 +9,7 @@ You already should know that we can work without Visual Studio at all. Read abou
 
 But wait ! What about if you need some scripting via vssbe, but you do not have the .sln, .csproj, .vcxproj, ... and any other project files for X place (where you need this).
 
-The basic example of this case - [GetNuTool](https://github.com/3F/GetNuTool) project.
+The basic example of this case - [hMSBuild](https://github.com/3F/hMSBuild) & [GetNuTool](https://github.com/3F/GetNuTool) projects.
 
 ### How to
 

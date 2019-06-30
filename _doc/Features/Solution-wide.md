@@ -41,7 +41,7 @@ But wait, "the any action is already can be for all projects at once". So just c
 
 As result you should get unified processing in Visual Studio IDE and msbuild.exe.
 
-## What's exists for work without plugins ?
+## What exists for work without plugins ?
 
 *In some cases*, any extending of Visual Studio may be not suitable or not comfortable for some reasons (for example, your some box-solution, etc.)
 
