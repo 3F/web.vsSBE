@@ -231,8 +231,11 @@ a + .svg-ico {
   text-decoration: none;
 }
 
-.twitter-share-button {
-  font-weight: 400;
+.sflat-btn {
   margin: 4px;
+}
+
+.tw-sflat-btn {
+  font-weight: 400;
   padding-top: 5px;
 }

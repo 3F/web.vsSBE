@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: Scripts & Commands
+title: Scripts and Commands
 permalink: /doc/Scripts/
 ---
 # Scripts & Commands

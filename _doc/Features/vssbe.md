@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: vsSolutionBuildEvent/vsSBE (.vssbe) File
+title: .vssbe File
 permalink: /doc/Features/.vssbe/
 ---
 ## .vssbe

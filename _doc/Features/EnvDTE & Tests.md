@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: Work with Unit-Tests & EnvDTE
+title: Work with Unit-Tests and EnvDTE
 permalink: /doc/Features/EnvDTE & Tests/
 ---
 # Work with Unit-Tests & EnvDTE

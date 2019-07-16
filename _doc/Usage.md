@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: Install & Build
+title: Install and Build
 permalink: /doc/Usage/
 ---
 
@@ -86,13 +86,7 @@ Find the Devenv project in solution:
 
 ## Build via MSBuild tools (Microsoft Build Tools)
 
-* [Clone repository](/Downloads/#Code) with git:
-
-```{{site.msblang}}
-git clone --branch=master https://github.com/3F/vsSolutionBuildEvent.git ./vsSolutionBuildEvent
-```
-
-Then, just command [**build**](https://github.com/3F/vsSolutionBuildEvent/tree/master/bin):
+* [Clone repository](/Downloads/#Code). Then, just command [**build**](https://github.com/3F/vsSolutionBuildEvent/tree/master/bin):
 
 ```
 .\build DBG

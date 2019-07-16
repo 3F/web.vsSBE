@@ -4,20 +4,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="description" content="{{metaDescr}}">
+  <meta name="keywords" content="VisualStudio,MSBuild,vsSolutionBuildEvent,Build,Tools,automation,Scripts,DevOps,Events,CI,DevTools,Projects,AppVeyor,TeamCity,Continuous-Integration,logger,Build-automation,Compiler,AzureDevOps,Version,7z,7zip,post-build,scripting,zip,http,Productivity,sln,Files,ftp,Commands,NuGet,pre-build,Versioning,downloader,archiver,GetNuTool,vsSBE">
 
   <!-- twitter -->
   <meta name="twitter:title" content="{{page.title}} - {{site.title}}">
-  <meta name="twitter:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="twitter:description" content="{{metaDescr}}">
   <meta name="twitter:image" content="{{ site.baseurl | prepend: site.url }}/img/logo.png">
   <!-- https://cards-dev.twitter.com/validator
        https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started.html
+       https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/summary-card-with-large-image
   -->
-  <!-- <meta name="twitter:card" content="summary image"> -->
-  
+  <meta name="twitter:card" content="summary"> <!-- summary_large_image -->
+  <meta name="twitter:site" content="@GitHub3F">
+  <meta name="twitter:creator" content="@GitHub3F">
+
   <!-- Open Graph protocol: ogp.me -->
   <meta property="og:title" content="{{page.title}} - {{site.title}}">
-  <meta property="og:description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:description" content="{{metaDescr}}">
   <meta property="og:image" content="{{ site.baseurl | prepend: site.url }}/img/logo.png">
   <meta property="og:url" content="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   

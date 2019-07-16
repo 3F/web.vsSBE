@@ -37,7 +37,7 @@ title: vsSolutionBuildEvent
                   <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
                 </td>
                 <td>
-                  <b><a href="{{site.docp}}/Usage/">Install & Build</a></b>
+                  <b><a href="{{site.docp}}/Usage/">Install / Build</a></b>
                   (<a href="{{site.docp}}/Dev/">Developer Zone</a>)
                 </td>
               </tr>
@@ -88,10 +88,8 @@ title: vsSolutionBuildEvent
           
         </td>
 
-        <td width="25%">
-          <!-- <iframe width="314" height="176" src="https://www.youtube.com/embed/FX5GiMX0ulI" frameborder="0" allowfullscreen></iframe>
-          <br />
-          <a href="{{site.docp}}/Scheme/"><img src="{{site.docp}}/Resources/events_model.png" width="298" height="199" /></a> -->
+        <td width="30%">
+        
         </td>
       </tr>
     </tbody>

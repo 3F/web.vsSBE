@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: Dom & Code Completion
+title: Dom and Code Completion
 permalink: /doc/Dev/SBE-Scripts/Dom/
 ---
 

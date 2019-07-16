@@ -1,5 +1,16 @@
 <!DOCTYPE html>
 <html>
+
+  {% assign pTitleUrlEsc =  page.title | url_encode %}
+  {% assign sTitleUrlEsc =  site.title | url_encode %}
+  {% assign pageUrlFull = page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url %}
+
+  {% assign pTitleShareUrlEsc = pTitleUrlEsc | append: ' - ' | append: sTitleUrlEsc | url_encode %}
+
+  {% assign pTitleXmlEsc = page.title | xml_escape %}
+
+  {% assign metaDescr = page.content | markdownify | replace:'</p>','. ' | replace:'</h1>','.' | replace:'</h2>','.' | replace:'</h3>','.' | replace:'</h4>','.' | strip_html | strip_newlines | slice: 0, 420 | append: '…' %}
+
   {% include head.html %}
 
   <body>

@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: Continuous Integration (CI)
+title: Continuous Integration
 permalink: /doc/CI/
 ---
 # Continuous Integration (CI) 

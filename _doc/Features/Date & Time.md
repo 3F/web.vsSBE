@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: Date & Time
+title: Date and Time
 permalink: /doc/Features/Date & Time/
 ---
 # Date & Time

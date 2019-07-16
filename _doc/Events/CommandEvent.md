@@ -1,6 +1,6 @@
 ---
 layout: doc
-title: CommandEvent (DTE)
+title: CommandEvent. EnvDTE
 permalink: /doc/Events/CommandEvent/
 ---
 # CommandEvent (DTE)
