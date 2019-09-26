@@ -5,6 +5,9 @@ permalink: /doc/Scripts/MSBuild/
 ---
 # MSBuild
 
+{% assign infoData = "Uses [E-MSBuild](https://github.com/3F/E-MSBuild) Starting from **1.14.** Part of the documentation may be irrelevant. Please update me." %}
+{% include elem/info %}
+
 *The Microsoft Build Engine which is also known as MSBuild.*
 
 This page contains information of how to work with MSBuild in vsSolutionBuildEvent context. 

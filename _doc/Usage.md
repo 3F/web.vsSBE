@@ -25,11 +25,16 @@ You need VSPackage (**.vsix**) file:
 
 [Known problems](https://github.com/3F/vsSolutionBuildEvent/pull/45)
 
-* `[VS feature]` Build can be started before activation of our plugin.
-    * *Solution:* Modern VS platform uses lazy loading for all plugins that produces the case when build can be started before activation of our plugin. But you can still affect for priority activation via our [Status Panel] window from `View` - `Other Windows`! **Just attach** once our status panel and it will activate our plugin for early registering handlers for events like opening solution etc.
+* `[VS2019]` Build can be started before activation of our plugin inside VS IDE. 
+    
+    This is a feature of the modern VS platform with lazy loading of all plugins. But you can still affect for priority activation: 
+    
+    *Solution:* **Just attach** once our [status panel] from `View` - `Other Windows` and this will always activate our plugin before start.
 
-* Deactivated [Status Panel] from `View` - `Other Windows` - *Affected VS2017 when upgrading from SDK10 release to SDK15*
-    * *Solution:* **Just close** this panel. Then, open it again from `View` - `Other Windows`.
+* Deactivated/Inactive [Status Panel] from `View` - `Other Windows`.
+    
+    Incorrect identifier in previous version produces wrong tool.    
+    *Solution:* **Just close** this panel. Then, open it again from `View` - `Other Windows`.
 
 # How to build vsSolutionBuildEvent
 

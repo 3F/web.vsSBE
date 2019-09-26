@@ -53,24 +53,25 @@ msblang: bash
 
 ## VSPackage
 
-lnkCur_VSPackage:   [ "0.12.11", "vsSolutionBuildEvent.0.12.11.39274.c68aea2.SDK15.vsix", "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/GitHub3F/vsextensions/vsSolutionBuildEvent-11615/0.12.11.39274/vspackage" ]
+lnkCur_VSPackage:   [ "1.14.0", "vsSolutionBuildEvent.1.14.0+16ee135.SDK15.vsix", "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/GitHub3F/vsextensions/vsSolutionBuildEvent-11615/1.14.0/vspackage" ]
 lnkList_VSPackage:  [
-                        [ "0.12.11-SDK15", "vsSolutionBuildEvent.0.12.11.39274.c68aea2.SDK15.vsix", "https://github.com/3F/vsSolutionBuildEvent/releases/download/0.12.11/vsSolutionBuildEvent.0.12.11.39274.c68aea2.SDK15.vsix" ],
-                        [ "0.12.11-SDK10", "vsSolutionBuildEvent.0.12.11.39273.c68aea2.SDK10.vsix", "https://github.com/3F/vsSolutionBuildEvent/releases/download/0.12.11/vsSolutionBuildEvent.0.12.11.39273.c68aea2.SDK10.vsix" ]
+                        [ "1.14.0-SDK15", "vsSolutionBuildEvent.1.14.0+16ee135.SDK15.vsix", "https://github.com/3F/vsSolutionBuildEvent/releases/download/1.14/vsSolutionBuildEvent.1.14.0.16ee135.SDK15.vsix" ],
+                        [ "1.14.0-SDK10", "vsSolutionBuildEvent.1.14.0+16ee135.SDK10.vsix", "https://github.com/3F/vsSolutionBuildEvent/releases/download/1.14/vsSolutionBuildEvent.1.14.0.16ee135.SDK10.vsix" ]
                     ]
 lnkOld_VSPackage:   [
-                        [ "v0.12.10_net40", "vsSolutionBuildEvent&#95;v0.12.10.10901&#95;[d37fe51][net40].vsix", "https://sourceforge.net/projects/vssbe/files/v0.x/vsSolutionBuildEvent_v0.12.10.10901_%5Bd37fe51%5D%5Bnet40%5D.vsix/download" ]
+                        [ "0.12.11-SDK15", "vsSolutionBuildEvent.0.12.11.39274+c68aea2.SDK15.vsix", "https://github.com/3F/vsSolutionBuildEvent/releases/download/0.12.11/vsSolutionBuildEvent.0.12.11.39274.c68aea2.SDK15.vsix" ],
+                        [ "0.12.11-SDK10", "vsSolutionBuildEvent.0.12.11.39273+c68aea2.SDK10.vsix", "https://github.com/3F/vsSolutionBuildEvent/releases/download/0.12.11/vsSolutionBuildEvent.0.12.11.39273.c68aea2.SDK10.vsix" ]
                     ]
 lnkAll_VSPackage:   [ "SDK10-SDK15", "https://github.com/3F/vsSolutionBuildEvent/releases" ]
 
 ## CI.MSBuild
 
-lnkCur_CIMSBuild:   [ "v1.6", "CI.MSBuild&#95;v1.6&#95;[48df3db][net40].zip", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/CI.MSBuild_v1.6_%5B48df3db%5D%5Bnet40%5D.zip/download" ]
+lnkCur_CIMSBuild:   [ "v1.7", "CI.MSBuild.1.7+16ee135.SDK15.zip", "https://github.com/3F/vsSolutionBuildEvent/releases/download/1.14/CI.MSBuild.1.7.16ee135.SDK15.zip" ]
 lnkList_CIMSBuild:  [ 
-                        [ "v1.6", "CI.MSBuild&#95;v1.6&#95;[48df3db][net40].zip", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/CI.MSBuild_v1.6_%5B48df3db%5D%5Bnet40%5D.zip/download" ]
+                        [ "v1.7", "CI.MSBuild.1.7+16ee135.SDK15.zip", "https://github.com/3F/vsSolutionBuildEvent/releases/download/1.14/CI.MSBuild.1.7.16ee135.SDK15.zip" ]
                     ]                
 lnkOld_CIMSBuild:   [ 
-
+                        [ "v1.6", "CI.MSBuild&#95;v1.6&#95;[48df3db][net40].zip", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/CI.MSBuild_v1.6_%5B48df3db%5D%5Bnet40%5D.zip/download" ]
                     ]
 lnkAll_CIMSBuild:   [ "/CI-Utilities/CI.MSBuild/", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/CI.MSBuild/"]
 
@@ -111,54 +112,52 @@ lnkAll_Provider:    [ "/API/Provider/", "http://sourceforge.net/projects/vssbe/f
 
 ## NuGet Package for CI
 
-lnkCur_CIMNuGet:    [ "v1.6.12011", "vsSBE.CI.MSBuild.1.6.12011.c68aea2.SDK10.nupkg", "https://www.nuget.org/api/v2/package/vsSBE.CI.MSBuild/1.6.12011" ]
+lnkCur_CIMNuGet:    [ "v1.14.0", "vsSolutionBuildEvent.1.14.0+16ee135.SDK10.nupkg", "https://www.nuget.org/api/v2/package/vsSolutionBuildEvent/1.14.0" ]
 lnkList_CIMNuGet:   [
+                        [ "v1.14.0", "vsSolutionBuildEvent.1.14.0+16ee135.SDK10.nupkg", "https://www.nuget.org/api/v2/package/vsSolutionBuildEvent/1.14.0" ]
+                    ]
+lnkOld_CIMNuGet:    [
                         [ "v1.6.12011", "vsSBE.CI.MSBuild.1.6.12011.c68aea2.SDK10.nupkg", "https://www.nuget.org/api/v2/package/vsSBE.CI.MSBuild/1.6.12011" ],
                         [ "v1.6.12010", "vsSBE.CI.MSBuild.1.6.12010.nupkg", "https://www.nuget.org/api/v2/package/vsSBE.CI.MSBuild/1.6.12010" ]
                     ]
-lnkOld_CIMNuGet:    [
-                        [ "v1.6.1209", "vsSBE.CI.MSBuild.1.6.1209.nupkg", "https://www.nuget.org/api/v2/package/vsSBE.CI.MSBuild/1.6.1209" ],
-                        [ "v1.6.1207", "vsSBE.CI.MSBuild.1.6.1207.nupkg", "https://www.nuget.org/api/v2/package/vsSBE.CI.MSBuild/1.6.1207" ]
-                    ]
-lnkAll_CIMNuGet:    [ "/CI-Utilities/CI.MSBuild/NuGet_packages/", "https://www.nuget.org/packages/vsSBE.CI.MSBuild" ]
+lnkAll_CIMNuGet:    [ "/CI-Utilities/CI.MSBuild/NuGet_packages/", "https://www.nuget.org/packages/vsSolutionBuildEvent" ]
 
 
 ## ClientDemo
 
-lnkCur_ClientDemo:  [ "[e3b9d87][net45]&#40;4989&#41;", "ClientDemo_[e3b9d87][net45]&#40;4989&#41;.zip", "http://sourceforge.net/projects/vssbe/files/dev/clients/client.vssbe.dll/ClientDemo_%5Be3b9d87%5D%5Bnet45%5D%284989%29.zip/download" ]
+lnkCur_ClientDemo:  [ "[e3b9d87][SDK15]", "ClientDemo.16ee135.SDK15.zip", "https://github.com/3F/vsSolutionBuildEvent/releases/download/1.14/ClientDemo.16ee135.SDK15.zip" ]
 lnkList_ClientDemo: [
-                        [ "[e3b9d87][net45]&#40;4989&#41;", "ClientDemo_[e3b9d87][net45]&#40;4989&#41;.zip", "http://sourceforge.net/projects/vssbe/files/dev/clients/client.vssbe.dll/ClientDemo_%5Be3b9d87%5D%5Bnet45%5D%284989%29.zip/download" ],
-                        [ "[8bde22a][net40]&#40;2692&#41;", "ClientDemo_[8bde22a][net40]&#40;2692&#41;.zip", "http://sourceforge.net/projects/vssbe/files/dev/clients/client.vssbe.dll/ClientDemo_%5B8bde22a%5D%5Bnet40%5D%282692%29.zip/download" ]
+                        [ "[e3b9d87][SDK15]", "ClientDemo.16ee135.SDK15.zip", "https://github.com/3F/vsSolutionBuildEvent/releases/download/1.14/ClientDemo.16ee135.SDK15.zip" ]
                     ]
 lnkOld_ClientDemo:  []
 lnkAll_ClientDemo:  [ "/dev/clients/client.vssbe.dll/", "https://github.com/3F/vsSolutionBuildEvent/releases" ]
 
 ## GetNuTool
 
-lnkCur_GetNuTool:  [ "v1.6", "gnt.bat v1.6", "https://github.com/3F/GetNuTool/releases/download/v1.6/gnt.bat" ]
+lnkCur_GetNuTool:  [ "v1.7", "gnt.bat 1.7", "https://github.com/3F/GetNuTool/releases/download/v1.7/gnt.bat" ]
 lnkList_GetNuTool: [
-                        [ "v1.6 Ex", "GetNuTool-v1.6 Ex", "https://github.com/3F/GetNuTool/releases/download/v1.6/gnt.bat" ],
-                        [ "v1.6 Full", "GetNuTool-v1.6 Full", "https://github.com/3F/GetNuTool/releases/download/v1.6/GetNuTool.zip" ]
+                        [ "v1.7 Ex", "GetNuTool-1.7 Ex", "https://github.com/3F/GetNuTool/releases/download/v1.7/gnt.bat" ],
+                        [ "v1.7 Full", "GetNuTool-1.7 Full", "https://github.com/3F/GetNuTool/releases/download/v1.7/GetNuTool_v1.7.0.7737_4bc1dfb.zip" ]
                     ]
 lnkOld_GetNuTool:  [
-                        [ "v1.5 Ex", "GetNuTool-v1.5 Ex", "https://github.com/3F/GetNuTool/releases/download/v1.5/gnt.bat" ],
-                        [ "v1.5 Full", "GetNuTool-v1.5 Full", "https://github.com/3F/GetNuTool/releases/download/v1.5/GetNuTool_v1.5.zip" ]
+                        [ "v1.6.2 Ex", "GetNuTool-1.6.2 Ex", "https://github.com/3F/GetNuTool/releases/download/v1.6.2/gnt.bat" ],
+                        [ "v1.6.2 Full", "GetNuTool-1.6.2 Full", "https://github.com/3F/GetNuTool/releases/download/v1.6.2/GetNuTool_v1.6.2.65510_e910e5c.zip" ]
                     ]
 lnkAll_GetNuTool:  [ "github.com/3F/GetNuTool/releases", "https://github.com/3F/GetNuTool/releases" ]
-lnkToCompt_GetNuTool: [ "v1.5", "https://github.com/3F/GetNuTool" ]
+lnkToCompt_GetNuTool: [ "v1.7", "https://github.com/3F/GetNuTool" ]
 
 
 ## get.CIM.bat
 
-lnkCur_getCIM:  [ "get.CIM.bat", "get.CIM.1.6.12011.bat", "https://github.com/3F/vsSolutionBuildEvent/releases/download/0.12.11/get.CIM.1.6.12011.bat" ]
+lnkCur_getCIM:  [ "get-vsSBE.bat", "get-vsSBE.1.14.0.bat", "https://github.com/3F/vsSolutionBuildEvent/releases/download/1.14/get-vsSBE.1.14.0.bat" ]
 lnkList_getCIM: [
-                        [ "get.CIM.1.6.12011.bat", "get.CIM.1.6.12011.bat", "https://github.com/3F/vsSolutionBuildEvent/releases/download/0.12.11/get.CIM.1.6.12011.bat" ],
-                        [ "get.CIM.1.6.12010.bat", "get.CIM.1.6.12010.bat", "https://github.com/3F/vsSolutionBuildEvent/releases/download/CI-build-204/get.CIM.1.6.12010.bat" ]
+                        [ "get-vsSBE.1.14.0.bat", "get-vsSBE.1.14.0.bat", "https://github.com/3F/vsSolutionBuildEvent/releases/download/1.14/get-vsSBE.1.14.0.bat" ]
                     ]
 lnkOld_getCIM:  [
-
+                        [ "get.CIM.1.6.12011.bat", "get.CIM.1.6.12011.bat", "https://github.com/3F/vsSolutionBuildEvent/releases/download/0.12.11/get.CIM.1.6.12011.bat" ],
+                        [ "get.CIM.1.6.12010.bat", "get.CIM.1.6.12010.bat", "https://github.com/3F/vsSolutionBuildEvent/releases/download/CI-build-204/get.CIM.1.6.12010.bat" ]
                 ]
-lnkAll_getCIM:  [ "/get.CIM.bat", "https://github.com/3F/vsSolutionBuildEvent/releases" ]
+lnkAll_getCIM:  [ "/get-vsSBE.bat", "https://github.com/3F/vsSolutionBuildEvent/releases" ]
 
 #######################################
 # Sources

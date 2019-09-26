@@ -5,9 +5,10 @@ permalink: /doc/Scripts/SBE-Scripts/
 ---
 # SBE-Scripts
 
-SBE-Scripts - it is our engine for additional work over [MSBuild](../MSBuild/) - conditions, subcommands, file operations, etc. by components.
+{% assign infoData = "Uses [SobaScript](https://github.com/3F/SobaScript) Starting from **1.14.** Part of the documentation may be irrelevant. Please update me." %}
+{% include elem/info %}
 
-*you can use this as an additional variant and/or if need a some features, for example, special for Visual Studio etc. all of that are not exists/available with [MSBuild](../MSBuild/)*
+Togehter with [MSBuild](../MSBuild/) provides and powerful conditions, subcommands, file operations, and lot of other.
 
 ## Components
 
