@@ -5,9 +5,9 @@ permalink: /doc/API/
 ---
 # vsSolutionBuildEvent API
 
-vsSolutionBuildEvent also provides the API level. This can be used with [any external application](../Scheme/) for work with events/actions.
+vsSolutionBuildEvent provides API layer for [external tools and their various environments](../Scheme/) to access for events/actions and more.
 
-For example, this is already implemented in our products as part of vsSolutionBuildEvent project:
+For example, this is already used in the following products:
 
 * [CI.MSBuild](../CI/CI.MSBuild/) - for work through msbuild.exe (Microsoft Build Tools)
 * [Devenv Command-Line](../CI/Devenv Command-Line/) - for work through devenv of the Visual Studio
@@ -18,46 +18,47 @@ Scheme of vsSolutionBuildEvent projects:
 
 [![Scheme of vsSolutionBuildEvent projects](../Resources/scheme.png)](../Scheme/)
 
-### Bridge
+### 1.14.1+
 
-* Download [{{site.lnkCur_API[1]}}]({{site.lnkCur_API[2]}}) (SourceForge.net) ~8Kb
-* All binaries of the Bridge: [{{site.lnkAll_API[0]}}]({{site.lnkAll_API[1]}})
+Please note: **Provider** now distributed together with **Bridge** as part of the API layer.
 
-You can use Bridge for accessing to our products.
+Specified interfaces to communicate with vsSolutionBuildEvent: [Bridge/](https://github.com/3F/vsSolutionBuildEvent/tree/master/Bridge)
 
-This contains specification of all available features from the vsSolutionBuildEvent and any other specifications of available operations with library, for example:
+* Download [{{site.lnkCur_API[1]}}]({{site.lnkCur_API[2]}})
+    * <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> [Download](/Downloads/)
 
-* [IEvent](https://github.com/3F/vsSolutionBuildEvent/blob/master/Bridge/IEvent.cs)
-* [Bridge/](https://github.com/3F/vsSolutionBuildEvent/tree/master/Bridge) - all specifications of Bridge
+### Before 1.14.1
 
+**Bridge**
 
-### Provider
+Current module specifies communication with vsSolutionBuildEvent and its related references, for example, [IEvent](https://github.com/3F/vsSolutionBuildEvent/blob/master/Bridge/IEvent.cs).
 
-* Download [{{site.lnkCur_Provider[1]}}]({{site.lnkCur_Provider[2]}}) (SourceForge.net) ~19Kb
-* All binaries of the Bridge: [{{site.lnkAll_Provider[0]}}]({{site.lnkAll_Provider[1]}})
+* Download [{{site.lnkCur_API[1]}}]({{site.lnkCur_API[2]}}) ~8Kb
+* All binaries of the Bridge: [{{site.lnkAll_API[0]}}]({{site.lnkAll_API[1]}}) (SourceForge)
 
-Contains loader of the vsSolutionBuildEvent core and any other methods for rapid accessing and services. Use this for a quick implementation of the basic logic.
+**Provider**
+
+Contains loader of the core components and related services. Use this to quickly implement basic logic.
+
+* Download [{{site.lnkCur_Provider[1]}}]({{site.lnkCur_Provider[2]}}) ~19Kb
+* All binaries of the Bridge: [{{site.lnkAll_Provider[0]}}]({{site.lnkAll_Provider[1]}}) (SourceForge)
 
 ### client.vssbe.dll
 
-The `client.vssbe.dll` it's optional variant for work with events from our core library. 
+**client.vssbe.dll** this is subset of our API layer and its **additional way** for work with vsSolutionBuildEvent. 
 
-Use our **[ClientDemo](https://github.com/3F/vsSolutionBuildEvent/tree/master/ClientDemo)** project as Template project for this features.
+Use our **[ClientDemo](https://github.com/3F/vsSolutionBuildEvent/tree/master/ClientDemo)** project as template project for implementing your logic.
 
-## How to
-
-### Create client.vssbe.dll
+#### How to create client.vssbe.dll from scratch
 
 * Add our Bridge in `References`
-* Firstly, you should implement the [IEntryPointClient](https://github.com/3F/vsSolutionBuildEvent/blob/master/Bridge/IEntryPointClient.cs) as you want.
+* Firstly, you must implement the [IEntryPointClient](https://github.com/3F/vsSolutionBuildEvent/blob/master/Bridge/IEntryPointClient.cs) as you want.
 * Provide a correct [IEvent2](https://github.com/3F/vsSolutionBuildEvent/blob/master/Bridge/IEvent2.cs) & [IBuild](https://github.com/3F/vsSolutionBuildEvent/blob/master/Bridge/IBuild.cs) objects.
 * Then build and place your **client.vssbe.dll** in directory with vsSolutionBuildEvent.dll (`Settings` - `Plugin` - `Open directory with plugin`)
 
-Feel free...
+##### Demo via ClientDemo
 
-#### ClientDemo
-
-For a quick testing of work see [ClientDemo](../Examples/Demo/#clientdemo) project as **basic sample**.
+Play with our [ClientDemo](../Examples/Demo/#clientdemo) project!
 
 * Download binary: [{{site.lnkCur_ClientDemo[1]}}]({{site.lnkCur_ClientDemo[2]}}).
 

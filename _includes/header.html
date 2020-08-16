@@ -1,7 +1,5 @@
 <header>
 
-{% include components/ghRibbon.html %}
-
 <div style="width:0; height:0; overflow: hidden;">
 
 </div>
@@ -35,13 +33,13 @@
                   <iframe src="https://duckduckgo.com/search.html?width=180&site=vssbe.r-eg.net,vsce.r-eg.net&prefill=Search DuckDuckGo" style="overflow:hidden;margin:0;padding:0;width:238px;height:40px;" frameborder="0"></iframe>
                 </li>
                 <li>
-                  <a href="{{site.issueNew}}" target="_blank" title="bug ? question ?">
-                    <span class="glyphicon glyphicon-bullhorn nav-gicon" aria-hidden="true"></span> Create Issue
+                  <a href="{{site.issueNew}}" target="_blank" title="Create issue">
+                    <span class="glyphicon glyphicon-bullhorn nav-gicon" aria-hidden="true"></span> Bug! Question?
                   </a>
                 </li>
                 <li>
                   <a href="{{ site.docp }}/New/" title="Create new wiki page">
-                    <span class="glyphicon glyphicon-pencil nav-gicon" aria-hidden="true"></span> Create new page
+                    <span class="glyphicon glyphicon-pencil nav-gicon" aria-hidden="true"></span> New wiki page
                   </a>
                 </li>
                 <li class="divider"></li>
@@ -64,7 +62,7 @@
                 <li class="divider"></li>
                 <li>
                   <a href="{{site.lnkVSGallery}}" target="_blank">
-                    <span class="glyphicon glyphicon-blackboard nav-gicon" aria-hidden="true"></span> VS Marketplace
+                    <span class="glyphicon glyphicon-gift nav-gicon" aria-hidden="true"></span> VS Marketplace
                   </a>
                 </li>
                 <li>
@@ -88,21 +86,27 @@
                     <span class="glyphicon glyphicon-ok nav-gicon" aria-hidden="true"></span> License
                   </a>
                 </li>
+                <li class="divider"></li>
+                <li>
+                  <a class="page-link" href="{{ site.baseurl }}/About/">
+                    <span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> About
+                  </a>
+                </li>
               </ul>
             </li>
             <li>
               <a class="page-link" href="{{ site.baseurl }}/Downloads/">
-                <span class="glyphicon glyphicon-globe" aria-hidden="true"></span> <strong>Downloads</strong>
+                <span class="glyphicon glyphicon-floppy-disk" aria-hidden="true"></span> <strong>Download</strong>
               </a>
             </li>
             <li>
-              <a class="page-link" target="_blank" href="https://3F.github.com/Donation/">
+              <a class="page-link" target="_blank" href="{{ site.baseurl }}/Donation/">
                 <span class="glyphicon glyphicon-leaf" aria-hidden="true"></span> Donate
               </a>
             </li>
             <li>
-              <a class="page-link" href="{{ site.baseurl }}/About/">
-                About
+              <a class="page-link" href="https://github.com/3F/vsSolutionBuildEvent">
+                <span class="glyphicon glyphicon-level-up" aria-hidden="true"></span> <strong>GitHub</strong>
               </a>
             </li>
           </ul>

@@ -25,6 +25,6 @@ permalink: /doc/Examples/Version/
 
 ### Simple variant
 
-*The most easy manually way.*
+*The easiest manual way.*
 
 [![](../../Resources/other/coffee.png)](Simple/) [ [View](Simple/) ]

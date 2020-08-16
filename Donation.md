@@ -1,51 +1,28 @@
 ---
-layout: page
+layout: doc
 title: Donation
 hidetitle: true
 permalink: /Donation/
 ---
-**vsSolutionBuildEvent** (vsSBE) - projects that are **open and free** for all!
 
-### Do you want support us ?
+## 🍰 **Open** and **Free** for all!
 
-* [ ☕ Ko-fi / PayPal / Patreon / ... https://3F.github.com/Donation/](https://3F.github.com/Donation/)
+[ ☕ Ko-fi / PayPal / Patreon / ... 3F.github.com/Donation/](https://3F.github.com/Donation/)
 
+### Share, Fork, Star, and Improve
 
-<br /><br /><br />
+Now [GitHub](https://github.com/3F/vsSolutionBuildEvent) is primary place for our project. [Fork, Star, and Improve whatever you want]({{site.repoMain}}) !
 
-
-#### New Features & bug fixes
-
-For existing or new things. Have ideas ? Ready for bug fixing or improving performance ? Good!
-
-Start with [Developer Zone]({{site.docp}}/Dev/)
+See help in [Developer Zone]({{site.docp}}/Dev/) 
 
 #### Wiki
 
-You can also add new or improve any existing pages for current wiki.
+Welcome everyone who is willing to improve our documentation! Take a few minutes of your time for helping for other users. Short examples, scripts, some note, or any complete solution. Use **[Edit]** buttons or Start new [here]({{site.docp}}/New/).
 
-Share some solutions/examples with community of your experiences. Use [Edit] buttons or Start new [here]({{site.docp}}/New/)
+#### Legacy UI
 
-*Take a few minutes of your time for helping for other our users. From short useful script/note or any complete solution.*
+> namespace: net.r_eg.vsSBE.**UI**
 
-#### GUI
+Improve or completely replace \**legacy UI* (main GUI, console, tool pane, ..).
 
-Improvement or complete replacement of current UI (main GUI, console, tool pane, ..)
-
-* Namespace: net.r_eg.vsSBE.**UI**
-
-Current UI is obsolete and inconvenient for all new features, so you can also try change this.
-
-Start with [Developer Zone]({{site.docp}}/Dev/)
-
-**Please note:** planned to separate this namespace into the new project (this is really needed with [API]({{site.docp}}/API) and all [related subprojects]({{site.docp}}/Scheme/)). Write before [here]({{site.issueNew}})
-
-#### Share
-
-Share project... a lot of users - a lot of help or something like that.
-
-Now, GitHub is primary place for our project - [fork, star, and improve all of what you want]({{site.repoMain}}) !
-
-#### Have a questions ?
-
--> [we'll help you]({{site.issueNew}}) -_*
+\* - This part hasn't evolved since version ~0.5. So you can try to fix it.

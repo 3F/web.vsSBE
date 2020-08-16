@@ -1,12 +1,14 @@
 ---
-layout: default
-title: About
+layout: doc
+title: About vsSolutionBuildEvent
+permalink: /About/
 ---
 
 [https://github.com/3F/vsSolutionBuildEvent](https://github.com/3F/vsSolutionBuildEvent)
 
+[![LGPLv3](/etc/badges/License.svg)](/License/)
 ```
-Copyright (c) 2013-2016,2019  Denis Kuzmin < entry.reg@gmail.com > GitHub/3F
+Copyright (c) 2013-2016,2019-2020  Denis Kuzmin < x-3F@outlook.com > GitHub/3F
 ```
 
 [ [ ☕ Donate ](https://3F.github.com/Donation/) ]
@@ -24,9 +26,7 @@ Various modes for everything:
 
 Supports [additional MSBuild](https://vssbe.r-eg.net/doc/Scripts/MSBuild/) features & [SBE-Scripts engine](https://vssbe.r-eg.net/doc/Scripts/SBE-Scripts/) for your awesome ideas.
 
-Possible work even **without** Visual Studio. 
-
-Provides also support of the CI-Build Servers (TeamCity, AppVeyor, Azure DevOps, ...), Command-Line mode and lot of other features for the convenience of your work with the build, tests, versioning, IO operations, and so on. See the documentation.
+Provides CI support (TeamCity, AppVeyor, Azure DevOps, ...), Command-Line mode and lot of other features for convenient work with the builds, tests, versioning, IO operations, and so on. See the documentation.
 
 <table class="table">
   <tbody>
@@ -37,14 +37,7 @@ Provides also support of the CI-Build Servers (TeamCity, AppVeyor, Azure DevOps,
     <tr>
       <td><p><a class="btn btn-default" href="/">Learn more</a></p></td>
       <td>
-        <a href="/Downloads/">It is ready for You:</a>
-        <div><a href="/Changelist/#vsix"><img src="/etc/badges/VSPackage.svg" /></a></div>
-        <a href="/Changelist/#nuget" target="_blank"><img src="https://img.shields.io/nuget/v/vsSBE.CI.MSBuild.svg" alt="CIM" /></a>
-        <a href="/Changelist/#cim"><img src="/etc/badges/CI.MSBuild.svg" /></a>
-        <a href="/Changelist/#devenv"><img src="/etc/badges/Devenv.svg" /></a>
-        <a href="/Changelist/#provider"><img src="/etc/badges/Provider.svg" /></a>
-        <a href="/Changelist/#api"><img src="/etc/badges/API.svg" /></a>
-        <a href="{{site.lnkToCompt_GetNuTool[1]}}"><img src="/etc/badges/GetNuTool.svg" /></a>
+        <a href="/Downloads/">It's ready for You!</a>
       </td>
     </tr>
   </tbody>
@@ -233,7 +226,7 @@ See our [**Wizard** for automatic code generation **or** use any **custom script
 
 ![](https://3F.github.io/web.vsSBE/doc/Resources/examples/VersionClass.gif)
 
-## Different environments
+## Various environments
 
 You can easily use this with TeamCity, Azure DevOps, AppVeyor, and any other automated environments:
 

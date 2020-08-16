@@ -7,92 +7,80 @@ permalink: /doc/Examples/Git/Submodules/
 
 ### Restore all git submodules when opening Visual Studio IDE 
 
-Before v0.12.8 you have [this way]({{site.docp}}/Examples/ReloadProjects/). But now it can be much more easier.
+Before v0.12.8 you have [this way]({{site.docp}}/Examples/ReloadProjects/). But now it can be much easier.
 
-* Add Action for [Sln-Opened]({{site.docp}}/Events/SlnOpened/) event.
-* Set Context: `Before`
-* Select [Script Mode]({{site.docp}}/Modes/Script/)
+1. Add Action for [Sln-Opened]({{site.docp}}/Events/SlnOpened/) event.
+1. Set Context: `Before`
+1. Select [Script Mode]({{site.docp}}/Modes/Script/)
 
-Then add simple script:
+Then add simple script, for example, we want to restore [Conari](https://github.com/3F/Conari):
 
 ```{{site.sbelang}}
-#[$(moduleConari = "Conari/Conari.sln")]
-
-#[( #[IO exists.file("$(moduleConari)")] )
-{ 
-    #[File scall("submodules.bat", "$(moduleConari)", 400)]
-}
-else{
-    #[File call("submodules.bat", "$(moduleConari)", 2000)]
+#[( !(#[IO exists.file("$(pConari)/Conari.sln")]) )
+{
+    #[File call("git", "submodule update --init Conari", 1000)]
 }]
 ```
 
-Create in solution directory `submodules.cmd`:
+Additionally you can restore and prepare .NET Core projects and/or some related nuget packages (including legacy packages.config), for example:
 
-```bash
-@echo off
-
-echo. checking submodules ...
-
-if not exist "%1" goto restore
-REM ...
-
-goto exit
-
-:restore
-
-echo.
-echo. We detected that you need to update git submodules.
-echo. We already do it automatically. Solution of VS IDE is also should be updated after ending of this process by the action via `Sln-Opened` event. If not, please reopen .sln file again.
-echo.
-echo. Please wait...
-echo.
-
-git submodule update --init --recursive 2>nul || goto err_gitNotFound
-
-goto exit
-
-:err_gitNotFound
-
-echo.  1>&2
-echo. `git` was not found or something went wrong. Check your connection and env. variable `PATH`. Or get submodules manually: 1>&2
-echo.     1. Use command `git submodule update --init --recursive` 1>&2
-echo.     2. Or clone initially with recursive option: `git clone --recursive ...` 1>&2
-echo.  1>&2
-
-:exit
+```{{site.sbelang}}
+#[( !(#[IO exists.file("packages/__checked")]) )
+{
+    #[File call("hmsbuild.bat", "-t:restore /v:q /nologo /p:Configuration=$(Configuration) /p:Platform=\"Any CPU\"", 1000)]
+        
+    #[NuGet gnt.raw("/p:ngconfig=\"packages.config\" /nologo /v:m /m:4")]
+    
+    #[IO copy.directory("", "packages/", true)]
+    #[File write("packages/__checked"): ]
+}]
 ```
 
 Activate action and click [Apply]
 
-Now when user will clone your repository without `--recursive` or in some other case when submodule does not exist in solution directory:
+Now, when some user will receive your source code:
 
-* Before first loading solution (after click on **.sln**) will be a black window with automatic restoring submodules.
-    * 'black window' can be hidden, but it can take a long time for restoring all packages. For this case the best way to show some information.
-* And no any windows (info) when all submodules has been restored.
+* Before first loading solution (after click on **.sln**) will be a "black window" with automatic restoring submodules.
+    * "black window" can be hidden (see settings) but it can take a long time for restoring all packages. For this case the best way to show some information.
 
-**To support msbuild.exe**, just use `call submodules "Conari/Conari.sln" || goto err` before build, like this:
+About CI [here]({{site.docp}}/CI/)
 
-```bash
-@echo off
 
-set msbuild=tools/msbuild
+### How to process large list of submodules
 
-call submodules "Conari/Conari.sln" || goto err
+For example:
 
-call %msbuild% gnt.core /p:ngconfig="packages.config" /nologo /v:m /m:4
-call %msbuild% "LunaRoad.sln" /verbosity:normal /l:"packages\vsSBE.CI.MSBuild\bin\CI.MSBuild.dll" /m:4 /t:Rebuild /p:Configuration=Release
+```{{site.sbelang}}
+#[$(_tprjs = 'MvsSln;E-MSBuild;LSender;SobaScript;SobaScript.Mapper;SobaScript.Z.Core;SobaScript.Z.Ext;SobaScript.Z.VS;Varhead')]
 
-goto exit
+#[$(loop = true)]
+#[Box iterate(i = 0; $(loop); i += 1): #[try
+{
+    #[$(_p = "$(_tprjs.Split(';')[$(i)].Trim())")]
+    #[try 
+    {
+        #[( $(_p) != "" ) 
+        {
+            #[( !(#[IO exists.file("$(_p)/$(_p).sln")]) ) { #[File call("git", "submodule update --init $(_p)", 1000)] }]
+        }]
+    }
+    catch(err, msg){ #[IO writeLine(STDERR): Cfg .props.user failed: #[$(msg)] ] }]
+}
+catch { $(loop = false) }] ]
 
-:err
+#[" Packages "]
 
-echo. Build failed. 1>&2
+#[( !(#[IO exists.file("packages/__checked")]) )
+{
+    #[IO writeLine(STDOUT): Restoring packages. Please wait ...]
+    #[File call("tools\hmsbuild.bat", "-t:restore /v:q /nologo /p:Configuration=$(Configuration) /p:Platform=\"Any CPU\"", 1000)]
 
-:exit
+    #[NuGet gnt.raw("/p:ngconfig=\".gnt/packages.config;vsSolutionBuildEvent/packages.config;vsSolutionBuildEventTest/packages.config\" /nologo /v:m /m:6")]    
+    
+    #[IO copy.directory("", "packages/", true)]
+    #[File write("packages/__checked"): ]
+}]
 ```
-
-For more about support CI, [read here]({{site.docp}}/CI/)
 
 
 ## References

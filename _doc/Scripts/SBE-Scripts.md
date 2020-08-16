@@ -3,12 +3,13 @@ layout: doc
 title: SBE-Scripts
 permalink: /doc/Scripts/SBE-Scripts/
 ---
-# SBE-Scripts
 
-{% assign infoData = "Uses [SobaScript](https://github.com/3F/SobaScript) Starting from **1.14.** Part of the documentation may be irrelevant. Please update me." %}
+{% assign infoData = "vsSolutionBuildEvent uses **[SobaScript](https://github.com/3F/SobaScript)** starting from **1.14.** Part of the documentation may be irrelevant. Please update me." %}
 {% include elem/info %}
 
-Togehter with [MSBuild](../MSBuild/) provides and powerful conditions, subcommands, file operations, and lot of other.
+# SBE-Scripts
+
+Togehter with [E-MSBuild](../MSBuild/) provides powerful conditions, subcommands, I/O operations, and others.
 
 ## Components
 

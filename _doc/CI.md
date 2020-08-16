@@ -5,27 +5,22 @@ permalink: /doc/CI/
 ---
 # Continuous Integration (CI) 
 
-***world without Visual Studio***.
+vsSolutionBuildEvent supports CI features [[?](http://en.wikipedia.org/wiki/Continuous_integration)] and may work without Visual Studio at all.
 
-The vsSolutionBuildEvent supports CI features [[?](http://en.wikipedia.org/wiki/Continuous_integration)] and may work without Visual Studio at all.
-
-This is possible with additional components:
-
-* **[CI.MSBuild](../CI/CI.MSBuild/)** - for work via msbuild.exe (MSBuild Tools)
-    * To get CI.MSBuild in one click ~10 Kb: [{{site.lnkCur_getCIM[1]}}]({{site.lnkCur_getCIM[2]}}) (Compiled by [GetNuTool](https://github.com/3F/GetNuTool))
-* [Devenv Command-Line](../CI/Devenv Command-Line/) - for work via devenv instance of the Visual Studio
+* **[CI.MSBuild](../CI/CI.MSBuild/)** support for MSBuild Tools.
+* Legacy [Devenv Command-Line](../CI/Devenv Command-Line/) support for devenv Visual Studio instance.
+* Other via [API](../Scheme/). It is easy to support any other tools and environments. Start with [Developer Zone](../Dev/).
 
 [![Example with AppVeyor](../Resources/ci_example_appveyor.png)](../CI/CI.MSBuild/)
 
-### Other utilities
+### GUI
 
-The vsSolutionBuildEvent provides [API level](../Scheme/). It easy to support any other places. 
+{% assign img = "vsSolutionBuildEvent.CIM.GUI.png" %}{% assign attr = "width='308' height='206'" %}{% include elem/lightbox %}
 
-* [Developer Zone](../Dev/)
-* [For questions]({{site.issueNew}})
+You can easily control scripts beyond of the Visual Studio IDE.
 
-#### VS + MSBuild & `after.<name>.sln.targets`
+Read more in **[Native scripting](../Examples/NativeScripting/)**.
 
-Don't forget about `after.<name>.sln.targets` features if you only need **unified action** in your MSBuild & Visual Studio [for all projects at once](../Features/Solution-wide/).
+### after.&lt;name&gt;.sln.targets
 
-* [Read here](../Features/Solution-wide/#afternameslntargets)
+You can simply use this feature if you only need a unified action in both MSBuild + Visual Studio environments [for all projects at once](../Features/Solution-wide/) etc. [Read here](../Features/Solution-wide/#afternameslntargets)

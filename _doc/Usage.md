@@ -8,9 +8,9 @@ permalink: /doc/Usage/
 
 ## Visual Studio
 
-You need VSPackage (**.vsix**) file:
+You need VSPackage (**.vsix**) file. Find it from the [Download page](/Downloads/). Or see latest binaries from [GitHub Releases Page](https://github.com/3F/vsSolutionBuildEvent/releases)
 
-* Find it from [Downloads page](/Downloads/). Or see latest binaries from [GitHub Releases Page](https://github.com/3F/vsSolutionBuildEvent/releases)
+Complete [Installation Guide]({{site.docp}}/Installation/)
 
 ### SDK10 / SDK15 versions
 

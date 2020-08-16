@@ -4,6 +4,8 @@ title: Examples
 permalink: /doc/Examples/
 ---
 
+Feel free to improve our wiki. Click **[Edit](#page-edit)** button below or start [new page](../New/).
+
 ## Complete solutions
 
 * [Automatic Version Numbering](Version/)
@@ -49,9 +51,3 @@ Read [here](../Scheme/)
 ## For developers
 
 See [Developer Zone](../Dev/) - *How to build plugin; How to create component for current platform; API; etc.*
-
-## Your experience
-
-Feel free to improve any our pages. Click [Edit] button below or Start new page [here](../New/).
-
-*From the short useful script/note to the complete solution for other our users. It can be as part of [donation]({{site.baseurl}}/Donation/) or simple note to self etc.*

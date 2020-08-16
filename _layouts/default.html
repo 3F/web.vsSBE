@@ -33,7 +33,8 @@
               <li class="active">{{p}}</li>
               {% break %}
             {% endif %}
-            <li><a href="{{url}}/{{p}}/">{{p}}</a></li>
+            {% assign url = url | append: '/' | append: p %}
+            <li><a href="{{url}}/">{{p}}</a></li>
           {% endfor %}
         </ul>
       </div>

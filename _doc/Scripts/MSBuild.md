@@ -3,10 +3,11 @@ layout: doc
 title: MSBuild
 permalink: /doc/Scripts/MSBuild/
 ---
-# MSBuild
 
-{% assign infoData = "Uses [E-MSBuild](https://github.com/3F/E-MSBuild) Starting from **1.14.** Part of the documentation may be irrelevant. Please update me." %}
+{% assign infoData = "vsSolutionBuildEvent uses **[E-MSBuild](https://github.com/3F/E-MSBuild)** starting from **1.14.** Part of the documentation may be irrelevant. Please update me." %}
 {% include elem/info %}
+
+# MSBuild
 
 *The Microsoft Build Engine which is also known as MSBuild.*
 

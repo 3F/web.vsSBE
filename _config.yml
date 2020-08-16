@@ -1,7 +1,7 @@
 # Site settings
 title: vsSolutionBuildEvent
 subtitle: Flexible actions for all  ...
-email: entry.reg@gmail.com
+email: x-3F@outlook.com
 baseurl: ""
 url: "http://vssbe.r-eg.net" # base hostname
 domain: "vssbe.r-eg.net"
@@ -53,10 +53,10 @@ msblang: bash
 
 ## VSPackage
 
-lnkCur_VSPackage:   [ "1.14.0", "vsSolutionBuildEvent.1.14.0+16ee135.SDK15.vsix", "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/GitHub3F/vsextensions/vsSolutionBuildEvent-11615/1.14.0/vspackage" ]
+lnkCur_VSPackage:   [ "1.14.1", "vsSolutionBuildEvent.1.14.1+014f49a.SDK15.vsix", "https://github.com/3F/vsSolutionBuildEvent/releases/download/1.14.1/vsSolutionBuildEvent.1.14.1+014f49a.SDK15.vsix" ]
 lnkList_VSPackage:  [
-                        [ "1.14.0-SDK15", "vsSolutionBuildEvent.1.14.0+16ee135.SDK15.vsix", "https://github.com/3F/vsSolutionBuildEvent/releases/download/1.14/vsSolutionBuildEvent.1.14.0.16ee135.SDK15.vsix" ],
-                        [ "1.14.0-SDK10", "vsSolutionBuildEvent.1.14.0+16ee135.SDK10.vsix", "https://github.com/3F/vsSolutionBuildEvent/releases/download/1.14/vsSolutionBuildEvent.1.14.0.16ee135.SDK10.vsix" ]
+                        [ "1.14.1-SDK15", "vsSolutionBuildEvent.1.14.1+014f49a.SDK15.vsix", "https://github.com/3F/vsSolutionBuildEvent/releases/download/1.14.1/vsSolutionBuildEvent.1.14.1+014f49a.SDK15.vsix" ],
+                        [ "1.14.1-SDK10", "vsSolutionBuildEvent.1.14.1+014f49a.SDK10.vsix", "https://github.com/3F/vsSolutionBuildEvent/releases/download/1.14.1/vsSolutionBuildEvent.1.14.1+014f49a.SDK10.vsix" ]
                     ]
 lnkOld_VSPackage:   [
                         [ "0.12.11-SDK15", "vsSolutionBuildEvent.0.12.11.39274+c68aea2.SDK15.vsix", "https://github.com/3F/vsSolutionBuildEvent/releases/download/0.12.11/vsSolutionBuildEvent.0.12.11.39274.c68aea2.SDK15.vsix" ],
@@ -66,7 +66,7 @@ lnkAll_VSPackage:   [ "SDK10-SDK15", "https://github.com/3F/vsSolutionBuildEvent
 
 ## CI.MSBuild
 
-lnkCur_CIMSBuild:   [ "v1.7", "CI.MSBuild.1.7+16ee135.SDK15.zip", "https://github.com/3F/vsSolutionBuildEvent/releases/download/1.14/CI.MSBuild.1.7.16ee135.SDK15.zip" ]
+lnkCur_CIMSBuild:   [ "1.14.1", "CI.MSBuild+vsSolutionBuildEvent", "https://www.nuget.org/packages/vsSolutionBuildEvent/" ]
 lnkList_CIMSBuild:  [ 
                         [ "v1.7", "CI.MSBuild.1.7+16ee135.SDK15.zip", "https://github.com/3F/vsSolutionBuildEvent/releases/download/1.14/CI.MSBuild.1.7.16ee135.SDK15.zip" ]
                     ]                
@@ -77,7 +77,7 @@ lnkAll_CIMSBuild:   [ "/CI-Utilities/CI.MSBuild/", "http://sourceforge.net/proje
 
 ## Devenv
 
-lnkCur_Devenv:  [ "v1.3", "Devenv&#95;v1.3&#95;[e3b9d87][net40].zip", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/Devenv/Devenv_v1.3_%5Be3b9d87%5D%5Bnet40%5D.zip/download" ]
+lnkCur_Devenv:  [ "v1.3", "Devenv.1.3+014f49a.SDK10.zip", "https://github.com/3F/vsSolutionBuildEvent/releases/download/1.14.1/Devenv.1.3+014f49a.SDK10.zip" ]
 lnkList_Devenv: [
                     [ "v1.3", "Devenv&#95;v1.3&#95;[e3b9d87][net40].zip", "http://sourceforge.net/projects/vssbe/files/CI-Utilities/Devenv/Devenv_v1.3_%5Be3b9d87%5D%5Bnet40%5D.zip/download" ]
                 ]
@@ -89,9 +89,9 @@ lnkAll_Devenv:  [ "/CI-Utilities/Devenv/", "http://sourceforge.net/projects/vssb
 
 ## API
 
-lnkCur_API:     [ "v1.4", "Bridge&#95;v1.4&#95;[50e9a29][net40].zip", "https://sourceforge.net/projects/vssbe/files/API/Bridge/Bridge_v1.4_%5B50e9a29%5D%5Bnet40%5D.zip/download" ]
+lnkCur_API:     [ "v1.4", "vsSBE.API.1.4+014f49a.SDK15.zip", "https://github.com/3F/vsSolutionBuildEvent/releases/download/1.14.1/vsSBE.API.1.4+014f49a.SDK15.zip" ]
 lnkList_API:    [
-                    [ "v1.4", "Bridge&#95;v1.4&#95;[50e9a29][net40].zip", "https://sourceforge.net/projects/vssbe/files/API/Bridge/Bridge_v1.4_%5B50e9a29%5D%5Bnet40%5D.zip/download" ]
+                    [ "v1.4", "vsSBE.API.1.4+014f49a.SDK15.zip", "https://github.com/3F/vsSolutionBuildEvent/releases/download/1.14.1/vsSBE.API.1.4+014f49a.SDK15.zip" ]
                 ]
 lnkOld_API:     [
 
@@ -100,7 +100,7 @@ lnkAll_API:     [ "/API/Bridge/", "http://sourceforge.net/projects/vssbe/files/A
 
 ## Provider
 
-lnkCur_Provider:    [ "v3.0", "Provider&#95;v3.0&#95;[8bde22a][net40].zip", "http://sourceforge.net/projects/vssbe/files/API/Provider/Provider_v3.0_%5B8bde22a%5D%5Bnet40%5D.zip/download" ]
+lnkCur_Provider:    [ "v3.0", "vsSBE.API.1.4+014f49a.SDK15.zip", "https://github.com/3F/vsSolutionBuildEvent/releases/download/1.14.1/vsSBE.API.1.4+014f49a.SDK15.zip" ]
 lnkList_Provider:   [
                         [ "v3.0", "Provider&#95;v3.0&#95;[8bde22a][net40].zip", "http://sourceforge.net/projects/vssbe/files/API/Provider/Provider_v3.0_%5B8bde22a%5D%5Bnet40%5D.zip/download" ]
                     ]
@@ -112,7 +112,7 @@ lnkAll_Provider:    [ "/API/Provider/", "http://sourceforge.net/projects/vssbe/f
 
 ## NuGet Package for CI
 
-lnkCur_CIMNuGet:    [ "v1.14.0", "vsSolutionBuildEvent.1.14.0+16ee135.SDK10.nupkg", "https://www.nuget.org/api/v2/package/vsSolutionBuildEvent/1.14.0" ]
+lnkCur_CIMNuGet:    [ "v1.14.1", "vsSolutionBuildEvent.1.14.1+014f49a.SDK10.nupkg", "https://www.nuget.org/api/v2/package/vsSolutionBuildEvent/" ]
 lnkList_CIMNuGet:   [
                         [ "v1.14.0", "vsSolutionBuildEvent.1.14.0+16ee135.SDK10.nupkg", "https://www.nuget.org/api/v2/package/vsSolutionBuildEvent/1.14.0" ]
                     ]
@@ -125,7 +125,7 @@ lnkAll_CIMNuGet:    [ "/CI-Utilities/CI.MSBuild/NuGet_packages/", "https://www.n
 
 ## ClientDemo
 
-lnkCur_ClientDemo:  [ "[e3b9d87][SDK15]", "ClientDemo.16ee135.SDK15.zip", "https://github.com/3F/vsSolutionBuildEvent/releases/download/1.14/ClientDemo.16ee135.SDK15.zip" ]
+lnkCur_ClientDemo:  [ "[014f49a][SDK15]", "ClientDemo.014f49a.SDK15.zip", "https://github.com/3F/vsSolutionBuildEvent/releases/download/1.14.1/ClientDemo.014f49a.SDK15.zip" ]
 lnkList_ClientDemo: [
                         [ "[e3b9d87][SDK15]", "ClientDemo.16ee135.SDK15.zip", "https://github.com/3F/vsSolutionBuildEvent/releases/download/1.14/ClientDemo.16ee135.SDK15.zip" ]
                     ]
@@ -134,7 +134,7 @@ lnkAll_ClientDemo:  [ "/dev/clients/client.vssbe.dll/", "https://github.com/3F/v
 
 ## GetNuTool
 
-lnkCur_GetNuTool:  [ "v1.7", "gnt.bat 1.7", "https://github.com/3F/GetNuTool/releases/download/v1.7/gnt.bat" ]
+lnkCur_GetNuTool:  [ "v1.8", "gnt.bat 1.8", "https://3F.github.io/GetNuTool/releases/latest/gnt/" ]
 lnkList_GetNuTool: [
                         [ "v1.7 Ex", "GetNuTool-1.7 Ex", "https://github.com/3F/GetNuTool/releases/download/v1.7/gnt.bat" ],
                         [ "v1.7 Full", "GetNuTool-1.7 Full", "https://github.com/3F/GetNuTool/releases/download/v1.7/GetNuTool_v1.7.0.7737_4bc1dfb.zip" ]
@@ -149,7 +149,7 @@ lnkToCompt_GetNuTool: [ "v1.7", "https://github.com/3F/GetNuTool" ]
 
 ## get.CIM.bat
 
-lnkCur_getCIM:  [ "get-vsSBE.bat", "get-vsSBE.1.14.0.bat", "https://github.com/3F/vsSolutionBuildEvent/releases/download/1.14/get-vsSBE.1.14.0.bat" ]
+lnkCur_getCIM:  [ "get-vsSBE.bat", "get-vsSBE.1.14.1.bat", "https://github.com/3F/vsSolutionBuildEvent/releases/download/1.14.1/get-vsSBE.1.14.1.bat" ]
 lnkList_getCIM: [
                         [ "get-vsSBE.1.14.0.bat", "get-vsSBE.1.14.0.bat", "https://github.com/3F/vsSolutionBuildEvent/releases/download/1.14/get-vsSBE.1.14.0.bat" ]
                     ]

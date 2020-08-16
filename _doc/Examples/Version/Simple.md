@@ -7,27 +7,33 @@ permalink: /doc/Examples/Version/Simple/
 
 ![]({{site.docp}}/Resources/other/coffee.png)
 
-Did you know: 
-
-The most easy versioning for your projects can be lighter than it described in '[Manually](../Manually/) variant'.
-And if you want configure all this manually instead of a [Wizard](../Wizard/), I'll tell you about a simple but still powerful way.
-
+The most easy versioning for your projects can be lighter than it described in '[Manually](../Manually/)' page.
+And if you still want to configure this manually instead of a [Wizard](../Wizard/), let's talk about simple but still powerful way.
 
 ## Real projects
 
-Firstly, you can look this trivial variants on real projects, for example:
+First of all, you can look the real projects in action.
 
-* [https://github.com/3F/Conari](https://github.com/3F/Conari)
-* [https://github.com/3F/LunaRoad](https://github.com/3F/LunaRoad)
-* [https://github.com/3F/DllExport](https://github.com/3F/DllExport)
+It is actively used for the following projects:
 
-Currently all this above has been configured by this simple scheme.
+* [regXwild](https://github.com/3F/regXwild)
+    * [Sample of build ![](https://img.shields.io/badge/Build30-passing-brightgreen.svg?style=flat)](https://ci.appveyor.com/project/3Fs/regxwild-github/builds/34562551)
+
+* [7z.Libs](https://github.com/3F/7z.Libs)
+* [MvsSln](https://github.com/3F/MvsSln)
+* [Conari](https://github.com/3F/Conari)
+* [DllExport](https://github.com/3F/DllExport)
+* [hMSBuild](https://github.com/3F/hMSBuild)
+* [LuNari](https://github.com/3F/LuNari)
+* [GetNuTool](https://github.com/3F/GetNuTool)
+* [vsSolutionBuildEvent](https://github.com/3F/vsSolutionBuildEvent)
+* ...
 
 ### How to
 
-In '[Manually variant](../Manually/)' we create a template of 'Version' file, then generate all of what we need.
+In '[Manually](../Manually/)' page we create a template of 'Version' file, then generate all of what we need.
 
-But here we will create a 'normal Version file' (file that's already stored with other files of project and can be controlled by SCM as and other).
+But here we'll create a 'normal Version file' (file that's already stored with other files of project and can be controlled by SCM as and other).
 
 For C# it can be like this:
 
@@ -55,14 +61,12 @@ namespace net.r_eg.Conari
 }
 ```
 
-Ok, now we have different information about product that can be used in [different places](https://gist.github.com/3F/f54ad9736a9cbb984785). How to manage it ?
+As you can see, you need only to control `S_NUM` *and optional `S_REV` + branch info.*
 
-As you can see, you need control only for `S_NUM` *and optional `S_REV` + branch info.*
-
-The same way, you may create `.version` file in root path of your project (or use something more, like special variable from CI servers, etc. see details [here](../Manually/)).
+The same way, you can create `.version` file in root path of your project (or use something more, like special variable from CI servers, etc. see details [here](../Manually/)).
 
 ```
-1.2.4  -> Major.Minor.Build.Revision etc.
+1.2.4  -> Major.Minor.Patch.Build etc.
 ```
 
 then simple script:
@@ -72,22 +76,19 @@ then simple script:
 #[IO replace.Regexp("$(pConari)/ConariVersion.cs", "(S_NUM\s+=).+?\";", "$1 \"$(pVer)\";")]
 ```
 
-yes, that's all. Now it should be automatically updated by your configured events, for example, [Pre-Build]({{site.docp}}/Events/).
+Yes, that's all. Now it should be automatically updated together with your [configured events]({{site.docp}}/Events/), for example, [Pre-Build]({{site.docp}}/Events/Pre-Build/).
 
 #### SCM info
 
-To get additional (branch info above `_NAME`, `_SHA1`, `_REVC`) information from your SCM (for example, [git](https://git-scm.com/)) you can use same variant from '[Manually version](../Manually/)', i.e.:
+To get additional (branch info above `_NAME`, `_SHA1`, `_REVC`) information from your SCM (eg. [git](https://git-scm.com/) etc.) you can use the same way from '[Manually](../Manually/)' page. That is:
 
 ```{{site.sbelang}}
-#[( #[IO exists.directory(".git")] && #[IO exists.file("git.exe", true)] )
-{
-    #[var bSha1     = #[IO sout("git", "rev-parse --short HEAD")]]
-    #[var bName     = #[IO sout("git", "rev-parse --abbrev-ref HEAD")]]
-    #[var bRevCount = #[IO sout("git", "rev-list HEAD --count")]]
-}
+#[var bSha1     = #[IO sout("git", "rev-parse --short HEAD")]]
+#[var bName     = #[IO sout("git", "rev-parse --abbrev-ref HEAD")]]
+#[var bRevCount = #[IO sout("git", "rev-list HEAD --count")]]
 ```
 
-isn't simply ?
+Isn't it easy?
 
 # References
 
